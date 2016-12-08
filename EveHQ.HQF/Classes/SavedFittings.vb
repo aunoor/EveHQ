@@ -93,6 +93,10 @@ Imports Newtonsoft.Json
 
         ' Write the JSON version of the fittings
         Try
+            If json = "null" Or json = "" Then
+                Throw New Exception("JSON conversion failed")
+            End If
+
             Using s As New StreamWriter(Path.Combine(PluginSettings.HQFFolder, "Fittings.json"), False)
                 s.Write(json)
                 s.Flush()

@@ -1149,7 +1149,14 @@ Imports EveHQ.Common.Extensions
                                         processData = True
                                     End If
                             End Select
-                            If processData = True And ((aModule.DatabaseGroup <> ModuleEnum.GroupCommandBurst And (aModule.LoadedCharge.ModuleState And chkEffect.Status) = aModule.LoadedCharge.ModuleState) Or (aModule.DatabaseGroup = ModuleEnum.GroupCommandBurst And aModule.ModuleState = chkEffect.Status)) Then
+                            ' I don't get this line but I think there is a bug
+                            ' I believe it should always work like the second line
+                            ' looking at the module state instead of the charge state
+                            ' because the charge state doesn't seem to ever change
+                            ' in any case command bursts require it to be like this
+                            ' (or we could have the charge state change)
+                            If processData = True And ((aModule.DatabaseGroup <> ModuleEnum.GroupCommandBurst And (aModule.LoadedCharge.ModuleState And chkEffect.Status) = aModule.LoadedCharge.ModuleState) _
+                                                        Or (aModule.DatabaseGroup = ModuleEnum.GroupCommandBurst And aModule.ModuleState = chkEffect.Status)) Then
                                 fEffect = New FinalEffect
                                 fEffect.AffectedAtt = chkEffect.AffectedAtt
                                 fEffect.AffectedType = chkEffect.AffectedType
@@ -1168,6 +1175,10 @@ Imports EveHQ.Common.Extensions
                                 Else
                                     fEffectList = _chargeEffectsTable(fEffect.AffectedAtt)
                                 End If
+                                ' Record the module that caused the effect so 
+                                ' we can make it only apply to the charge in it
+                                ' later if needed
+                                fEffect.CauseModule = aModule
                                 fEffectList.Add(fEffect)
                             End If
                         Next
@@ -1227,9 +1238,7 @@ Imports EveHQ.Common.Extensions
                                 cause = aModule.LoadedCharge.Name
                             End If
                         End If
-                        If processData = True And
-                            ((aModule.ModuleState And chkEffect.Status) = aModule.ModuleState Or
-                            (chkEffect.Status = ModuleStates.Gang And aModule.DatabaseGroup = ModuleEnum.GroupCommandBurst And forRemoteShip = True)) Then
+                        If processData = True And (aModule.ModuleState And chkEffect.Status) = aModule.ModuleState Then
                             fEffect = New FinalEffect
                             fEffect.AffectedAtt = chkEffect.AffectedAtt
                             fEffect.AffectedType = chkEffect.AffectedType
@@ -1248,18 +1257,25 @@ Imports EveHQ.Common.Extensions
                             Else
                                 fEffectList = _moduleEffectsTable(fEffect.AffectedAtt)
                             End If
+                            ' We need to special case Command Bursts because they have
+                            ' have local and remote effects and should only apply
+                            ' to the charge loaded
                             If aModule.DatabaseGroup = ModuleEnum.GroupCommandBurst Then
                                 If aModule.LoadedCharge IsNot Nothing Then
-                                    If fEffect.AffectedID.Contains(aModule.LoadedCharge.ID) Then
-                                        If (aModule.ModuleState = ModuleStates.Active And chkEffect.Status = ModuleStates.Active And forRemoteShip = False) _
-                                            Or (chkEffect.Status = ModuleStates.Gang And forRemoteShip = True) Then
-                                            fEffectList.Add(fEffect)
-                                        End If
+                                    ' We only want the burst to affect the charge loaded
+                                    ' so we are going to record which module the effect is for
+                                    If forRemoteShip = False Then
+                                        fEffect.CauseModule = aModule
+                                        ' We need to exclude the Non-gang effects for remote bursts
+                                        ' Note that we are still adding the effect but if it isn't
+                                        ' a gang effect it will not match with a module 
+                                        ' ergo it will no be applied later in the ApplyModuleEffectsToCharges
+                                    ElseIf (chkEffect.Status = ModuleStates.Gang And forRemoteShip = True) Then
+                                        fEffect.CauseModule = aModule
                                     End If
                                 End If
-                            Else
-                                fEffectList.Add(fEffect)
                             End If
+                            fEffectList.Add(fEffect)
                         End If
                     Next
                 End If
@@ -1508,7 +1524,7 @@ Imports EveHQ.Common.Extensions
     End Sub
     Public Sub ApplySkillEffectsToModule(ByRef aModule As ShipModule, ByVal mapAttributes As Boolean)
         Dim att As Integer
-        If aModule.ModuleState <16 Then
+        If aModule.ModuleState < 16 Then
             For attNo As Integer = 0 To aModule.Attributes.Keys.Count - 1
                 att = aModule.Attributes.Keys(attNo)
                 If _skillEffectsTable.ContainsKey(att) = True Then
@@ -1765,7 +1781,16 @@ Imports EveHQ.Common.Extensions
                         If _moduleEffectsTable.ContainsKey(att) = True Then
                             For Each fEffect As FinalEffect In _moduleEffectsTable(att)
                                 If ProcessFinalEffectForModule(aModule.LoadedCharge, fEffect) = True Then
-                                    Call ApplyFinalEffectToModule(aModule.LoadedCharge, fEffect, att)
+                                    ' Bursts need to only apply to their loaded charge
+                                    ' we recorded which burst an effect goes to earlier
+                                    ' so now we can filter on it
+                                    If aModule.DatabaseGroup = ModuleEnum.GroupCommandBurst Then
+                                        If fEffect.CauseModule Is aModule Then
+                                            Call ApplyFinalEffectToModule(aModule.LoadedCharge, fEffect, att)
+                                        End If
+                                    Else
+                                        Call ApplyFinalEffectToModule(aModule.LoadedCharge, fEffect, att)
+                                    End If
                                 End If
                             Next
                         End If

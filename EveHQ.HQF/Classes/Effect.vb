@@ -111,6 +111,7 @@ End Class
     Public Cause As String
     Public CalcType As EffectCalcType
     Public Status As Integer
+    Public CauseModule As ShipModule
 End Class
 
 Public Enum HQFEffectType As Integer

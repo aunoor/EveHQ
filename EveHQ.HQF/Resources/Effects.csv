@@ -1306,67 +1306,11 @@
 780,2,546,73,4,1038;2151,0,0,0,14,Cycle Time
 1082,2,546,50,4,1038;2151,0,0,0,14,CPU Penalty
 # FLEET ASSISTANCE MODULES REMOTE
-# Command Bursts (combining these will break things)
-2469,1,42529;43555,2596,1,42694,0,0,5,16,Shield Command Burst Module Bonus on Active Shielding Charge
-2471,1,42529;43555,2597,1,42694,0,0,5,16,Shield Command Burst Module Bonus on Active Shielding Charge
-2473,1,42529;43555,2598,1,42694,0,0,5,16,Shield Command Burst Module Bonus on Active Shielding Charge
-2537,1,42529;43555,2599,1,42694,0,0,5,16,Shield Command Burst Module Bonus on Active Shielding Charge
-2469,1,42529;43555,2596,1,42695,0,0,5,16,Shield Command Burst Module Bonus on Shield Harmonizing Charge
-2471,1,42529;43555,2597,1,42695,0,0,5,16,Shield Command Burst Module Bonus on Shield Harmonizing Charge
-2473,1,42529;43555,2598,1,42695,0,0,5,16,Shield Command Burst Module Bonus on Shield Harmonizing Charge
-2537,1,42529;43555,2599,1,42695,0,0,5,16,Shield Command Burst Module Bonus on Shield Harmonizing Charge
-2469,1,42529;43555,2596,1,42696,0,0,5,16,Shield Command Burst Module Bonus on Shield Extension Charge
-2471,1,42529;43555,2597,1,42696,0,0,5,16,Shield Command Burst Module Bonus on Shield Extension Charge
-2473,1,42529;43555,2598,1,42696,0,0,5,16,Shield Command Burst Module Bonus on Shield Extension Charge
-2537,1,42529;43555,2599,1,42696,0,0,5,16,Shield Command Burst Module Bonus on Shield Extension Charge
-2469,1,42527;43554,2596,1,42835,0,0,5,16,Information Command Burst Module Bonus on Sensor Optimization Charge
-2471,1,42527;43554,2597,1,42835,0,0,5,16,Information Command Burst Module Bonus on Sensor Optimization Charge
-2473,1,42527;43554,2598,1,42835,0,0,5,16,Information Command Burst Module Bonus on Sensor Optimization Charge
-2537,1,42527;43554,2599,1,42835,0,0,5,16,Information Command Burst Module Bonus on Sensor Optimization Charge
-2469,1,42527;43554,2596,1,42836,0,0,5,16,Information Command Burst Module Bonus on Electronic Superiority Charge
-2471,1,42527;43554,2597,1,42836,0,0,5,16,Information Command Burst Module Bonus on Electronic Superiority Charge
-2473,1,42527;43554,2598,1,42836,0,0,5,16,Information Command Burst Module Bonus on Electronic Superiority Charge
-2537,1,42527;43554,2599,1,42836,0,0,5,16,Information Command Burst Module Bonus on Electronic Superiority Charge
-2469,1,42527;43554,2596,1,42837,0,0,5,16,Information Command Burst Module Bonus on Electronic Hardening Charge
-2471,1,42527;43554,2597,1,42837,0,0,5,16,Information Command Burst Module Bonus on Electronic Hardening Charge
-2473,1,42527;43554,2598,1,42837,0,0,5,16,Information Command Burst Module Bonus on Electronic Hardening Charge
-2537,1,42527;43554,2599,1,42837,0,0,5,16,Information Command Burst Module Bonus on Electronic Hardening Charge
-2469,1,42526;43552,2596,1,42832,0,0,5,16,Armored Command Burst Module Bonus on Armor Energizing Charge
-2471,1,42526;43552,2597,1,42832,0,0,5,16,Armored Command Burst Module Bonus on Armor Energizing Charge
-2473,1,42526;43552,2598,1,42832,0,0,5,16,Armored Command Burst Module Bonus on Armor Energizing Charge
-2537,1,42526;43552,2599,1,42832,0,0,5,16,Armored Command Burst Module Bonus on Armor Energizing Charge
-2469,1,42526;43552,2596,1,42833,0,0,5,16,Armored Command Burst Module Bonus on Rapid Repair Charge
-2471,1,42526;43552,2597,1,42833,0,0,5,16,Armored Command Burst Module Bonus on Rapid Repair Charge
-2473,1,42526;43552,2598,1,42833,0,0,5,16,Armored Command Burst Module Bonus on Rapid Repair Charge
-2537,1,42526;43552,2599,1,42833,0,0,5,16,Armored Command Burst Module Bonus on Rapid Repair Charge
-2469,1,42526;43552,2596,1,42834,0,0,5,16,Armored Command Burst Module Bonus on Armor Reinforcement Charge
-2471,1,42526;43552,2597,1,42834,0,0,5,16,Armored Command Burst Module Bonus on Armor Reinforcement Charge
-2473,1,42526;43552,2598,1,42834,0,0,5,16,Armored Command Burst Module Bonus on Armor Reinforcement Charge
-2537,1,42526;43552,2599,1,42834,0,0,5,16,Armored Command Burst Module Bonus on Armor Reinforcement Charge
-2469,1,42530;43556,2596,1,42838,0,0,5,16,Skirmish Command Burst Module Bonus on Evasive Maneuvers Charge
-2471,1,42530;43556,2597,1,42838,0,0,5,16,Skirmish Command Burst Module Bonus on Evasive Maneuvers Charge
-2473,1,42530;43556,2598,1,42838,0,0,5,16,Skirmish Command Burst Module Bonus on Evasive Maneuvers Charge
-2537,1,42530;43556,2599,1,42838,0,0,5,16,Skirmish Command Burst Module Bonus on Evasive Maneuvers Charge
-2469,1,42530;43556,2596,1,42839,0,0,5,16,Skirmish Command Burst Module Bonus on Interdiction Maneuvers Charge
-2471,1,42530;43556,2597,1,42839,0,0,5,16,Skirmish Command Burst Module Bonus on Interdiction Maneuvers Charge
-2473,1,42530;43556,2598,1,42839,0,0,5,16,Skirmish Command Burst Module Bonus on Interdiction Maneuvers Charge
-2537,1,42530;43556,2599,1,42839,0,0,5,16,Skirmish Command Burst Module Bonus on Interdiction Maneuvers Charge
-2469,1,42530;43556,2596,1,42840,0,0,5,16,Skirmish Command Burst Module Bonus on Rapid Deployment Charge
-2471,1,42530;43556,2597,1,42840,0,0,5,16,Skirmish Command Burst Module Bonus on Rapid Deployment Charge
-2473,1,42530;43556,2598,1,42840,0,0,5,16,Skirmish Command Burst Module Bonus on Rapid Deployment Charge
-2537,1,42530;43556,2599,1,42840,0,0,5,16,Skirmish Command Burst Module Bonus on Rapid Deployment Charge
-2469,1,42528;43551,2596,1,42829,0,0,5,16,Mining  Command Burst Module Bonus on Mining Laser Field Enhancement Charge
-2471,1,42528;43551,2597,1,42829,0,0,5,16,Mining  Command Burst Module Bonus on Mining Laser Field Enhancement Charge
-2473,1,42528;43551,2598,1,42829,0,0,5,16,Mining  Command Burst Module Bonus on Mining Laser Field Enhancement Charge
-2537,1,42528;43551,2599,1,42829,0,0,5,16,Mining  Command Burst Module Bonus on Mining Laser Field Enhancement Charge
-2469,1,42528;43551,2596,1,42830,0,0,5,16,Mining  Command Burst Module Bonus on Mining Laser Optimization Charge
-2471,1,42528;43551,2597,1,42830,0,0,5,16,Mining  Command Burst Module Bonus on Mining Laser Optimization Charge
-2473,1,42528;43551,2598,1,42830,0,0,5,16,Mining  Command Burst Module Bonus on Mining Laser Optimization Charge
-2537,1,42528;43551,2599,1,42830,0,0,5,16,Mining  Command Burst Module Bonus on Mining Laser Optimization Charge
-2469,1,42528;43551,2596,1,42831,0,0,5,16,Mining  Command Burst Module Bonus on Mining Equipment Preservation Charge
-2471,1,42528;43551,2597,1,42831,0,0,5,16,Mining  Command Burst Module Bonus on Mining Equipment Preservation Charge
-2473,1,42528;43551,2598,1,42831,0,0,5,16,Mining  Command Burst Module Bonus on Mining Equipment Preservation Charge
-2537,1,42528;43551,2599,1,42831,0,0,5,16,Mining  Command Burst Module Bonus on Mining Equipment Preservation Charge
+# Command Bursts
+2469,2,1770,2596,2,1769;1772;1773;1774;1771,0,0,5,16,Command and Foreman Burst Module Bonus
+2471,2,1770,2597,2,1769;1772;1773;1774;1771,0,0,5,16,Command and Foreman Burst Module Bonus
+2473,2,1770,2598,2,1769;1772;1773;1774;1771,0,0,5,16,Command and Foreman Burst Module Bonus
+2537,2,1770,2599,2,1769;1772;1773;1774;1771,0,0,5,16,Command and Foreman Burst Module Bonus
 # Shield Harmonizing Charge
 #  Bonus: 10 Shield resistance bonus		Value: -8
 2596,1,42695,271,3,6,0,0,2,16,Shield Harmonizing Charge	- EM Shield Resistance Bonus
@@ -1450,67 +1394,11 @@
 #  Bonus: 60 Agility bonus    Value: -6   
 2597,1,42838,70,3,6,0,0,0,16,Evasive Maneuvers Charge - Agility bonus
 # FLEET ASSISTANCE MODULES LOCAL
-# Command Bursts (combining these will break things)
-2469,1,42529;43555,2596,1,42694,0,0,5,4,Shield Command Burst Module Bonus on Active Shielding Charge
-2471,1,42529;43555,2597,1,42694,0,0,5,4,Shield Command Burst Module Bonus on Active Shielding Charge
-2473,1,42529;43555,2598,1,42694,0,0,5,4,Shield Command Burst Module Bonus on Active Shielding Charge
-2537,1,42529;43555,2599,1,42694,0,0,5,4,Shield Command Burst Module Bonus on Active Shielding Charge
-2469,1,42529;43555,2596,1,42695,0,0,5,4,Shield Command Burst Module Bonus on Shield Harmonizing Charge
-2471,1,42529;43555,2597,1,42695,0,0,5,4,Shield Command Burst Module Bonus on Shield Harmonizing Charge
-2473,1,42529;43555,2598,1,42695,0,0,5,4,Shield Command Burst Module Bonus on Shield Harmonizing Charge
-2537,1,42529;43555,2599,1,42695,0,0,5,4,Shield Command Burst Module Bonus on Shield Harmonizing Charge
-2469,1,42529;43555,2596,1,42696,0,0,5,4,Shield Command Burst Module Bonus on Shield Extension Charge
-2471,1,42529;43555,2597,1,42696,0,0,5,4,Shield Command Burst Module Bonus on Shield Extension Charge
-2473,1,42529;43555,2598,1,42696,0,0,5,4,Shield Command Burst Module Bonus on Shield Extension Charge
-2537,1,42529;43555,2599,1,42696,0,0,5,4,Shield Command Burst Module Bonus on Shield Extension Charge
-2469,1,42527;43554,2596,1,42835,0,0,5,4,Information Command Burst Module Bonus on Sensor Optimization Charge
-2471,1,42527;43554,2597,1,42835,0,0,5,4,Information Command Burst Module Bonus on Sensor Optimization Charge
-2473,1,42527;43554,2598,1,42835,0,0,5,4,Information Command Burst Module Bonus on Sensor Optimization Charge
-2537,1,42527;43554,2599,1,42835,0,0,5,4,Information Command Burst Module Bonus on Sensor Optimization Charge
-2469,1,42527;43554,2596,1,42836,0,0,5,4,Information Command Burst Module Bonus on Electronic Superiority Charge
-2471,1,42527;43554,2597,1,42836,0,0,5,4,Information Command Burst Module Bonus on Electronic Superiority Charge
-2473,1,42527;43554,2598,1,42836,0,0,5,4,Information Command Burst Module Bonus on Electronic Superiority Charge
-2537,1,42527;43554,2599,1,42836,0,0,5,4,Information Command Burst Module Bonus on Electronic Superiority Charge
-2469,1,42527;43554,2596,1,42837,0,0,5,4,Information Command Burst Module Bonus on Electronic Hardening Charge
-2471,1,42527;43554,2597,1,42837,0,0,5,4,Information Command Burst Module Bonus on Electronic Hardening Charge
-2473,1,42527;43554,2598,1,42837,0,0,5,4,Information Command Burst Module Bonus on Electronic Hardening Charge
-2537,1,42527;43554,2599,1,42837,0,0,5,4,Information Command Burst Module Bonus on Electronic Hardening Charge
-2469,1,42526;43552,2596,1,42832,0,0,5,4,Armored Command Burst Module Bonus on Armor Energizing Charge
-2471,1,42526;43552,2597,1,42832,0,0,5,4,Armored Command Burst Module Bonus on Armor Energizing Charge
-2473,1,42526;43552,2598,1,42832,0,0,5,4,Armored Command Burst Module Bonus on Armor Energizing Charge
-2537,1,42526;43552,2599,1,42832,0,0,5,4,Armored Command Burst Module Bonus on Armor Energizing Charge
-2469,1,42526;43552,2596,1,42833,0,0,5,4,Armored Command Burst Module Bonus on Rapid Repair Charge
-2471,1,42526;43552,2597,1,42833,0,0,5,4,Armored Command Burst Module Bonus on Rapid Repair Charge
-2473,1,42526;43552,2598,1,42833,0,0,5,4,Armored Command Burst Module Bonus on Rapid Repair Charge
-2537,1,42526;43552,2599,1,42833,0,0,5,4,Armored Command Burst Module Bonus on Rapid Repair Charge
-2469,1,42526;43552,2596,1,42834,0,0,5,4,Armored Command Burst Module Bonus on Armor Reinforcement Charge
-2471,1,42526;43552,2597,1,42834,0,0,5,4,Armored Command Burst Module Bonus on Armor Reinforcement Charge
-2473,1,42526;43552,2598,1,42834,0,0,5,4,Armored Command Burst Module Bonus on Armor Reinforcement Charge
-2537,1,42526;43552,2599,1,42834,0,0,5,4,Armored Command Burst Module Bonus on Armor Reinforcement Charge
-2469,1,42530;43556,2596,1,42838,0,0,5,4,Skirmish Command Burst Module Bonus on Evasive Maneuvers Charge
-2471,1,42530;43556,2597,1,42838,0,0,5,4,Skirmish Command Burst Module Bonus on Evasive Maneuvers Charge
-2473,1,42530;43556,2598,1,42838,0,0,5,4,Skirmish Command Burst Module Bonus on Evasive Maneuvers Charge
-2537,1,42530;43556,2599,1,42838,0,0,5,4,Skirmish Command Burst Module Bonus on Evasive Maneuvers Charge
-2469,1,42530;43556,2596,1,42839,0,0,5,4,Skirmish Command Burst Module Bonus on Interdiction Maneuvers Charge
-2471,1,42530;43556,2597,1,42839,0,0,5,4,Skirmish Command Burst Module Bonus on Interdiction Maneuvers Charge
-2473,1,42530;43556,2598,1,42839,0,0,5,4,Skirmish Command Burst Module Bonus on Interdiction Maneuvers Charge
-2537,1,42530;43556,2599,1,42839,0,0,5,4,Skirmish Command Burst Module Bonus on Interdiction Maneuvers Charge
-2469,1,42530;43556,2596,1,42840,0,0,5,4,Skirmish Command Burst Module Bonus on Rapid Deployment Charge
-2471,1,42530;43556,2597,1,42840,0,0,5,4,Skirmish Command Burst Module Bonus on Rapid Deployment Charge
-2473,1,42530;43556,2598,1,42840,0,0,5,4,Skirmish Command Burst Module Bonus on Rapid Deployment Charge
-2537,1,42530;43556,2599,1,42840,0,0,5,4,Skirmish Command Burst Module Bonus on Rapid Deployment Charge
-2469,1,42528;43551,2596,1,42829,0,0,5,4,Mining  Command Burst Module Bonus on Mining Laser Field Enhancement Charge
-2471,1,42528;43551,2597,1,42829,0,0,5,4,Mining  Command Burst Module Bonus on Mining Laser Field Enhancement Charge
-2473,1,42528;43551,2598,1,42829,0,0,5,4,Mining  Command Burst Module Bonus on Mining Laser Field Enhancement Charge
-2537,1,42528;43551,2599,1,42829,0,0,5,4,Mining  Command Burst Module Bonus on Mining Laser Field Enhancement Charge
-2469,1,42528;43551,2596,1,42830,0,0,5,4,Mining  Command Burst Module Bonus on Mining Laser Optimization Charge
-2471,1,42528;43551,2597,1,42830,0,0,5,4,Mining  Command Burst Module Bonus on Mining Laser Optimization Charge
-2473,1,42528;43551,2598,1,42830,0,0,5,4,Mining  Command Burst Module Bonus on Mining Laser Optimization Charge
-2537,1,42528;43551,2599,1,42830,0,0,5,4,Mining  Command Burst Module Bonus on Mining Laser Optimization Charge
-2469,1,42528;43551,2596,1,42831,0,0,5,4,Mining  Command Burst Module Bonus on Mining Equipment Preservation Charge
-2471,1,42528;43551,2597,1,42831,0,0,5,4,Mining  Command Burst Module Bonus on Mining Equipment Preservation Charge
-2473,1,42528;43551,2598,1,42831,0,0,5,4,Mining  Command Burst Module Bonus on Mining Equipment Preservation Charge
-2537,1,42528;43551,2599,1,42831,0,0,5,4,Mining  Command Burst Module Bonus on Mining Equipment Preservation Charge
+# Command Bursts
+2469,2,1770,2596,2,1769;1772;1773;1774;1771,0,0,5,4,Command and Foreman Burst Module Bonus
+2471,2,1770,2597,2,1769;1772;1773;1774;1771,0,0,5,4,Command and Foreman Burst Module Bonus
+2473,2,1770,2598,2,1769;1772;1773;1774;1771,0,0,5,4,Command and Foreman Burst Module Bonus
+2537,2,1770,2599,2,1769;1772;1773;1774;1771,0,0,5,4,Command and Foreman Burst Module Bonus
 # Shield Harmonizing Charge
 #  Bonus: 10 Shield resistance bonus		Value: -8
 2596,1,42695,271,3,6,0,0,2,4,Shield Harmonizing Charge	- EM Shield Resistance Bonus
