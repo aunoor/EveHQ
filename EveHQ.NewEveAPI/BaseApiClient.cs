@@ -113,7 +113,7 @@ namespace EveHQ.NewEveApi
         }
 
         protected internal Task<EveServiceResponse<T>> GetServiceResponseAsync<T>(string keyId, string vCode,
-            int characterId, string servicePath, IDictionary<string, string> callParams, string cacheKey,
+            long characterId, string servicePath, IDictionary<string, string> callParams, string cacheKey,
             int defaultCacheSeconds, ResponseMode responseMode, Func<XElement, T> xmlParseDelegate)
             where T : class
         {

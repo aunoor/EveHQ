@@ -1071,7 +1071,7 @@ Public Class CustomDataFunctions
         If accountName <> "" Then
             Dim mAccount As EveHQAccount = HQ.Settings.Accounts.Item(accountName)
             ' Send this to the API
-            Dim mailingListResponse As EveServiceResponse(Of IEnumerable(Of MailingList)) = HQ.ApiProvider.Character.MailingLists(mAccount.UserID, mAccount.APIKey, Int32.Parse(mPilot.ID))
+            Dim mailingListResponse As EveServiceResponse(Of IEnumerable(Of MailingList)) = HQ.ApiProvider.Character.MailingLists(mAccount.UserID, mAccount.APIKey, Long.Parse(mPilot.ID))
 
             ' Parse this XML
             If mailingListResponse.IsSuccess Then

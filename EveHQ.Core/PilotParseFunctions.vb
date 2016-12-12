@@ -478,7 +478,7 @@ Public Class PilotParseFunctions
         'Dim cXML As XmlDocument = apiReq.GetAPIXML(APITypes.CharacterSheet, cAccount.ToAPIAccount, cPilot.ID,
         '                                           APIReturnMethods.ReturnStandard)
 
-        Dim characterSheetResponse As EveServiceResponse(Of CharacterData) = HQ.ApiProvider.Character.CharacterSheet(cAccount.UserID, cAccount.APIKey, cPilot.ID.ToInt32())
+        Dim characterSheetResponse As EveServiceResponse(Of CharacterData) = HQ.ApiProvider.Character.CharacterSheet(cAccount.UserID, cAccount.APIKey, CLng(cPilot.ID))
 
         ' Store the Character Sheet API result
         If characterSheetResponse.EveErrorCode > 0 Then
@@ -493,7 +493,7 @@ Public Class PilotParseFunctions
 
 
         ' Get the Skill Queue
-        Dim skillResponse As EveServiceResponse(Of IEnumerable(Of QueuedSkill)) = HQ.ApiProvider.Character.SkillQueue(cAccount.UserID, cAccount.APIKey, cPilot.ID.ToInt32())
+        Dim skillResponse As EveServiceResponse(Of IEnumerable(Of QueuedSkill)) = HQ.ApiProvider.Character.SkillQueue(cAccount.UserID, cAccount.APIKey, CLng(cPilot.ID))
 
         ' Store the Skill Queue API result
         If skillResponse.EveErrorCode > 0 Then

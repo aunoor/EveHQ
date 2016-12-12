@@ -116,7 +116,7 @@ Namespace Controls.DBControls
 
                 Dim ordersResponse As EveServiceResponse(Of IEnumerable(Of MarketOrder)) =
                         HQ.ApiProvider.Character.MarketOrders(pilotAccount.UserID, pilotAccount.APIKey,
-                                                              Integer.Parse(selPilot.ID))
+                                                              Long.Parse(selPilot.ID))
 
                 If ordersResponse.ResultData IsNot Nothing Then
 

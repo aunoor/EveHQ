@@ -325,7 +325,7 @@ Namespace Forms
 
             _currentUnreadMails = 0
             For Each newMail As EveMailMessage In _allMails.Values
-                If newMail.SenderID = CDbl(_displayPilot.ID) Then
+                If newMail.SenderID = CLng(_displayPilot.ID) Then
                     ' Sent Items
                     Dim strTo As String
                     If newMail.ToListIDs = "" Or newMail.ToListIDs = "0" Then
