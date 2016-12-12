@@ -206,16 +206,6 @@ Partial Class FrmKmv
         Me.txtKillMailDetails.Size = New System.Drawing.Size(282, 491)
         Me.txtKillMailDetails.TabIndex = 6
         '
-        'btnUploadToBC
-        '
-        Me.btnUploadToBC.Location = New System.Drawing.Point(418, 177)
-        Me.btnUploadToBC.Name = "btnUploadToBC"
-        Me.btnUploadToBC.Size = New System.Drawing.Size(123, 23)
-        Me.btnUploadToBC.TabIndex = 7
-        Me.btnUploadToBC.Text = "Upload to BattleClinic"
-        Me.btnUploadToBC.UseVisualStyleBackColor = True
-        Me.btnUploadToBC.Visible = False
-        '
         'gpAPI
         '
         Me.gpAPI.CanvasColor = System.Drawing.SystemColors.Control

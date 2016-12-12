@@ -1546,19 +1546,6 @@ Public Class EveSettings
         End Set
     End Property
 
-    Public Property IGBAllowedData() As SortedList(Of String, Boolean)
-        Get
-            If cIGBAllowedData Is Nothing Then
-                cIGBAllowedData = New SortedList(Of String, Boolean)
-                Call IGB.CheckAllIGBAccessRights()
-            End If
-            Return cIGBAllowedData
-        End Get
-        Set(ByVal value As SortedList(Of String, Boolean))
-            cIGBAllowedData = value
-        End Set
-    End Property
-
     Public Property AutoHide() As Boolean
         Get
             Return cAutoHide

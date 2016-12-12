@@ -50,7 +50,6 @@ Public Interface IEveHQPlugIn
 
     Function GetEveHQPlugInInfo() As EveHQPlugIn
     Function EveHQStartUp() As Boolean
-    Function IGBService(ByVal igbContext As HttpListenerContext) As String
     Function RunEveHQPlugIn() As Form
     Function GetPlugInData(ByVal data As Object, ByVal dataType As Integer) As Object
     Function SaveAll() As Boolean

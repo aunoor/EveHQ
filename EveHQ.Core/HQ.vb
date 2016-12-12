@@ -59,7 +59,6 @@ Public Class HQ
     Public Shared MainForm As Form
     Private Shared tempPilots1 As New SortedList(Of String, EveHQPilot)
     Public Shared TempCorps As New SortedList(Of String, Corporation)
-    Public Shared MyIGB As New IGB
     Public Shared MyTqServer As EveServer = New EveServer
     Public Shared SkillListName As New Dictionary(Of String, EveSkill) ' SkillName, EveSkill
     Public Shared SkillListID As New SortedList(Of Integer, EveSkill) ' SkillID, EveSkill
@@ -90,7 +89,6 @@ Public Class HQ
     Public Shared CustomPriceList As New SortedList(Of Integer, Double) ' TypeID, Price
     Public Shared APIUpdateAvailable As Boolean = False
     Public Shared AppUpdateAvailable As Boolean = False
-    Public Shared FittingProtocol As String = "fitting"
     Public Shared NextAutoMailAPITime As DateTime = Now
     Public Shared Widgets As New SortedList(Of String, String)
     Public Shared Event ShutDownEveHQ()

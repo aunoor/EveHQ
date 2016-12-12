@@ -80,7 +80,6 @@ Public Class MarketData
 End Class
 
 Public Enum MarketSite
-    Battleclinic = 0
     EveMarketeer = 1
 End Enum
 

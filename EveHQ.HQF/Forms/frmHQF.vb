@@ -66,7 +66,6 @@ Namespace Forms
         Dim _lastSlotFitting As New ArrayList
         Dim _lastModuleResults As New SortedList(Of Integer, ShipModule)
         Dim _myPilotManager As New FrmPilotManager
-        Dim _myBcBrowser As New FrmBcBrowser
         Dim _myEveImport As New FrmEveImport
         Dim _shutdownComplete As Boolean = False
 
@@ -135,7 +134,6 @@ Namespace Forms
             If _shutdownComplete = False Then
                 ' Close any open windows
                 If _myPilotManager.IsHandleCreated Then _myPilotManager.Close()
-                If _myBcBrowser.IsHandleCreated Then _myBcBrowser.Close()
 
                 ' Save data and settings
                 Call SaveAll()
@@ -610,18 +608,7 @@ Namespace Forms
             End If
             showInfo.ShowItemDetails(selShip, hPilot)
         End Sub
-        Private Sub mnuBattleClinicBrowser_Click(ByVal sender As Object, ByVal e As EventArgs) Handles mnuBattleClinicBrowser.Click
-            Dim shipName As String = mnuShipBrowserShipName.Text
-            Dim bShip As Ship = ShipLists.ShipList(shipName).Clone
-            If _myBcBrowser.IsHandleCreated = True Then
-                _myBcBrowser.ShipType = bShip
-                _myBcBrowser.BringToFront()
-            Else
-                _myBcBrowser = New FrmBcBrowser
-                _myBcBrowser.ShipType = bShip
-                _myBcBrowser.Show()
-            End If
-        End Sub
+
         Private Sub CreateNewFitting(ByVal shipName As String)
             ' Check we have some valid characters
             ' Bug 83: Adding a check of the core pilots collection as well, since it may end up in an unstable state due to other actors, and needs to contain pilots before loading the new fitting.
@@ -1986,18 +1973,6 @@ Namespace Forms
         Private Sub RemoteShowFitting(ByVal fitKey As String)
             ShowFitting(fitKey)
         End Sub
-        Private Sub mnuFittingsBCBrowser_Click(ByVal sender As Object, ByVal e As EventArgs) Handles mnuFittingsBCBrowser.Click
-            Dim shipName As String = mnuFittingsFittingName.Tag.ToString
-            Dim bShip As Ship = ShipLists.ShipList(shipName).Clone
-            If _myBcBrowser.IsHandleCreated = True Then
-                _myBcBrowser.ShipType = bShip
-                _myBcBrowser.BringToFront()
-            Else
-                _myBcBrowser = New FrmBcBrowser
-                _myBcBrowser.ShipType = bShip
-                _myBcBrowser.Show()
-            End If
-        End Sub
         Private Sub mnuExportToEve_Click(ByVal sender As Object, ByVal e As EventArgs) Handles mnuExportToEve.Click
             Call ExportFittingsToEve()
         End Sub
@@ -2429,7 +2404,7 @@ Namespace Forms
                 fitting.AppendLine(cargo.ItemType.Name & ", " & cargo.Quantity)
             Next
             Try
-                Clipboard.SetText(fitting.ToString)
+                Clipboard.SetText(fitting.ToString.Trim)
             Catch ex As Exception
                 MessageBox.Show("There was an error writing data to the clipboard. Please wait a couple of seconds and try again.", "Copy For HQF Error")
             End Try
@@ -2509,7 +2484,7 @@ Namespace Forms
                 fitting.AppendLine(cargo.ItemType.Name & " x" & cargo.Quantity)
             Next
             Try
-                Clipboard.SetText(fitting.ToString)
+                Clipboard.SetText(fitting.ToString.Trim)
             Catch ex As Exception
                 MessageBox.Show("There was an error writing data to the clipboard. Please wait a couple of seconds and try again.", "Copy For EFT Error")
             End Try

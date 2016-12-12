@@ -92,7 +92,6 @@ Namespace Forms
             Call UpdateGeneralSettings()
             Call UpdateColourOptions()
             Call UpdateEveServerSettings()
-            Call UpdateIGBSettings()
             Call UpdateAccounts()
             Call UpdatePilots()
             Call UpdateEveFolderOptions()
@@ -614,11 +613,16 @@ Namespace Forms
                 Dim userID As String = si.Name
                 Dim cAccount As EveHQAccount = HQ.Settings.Accounts(userID)
                 Select Case cAccount.APIAccountStatus
-                    Case APIAccountStatuses.Active, APIAccountStatuses.Disabled
+                    Case APIAccountStatuses.Active, APIAccountStatuses.Alpha
                         cAccount.APIAccountStatus = APIAccountStatuses.ManualDisabled
                         btnDisableAccount.Text = "Enable Account"
                     Case APIAccountStatuses.ManualDisabled
-                        cAccount.APIAccountStatus = APIAccountStatuses.Active
+                        If cAccount.PaidUntil < Now Then
+                            ' Account is alpha state
+                            cAccount.APIAccountStatus = APIAccountStatuses.Alpha
+                        Else
+                            cAccount.APIAccountStatus = APIAccountStatuses.Active
+                        End If
                         btnDisableAccount.Text = "Disable Account"
                 End Select
                 si.Cells(4).Text = cAccount.APIAccountStatus.ToString
@@ -691,7 +695,7 @@ Namespace Forms
                 Dim userID As String = si.Name
                 Dim cAccount As EveHQAccount = HQ.Settings.Accounts(userID)
                 Select Case cAccount.APIAccountStatus
-                    Case APIAccountStatuses.Active, APIAccountStatuses.Disabled
+                    Case APIAccountStatuses.Active, APIAccountStatuses.Alpha
                         btnDisableAccount.Text = "Disable Account"
                         btnDisableAccount.Enabled = True
                     Case APIAccountStatuses.ManualDisabled
@@ -890,90 +894,6 @@ Namespace Forms
                 newpilot.Active = True
             Else
                 newpilot.Active = False
-            End If
-        End Sub
-
-#End Region
-
-#Region "IGB Settings"
-
-        Private Sub UpdateIGBSettings()
-            Dim sp As Boolean
-
-            nudIGBPort.Value = HQ.Settings.IgbPort
-            chkStartIGBonLoad.Checked = HQ.Settings.IgbAutoStart
-            Call IGB.CheckAllIGBAccessRights()
-
-            If HQ.Settings.IgbFullMode = False Then
-                rb_IGBCfgAccessMode.Checked = True
-            Else
-                rb_IGBFullAccessMode.Checked = True
-            End If
-
-            ' Cycle plug-ins
-            For Each plugInInfo As EveHQPlugIn In HQ.Plugins.Values
-                If plugInInfo.RunInIGB = True Then
-                    ' If the Plug-In is not part of the List, then add it, default to enabled
-                    If Not HQ.Settings.IgbAllowedData.ContainsKey(plugInInfo.Name) Then
-                        HQ.Settings.IgbAllowedData.Add(plugInInfo.Name, True)
-                    End If
-                End If
-            Next
-
-            clb_IGBAllowedDisplay.Items.Clear()
-            For Each allowed As String In HQ.Settings.IgbAllowedData.Keys
-                sp = HQ.Settings.IgbAllowedData(allowed)
-                clb_IGBAllowedDisplay.Items.Add(allowed, sp)
-            Next
-        End Sub
-
-        Private Sub nudIGBPort_Click(ByVal sender As Object, ByVal e As EventArgs) Handles nudIGBPort.Click
-            HQ.Settings.IgbPort = CInt(nudIGBPort.Value)
-        End Sub
-
-        Private Sub nudIGBPort_HandleDestroyed(ByVal sender As Object, ByVal e As EventArgs) _
-            Handles nudIGBPort.HandleDestroyed
-            HQ.Settings.IgbPort = CInt(nudIGBPort.Value)
-        End Sub
-
-        Private Sub nudIGBPort_KeyUp(ByVal sender As Object, ByVal e As KeyEventArgs) Handles nudIGBPort.KeyUp
-            If e.KeyCode = Keys.Enter Then
-                HQ.Settings.IgbPort = CInt(nudIGBPort.Value)
-            End If
-        End Sub
-
-        Private Sub chkStartIGBOnLoad_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs) _
-            Handles chkStartIGBonLoad.CheckedChanged
-            If chkStartIGBonLoad.Checked = True Then
-                HQ.Settings.IgbAutoStart = True
-            Else
-                HQ.Settings.IgbAutoStart = False
-            End If
-        End Sub
-
-        Private Sub rb_IGBInPublicMode_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs) _
-            Handles rb_IGBCfgAccessMode.CheckedChanged, rb_IGBFullAccessMode.CheckedChanged
-            If _startup = False Then
-                If rb_IGBCfgAccessMode.Checked = True Then
-                    HQ.Settings.IgbFullMode = False
-                Else
-                    HQ.Settings.IgbFullMode = True
-                End If
-            End If
-        End Sub
-
-        Private Sub clb_IGBAllowedDisplay_ItemCheck(ByVal sender As Object, ByVal e As ItemCheckEventArgs) Handles clb_IGBAllowedDisplay.ItemCheck
-            If _startup = False Then
-                Dim cbx As String = clb_IGBAllowedDisplay.SelectedItem.ToString()
-                Dim chkSt As Boolean
-
-                If (e.NewValue = CheckState.Checked) Then
-                    chkSt = True
-                Else
-                    chkSt = False
-                End If
-
-                HQ.Settings.IgbAllowedData(cbx) = chkSt
             End If
         End Sub
 

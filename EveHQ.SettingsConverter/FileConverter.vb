@@ -424,10 +424,6 @@ Public Class FileConverter
             _newSettings.ProxyPort = oldSettings.ProxyPort
             _newSettings.ProxyServer = oldSettings.ProxyServer
             _newSettings.ProxyRequired = oldSettings.ProxyRequired
-            _newSettings.IgbPort = oldSettings.IGBPort
-            _newSettings.IgbAutoStart = oldSettings.IGBAutoStart
-            _newSettings.IgbFullMode = oldSettings.IGBFullMode
-            _newSettings.IgbAllowedData = oldSettings.IGBAllowedData
             _newSettings.AutoHide = oldSettings.AutoHide
             _newSettings.AutoStart = oldSettings.AutoStart
             _newSettings.AutoCheck = oldSettings.AutoCheck

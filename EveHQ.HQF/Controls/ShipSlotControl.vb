@@ -131,6 +131,8 @@ Namespace Controls
             ' This call is required by the Windows Form Designer.
             InitializeComponent()
 
+            tiFleetEffects.Visible = False
+
             ' Set the parent fitting
             _parentFitting = shipFit
 
@@ -169,7 +171,10 @@ Namespace Controls
             _remoteGroups.Add(641) ' Stasis web drone
             _remoteGroups.Add(640) ' Shield/armor repair drone
             _remoteGroups.Add(639) ' EW Drone
-            _fleetGroups.Add(316)
+            _remoteGroups.Add(1770)
+            _remoteGroups.Add(1815)
+            _fleetGroups.Add(ModuleEnum.GroupCommandBurst)
+            _fleetGroups.Add(ModuleEnum.GroupGangLinks)
             _fleetSkills.Add(ModuleEnum.ItemSkillLeadership, AttributeEnum.SkillScanResBonus)
             _fleetSkills.Add(ModuleEnum.ItemSkillArmoredWarfare, AttributeEnum.SkillArmorHpBonus)
             _fleetSkills.Add(ModuleEnum.ItemSkillInformationWarfare, AttributeEnum.SkillTargetRangeBonus)
@@ -1302,113 +1307,94 @@ Namespace Controls
 
                 ' Update only if the module state has changed
                 If currentstate <> currentMod.ModuleState Then
-                    ' Check for command processors as this affects the fitting!
-                    If currentMod.ID = ModuleEnum.ItemCommandProcessorI Then
-                        If currentstate = ModuleStates.Offline Then
-                            ParentFitting.BaseShip.Attributes(AttributeEnum.ShipMaxGangLinks) -= 1
-                            ' Check if we need to deactivate a highslot ganglink
-                            Dim activeGanglinks As New List(Of Integer)
-                            If ParentFitting.BaseShip.HiSlots > 0 Then
-                                For slot As Integer = ParentFitting.BaseShip.HiSlots To 1 Step - 1
-                                    If ParentFitting.BaseShip.HiSlot(slot) IsNot Nothing Then
-                                        If _
-                                            ParentFitting.BaseShip.HiSlot(slot).DatabaseGroup =
-                                            ModuleEnum.GroupGangLinks And
-                                            ParentFitting.BaseShip.HiSlot(slot).ModuleState = ModuleStates.Active Then
-                                            activeGanglinks.Add(slot)
-                                        End If
-                                    End If
-                                Next
-                            End If
-                            If activeGanglinks.Count > ParentFitting.BaseShip.Attributes(AttributeEnum.ShipMaxGangLinks) _
-                                Then
-                                ParentFitting.BaseShip.HiSlot(activeGanglinks(0)).ModuleState = ModuleStates.Inactive
-                            End If
-                        Else
-                            ParentFitting.BaseShip.Attributes(AttributeEnum.ShipMaxGangLinks) += 1
-                        End If
-                    End If
                     Dim oldState As ModuleStates = currentMod.ModuleState
                     currentMod.ModuleState = CType(currentstate, ModuleStates)
                     ' Check for maxGroupActive flag
                     If _
                         (currentstate = ModuleStates.Active Or currentstate = ModuleStates.Overloaded) And
                         currentMod.Attributes.ContainsKey(AttributeEnum.ModuleMaxGroupActive) = True Then
-                        If currentMod.DatabaseGroup <> ModuleEnum.GroupGangLinks Then
-                            If _
-                                ParentFitting.IsModuleGroupLimitExceeded(fittedMod, False,
-                                                                         AttributeEnum.ModuleMaxGroupActive) = True Then
+                        If _
+                             ParentFitting.IsModuleGroupLimitExceeded(fittedMod, False,
+                                                                      AttributeEnum.ModuleMaxGroupActive) = True Then
 
-                                ' Set the module offline
-                                MessageBox.Show(
-                                    "You cannot activate the " & currentMod.Name &
-                                    " due to a restriction on the maximum number permitted for this group.",
-                                    "Module Group Restriction", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                                currentMod.ModuleState = oldState
-                                Exit Sub
-                            End If
-                        Else
-                            If _
-                                ParentFitting.IsModuleGroupLimitExceeded(fittedMod, False,
-                                                                         AttributeEnum.ModuleMaxGroupActive) = True Then
-                                ' Set the module offline
-                                MessageBox.Show(
-                                    "You cannot activate the " & currentMod.Name &
-                                    " due to a restriction on the maximum number permitted for this group.",
-                                    "Module Group Restriction", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                                currentMod.ModuleState = oldState
-                                Exit Sub
-                            Else
-                                If _
-                                    ParentFitting.CountActiveTypeModules(fittedMod.ID) >
-                                    CInt(fittedMod.Attributes(AttributeEnum.ModuleMaxGroupActive)) Then
-
-
-                                    ' Set the module offline
-                                    MessageBox.Show(
-                                        "You cannot activate the " & currentMod.Name &
-                                        " due to a restriction on the maximum number permitted for this type.",
-                                        "Module Type Restriction", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                                    currentMod.ModuleState = oldState
+                            ' Set the module offline
+                            MessageBox.Show(
+                                "You cannot activate the " & currentMod.Name &
+                                " due to a restriction on the maximum number permitted for this group.",
+                                "Module Group Restriction", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            currentMod.ModuleState = oldState
+                            Exit Sub
+                        End If
+                    End If
+                    ' Check for activation of siege mode with remote effects
+                    If currentstate = ModuleStates.Active Then
+                        If fittedMod.ID = ModuleEnum.ItemSiegeModuleI Or fittedMod.ID = ModuleEnum.ItemSiegeModuleT2 Then
+                            If ParentFitting.FittedShip.RemoteSlotCollection.Count > 0 Then
+                                Const Msg As String =
+                                      "You have active remote modules and activating Siege Mode will cancel these effects. Do you wish to continue activating Siege Mode?"
+                                Dim reply As Integer = MessageBox.Show(Msg, "Confirm Activate Siege Mode",
+                                                                   MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                                If reply = DialogResult.No Then
+                                    fittedMod.ModuleState = oldState
                                     Exit Sub
+                                Else
+                                    ParentFitting.BaseShip.RemoteSlotCollection.Clear()
+                                    Call ResetRemoteEffects()
+                                End If
+                            End If
+                        End If
+                        ' Check for activation of triage mode with remote effects
+                        If fittedMod.ID = ModuleEnum.ItemTriageModuleI Or fittedMod.ID = ModuleEnum.ItemTriageModuleT2 Then
+                            If ParentFitting.FittedShip.RemoteSlotCollection.Count > 0 Then
+                                Const Msg As String =
+                                      "You have active remote modules and activating Triage Mode will cancel these effects. Do you wish to continue activating Triage Mode?"
+                                Dim reply As Integer = MessageBox.Show(Msg, "Confirm Activate Triage Mode",
+                                                                   MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+                                If reply = DialogResult.No Then
+                                    fittedMod.ModuleState = oldState
+                                    Exit Sub
+                                Else
+                                    ParentFitting.BaseShip.RemoteSlotCollection.Clear()
+                                    Call ResetRemoteEffects()
+                                End If
+                            End If
+                        End If
+                        ' Check for activation of bastion mode with remote effects
+                        If fittedMod.ID = ModuleEnum.ItemBastionModuleI Then
+                            If ParentFitting.FittedShip.RemoteSlotCollection.Count > 0 Then
+                                Const Msg As String =
+                                      "You have active remote modules and activating Bastion Mode will cancel these effects. Do you wish to continue activating Bastion Mode?"
+                                Dim reply As Integer = MessageBox.Show(Msg, "Confirm Activate Bastion Mode",
+                                                                   MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+                                If reply = DialogResult.No Then
+                                    fittedMod.ModuleState = oldState
+                                    Exit Sub
+                                Else
+                                    ParentFitting.BaseShip.RemoteSlotCollection.Clear()
+                                    Call ResetRemoteEffects()
+                                End If
+                            End If
+                        End If
+                        ' Check for activation of industrial mode with remote effects
+                        If fittedMod.ID = ModuleEnum.ItemIndustrialCoreI Or fittedMod.ID = ModuleEnum.ItemIndustrialCoreII Then
+                            If ParentFitting.FittedShip.RemoteSlotCollection.Count > 0 Then
+                                Const Msg As String =
+                                      "You have active remote modules and activating Industrial Mode will cancel these effects. Do you wish to continue activating Industrial Mode?"
+                                Dim reply As Integer = MessageBox.Show(Msg, "Confirm Activate Industrial Mode",
+                                                                   MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+                                If reply = DialogResult.No Then
+                                    fittedMod.ModuleState = oldState
+                                    Exit Sub
+                                Else
+                                    ParentFitting.BaseShip.RemoteSlotCollection.Clear()
+                                    Call ResetRemoteEffects()
                                 End If
                             End If
                         End If
                     End If
-                    ' Check for activation of siege mode with remote effects
-                    If fittedMod.ID = ModuleEnum.ItemSiegeModuleI Or fittedMod.ID = ModuleEnum.ItemSiegeModuleT2 Then
-                        If ParentFitting.FittedShip.RemoteSlotCollection.Count > 0 Then
-                            Const Msg As String =
-                                      "You have active remote modules and activating Siege Mode will cancel these effects. Do you wish to continue activating Siege Mode?"
-                            Dim reply As Integer = MessageBox.Show(Msg, "Confirm Activate Siege Mode",
-                                                                   MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-                            If reply = DialogResult.No Then
-                                fittedMod.ModuleState = oldState
-                                Exit Sub
-                            Else
-                                ParentFitting.BaseShip.RemoteSlotCollection.Clear()
-                                Call ResetRemoteEffects()
-                            End If
-                        End If
-                    End If
-                    ' Check for activation of triage mode with remote effects
-                    If fittedMod.ID = ModuleEnum.ItemTriageModuleI Or fittedMod.ID = ModuleEnum.ItemTriageModuleT2 Then
-                        If ParentFitting.FittedShip.RemoteSlotCollection.Count > 0 Then
-                            Const Msg As String =
-                                      "You have active remote modules and activating Triage Mode will cancel these effects. Do you wish to continue activating Triage Mode?"
-                            Dim reply As Integer = MessageBox.Show(Msg, "Confirm Activate Triage Mode",
-                                                                   MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-
-                            If reply = DialogResult.No Then
-                                fittedMod.ModuleState = oldState
-                                Exit Sub
-                            Else
-                                ParentFitting.BaseShip.RemoteSlotCollection.Clear()
-                                Call ResetRemoteEffects()
-                            End If
-                        End If
-                    End If
-
                 End If
             End If
         End Sub
@@ -1558,6 +1544,27 @@ Namespace Controls
                         UndoStack.Push(New UndoInfo(UndoInfo.TransType.RemoveModule, slotType, slotNo, selMod.Name, "",
                                                     slotNo, "", ""))
                     End If
+                    If (selMod.ID = ModuleEnum.ItemSmallCommandProcessorI Or selMod.ID = ModuleEnum.ItemMediumCommandProcessorI Or selMod.ID = ModuleEnum.ItemLargeCommandProcessorI Or selMod.ID = ModuleEnum.ItemCapitalCommandProcessorI) Then
+                        ParentFitting.BaseShip.Attributes(AttributeEnum.ShipMaxBursts) -= 1
+
+                        ' Check if we need to deactivate a highslot ganglink
+                        Dim activeGanglinks As New List(Of Integer)
+                        If ParentFitting.BaseShip.HiSlots > 0 Then
+                            For hSlot As Integer = ParentFitting.BaseShip.HiSlots To 1 Step -1
+                                If ParentFitting.BaseShip.HiSlot(hSlot) IsNot Nothing Then
+                                    If _
+                                        (ParentFitting.BaseShip.HiSlot(hSlot).DatabaseGroup = ModuleEnum.GroupGangLinks Or ParentFitting.BaseShip.HiSlot(hSlot).DatabaseGroup = ModuleEnum.GroupCommandBurst) And
+                                        ParentFitting.BaseShip.HiSlot(hSlot).ModuleState = ModuleStates.Active Then
+                                        activeGanglinks.Add(hSlot)
+                                    End If
+                                End If
+                            Next
+                        End If
+                        If activeGanglinks.Count > ParentFitting.BaseShip.Attributes(AttributeEnum.ShipMaxBursts) Then
+                            ParentFitting.BaseShip.HiSlot(activeGanglinks(0)).ModuleState = ModuleStates.Inactive
+                        End If
+
+                    End If
                     Select Case slotType
                         Case SlotTypes.Rig
                             ParentFitting.BaseShip.RigSlot(slotNo) = Nothing
@@ -1613,23 +1620,23 @@ Namespace Controls
                 End Select
                 ' Check for command processor usage
                 If selMod IsNot Nothing Then
-                    If selMod.ID = ModuleEnum.ItemCommandProcessorI Then
-                        ParentFitting.BaseShip.Attributes(AttributeEnum.ShipMaxGangLinks) -= 1
+                    If (selMod.ID = ModuleEnum.ItemSmallCommandProcessorI Or selMod.ID = ModuleEnum.ItemMediumCommandProcessorI Or selMod.ID = ModuleEnum.ItemLargeCommandProcessorI Or selMod.ID = ModuleEnum.ItemCapitalCommandProcessorI) Then
+                        ParentFitting.BaseShip.Attributes(AttributeEnum.ShipMaxBursts) -= 1
 
                         ' Check if we need to deactivate a highslot ganglink
                         Dim activeGanglinks As New List(Of Integer)
                         If ParentFitting.BaseShip.HiSlots > 0 Then
-                            For hSlot As Integer = ParentFitting.BaseShip.HiSlots To 1 Step - 1
+                            For hSlot As Integer = ParentFitting.BaseShip.HiSlots To 1 Step -1
                                 If ParentFitting.BaseShip.HiSlot(hSlot) IsNot Nothing Then
                                     If _
-                                        ParentFitting.BaseShip.HiSlot(hSlot).DatabaseGroup = 316 And
+                                        (ParentFitting.BaseShip.HiSlot(hSlot).DatabaseGroup = ModuleEnum.GroupGangLinks Or ParentFitting.BaseShip.HiSlot(hSlot).DatabaseGroup = ModuleEnum.GroupCommandBurst) And
                                         ParentFitting.BaseShip.HiSlot(hSlot).ModuleState = ModuleStates.Active Then
                                         activeGanglinks.Add(hSlot)
                                     End If
                                 End If
                             Next
                         End If
-                        If activeGanglinks.Count > ParentFitting.BaseShip.Attributes(10063) Then
+                        If activeGanglinks.Count > ParentFitting.BaseShip.Attributes(AttributeEnum.ShipMaxBursts) Then
                             ParentFitting.BaseShip.HiSlot(activeGanglinks(0)).ModuleState = ModuleStates.Inactive
                         End If
 
@@ -2584,42 +2591,16 @@ Namespace Controls
             sModule.ModuleState = ModuleStates.Active
             ' Check for maxGroupActive flag
             If sModule.Attributes.ContainsKey(AttributeEnum.ModuleMaxGroupActive) = True Then
-                If sModule.DatabaseGroup <> ModuleEnum.GroupGangLinks Then
-                    If _
+                If _
                         ParentFitting.IsModuleGroupLimitExceeded(sModule, False, AttributeEnum.ModuleMaxGroupActive) =
                         True Then
-                        ' Set the module offline
-                        MessageBox.Show(
+                    ' Set the module offline
+                    MessageBox.Show(
                             "You cannot activate the " & sModule.Name &
                             " due to a restriction on the maximum number permitted for this group.",
                             "Module Group Restriction", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                        sModule.ModuleState = oldState
-                        Exit Sub
-                    End If
-                Else
-                    If _
-                        ParentFitting.IsModuleGroupLimitExceeded(sModule, False, AttributeEnum.ModuleMaxGroupActive) =
-                        True Then
-                        ' Set the module offline
-                        MessageBox.Show(
-                            "You cannot activate the " & sModule.Name &
-                            " due to a restriction on the maximum number permitted for this group.",
-                            "Module Group Restriction", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                        sModule.ModuleState = oldState
-                        Exit Sub
-                    Else
-                        If _
-                            ParentFitting.CountActiveTypeModules(sModule.ID) >
-                            CInt(fModule.Attributes(AttributeEnum.ModuleMaxGroupActive)) Then
-                            ' Set the module offline
-                            MessageBox.Show(
-                                "You cannot activate the " & sModule.Name &
-                                " due to a restriction on the maximum number permitted for this type.",
-                                "Module Type Restriction", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                            sModule.ModuleState = oldState
-                            Exit Sub
-                        End If
-                    End If
+                    sModule.ModuleState = oldState
+                    Exit Sub
                 End If
             End If
             ' Check for activation of siege mode with remote effects
@@ -2654,6 +2635,38 @@ Namespace Controls
                     End If
                 End If
             End If
+            ' Check for activation of bastion mode with remote effects
+            If sModule.ID = ModuleEnum.ItemBastionModuleI Then
+                If ParentFitting.FittedShip.RemoteSlotCollection.Count > 0 Then
+                    Const Msg As String =
+                              "You have active remote modules and activating Bastion Mode will cancel these effects. Do you wish to continue activating Bastion Mode?"
+                    Dim reply As Integer = MessageBox.Show(Msg, "Confirm Activate Bastion Mode", MessageBoxButtons.YesNo,
+                                                           MessageBoxIcon.Question)
+                    If reply = DialogResult.No Then
+                        sModule.ModuleState = oldState
+                        Exit Sub
+                    Else
+                        ParentFitting.BaseShip.RemoteSlotCollection.Clear()
+                        Call ResetRemoteEffects()
+                    End If
+                End If
+            End If
+            ' Check for activation of industrial mode with remote effects
+            If sModule.ID = ModuleEnum.ItemIndustrialCoreI Or sModule.ID = ModuleEnum.ItemIndustrialCoreII Then
+                If ParentFitting.FittedShip.RemoteSlotCollection.Count > 0 Then
+                    Const Msg As String =
+                              "You have active remote modules and activating Industrial Mode will cancel these effects. Do you wish to continue activating Industrial Mode?"
+                    Dim reply As Integer = MessageBox.Show(Msg, "Confirm Activate Industrial Mode", MessageBoxButtons.YesNo,
+                                                           MessageBoxIcon.Question)
+                    If reply = DialogResult.No Then
+                        sModule.ModuleState = oldState
+                        Exit Sub
+                    Else
+                        ParentFitting.BaseShip.RemoteSlotCollection.Clear()
+                        Call ResetRemoteEffects()
+                    End If
+                End If
+            End If
         End Sub
 
         Private Sub SetSingleModuleOverloaded(sModule As ShipModule)
@@ -2675,42 +2688,16 @@ Namespace Controls
             sModule.ModuleState = ModuleStates.Overloaded
             ' Check for maxGroupActive flag
             If sModule.Attributes.ContainsKey(AttributeEnum.ModuleMaxGroupActive) = True Then
-                If sModule.DatabaseGroup <> ModuleEnum.GroupGangLinks Then
-                    If _
-                        ParentFitting.IsModuleGroupLimitExceeded(sModule, False, AttributeEnum.ModuleMaxGroupActive) =
-                        True Then
-                        ' Set the module offline
-                        MessageBox.Show(
-                            "You cannot activate the " & sModule.Name &
-                            " due to a restriction on the maximum number permitted for this group.",
-                            "Module Group Restriction", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                        sModule.ModuleState = oldState
-                        Exit Sub
-                    End If
-                Else
-                    If _
-                        ParentFitting.IsModuleGroupLimitExceeded(sModule, False, AttributeEnum.ModuleMaxGroupActive) =
-                        True Then
-                        ' Set the module offline
-                        MessageBox.Show(
-                            "You cannot activate the " & sModule.Name &
-                            " due to a restriction on the maximum number permitted for this group.",
-                            "Module Group Restriction", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                        sModule.ModuleState = oldState
-                        Exit Sub
-                    Else
-                        If _
-                            ParentFitting.CountActiveTypeModules(sModule.ID) >
-                            CInt(fModule.Attributes(AttributeEnum.ModuleMaxGroupActive)) Then
-                            ' Set the module offline
-                            MessageBox.Show(
-                                "You cannot activate the " & sModule.Name &
-                                " due to a restriction on the maximum number permitted for this type.",
-                                "Module Type Restriction", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                            sModule.ModuleState = oldState
-                            Exit Sub
-                        End If
-                    End If
+                If _
+                    ParentFitting.IsModuleGroupLimitExceeded(sModule, False, AttributeEnum.ModuleMaxGroupActive) =
+                    True Then
+                    ' Set the module offline
+                    MessageBox.Show(
+                        "You cannot activate the " & sModule.Name &
+                        " due to a restriction on the maximum number permitted for this group.",
+                        "Module Group Restriction", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    sModule.ModuleState = oldState
+                    Exit Sub
                 End If
             End If
         End Sub
@@ -3561,6 +3548,7 @@ Namespace Controls
                     Next
                     Call ParentFitting.UpdateFittingFromBaseShip()
                     Call RedrawCargoBay()
+                    ParentFitting.ApplyFitting(BuildType.BuildFromEffectsMaps)
                 Case "lvwShipBay"
                     ' Removes the item from the cargo bay
                     For Each remItem As ListViewItem In lvwShipBay.SelectedItems
@@ -4203,7 +4191,7 @@ Namespace Controls
                     Dim newFit As Fitting = Fittings.FittingList(shipFit).Clone
                     newFit.UpdateBaseShipFromFitting()
                     newFit.PilotName = pPilot.PilotName
-                    newFit.ApplyFitting(BuildType.BuildEverything)
+                    newFit.ApplyFitting(BuildType.BuildEverything, True, True)
                     Dim remoteShip As Ship = newFit.FittedShip
                     For Each remoteModule As ShipModule In remoteShip.SlotCollection
                         If _remoteGroups.Contains(CInt(remoteModule.DatabaseGroup)) = True Then
@@ -4270,9 +4258,14 @@ Namespace Controls
                     remoteMod = remoteDrones.DroneType
                 End If
                 If _
-                    remoteMod.DatabaseGroup <> ModuleEnum.GroupEnergyVampires And
-                    remoteMod.DatabaseGroup <> ModuleEnum.GroupEnergyNeutralizers And
-                    remoteMod.DatabaseGroup <> ModuleEnum.GroupEnergyNeutralizerDrones Then
+                    remoteMod.DatabaseGroup = ModuleEnum.GroupRemoteArmorRepairers Or
+                    remoteMod.DatabaseGroup = ModuleEnum.GroupAncillaryRemoteArmorsRepairers Or
+                    remoteMod.DatabaseGroup = ModuleEnum.GroupRemoteHullRepairers Or
+                    remoteMod.DatabaseGroup = ModuleEnum.GroupFueledRemoteShieldBoosters Or
+                    remoteMod.DatabaseGroup = ModuleEnum.GroupShieldTransporters Or
+                    remoteMod.DatabaseGroup = ModuleEnum.GroupEnergyTransfers Or
+                    remoteMod.DatabaseGroup = ModuleEnum.GroupECM Or
+                    remoteMod.DatabaseGroup = ModuleEnum.GroupLogisticDrones Then
                     For Each cMod As ShipModule In ParentFitting.FittedShip.SlotCollection
                         If _
                             (cMod.ID = ModuleEnum.ItemSiegeModuleI Or cMod.ID = ModuleEnum.ItemSiegeModuleT2) And
@@ -4296,6 +4289,15 @@ Namespace Controls
                             MessageBox.Show(
                                 "You cannot apply remote effects from " & remoteMod.Name & " while the " &
                                 ParentFitting.BaseShip.Name & " is in Bastion Mode!", "Remote Effect Not Permitted",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            e.Item.Checked = False
+                            Exit Sub
+                        ElseIf _
+                            (cMod.ID = ModuleEnum.ItemIndustrialCoreI Or cMod.ID = ModuleEnum.ItemIndustrialCoreII) And
+                            cMod.ModuleState = ModuleStates.Active Then
+                            MessageBox.Show(
+                                "You cannot apply remote effects from " & remoteMod.Name & " while the " &
+                                ParentFitting.BaseShip.Name & " is in Industrial Mode!", "Remote Effect Not Permitted",
                                 MessageBoxButtons.OK, MessageBoxIcon.Information)
                             e.Item.Checked = False
                             Exit Sub

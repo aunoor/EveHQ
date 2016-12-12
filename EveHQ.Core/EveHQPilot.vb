@@ -51,6 +51,7 @@ Imports EveHQ.EveData
     Public Property ID As String = ""
     Public Property Account As String = ""
     Public Property AccountPosition As String = ""
+    Public Property AccountStatus As APIAccountStatuses
     Public Property Race As String = ""
     Public Property Blood As String = ""
     Public Property Gender As String = ""

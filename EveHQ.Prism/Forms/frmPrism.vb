@@ -422,39 +422,39 @@ Namespace Forms
                     Dim pilotAccount As EveHQAccount = pOwner.Account
 
                     ' Check for char assets
-                    Dim assetResponse = HQ.ApiProvider.Character.AssetList(pilotAccount.UserID, pilotAccount.APIKey, selPilot.ID.ToInt32(), ResponseMode)
+                    Dim assetResponse = HQ.ApiProvider.Character.AssetList(pilotAccount.UserID, pilotAccount.APIKey, CLng(selPilot.ID), ResponseMode)
                     Call CheckApiResult(assetResponse, pOwner, CorpRepType.Assets)
 
                     ' Check for char balances
-                    Dim balanceResponse = HQ.ApiProvider.Character.AccountBalance(pilotAccount.UserID, pilotAccount.APIKey, selPilot.ID.ToInt32(), ResponseMode)
+                    Dim balanceResponse = HQ.ApiProvider.Character.AccountBalance(pilotAccount.UserID, pilotAccount.APIKey, CLng(selPilot.ID), ResponseMode)
                     Call CheckApiResult(balanceResponse, pOwner, CorpRepType.Balances)
 
                     ' Check for char jobs
-                    Dim jobsResponse = HQ.ApiProvider.Character.IndustryJobs(pilotAccount.UserID, pilotAccount.APIKey, selPilot.ID.ToInt32(), ResponseMode)
+                    Dim jobsResponse = HQ.ApiProvider.Character.IndustryJobs(pilotAccount.UserID, pilotAccount.APIKey, CLng(selPilot.ID), ResponseMode)
                     Call CheckApiResult(jobsResponse, pOwner, CorpRepType.Jobs)
 
                     ' Check for char journal
-                    Dim walletResponse = HQ.ApiProvider.Character.WalletJournal(pilotAccount.UserID, pilotAccount.APIKey, selPilot.ID.ToInt32(), 1000, Nothing, Nothing, ResponseMode)
+                    Dim walletResponse = HQ.ApiProvider.Character.WalletJournal(pilotAccount.UserID, pilotAccount.APIKey, CLng(selPilot.ID), 1000, Nothing, Nothing, ResponseMode)
                     Call CheckApiResult(walletResponse, pOwner, CorpRepType.WalletJournal)
 
                     ' Check for char orders
-                    Dim ordersResponse = HQ.ApiProvider.Character.MarketOrders(pilotAccount.UserID, pilotAccount.APIKey, selPilot.ID.ToInt32(), ResponseMode)
+                    Dim ordersResponse = HQ.ApiProvider.Character.MarketOrders(pilotAccount.UserID, pilotAccount.APIKey, CLng(selPilot.ID), ResponseMode)
                     Call CheckApiResult(ordersResponse, pOwner, CorpRepType.Orders)
 
                     ' Check for char transactions
-                    Dim transactionsResponse = HQ.ApiProvider.Character.WalletTransactions(pilotAccount.UserID, pilotAccount.APIKey, selPilot.ID.ToInt32(), 1000, Nothing, Nothing, ResponseMode)
+                    Dim transactionsResponse = HQ.ApiProvider.Character.WalletTransactions(pilotAccount.UserID, pilotAccount.APIKey, CLng(selPilot.ID), 1000, Nothing, Nothing, ResponseMode)
 
                     Call CheckApiResult(transactionsResponse, pOwner, CorpRepType.WalletTransactions)
 
                     ' Check for char contracts
-                    Dim contractsResponse = HQ.ApiProvider.Character.Contracts(pilotAccount.UserID, pilotAccount.APIKey, selPilot.ID.ToInt32(), 0, ResponseMode)
+                    Dim contractsResponse = HQ.ApiProvider.Character.Contracts(pilotAccount.UserID, pilotAccount.APIKey, CLng(selPilot.ID), 0, ResponseMode)
                     Call CheckApiResult(contractsResponse, pOwner, CorpRepType.Contracts)
 
                     ' Check for corp sheets
                     If PrismSettings.UserSettings.CorpReps.ContainsKey(selPilot.Corp) Then
                         If PrismSettings.UserSettings.CorpReps(selPilot.Corp).ContainsKey(CorpRepType.CorpSheet) Then
                             If PrismSettings.UserSettings.CorpReps(selPilot.Corp).Item(CorpRepType.CorpSheet) = selPilot.Name Then
-                                Dim corpSheetRepsonse = HQ.ApiProvider.Corporation.CorporationSheet(pilotAccount.UserID, pilotAccount.APIKey, selPilot.ID.ToInt32(), ResponseMode)
+                                Dim corpSheetRepsonse = HQ.ApiProvider.Corporation.CorporationSheet(pilotAccount.UserID, pilotAccount.APIKey, CLng(selPilot.ID), ResponseMode)
 
                                 Call CheckApiResult(corpSheetRepsonse, pOwner, CorpRepType.CorpSheet)
                             Else
@@ -673,7 +673,7 @@ Namespace Forms
 
         Private Function CanUseApiV2(ByVal pOwner As PrismOwner, ByVal apiType As CorpRepType) As Boolean
             Dim account As EveHQAccount = pOwner.Account
-            If account.APIAccountStatus = APIAccountStatuses.Active And account.ApiKeySystem = APIKeySystems.Version2 Then
+            If (account.APIAccountStatus = APIAccountStatuses.Active Or account.APIAccountStatus = APIAccountStatuses.Alpha) And account.ApiKeySystem = APIKeySystems.Version2 Then
                 Select Case account.APIKeyType
                     Case APIKeyTypes.Corporation
                         Select Case apiType

@@ -74,13 +74,13 @@ namespace EveHQ.NewEveApi
         }
 
 
-        public EveServiceResponse<CorporateData> CorporationSheet(string keyId, string vCode, int corpId = 0,
+        public EveServiceResponse<CorporateData> CorporationSheet(string keyId, string vCode, long corpId = 0,
             ResponseMode responseMode = ResponseMode.Normal)
         {
             return RunAsyncMethod(CorporationSheetAsync, keyId, vCode, corpId, responseMode);
         }
 
-        public Task<EveServiceResponse<CorporateData>> CorporationSheetAsync(string keyId, string vCode, int corpId = 0,
+        public Task<EveServiceResponse<CorporateData>> CorporationSheetAsync(string keyId, string vCode, long corpId = 0,
             ResponseMode responseMode = ResponseMode.Normal)
         {
             Guard.Ensure(!keyId.IsNullOrWhiteSpace());

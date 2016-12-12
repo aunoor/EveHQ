@@ -88,7 +88,7 @@ Imports Newtonsoft.Json
             Next
             If resetRequired = True Then
                 ResetSkillsToDefault(hPilot)
-                MessageBox.Show(String.Format("The pilot '{0}', was found to have a skill that either has been renamed or no longer exists. In order to ensure a proper experience for fitting calculations, this pilot has had their HQFitter skills reset back to match what the Eve API has reported. If you had some custom values set on this pilot, they will have to be recreated.", hPilot.PilotName))
+                'MessageBox.Show(String.Format("The pilot '{0}', was found to have a skill that either has been renamed or no longer exists. In order to ensure a proper experience for fitting calculations, this pilot has had their HQFitter skills reset back to match what the Eve API has reported. If you had some custom values set on this pilot, they will have to be recreated.", hPilot.PilotName))
             End If
         End If
     End Sub

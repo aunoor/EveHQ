@@ -1,6 +1,6 @@
 #HQF Attribute Mapping Table,,,,,,,,,,
 #Affecting Attribute,Affecting Type,Affecting ID,Affected Attribute,Affected Type,Affected ID,Stack Nerf,Per Level,Calc Type,State,Description
-# SKILL ATTRIBUTE MAPPING,,,,,,,,,,
+## SKILL ATTRIBUTE MAPPING,,,,,,,,,,
 # DRONES,,,,,,,,,,
 459,1,23566,10007,3,6,0,1,1,0,Advanced Drone Avionics
 2340,1,24613,2055,3,6,0,1,0,0,Fighter Hangar Management
@@ -45,7 +45,12 @@
 292,1,3441,64,4,839,0,1,0,0,Heavy Drone Operation
 292,1,24241,64,4,837,0,1,0,0,Light Drone Operation
 292,1,33699,64,4,838,0,1,0,0,Medium Drone Operation
-434,1,3438,77,2,101,0,1,0,0,Mining Drone Operation
+434,1,3438,77,5,3438,0,1,0,0,Mining Drone Operation
+434,1,22541,77,5,22541,0,1,0,0,Mining Drone Specialization - Mining
+2603,1,22541,37,5,22541,0,1,0,0,Mining Drone Specialization - Velocity
+293,1,43702,73,5,43702,0,1,0,0,Ice Harvesting Drone Operation
+293,1,43703,73,5,43703,0,1,0,0,Ice Harvesting Drone Operation Specialization - Cycle duration
+2603,1,43703,37,5,43703,0,1,0,0,Ice Harvesting Drone Specialization - Velocity
 292,1,12485,64,5,12485,0,1,0,0,Minmatar Drone Specialization
 39,1,3439,68,2,640,0,1,0,0,Repair Drone Operation - Shield
 39,1,3439,84,2,640,0,1,0,0,Repair Drone Operation - Armor
@@ -128,6 +133,8 @@
 323,1,3425,30,5,3425,0,1,0,0,Shield Upgrades
 336,1,3420,484,3,6,0,1,0,0,Tactical Shield Manipulation
 958,1,11566,987,2,295,0,1,0,0,Thermic Shield Compensation
+66,1,44067,73,1,42522,0,1,0,0,Pulse Activated Nexus Invulnerability Core - Duration
+66,1,44067,2535,1,42522,0,1,0,0,Pulse Activated Nexus Invulnerability Core - Effect duration
 # GUNNERY,,,,,,,,,,
 323,1,11207,30,2,53,0,1,0,0,Advanced Weapon Upgrades - Energy
 323,1,11207,30,2,74,0,1,0,0,Advanced Weapon Upgrades - Hybrid
@@ -239,39 +246,43 @@
 434,1,3386,77,4,1040,0,1,0,0,Mining - Strip Miner
 927,1,22578,1082,2,546,0,1,0,0,Mining Upgrades
 # LEADERSHIP,,,,,,,,,,
-335,1,-20494,265,3,6,0,0,0,32,Armored Warfare - Ship
-#,1,-20494,1159,2,329,0,0,0,32,Armored Warfare - Plates
-850,1,11569,833,4,1634,0,1,0,0,Armored Warfare Specialist
-#,1,24764,,,,0,1,0,0,Fleet Command
-309,1,-20495,76,3,6,0,0,0,32,Information Warfare
-850,1,3352,833,4,1635,0,1,0,0,Information Warfare Specialist
-850,1,3352,1310,4,1635,0,1,0,0,Information Warfare Specialist
-850,1,3352,1320,4,1635,0,1,0,0,Information Warfare Specialist
-850,1,3352,1321,4,1635,0,1,0,0,Information Warfare Specialist
-850,1,3352,1322,4,1635,0,1,0,0,Information Warfare Specialist
-850,1,3352,1323,4,1635,0,1,0,0,Information Warfare Specialist
-566,1,-3348,564,3,6,0,0,0,32,Leadership
-850,1,22552,833,4,1638,0,1,0,0,Mining Director
-434,1,-22536,77,4,1039,0,0,0,32,Mining Foreman
-434,1,-22536,77,4,1040,0,0,0,32,Mining Foreman
-337,1,-3350,263,3,6,0,0,0,32,Siege Warfare - Ship
-#,1,-3350,72,2,38,0,0,0,32,Siege Warfare - Extenders
-850,1,3351,833,4,1636,0,1,0,0,Siege Warfare Specialist
-151,1,-3349,70,3,6,0,0,0,32,Skirmish Warfare
-850,1,11572,833,4,1637,0,1,0,0,Skirmish Warfare Specialist
-850,1,3354,833,2,316,0,1,0,0,Warfare Link Specialist
-850,1,3354,1310,2,316,0,1,0,0,Warfare Link Specialist
-850,1,3354,1320,2,316,0,1,0,0,Warfare Link Specialist
-850,1,3354,1321,2,316,0,1,0,0,Warfare Link Specialist
-850,1,3354,1322,2,316,0,1,0,0,Warfare Link Specialist
-850,1,3354,1323,2,316,0,1,0,0,Warfare Link Specialist
-#,1,11574,,,,0,1,0,0,Wing Command
+66,1,3350,2535,1,42529;43555,0,1,0,0,Shield Command
+66,1,20495,2535,1,42527;43554,0,1,0,0,Information Command
+66,1,20494,2535,1,42526;43552,0,1,0,0,Armored Command
+66,1,3349,2535,1,42530;43556,0,1,0,0,Skirmish Command
+66,1,22536,2535,1,42528;43551,0,1,0,0,Mining Foreman
+66,1,43728,2535,2,1815,0,1,0,0,Spatial Phenomena Generation
+2572,1,3351,2469,1,42529;43555,0,1,0,0,Shield Command Specialist
+2572,1,3351,2471,1,42529;43555,0,1,0,0,Shield Command Specialist
+2572,1,3351,2473,1,42529;43555,0,1,0,0,Shield Command Specialist
+2572,1,3351,2537,1,42529;43555,0,1,0,0,Shield Command Specialist
+2572,1,3352,2469,1,42527;43554,0,1,0,0,Information Command Specialist
+2572,1,3352,2471,1,42527;43554,0,1,0,0,Information Command Specialist
+2572,1,3352,2473,1,42527;43554,0,1,0,0,Information Command Specialist
+2572,1,3352,2537,1,42527;43554,0,1,0,0,Information Command Specialist
+2572,1,11569,2469,1,42526;43552,0,1,0,0,Armored Command Specialist
+2572,1,11569,2471,1,42526;43552,0,1,0,0,Armored Command Specialist
+2572,1,11569,2473,1,42526;43552,0,1,0,0,Armored Command Specialist
+2572,1,11569,2537,1,42526;43552,0,1,0,0,Armored Command Specialist
+2572,1,11572,2469,1,42530;43556,0,1,0,0,Skirmish Command Specialist
+2572,1,11572,2471,1,42530;43556,0,1,0,0,Skirmish Command Specialist
+2572,1,11572,2473,1,42530;43556,0,1,0,0,Skirmish Command Specialist
+2572,1,11572,2537,1,42530;43556,0,1,0,0,Skirmish Command Specialist
+2572,1,22552,2469,1,42528;43551,0,1,0,0,Mining Director
+2572,1,22552,2471,1,42528;43551,0,1,0,0,Mining Director
+2572,1,22552,2473,1,42528;43551,0,1,0,0,Mining Director
+2572,1,22552,2537,1,42528;43551,0,1,0,0,Mining Director
+670,1,3348,54,4,1633,0,1,0,0,Leadership
+670,1,11574,54,4,1633,0,1,0,0,Wing Command
+670,1,24764,54,4,1633,0,1,0,0,Fleet Command
+2573,1,3354,1795,4,1633,0,1,0,0,Command Burst Specialist
 # MECHANIC,,,,,,,,,,
 1856,1,33078,796,2,329,0,1,0,0,Armor Layering
 317,1,32797,6,2,1150,0,1,0,0,Armor Resistance Phasing - Cap Usage
 66,1,32797,73,2,1150,0,1,0,0,Armor Resistance Phasing - Duration
 1139,1,26253,1138,2,773;1232,0,1,0,0,Armor Rigging
 1139,1,26254,1138,2,782,0,1,0,0,Astronautics Rigging
+1139,1,26254,1138,2,1308,0,1,0,0,Astronautic Rigging
 317,1,24568,6,4,1056,0,1,0,0,Capital Remote Armor Repair Systems
 317,1,27936,6,4,1063,0,1,0,0,Capital Remote Hull Repair Systems
 312,1,21803,73,4,1052,0,1,0,0,Capital Repair Systems
@@ -532,10 +543,10 @@
 846,1,3412,1371,2,479,0,1,0,0,Astrometrics - Scan Strength
 66,1,3405,330,2,303,0,1,0,0,Biology
 #,1,24606,,,,0,1,0,0,Cloning Facility Operation
-292,1,24563,118,2,588,0,1,0,0,Doomsday Operation - Thermal
-292,1,24563,116,2,588,0,1,0,0,Doomsday Operation - Explosive
-292,1,24563,114,2,588,0,1,0,0,Doomsday Operation - EM
-292,1,24563,117,2,588,0,1,0,0,Doomsday Operation - Kinetic
+292,1,24563,118,4,2267;2268;2269;2270;2276,0,1,0,0,Doomsday Operation - Thermal
+292,1,24563,116,4,2267;2268;2269;2270;2276,0,1,0,0,Doomsday Operation - Explosive
+292,1,24563,114,4,2267;2268;2269;2270;2276,0,1,0,0,Doomsday Operation - EM
+292,1,24563,117,4,2267;2268;2269;2270;2276,0,1,0,0,Doomsday Operation - Kinetic
 1772,1,21718,902,1,22175;30834;3581,0,1,11,0,Hacking - Access Chance
 1915,1,21718,1909,1,22175;30834;3581,0,1,1,0,Hacking - Virus Coherence
 885,1,24562,714,2,590,0,1,0,0,Jump Portal Generation
@@ -613,7 +624,7 @@
 #,1,22761,0,0,0,0,1,0,0,Recon Ship
 151,1,3327,70,3,6,0,1,0,0,Spaceship Command
 #,1,19719,0,0,0,0,1,0,0,Transport Ships
-# OVERLOADING ATTRIBUTE MAPPING,,,,,,,,,,
+## OVERLOADING ATTRIBUTE MAPPING,,,,,,,,,,
 # ARMOR,,,,,,,,,,
 1230,2,1199,84,6,0,0,0,0,8,Ancillary Armor Rep Amount
 1206,2,1199,73,6,0,0,0,0,8,Ancillary Armor Rep Duration
@@ -729,7 +740,7 @@
 1935,2,1396,547,6,0,0,0,0,8,Missile Guidance Computer - Missile Velocity
 1935,2,1396,596,6,0,0,0,0,8,Missile Guidance Computer - Missile Flight Time
 1206,2,899,73,6,0,0,0,0,8,Warp Disruption Field Generator - Cycle Time
-# MODULE ATTRIBUTE MAPPING,,,,,,,,,,
+## MODULE ATTRIBUTE MAPPING,,,,,,,,,,
 # FITTING,,,,,,,,,,
 50,0,0,49,3,6,0,0,1,14,CPU -> CPU_Used
 50,0,0,49,3,65,0,0,1,14,CPU -> CPU_Used
@@ -1122,6 +1133,43 @@
 # TURRETS & BAYS,,,,,,,,,,
 # Bomb Launchers,,,,,,,,,,
 983,2,862,552,3,6,0,0,1,15,Signature Radius
+# Superweapons
+# Amarr Phenomena Generator
+2469,1,43658,55,3,6,0,0,0,20,Avatar Effect Generator : Capacitor Recharge bonus
+2471,1,43658,269,3,6,0,0,2,20,Avatar Effect Generator : Kinetic resistance bonus
+2471,1,43658,273,3,6,0,0,2,20,Avatar Effect Generator : Kinetic resistance bonus
+2471,1,43658,976,3,6,0,0,2,20,Avatar Effect Generator : Kinetic resistance bonus
+2473,1,43658,267,3,6,0,0,2,20,Avatar Effect Generator : EM resistance penalty
+2473,1,43658,271,3,6,0,0,2,20,Avatar Effect Generator : EM resistance penalty
+2473,1,43658,974,3,6,0,0,2,20,Avatar Effect Generator : EM resistance penalty
+2537,1,43658,37,3,6,0,0,0,20,Avatar Effect Generator : Velocity penalty
+# Caldari Phenomena Generator
+2469,1,43660,263,3,6,0,0,0,20,Leviathan Effect Generator : Shield HP bonus
+2471,1,43660,267,3,6,0,0,2,20,Leviathan Effect Generator : EM resistance bonus
+2471,1,43660,271,3,6,0,0,2,20,Leviathan Effect Generator : EM resistance bonus
+2471,1,43660,974,3,6,0,0,2,20,Leviathan Effect Generator : EM resistance bonus
+2473,1,43660,269,3,6,0,0,2,20,Leviathan Effect Generator : Kinetic resistance penalty
+2473,1,43660,273,3,6,0,0,2,20,Leviathan Effect Generator : Kinetic resistance penalty
+2473,1,43660,976,3,6,0,0,2,20,Leviathan Effect Generator : Kinetic resistance penalty
+2537,1,43660,84,5,16069,0,0,0,20,Leviathan Effect Generator : Armor RR penalty
+# Gallente Phenomena Generator
+2469,1,43662,265,3,6,0,0,0,20,Erebus Effect Generator : Armor HP bonus
+2471,1,43662,268,3,6,0,0,2,20,Erebus Effect Generator : Explosive resistance bonus
+2471,1,43662,272,3,6,0,0,2,20,Erebus Effect Generator : Explosive resistance bonus
+2471,1,43662,975,3,6,0,0,2,20,Erebus Effect Generator : Explosive resistance bonus
+2473,1,43662,270,3,6,0,0,2,20,Erebus Effect Generator : Thermal resistance penalty
+2473,1,43662,274,3,6,0,0,2,20,Erebus Effect Generator : Thermal resistance penalty
+2473,1,43662,977,3,6,0,0,2,20,Erebus Effect Generator : Thermal resistance penalty
+2537,1,43662,68,5,3422,0,0,0,20,Erebus Effect Generator : Shield RR penalty
+# Minmatar Phenomena Generator
+2469,1,43664,552,3,6,0,0,0,20,Ragnarok Effect Generator : Signature Radius bonus
+2471,1,43664,270,3,6,0,0,2,20,Ragnarok Effect Generator : Thermal resistance bonus
+2471,1,43664,274,3,6,0,0,2,20,Ragnarok Effect Generator : Thermal resistance bonus
+2471,1,43664,977,3,6,0,0,2,20,Ragnarok Effect Generator : Thermal resistance bonus
+2473,1,43664,268,3,6,0,0,2,20,Ragnarok Effect Generator : Explosive resistance penalty
+2473,1,43664,272,3,6,0,0,2,20,Ragnarok Effect Generator : Explosive resistance penalty
+2473,1,43664,975,3,6,0,0,2,20,Ragnarok Effect Generator : Explosive resistance penalty
+2537,1,43664,54,2,53;74,0,0,0,20,Ragnarok Effect Generator : Laser and Hybrid Optimal penalty
 # Ballistic Control Systems,,,,,,,,,,
 204,2,367,51,2,511;524;506;510;771;507;508;509;1245;1673;1674,1,0,0,14,ROF Bonus
 213,2,367,114,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1677;1019;1678;88;1158;394;395;396,1,0,0,14,Damage Bonus - EM
@@ -1171,8 +1219,29 @@
 1029,1,33400,210,3,6,0,0,0,4,Magnetrometric Sensor Strength
 1030,1,33400,208,3,6,0,0,0,4,Radar Sensor Strength
 # Industrial Core,,,,,,,,,,
-20,1,28583,37,3,6,0,0,0,4,Max Velocity Bonus
-1238,1,28583,833,4,1638,0,0,5,4,Mining Foreman Ganglink Bonus
+2605,1,28583;42890,73,4,600;910;1056;1063,0,0,0,4,Capital Remote Shield Duration
+2605,1,28583;42890,6,4,600;910;1056;1063,0,0,0,4,Capital Remote Shield Capacitor Need
+20,1,28583;42890,37,3,6,0,0,0,4,Max Velocity Bonus
+2583,1,28583;42890,64,3,18,0,0,0,4,Drone Damage
+2583,1,28583;42890,263,3,18,0,0,0,4,Drone Shield
+2583,1,28583;42890,265,3,18,0,0,0,4,Drone Armor
+2583,1,28583;42890,9,3,18,0,0,0,4,Drone Hull
+2584,1,28583;42890,37,3,18,0,0,0,4,Drone Velocity
+2585,1,28583;42890,77,5,3438,0,0,0,4,Ore Mining Amount
+2586,1,28583;42890,73,5,43702,0,0,0,4,Ice Harvesting Drone Cycle duration
+2587,1,28583;42890,2469,1,42528;43551,0,0,0,4,Mining Foreman Burst strength
+2587,1,28583;42890,2471,1,42528;43551,0,0,0,4,Mining Foreman Burst strength
+2587,1,28583;42890,2473,1,42528;43551,0,0,0,4,Mining Foreman Burst strength
+2587,1,28583;42890,2537,1,42528;43551,0,0,0,4,Mining Foreman Burst strength
+2588,1,28583;42890,54,2,1770,0,0,0,4,Command burst range
+2604,1,28583;42890,54,4,600;910;1056;1063,0,0,0,4,Capital Remote Shield Optimal
+2604,1,28583;42890,2044,4,600;910;1056;1063,0,0,0,4,Capital Remote Shield Falloff
+2606,1,28583;42890,73,2,40;1156,0,0,0,4,Shield Booster Duration
+2607,1,28583;42890,68,2,40;1156,0,0,0,4,Shield Boost Amount
+#2351,1,28583;42890,2112,3,6,0,0,0,4,Sensor Dampener resistance
+# Remote assistance impedance 
+565,1,28583;42890,564,3,6,0,0,0,4,Scan Resolution Bonus
+1471,1,28583;42890,10002,3,6,0,0,5,4,Mass Multiplier
 # Siege Modules,,,,,,,,,,
 20,1,4292;20280,37,3,6,0,0,0,4,Max Velocity Bonus
 1027,1,4292;20280,211,3,6,0,0,0,4,Gravimetric Sensor Strength
@@ -1239,98 +1308,182 @@
 # Ice Harvester Upgrade,,,,,,,,,,
 780,2,546,73,4,1038;2151,0,0,0,14,Cycle Time
 1082,2,546,50,4,1038;2151,0,0,0,14,CPU Penalty
-# GANG MODULES,,,,,,,,,,
-# Armored Warfare Links,,,,,,,,,,
-833,1,20069,6,4,1049;1050;1051,0,0,0,16,Armored Warfare Link - Damage Control - Armor Repairers
-833,1,20069,6,2,325,0,0,0,16,Armored Warfare Link - Damage Control - Armor Transporters
-833,1,4262,6,4,1049;1050;1051,0,0,0,16,Armored Warfare Link - Damage Control II - Armor Repairers
-833,1,4262,6,2,325,0,0,0,16,Armored Warfare Link - Damage Control II - Armor Transporters
-833,1,20409,267,3,6,1,0,2,16,Armored Warfare Link - Passive Defense
-833,1,20409,268,3,6,1,0,2,16,Armored Warfare Link - Passive Defense
-833,1,20409,269,3,6,1,0,2,16,Armored Warfare Link - Passive Defense
-833,1,20409,270,3,6,1,0,2,16,Armored Warfare Link - Passive Defense
-833,1,4264,267,3,6,1,0,2,16,Armored Warfare Link - Passive Defense II
-833,1,4264,268,3,6,1,0,2,16,Armored Warfare Link - Passive Defense II
-833,1,4264,269,3,6,1,0,2,16,Armored Warfare Link - Passive Defense II
-833,1,4264,270,3,6,1,0,2,16,Armored Warfare Link - Passive Defense II
-833,1,22227,73,4,1049;1050;1051,0,0,0,16,Armored Warfare Link - Rapid Repair - Armor Repairers
-833,1,22227,73,2,325,0,0,0,16,Armored Warfare Link - Rapid Repair - Armor Transporters
-833,1,4266,73,4,1049;1050;1051,0,0,0,16,Armored Warfare Link - Rapid Repair II - Armor Repairers
-833,1,4266,73,2,325,0,0,0,16,Armored Warfare Link - Rapid Repair II - Armor Transporters
-# Information Warfare Links,,,,,,,,,,
-1320,1,20406,238,2,201,1,0,0,16,IWL - Electronic Superiority (ECM Strength)
-1320,1,20406,239,2,201,1,0,0,16,IWL - Electronic Superiority (ECM Strength)
-1320,1,20406,240,2,201,1,0,0,16,IWL - Electronic Superiority (ECM Strength)
-1320,1,20406,241,2,201,1,0,0,16,IWL - Electronic Superiority (ECM Strength)
-1320,1,20406,238,2,80,1,0,0,16,IWL - Electronic Superiority (ECM Burst Strength)
-1320,1,20406,239,2,80,1,0,0,16,IWL - Electronic Superiority (ECM Burst Strength)
-1320,1,20406,240,2,80,1,0,0,16,IWL - Electronic Superiority (ECM Burst Strength)
-1320,1,20406,241,2,80,1,0,0,16,IWL - Electronic Superiority (ECM Burst Strength)
-1321,1,20406,309,2,208,1,0,0,16,IWL - Electronic Superiority (Sensor Dampening)
-1321,1,20406,566,2,208,1,0,0,16,IWL - Electronic Superiority (Sensor Dampening)
-1322,1,20406,351,2,291,1,0,0,16,IWL - Electronic Superiority (Tracking Disruption)
-1322,1,20406,767,2,291,1,0,0,16,IWL - Electronic Superiority (Tracking Disruption)
-1323,1,20406,554,2,379,1,0,0,16,IWL - Electronic Superiority (Target Painters)
-1320,1,4268,238,2,201,1,0,0,16,IWL - Electronic Superiority II (ECM Strength)
-1320,1,4268,239,2,201,1,0,0,16,IWL - Electronic Superiority II (ECM Strength)
-1320,1,4268,240,2,201,1,0,0,16,IWL - Electronic Superiority II (ECM Strength)
-1320,1,4268,241,2,201,1,0,0,16,IWL - Electronic Superiority II (ECM Strength)
-1320,1,4268,238,2,80,1,0,0,16,IWL - Electronic Superiority II (ECM Burst Strength)
-1320,1,4268,239,2,80,1,0,0,16,IWL - Electronic Superiority II (ECM Burst Strength)
-1320,1,4268,240,2,80,1,0,0,16,IWL - Electronic Superiority II (ECM Burst Strength)
-1320,1,4268,241,2,80,1,0,0,16,IWL - Electronic Superiority II (ECM Burst Strength)
-1321,1,4268,309,2,208,1,0,0,16,IWL - Electronic Superiority II (Sensor Dampening)
-1321,1,4268,566,2,208,1,0,0,16,IWL - Electronic Superiority II (Sensor Dampening)
-1322,1,4268,351,2,291,1,0,0,16,IWL - Electronic Superiority II (Tracking Disruption)
-1322,1,4268,767,2,291,1,0,0,16,IWL - Electronic Superiority II (Tracking Disruption)
-1323,1,4268,554,2,379,1,0,0,16,IWL - Electronic Superiority II (Target Painters)
-833,1,20405,54,2,201;208;291;379,0,0,0,16,IWL - Recon Operation (ECM Mods)
-833,1,20405,142,2,80,0,0,0,16,IWL - Recon Operation (ECM Burst)
-833,1,4270,54,2,201;208;291;379,0,0,0,16,IWL - Recon Operation II (ECM Mods)
-833,1,4270,142,2,80,0,0,0,16,IWL - Recon Operation II (ECM Burst)
-833,1,11052,211,3,6,1,0,0,16,IWL - Sensor Integrity (Grav Strength)
-833,1,11052,209,3,6,1,0,0,16,IWL - Sensor Integrity (Ladar Strength)
-833,1,11052,210,3,6,1,0,0,16,IWL - Sensor Integrity (Mag Strength)
-833,1,11052,208,3,6,1,0,0,16,IWL - Sensor Integrity (Radar Strength)
-833,1,11052,76,3,6,1,0,0,16,IWL - Sensor Integrity (Max Targeting Range)
-833,1,4272,211,3,6,1,0,0,16,IWL - Sensor Integrity II (Grav Strength)
-833,1,4272,209,3,6,1,0,0,16,IWL - Sensor Integrity II (Ladar Strength)
-833,1,4272,210,3,6,1,0,0,16,IWL - Sensor Integrity II (Mag Strength)
-833,1,4272,208,3,6,1,0,0,16,IWL - Sensor Integrity II (Radar Strength)
-833,1,4272,76,3,6,1,0,0,16,IWL - Sensor Integrity II (Max Targeting Range)
-# Mining Foreman Links,,,,,,,,,,
-833,1,22553,6,4,1037;1038;1039;1040,0,0,0,16,MFL - Harvester Capacitor Efficiency
-833,1,22557,73,4,1037;1038;1039;1040,0,0,0,16,MFL - Laser Optimization
-833,1,22555,54,4,1037;1038;1039;1040;714,0,0,0,16,MFL - Mining Laser Field Enhancement
-833,1,4274,6,4,1037;1038;1039;1040,0,0,0,16,MFL - Harvester Capacitor Efficiency II
-833,1,4276,73,4,1037;1038;1039;1040,0,0,0,16,MFL - Laser Optimization II
-833,1,4278,54,4,1037;1038;1039;1040;714,0,0,0,16,MFL - Mining Laser Field Enhancement II
-# Siege Warfare Links,,,,,,,,,,
-833,1,20124,73,4,609;610;611;612,0,0,0,16,SiWL - Active Shielding - Shield Boosters
-833,1,20124,73,2,41,0,0,0,16,SiWL - Active Shielding - Shield Transporters
-833,1,4280,73,4,609;610;611;612,0,0,0,16,SiWL - Active Shielding II - Shield Boosters
-833,1,4280,73,2,41,0,0,0,16,SiWL - Active Shielding II - Shield Transporters
-833,1,22228,6,4,609;610;611;612,0,0,0,16,SiWL - Shield Efficiency - Shield Boosters
-833,1,22228,6,2,41,0,0,0,16,SiWL - Shield Efficiency - Shield Transporters
-833,1,4282,6,4,609;610;611;612,0,0,0,16,SiWL - Shield Efficiency II - Shield Boosters
-833,1,4282,6,2,41,0,0,0,16,SiWL - Shield Efficiency II - Shield Transporters
-833,1,20514,271,3,6,1,0,2,16,SiWL - Shield Harmonizing
-833,1,20514,272,3,6,1,0,2,16,SiWL - Shield Harmonizing
-833,1,20514,273,3,6,1,0,2,16,SiWL - Shield Harmonizing
-833,1,20514,274,3,6,1,0,2,16,SiWL - Shield Harmonizing
-833,1,4284,271,3,6,1,0,2,16,SiWL - Shield Harmonizing II
-833,1,4284,272,3,6,1,0,2,16,SiWL - Shield Harmonizing II
-833,1,4284,273,3,6,1,0,2,16,SiWL - Shield Harmonizing II
-833,1,4284,274,3,6,1,0,2,16,SiWL - Shield Harmonizing II
-# Skirmish Warfare Links,,,,,,,,,,
-833,1,20070,552,3,6,0,0,0,16,SkWL - Evasive Maneuvers
-833,1,11017,54,2,52;65,0,0,0,16,SkWL - Interdiction Maneuvers
-833,1,20408,567,2,46,0,0,0,16,SkWL - Rapid Deployment
-833,1,4286,552,3,6,0,0,0,16,SkWL - Evasive Maneuvers II
-833,1,4288,54,2,52;65,0,0,0,16,SkWL - Interdiction Maneuvers II
-833,1,4290,567,2,46,0,0,0,16,SkWL - Rapid Deployment II
-# Misc Fleet Modules,,,,,,,,,,
-435,1,11014,10063,3,6,0,0,1,12,Command Processor
+# FLEET ASSISTANCE MODULES REMOTE
+# Command Bursts
+2469,2,1770,2596,2,1769;1772;1773;1774;1771,0,0,5,16,Command and Foreman Burst Module Bonus
+2471,2,1770,2597,2,1769;1772;1773;1774;1771,0,0,5,16,Command and Foreman Burst Module Bonus
+2473,2,1770,2598,2,1769;1772;1773;1774;1771,0,0,5,16,Command and Foreman Burst Module Bonus
+2537,2,1770,2599,2,1769;1772;1773;1774;1771,0,0,5,16,Command and Foreman Burst Module Bonus
+# Shield Harmonizing Charge
+#  Bonus: 10 Shield resistance bonus		Value: -8
+2596,1,42695,271,3,6,0,0,2,16,Shield Harmonizing Charge	- EM Shield Resistance Bonus
+2596,1,42695,272,3,6,0,0,2,16,Shield Harmonizing Charge	- Explosive Shield Resistance Bonus
+2596,1,42695,273,3,6,0,0,2,16,Shield Harmonizing Charge	- Kinetic Shield Resistance Bonus
+2596,1,42695,274,3,6,0,0,2,16,Shield Harmonizing Charge	- Thermal Shield Resistance Bonus
+# Active Shielding Charge
+#  Bonus: 11 Shield repair modules: duration & capacitor-use bonus	Value: -8
+2596,1,42694,6,5,3416;3422,0,0,0,16,Active Shielding Charge - Shield Repair Modules Capacitor-Use Bonus
+2596,1,42694,73,5,3416;3422,0,0,0,16,Active Shielding Charge - Shield Repair Modules Duration Bonus
+# Shield Extension Charge
+#  Bonus: 12 Shield HP bonus		Value: 8
+2596,1,42696,263,3,6,0,0,0,16,Shield Extension Charge - Shield HP Bonus
+# Armor Energizing Charge
+#  Bonus: 13 Armor Resistance Bonus    Value: -8
+2596,1,42832,267,3,6,0,0,2,16,Armor Energizing Charge - EM Armor Resistance Bonus
+2596,1,42832,268,3,6,0,0,2,16,Armor Energizing Charge - Explosive Armor Resistance Bonus
+2596,1,42832,269,3,6,0,0,2,16,Armor Energizing Charge - Kinetic Armor Resistance Bonus
+2596,1,42832,270,3,6,0,0,2,16,Armor Energizing Charge - Thermal Armor Resistance Bonus
+# Rapid Repair Charge
+#  Bonus: 14 Armor Repair Modules: Duration & Cap-use bonus      Value: -8
+2596,1,42833,6,2,62;1199,0,0,0,16,Rapid Repair Charge - Armor Repair Modules Capacitor-Use Bonus
+2596,1,42833,73,2,62;1199,0,0,0,16,Rapid Repair Charge - Armor Repair Modules Duration Bonus
+# Armor Reinforcement Charge
+#  Bonus: 15 Armor HP Bonus  Value: 8
+2596,1,42834,265,3,6,0,0,0,16,Armor Reinforcement Charge - Armor HP Bonus
+# Sensor Optimization Charge
+#  Bonus: 16 Scan resolution bonus  Value: 9
+2596,1,42835,564,3,6,0,0,0,16,Sensor Optimization Charge - Scan resolution bonus
+# Electronic Superiority Charge
+#  Bonus: 17 Electronic warfare Modules: Range and strength bonus  Value: 9
+2596,1,42836,54,2,201;208;291;379,0,0,0,16,Electronic Superiority Charge - Electronic warfare Modules: Range Bonus
+2596,1,42836,238,2,201,0,0,0,16,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
+2596,1,42836,239,2,201,0,0,0,16,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
+2596,1,42836,240,2,201,0,0,0,16,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
+2596,1,42836,241,2,201,0,0,0,16,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
+2596,1,42836,309,2,208,0,0,0,16,Electronic Superiority Charge - Electronic warfare Modules: Range Bonus
+2596,1,42836,349,2,291,0,0,0,16,Electronic Superiority Charge - Electronic warfare Modules: Range Bonus
+2596,1,42836,351,2,291,0,0,0,16,Electronic Superiority Charge - Electronic warfare Modules: Range Bonus
+2596,1,42836,547,2,291,0,0,0,16,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
+2596,1,42836,554,2,379,0,0,0,16,Electronic Superiority Charge - Electronic warfare Modules: Range Bonus
+2596,1,42836,566,2,208,0,0,0,16,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
+2596,1,42836,596,2,291,0,0,0,16,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
+2596,1,42836,767,2,291,0,0,0,16,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
+2596,1,42836,847,2,291,0,0,0,16,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
+2596,1,42836,848,2,291,0,0,0,16,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
+2596,1,42836,2044,2,201;208;291;379,0,0,0,16,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
+# Electronic Hardening Charge
+#  Bonus: 18 Sensor strength bonus  Value: 18
+2596,1,42837,208,3,6,0,0,0,16,Electronic Hardening Charge - Radar Sensor strength bonus
+2596,1,42837,209,3,6,0,0,0,16,Electronic Hardening Charge - Ladar Sensor strength bonus
+2596,1,42837,210,3,6,0,0,0,16,Electronic Hardening Charge - Magnetometric Sensor strength bonus
+2596,1,42837,211,3,6,0,0,0,16,Electronic Hardening Charge - Gravimetric Sensor strength bonus
+# Evasive Maneuvers Charge
+#  Bonus: 20 Signature radius bonus  Value: -6
+2596,1,42838,552,3,6,0,0,0,16,Evasive Maneuvers Charge - Signature radius bonus
+# Interdiction Maneuvers Charge
+#  Bonus: 21 Tackle module range bonus  Value: 12
+2596,1,42839,54,5,3435,0,0,0,16,Interdiction Maneuvers Charge - Tackle module range bonus
+# Rapid Deployment Charge
+#  Bonus: 22 AB/MWD module speed increase bonus  Value: 12
+2596,1,42840,20,5,3450;3454,0,0,0,16,Rapid Deployment Charge - AB/MWD module speed increase bonus
+# Mining Laser Field Enhancement Charge
+#  Bonus: 23 Mining/survey module range bonus  Value: 30 
+2596,1,42829,54,5,3386;16281;25544;3426,0,0,0,16,Mining Laser Field Enhancement Charge - Mining/survey module range bonus
+# Mining Laser Optimization Charge
+#  Bonus: 24 Mining modules: Duration & Capacitor-use bonus	Value: -15  
+2596,1,42830,6,5,3386;16281;25544,0,0,0,16,Mining Laser Optimization Charge - Mining modules: Capacitor-use bonus
+2596,1,42830,73,5,3386;16281;25544,0,0,0,16,Mining Laser Optimization Charge - Mining modules: Duration bonus
+# Mining Equipment Preservation Charge
+#  Bonus: 25 Mining crystal volatility bonus  Value: -15
+2596,1,42831,783,5,3386,0,0,0,16,Mining Equipment Preservation Charge - Mining crystal volatility bonus
+# Electronic Hardening Charge
+#  Bonus: 19 Remote Sensor Dampener / Remote Weapon Disruption Resistance bonus  Value: -9   
+2597,1,42837,2112,3,6,0,0,0,16,Electronic Hardening Charge - Remote Sensor Dampener / Remote Weapon Disruption Resistance bonus
+2597,1,42837,2113,3,6,0,0,0,16,Electronic Hardening Charge - Remote Sensor Dampener / Remote Weapon Disruption Resistance bonus
+# Sensor Optimization Charge
+#  Bonus: 26 Targeting range bonus  Value: 18   
+2597,1,42835,76,3,6,0,0,0,16,Sensor Optimization Charge - Targeting range bonus
+# Evasive Maneuvers Charge
+#  Bonus: 60 Agility bonus    Value: -6   
+2597,1,42838,70,3,6,0,0,0,16,Evasive Maneuvers Charge - Agility bonus
+# FLEET ASSISTANCE MODULES LOCAL
+# Command Bursts
+2469,2,1770,2596,2,1769;1772;1773;1774;1771,0,0,5,4,Command and Foreman Burst Module Bonus
+2471,2,1770,2597,2,1769;1772;1773;1774;1771,0,0,5,4,Command and Foreman Burst Module Bonus
+2473,2,1770,2598,2,1769;1772;1773;1774;1771,0,0,5,4,Command and Foreman Burst Module Bonus
+2537,2,1770,2599,2,1769;1772;1773;1774;1771,0,0,5,4,Command and Foreman Burst Module Bonus
+# Shield Harmonizing Charge
+#  Bonus: 10 Shield resistance bonus		Value: -8
+2596,1,42695,271,3,6,0,0,2,4,Shield Harmonizing Charge	- EM Shield Resistance Bonus
+2596,1,42695,272,3,6,0,0,2,4,Shield Harmonizing Charge	- Explosive Shield Resistance Bonus
+2596,1,42695,273,3,6,0,0,2,4,Shield Harmonizing Charge	- Kinetic Shield Resistance Bonus
+2596,1,42695,274,3,6,0,0,2,4,Shield Harmonizing Charge	- Thermal Shield Resistance Bonus
+# Active Shielding Charge
+#  Bonus: 11 Shield repair modules: duration & capacitor-use bonus	Value: -8
+2596,1,42694,6,5,3416;3422,0,0,0,4,Active Shielding Charge - Shield Repair Modules Capacitor-Use Bonus
+2596,1,42694,73,5,3416;3422,0,0,0,4,Active Shielding Charge - Shield Repair Modules Duration Bonus
+# Shield Extension Charge
+#  Bonus: 12 Shield HP bonus		Value: 8
+2596,1,42696,263,3,6,0,0,0,4,Shield Extension Charge - Shield HP Bonus
+# Armor Energizing Charge
+#  Bonus: 13 Armor Resistance Bonus    Value: -8
+2596,1,42832,267,3,6,0,0,2,4,Armor Energizing Charge - EM Armor Resistance Bonus
+2596,1,42832,268,3,6,0,0,2,4,Armor Energizing Charge - Explosive Armor Resistance Bonus
+2596,1,42832,269,3,6,0,0,2,4,Armor Energizing Charge - Kinetic Armor Resistance Bonus
+2596,1,42832,270,3,6,0,0,2,4,Armor Energizing Charge - Thermal Armor Resistance Bonus
+# Rapid Repair Charge
+#  Bonus: 14 Armor Repair Modules: Duration & Cap-use bonus      Value: -8
+2596,1,42833,6,2,62;1199,0,0,0,4,Rapid Repair Charge - Armor Repair Modules Capacitor-Use Bonus
+2596,1,42833,73,2,62;1199,0,0,0,4,Rapid Repair Charge - Armor Repair Modules Duration Bonus
+# Armor Reinforcement Charge
+#  Bonus: 15 Armor HP Bonus  Value: 8
+2596,1,42834,265,3,6,0,0,0,4,Armor Reinforcement Charge - Armor HP Bonus
+# Sensor Optimization Charge
+#  Bonus: 16 Scan resolution bonus  Value: 9
+2596,1,42835,564,3,6,0,0,0,4,Sensor Optimization Charge - Scan resolution bonus
+# Electronic Superiority Charge
+#  Bonus: 17 Electronic warfare Modules: Range and strength bonus  Value: 9
+2596,1,42836,54,2,201;208;291;379,0,0,0,4,Electronic Superiority Charge - Electronic warfare Modules: Range Bonus
+2596,1,42836,238,2,201,0,0,0,4,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
+2596,1,42836,239,2,201,0,0,0,4,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
+2596,1,42836,240,2,201,0,0,0,4,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
+2596,1,42836,241,2,201,0,0,0,4,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
+2596,1,42836,309,2,208,0,0,0,4,Electronic Superiority Charge - Electronic warfare Modules: Range Bonus
+2596,1,42836,349,2,291,0,0,0,4,Electronic Superiority Charge - Electronic warfare Modules: Range Bonus
+2596,1,42836,351,2,291,0,0,0,4,Electronic Superiority Charge - Electronic warfare Modules: Range Bonus
+2596,1,42836,547,2,291,0,0,0,4,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
+2596,1,42836,554,2,379,0,0,0,4,Electronic Superiority Charge - Electronic warfare Modules: Range Bonus
+2596,1,42836,566,2,208,0,0,0,4,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
+2596,1,42836,596,2,291,0,0,0,4,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
+2596,1,42836,767,2,291,0,0,0,4,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
+2596,1,42836,847,2,291,0,0,0,4,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
+2596,1,42836,848,2,291,0,0,0,4,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
+2596,1,42836,2044,2,201;208;291;379,0,0,0,4,Electronic Superiority Charge - Electronic warfare Modules: Strength Bonus
+# Electronic Hardening Charge
+#  Bonus: 18 Sensor strength bonus  Value: 18
+2596,1,42837,208,3,6,0,0,0,4,Electronic Hardening Charge - Radar Sensor strength bonus
+2596,1,42837,209,3,6,0,0,0,4,Electronic Hardening Charge - Ladar Sensor strength bonus
+2596,1,42837,210,3,6,0,0,0,4,Electronic Hardening Charge - Magnetometric Sensor strength bonus
+2596,1,42837,211,3,6,0,0,0,4,Electronic Hardening Charge - Gravimetric Sensor strength bonus
+# Evasive Maneuvers Charge
+#  Bonus: 20 Signature radius bonus  Value: -6
+2596,1,42838,552,3,6,0,0,0,4,Evasive Maneuvers Charge - Signature radius bonus
+# Interdiction Maneuvers Charge
+#  Bonus: 21 Tackle module range bonus  Value: 12
+2596,1,42839,54,5,3435,0,0,0,4,Interdiction Maneuvers Charge - Tackle module range bonus
+# Rapid Deployment Charge
+#  Bonus: 22 AB/MWD module speed increase bonus  Value: 12
+2596,1,42840,20,5,3450;3454,0,0,0,4,Rapid Deployment Charge - AB/MWD module speed increase bonus
+# Mining Laser Field Enhancement Charge
+#  Bonus: 23 Mining/survey module range bonus  Value: 30 
+2596,1,42829,54,5,3386;16281;25544;3426,0,0,0,4,Mining Laser Field Enhancement Charge - Mining/survey module range bonus
+# Mining Laser Optimization Charge
+#  Bonus: 24 Mining modules: Duration & Capacitor-use bonus	Value: -15  
+2596,1,42830,6,5,3386;16281;25544,0,0,0,4,Mining Laser Optimization Charge - Mining modules: Capacitor-use bonus
+2596,1,42830,73,5,3386;16281;25544,0,0,0,4,Mining Laser Optimization Charge - Mining modules: Duration bonus
+# Mining Equipment Preservation Charge
+#  Bonus: 25 Mining crystal volatility bonus  Value: -15
+2596,1,42831,783,5,3386,0,0,0,4,Mining Equipment Preservation Charge - Mining crystal volatility bonus
+# Electronic Hardening Charge
+#  Bonus: 19 Remote Sensor Dampener / Remote Weapon Disruption Resistance bonus  Value: -9   
+2597,1,42837,2112,3,6,0,0,0,4,Electronic Hardening Charge - Remote Sensor Dampener / Remote Weapon Disruption Resistance bonus
+2597,1,42837,2113,3,6,0,0,0,4,Electronic Hardening Charge - Remote Sensor Dampener / Remote Weapon Disruption Resistance bonus
+# Sensor Optimization Charge
+#  Bonus: 26 Targeting range bonus  Value: 18   
+2597,1,42835,76,3,6,0,0,0,4,Sensor Optimization Charge - Targeting range bonus
+# Evasive Maneuvers Charge
+#  Bonus: 60 Agility bonus    Value: -6   
+2597,1,42838,70,3,6,0,0,0,4,Evasive Maneuvers Charge - Agility bonus
 # FLEET SHIP EFFECTS,,,,,,,,,,
 55,1,-1,55,3,6,0,0,0,16,Gang Capacitor Recharge Rate
 265,1,-1,265,3,6,0,0,0,16,Gang Armor HP
@@ -1505,12 +1658,17 @@
 327,2,778,263,2,100;101;544;639;640;641;1159,0,0,0,15,Drone Durability Enhancer - Shield
 327,2,778,265,2,100;101;544;639;640;641;1159,0,0,0,15,Drone Durability Enhancer - Armor
 327,2,778,9,2,100;101;544;639;640;641;1159,0,0,0,15,Drone Durability Enhancer - Hull
+327,2,778,263,3,87,0,0,0,15,Drone Durability Enhancer - Fighter Shield HP
+327,2,778,9,3,87,0,0,0,15,Drone Durability Enhancer - Fighter Hull HP
 434,2,778,77,2,101,0,0,0,15,Drone Mining Augmentor
 39,2,778,68,2,640,0,0,0,15,Drone Repair Augmentor - Shield
 39,2,778,84,2,640,0,0,0,15,Drone Repair Augmentor - Armor
 39,2,778,83,2,640,0,0,0,15,Drone Repair Augmentor - Hull
 294,2,778,54,2,100;101;544;639;640;641;1159,0,0,0,15,Drone Scope Chip
+294,2,778,2149,3,87,0,0,0,15,Drone Scope Chip - Fighters
+294,2,778,2236,3,87,0,0,0,15,Drone Scope Chip - Fighters
 591,2,778,37,2,100;101;544;639;640;641;1159,3,0,0,15,Drone Speed Augmentor
+591,2,778,37,3,87,3,0,0,15,Drone Speed Augmentor - Fighters
 292,2,778,64,4,911,1,0,0,15,Sentry Damage Augmentor
 1619,2,778,20,2,641,1,0,0,15,Stasis Drone Augmentor
 # RIGS - ELECTRONICS SUPERIORITY,,,,,,,,,,
@@ -1622,6 +1780,11 @@
 310,1,31404,50,2,43;61;766;767;768;769,0,0,0,15,Powergrid Subroutine Maximizer
 424,2,781,48,3,6,0,0,0,15,Processor Overclocking Unit
 1079,2,781,482,3,6,0,0,0,15,Semiconductor Memory Cell
+# Fleet Assitance Rigs,,,,,,,,,,
+435,1,43894,10063,3,6,0,0,1,12,Small Command Processor I
+435,1,43896,10063,3,6,0,0,1,12,Medium Command Processor I
+435,1,43898,10063,3,6,0,0,1,12,Large Command Processor I
+435,1,43900,10063,3,6,0,0,1,12,Capital Command Processor I
 # RIGS - HYBRID WEAPON,,,,,,,,,,
 1138,2,776,30,2,74,0,0,0,15,Hybrid Weapon Rig Drawback - PG Penalty
 310,2,776,50,2,74,0,0,0,15,Algid Hybrid Administrations Unit
@@ -1632,8 +1795,8 @@
 351,2,776,54,2,74,1,0,0,15,Hybrid Locus Coordinator
 767,2,776,160,2,74,1,0,0,15,Hybrid Metastasis Adjuster
 # RIGS - LAUNCHER,,,,,,,,,,
-1138,2,779,50,2,511;524;506;510;771;507;508;509;1245;1674,0,0,0,15,Launcher Rig Drawback - CPU Penalty
-204,2,779,51,2,511;524;506;510;771;507;508;509;1245;1674,1,0,0,15,Bay Loading Accelerator
+1138,2,779,50,2,511;524;506;510;771;507;508;509;1245;1673;1674,0,0,0,15,Launcher Rig Drawback - CPU Penalty
+204,2,779,51,2,511;524;506;510;771;507;508;509;1245;1673;1674,1,0,0,15,Bay Loading Accelerator
 20,2,779,37,2,654;656;655;653;648;657;772;476;1677;1019;1678;386;88;1158;396;395;394;385;384;387;89,2,0,0,15,Hydraulic Bay Thrusters
 557,2,779,281,2,654;656;655;653;648;657;772;476;1677;1019;1678;386;88;1158;396;395;394;385;384;387;89,0,0,0,15,Rocket Fuel Cache Partition
 213,2,779,114,2,654;656;655;653;648;657;772;476;1677;1019;1678;386;88;1158;396;395;394;385;384;387;89,1,0,0,15,Warhead Calefaction Catalyst
@@ -1743,7 +1906,7 @@
 1034,3,32,669,2,330,0,0,4,15,Cloak Reactivation Delay
 # SHIPS,,,,,,,,,,
 1034,3,6,669,2,330,0,0,4,15,Cloak Reactivation Delay
-# ENVIRONMENT,,,,,,,,,,
+## ENVIRONMENT,,,,,,,,,,
 146,2,920,263,3,6,0,0,0,15,Shield HP Bonus - Ship
 #,2,920,72,2,38,0,0,0,15,Shield HP Bonus - Extenders
 148,2,920,265,3,6,0,0,0,15,Wolf Rayet - Armor HP Bonus
@@ -1848,7 +2011,7 @@
 1482,2,920,116,2,90,0,0,5,15,Magnetar - Explosive Bomb Damage
 237,2,920,76,3,6,0,0,0,15,Magnetar - Max Targeting Range
 1969,2,920,20,2,65,0,0,5,15,Black Hole - Stasis Webifier Strength Multiplier
-# BOOSTERS,,,,,,,,,,
+## BOOSTERS,,,,,,,,,,
 548,1,10155,68,2,40;1156,0,0,0,15,Improved Blue Pill - Shield Boost Bonus
 848,1,10151,654,2,654;656;655;653;648;657;772;476;1677;1019;1678;386;396;395;394;385;384;387;89,0,0,0,15,Improved Crash - Explosion Radius Bonus
 767,1,15477,160,2,55;53;74,0,0,0,15,Improved Drop - Tracking Speed Bonus

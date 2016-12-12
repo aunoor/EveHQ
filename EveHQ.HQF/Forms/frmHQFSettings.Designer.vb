@@ -34,11 +34,6 @@ Namespace Forms
             Me.chkRestoreLastSession = New DevComponents.DotNetBar.Controls.CheckBoxX()
             Me.chkShowPerformance = New DevComponents.DotNetBar.Controls.CheckBoxX()
             Me.cboStartupPilot = New DevComponents.DotNetBar.Controls.ComboBoxEx()
-            Me.gbFittingProtocol = New System.Windows.Forms.GroupBox()
-            Me.btnEnableProtocol = New DevComponents.DotNetBar.ButtonX()
-            Me.btnDisableProtocol = New DevComponents.DotNetBar.ButtonX()
-            Me.lblFittingProtocolStatus = New System.Windows.Forms.Label()
-            Me.lblFittingProtocolStatusLbl = New System.Windows.Forms.Label()
             Me.lblDefaultPilot = New System.Windows.Forms.Label()
             Me.fbd1 = New System.Windows.Forms.FolderBrowserDialog()
             Me.ofd1 = New System.Windows.Forms.OpenFileDialog()
@@ -156,7 +151,6 @@ Namespace Forms
             Me.colProfileName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
             Me.colProfileType = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
             Me.gbGeneral.SuspendLayout()
-            Me.gbFittingProtocol.SuspendLayout()
             CType(Me.pbHiSlotColour, System.ComponentModel.ISupportInitialize).BeginInit()
             CType(Me.pbMidSlotColour, System.ComponentModel.ISupportInitialize).BeginInit()
             CType(Me.pbLowSlotColour, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -186,7 +180,6 @@ Namespace Forms
             Me.gbGeneral.Controls.Add(Me.chkRestoreLastSession)
             Me.gbGeneral.Controls.Add(Me.chkShowPerformance)
             Me.gbGeneral.Controls.Add(Me.cboStartupPilot)
-            Me.gbGeneral.Controls.Add(Me.gbFittingProtocol)
             Me.gbGeneral.Controls.Add(Me.lblDefaultPilot)
             Me.gbGeneral.Location = New System.Drawing.Point(228, 352)
             Me.gbGeneral.Name = "gbGeneral"
@@ -256,6 +249,7 @@ Namespace Forms
             '
             Me.cboStartupPilot.DisplayMember = "Text"
             Me.cboStartupPilot.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+            Me.cboStartupPilot.FlatStyle = System.Windows.Forms.FlatStyle.Flat
             Me.cboStartupPilot.FormattingEnabled = True
             Me.cboStartupPilot.ItemHeight = 15
             Me.cboStartupPilot.Location = New System.Drawing.Point(152, 48)
@@ -263,59 +257,6 @@ Namespace Forms
             Me.cboStartupPilot.Size = New System.Drawing.Size(168, 21)
             Me.cboStartupPilot.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
             Me.cboStartupPilot.TabIndex = 13
-            '
-            'gbFittingProtocol
-            '
-            Me.gbFittingProtocol.Controls.Add(Me.btnEnableProtocol)
-            Me.gbFittingProtocol.Controls.Add(Me.btnDisableProtocol)
-            Me.gbFittingProtocol.Controls.Add(Me.lblFittingProtocolStatus)
-            Me.gbFittingProtocol.Controls.Add(Me.lblFittingProtocolStatusLbl)
-            Me.gbFittingProtocol.Location = New System.Drawing.Point(25, 174)
-            Me.gbFittingProtocol.Name = "gbFittingProtocol"
-            Me.gbFittingProtocol.Size = New System.Drawing.Size(439, 66)
-            Me.gbFittingProtocol.TabIndex = 12
-            Me.gbFittingProtocol.TabStop = False
-            Me.gbFittingProtocol.Text = "Fitting Protocol"
-            '
-            'btnEnableProtocol
-            '
-            Me.btnEnableProtocol.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
-            Me.btnEnableProtocol.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
-            Me.btnEnableProtocol.Location = New System.Drawing.Point(233, 25)
-            Me.btnEnableProtocol.Name = "btnEnableProtocol"
-            Me.btnEnableProtocol.Size = New System.Drawing.Size(75, 23)
-            Me.btnEnableProtocol.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-            Me.btnEnableProtocol.TabIndex = 18
-            Me.btnEnableProtocol.Text = "Enable"
-            '
-            'btnDisableProtocol
-            '
-            Me.btnDisableProtocol.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
-            Me.btnDisableProtocol.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
-            Me.btnDisableProtocol.Location = New System.Drawing.Point(314, 25)
-            Me.btnDisableProtocol.Name = "btnDisableProtocol"
-            Me.btnDisableProtocol.Size = New System.Drawing.Size(75, 23)
-            Me.btnDisableProtocol.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-            Me.btnDisableProtocol.TabIndex = 19
-            Me.btnDisableProtocol.Text = "Disable"
-            '
-            'lblFittingProtocolStatus
-            '
-            Me.lblFittingProtocolStatus.AutoSize = True
-            Me.lblFittingProtocolStatus.Location = New System.Drawing.Point(151, 30)
-            Me.lblFittingProtocolStatus.Name = "lblFittingProtocolStatus"
-            Me.lblFittingProtocolStatus.Size = New System.Drawing.Size(47, 13)
-            Me.lblFittingProtocolStatus.TabIndex = 1
-            Me.lblFittingProtocolStatus.Text = "Disabled"
-            '
-            'lblFittingProtocolStatusLbl
-            '
-            Me.lblFittingProtocolStatusLbl.AutoSize = True
-            Me.lblFittingProtocolStatusLbl.Location = New System.Drawing.Point(28, 30)
-            Me.lblFittingProtocolStatusLbl.Name = "lblFittingProtocolStatusLbl"
-            Me.lblFittingProtocolStatusLbl.Size = New System.Drawing.Size(117, 13)
-            Me.lblFittingProtocolStatusLbl.TabIndex = 0
-            Me.lblFittingProtocolStatusLbl.Text = "Fitting Protocol Status:"
             '
             'lblDefaultPilot
             '
@@ -604,8 +545,8 @@ Namespace Forms
             Me.nudMissileRange.Size = New System.Drawing.Size(72, 21)
             Me.nudMissileRange.TabIndex = 5
             Me.nudMissileRange.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-            Me.ToolTip1.SetToolTip(Me.nudMissileRange, "Defines the proportion of the theoretical maximum range of missiles (velocity x f" & _
-            "light time) to be used for optimal missile optimal range calculations")
+            Me.ToolTip1.SetToolTip(Me.nudMissileRange, "Defines the proportion of the theoretical maximum range of missiles (velocity x f" &
+        "light time) to be used for optimal missile optimal range calculations")
             Me.nudMissileRange.Value = New Decimal(New Integer() {1, 0, 0, 0})
             '
             'lblMissileRange
@@ -616,8 +557,8 @@ Namespace Forms
             Me.lblMissileRange.Size = New System.Drawing.Size(122, 13)
             Me.lblMissileRange.TabIndex = 4
             Me.lblMissileRange.Text = "Missile Range Constant:"
-            Me.ToolTip1.SetToolTip(Me.lblMissileRange, "Defines the proportion of the theoretical maximum range of missiles (velocity x f" & _
-            "light time) to be used for optimal missile optimal range calculations")
+            Me.ToolTip1.SetToolTip(Me.lblMissileRange, "Defines the proportion of the theoretical maximum range of missiles (velocity x f" &
+        "light time) to be used for optimal missile optimal range calculations")
             '
             'nudShieldRecharge
             '
@@ -1160,8 +1101,8 @@ Namespace Forms
             Me.adtAttributeColumns.AccessibleRole = System.Windows.Forms.AccessibleRole.Outline
             Me.adtAttributeColumns.AllowDrop = True
             Me.adtAttributeColumns.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                Or System.Windows.Forms.AnchorStyles.Left) _
-                Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
             Me.adtAttributeColumns.BackColor = System.Drawing.SystemColors.Window
             '
             '
@@ -1677,8 +1618,6 @@ Namespace Forms
             Me.Text = "HQF Settings"
             Me.gbGeneral.ResumeLayout(False)
             Me.gbGeneral.PerformLayout()
-            Me.gbFittingProtocol.ResumeLayout(False)
-            Me.gbFittingProtocol.PerformLayout()
             CType(Me.pbHiSlotColour, System.ComponentModel.ISupportInitialize).EndInit()
             CType(Me.pbMidSlotColour, System.ComponentModel.ISupportInitialize).EndInit()
             CType(Me.pbLowSlotColour, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1741,9 +1680,6 @@ Namespace Forms
         Friend WithEvents pbSubSlotColour As System.Windows.Forms.PictureBox
         Friend WithEvents chkAmmoLoadTime As System.Windows.Forms.CheckBox
         Friend WithEvents chkCapBoosterReloadTime As System.Windows.Forms.CheckBox
-        Friend WithEvents gbFittingProtocol As System.Windows.Forms.GroupBox
-        Friend WithEvents lblFittingProtocolStatus As System.Windows.Forms.Label
-        Friend WithEvents lblFittingProtocolStatusLbl As System.Windows.Forms.Label
         Friend WithEvents gbDamageProfiles As System.Windows.Forms.GroupBox
         Friend WithEvents lblNPCName As System.Windows.Forms.Label
         Friend WithEvents lblProfileNameLbl As System.Windows.Forms.Label
@@ -1816,8 +1752,6 @@ Namespace Forms
         Private WithEvents chkShowPerformance As DevComponents.DotNetBar.Controls.CheckBoxX
         Private WithEvents cboStartupPilot As DevComponents.DotNetBar.Controls.ComboBoxEx
         Private WithEvents pnlSettings As DevComponents.DotNetBar.PanelEx
-        Private WithEvents btnEnableProtocol As DevComponents.DotNetBar.ButtonX
-        Private WithEvents btnDisableProtocol As DevComponents.DotNetBar.ButtonX
         Private WithEvents gpProfile As DevComponents.DotNetBar.Controls.GroupPanel
         Private WithEvents btnEditProfile As DevComponents.DotNetBar.ButtonX
         Private WithEvents btnDeleteProfile As DevComponents.DotNetBar.ButtonX

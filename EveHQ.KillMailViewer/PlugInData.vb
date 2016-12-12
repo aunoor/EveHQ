@@ -69,10 +69,6 @@ Public Class PlugInData
         Return eveHQPlugIn
     End Function
 
-    Public Function IGBService(ByVal igbContext As Net.HttpListenerContext) As String Implements Core.IEveHQPlugIn.IGBService
-        Return ""
-    End Function
-
     Public Function RunEveHQPlugIn() As Windows.Forms.Form Implements Core.IEveHQPlugIn.RunEveHQPlugIn
         Return New frmKMV
     End Function

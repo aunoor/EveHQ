@@ -102,7 +102,7 @@ Public Class EveMail
                         mailingListIDs = CustomDataFunctions.WriteMailingListIDsToDatabase(mPilot)
                         ' Make a call to the API to fetch the EveMail
                         RaiseEvent MailProgress("Fetching EveMails for " & mPilot.Name & "...")
-                        Dim mailMessages As EveServiceResponse(Of IEnumerable(Of MailHeader)) = HQ.ApiProvider.Character.MailMessages(mAccount.UserID, mAccount.APIKey, Integer.Parse(mPilot.ID))
+                        Dim mailMessages As EveServiceResponse(Of IEnumerable(Of MailHeader)) = HQ.ApiProvider.Character.MailMessages(mAccount.UserID, mAccount.APIKey, Long.Parse(mPilot.ID))
                         If mailMessages.ResultData IsNot Nothing Then
                             ' Stage 2: Populate the class with our EveMails
 
@@ -134,7 +134,7 @@ Public Class EveMail
                                 If mailIDs.Count > 0 Then
                                     Dim idsToQuery As List(Of Integer) = (From id In mailIDs Select Integer.Parse(id)).ToList()
 
-                                    Dim bodies As EveServiceResponse(Of IEnumerable(Of MailBody)) = HQ.ApiProvider.Character.MailBodies(mAccount.UserID, mAccount.APIKey, Integer.Parse(mPilot.ID), idsToQuery)
+                                    Dim bodies As EveServiceResponse(Of IEnumerable(Of MailBody)) = HQ.ApiProvider.Character.MailBodies(mAccount.UserID, mAccount.APIKey, Long.Parse(mPilot.ID), idsToQuery)
 
 
                                     If bodies IsNot Nothing Then
@@ -286,7 +286,7 @@ Public Class EveMail
                         ' Make a call to the API to fetch the EveMail
                         RaiseEvent MailProgress("Fetching Eve Notifications for " & mPilot.Name & "...")
 
-                        Dim notifications As EveServiceResponse(Of IEnumerable(Of Notification)) = HQ.ApiProvider.Character.Notifications(mAccount.UserID, mAccount.APIKey, Integer.Parse(mPilot.ID))
+                        Dim notifications As EveServiceResponse(Of IEnumerable(Of Notification)) = HQ.ApiProvider.Character.Notifications(mAccount.UserID, mAccount.APIKey, Long.Parse(mPilot.ID))
 
                         If notifications IsNot Nothing Then
                             If notifications.ResultData IsNot Nothing Then
@@ -312,7 +312,7 @@ Public Class EveMail
 
                                         Dim idsToQuery As List(Of Long) = (From id In notificationIds Select Long.Parse(id)).ToList()
 
-                                        Dim notificationTextResponse As EveServiceResponse(Of IEnumerable(Of NotificationText)) = HQ.ApiProvider.Character.NotificationTexts(mAccount.UserID, mAccount.APIKey, Integer.Parse(mPilot.ID), idsToQuery)
+                                        Dim notificationTextResponse As EveServiceResponse(Of IEnumerable(Of NotificationText)) = HQ.ApiProvider.Character.NotificationTexts(mAccount.UserID, mAccount.APIKey, Long.Parse(mPilot.ID), idsToQuery)
 
                                         If notificationTextResponse IsNot Nothing Then
                                             If notificationTextResponse.IsSuccess And notificationTextResponse.ResultData IsNot Nothing Then

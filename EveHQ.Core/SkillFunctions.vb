@@ -468,7 +468,9 @@ Public Class SkillFunctions
                             newSkill.Rank = skill.Rank
                             If skill.RequiredSkills.Any() Then
                                 For Each reqSkill In skill.RequiredSkills
-                                    newSkill.PreReqSkills.Add(reqSkill.TypeId, reqSkill.Level)
+                                    If newSkill.PreReqSkills.ContainsKey(reqSkill.TypeId) = False Then
+                                        newSkill.PreReqSkills.Add(reqSkill.TypeId, reqSkill.Level)
+                                    End If
                                 Next
                             End If
                             newSkill.Pa = StrConv(skill.PrimaryAttribute, VbStrConv.ProperCase)
@@ -519,6 +521,11 @@ Public Class SkillFunctions
         End Select
 
         rate = CInt(((60 * pa) + (30 * sa)))
+
+        ' Half the rate if Alpha Clone
+        If (cPilot.AccountStatus = APIAccountStatuses.Alpha) Then
+            rate = CInt(rate / 2)
+        End If
         Return rate
 
     End Function          'CalculateSPRate
@@ -635,6 +642,10 @@ Public Class SkillFunctions
                 sTime = 0
             Else
                 sTime = CLng(sTime + Int((endSP - startSP) / (pa + (sa / 2)) * 60))
+                ' Double the time if alpha clone
+                If cPilot.AccountStatus = APIAccountStatuses.Alpha Then
+                    sTime = CLng(sTime * 2)
+                End If
             End If
 
             startSP = endSP
@@ -694,14 +705,19 @@ Public Class SkillFunctions
     End Function
 
     Public Shared Function CalcLevelFromSP(ByVal skillID As Integer, ByVal sp As Integer) As Integer
-        Dim cSkill As EveSkill = HQ.SkillListID(skillID)
-        Dim curLevel As Integer = 0
-        For level As Integer = 0 To 5
-            If sp >= cSkill.LevelUp(level) Then
-                curLevel = level
-            End If
-        Next
-        Return curLevel
+
+        If HQ.SkillListID.ContainsKey(skillID) Then
+            Dim cSkill As EveSkill = HQ.SkillListID(skillID)
+            Dim curLevel As Integer = 0
+            For level As Integer = 0 To 5
+                If sp >= cSkill.LevelUp(level) Then
+                    curLevel = level
+                End If
+            Next
+            Return curLevel
+        End If
+
+        Return 1
     End Function
 
     Public Shared Function HavePreReqs(ByVal qpilot As EveHQPilot, ByVal skillID As Integer) As Boolean

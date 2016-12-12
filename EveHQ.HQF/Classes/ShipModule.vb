@@ -275,7 +275,6 @@ Public Enum ModuleEnum
 
     ' itemIDs (see invTypes)
     ItemBastionModuleI = 33400
-    ItemCommandProcessorI = 11014
     ItemLegionCovertReconfiguration = 30120
     ItemLegionWarfareProcessor = 29967
     ItemLokiCovertReconfiguration = 30135
@@ -295,6 +294,12 @@ Public Enum ModuleEnum
     ItemTenguWarfareProcessor = 29972
     ItemTriageModuleI = 27951
     ItemTriageModuleT2 = 4294
+    ItemSmallCommandProcessorI = 43894
+    ItemMediumCommandProcessorI = 43896
+    ItemLargeCommandProcessorI = 43898
+    ItemCapitalCommandProcessorI = 43900
+    ItemIndustrialCoreI = 28583
+    ItemIndustrialCoreII = 42890
 
     ' categoryIDs (see invCategories)
     CategoryCelestials = 2
@@ -312,6 +317,7 @@ Public Enum ModuleEnum
     GroupBoosters = 303
     GroupCapBoosters = 76
     GroupCloakingDevices = 330
+    GroupCommandBurst = 1770
     GroupCynosuralFields = 658
     GroupDamageControls = 60
     GroupDeepSpaceTransports = 380
@@ -343,6 +349,8 @@ Public Enum ModuleEnum
     GroupShieldTransporters = 41
     GroupSmartbombs = 72
     GroupStrategicCruisers = 963
+    GroupAncillaryRemoteArmorsRepairers = 1698
+    GroupECM = 201
     GroupCitadel = 1657
 
     ' marketGroupIDs (see invMarketGroups)

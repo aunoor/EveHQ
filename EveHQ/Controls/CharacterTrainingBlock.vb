@@ -61,25 +61,10 @@ Namespace Controls
 
             If IsAccount = True Then
                 Dim cAccount As Core.EveHQAccount = Core.HQ.Settings.Accounts(objectName)
-                _usingAccount = cAccount.userID
-                If cAccount.APIAccountStatus = Core.APIAccountStatuses.Disabled Then
-                    ' Prepare block for a blank account
-                    pbPilot.SizeMode = PictureBoxSizeMode.StretchImage
-                    pbPilot.Image = My.Resources.Warning64
-                    lblSkill.Text = "Account: " & cAccount.FriendlyName
-                    lblTime.Text = "ACCOUNT HAS EXPIRED!"
-                    ToolTip1.SetToolTip(lblTime, "Account '" & cAccount.FriendlyName & "' has expired!")
-                    lblQueue.Text = ""
-                    'ToolTip1.SetToolTip(lblQueue, "Purchase your GTCs from EveTimeCode.com and help support EveHQ!")
-                    lblSkill.ForeColor = Color.Red
-                    lblTime.LinkColor = Color.Red
-                    lblQueue.LinkColor = Color.Red
-                    lblSkill.Name = ""
-                    lblTime.Name = ""
-                    lblQueue.Name = ""
-                Else
-                    ' Prepare block for a blank account
-                    pbPilot.SizeMode = PictureBoxSizeMode.StretchImage
+                _usingAccount = cAccount.UserID
+
+                ' Prepare block for a blank account
+                pbPilot.SizeMode = PictureBoxSizeMode.StretchImage
                     pbPilot.Image = My.Resources.Warning64
                     lblSkill.Text = "Account: " & cAccount.FriendlyName
                     lblTime.Text = "NOT CURRENTLY TRAINING!"
@@ -91,8 +76,7 @@ Namespace Controls
                     lblQueue.LinkColor = Color.Red
                     lblSkill.Name = ""
                     lblTime.Name = ""
-                    lblQueue.Name = ""
-                End If
+                lblQueue.Name = ""
             Else
                 ' Prepare block for a training character
                 _displayPilotName = objectName
@@ -216,7 +200,8 @@ Namespace Controls
 
         Private Sub OverlayAccountTime()
             If pbPilot.InitialImage IsNot Nothing Then
-                If Core.HQ.Settings.NotifyAccountTime = True Then
+                Dim isAlpha As Boolean = Core.HQ.Settings.Pilots.ContainsKey(_displayPilotName) And Core.HQ.Settings.Accounts(_displayPilot.Account).APIAccountStatus = Core.APIAccountStatuses.Alpha
+                If Core.HQ.Settings.NotifyAccountTime = True Or isAlpha Then
                     If Core.HQ.Settings.Pilots.ContainsKey(_displayPilotName) Then
                         If Core.HQ.Settings.Accounts.ContainsKey(_displayPilot.Account) Then
                             Dim accountTime As Date = Core.HQ.Settings.Accounts(_displayPilot.Account).PaidUntil
@@ -227,16 +212,20 @@ Namespace Controls
                                 If timeRemaining > 2400 Then
                                     timeRemaining = Int(timeRemaining / 24) * 24
                                 End If
+                                Dim overlayBrush As SolidBrush
                                 Select Case timeRemaining
                                     Case Is <= 0
-                                        overlayText = "Expired"
+                                        overlayText = "Alpha"
+                                        overlayBrush = New SolidBrush(Color.FromArgb(192, 255, 128, 0))
                                     Case Is >= 1
                                         overlayText = Core.SkillFunctions.TimeToString(Int(timeRemaining) * 3600, False)
+                                        overlayBrush = New SolidBrush(Color.FromArgb(192, 255, 0, 0))
                                     Case Else
                                         overlayText = " < 1h"
+                                        overlayBrush = New SolidBrush(Color.FromArgb(192, 255, 0, 0))
                                 End Select
                                 Dim overlayFont As Font = New Font(Font.FontFamily, 7)
-                                Dim overlayBrush As New SolidBrush(Color.FromArgb(192, 255, 0, 0))
+                                'Dim overlayBrush As New SolidBrush(Color.FromArgb(192, 255, 0, 0))
                                 ' Define a new image
                                 Dim olImage As Bitmap = New Bitmap(pbPilot.InitialImage, pbPilot.Width, pbPilot.Height)
                                 Dim myGraphics As Graphics = Graphics.FromImage(olImage)

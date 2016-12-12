@@ -82,28 +82,6 @@ Namespace My
             'MessageBox.Show("You can only run one copy of EveHQ at a time!", "EveHQ Already Running", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             ' Can we get /params?
             For Each param As String In e.CommandLine
-                ' Check for the fitting protocol
-                If param.StartsWith(Core.HQ.FittingProtocol, StringComparison.Ordinal) Then
-                    ' Now see if HQF is available
-                    Const PluginName As String = "EveHQ Fitter"
-                    Dim myPlugIn As Core.EveHQPlugIn = Core.HQ.Plugins(PluginName)
-                    myPlugIn.PostStartupData = param
-                    If myPlugIn.Status = Core.EveHQPlugInStatus.Active Then
-                        Dim mainTab As DevComponents.DotNetBar.TabStrip = CType(Core.HQ.MainForm.Controls("tabEveHQMDI"), DevComponents.DotNetBar.TabStrip)
-                        Dim tp As DevComponents.DotNetBar.TabItem = Core.HQ.GetMdiTab(PluginName)
-                        If tp IsNot Nothing Then
-                            mainTab.SelectedTab = tp
-                        Else
-                            Dim plugInForm As Form = myPlugIn.Instance.RunEveHQPlugIn
-                            plugInForm.MdiParent = Core.HQ.MainForm
-                            plugInForm.Show()
-                        End If
-                        myPlugIn.Instance.GetPlugInData(myPlugIn.PostStartupData, 0)
-                    Else
-                        ' Try to load an open the plug-in here
-                        Threading.ThreadPool.QueueUserWorkItem(AddressOf FrmEveHQ.LoadAndOpenPlugIn, myPlugIn)
-                    End If
-                End If
             Next
             If frmEveHQ.WindowState = FormWindowState.Minimized Then
                 frmEveHQ.WindowState = FormWindowState.Maximized

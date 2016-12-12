@@ -104,7 +104,6 @@
     <Compile Include="Classes\Capacitor.vb" />
     <Compile Include="Classes\Charges.vb" />
     <Compile Include="Classes\DNAFitting.vb" />
-    <Compile Include="Classes\IGBData.vb" />
     <Compile Include="Classes\ShipModes.vb" />
     <Compile Include="Forms\frmShipSelection.Designer.vb">
       <DependentUpon>frmShipSelection.vb</DependentUpon>
@@ -184,12 +183,6 @@
       <DependentUpon>frmAddDamageProfile.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmAddDamageProfile.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\frmBCBrowser.Designer.vb">
-      <DependentUpon>frmBCBrowser.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\frmBCBrowser.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\frmEFTImport.Designer.vb">
@@ -378,9 +371,6 @@
     <EmbeddedResource Include="Forms\frmAddDamageProfile.resx">
       <DependentUpon>frmAddDamageProfile.vb</DependentUpon>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmBCBrowser.resx">
-      <DependentUpon>frmBCBrowser.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmEFTImport.resx">
       <DependentUpon>frmEFTImport.vb</DependentUpon>

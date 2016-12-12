@@ -103,7 +103,6 @@ Namespace Forms
                 _currentShip = ShipLists.ShipList(ShipLists.ShipListKeyID(value.ShipID)).Clone
                 pbShip.ImageLocation = Core.ImageHandler.GetImageLocation(CInt(_currentShip.ID))
                 lblShipType.Text = _currentShip.Name
-                Call UseDNAFitting()
                 lblLoadoutName.Text = _loadoutName
             End Set
         End Property
@@ -325,75 +324,6 @@ Namespace Forms
 
         Private Sub lblLoadoutTopic_MouseLeave(ByVal sender As Object, ByVal e As EventArgs) Handles lblLoadoutTopic.MouseLeave
             lblTopicAddress.Text = ""
-        End Sub
-
-#End Region
-
-#Region "DNA Fitting Routines"
-        Private Sub UseDNAFitting()
-            Dim baseFit As String
-            Dim revisedFit As String
-            _currentFit.Clear()
-            ' Get SourceURL if available
-            If _cDNAFit.Arguments.ContainsKey("sourceURL") = True Then
-                _sourceURL = _cDNAFit.Arguments("sourceURL")
-                ' Try to get fitting name
-                If _sourceURL.Contains("eve.battleclinic.com") = True Then
-                    _loadoutName = _sourceURL.TrimStart("http://eve.battleclinic.com/loadout/".ToCharArray).TrimEnd(".html".ToCharArray)
-                    _loadoutID = _loadoutName.Substring(0, _loadoutName.IndexOf("-".ToCharArray))
-                    _loadoutName = _loadoutName.TrimStart((_loadoutID & "-").ToCharArray)
-                    _loadoutName = _loadoutName.Replace(" - ", "######")
-                    _loadoutName = _loadoutName.Replace("-", " ")
-                    _loadoutName = _loadoutName.Replace("######", " - ")
-                Else
-                    _loadoutName = "Unknown Fitting"
-                End If
-                lblLoadoutTopic.Visible = True
-                LblLoadoutTopicLbl.Visible = True
-            Else
-                If _cDNAFit.Arguments.ContainsKey("LoadoutName") = True Then
-                    _loadoutName = _cDNAFit.Arguments("LoadoutName")
-                Else
-                    _loadoutName = "Unknown Fitting"
-                End If
-                lblLoadoutTopic.Visible = False
-                LblLoadoutTopicLbl.Visible = False
-            End If
-           ' Parse modules
-            For Each fittedMod As Integer In _cDNAFit.Modules
-                Dim fModule As ShipModule = ModuleLists.ModuleList(fittedMod)
-                If fModule IsNot Nothing Then
-                    baseFit = fModule.Name : revisedFit = baseFit
-                    If fModule.Charges.Count <> 0 Then
-                        For Each ammo As Integer In _cDNAFit.Charges
-                            If ModuleLists.ModuleList.ContainsKey(ammo) = True Then
-                                If fModule.Charges.Contains(ModuleLists.ModuleList(ammo).DatabaseGroup) Then
-                                    revisedFit = baseFit & "," & ModuleLists.ModuleList(ammo).Name
-                                End If
-                            End If
-                        Next
-                        _currentFit.Add(revisedFit)
-                    Else
-                        _currentFit.Add(fModule.Name)
-                    End If
-                End If
-            Next
-            Call ReorderModules()
-            lblLoadoutName.Visible = True
-            lblLoadoutTopic.Text = "Source Link"
-            btnImport.Enabled = True
-            Dim shipName As String = lblShipType.Text
-            Dim fittingName As String = lblLoadoutName.Text
-            _currentFitting = Fittings.ConvertOldFitToNewFit(shipName & ", " & fittingName, _currentFit)
-            _currentFitting.PilotName = cboPilots.SelectedItem.ToString
-            _currentFitting.UpdateBaseShipFromFitting()
-            _currentShip = _currentFitting.BaseShip
-            ' Generate fitting data
-            Call GenerateFittingData()
-            gpStatistics.Visible = True
-            Call UpdateSlotColumns()
-            Call UpdateSlotLayout()
-           
         End Sub
 
 #End Region

@@ -52,7 +52,7 @@ namespace EveHQ.NewEveApi.Entities
     public sealed class CharacterData
     {
         /// <summary>Gets the character id.</summary>
-        public int CharacterId { get; set; }
+        public long CharacterId { get; set; }
 
         /// <summary>Gets the name.</summary>
         public string Name { get; set; }

@@ -151,16 +151,6 @@ Namespace Forms
             chkAutoUpdateHQFSkills.Checked = PluginSettings.HQFSettings.AutoUpdateHQFSkills
             chkShowPerformance.Checked = PluginSettings.HQFSettings.ShowPerformanceData
             chkUseLastPilot.Checked = PluginSettings.HQFSettings.UseLastPilot
-            ' Check for protocol
-            If IsProtocolInstalled(HQ.FittingProtocol) = False Then
-                lblFittingProtocolStatus.Text = "Disabled"
-                btnEnableProtocol.Enabled = True
-                btnDisableProtocol.Enabled = False
-            Else
-                lblFittingProtocolStatus.Text = "Enabled"
-                btnEnableProtocol.Enabled = False
-                btnDisableProtocol.Enabled = True
-            End If
         End Sub
         Private Sub cboStartupPilot_SelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs) Handles cboStartupPilot.SelectedIndexChanged
             PluginSettings.HQFSettings.DefaultPilot = CStr(cboStartupPilot.SelectedItem)
@@ -434,80 +424,6 @@ Namespace Forms
             PluginSettings.HQFSettings.IncludeAmmoReloadTime = chkAmmoLoadTime.Checked
             _forceUpdate = True
         End Sub
-#End Region
-
-#Region "Protocol Check Routines"
-
-        Private Function IsProtocolInstalled(ByVal protocol As String) As Boolean
-            Dim rk As RegistryKey = Registry.ClassesRoot.OpenSubKey(protocol)
-            If rk IsNot Nothing Then
-                Return True
-            Else
-                Return False
-            End If
-        End Function
-
-        Private Sub btnEnableProtocol_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnEnableProtocol.Click
-            ' Ask if we want to install the protocol
-            Dim msg As String = "Would you like to associate the '" & HQ.FittingProtocol & "://' protocol with EveHQ?"
-            Dim reply As Integer = MessageBox.Show(msg, "Install Protocol", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-            If reply = DialogResult.Yes Then
-                Call InstallProtocol(HQ.FittingProtocol)
-            End If
-        End Sub
-
-        Private Sub btnDisableProtocol_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnDisableProtocol.Click
-            ' Ask if we want to install the protocol
-            Dim msg As String = "Would you like to remove the '" & HQ.FittingProtocol & "://' protocol from use with EveHQ?"
-            Dim reply As Integer = MessageBox.Show(msg, "Remove Protocol", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-            If reply = DialogResult.Yes Then
-                Call RemoveProtocol(HQ.FittingProtocol)
-            End If
-        End Sub
-
-        Private Sub InstallProtocol(ByVal protocol As String)
-            Dim rKey As RegistryKey = Registry.ClassesRoot.OpenSubKey(protocol, True)
-            Try
-                If rKey Is Nothing Then
-                    rKey = Registry.ClassesRoot.CreateSubKey(protocol)
-                    rKey.SetValue("", "URL: Eve Fitting Protocol")
-                    rKey.SetValue("URL Protocol", "")
-                    rKey = rKey.CreateSubKey("shell\open\command")
-                    Dim keyValue As String = ControlChars.Quote & Application.ExecutablePath & ControlChars.Quote & " " & ControlChars.Quote & "%1" & ControlChars.Quote
-                    rKey.SetValue("", keyValue)
-                Else
-                    rKey.Close()
-                End If
-                lblFittingProtocolStatus.Text = "Enabled"
-                btnEnableProtocol.Enabled = False
-                btnDisableProtocol.Enabled = True
-            Catch ex As UnauthorizedAccessException
-                MessageBox.Show("You do not have the required permissions to access the registry. To install the protocol, EveHQ will need to be run in administrator mode.", "Elevated Permissions Required", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                lblFittingProtocolStatus.Text = "Disabled"
-                btnEnableProtocol.Enabled = True
-                btnDisableProtocol.Enabled = False
-            End Try
-        End Sub
-
-        Private Sub RemoveProtocol(ByVal protocol As String)
-            Dim rKey As RegistryKey = Registry.ClassesRoot.OpenSubKey(protocol, True)
-            Try
-                If rKey IsNot Nothing Then
-                    Registry.ClassesRoot.DeleteSubKeyTree(protocol)
-                Else
-                    rKey.Close()
-                End If
-                lblFittingProtocolStatus.Text = "Disabled"
-                btnEnableProtocol.Enabled = True
-                btnDisableProtocol.Enabled = False
-            Catch ex As UnauthorizedAccessException
-                MessageBox.Show("You do not have the required permissions to access the registry. To install the protocol, EveHQ will need to be run in administrator mode.", "Elevated Permissions Required", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                lblFittingProtocolStatus.Text = "Enabled"
-                btnEnableProtocol.Enabled = False
-                btnDisableProtocol.Enabled = True
-            End Try
-        End Sub
-
 #End Region
 
 #Region "Damage Profile Options"

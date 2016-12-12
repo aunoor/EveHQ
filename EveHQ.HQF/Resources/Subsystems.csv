@@ -13,12 +13,22 @@
 29966,1,30532,265,1,29986,0,1,0,7.5,15,Armor HP
 #29966,1,30532,1159,2,329,0,1,0,7.5,15,Armor Plate HP
 # Legion Defensive - Warfare Processor,,,,,,,,,,,
-29967,1,30532,833,4,1634;1635;1637,0,1,0,2,15,"Armored, Skirmish & Information Warfare Link Bonus"
-29967,1,30532,1310,4,1635,0,1,0,2,15,Information Warfare Link Bonus
-29967,1,30532,1320,4,1635,0,1,0,2,15,Information Warfare Link Bonus
-29967,1,30532,1321,4,1635,0,1,0,2,15,Information Warfare Link Bonus
-29967,1,30532,1322,4,1635,0,1,0,2,15,Information Warfare Link Bonus
-29967,1,30532,1323,4,1635,0,1,0,2,15,Information Warfare Link Bonus
+29967,0,0,54,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,50,15,Command Burst AoE Range Bonus
+29967,1,30532,2535,1,42527;43554,0,1,0,2,15,Information Command Burst Duration
+29967,1,30532,2535,1,42526;43552,0,1,0,2,15,Armored Command Burst Duration
+29967,1,30532,2535,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Duration
+29967,1,30532,2469,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
+29967,1,30532,2471,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
+29967,1,30532,2473,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
+29967,1,30532,2537,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
+29967,1,30532,2469,1,42526;43552,0,1,0,2,15,Armored Command Burst Stength
+29967,1,30532,2471,1,42526;43552,0,1,0,2,15,Armored Command Burst Stength
+29967,1,30532,2473,1,42526;43552,0,1,0,2,15,Armored Command Burst Stength
+29967,1,30532,2537,1,42526;43552,0,1,0,2,15,Armored Command Burst Stength
+29967,1,30532,2469,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Stength
+29967,1,30532,2471,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Stength
+29967,1,30532,2473,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Stength
+29967,1,30532,2537,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Stength
 # Loki Defensive - Adaptive Shielding,,,,,,,,,,,
 29974,1,30545,271,1,29990,0,1,2,-4,15,Shield EM Resistance
 29974,1,30545,272,1,29990,0,1,2,-4,15,Shield Explosive Resistance
@@ -33,7 +43,22 @@
 # Loki Defensive - Amplification Node,,,,,,,,,,,
 29976,1,30545,552,1,29990,0,1,0,-5,15,Signature Radius
 # Loki Defensive - Warfare Processor,,,,,,,,,,,
-29977,1,30545,833,4,1634;1636;1637,0,1,0,2,15,"Armored, Siege & Skirmish Warfare Link Bonus"
+29977,0,0,54,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,50,15,Command Burst AoE Range Bonus
+29977,1,30545,2535,1,42529;43555,0,1,0,2,15,Shield Command Burst Duration
+29977,1,30545,2535,1,42526;43552,0,1,0,2,15,Armored Command Burst Duration
+29977,1,30545,2535,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Duration
+29977,1,30545,2469,1,42529;43555,0,1,0,2,15,Shield Command Burst Stength
+29977,1,30545,2471,1,42529;43555,0,1,0,2,15,Shield Command Burst Stength
+29977,1,30545,2473,1,42529;43555,0,1,0,2,15,Shield Command Burst Stength
+29977,1,30545,2537,1,42529;43555,0,1,0,2,15,Shield Command Burst Stength
+29977,1,30545,2469,1,42526;43552,0,1,0,2,15,Armored Command Burst Stength
+29977,1,30545,2471,1,42526;43552,0,1,0,2,15,Armored Command Burst Stength
+29977,1,30545,2473,1,42526;43552,0,1,0,2,15,Armored Command Burst Stength
+29977,1,30545,2537,1,42526;43552,0,1,0,2,15,Armored Command Burst Stength
+29977,1,30545,2469,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Stength
+29977,1,30545,2471,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Stength
+29977,1,30545,2473,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Stength
+29977,1,30545,2537,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Stength
 # Proteus Defensive - Adaptive Augmenter,,,,,,,,,,,
 29979,1,30540,267,1,29988,0,1,2,-4,15,Armor EM Resistance
 29979,1,30540,268,1,29988,0,1,2,-4,15,Armor Explosive Resistance
@@ -46,12 +71,22 @@
 29981,1,30540,265,1,29988,0,1,0,7.5,15,Armor HP
 #29981,1,30540,1159,2,329,0,1,0,7.5,15,Armor Plate HP
 # Proteus Defensive - Warfare Processor,,,,,,,,,,,
-29982,1,30540,833,4,1634;1635;1637,0,1,0,2,15,"Armored, Skirmish & Information Warfare Link Bonus"
-29982,1,30540,1310,4,1635,0,1,0,2,15,Information Warfare Link Bonus
-29982,1,30540,1320,4,1635,0,1,0,2,15,Information Warfare Link Bonus
-29982,1,30540,1321,4,1635,0,1,0,2,15,Information Warfare Link Bonus
-29982,1,30540,1322,4,1635,0,1,0,2,15,Information Warfare Link Bonus
-29982,1,30540,1323,4,1635,0,1,0,2,15,Information Warfare Link Bonus
+29982,0,0,54,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,50,15,Command Burst AoE Range Bonus
+29982,1,30540,2535,1,42527;43554,0,1,0,2,15,Information Command Burst Duration
+29982,1,30540,2535,1,42526;43552,0,1,0,2,15,Armored Command Burst Duration
+29982,1,30540,2535,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Duration
+29982,1,30540,2469,1,42526;43552,0,1,0,2,15,Armored Command Burst Stength
+29982,1,30540,2471,1,42526;43552,0,1,0,2,15,Armored Command Burst Stength
+29982,1,30540,2473,1,42526;43552,0,1,0,2,15,Armored Command Burst Stength
+29982,1,30540,2537,1,42526;43552,0,1,0,2,15,Armored Command Burst Stength
+29982,1,30540,2469,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Stength
+29982,1,30540,2471,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Stength
+29982,1,30540,2473,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Stength
+29982,1,30540,2537,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Stength
+29982,1,30540,2469,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
+29982,1,30540,2471,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
+29982,1,30540,2473,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
+29982,1,30540,2537,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
 # Tengu Defensive - Adaptive Shielding,,,,,,,,,,,
 29969,1,30544,271,1,29984,0,1,2,-4,15,Shield EM Resistance
 29969,1,30544,272,1,29984,0,1,2,-4,15,Shield Explosive Resistance
@@ -65,12 +100,22 @@
 #29971,1,30544,72,2,38,0,1,0,10,5,Shield Extender HP
 29971,1,30544,479,1,29984,0,1,0,-3,15,Shield Recharge Rate,,,,,,,,,,,,,,,,,,
 # Tengu Defensive - Warfare Processor,,,,,,,,,,,
-29972,1,30544,833,4,1635;1636;1637,0,1,0,2,15,"Siege, Skirmish & Information Warfare Link Bonus"
-29972,1,30544,1310,4,1635,0,1,0,2,15,Information Warfare Link Bonus
-29972,1,30544,1320,4,1635,0,1,0,2,15,Information Warfare Link Bonus
-29972,1,30544,1321,4,1635,0,1,0,2,15,Information Warfare Link Bonus
-29972,1,30544,1322,4,1635,0,1,0,2,15,Information Warfare Link Bonus
-29972,1,30544,1323,4,1635,0,1,0,2,15,Information Warfare Link Bonus
+29972,0,0,54,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,50,15,Command Burst AoE Range Bonus
+29972,1,30544,2535,1,42529;43555,0,1,0,2,15,Shield Command Burst Duration
+29972,1,30544,2535,1,42527;43554,0,1,0,2,15,Information Command Burst Duration
+29972,1,30544,2535,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Duration
+29972,1,30544,2469,1,42529;43555,0,1,0,2,15,Shield Command Burst Stength
+29972,1,30544,2471,1,42529;43555,0,1,0,2,15,Shield Command Burst Stength
+29972,1,30544,2473,1,42529;43555,0,1,0,2,15,Shield Command Burst Stength
+29972,1,30544,2537,1,42529;43555,0,1,0,2,15,Shield Command Burst Stength
+29972,1,30544,2469,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Stength
+29972,1,30544,2471,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Stength
+29972,1,30544,2473,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Stength
+29972,1,30544,2537,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Stength
+29972,1,30544,2469,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
+29972,1,30544,2471,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
+29972,1,30544,2473,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
+29972,1,30544,2537,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
 # Electronics Subsystems,,,,,,,,,,,
 # Legion Electronics - Energy Parasitic Complex,,,,,,,,,,,
 30036,1,30536,90,2,68,0,1,0,10,15,Nos Drain Amount

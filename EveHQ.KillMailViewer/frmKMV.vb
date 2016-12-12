@@ -486,31 +486,6 @@ Public Class FrmKmv
         Return killmailText.ToString
     End Function
 
-    Private Sub btnUploadToBC_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnUploadToBC.Click
-        ' Only do selected KM for now for testing purposes
-        Const Uri As String = "http://eve.battleclinic.com/killboard/index.php"
-
-        If adtKillmails.SelectedNodes.Count > 0 Then
-            ' Get the killID of the selected Killmail
-            Dim killID As Long = CLng(adtKillmails.SelectedNodes(0).Tag)
-            Dim selKillmail As New NewEveApi.Entities.Killmail.KillMail
-            If _kms.TryGetValue(killID, selKillmail) Then
-                ' Check for valid attackers (i.e. not all NPC ones)
-                Dim validKillmail As Boolean =
-                        selKillmail.Attackers.Cast(Of NewEveApi.Entities.Killmail.Attacker)().Any(
-                            Function(attacker) attacker.CharacterName <> "")
-                If validKillmail = False Then
-                    MessageBox.Show(
-                        "There does not appear to be any valid Attackers on this killmail other than NPCs. The killmail will therefore not be uploaded.",
-                        "Non-NPC Attackers Required.", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                Else
-                    ' Write the killmail detail
-                    Call UploadKillmail(Uri, BuildKillmailDetails(selKillmail))
-                End If
-            End If
-        End If
-    End Sub
-
     Private Sub UploadKillmail(ByVal remoteURL As String, ByVal killmailText As String)
 
         ' Build the POST data

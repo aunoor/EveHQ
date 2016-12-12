@@ -27,12 +27,16 @@ Partial Class FrmCacheCreator
         Me.txtServerName = New System.Windows.Forms.TextBox()
         Me.btnGenerateCache = New System.Windows.Forms.Button()
         Me.btnCheckDB = New System.Windows.Forms.Button()
-        Me.lblDB = New System.Windows.Forms.Label()
         Me.btnCheckMarketGroup = New System.Windows.Forms.Button()
-        Me.lblInfo = New System.Windows.Forms.Label()
         Me.gbCheckingTools = New System.Windows.Forms.GroupBox()
         Me.gbEveHQCacheGeneration = New System.Windows.Forms.GroupBox()
+        Me.TextBoxYamlFiles = New System.Windows.Forms.TextBox()
+        Me.ButtonYamlFind = New System.Windows.Forms.Button()
+        Me.TextBoxEveDbLocation = New System.Windows.Forms.TextBox()
+        Me.ButtonEveDbFind = New System.Windows.Forms.Button()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.OpenFileDialogDb = New System.Windows.Forms.OpenFileDialog()
+        Me.FolderBrowserDialogYaml = New System.Windows.Forms.FolderBrowserDialog()
         Me.gbCheckingTools.SuspendLayout()
         Me.gbEveHQCacheGeneration.SuspendLayout()
         Me.SuspendLayout()
@@ -47,7 +51,7 @@ Partial Class FrmCacheCreator
         '
         'btnGenerateCache
         '
-        Me.btnGenerateCache.Location = New System.Drawing.Point(9, 118)
+        Me.btnGenerateCache.Location = New System.Drawing.Point(9, 184)
         Me.btnGenerateCache.Name = "btnGenerateCache"
         Me.btnGenerateCache.Size = New System.Drawing.Size(299, 23)
         Me.btnGenerateCache.TabIndex = 5
@@ -56,21 +60,12 @@ Partial Class FrmCacheCreator
         '
         'btnCheckDB
         '
-        Me.btnCheckDB.Location = New System.Drawing.Point(9, 89)
+        Me.btnCheckDB.Location = New System.Drawing.Point(9, 155)
         Me.btnCheckDB.Name = "btnCheckDB"
         Me.btnCheckDB.Size = New System.Drawing.Size(299, 23)
         Me.btnCheckDB.TabIndex = 6
         Me.btnCheckDB.Text = "Check SQL Database"
         Me.btnCheckDB.UseVisualStyleBackColor = True
-        '
-        'lblDB
-        '
-        Me.lblDB.AutoSize = True
-        Me.lblDB.Location = New System.Drawing.Point(6, 70)
-        Me.lblDB.Name = "lblDB"
-        Me.lblDB.Size = New System.Drawing.Size(56, 13)
-        Me.lblDB.TabIndex = 7
-        Me.lblDB.Text = "Database:"
         '
         'btnCheckMarketGroup
         '
@@ -81,19 +76,10 @@ Partial Class FrmCacheCreator
         Me.btnCheckMarketGroup.Text = "Check Market Groups"
         Me.btnCheckMarketGroup.UseVisualStyleBackColor = True
         '
-        'lblInfo
-        '
-        Me.lblInfo.Location = New System.Drawing.Point(6, 25)
-        Me.lblInfo.Name = "lblInfo"
-        Me.lblInfo.Size = New System.Drawing.Size(302, 35)
-        Me.lblInfo.TabIndex = 10
-        Me.lblInfo.Text = "Before starting this, ensure the typeID and iconID YAML files are in the resource" & _
-    "s folder so the database can be updated."
-        '
         'gbCheckingTools
         '
         Me.gbCheckingTools.Controls.Add(Me.btnCheckMarketGroup)
-        Me.gbCheckingTools.Location = New System.Drawing.Point(9, 147)
+        Me.gbCheckingTools.Location = New System.Drawing.Point(9, 221)
         Me.gbCheckingTools.Name = "gbCheckingTools"
         Me.gbCheckingTools.Size = New System.Drawing.Size(299, 58)
         Me.gbCheckingTools.TabIndex = 11
@@ -102,23 +88,73 @@ Partial Class FrmCacheCreator
         '
         'gbEveHQCacheGeneration
         '
-        Me.gbEveHQCacheGeneration.Controls.Add(Me.lblInfo)
+        Me.gbEveHQCacheGeneration.Controls.Add(Me.TextBoxYamlFiles)
+        Me.gbEveHQCacheGeneration.Controls.Add(Me.ButtonYamlFind)
+        Me.gbEveHQCacheGeneration.Controls.Add(Me.TextBoxEveDbLocation)
+        Me.gbEveHQCacheGeneration.Controls.Add(Me.ButtonEveDbFind)
         Me.gbEveHQCacheGeneration.Controls.Add(Me.gbCheckingTools)
         Me.gbEveHQCacheGeneration.Controls.Add(Me.btnGenerateCache)
         Me.gbEveHQCacheGeneration.Controls.Add(Me.btnCheckDB)
-        Me.gbEveHQCacheGeneration.Controls.Add(Me.lblDB)
         Me.gbEveHQCacheGeneration.Location = New System.Drawing.Point(12, 12)
         Me.gbEveHQCacheGeneration.Name = "gbEveHQCacheGeneration"
-        Me.gbEveHQCacheGeneration.Size = New System.Drawing.Size(318, 213)
+        Me.gbEveHQCacheGeneration.Size = New System.Drawing.Size(318, 291)
         Me.gbEveHQCacheGeneration.TabIndex = 12
         Me.gbEveHQCacheGeneration.TabStop = False
         Me.gbEveHQCacheGeneration.Text = "EveHQ Cache Generation"
+        '
+        'TextBoxYamlFiles
+        '
+        Me.TextBoxYamlFiles.AcceptsReturn = True
+        Me.TextBoxYamlFiles.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBoxYamlFiles.Location = New System.Drawing.Point(9, 39)
+        Me.TextBoxYamlFiles.Multiline = True
+        Me.TextBoxYamlFiles.Name = "TextBoxYamlFiles"
+        Me.TextBoxYamlFiles.ReadOnly = True
+        Me.TextBoxYamlFiles.Size = New System.Drawing.Size(137, 62)
+        Me.TextBoxYamlFiles.TabIndex = 15
+        '
+        'ButtonYamlFind
+        '
+        Me.ButtonYamlFind.Location = New System.Drawing.Point(172, 39)
+        Me.ButtonYamlFind.Name = "ButtonYamlFind"
+        Me.ButtonYamlFind.Size = New System.Drawing.Size(129, 23)
+        Me.ButtonYamlFind.TabIndex = 14
+        Me.ButtonYamlFind.Text = "Find yaml files"
+        Me.ButtonYamlFind.UseVisualStyleBackColor = True
+        '
+        'TextBoxEveDbLocation
+        '
+        Me.TextBoxEveDbLocation.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBoxEveDbLocation.Location = New System.Drawing.Point(9, 107)
+        Me.TextBoxEveDbLocation.Name = "TextBoxEveDbLocation"
+        Me.TextBoxEveDbLocation.ReadOnly = True
+        Me.TextBoxEveDbLocation.Size = New System.Drawing.Size(137, 13)
+        Me.TextBoxEveDbLocation.TabIndex = 13
+        Me.TextBoxEveDbLocation.Text = "eve.db file not found"
+        '
+        'ButtonEveDbFind
+        '
+        Me.ButtonEveDbFind.Location = New System.Drawing.Point(172, 107)
+        Me.ButtonEveDbFind.Name = "ButtonEveDbFind"
+        Me.ButtonEveDbFind.Size = New System.Drawing.Size(129, 23)
+        Me.ButtonEveDbFind.TabIndex = 12
+        Me.ButtonEveDbFind.Text = "Find eve.db"
+        Me.ButtonEveDbFind.UseVisualStyleBackColor = True
+        '
+        'OpenFileDialogDb
+        '
+        Me.OpenFileDialogDb.FileName = "OpenFileDialogDb"
+        '
+        'FolderBrowserDialogYaml
+        '
+        Me.FolderBrowserDialogYaml.RootFolder = System.Environment.SpecialFolder.MyComputer
+        Me.FolderBrowserDialogYaml.ShowNewFolderButton = False
         '
         'FrmCacheCreator
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(342, 232)
+        Me.ClientSize = New System.Drawing.Size(342, 311)
         Me.Controls.Add(Me.gbEveHQCacheGeneration)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmCacheCreator"
@@ -133,11 +169,14 @@ Partial Class FrmCacheCreator
     Friend WithEvents txtServerName As System.Windows.Forms.TextBox
     Friend WithEvents btnGenerateCache As System.Windows.Forms.Button
     Friend WithEvents btnCheckDB As System.Windows.Forms.Button
-    Friend WithEvents lblDB As System.Windows.Forms.Label
     Friend WithEvents btnCheckMarketGroup As System.Windows.Forms.Button
-    Friend WithEvents lblInfo As System.Windows.Forms.Label
     Friend WithEvents gbCheckingTools As System.Windows.Forms.GroupBox
     Friend WithEvents gbEveHQCacheGeneration As System.Windows.Forms.GroupBox
     Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
-
+    Friend WithEvents ButtonEveDbFind As Button
+    Friend WithEvents OpenFileDialogDb As OpenFileDialog
+    Friend WithEvents TextBoxEveDbLocation As TextBox
+    Friend WithEvents ButtonYamlFind As Button
+    Friend WithEvents TextBoxYamlFiles As TextBox
+    Friend WithEvents FolderBrowserDialogYaml As FolderBrowserDialog
 End Class

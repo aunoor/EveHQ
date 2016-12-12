@@ -29,15 +29,15 @@ Namespace Forms
             Dim TreeNode6 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Eve Folders")
             Dim TreeNode7 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Eve API & Server")
             Dim TreeNode8 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("G15 Display")
-            Dim TreeNode9 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("IGB")
-            Dim TreeNode10 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Notifications")
-            Dim TreeNode11 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Pilots")
-            Dim TreeNode12 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Plug Ins")
-            Dim TreeNode13 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Proxy Server")
-            Dim TreeNode14 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Taskbar Icon")
-            Dim TreeNode15 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Training Queue")
-            Dim TreeNode16 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Item Overrides")
-            Dim TreeNode17 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Market & Price Data", New System.Windows.Forms.TreeNode() {TreeNode16})
+            Dim TreeNode9 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Notifications")
+            Dim TreeNode10 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Pilots")
+            Dim TreeNode11 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Plug Ins")
+            Dim TreeNode12 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Proxy Server")
+            Dim TreeNode13 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Taskbar Icon")
+            Dim TreeNode14 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Training Queue")
+            Dim TreeNode15 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Item Overrides")
+            Dim TreeNode16 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Market & Price Data", New System.Windows.Forms.TreeNode() {TreeNode15})
+            Dim SuperTooltipInfo1 As DevComponents.DotNetBar.SuperTooltipInfo = New DevComponents.DotNetBar.SuperTooltipInfo()
             Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmSettings))
             Me.gbGeneral = New System.Windows.Forms.GroupBox()
             Me.chkViewSkillTraining = New System.Windows.Forms.CheckBox()
@@ -109,14 +109,7 @@ Namespace Forms
             Me.colPilot = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
             Me.colID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
             Me.colAccount = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-            Me.gbIGB = New System.Windows.Forms.GroupBox()
             Me.Label4 = New System.Windows.Forms.Label()
-            Me.clb_IGBAllowedDisplay = New System.Windows.Forms.CheckedListBox()
-            Me.rb_IGBCfgAccessMode = New System.Windows.Forms.RadioButton()
-            Me.rb_IGBFullAccessMode = New System.Windows.Forms.RadioButton()
-            Me.chkStartIGBonLoad = New System.Windows.Forms.CheckBox()
-            Me.nudIGBPort = New System.Windows.Forms.NumericUpDown()
-            Me.lblIGBPort = New System.Windows.Forms.Label()
             Me.gbEveFolders = New System.Windows.Forms.GroupBox()
             Me.gbLocation4 = New System.Windows.Forms.GroupBox()
             Me.lblFriendlyName4 = New System.Windows.Forms.Label()
@@ -151,6 +144,8 @@ Namespace Forms
             Me.btnEveDir1 = New System.Windows.Forms.Button()
             Me.btnClear1 = New System.Windows.Forms.Button()
             Me.gbTrainingQueue = New System.Windows.Forms.GroupBox()
+            Me.lblEveQueueDisplayLength = New System.Windows.Forms.Label()
+            Me.nudEveQueueDisplayLength = New System.Windows.Forms.NumericUpDown()
             Me.chkStartWithPrimaryQueue = New System.Windows.Forms.CheckBox()
             Me.btnMoveDown = New System.Windows.Forms.Button()
             Me.btnMoveUp = New System.Windows.Forms.Button()
@@ -330,8 +325,6 @@ Namespace Forms
             Me.Label1 = New System.Windows.Forms.Label()
             Me.gpNav = New DevComponents.DotNetBar.Controls.GroupPanel()
             Me.STT = New DevComponents.DotNetBar.SuperTooltip()
-            Me.nudEveQueueDisplayLength = New System.Windows.Forms.NumericUpDown()
-            Me.lblEveQueueDisplayLength = New System.Windows.Forms.Label()
             Me.gbGeneral.SuspendLayout()
             CType(Me.nudAutomaticSaveTime, System.ComponentModel.ISupportInitialize).BeginInit()
             Me.gbPilotScreenColours.SuspendLayout()
@@ -346,14 +339,13 @@ Namespace Forms
             Me.gbEveAccounts.SuspendLayout()
             CType(Me.adtAccounts, System.ComponentModel.ISupportInitialize).BeginInit()
             Me.gbPilots.SuspendLayout()
-            Me.gbIGB.SuspendLayout()
-            CType(Me.nudIGBPort, System.ComponentModel.ISupportInitialize).BeginInit()
             Me.gbEveFolders.SuspendLayout()
             Me.gbLocation4.SuspendLayout()
             Me.gbLocation3.SuspendLayout()
             Me.gbLocation2.SuspendLayout()
             Me.gbLocation1.SuspendLayout()
             Me.gbTrainingQueue.SuspendLayout()
+            CType(Me.nudEveQueueDisplayLength, System.ComponentModel.ISupportInitialize).BeginInit()
             CType(Me.pbPartiallyTrainedColour, System.ComponentModel.ISupportInitialize).BeginInit()
             CType(Me.pbReadySkillColour, System.ComponentModel.ISupportInitialize).BeginInit()
             CType(Me.pbDowntimeClashColour, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -384,7 +376,6 @@ Namespace Forms
             Me.Panel2.SuspendLayout()
             Me.GroupBox1.SuspendLayout()
             Me.gpNav.SuspendLayout()
-            CType(Me.nudEveQueueDisplayLength, System.ComponentModel.ISupportInitialize).BeginInit()
             Me.SuspendLayout()
             '
             'gbGeneral
@@ -899,8 +890,8 @@ Namespace Forms
             Me.adtAccounts.AccessibleRole = System.Windows.Forms.AccessibleRole.Outline
             Me.adtAccounts.AllowDrop = True
             Me.adtAccounts.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                Or System.Windows.Forms.AnchorStyles.Left) _
-                Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
             Me.adtAccounts.BackColor = System.Drawing.SystemColors.Window
             '
             '
@@ -1082,7 +1073,7 @@ Namespace Forms
             '
             Me.lvwPilots.AllowColumnReorder = True
             Me.lvwPilots.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
             '
             '
             '
@@ -1116,23 +1107,6 @@ Namespace Forms
             Me.colAccount.Text = "Linked to Account"
             Me.colAccount.Width = 130
             '
-            'gbIGB
-            '
-            Me.gbIGB.Controls.Add(Me.Label4)
-            Me.gbIGB.Controls.Add(Me.clb_IGBAllowedDisplay)
-            Me.gbIGB.Controls.Add(Me.rb_IGBCfgAccessMode)
-            Me.gbIGB.Controls.Add(Me.rb_IGBFullAccessMode)
-            Me.gbIGB.Controls.Add(Me.chkStartIGBonLoad)
-            Me.gbIGB.Controls.Add(Me.nudIGBPort)
-            Me.gbIGB.Controls.Add(Me.lblIGBPort)
-            Me.gbIGB.Location = New System.Drawing.Point(735, 77)
-            Me.gbIGB.Name = "gbIGB"
-            Me.gbIGB.Size = New System.Drawing.Size(124, 32)
-            Me.gbIGB.TabIndex = 19
-            Me.gbIGB.TabStop = False
-            Me.gbIGB.Text = "IGB Settings"
-            Me.gbIGB.Visible = False
-            '
             'Label4
             '
             Me.Label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -1140,71 +1114,9 @@ Namespace Forms
             Me.Label4.Name = "Label4"
             Me.Label4.Size = New System.Drawing.Size(395, 41)
             Me.Label4.TabIndex = 7
-            Me.Label4.Text = "The settings below are used while in Public Mode. If an item is checked, the data" & _
-        " will be available on the In-Game Browser. If it is not checked, then the item w" & _
-        "ill not be displayed."
-            '
-            'clb_IGBAllowedDisplay
-            '
-            Me.clb_IGBAllowedDisplay.CheckOnClick = True
-            Me.clb_IGBAllowedDisplay.FormattingEnabled = True
-            Me.clb_IGBAllowedDisplay.Location = New System.Drawing.Point(26, 129)
-            Me.clb_IGBAllowedDisplay.Name = "clb_IGBAllowedDisplay"
-            Me.clb_IGBAllowedDisplay.Size = New System.Drawing.Size(395, 340)
-            Me.clb_IGBAllowedDisplay.TabIndex = 5
-            '
-            'rb_IGBCfgAccessMode
-            '
-            Me.rb_IGBCfgAccessMode.AutoSize = True
-            Me.rb_IGBCfgAccessMode.Location = New System.Drawing.Point(185, 65)
-            Me.rb_IGBCfgAccessMode.Name = "rb_IGBCfgAccessMode"
-            Me.rb_IGBCfgAccessMode.Size = New System.Drawing.Size(234, 17)
-            Me.rb_IGBCfgAccessMode.TabIndex = 4
-            Me.rb_IGBCfgAccessMode.Text = "Run IGB in Public Configurable Access Mode"
-            Me.ToolTip1.SetToolTip(Me.rb_IGBCfgAccessMode, "Configurable Access Mode: Only The checked IGB items will be Available!")
-            Me.rb_IGBCfgAccessMode.UseVisualStyleBackColor = True
-            '
-            'rb_IGBFullAccessMode
-            '
-            Me.rb_IGBFullAccessMode.AutoSize = True
-            Me.rb_IGBFullAccessMode.Checked = True
-            Me.rb_IGBFullAccessMode.Location = New System.Drawing.Point(26, 65)
-            Me.rb_IGBFullAccessMode.Name = "rb_IGBFullAccessMode"
-            Me.rb_IGBFullAccessMode.Size = New System.Drawing.Size(161, 17)
-            Me.rb_IGBFullAccessMode.TabIndex = 3
-            Me.rb_IGBFullAccessMode.TabStop = True
-            Me.rb_IGBFullAccessMode.Text = "Run IGB In Full Access Mode"
-            Me.ToolTip1.SetToolTip(Me.rb_IGBFullAccessMode, "Full Access Mode - All Features Available in the IGB.")
-            Me.rb_IGBFullAccessMode.UseVisualStyleBackColor = True
-            '
-            'chkStartIGBonLoad
-            '
-            Me.chkStartIGBonLoad.AutoSize = True
-            Me.chkStartIGBonLoad.Location = New System.Drawing.Point(229, 28)
-            Me.chkStartIGBonLoad.Name = "chkStartIGBonLoad"
-            Me.chkStartIGBonLoad.Size = New System.Drawing.Size(155, 17)
-            Me.chkStartIGBonLoad.TabIndex = 2
-            Me.chkStartIGBonLoad.Text = "Run IGB on EveHQ Startup"
-            Me.chkStartIGBonLoad.UseVisualStyleBackColor = True
-            '
-            'nudIGBPort
-            '
-            Me.nudIGBPort.Location = New System.Drawing.Point(98, 27)
-            Me.nudIGBPort.Maximum = New Decimal(New Integer() {65535, 0, 0, 0})
-            Me.nudIGBPort.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
-            Me.nudIGBPort.Name = "nudIGBPort"
-            Me.nudIGBPort.Size = New System.Drawing.Size(120, 21)
-            Me.nudIGBPort.TabIndex = 1
-            Me.nudIGBPort.Value = New Decimal(New Integer() {26001, 0, 0, 0})
-            '
-            'lblIGBPort
-            '
-            Me.lblIGBPort.AutoSize = True
-            Me.lblIGBPort.Location = New System.Drawing.Point(26, 29)
-            Me.lblIGBPort.Name = "lblIGBPort"
-            Me.lblIGBPort.Size = New System.Drawing.Size(51, 13)
-            Me.lblIGBPort.TabIndex = 0
-            Me.lblIGBPort.Text = "IGB Port:"
+            Me.Label4.Text = "The settings below are used while in Public Mode. If an item is checked, the data" &
+    " will be available on the In-Game Browser. If it is not checked, then the item w" &
+    "ill not be displayed."
             '
             'gbEveFolders
             '
@@ -1223,7 +1135,7 @@ Namespace Forms
             'gbLocation4
             '
             Me.gbLocation4.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
             Me.gbLocation4.Controls.Add(Me.lblFriendlyName4)
             Me.gbLocation4.Controls.Add(Me.txtFriendlyName4)
             Me.gbLocation4.Controls.Add(Me.lblCacheSize4)
@@ -1279,7 +1191,7 @@ Namespace Forms
             'lblEveDir4
             '
             Me.lblEveDir4.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
             Me.lblEveDir4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
             Me.lblEveDir4.Location = New System.Drawing.Point(6, 16)
             Me.lblEveDir4.Name = "lblEveDir4"
@@ -1311,7 +1223,7 @@ Namespace Forms
             'gbLocation3
             '
             Me.gbLocation3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
             Me.gbLocation3.Controls.Add(Me.lblFriendlyName3)
             Me.gbLocation3.Controls.Add(Me.txtFriendlyName3)
             Me.gbLocation3.Controls.Add(Me.lblCacheSize3)
@@ -1367,7 +1279,7 @@ Namespace Forms
             'lblEveDir3
             '
             Me.lblEveDir3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
             Me.lblEveDir3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
             Me.lblEveDir3.Location = New System.Drawing.Point(6, 16)
             Me.lblEveDir3.Name = "lblEveDir3"
@@ -1399,7 +1311,7 @@ Namespace Forms
             'gbLocation2
             '
             Me.gbLocation2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
             Me.gbLocation2.Controls.Add(Me.lblFriendlyName2)
             Me.gbLocation2.Controls.Add(Me.txtFriendlyName2)
             Me.gbLocation2.Controls.Add(Me.lblCacheSize2)
@@ -1455,7 +1367,7 @@ Namespace Forms
             'lblEveDir2
             '
             Me.lblEveDir2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
             Me.lblEveDir2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
             Me.lblEveDir2.Location = New System.Drawing.Point(6, 16)
             Me.lblEveDir2.Name = "lblEveDir2"
@@ -1487,7 +1399,7 @@ Namespace Forms
             'gbLocation1
             '
             Me.gbLocation1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
             Me.gbLocation1.Controls.Add(Me.lblFriendlyName1)
             Me.gbLocation1.Controls.Add(Me.txtFriendlyName1)
             Me.gbLocation1.Controls.Add(Me.lblCacheSize1)
@@ -1543,7 +1455,7 @@ Namespace Forms
             'lblEveDir1
             '
             Me.lblEveDir1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
             Me.lblEveDir1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
             Me.lblEveDir1.Location = New System.Drawing.Point(6, 16)
             Me.lblEveDir1.Name = "lblEveDir1"
@@ -1602,6 +1514,26 @@ Namespace Forms
             Me.gbTrainingQueue.TabStop = False
             Me.gbTrainingQueue.Text = "Training Queue"
             Me.gbTrainingQueue.Visible = False
+            '
+            'lblEveQueueDisplayLength
+            '
+            Me.lblEveQueueDisplayLength.AutoSize = True
+            Me.lblEveQueueDisplayLength.Location = New System.Drawing.Point(284, 335)
+            Me.lblEveQueueDisplayLength.Name = "lblEveQueueDisplayLength"
+            Me.lblEveQueueDisplayLength.Size = New System.Drawing.Size(168, 13)
+            Me.lblEveQueueDisplayLength.TabIndex = 39
+            Me.lblEveQueueDisplayLength.Text = "Eve Queue Display Length (Days)"
+            '
+            'nudEveQueueDisplayLength
+            '
+            Me.nudEveQueueDisplayLength.Location = New System.Drawing.Point(464, 333)
+            Me.nudEveQueueDisplayLength.Maximum = New Decimal(New Integer() {14, 0, 0, 0})
+            Me.nudEveQueueDisplayLength.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+            Me.nudEveQueueDisplayLength.Name = "nudEveQueueDisplayLength"
+            Me.nudEveQueueDisplayLength.Size = New System.Drawing.Size(68, 21)
+            Me.nudEveQueueDisplayLength.TabIndex = 38
+            Me.nudEveQueueDisplayLength.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+            Me.nudEveQueueDisplayLength.Value = New Decimal(New Integer() {1, 0, 0, 0})
             '
             'chkStartWithPrimaryQueue
             '
@@ -2605,25 +2537,23 @@ Namespace Forms
             TreeNode7.Text = "Eve API & Server"
             TreeNode8.Name = "nodeG15"
             TreeNode8.Text = "G15 Display"
-            TreeNode9.Name = "nodeIGB"
-            TreeNode9.Text = "IGB"
-            TreeNode10.Name = "nodeNotifications"
-            TreeNode10.Text = "Notifications"
-            TreeNode11.Name = "nodePilots"
-            TreeNode11.Text = "Pilots"
-            TreeNode12.Name = "nodePlugins"
-            TreeNode12.Text = "Plug Ins"
-            TreeNode13.Name = "nodeProxyServer"
-            TreeNode13.Text = "Proxy Server"
-            TreeNode14.Name = "nodeTaskBarIcon"
-            TreeNode14.Text = "Taskbar Icon"
-            TreeNode15.Name = "nodeTrainingQueue"
-            TreeNode15.Text = "Training Queue"
-            TreeNode16.Name = "nodeItemOverrides"
-            TreeNode16.Text = "Item Overrides"
-            TreeNode17.Name = "nodeMarket"
-            TreeNode17.Text = "Market & Price Data"
-            Me.tvwSettings.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode1, TreeNode2, TreeNode3, TreeNode4, TreeNode5, TreeNode6, TreeNode7, TreeNode8, TreeNode9, TreeNode10, TreeNode11, TreeNode12, TreeNode13, TreeNode14, TreeNode15, TreeNode17})
+            TreeNode9.Name = "nodeNotifications"
+            TreeNode9.Text = "Notifications"
+            TreeNode10.Name = "nodePilots"
+            TreeNode10.Text = "Pilots"
+            TreeNode11.Name = "nodePlugins"
+            TreeNode11.Text = "Plug Ins"
+            TreeNode12.Name = "nodeProxyServer"
+            TreeNode12.Text = "Proxy Server"
+            TreeNode13.Name = "nodeTaskBarIcon"
+            TreeNode13.Text = "Taskbar Icon"
+            TreeNode14.Name = "nodeTrainingQueue"
+            TreeNode14.Text = "Training Queue"
+            TreeNode15.Name = "nodeItemOverrides"
+            TreeNode15.Text = "Item Overrides"
+            TreeNode16.Name = "nodeMarket"
+            TreeNode16.Text = "Market & Price Data"
+            Me.tvwSettings.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode1, TreeNode2, TreeNode3, TreeNode4, TreeNode5, TreeNode6, TreeNode7, TreeNode8, TreeNode9, TreeNode10, TreeNode11, TreeNode12, TreeNode13, TreeNode14, TreeNode16})
             Me.tvwSettings.Size = New System.Drawing.Size(180, 463)
             Me.tvwSettings.TabIndex = 27
             '
@@ -2879,8 +2809,8 @@ Namespace Forms
             'lvWidgets
             '
             Me.lvWidgets.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                Or System.Windows.Forms.AnchorStyles.Left) _
-                Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
             '
             '
             '
@@ -2941,7 +2871,6 @@ Namespace Forms
             Me.panelSettings.Controls.Add(Me.gbNotifications)
             Me.panelSettings.Controls.Add(Me.gbDashboard)
             Me.panelSettings.Controls.Add(Me.gbEveFolders)
-            Me.panelSettings.Controls.Add(Me.gbIGB)
             Me.panelSettings.Controls.Add(Me.gbProxyServer)
             Me.panelSettings.Controls.Add(Me.gbEmail)
             Me.panelSettings.Controls.Add(Me.gbTaskbarIcon)
@@ -3470,30 +3399,10 @@ Namespace Forms
             'STT
             '
             Me.STT.DefaultFont = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-            Me.STT.DefaultTooltipSettings = New DevComponents.DotNetBar.SuperTooltipInfo("", "", "", Nothing, Nothing, DevComponents.DotNetBar.eTooltipColor.Gray)
+            Me.STT.DefaultTooltipSettings = SuperTooltipInfo1
             Me.STT.LicenseKey = "F962CEC7-CD8F-4911-A9E9-CAB39962FC1F"
             Me.STT.MinimumTooltipSize = New System.Drawing.Size(300, 24)
             Me.STT.PositionBelowControl = False
-            '
-            'nudEveQueueDisplayLength
-            '
-            Me.nudEveQueueDisplayLength.Location = New System.Drawing.Point(464, 333)
-            Me.nudEveQueueDisplayLength.Maximum = New Decimal(New Integer() {14, 0, 0, 0})
-            Me.nudEveQueueDisplayLength.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
-            Me.nudEveQueueDisplayLength.Name = "nudEveQueueDisplayLength"
-            Me.nudEveQueueDisplayLength.Size = New System.Drawing.Size(68, 21)
-            Me.nudEveQueueDisplayLength.TabIndex = 38
-            Me.nudEveQueueDisplayLength.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-            Me.nudEveQueueDisplayLength.Value = New Decimal(New Integer() {1, 0, 0, 0})
-            '
-            'lblEveQueueDisplayLength
-            '
-            Me.lblEveQueueDisplayLength.AutoSize = True
-            Me.lblEveQueueDisplayLength.Location = New System.Drawing.Point(284, 335)
-            Me.lblEveQueueDisplayLength.Name = "lblEveQueueDisplayLength"
-            Me.lblEveQueueDisplayLength.Size = New System.Drawing.Size(168, 13)
-            Me.lblEveQueueDisplayLength.TabIndex = 39
-            Me.lblEveQueueDisplayLength.Text = "Eve Queue Display Length (Days)"
             '
             'FrmSettings
             '
@@ -3528,9 +3437,6 @@ Namespace Forms
             Me.gbEveAccounts.ResumeLayout(False)
             CType(Me.adtAccounts, System.ComponentModel.ISupportInitialize).EndInit()
             Me.gbPilots.ResumeLayout(False)
-            Me.gbIGB.ResumeLayout(False)
-            Me.gbIGB.PerformLayout()
-            CType(Me.nudIGBPort, System.ComponentModel.ISupportInitialize).EndInit()
             Me.gbEveFolders.ResumeLayout(False)
             Me.gbLocation4.ResumeLayout(False)
             Me.gbLocation4.PerformLayout()
@@ -3542,6 +3448,7 @@ Namespace Forms
             Me.gbLocation1.PerformLayout()
             Me.gbTrainingQueue.ResumeLayout(False)
             Me.gbTrainingQueue.PerformLayout()
+            CType(Me.nudEveQueueDisplayLength, System.ComponentModel.ISupportInitialize).EndInit()
             CType(Me.pbPartiallyTrainedColour, System.ComponentModel.ISupportInitialize).EndInit()
             CType(Me.pbReadySkillColour, System.ComponentModel.ISupportInitialize).EndInit()
             CType(Me.pbDowntimeClashColour, System.ComponentModel.ISupportInitialize).EndInit()
@@ -3589,7 +3496,6 @@ Namespace Forms
             Me.GroupBox1.ResumeLayout(False)
             Me.GroupBox1.PerformLayout()
             Me.gpNav.ResumeLayout(False)
-            CType(Me.nudEveQueueDisplayLength, System.ComponentModel.ISupportInitialize).EndInit()
             Me.ResumeLayout(False)
 
         End Sub
@@ -3650,10 +3556,6 @@ Namespace Forms
         Friend WithEvents lvwPlugins As DevComponents.DotNetBar.Controls.ListViewEx
         Friend WithEvents colPlugInName As System.Windows.Forms.ColumnHeader
         Friend WithEvents colStatus As System.Windows.Forms.ColumnHeader
-        Friend WithEvents gbIGB As System.Windows.Forms.GroupBox
-        Friend WithEvents lblIGBPort As System.Windows.Forms.Label
-        Friend WithEvents nudIGBPort As System.Windows.Forms.NumericUpDown
-        Friend WithEvents chkStartIGBonLoad As System.Windows.Forms.CheckBox
         Friend WithEvents lblPlugInInfo As System.Windows.Forms.Label
         Friend WithEvents gbTrainingQueue As System.Windows.Forms.GroupBox
         Friend WithEvents gbNotifications As System.Windows.Forms.GroupBox
@@ -3802,8 +3704,6 @@ Namespace Forms
         Friend WithEvents chkAutoMailAPI As System.Windows.Forms.CheckBox
         Friend WithEvents chkNotifyNotification As System.Windows.Forms.CheckBox
         Friend WithEvents chkNotifyEveMail As System.Windows.Forms.CheckBox
-        Friend WithEvents panelSettings As DevComponents.DotNetBar.PanelEx
-        Friend WithEvents gpNav As DevComponents.DotNetBar.Controls.GroupPanel
         Friend WithEvents btnCreateBlankPilot As System.Windows.Forms.Button
         Friend WithEvents chkUseSSL As System.Windows.Forms.CheckBox
         Friend WithEvents chkProxyUseBasic As System.Windows.Forms.CheckBox
@@ -3811,13 +3711,8 @@ Namespace Forms
         Friend WithEvents chkEnableAutomaticSave As System.Windows.Forms.CheckBox
         Friend WithEvents nudAutomaticSaveTime As System.Windows.Forms.NumericUpDown
         Friend WithEvents lblAutomaticSaveTime As System.Windows.Forms.Label
-        Friend WithEvents rb_IGBCfgAccessMode As System.Windows.Forms.RadioButton
-        Friend WithEvents rb_IGBFullAccessMode As System.Windows.Forms.RadioButton
-        Friend WithEvents clb_IGBAllowedDisplay As System.Windows.Forms.CheckedListBox
         Friend WithEvents Label4 As System.Windows.Forms.Label
         Friend WithEvents chkIgnoreLastMessage As System.Windows.Forms.CheckBox
-        Friend WithEvents trackServerOffset As DevComponents.DotNetBar.Controls.Slider
-        Friend WithEvents sldNotifyOffset As DevComponents.DotNetBar.Controls.Slider
         Friend WithEvents btnCheckAPIKeys As System.Windows.Forms.Button
         Friend WithEvents chkStartWithPrimaryQueue As System.Windows.Forms.CheckBox
         Friend WithEvents nudAccountTimeLimit As System.Windows.Forms.NumericUpDown
@@ -3825,13 +3720,6 @@ Namespace Forms
         Friend WithEvents chkNotifyAccountTime As System.Windows.Forms.CheckBox
         Friend WithEvents chkNotifyInsuffClone As System.Windows.Forms.CheckBox
         Friend WithEvents btnDisableAccount As System.Windows.Forms.Button
-        Friend WithEvents STT As DevComponents.DotNetBar.SuperTooltip
-        Friend WithEvents adtAccounts As DevComponents.AdvTree.AdvTree
-        Friend WithEvents colAccountName As DevComponents.AdvTree.ColumnHeader
-        Friend WithEvents colAccountVersion As DevComponents.AdvTree.ColumnHeader
-        Friend WithEvents colAccountUserID As DevComponents.AdvTree.ColumnHeader
-        Friend WithEvents colAccountAccessType As DevComponents.AdvTree.ColumnHeader
-        Friend WithEvents colAccountStatus As DevComponents.AdvTree.ColumnHeader
         Friend WithEvents NodeConnector1 As DevComponents.AdvTree.NodeConnector
         Friend WithEvents ElementStyle1 As DevComponents.DotNetBar.ElementStyle
         Friend WithEvents gbMarket As System.Windows.Forms.GroupBox
@@ -3861,11 +3749,8 @@ Namespace Forms
         Friend WithEvents Label8 As System.Windows.Forms.Label
         Friend WithEvents _itemOverrideAllOrders As System.Windows.Forms.RadioButton
         Friend WithEvents Label10 As System.Windows.Forms.Label
-        Friend WithEvents _itemOverridesActiveGrid As DevComponents.AdvTree.AdvTree
         Private WithEvents _itemOverridesActiveGridNameColumn As DevComponents.AdvTree.ColumnHeader
         Private WithEvents _itemOverridesActiveGridItemIdColumn As DevComponents.AdvTree.ColumnHeader
-        Friend WithEvents _itemOverridesActiveGridOrderTypeColumn As DevComponents.AdvTree.ColumnHeader
-        Friend WithEvents _itemOverridesActiveGridMetricColumn As DevComponents.AdvTree.ColumnHeader
         Friend WithEvents NodeConnector2 As DevComponents.AdvTree.NodeConnector
         Friend WithEvents ElementStyle2 As DevComponents.DotNetBar.ElementStyle
         Friend WithEvents _itemOverrideRemoveOverride As System.Windows.Forms.Button
@@ -3886,5 +3771,19 @@ Namespace Forms
         Friend WithEvents chkViewPilotInfo As System.Windows.Forms.CheckBox
         Friend WithEvents lblEveQueueDisplayLength As System.Windows.Forms.Label
         Friend WithEvents nudEveQueueDisplayLength As System.Windows.Forms.NumericUpDown
+        Private WithEvents panelSettings As DevComponents.DotNetBar.PanelEx
+        Private WithEvents gpNav As DevComponents.DotNetBar.Controls.GroupPanel
+        Private WithEvents trackServerOffset As DevComponents.DotNetBar.Controls.Slider
+        Private WithEvents sldNotifyOffset As DevComponents.DotNetBar.Controls.Slider
+        Private WithEvents STT As DevComponents.DotNetBar.SuperTooltip
+        Private WithEvents adtAccounts As DevComponents.AdvTree.AdvTree
+        Private WithEvents colAccountName As DevComponents.AdvTree.ColumnHeader
+        Private WithEvents colAccountVersion As DevComponents.AdvTree.ColumnHeader
+        Private WithEvents colAccountUserID As DevComponents.AdvTree.ColumnHeader
+        Private WithEvents colAccountAccessType As DevComponents.AdvTree.ColumnHeader
+        Private WithEvents colAccountStatus As DevComponents.AdvTree.ColumnHeader
+        Private WithEvents _itemOverridesActiveGrid As DevComponents.AdvTree.AdvTree
+        Private WithEvents _itemOverridesActiveGridOrderTypeColumn As DevComponents.AdvTree.ColumnHeader
+        Private WithEvents _itemOverridesActiveGridMetricColumn As DevComponents.AdvTree.ColumnHeader
     End Class
 End NameSpace

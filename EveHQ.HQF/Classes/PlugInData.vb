@@ -62,17 +62,7 @@ Public Class PlugInData
 #Region "Plug-in Interface Properties and Functions"
 
     Public Function GetPlugInData(ByVal data As Object, ByVal dataType As Integer) As Object Implements IEveHQPlugIn.GetPlugInData
-        Select Case dataType
-            Case 0 ' Fitting Protocol
-                ' Check for fitting protocol
-                Dim fb As New FrmFittingBrowser
-                fb.DNAFit = ParseFittingLink(CStr(data))
-                fb.TopMost = True
-                fb.Show()
-                Return Nothing
-            Case Else
-                Return Nothing
-        End Select
+        Return Nothing
     End Function
 
     Public Function EveHQStartUp() As Boolean Implements IEveHQPlugIn.EveHQStartUp
@@ -286,10 +276,6 @@ Public Class PlugInData
         Return eveHQPlugIn
     End Function
 
-    Public Function IGBService(ByVal igbContext As HttpListenerContext) As String Implements IEveHQPlugIn.IGBService
-        Return IGBData.Response(igbContext)
-    End Function
-
     Public Function RunEveHQPlugIn() As Form Implements IEveHQPlugIn.RunEveHQPlugIn
         _activeForm = New FrmHQF()
         Return _activeForm
@@ -301,63 +287,6 @@ Public Class PlugInData
             Return True
         End If
         Return False
-    End Function
-
-#End Region
-
-#Region "Fitting Link Parser"
-    'fitting://evehq/28710:2032*1:2420*4:15681*4:15905*1:17498*2:19191*1:19814*2:24348*3:26416*1:26418*1
-    '?sourceURL=http://eve.battleclinic.com/loadout/21813-Golem-that-actually-has-TP-039-s.html
-
-    Private Function ParseFittingLink(ByVal dna As String) As DNAFitting
-        Dim shipDNA As New DNAFitting
-        dna = dna.TrimStart("fitting://".ToCharArray).Trim("/".ToCharArray)
-        ' Remove the application name
-        Dim appSep As Integer = dna.IndexOf("/", StringComparison.Ordinal)
-        dna = dna.Remove(0, appSep + 1)
-
-        ' Remove any query string to analyse later
-        Dim parts() As String = dna.Split("?".ToCharArray)
-        Dim mods() As String = parts(0).Split(":".ToCharArray)
-
-        shipDNA.ShipID = CInt(mods(0))
-        For modNo As Integer = 1 To mods.Length - 1
-            Dim modData As List(Of String) = mods(modNo).Split("*".ToCharArray).ToList
-            If modData.Count > 0 Then
-                Dim modID As Integer = CInt(modData(0))
-                Dim modCount As Integer = CInt(modData(1))
-                ' ReSharper disable once RedundantAssignment - incorrect warning by R#
-                For m As Integer = 1 To modCount
-                    If ModuleLists.ModuleList.ContainsKey(modID) = True Then
-                        Dim fModule As ShipModule = ModuleLists.ModuleList(modID)
-                        If fModule.IsCharge Then
-                            shipDNA.Charges.Add(fModule.ID)
-                        Else
-                            shipDNA.Modules.Add(fModule.ID)
-                        End If
-                    End If
-                Next
-            Else
-                If ModuleLists.ModuleList.ContainsKey(CInt(modData(0))) = True Then
-                    Dim fModule As ShipModule = CType(ModuleLists.ModuleList(CInt(modData(0))), ShipModule)
-                    If fModule.IsCharge Then
-                        shipDNA.Charges.Add(fModule.ID)
-                    Else
-                        shipDNA.Modules.Add(fModule.ID)
-                    End If
-                End If
-            End If
-        Next
-
-        If parts.Length > 1 Then
-            Dim args() As String = parts(1).Split("&".ToCharArray)
-            For Each arg As String In args
-                Dim argData() As String = arg.Split("=".ToCharArray)
-                shipDNA.Arguments.Add(argData(0), argData(1))
-            Next
-        End If
-
-        Return shipDNA
     End Function
 
 #End Region

@@ -2200,7 +2200,7 @@ Imports System.Runtime.Serialization
         Attributes.Add(10060, 0)
         Attributes.Add(10061, 0)
         Attributes.Add(10062, 0)
-        Attributes.Add(10063, 1)
+        Attributes.Add(AttributeEnum.ShipMaxBursts, 1)
         Attributes.Add(10064, 2)
         Attributes.Add(10065, 0)
         Attributes.Add(10066, 0)

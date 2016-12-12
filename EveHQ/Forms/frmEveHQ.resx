@@ -118,34 +118,34 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <metadata name="ToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>516, 17</value>
+    <value>1376, 56</value>
   </metadata>
   <metadata name="tmrEve.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>608, 17</value>
+    <value>17, 95</value>
   </metadata>
   <metadata name="EveIconMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>824, 17</value>
+    <value>233, 95</value>
   </metadata>
   <metadata name="tmrSkillUpdate.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>949, 17</value>
+    <value>358, 95</value>
   </metadata>
   <metadata name="tmrSave.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>310, 17</value>
+    <value>1170, 56</value>
   </metadata>
   <metadata name="tmrBackup.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>406, 17</value>
+    <value>1266, 56</value>
   </metadata>
   <metadata name="tmrModules.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 56</value>
+    <value>658, 95</value>
   </metadata>
   <metadata name="ctxTabbedMDI.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>135, 56</value>
+    <value>776, 95</value>
   </metadata>
   <metadata name="fbd1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>266, 56</value>
+    <value>907, 95</value>
   </metadata>
   <metadata name="iconEveHQMLW.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>343, 56</value>
+    <value>984, 95</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="iconEveHQMLW.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -191,10 +191,7 @@
 </value>
   </data>
   <metadata name="tmrMemory.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>483, 56</value>
-  </metadata>
-  <metadata name="SuperTooltip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
+    <value>1124, 95</value>
   </metadata>
   <data name="btnIB.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -223,39 +220,36 @@
         Z/d2vw8AMQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btnIB.SuperTooltip" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="SuperTooltipInfo10.FooterImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAAadEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41LjEwMPRy
-        oQAABOdJREFUWEft1XtMk1cYBnCuTgU2BKcTRRhyEbG0QBEUQeRSEFpuBcTKpUDBUOUmchEQGQwQRFQY
-        IEaycpmLU1BQwnS6abapyQzLbo5scWZzmboNBorchD57j8PE/WFWdC5ZwpP80ib9vvc953zn9FObyUxm
-        8r8MALULR/fM/bC1xOKDpkK7T9rq+PU5EaZTP7/4nG1T6EA50dP/yw+Xb3x5+fzFzpbOxnxJ79jIkObU
-        Jf9OJkeHpr79Pbd6L9pOjA7I2UoM9t2dPdD3q0GuxOXEofzosEq5r3+I44LUnRFO+dnhzpEnDqRpTd02
-        /Xx7tVt9d4y79l654DXxGhPrhgyhd8N2ofhwVqDi46aCH08UhV9rSPe5fSTLf/BU1Ra8VxKF87Xb0HO8
-        ED3ddbjSXoTecwf2/lXtGdLdkBv0+61vvr9yrHzobHXi5KfHCvD5OQVuXDmJB7ev4UH/17jXdxP9d27i
-        9vWP8NmZfehuLsCx2kzUZYhQFOuGrv2J/VPlph/JOtP0n7/rAZRKWm1g4uE4Rod/Q1/vRXx14SguHa9E
-        R3k0alJ8kS9xQnLASsi8LRHraYFo92WI9rRCbbH8DyrF9gajweqqHFcbw5j2IxWPmt+53oG24giUx69F
-        /iZH7Ai2RZbYDoUxLo+abxfbI857OaLWWyBinTlkfhxEelihqkA2SKUMiQHRJarvCTsz/ZD6nFBagUko
-        coORF+GITDEP6UG2SA3ioDo7Co3FcrSUpqGrtQanmqoR58tBgJMxgp2NIXQwQmG89wArRbjEjOgR1VbC
-        0UzXL49mxwawR+aKHSEcbBOtIBxabi5Ot1TjaFkWKty56Hx7P9obqxAjsEGCkAsRfxECHBaiSLr2PpUS
-        EE/iQOYT1Y7rOmtdl8xQeyUbQEWCGwojnWj2XKQE8ZAk5KB5VzIOir1QvsoS5R72UOxMwhaRHSTu5oj2
-        soKU9kOJzGOYSoWQQLKavEpUG4CblY61TLBMqZx4iPpUAXbTANJoAHKRLbYG8PAONTwsDcS+tSvRWVuC
-        DsUByPx51JxWgT6T6Jp9yf5sADFkE3EhbC+o9ggEtvMWxXuaTk6Mj6Fmmyc9fy62imyQRANIDrbDhZMK
-        nDlShTqJP0431eDdhgpEeXEg9SECDmQbbPDW9sARKiUnUsJW4GWiTv45Ui9zvXjP1ycfjo+iNVeEbBpA
-        Gm3AFGqeHGSHqhwpqvPiUZosRkroasT58RC3gYtYhjZj6BoTxPtY3aVSmURG+GQuUW0AWwM4mpvXm42N
-        j42gs2QjCjc7IDPMAeliPlJJWrgTUsSrkBTIh8RjOYSOS+G2Yv6ko7n+gM3iuTeXGGpf0putcYhK7SIJ
-        hENeIqon0tW4bOjeXZyr3oLsUB7kQhvECqwfnXU//hKls6Xh/eVGuj8ZzdO+qjNLo11LU72BbqsgpeRN
-        8gbJIeGEvTGn927gWy7Ueb9xV09WmD010x+2NppzZ4mB9he6szW6tDXVm+mSg4T935eRYlJAskkqSSSR
-        RERsierP/4lomRhouc6ZpZFLd7JGlaScsGZ5JIMkkWjCjhs782y384glWUrY0dMhz/S6ZiNm/172ZCNh
-        MxITH/JkI2OygOgT1ow9a23y+B0w7Zk/GVaELd/iKWxGr5CnNXquZk8LK86aMI+bvJBGM5nJfxg1tT8B
-        4xoxZhkm+qEAAAAASUVORK5CYII=
+        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
+        RU5ErkJggg==
 </value>
   </data>
   <metadata name="AppCommandTheme.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1081, 17</value>
-  </metadata>
-  <metadata name="DotNetBarManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>145, 17</value>
+    <value>490, 95</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>92</value>
@@ -326,10 +320,10 @@
 </value>
   </data>
   <metadata name="StyleManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>599, 56</value>
+    <value>1240, 95</value>
   </metadata>
   <metadata name="EveStatusIcon.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>697, 17</value>
+    <value>106, 95</value>
   </metadata>
   <data name="EveStatusIcon.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

@@ -653,11 +653,7 @@ Public Class SkillQueueFunctions
         Dim checkQueue As EveHQSkillQueue = CType(bQueue.Clone, EveHQSkillQueue)
 
         For Each curSkill As EveHQSkillQueueItem In checkQueue.Queue.Values
-            ' Work out if Skill pre-requisites are needed and add them to the queue
-            ' If skill is already injected no pre-reqs are needed
-            If qPilot.PilotSkills.ContainsKey(curSkill.Name) = False Then
-                CheckSkillPreReqs(qPilot, curSkill.Name, bQueue, curSkill.Notes)
-            End If
+            CheckSkillPreReqs(qPilot, curSkill.Name, bQueue, curSkill.Notes)
         Next
     End Sub
 
@@ -920,9 +916,7 @@ Public Class SkillQueueFunctions
         ' Check through all the items in the queue and see if we have any that exist
         Dim maxLevel As Integer = 0
         Dim checkSkill As EveHQSkillQueueItem
-        If skillName = qPilot.TrainingSkillName Then
-            maxLevel = Math.Max(maxLevel, CInt(qPilot.TrainingSkillLevel))
-        End If
+
         For Each checkSkill In nQueue.Queue.Values
             If checkSkill.Name = skillName Then
                 maxLevel = Math.Max(maxLevel, CInt(checkSkill.ToLevel))

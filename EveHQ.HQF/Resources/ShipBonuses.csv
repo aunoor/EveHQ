@@ -26,13 +26,18 @@
 22448,1,33095,270,1,22448,0,1,2,-4,15,Armor Thermal Resistance
 22448,1,23950,10014,4,568;572,0,1,0,10,15,Medium Energy Turret Damage
 22448,1,23950,10011,4,568;572,0,1,0,-5,15,Medium Energy Turret ROF
-22448,1,23950,833,4,1634;1635,0,1,0,3,15,Armored & Information Warfare Link Bonus
-22448,1,23950,1310,4,1635,0,1,0,3,15,Information Warfare Link Bonus
-22448,1,23950,1320,4,1635,0,1,0,3,15,Information Warfare Link Bonus
-22448,1,23950,1321,4,1635,0,1,0,3,15,Information Warfare Link Bonus
-22448,1,23950,1322,4,1635,0,1,0,3,15,Information Warfare Link Bonus
-22448,1,23950,1323,4,1635,0,1,0,3,15,Information Warfare Link Bonus
-22448,0,0,10063,1,22448,0,0,1,2,15,Warfare Link Use
+22448,0,0,10063,1,22448,0,0,1,1,15,Command Burst Modules
+22448,0,0,54,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,100,15,Command Burst AoE Range Bonus
+22448,1,23950,2535,1,42527;43554,0,1,0,3,15,Information Command Burst Duration
+22448,1,23950,2535,1,42526;43552,0,1,0,3,15,Armored Command Burst Duration
+22448,1,23950,2469,1,42527;43554,0,1,0,3,15,Information Command Burst Stength
+22448,1,23950,2471,1,42527;43554,0,1,0,3,15,Information Command Burst Stength
+22448,1,23950,2473,1,42527;43554,0,1,0,3,15,Information Command Burst Stength
+22448,1,23950,2537,1,42527;43554,0,1,0,3,15,Information Command Burst Stength
+22448,1,23950,2469,1,42526;43552,0,1,0,3,15,Armored Command Burst Stength
+22448,1,23950,2471,1,42526;43552,0,1,0,3,15,Armored Command Burst Stength
+22448,1,23950,2473,1,42526;43552,0,1,0,3,15,Armored Command Burst Stength
+22448,1,23950,2537,1,42526;43552,0,1,0,3,15,Armored Command Burst Stength
 # Adrestia,,,,,,,,,,,
 2836,0,0,37,1,2836,0,0,0,25,15,Max Velocity
 2836,0,0,158,4,562;565,0,0,0,50,15,Medium Hybrid Turret Falloff
@@ -54,14 +59,24 @@
 23919,1,24311,270,1,23919,0,1,2,-4,15,Armor Thermal Resistance
 23919,1,24311,10009,1,23919,0,1,1,5,15,Warp Core Strength
 23919,1,24311,2397,1,40699,0,1,0,-5,15,Weapon Disruption Burst Projector Duration
-23919,1,24311,833,4,1634;1635,0,1,0,2,15,Armored & Information Warfare Link Bonus
 23919,0,0,72,2,38,0,0,0,400,15,Shield HP - Extenders
 23919,0,0,1159,2,329,0,0,0,400,15,Armor HP - Plates
 23919,0,0,2112,1,11567,0,0,0,50,15,Sensor Dampener resistance
 23919,0,0,2115,1,11567,0,0,0,50,15,Stasis effect resistance
 23919,0,0,2135,1,11567,0,0,0,50,15,Remote Electronic Assistance impedance
 23919,0,0,73,2,1313,0,0,0,500,15,Entosis link duration
-23919,0,0,10063,1,23919,0,0,1,2,15,Warfare Link Use
+23919,0,0,10063,1,23919,0,0,1,1,15,Command Burst Modules
+23919,0,0,54,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,200,15,Command Burst AoE Range Bonus
+23919,1,24311,2535,1,42527;43554,0,1,0,2,15,Information Command Burst Duration
+23919,1,24311,2535,1,42526;43552,0,1,0,2,15,Armored Command Burst Duration
+23919,1,24311,2469,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
+23919,1,24311,2471,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
+23919,1,24311,2473,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
+23919,1,24311,2537,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
+23919,1,24311,2469,1,42526;43552,0,1,0,2,15,Armored Command Burst Stength
+23919,1,24311,2471,1,42526;43552,0,1,0,2,15,Armored Command Burst Stength
+23919,1,24311,2473,1,42526;43552,0,1,0,2,15,Armored Command Burst Stength
+23919,1,24311,2537,1,42526;43552,0,1,0,2,15,Armored Command Burst Stength
 # Algos,,,,,,,,,,,
 32872,1,33093,160,4,561;564,0,1,0,7.5,15,Small Hybrid Turret Tracking
 32872,1,33093,64,3,18,0,1,0,10,15,Drone Damage
@@ -107,17 +122,27 @@
 # Apostle,,,,,,,,,,,
 37604,1,24311,90,2,67,0,1,0,5,15,Energy Transfer Amount
 37604,1,24311,84,2,325;1698,0,1,0,5,15,Armor Transfer Amount
-37604,1,24311,833,4,1634;1635,0,1,0,1,15,Armored & Information Warfare Link Bonus
 37604,1,24311,267,1,37604,0,1,2,-4,15,Armor EM Resistance
 37604,1,24311,268,1,37604,0,1,2,-4,15,Armor Explosive Resistance
 37604,1,24311,269,1,37604,0,1,2,-4,15,Armor Kinetic Resistance
 37604,1,24311,270,1,37604,0,1,2,-4,15,Armor Thermal Resistance
 37604,1,24311,482,1,37604,0,1,0,5,15,Capacitor Capacity
-37604,0,0,50,2,316,0,0,0,-50,15,Warfare Link CPU Reduction
+37604,0,0,50,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,-50,15,Command Burst CPU Reduction
 37604,0,0,68,4,842,0,0,0,200,15,Shield Maintenance Bot Transfer
 37604,0,0,84,4,842,0,0,0,200,15,Armor Maintenance Bot Transfer
-37604,0,0,10063,1,37604,0,0,1,2,15,Warfare Link Use
 37604,0,0,73,2,1313,0,0,0,500,15,Entosis link duration
+37604,0,0,10063,1,37604,0,0,1,1,15,Command Burst Modules
+37604,0,0,54,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,200,15,Command Burst AoE Range Bonus
+37604,1,24311,2535,1,42527;43554,0,1,0,1,15,Information Command Burst Duration
+37604,1,24311,2535,1,42526;43552,0,1,0,1,15,Armored Command Burst Duration
+37604,1,24311,2469,1,42527;43554,0,1,0,1,15,Information Command Burst Stength
+37604,1,24311,2471,1,42527;43554,0,1,0,1,15,Information Command Burst Stength
+37604,1,24311,2473,1,42527;43554,0,1,0,1,15,Information Command Burst Stength
+37604,1,24311,2537,1,42527;43554,0,1,0,1,15,Information Command Burst Stength
+37604,1,24311,2469,1,42526;43552,0,1,0,1,15,Armored Command Burst Stength
+37604,1,24311,2471,1,42526;43552,0,1,0,1,15,Armored Command Burst Stength
+37604,1,24311,2473,1,42526;43552,0,1,0,1,15,Armored Command Burst Stength
+37604,1,24311,2537,1,42526;43552,0,1,0,1,15,Armored Command Burst Stength
 # Arazu,,,,,,,,,,,
 11969,1,3332,10015,4,562;565,0,1,0,5,15,Medium Hybrid Turret Damage
 11969,1,3332,309,2,208,0,1,0,7.5,15,Remote Sensor Damp Effect Range
@@ -145,9 +170,19 @@
 23757,1,24311,269,1,23757,0,1,2,-4,15,Armor Kinetic Resistance
 23757,1,24311,270,1,23757,0,1,2,-4,15,Armor Thermal Resistance
 23757,1,24311,2209,1,37599;40568,0,1,0,5,15,Cenobite optimal range
-23757,1,24311,833,4,1634;1635,0,1,0,1,15,Armored & Information Warfare Link Bonus
-23757,0,0,10063,1,23757,0,0,1,2,15,Warfare Link Use
-# Ares,,,,,,,,,,,
+23757,0,0,10063,1,23757,0,0,1,1,15,Command Burst Modules
+23757,0,0,54,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,200,15,Command Burst AoE Range Bonus
+23757,1,24311,2535,1,42527;43554,0,1,0,1,15,Information Command Burst Duration
+23757,1,24311,2535,1,42526;43552,0,1,0,1,15,Armored Command Burst Duration
+23757,1,24311,2469,1,42527;43554,0,1,0,1,15,Information Command Burst Stength
+23757,1,24311,2471,1,42527;43554,0,1,0,1,15,Information Command Burst Stength
+23757,1,24311,2473,1,42527;43554,0,1,0,1,15,Information Command Burst Stength
+23757,1,24311,2537,1,42527;43554,0,1,0,1,15,Information Command Burst Stength
+23757,1,24311,2469,1,42526;43552,0,1,0,1,15,Armored Command Burst Stength
+23757,1,24311,2471,1,42526;43552,0,1,0,1,15,Armored Command Burst Stength
+23757,1,24311,2473,1,42526;43552,0,1,0,1,15,Armored Command Burst Stength
+23757,1,24311,2537,1,42526;43552,0,1,0,1,15,Armored Command Burst Stength
+# Ares,,,,,,,,,,
 11202,1,3328,54,4,561;564,0,1,0,10,15,Small Hybrid Turret Optimal Range
 11202,1,3328,160,4,561;564,0,1,0,10,15,Small Hybrid Turret Tracking
 11202,1,12092,554,2,46,0,1,0,-15,15,MWD Signature Radius Penalty
@@ -186,8 +221,18 @@
 22466,1,33097,84,2,62;1199,0,1,0,7.5,15,Armor Repair Amount
 22466,1,23950,10012,4,562;565,0,1,0,-7.5,15,Medium Hybrid Turret ROF
 22466,1,23950,158,4,562;565,0,1,0,10,15,Medium Hybrid Turret Falloff
-22466,1,23950,833,4,1634;1637,0,1,0,3,15,Armored & Skirmish Warfare Link Bonus
-22466,0,0,10063,1,22466,0,0,1,2,15,Warfare Link Use
+22466,0,0,10063,1,22466,0,0,1,1,15,Command Burst Modules
+22466,0,0,54,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,100,15,Command Burst AoE Range Bonus
+22466,1,23950,2535,1,42530;43556,0,1,0,3,15,Skirmish Command Burst Duration
+22466,1,23950,2535,1,42526;43552,0,1,0,3,15,Armored Command Burst Duration
+22466,1,23950,2469,1,42530;43556,0,1,0,3,15,Skirmish Command Burst Stength
+22466,1,23950,2471,1,42530;43556,0,1,0,3,15,Skirmish Command Burst Stength
+22466,1,23950,2473,1,42530;43556,0,1,0,3,15,Skirmish Command Burst Stength
+22466,1,23950,2537,1,42530;43556,0,1,0,3,15,Skirmish Command Burst Stength
+22466,1,23950,2469,1,42526;43552,0,1,0,3,15,Armored Command Burst Stength
+22466,1,23950,2471,1,42526;43552,0,1,0,3,15,Armored Command Burst Stength
+22466,1,23950,2473,1,42526;43552,0,1,0,3,15,Armored Command Burst Stength
+22466,1,23950,2537,1,42526;43552,0,1,0,3,15,Armored Command Burst Stength
 # Astero,,,,,,,,,,,
 33468,1,3331,267,1,33468,0,1,2,-4,15,Armor EM Resistance
 33468,1,3331,268,1,33468,0,1,2,-4,15,Armor Explosive Resistance
@@ -217,7 +262,6 @@
 11567,1,3347,10014,4,773;774,0,1,0,180,15,Capital Energy Turret Damage
 11567,1,3347,6,4,773;774,0,1,0,-10,15,Small Energy Turret Cap Use
 11567,1,3347,55,3,6,0,1,0,-7.5,16,Gang Capacitor Recharge
-11567,1,3347,10063,1,11567,0,1,1,1,15,Warfare Link Bonus
 11567,1,3347,10009,1,11567,0,1,1,10,15,Warp Core Strength
 11567,0,0,72,2,38,0,0,0,500,15,Shield HP - Extenders
 11567,0,0,1159,2,329,0,0,0,500,15,Armor HP - Plates
@@ -226,7 +270,8 @@
 11567,0,0,2115,1,11567,0,0,0,80,15,Stasis effect resistance
 11567,0,0,2135,1,11567,0,0,0,80,15,Remote Electronic Assistance impedance
 11567,0,0,73,2,1313,0,0,0,500,15,Entosis link duration
-11567,0,0,10063,1,11567,0,0,1,2,15,Warfare Link Use
+11567,0,0,10063,1,11567,0,0,1,2,15,Command Burst Modules
+11567,0,0,54,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,200,15,Command Burst AoE Range Bonus
 # Badger,,,,,,,,,,,
 648,1,3342,10004,1,648,0,1,0,5,15,Cargo Capacity
 648,1,3342,70,1,648,0,1,0,-5,15,Agility
@@ -276,10 +321,19 @@
 37480,1,33094,272,1,37480,0,1,2,-4,15,Shield Explosive Resistance
 37480,1,33094,273,1,37480,0,1,2,-4,15,Shield Kinetic Resistance
 37480,1,33094,274,1,37480,0,1,2,-4,15,Shield Thermal Resistance
-37480,1,37615,833,4,1636;1637,0,1,0,2,15,Siege & Skirmish Warfare Link Bonus
 37480,1,37615,73,2,1533,0,1,0,-5,15,Micro Jump Field Generator duration
-37480,0,0,30,2,316,0,0,0,-95,15,Warfare link power need
+37480,0,0,30,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,-95,15,Command Burst power need
 37480,0,0,554,2,46,0,0,0,-50,15,MWD Signature Radius Penalty
+37480,1,37615,2535,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Duration
+37480,1,37615,2535,1,42529;43555,0,1,0,2,15,Shield Command Burst Duration
+37480,1,37615,2469,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Stength
+37480,1,37615,2471,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Stength
+37480,1,37615,2473,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Stength
+37480,1,37615,2537,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Stength
+37480,1,37615,2469,1,42529;43555,0,1,0,2,15,Shield Command Burst Stength
+37480,1,37615,2471,1,42529;43555,0,1,0,2,15,Shield Command Burst Stength
+37480,1,37615,2473,1,42529;43555,0,1,0,2,15,Shield Command Burst Stength
+37480,1,37615,2537,1,42529;43555,0,1,0,2,15,Shield Command Burst Stength
 # Blackbird,,,,,,,,,,,
 632,1,3334,238,2,201,0,1,0,15,15,ECM Jam Strength Grav
 632,1,3334,239,2,201,0,1,0,15,15,ECM Jam Strength Ladar
@@ -307,11 +361,13 @@
 16229,1,33097,84,2,62;1199,0,1,0,7.5,15,Armor Repair Amount
 16229,0,0,54,4,562;565,0,0,0,25,15,Medium Hybrid Turret Optimal Range
 16229,0,0,158,4,562;565,0,0,0,25,15,Medium Hybrid Turret Falloff
+16229,0,0,54,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,50,15,Command Burst AoE Range Bonus
 # Brutix Navy Issue,,,,,,,,,,,
 33151,1,33097,10015,4,562;565,0,1,0,10,15,Medium Hybrid Turret Damage
 33151,1,33097,160,4,562;565,0,1,0,7.5,15,Medium Hybrid Turret Tracking
 33151,0,0,54,4,562;565,0,0,0,25,15,Medium Hybrid Turret Optimal Range
 33151,0,0,158,4,562;565,0,0,0,25,15,Medium Hybrid Turret Falloff
+33151,0,0,54,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,50,15,Command Burst AoE Range Bonus
 # Brutix Serpentis Edition,,,,,,,,,,,
 #33869,1,33097,10015,4,562;565,0,1,0,10,15,Medium Hybrid Turret Damage
 #33869,1,33097,84,2,62;1199,0,1,0,7.5,15,Armor Repair Amount
@@ -345,6 +401,18 @@
 17619,1,3330,116,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1677;1019;1678;88;1158;394;395;396,0,1,0,20,15,Missile Explosive Damage
 17619,1,3330,117,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1677;1019;1678;88;1158;394;395;396,0,1,0,25,15,Missile Kinetic Damage
 17619,1,3330,118,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1677;1019;1678;88;1158;394;395;396,0,1,0,20,15,Missile Thermal Damage
+# Caedes
+42246,1,3331,90,2,68,0,1,0,20,15,Nos Drain Amount
+42246,1,3331,97,2,71,0,1,0,20,15,Neut Drain Amount
+42246,1,3331,158,4,567;570,0,1,0,25,15,Small Energy Turret falloff
+42246,1,3329,54,2,65,0,1,0,20,15,Stasis Web Range
+42246,1,3329,50,2,330,0,1,0,-20,15,Cloaking Device CPU
+42246,1,12093,1371,2,479,0,1,0,10,15,Probe Scan Strength Bonus
+42246,1,12093,2044,2,68,0,1,0,25,15,Nos Drain Falloff
+42246,1,12093,2044,2,71,0,1,0,25,15,Neut Drain Falloff
+42246,0,0,10014,4,567;570,0,0,0,400,15,Small Energy Turret Damage
+42246,0,0,1910,4,1718,0,0,1,10,15,Data & Relic Analyzer Virus Strength
+42246,0,0,560,2,330,0,0,0,-100,15,Sensor Recalibration Time Bonus
 # Cambion,,,,,,,,,,,
 32788,1,3330,271,1,11381,0,1,2,-4,15,Shield EM Resistance
 32788,1,3330,272,1,11381,0,1,2,-4,15,Shield Explosive Resistance
@@ -435,8 +503,18 @@
 23915,1,24312,273,1,23915,0,1,2,-4,15,Shield Kinetic Resistance
 23915,1,24312,274,1,23915,0,1,2,-4,15,Shield Thermal Resistance
 23915,1,24312,2221,1,40345;40569,0,1,0,5,15,Scarab optimal range
-23915,1,24312,833,4,1636;1635,0,1,0,1,15,Siege & Information Warfare Link Bonus
-23915,0,0,10063,1,23915,0,0,1,2,15,Warfare Link Use
+23915,0,0,10063,1,23915,0,0,1,1,15,Command Burst Modules
+23915,0,0,54,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,200,15,Command Burst AoE Range Bonus
+23915,1,24312,2535,1,42527;43554,0,1,0,1,15,Information Command Burst Duration
+23915,1,24312,2535,1,42529;43555,0,1,0,1,15,Shield Command Burst Duration
+23915,1,24312,2469,1,42527;43554,0,1,0,1,15,Information Command Burst Stength
+23915,1,24312,2471,1,42527;43554,0,1,0,1,15,Information Command Burst Stength
+23915,1,24312,2473,1,42527;43554,0,1,0,1,15,Information Command Burst Stength
+23915,1,24312,2537,1,42527;43554,0,1,0,1,15,Information Command Burst Stength
+23915,1,24312,2469,1,42529;43555,0,1,0,1,15,Shield Command Burst Stength
+23915,1,24312,2471,1,42529;43555,0,1,0,1,15,Shield Command Burst Stength
+23915,1,24312,2473,1,42529;43555,0,1,0,1,15,Shield Command Burst Stength
+23915,1,24312,2537,1,42529;43555,0,1,0,1,15,Shield Command Burst Stength
 # Chremoas,,,,,,,,,,,
 33397,1,3328,160,4,574;577,0,1,0,15,15,Small Projectile Turret Tracking
 33397,1,3329,54,4,574;577,0,1,0,10,15,Small Projectile Turret Optimal Range
@@ -457,8 +535,18 @@
 22468,1,33098,68,2,40;1156,0,1,0,7.5,15,Shield Booster Boost
 22468,1,23950,51,2,510;771,0,1,0,-5,15,Heavy & HAM Launcher ROF
 22468,1,23950,653,2,385;655;395;772;654,0,1,0,5,15,Heavy & HAM Explosion Velocity
-22468,1,23950,833,4,1636;1637,0,1,0,3,15,Siege & Skirmish Warfare Link Bonus
-22468,0,0,10063,1,22468,0,0,1,2,15,Warfare Link Use
+22468,0,0,10063,1,22468,0,0,1,1,15,Command Burst Modules
+22468,0,0,54,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,100,15,Command Burst AoE Range Bonus
+22468,1,23950,2535,1,42530;43556,0,1,0,3,15,Skirmish Command Burst Duration
+22468,1,23950,2535,1,42529;43555,0,1,0,3,15,Shield Command Burst Duration
+22468,1,23950,2469,1,42530;43556,0,1,0,3,15,Skirmish Command Burst Stength
+22468,1,23950,2471,1,42530;43556,0,1,0,3,15,Skirmish Command Burst Stength
+22468,1,23950,2473,1,42530;43556,0,1,0,3,15,Skirmish Command Burst Stength
+22468,1,23950,2537,1,42530;43556,0,1,0,3,15,Skirmish Command Burst Stength
+22468,1,23950,2469,1,42529;43555,0,1,0,3,15,Shield Command Burst Stength
+22468,1,23950,2471,1,42529;43555,0,1,0,3,15,Shield Command Burst Stength
+22468,1,23950,2473,1,42529;43555,0,1,0,3,15,Shield Command Burst Stength
+22468,1,23950,2537,1,42529;43555,0,1,0,3,15,Shield Command Burst Stength
 # Coercer,,,,,,,,,,,
 16236,1,33091,160,4,567;570,0,1,0,10,15,Small Energy Turret Tracking
 16236,1,33091,6,4,567;570,0,1,0,-10,15,Small Energy Turret Cap Use
@@ -471,11 +559,11 @@
 583,1,3330,117,2,387;648;384;653;394,0,1,0,10,15,Rocket & Light Missile Kinetic Damage
 583,0,0,6,2,52;65,0,0,0,-80,15,Propulsion Jamming Cap Use
 # Confessor,,,,,,,,,,,
-34317,1,34390,10014,4,567;570,0,1,0,10,15,Small Energy Turret Damage
+34317,1,34390,10014,4,567;570,0,1,0,5,15,Small Energy Turret Damage
 34317,1,34390,6,4,567;570,0,1,0,-10,15,Small Energy Turret Cap Use
 34317,1,34390,1211,7,1211,0,1,0,-5,15,Heat Damage Reduction
-34317,0,0,50,2,481,0,0,0,-95,15,Scan Probe Launcher CPU Need
-34317,2,34390,10014,4,567;570,0,0,0,50,15,Small Energy Turret Damage
+34317,2,0,50,2,481,0,0,0,-95,15,Scan Probe Launcher CPU Need
+34317,2,34390,10014,4,567;570,0,0,0,33,15,Small Energy Turret Damage
 # Corax,,,,,,,,,,,
 32876,0,0,37,2,387;648;384;653;394,0,0,0,50,15,Rocket & Light Missile Velocity
 32876,1,33092,117,2,387;648;384;653;394,0,1,0,5,15,Rocket & Light Missile Kinetic Damage
@@ -490,7 +578,9 @@
 #33881,0,0,54,4,561;564,0,0,0,50,15,Small Hybrid Turret Optimal Range
 # Covetor,,,,,,,,,,,
 17476,1,17940,54,4,1040;1038,0,1,0,5,15,Strip Miner & Ice Harvester Range
-17476,1,17940,73,4,1040;1038,0,1,0,-4,15,Strip Miner & Ice Harvester Duration
+17476,1,17940,73,4,1040;1038,0,1,0,-2,15,Strip Miner & Ice Harvester Duration
+17476,0,0,73,4,1040;1038,0,0,0,-25,15,Strip Miner & Ice Harvester Duration
+17476,0,0,6,4,1040;1038,0,0,0,-25,15,Strip Miner & Ice Cap Use
 # Crane,,,,,,,,,,,
 12729,1,3342,10004,1,12729,0,1,0,5,15,Cargo Capacity
 12729,1,3342,37,1,12729,0,1,0,5,15,Max Velocity
@@ -555,6 +645,7 @@
 16231,1,33098,51,2,510;771,0,1,0,-5,15,Heavy & HAM Launcher ROF
 16231,1,33098,68,2,40;1156,0,1,0,7.5,15,Shield Booster Boost
 16231,0,0,37,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1677;1019;1678;88;1158;394;395;396,0,0,0,25,15,Missile Velocity
+16231,0,0,54,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,50,15,Command Burst AoE Range Bonus
 # Cyclone Thukker Tribe Edition,,,,,,,,,,,
 #33871,1,33098,51,2,510;771,0,1,0,-5,15,Heavy & HAM Launcher ROF
 #33871,1,33098,68,2,40;1156,0,1,0,7.5,15,Shield Booster Boost
@@ -573,13 +664,18 @@
 22474,1,23950,116,2,385;655;772;654;395,0,1,0,10,15,Heavy & HAM Explosive Damage
 22474,1,23950,117,2,385;655;772;654;395,0,1,0,10,15,Heavy & HAM Kinetic Damage
 22474,1,23950,118,2,385;655;772;654;395,0,1,0,10,15,Heavy & HAM Thermal Damage
-22474,1,23950,833,4,1634;1635,0,1,0,3,15,Armored & Information Warfare Link Bonus
-22474,1,23950,1310,4,1635,0,1,0,3,15,Information Warfare Link Bonus
-22474,1,23950,1320,4,1635,0,1,0,3,15,Information Warfare Link Bonus
-22474,1,23950,1321,4,1635,0,1,0,3,15,Information Warfare Link Bonus
-22474,1,23950,1322,4,1635,0,1,0,3,15,Information Warfare Link Bonus
-22474,1,23950,1323,4,1635,0,1,0,3,15,Information Warfare Link Bonus
-22474,0,0,10063,1,22474,0,0,1,2,15,Warfare Link Use
+22474,0,0,10063,1,22474,0,0,1,1,15,Command Burst Modules
+22474,0,0,54,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,100,15,Command Burst AoE Range Bonus
+22474,1,23950,2535,1,42527;43554,0,1,0,3,15,Information Command Burst Duration
+22474,1,23950,2535,1,42526;43552,0,1,0,3,15,Armored Command Burst Duration
+22474,1,23950,2469,1,42527;43554,0,1,0,3,15,Information Command Burst Stength
+22474,1,23950,2471,1,42527;43554,0,1,0,3,15,Information Command Burst Stength
+22474,1,23950,2473,1,42527;43554,0,1,0,3,15,Information Command Burst Stength
+22474,1,23950,2537,1,42527;43554,0,1,0,3,15,Information Command Burst Stength
+22474,1,23950,2469,1,42526;43552,0,1,0,3,15,Armored Command Burst Stength
+22474,1,23950,2471,1,42526;43552,0,1,0,3,15,Armored Command Burst Stength
+22474,1,23950,2473,1,42526;43552,0,1,0,3,15,Armored Command Burst Stength
+22474,1,23950,2537,1,42526;43552,0,1,0,3,15,Armored Command Burst Stength
 # Daredevil,,,,,,,,,,,
 17928,0,0,10015,4,561;564,0,0,0,200,15,Small Hybrid Turret Damage
 17928,1,3328,158,4,561;564,0,1,0,10,15,Small Hybrid Turret Falloff
@@ -637,6 +733,7 @@
 24698,1,33096,273,1,24698,0,1,2,-4,15,Shield Kinetic Resistance
 24698,1,33096,274,1,24698,0,1,2,-4,15,Shield Thermal Resistance
 24698,0,0,37,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1677;1019;1678;88;1158;394;395;396,0,0,0,25,15,Missile Velocity
+24698,0,0,54,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,50,15,Command Burst AoE Range Bonus
 # Drake Navy Issue,,,,,,,,,,,
 33153,1,33096,271,1,33153,0,1,2,-4,15,Shield EM Resistance
 33153,1,33096,272,1,33153,0,1,2,-4,15,Shield Explosive Resistance
@@ -644,6 +741,7 @@
 33153,1,33096,274,1,33153,0,1,2,-4,15,Shield Thermal Resistance
 33153,1,33096,654,2,385;655;772;654;395,0,1,0,-5,15,Heavy & HAM Explosion Radius
 33153,0,0,37,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1677;1019;1678;88;1158;394;395;396,0,0,0,25,15,Missile Velocity
+33153,0,0,54,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,50,15,Command Burst AoE Range Bonus
 # Dramiel,,,,,,,,,,,
 17932,0,0,10016,4,574;577,0,0,0,100,15,Small Projectile Turret Damage
 17932,1,3329,158,4,574;577,0,1,0,10,15,Small Projectile Turret Falloff
@@ -688,8 +786,18 @@
 22442,1,23950,160,4,839,0,1,0,7.5,15,Heavy Drone Tracking
 22442,1,23950,37,4,839,0,1,0,7.5,15,Heavy Drone MWD Speed
 22442,1,23950,160,4,562;565,0,1,0,7.5,15,Medium Hybrid Turret Tracking
-22442,1,23950,833,4,1634;1637,0,1,0,3,15,Armored & Skirmish Warfare Link Bonus
-22442,0,0,10063,1,22442,0,0,1,2,15,Warfare Link Use
+22442,0,0,10063,1,22442,0,0,1,1,15,Command Burst Modules
+22442,0,0,54,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,100,15,Command Burst AoE Range Bonus
+22442,1,23950,2535,1,42530;43556,0,1,0,3,15,Skirmish Command Burst Duration
+22442,1,23950,2535,1,42526;43552,0,1,0,3,15,Armored Command Burst Duration
+22442,1,23950,2469,1,42530;43556,0,1,0,3,15,Skirmish Command Burst Stength
+22442,1,23950,2471,1,42530;43556,0,1,0,3,15,Skirmish Command Burst Stength
+22442,1,23950,2473,1,42530;43556,0,1,0,3,15,Skirmish Command Burst Stength
+22442,1,23950,2537,1,42530;43556,0,1,0,3,15,Skirmish Command Burst Stength
+22442,1,23950,2469,1,42526;43552,0,1,0,3,15,Armored Command Burst Stength
+22442,1,23950,2471,1,42526;43552,0,1,0,3,15,Armored Command Burst Stength
+22442,1,23950,2473,1,42526;43552,0,1,0,3,15,Armored Command Burst Stength
+22442,1,23950,2537,1,42526;43552,0,1,0,3,15,Armored Command Burst Stength
 # Epithal,,,,,,,,,,,
 655,1,3340,1653,1,655,0,1,0,10,15,PI Commodities Capacity
 655,1,3340,37,1,655,0,1,0,5,15,Max Velocity
@@ -697,7 +805,6 @@
 671,1,3344,10015,4,771;772,0,1,0,180,15,Capital Hybrid Turret Damage
 671,1,3344,10012,4,771;772,0,1,0,-5,15,Capital Hybrid Turret ROF
 671,1,3344,265,3,6,0,1,0,7.5,16,Gang Armor Amount
-671,1,3344,10063,1,671,0,1,1,1,15,Warfare Link Bonus
 671,1,3344,10009,1,671,0,1,1,10,15,Warp Core Strength
 671,0,0,72,2,38,0,0,0,500,15,Shield HP - Extenders
 671,0,0,1159,2,329,0,0,0,500,15,Armor HP - Plates
@@ -706,7 +813,8 @@
 671,0,0,2115,1,671,0,0,0,80,15,Stasis effect resistance
 671,0,0,2135,1,671,0,0,0,80,15,Remote Electronic Assistance impedance
 671,0,0,73,2,1313,0,0,0,500,15,Entosis link duration
-671,0,0,10063,1,671,0,0,1,2,15,Warfare Link Use
+671,0,0,10063,1,671,0,0,1,2,15,Command Burst Modules
+671,0,0,54,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,200,15,Command Burst AoE Range Bonus
 # Eris,,,,,,,,,,,
 22460,1,33093,160,4,561;564,0,1,0,10,15,Small Hybrid Turret Tracking
 22460,1,33093,54,4,561;564,0,1,0,10,15,Small Hybrid Turret Optimal Range
@@ -763,6 +871,7 @@
 16227,1,33096,10015,4,562;565,0,1,0,5,15,Medium Hybrid Turret Damage
 16227,0,0,54,4,562;565,0,0,0,25,15,Medium Hybrid Turret Optimal Range
 16227,0,0,158,4,562;565,0,0,0,25,15,Medium Hybrid Turret Falloff
+16227,0,0,54,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,50,15,Command Burst AoE Range Bonus
 # Ferox Guristas Edition,,,,,,,,,,,
 #33873,1,33096,54,4,562;565,0,1,0,10,15,Medium Hybrid Turret Optimal Range
 #33873,1,33096,271,1,33873,0,1,2,-4,15,Shield EM Resistance
@@ -812,6 +921,7 @@
 3756,0,0,9,3,18,0,0,0,50,15,Drone Hull HP
 3756,0,0,64,3,18,0,0,0,50,15,Drone Damage
 3756,0,0,1371,2,479,0,0,0,37.5,15,Probe Scan Strength Bonus
+3756,0,0,54,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,50,15,Command Burst AoE Range Bonus
 # Gold Magnate,,,,,,,,,,,
 11940,1,3331,6,4,567;570,0,1,0,-5,15,Small Energy Turret Cap Use
 11940,1,3331,10014,4,567;570,0,1,0,5,15,Small Energy Turret Damage
@@ -898,11 +1008,13 @@
 24696,1,33095,10014,4,568;572,0,1,0,10,15,Medium Energy Turret Damage
 24696,0,0,54,4,568;572,0,0,0,25,15,Medium Energy Turret Optimal Range
 24696,0,0,158,4,568;572,0,0,0,25,15,Medium Energy Turret Falloff
+24696,0,0,54,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,50,15,Command Burst AoE Range Bonus
 # Harbinger Navy Issue,,,,,,,,,,,
 33155,1,33095,10014,4,568;572,0,1,0,10,15,Medium Energy Turret Damage
 33155,1,33095,160,4,568;572,0,1,0,7.5,15,Medium Energy Turret Tracking
 33155,0,0,54,4,568;572,0,0,0,25,15,Medium Energy Turret Optimal Range
 33155,0,0,158,4,568;572,0,0,0,25,15,Medium Energy Turret Falloff
+33155,0,0,54,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,50,15,Command Burst AoE Range Bonus
 # Harpy,,,,,,,,,,,
 11381,1,3330,54,4,561;564,0,1,0,10,15,Small Hybrid Turret Optimal Range
 11381,1,3330,271,1,11381,0,1,2,-4,15,Shield EM Resistance
@@ -919,11 +1031,11 @@
 11379,1,12095,37,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1677;1019;1678;88;1158;394;395;396,0,1,0,10,15,Missile Velocity
 11379,0,0,554,2,46,0,0,0,-50,15,MWD Signature Radius Penalty
 # Hecate,,,,,,,,,,,
-35683,1,35685,10012,4,564;561,0,1,0,-5,15,Small Hybrid Turret ROF
+35683,1,35685,10012,4,564;561,0,1,0,-3,15,Small Hybrid Turret ROF
 35683,1,35685,160,4,564;561,0,1,0,7.5,15,Small Hybrid Turret Tracking
 35683,1,35685,1211,7,1211,0,1,0,-5,15,Heat Damage Reduction
-35683,0,0,10015,4,564;561,0,0,0,50,15,Small Hybrid Turret Damage
-35683,0,0,50,2,481,0,0,0,-95,15,Scan Probe Launcher CPU Need
+35683,2,0,10015,4,564;561,0,0,0,33,15,Small Hybrid Turret Damage
+35683,2,0,50,2,481,0,0,0,-95,15,Scan Probe Launcher CPU Need
 # Hel,,,,,,,,,,,
 22852,1,24314,2131,3,87,0,1,0,10,15,Fighter Attack Missile EM Damage
 22852,1,24314,2132,3,87,0,1,0,10,15,Fighter Attack Missile Thermal Damage
@@ -936,14 +1048,24 @@
 22852,1,24314,37,3,87,0,1,0,5,15,Fighter Velocity
 22852,1,24314,10009,1,22852,0,1,1,5,15,Warp Core Strength
 22852,1,24314,2397,1,40698,0,1,0,-5,15,Target Illumination Burst Projector Duration
-22852,1,24314,833,4,1636;1637,0,1,0,2,15,Siege & Skirmish Warfare Link Bonus
 22852,0,0,72,2,38,0,0,0,400,15,Shield HP - Extenders
 22852,0,0,1159,2,329,0,0,0,400,15,Armor HP - Plates
 22852,0,0,2112,1,22852,0,0,0,50,15,Sensor Dampener resistance
 22852,0,0,2115,1,22852,0,0,0,50,15,Stasis effect resistance
 22852,0,0,2135,1,22852,0,0,0,50,15,Remote Electronic Assistance impedance
 22852,0,0,73,2,1313,0,0,0,500,15,Entosis link duration
-22852,0,0,10063,1,22852,0,0,1,2,15,Warfare Link Use
+22852,0,0,10063,1,22852,0,0,1,1,15,Command Burst Modules
+22852,0,0,54,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,200,15,Command Burst AoE Range Bonus
+22852,1,24314,2535,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Duration
+22852,1,24314,2535,1,42529;43555,0,1,0,2,15,Shield Command Burst Duration
+22852,1,24314,2469,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Stength
+22852,1,24314,2471,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Stength
+22852,1,24314,2473,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Stength
+22852,1,24314,2537,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Stength
+22852,1,24314,2469,1,42529;43555,0,1,0,2,15,Shield Command Burst Stength
+22852,1,24314,2471,1,42529;43555,0,1,0,2,15,Shield Command Burst Stength
+22852,1,24314,2473,1,42529;43555,0,1,0,2,15,Shield Command Burst Stength
+22852,1,24314,2537,1,42529;43555,0,1,0,2,15,Shield Command Burst Stength
 # Helios,,,,,,,,,,,
 11172,1,3328,10015,4,564;561,0,1,0,5,15,Small Hybrid Turret Damage
 11172,1,3328,118,4,837,0,1,0,10,15,Scout Drone Thermal Damage
@@ -992,22 +1114,26 @@
 11961,1,22761,10016,4,575;578,0,1,0,5,15,Medium Projectile Turret Damage
 # Hulk,,,,,,,,,,,
 22544,1,17940,54,4,1040;1038,0,1,0,5,15,Strip Miner & Ice Harvester Range
-22544,1,17940,73,4,1040;1038,0,1,0,-4,15,Strip Miner & Ice Harvester Duration
+22544,1,17940,73,4,1040;1038,0,1,0,-2,15,Strip Miner & Ice Harvester Duration
 22544,1,22551,271,1,22544,0,1,2,-4,15,Shield EM Resistance
 22544,1,22551,272,1,22544,0,1,2,-4,15,Shield Explosive Resistance
 22544,1,22551,273,1,22544,0,1,2,-4,15,Shield Kinetic Resistance
 22544,1,22551,274,1,22544,0,1,2,-4,15,Shield Thermal Resistance
 22544,1,22551,73,4,1040;1038,0,1,0,-3,15,Strip Miner & Ice Harvester Duration
+22544,0,0,73,4,1040;1038,0,0,0,-25,15,Strip Miner & Ice Harvester Duration
+22544,0,0,6,4,1040;1038,0,0,0,-25,15,Strip Miner & Ice Cap Use
 # Hurricane,,,,,,,,,,,
 24702,1,33098,10013,4,575;578,0,1,0,-5,15,Medium Projectile Turret ROF
 24702,1,33098,10016,4,575;578,0,1,0,5,15,Medium Projectile Turret Damage
 24702,0,0,54,4,575;578,0,0,0,25,15,Medium Projectile Turret Optimal Range
 24702,0,0,158,4,575;578,0,0,0,25,15,Medium Projectile Turret Falloff
+24702,0,0,54,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,50,15,Command Burst AoE Range Bonus
 # Hurricane Fleet Issue,,,,,,,,,,,
 33157,1,33098,160,4,575;578,0,1,0,10,15,Medium Projectile Turret Tracking
 33157,1,33098,10016,4,575;578,0,1,0,10,15,Medium Projectile Turret Damage
 33157,0,0,54,4,575;578,0,0,0,25,15,Medium Projectile Turret Optimal Range
 33157,0,0,158,4,575;578,0,0,0,25,15,Medium Projectile Turret Falloff
+33157,0,0,54,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,50,15,Command Burst AoE Range Bonus
 # Hyena,,,,,,,,,,,
 11387,1,3329,54,2,379,0,1,0,10,15,Target Painter Optimal Range
 11387,1,3329,554,2,379,0,1,0,10,15,Target Painter Effect Sig Radius
@@ -1123,14 +1249,14 @@
 #33689,1,3340,10004,1,33689,0,1,0,5,15,Cargo Capacity
 #33689,1,3340,37,1,33689,0,1,0,5,15,Max Velocity
 # Jackdaw,,,,,,,,,,,
-34828,1,35680,51,2,507;509,0,1,0,-5,15,Rocket & Light Missile Launcher ROF
+34828,1,35680,51,2,507;509,0,1,0,-3,15,Rocket & Light Missile Launcher ROF
 34828,1,35680,1795,2,511;524;506;510;771;507;508;509;1245,0,1,0,-15,15, Missile launcher reload time
 34828,1,35680,1211,7,1211,0,1,0,-5,15,Heat Damage Reduction
-34828,0,0,116,2,387;648;384;653;394,0,0,0,50,15,Rocket & Light Missile Explosive Damage
-34828,0,0,117,2,387;648;384;653;394,0,0,0,50,15,Rocket & Light Missile Kinetic Damage
-34828,0,0,114,2,387;648;384;653;394,0,0,0,50,15,Rocket & Light Missile EM Damage
-34828,0,0,118,2,387;648;384;653;394,0,0,0,50,15,Rocket & Light Missile Thermal Damage
-34828,0,0,50,2,481,0,0,0,-95,15,Scan Probe Launcher CPU Need
+34828,2,0,116,2,387;648;384;653;394,0,0,0,33,15,Rocket & Light Missile Explosive Damage
+34828,2,0,117,2,387;648;384;653;394,0,0,0,33,15,Rocket & Light Missile Kinetic Damage
+34828,2,0,114,2,387;648;384;653;394,0,0,0,33,15,Rocket & Light Missile EM Damage
+34828,2,0,118,2,387;648;384;653;394,0,0,0,33,15,Rocket & Light Missile Thermal Damage
+34828,2,0,50,2,481,0,0,0,-95,15,Scan Probe Launcher CPU Need
 # Jaguar,,,,,,,,,,,
 11400,1,3329,10016,4,574;577,0,1,0,5,15,Small Projectile Turret Damage
 11400,1,3329,160,4,574;577,0,1,0,7.5,15,Small Projectile Turret Tracking
@@ -1219,7 +1345,6 @@
 3764,1,3346,118,2,476;1677;1019;1678;89;657,0,1,0,40,15,Citadel Torpedo, Torpedo & Citadel Cruise thermal Damage
 3764,1,3346,51,2,524;1673;1674,0,1,0,15,15,Citadel launcher and Rapid Torpedo ROF
 3764,1,3346,263,3,6,0,1,0,7.5,16,Gang Shield HP
-3764,1,3346,10063,1,3764,0,1,1,1,15,Warfare Link Bonus
 3764,1,3346,10009,1,3764,0,1,1,10,15,Warp Core Strength
 3764,0,0,37,2,89,0,0,0,100,15,Torpedo Velocity
 3764,0,0,72,2,38,0,0,0,500,15,Shield HP - Extenders
@@ -1229,17 +1354,28 @@
 3764,0,0,2115,1,3764,0,0,0,80,15,Stasis effect resistance
 3764,0,0,2135,1,3764,0,0,0,80,15,Remote Electronic Assistance impedance
 3764,0,0,73,2,1313,0,0,0,500,15,Entosis link duration
-3764,0,0,10063,1,3764,0,0,1,2,15,Warfare Link Use
+3764,0,0,10063,1,3764,0,0,1,2,15,Command Burst Modules
+3764,0,0,54,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,200,15,Command Burst AoE Range Bonus
 # Lif,,,,,,,,,,,
-37606,1,24314,833,4,1636;1637,0,1,0,1,15,Siege & Skirmish Warfare Link Bonus
 37606,1,24314,67,2,87,0,1,0,10,15,Cap Booster Charge Strength
 37606,1,24314,68,2,40;1156,0,1,0,7.5,15,Shield Booster Boost
 37606,1,24314,73,2,41;1697;325;1698,0,1,0,-5,15,Remote Shield Booster And Armor Repair Duration
-37606,0,0,50,2,316,0,0,0,-50,15,Warfare Link CPU Reduction
+37606,0,0,50,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,-50,15,Command Burst CPU Reduction
 37606,0,0,68,4,842,0,0,0,200,15,Shield Maintenance Bot Transfer
 37606,0,0,84,4,842,0,0,0,200,15,Armor Maintenance Bot Transfer
-37606,0,0,10063,1,37606,0,0,1,2,15,Warfare Link Use
 37606,0,0,73,2,1313,0,0,0,500,15,Entosis link duration
+37606,0,0,10063,1,37606,0,0,1,1,15,Command Burst Modules
+37606,0,0,54,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,200,15,Command Burst AoE Range Bonus
+37606,1,24314,2535,1,42530;43556,0,1,0,1,15,Skirmish Command Burst Duration
+37606,1,24314,2535,1,42529;43555,0,1,0,1,15,Shield Command Burst Duration
+37606,1,24314,2469,1,42530;43556,0,1,0,1,15,Skirmish Command Burst Stength
+37606,1,24314,2471,1,42530;43556,0,1,0,1,15,Skirmish Command Burst Stength
+37606,1,24314,2473,1,42530;43556,0,1,0,1,15,Skirmish Command Burst Stength
+37606,1,24314,2537,1,42530;43556,0,1,0,1,15,Skirmish Command Burst Stength
+37606,1,24314,2469,1,42529;43555,0,1,0,1,15,Shield Command Burst Stength
+37606,1,24314,2471,1,42529;43555,0,1,0,1,15,Shield Command Burst Stength
+37606,1,24314,2473,1,42529;43555,0,1,0,1,15,Shield Command Burst Stength
+37606,1,24314,2537,1,42529;43555,0,1,0,1,15,Shield Command Burst Stength
 # Loki,,,,,,,,,,,
 29990,1,30653,1211,7,1211,0,1,0,-5,15,Heat Damage Reduction
 # Machariel,,,,,,,,,,,
@@ -1254,9 +1390,6 @@
 22548,1,22551,273,1,22548,0,1,2,-4,15,Shield Kinetic Resistance
 22548,1,22551,274,1,22548,0,1,2,-4,15,Shield Thermal Resistance
 22548,1,22551,73,4,1040;1038,0,1,0,-2,15,Strip Miner & Ice Harvester Duration
-22548,0,0,77,4,1040,0,0,0,25,15,Strip Miner Mining Yield
-22548,0,0,73,4,1038,0,0,0,-20,15,Ice Harvester Duration
-22548,0,0,6,4,1038,0,0,0,-20,15,Ice Harvester Cap Use
 # Mackinaw ORE Development Edition,,,,,,,,,,,
 #33683,1,17940,1556,1,33683,0,1,0,5,15,Ore Hold Capacity
 #33683,1,17940,73,4,1040;1038,0,1,0,-2,15,Strip Miner & Ice Harvester Duration
@@ -1298,10 +1431,19 @@
 37483,1,33093,268,1,37483,0,1,2,-4,15,Armor Explosive Resistance
 37483,1,33093,269,1,37483,0,1,2,-4,15,Armor Kinetic Resistance
 37483,1,33093,270,1,37483,0,1,2,-4,15,Armor Thermal Resistance
-37483,1,37615,833,4,1634;1637,0,1,0,2,15,Armored & Skirmish Warfare Link Bonus
 37483,1,37615,73,2,1533,0,1,0,-5,15,Micro Jump Field Generator duration
-37483,0,0,30,2,316,0,0,0,-95,15,Warfare link power need
+37483,0,0,30,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,-95,15,Command Burst power need
 37483,0,0,554,2,46,0,0,0,-50,15,MWD Signature Radius Penalty
+37483,1,37615,2535,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Duration
+37483,1,37615,2535,1,42526;43552,0,1,0,2,15,Armored Command Burst Duration
+37483,1,37615,2469,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Stength
+37483,1,37615,2471,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Stength
+37483,1,37615,2473,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Stength
+37483,1,37615,2537,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Stength
+37483,1,37615,2469,1,42526;43552,0,1,0,2,15,Armored Command Burst Stength
+37483,1,37615,2471,1,42526;43552,0,1,0,2,15,Armored Command Burst Stength
+37483,1,37615,2473,1,42526;43552,0,1,0,2,15,Armored Command Burst Stength
+37483,1,37615,2537,1,42526;43552,0,1,0,2,15,Armored Command Burst Stength
 # Malediction,,,,,,,,,,,
 11186,1,3331,51,2,507,0,1,0,-5,15,Rocket Launcher ROF
 11186,1,3331,267,1,11186,0,1,2,-4,15,Armor EM Resistance
@@ -1428,18 +1570,28 @@
 32209,1,3333,270,1,32209,0,1,2,-4,15,Armor Thermal Resistance
 # Minokawa,,,,,,,,,,,
 37605,1,24312,482,1,37605,0,1,0,5,15,Capacitor Capacity
-37605,1,24312,833,4,1636;1635,0,1,0,1,15,Siege & Information Warfare Link Bonus
 37605,1,24312,271,1,37605,0,1,2,-4,15,Shield EM Resistance
 37605,1,24312,272,1,37605,0,1,2,-4,15,Shield Explosive Resistance
 37605,1,24312,273,1,37605,0,1,2,-4,15,Shield Kinetic Resistance
 37605,1,24312,274,1,37605,0,1,2,-4,15,Shield Thermal Resistance
 37605,1,24312,90,2,67,0,1,0,5,15,Energy Transfer Amount
 37605,1,24312,68,2,41;1697,0,1,0,5,15,Remote Shield Booster Rep Amount
-37605,0,0,50,2,316,0,0,0,-50,15,Warfare Link CPU Reduction
+37605,0,0,50,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,-50,15,Command Burst CPU Reduction
 37605,0,0,68,4,842,0,0,0,200,15,Shield Maintenance Bot Transfer
 37605,0,0,84,4,842,0,0,0,200,15,Armor Maintenance Bot Transfer
-37605,0,0,10063,1,37605,0,0,1,2,15,Warfare Link Use
 37605,0,0,73,2,1313,0,0,0,500,15,Entosis link duration
+37605,0,0,10063,1,37605,0,0,1,1,15,Command Burst Modules
+37605,0,0,54,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,200,15,Command Burst AoE Range Bonus
+37605,1,24312,2535,1,42527;43554,0,1,0,1,15,Information Command Burst Duration
+37605,1,24312,2535,1,42529;43555,0,1,0,1,15,Shield Command Burst Duration
+37605,1,24312,2469,1,42527;43554,0,1,0,1,15,Information Command Burst Stength
+37605,1,24312,2471,1,42527;43554,0,1,0,1,15,Information Command Burst Stength
+37605,1,24312,2473,1,42527;43554,0,1,0,1,15,Information Command Burst Stength
+37605,1,24312,2537,1,42527;43554,0,1,0,1,15,Information Command Burst Stength
+37605,1,24312,2469,1,42529;43555,0,1,0,1,15,Shield Command Burst Stength
+37605,1,24312,2471,1,42529;43555,0,1,0,1,15,Shield Command Burst Stength
+37605,1,24312,2473,1,42529;43555,0,1,0,1,15,Shield Command Burst Stength
+37605,1,24312,2537,1,42529;43555,0,1,0,1,15,Shield Command Burst Stength
 # Moa,,,,,,,,,,,
 623,1,3334,10015,4,562;565,0,1,0,5,15,Medium Hybrid Turret Damage
 623,1,3334,271,1,623,0,1,2,-4,15,Shield EM Resistance
@@ -1473,6 +1625,7 @@
 24700,1,33097,64,3,18,0,1,0,10,15,Drone Damage
 24700,1,33097,84,2,62;1199,0,1,0,7.5,15,Armor Repair Amount
 24700,0,0,37,3,18,0,0,0,25,15,Drone max velocity
+24700,0,0,54,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,50,15,Command Burst AoE Range Bonus
 # Naga,,,,,,,,,,,
 4306,1,33096,10015,4,563;566,0,1,0,5,15,Large Hybrid Turret Damage
 4306,1,33096,54,4,563;566,0,1,0,10,15,Large Hybrid Turret Optimal Range
@@ -1531,8 +1684,18 @@
 24483,1,24314,2230,3,87,0,1,0,5,15,Fighter Ability Explosive Damage
 24483,1,24314,37,3,87,0,1,0,2.5,15,Fighter Velocity
 24483,1,24314,2186,1,40347;40571,0,1,0,5,15,Dromi Web Range
-24483,1,24314,833,4,1636;1637,0,1,0,1,15,Siege & Skirmish Warfare Link Bonus
-24483,0,0,10063,1,24483,0,0,1,2,15,Warfare Link Use
+24483,0,0,10063,1,24483,0,0,1,1,15,Command Burst Modules
+24483,0,0,54,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,200,15,Command Burst AoE Range Bonus
+24483,1,24314,2535,1,42530;43556,0,1,0,1,15,Skirmish Command Burst Duration
+24483,1,24314,2535,1,42529;43555,0,1,0,1,15,Shield Command Burst Duration
+24483,1,24314,2469,1,42530;43556,0,1,0,1,15,Skirmish Command Burst Stength
+24483,1,24314,2471,1,42530;43556,0,1,0,1,15,Skirmish Command Burst Stength
+24483,1,24314,2473,1,42530;43556,0,1,0,1,15,Skirmish Command Burst Stength
+24483,1,24314,2537,1,42530;43556,0,1,0,1,15,Skirmish Command Burst Stength
+24483,1,24314,2469,1,42529;43555,0,1,0,1,15,Shield Command Burst Stength
+24483,1,24314,2471,1,42529;43555,0,1,0,1,15,Shield Command Burst Stength
+24483,1,24314,2473,1,42529;43555,0,1,0,1,15,Shield Command Burst Stength
+24483,1,24314,2537,1,42529;43555,0,1,0,1,15,Shield Command Burst Stength
 # Nighthawk,,,,,,,,,,,
 22470,1,33096,271,1,22470,0,1,2,-4,15,Shield EM Resistance
 22470,1,33096,272,1,22470,0,1,2,-4,15,Shield Explosive Resistance
@@ -1541,27 +1704,42 @@
 22470,1,33096,117,2,385;655;395;772;654,0,1,0,7.5,15,Heavy & HAM Kinetic Damage
 22470,1,23950,51,2,510;771,0,1,0,-7.5,15,Heavy & HAM Launcher ROF
 22470,1,23950,654,2,385;655;395;772;654,0,1,0,-5,15,Heavy & HAM Explosion Radius
-22470,1,23950,833,4,1636;1635,0,1,0,3,15,Siege & Information Warfare Link Bonus
-22470,1,23950,1310,4,1635,0,1,0,3,15,Information Warfare Link Bonus
-22470,1,23950,1320,4,1635,0,1,0,3,15,Information Warfare Link Bonus
-22470,1,23950,1321,4,1635,0,1,0,3,15,Information Warfare Link Bonus
-22470,1,23950,1322,4,1635,0,1,0,3,15,Information Warfare Link Bonus
-22470,1,23950,1323,4,1635,0,1,0,3,15,Information Warfare Link Bonus
-22470,0,0,10063,1,22470,0,0,1,2,15,Warfare Link Use
+22470,0,0,10063,1,22470,0,0,1,1,15,Command Burst Modules
+22470,0,0,54,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,100,15,Command Burst AoE Range Bonus
+22470,1,23950,2535,1,42527;43554,0,1,0,3,15,Information Command Burst Duration
+22470,1,23950,2535,1,42529;43555,0,1,0,3,15,Shield Command Burst Duration
+22470,1,23950,2469,1,42527;43554,0,1,0,3,15,Information Command Burst Stength
+22470,1,23950,2471,1,42527;43554,0,1,0,3,15,Information Command Burst Stength
+22470,1,23950,2473,1,42527;43554,0,1,0,3,15,Information Command Burst Stength
+22470,1,23950,2537,1,42527;43554,0,1,0,3,15,Information Command Burst Stength
+22470,1,23950,2469,1,42529;43555,0,1,0,3,15,Shield Command Burst Stength
+22470,1,23950,2471,1,42529;43555,0,1,0,3,15,Shield Command Burst Stength
+22470,1,23950,2473,1,42529;43555,0,1,0,3,15,Shield Command Burst Stength
+22470,1,23950,2537,1,42529;43555,0,1,0,3,15,Shield Command Burst Stength
 # Nightmare,,,,,,,,,,,
 17736,0,0,10014,4,569;573,0,0,0,150,15,Large Energy Turret Damage
 17736,1,3339,160,4,569;573,0,1,0,7.5,15,Large Energy Turret Tracking
 17736,1,3338,20,4,542,0,1,0,30,15,Afterburner Velocity
 # Ninazu,,,,,,,,,,,
-37607,1,24313,833,4,1634;1637,0,1,0,1,15,Armored & Skirmish Warfare Link Bonus
 37607,1,24313,67,2,87,0,1,0,10,15,Cap Booster Charge Strength
 37607,1,24313,84,2,62;1199,0,1,0,7.5,15,Armor Repair Amount
 37607,1,24313,73,2,41;1697;325;1698,0,1,0,-5,15,Remote Shield Booster And Armor Repair Duration
-37607,0,0,50,2,316,0,0,0,-50,15,Warfare Link CPU Reduction
+37607,0,0,50,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,-50,15,Command Burst CPU Reduction
 37607,0,0,68,4,842,0,0,0,200,15,Shield Maintenance Bot Transfer
 37607,0,0,84,4,842,0,0,0,200,15,Armor Maintenance Bot Transfer
-37607,0,0,10063,1,37607,0,0,1,2,15,Warfare Link Use
 37607,0,0,73,2,1313,0,0,0,500,15,Entosis link duration
+37607,0,0,10063,1,37607,0,0,1,1,15,Command Burst Modules
+37607,0,0,54,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,200,15,Command Burst AoE Range Bonus
+37607,1,24313,2535,1,42530;43556,0,1,0,1,15,Skirmish Command Burst Duration
+37607,1,24313,2535,1,42526;43552,0,1,0,1,15,Armored Command Burst Duration
+37607,1,24313,2469,1,42530;43556,0,1,0,1,15,Skirmish Command Burst Stength
+37607,1,24313,2471,1,42530;43556,0,1,0,1,15,Skirmish Command Burst Stength
+37607,1,24313,2473,1,42530;43556,0,1,0,1,15,Skirmish Command Burst Stength
+37607,1,24313,2537,1,42530;43556,0,1,0,1,15,Skirmish Command Burst Stength
+37607,1,24313,2469,1,42526;43552,0,1,0,1,15,Armored Command Burst Stength
+37607,1,24313,2471,1,42526;43552,0,1,0,1,15,Armored Command Burst Stength
+37607,1,24313,2473,1,42526;43552,0,1,0,1,15,Armored Command Burst Stength
+37607,1,24313,2537,1,42526;43552,0,1,0,1,15,Armored Command Burst Stength
 # Noctis,,,,,,,,,,,
 2998,1,3184,73,2,650,0,1,0,-5,15,Tractor Beam Cycle Time
 2998,1,3184,73,4,1715,0,1,0,-5,15,Salvager Cycle Time
@@ -1588,14 +1766,24 @@
 23913,1,24313,9,3,87,0,1,0,5,15,Fighter Hull HP
 23913,1,24313,10009,1,23913,0,1,1,5,15,Warp Core Strength
 23913,1,24313,2397,1,40697,0,1,0,-5,15,Sensor Dampening Burst Projector Duration
-23913,1,24313,833,4,1634;1637,0,1,0,2,15,Armored & Skirmish Warfare Link Bonus
 23913,0,0,72,2,38,0,0,0,400,15,Shield HP - Extenders
 23913,0,0,1159,2,329,0,0,0,400,15,Armor HP - Plates
 23913,0,0,2112,1,23913,0,0,0,50,15,Sensor Dampener resistance
 23913,0,0,2115,1,23913,0,0,0,50,15,Stasis effect resistance
 23913,0,0,2135,1,23913,0,0,0,50,15,Remote Electronic Assistance impedance
 23913,0,0,73,2,1313,0,0,0,500,15,Entosis link duration
-23913,0,0,10063,1,23913,0,0,1,2,15,Warfare Link Use
+23913,0,0,10063,1,23913,0,0,1,1,15,Command Burst Modules
+23913,0,0,54,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,200,15,Command Burst AoE Range Bonus
+23913,1,24313,2535,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Duration
+23913,1,24313,2535,1,42526;43552,0,1,0,2,15,Armored Command Burst Duration
+23913,1,24313,2469,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Stength
+23913,1,24313,2471,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Stength
+23913,1,24313,2473,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Stength
+23913,1,24313,2537,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Stength
+23913,1,24313,2469,1,42526;43552,0,1,0,2,15,Armored Command Burst Stength
+23913,1,24313,2471,1,42526;43552,0,1,0,2,15,Armored Command Burst Stength
+23913,1,24313,2473,1,42526;43552,0,1,0,2,15,Armored Command Burst Stength
+23913,1,24313,2537,1,42526;43552,0,1,0,2,15,Armored Command Burst Stength
 # Obelisk,,,,,,,,,,,
 20187,1,20527,10004,1,20187,0,1,0,5,15,Cargo Capacity
 20187,1,20527,37,1,20187,0,1,0,5,15,Max Velocity
@@ -1656,14 +1844,35 @@
 28606,0,0,1045,2,650,0,0,0,100,15,Tractor Beam Velocity
 28606,0,0,54,2,650,0,0,0,250,15,Tractor Beam Range
 28606,0,0,197,2,49,0,0,0,500,15,Survey Scanner Range
-28606,0,0,10063,1,28606,0,0,1,2,15,Warfare Link Use
+28606,0,0,10063,1,28606,0,0,1,2,15,Command Burst Modules
+28606,0,0,54,2,41;1697,0,0,0,400,15,Remote Shield Booster optimal
+28606,0,0,64,3,18,0,0,0,100,15,Drone Damage
+28606,0,0,77,5,3438,0,0,0,100,15,Drone Ore Mining Yield
+28606,0,0,73,5,43702,0,0,0,-25,15,Drone Ice Mining Cycle Time
 28606,1,29637,10004,1,28606,0,1,0,5,15,Cargo Capacity
-28606,1,29637,833,4,1638,0,1,0,3,15,Warfare Link Bonus
+28606,1,29637,1556,1,28606,0,1,0,5,15,Ore Hold Capacity
+28606,1,29637,73,5,43702,0,1,0,-10,15,Drone Ice Mining Cycle Time
+28606,1,29637,77,5,3438,0,1,0,10,15,Drone Mining Yield
+28606,1,29637,263,3,18,0,1,0,10,15,Drone Shield HP
+28606,1,29637,265,3,18,0,1,0,10,15,Drone Armor HP
+28606,1,29637,9,3,18,0,1,0,10,15,Drone Hull HP
+28606,1,29637,64,3,18,0,1,0,10,15,Drone Damage
+28606,1,29637,2535,1,42528;43551,0,1,0,3,15,Mining Foreman Burst duration
+28606,1,29637,2469,1,42528;43551,0,1,0,3,15,Mining Foreman Burst strength
+28606,1,29637,2471,1,42528;43551,0,1,0,3,15,Mining Foreman Burst strength
+28606,1,29637,2473,1,42528;43551,0,1,0,3,15,Mining Foreman Burst strength
+28606,1,29637,2537,1,42528;43551,0,1,0,3,15,Mining Foreman Burst strength
+28606,1,29637,2535,1,42529;43555,0,1,0,1,15,Shield Command Burst duration
+28606,1,29637,2469,1,42529;43555,0,1,0,1,15,Shield Command Burst strength
+28606,1,29637,2471,1,42529;43555,0,1,0,1,15,Shield Command Burst strength
+28606,1,29637,2473,1,42529;43555,0,1,0,1,15,Shield Command Burst strength
+28606,1,29637,2537,1,42529;43555,0,1,0,1,15,Shield Command Burst strength
+28606,0,0,54,4,1633,0,0,0,50,15,Mining Foreman and Command Burst AoE Range Bonus
 # Orca ORE Development Edition,,,,,,,,,,,
 #33685,0,0,1045,2,650,0,0,0,100,15,Tractor Beam Velocity
 #33685,0,0,54,2,650,0,0,0,250,15,Tractor Beam Range
 #33685,0,0,197,2,49,0,0,0,500,15,Survey Scanner Range
-#33685,0,0,10063,1,33685,0,0,1,2,15,Warfare Link Use
+#33685,0,0,10063,1,33685,0,0,1,1,15,Warfare Link Use
 #33685,1,29637,10004,1,33685,0,1,0,5,15,Cargo Capacity
 #33685,1,29637,833,4,1638,0,1,0,3,15,Warfare Link Bonus
 # Orthrus,,,,,,,,,,,
@@ -1789,10 +1998,40 @@
 37481,1,33091,268,1,37481,0,1,2,-4,15,Armor Explosive Resistance
 37481,1,33091,269,1,37481,0,1,2,-4,15,Armor Kinetic Resistance
 37481,1,33091,270,1,37481,0,1,2,-4,15,Armor Thermal Resistance
-37481,1,37615,833,4,1634;1635,0,1,0,2,15,Armored & Information Warfare Link Bonus
 37481,1,37615,73,2,1533,0,1,0,-5,15,Micro Jump Field Generator duration
-37481,0,0,30,2,316,0,0,0,-95,15,Warfare link power need
 37481,0,0,554,2,46,0,0,0,-50,15,MWD Signature Radius Penalty
+37481,0,0,30,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,-95,15,Command Burst power need
+37481,1,37615,2535,1,42527;43554,0,1,0,2,15,Information Command Burst Duration
+37481,1,37615,2535,1,42526;43552,0,1,0,2,15,Armored Command Burst Duration
+37481,1,37615,2469,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
+37481,1,37615,2471,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
+37481,1,37615,2473,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
+37481,1,37615,2537,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
+37481,1,37615,2469,1,42526;43552,0,1,0,2,15,Armored Command Burst Stength
+37481,1,37615,2471,1,42526;43552,0,1,0,2,15,Armored Command Burst Stength
+37481,1,37615,2473,1,42526;43552,0,1,0,2,15,Armored Command Burst Stength
+37481,1,37615,2537,1,42526;43552,0,1,0,2,15,Armored Command Burst Stength
+# Porpoise,,,,,,,,,,,
+42244,0,0,30,2,1770,0,0,0,-90,15,Command and Foreman Burst module power need
+42244,0,0,77,5,3438,0,0,0,50,15,Drone Mining Yield
+42244,0,0,54,2,41;1697,0,0,0,400,15,Remote Shield Booster optimal
+42244,0,0,1045,2,650,0,0,0,50,15,Tractor Beam Velocity
+42244,0,0,54,2,650,0,0,0,100,15,Tractor Beam Range
+42244,0,0,197,2,49,0,0,0,300,15,Survey Scanner Range
+42244,0,0,10063,1,42244,0,0,1,1,15,Command Burst Modules
+42244,1,29637,1556,1,42244,0,1,0,5,15,Ore Hold Capacity
+42244,1,29637,10004,1,42244,0,1,0,5,15,Cargo Capacity
+42244,1,29637,73,5,43702,0,1,0,-10,15,Drone Ice Mining Cycle Time
+42244,1,29637,77,5,3438,0,1,0,10,15,Drone Mining Yield
+42244,1,29637,263,3,18,0,1,0,10,15,Drone Shield HP
+42244,1,29637,265,3,18,0,1,0,10,15,Drone Armor HP
+42244,1,29637,9,3,18,0,1,0,10,15,Drone Hull HP
+42244,1,29637,64,3,18,0,1,0,10,15,Drone Damage
+42244,1,29637,2535,1,42528;43551,0,1,0,2,15,Mining Foreman Burst duration
+42244,1,29637,2469,1,42528;43551,0,1,0,2,15,Mining Foreman Burst strength
+42244,1,29637,2471,1,42528;43551,0,1,0,2,15,Mining Foreman Burst strength
+42244,1,29637,2473,1,42528;43551,0,1,0,2,15,Mining Foreman Burst strength
+42244,1,29637,2537,1,42528;43551,0,1,0,2,15,Mining Foreman Burst strength
 # Probe,,,,,,,,,,,
 586,1,3329,1371,2,479,0,1,0,7.5,15,Probe Scan Strength Bonus
 586,1,3329,73,4,1715,0,1,0,-5,15,Salvager Cycle Time
@@ -1804,9 +2043,6 @@
 # Procurer,,,,,,,,,,,
 17480,1,17940,263,1,17480,0,1,0,5,15,Shield HP
 17480,1,17940,73,4,1040;1038,0,1,0,-2,15,Strip Miner & Ice Harvester Duration
-17480,0,0,77,4,1040,0,0,0,150,15,Strip Miner Mining Yield
-17480,0,0,73,4,1038,0,0,0,-60,15,Ice Harvester Duration
-17480,0,0,6,4,1038,0,0,0,-60,15,Ice Harvester Cap Use
 17480,0,0,263,3,18,0,0,0,50,15,Drone Shield HP
 17480,0,0,265,3,18,0,0,0,50,15,Drone Armor HP
 17480,0,0,9,3,18,0,0,0,50,15,Drone Hull HP
@@ -1821,6 +2057,7 @@
 16233,1,33095,9,3,18,0,1,0,10,15,Drone Hull HP
 16233,1,33095,64,3,18,0,1,0,10,15,Drone Damage
 16233,0,0,37,3,18,0,0,0,25,15,Drone max velocity
+16233,0,0,54,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,50,15,Command Burst AoE Range Bonus
 # Prophecy Blood Raiders Edition,,,,,,,,,,,
 #33875,1,33095,267,1,33875,0,1,2,-4,15,Armor EM Resistance
 #33875,1,33095,268,1,33875,0,1,2,-4,15,Armor Explosive Resistance
@@ -1881,11 +2118,25 @@
 12038,0,0,30,2,508,0,0,0,-99.65,15,Torpedo Launcher PG Need
 12038,0,0,50,2,330,0,0,0,-50,15,Cloaking Device CPU
 12038,0,0,560,2,330,0,0,0,-100,15,Sensor Recalibration Time Bonus
+# Rabisu
+42245,1,3335,90,2,68,0,1,0,20,15,Nos Drain Amount
+42245,1,3335,54,2,68,0,1,0,35,15,Nos Drain Optimal Range
+42245,1,3335,2044,2,68,0,1,0,35,15,Nos Drain Falloff
+42245,1,3333,68,4,842,0,1,0,20,15,Shield Maintenance Bot Transfer
+42245,1,3333,84,4,842,0,1,0,20,15,Armor Maintenance Bot Transfer
+42245,1,3333,50,2,330,0,1,0,-20,15,Cloaking Device CPU
+42245,1,12096,54,2,325;1698,0,1,0,20,15,Remote Armor Repair Optimal Range Bonus
+42245,1,12096,2044,2,325;1698,0,1,0,20,15,Remote Armor Repair falloff Bonus
+42245,1,12096,6,2,325;1698,0,1,0,-15,15,Remote Armor Repairer Cap Use
+42245,1,12096,73,2,325;1698,0,1,0,-2,15,Remote Armor Repairer Cycle Time
+42245,0,0,30,2,325;1698,0,0,0,-85,15,Remote Armor Repairer Power Need
+42245,0,0,50,2,68,0,0,0,-85,15,Nos CPU Need
+42245,0,0,54,2,325;1698,0,0,0,100,15,Remote Armor Repair Optimal Range Bonus
+42245,0,0,2044,2,325;1698,0,0,0,100,15,Remote Armor Repair falloff Bonus
 # Ragnarok,,,,,,,,,,,
 23773,1,3345,10016,4,775;776,0,1,0,180,15,Capital Projectile Turret Damage
 23773,1,3345,10013,4,775;776,0,1,0,-5,15,Capital Projectile Turret ROF
 23773,1,3345,552,3,6,0,1,0,-7.5,16,Gang Sig Radius
-23773,1,3345,10063,1,23773,0,1,1,1,15,Warfare Link Bonus
 23773,1,3345,10009,1,23773,0,1,1,10,15,Warp Core Strength
 23773,0,0,72,2,38,0,0,0,500,15,Shield HP - Extenders
 23773,0,0,1159,2,329,0,0,0,500,15,Armor HP - Plates
@@ -1894,7 +2145,8 @@
 23773,0,0,2115,1,23773,0,0,0,80,15,Stasis effect resistance
 23773,0,0,2135,1,23773,0,0,0,80,15,Remote Electronic Assistance impedance
 23773,0,0,73,2,1313,0,0,0,500,15,Entosis link duration
-23773,0,0,10063,1,23773,0,0,1,2,15,Warfare Link Use
+23773,0,0,10063,1,23773,0,0,1,2,15,Command Burst Modules
+23773,0,0,54,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,200,15,Command Burst AoE Range Bonus
 # Rapier,,,,,,,,,,,
 #11963,1,3333,10013,4,575;578,0,1,0,-5,15,Medium Projectile Turret ROF
 11963,1,3333,114,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1677;1019;1678;88;1158;394;395;396,0,1,0,10,15,EM Missile Damage
@@ -1978,9 +2230,6 @@
 # Retriever,,,,,,,,,,,
 17478,1,17940,1556,1,17478,0,1,0,5,15,Ore Hold Capacity
 17478,1,17940,73,4,1040;1038,0,1,0,-2,15,Strip Miner & Ice Harvester Duration
-17478,0,0,77,4,1040,0,0,0,25,15,Strip Miner Mining Yield
-17478,0,0,73,4,1038,0,0,0,-20,15,Ice Harvester Duration
-17478,0,0,6,4,1038,0,0,0,-20,15,Ice Harvester Cap Use
 # Revelation,,,,,,,,,,,
 19720,1,20525,10014,4,773;774,0,1,0,5,15,Capital Energy Turret Damage
 19720,1,20525,6,4,773;774,0,1,0,-10,15,Capital Energy Turret Cap Use
@@ -2020,7 +2269,8 @@
 3514,0,0,2115,1,3514,0,0,0,50,15,Stasis effect resistance
 3514,0,0,2135,1,3514,0,0,0,50,15,Remote Electronic Assistance impedance
 3514,0,0,73,2,1313,0,0,0,500,15,Entosis link duration
-3514,0,0,10063,1,3514,0,0,1,2,15,Warfare Link Use
+3514,0,0,10063,1,3514,0,0,1,1,15,Command Burst Modules
+3514,0,0,54,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,200,15,Command Burst AoE Range Bonus
 # Rhea,,,,,,,,,,,
 28844,1,20526,10004,1,28844,0,1,0,5,15,Cargo Capacity
 28844,1,20526,70,1,28844,0,1,0,-5,15,Agility
@@ -2067,17 +2317,29 @@
 11959,1,22761,241,2,201,0,1,0,30,15,ECM Jam Strength Radar
 11959,1,22761,37,2,385;655;772;654;395,0,1,0,10,15,Heavy & HAM Velocity
 # Rorqual,,,,,,,,,,,
-28352,1,28374,54,4,600,0,1,0,40,15,Capital Remote Shield Booster Optimal
-28352,1,28374,2044,4,600,0,1,0,40,15,Capital Remote Shield Booster Falloff
-28352,1,28374,263,3,18,0,1,0,20,15,Drone Shield HP
-28352,1,28374,265,3,18,0,1,0,20,15,Drone Armor HP
-28352,1,28374,9,3,18,0,1,0,20,15,Drone Hull HP
-28352,1,28374,64,3,18,0,1,0,20,15,Drone Damage
-28352,1,28374,714,1,28583,0,1,0,-5,15,Industrial Core Fuel Need
-28352,1,28374,1238,1,28583,0,1,0,10,15,Mining Foreman Ganglink Bonus
-28352,0,0,197,2,49,0,0,0,900,15,Survey Scanner Range
-28352,0,0,126,2,47,0,0,0,200,15,Cargo Scanner Range
-28352,0,0,10063,1,28352,0,0,1,2,15,Warfare Link Use
+28352,1,28374,2535,1,42529;43555,0,1,0,3,15,Shield Command Burst Effect Duration
+28352,1,28374,2469,1,42529;43555,0,1,0,3,15,Shield Command Burst Stength
+28352,1,28374,2471,1,42529;43555,0,1,0,3,15,Shield Command Burst Stength
+28352,1,28374,2473,1,42529;43555,0,1,0,3,15,Shield Command Burst Stength
+28352,1,28374,2537,1,42529;43555,0,1,0,3,15,Shield Command Burst Stength
+28352,1,28374,2535,1,42528;43551,0,1,0,5,15,Mining Foreman Burst Effect Duration
+28352,1,28374,2469,1,42528;43551,0,1,0,5,15,Mining Foreman Burst Strength
+28352,1,28374,2471,1,42528;43551,0,1,0,5,15,Mining Foreman Burst Strength
+28352,1,28374,2473,1,42528;43551,0,1,0,5,15,Mining Foreman Burst Strength
+28352,1,28374,2537,1,42528;43551,0,1,0,5,15,Mining Foreman Burst Strength
+28352,1,28374,714,1,28583;42890,0,1,0,-5,15,Industrial Core Fuel Consumption
+28352,1,28374,77,5,3438,0,1,0,10,15,Drone Mining Yield
+28352,1,28374,263,3,18,0,1,0,10,15,Drone Shield HP
+28352,1,28374,265,3,18,0,1,0,10,15,Drone Armor HP
+28352,1,28374,9,3,18,0,1,0,10,15,Drone Hull HP
+28352,1,28374,64,3,18,0,1,0,10,15,Drone Damage
+28352,1,28374,73,5,43702,0,1,0,-10,15,Drone Ice Mining Cycle Time
+28352,0,0,54,2,1770,0,0,0,50,15,Command burst range
+28352,0,0,126,2,47,0,0,0,200,15,Cargo scanner range
+28352,0,0,54,2,41;1697,0,0,0,400,15,Remote Shield Booster Optimal
+28352,0,0,197,2,49,0,0,0,900,15,Survey scanner range
+28352,0,0,10063,1,28352,0,0,1,2,15,Command Burst Modules
+28352,0,0,73,2,1313,0,0,0,500,15,Entosis link duration
 # Rorqual ORE Development Edition,,,,,,,,,,,
 #33687,1,28374,54,4,600,0,1,0,50,15,Capital Remote Shield Booster Range
 #33687,1,28374,263,3,18,0,1,0,20,15,Drone Shield HP
@@ -2088,7 +2350,7 @@
 #33687,1,28374,1238,1,28583,0,1,0,10,15,Mining Foreman Ganglink Bonus
 #33687,0,0,197,2,49,0,0,0,900,15,Survey Scanner Range
 #33687,0,0,126,2,47,0,0,0,200,15,Cargo Scanner Range
-#33687,0,0,10063,1,33687,0,0,1,2,15,Warfare Link Use
+#33687,0,0,10063,1,33687,0,0,1,1,15,Warfare Link Use
 # Rupture,,,,,,,,,,,
 629,1,3333,10013,4,575;578,0,1,0,-5,15,Medium Projectile Turret ROF
 629,1,3333,10016,4,575;578,0,1,0,5,15,Medium Projectile Turret Damage
@@ -2210,9 +2472,6 @@
 22546,1,22551,273,1,22546,0,1,2,-4,15,Shield Kinetic Resistance
 22546,1,22551,274,1,22546,0,1,2,-4,15,Shield Thermal Resistance
 22546,1,22551,73,4,1040;1038,0,1,0,-2,15,Strip Miner & Ice Harvester Duration
-22546,0,0,77,4,1040,0,0,0,150,15,Strip Miner Mining Yield
-22546,0,0,73,4,1038,0,0,0,-60,15,Ice Harvester Duration
-22546,0,0,6,4,1038,0,0,0,-60,15,Ice Harvester Cap Use
 22546,0,0,263,3,18,0,0,0,50,15,Drone Shield HP
 22546,0,0,265,3,18,0,0,0,50,15,Drone Armor HP
 22546,0,0,9,3,18,0,0,0,50,15,Drone Hull HP
@@ -2226,8 +2485,18 @@
 22444,1,33098,68,2,40;1156,0,1,0,7.5,15,Shield Booster Boost
 22444,1,23950,10016,4,575;578,0,1,0,10,15,Medium Projectile Turret Damage
 22444,1,23950,158,4,575;578,0,1,0,10,15,Medium Projectile Turret Falloff
-22444,1,23950,833,4,1636;1637,0,1,0,3,15,Siege & Skirmish Warfare Link Bonus
-22444,0,0,10063,1,22444,0,0,1,2,15,Warfare Link Use
+22444,0,0,10063,1,22444,0,0,1,1,15,Command Burst Modules
+22444,0,0,54,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,100,15,Command Burst AoE Range Bonus
+22444,1,23950,2535,1,42530;43556,0,1,0,3,15,Skirmish Command Burst Duration
+22444,1,23950,2535,1,42529;43555,0,1,0,3,15,Shield Command Burst Duration
+22444,1,23950,2469,1,42530;43556,0,1,0,3,15,Skirmish Command Burst Stength
+22444,1,23950,2471,1,42530;43556,0,1,0,3,15,Skirmish Command Burst Stength
+22444,1,23950,2473,1,42530;43556,0,1,0,3,15,Skirmish Command Burst Stength
+22444,1,23950,2537,1,42530;43556,0,1,0,3,15,Skirmish Command Burst Stength
+22444,1,23950,2469,1,42529;43555,0,1,0,3,15,Shield Command Burst Stength
+22444,1,23950,2471,1,42529;43555,0,1,0,3,15,Shield Command Burst Stength
+22444,1,23950,2473,1,42529;43555,0,1,0,3,15,Shield Command Burst Stength
+22444,1,23950,2537,1,42529;43555,0,1,0,3,15,Shield Command Burst Stength
 # Stabber,,,,,,,,,,,
 622,1,3333,10013,4,575;578,0,1,0,-5,15,Medium Projectile Turret ROF
 622,1,3333,158,4,575;578,0,1,0,10,15,Medium Projectile Turret Falloff
@@ -2255,10 +2524,19 @@
 37482,1,33092,272,1,37482,0,1,2,-4,15,Shield Explosive Resistance
 37482,1,33092,273,1,37482,0,1,2,-4,15,Shield Kinetic Resistance
 37482,1,33092,274,1,37482,0,1,2,-4,15,Shield Thermal Resistance
-37482,1,37615,833,4,1636;1635,0,1,0,2,15,Siege & Information Warfare Link Bonus
 37482,1,37615,73,2,1533,0,1,0,-5,15,Micro Jump Field Generator duration
-37482,0,0,30,2,316,0,0,0,-95,15,Warfare link power need
+37482,0,0,30,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,-95,15,Command Burst power need
 37482,0,0,554,2,46,0,0,0,-50,15,MWD Signature Radius Penalty
+37482,1,37615,2535,1,42527;43554,0,1,0,2,15,Information Command Burst Duration
+37482,1,37615,2535,1,42529;43555,0,1,0,2,15,Shield Command Burst Duration
+37482,1,37615,2469,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
+37482,1,37615,2471,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
+37482,1,37615,2473,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
+37482,1,37615,2537,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
+37482,1,37615,2469,1,42529;43555,0,1,0,2,15,Shield Command Burst Stength
+37482,1,37615,2471,1,42529;43555,0,1,0,2,15,Shield Command Burst Stength
+37482,1,37615,2473,1,42529;43555,0,1,0,2,15,Shield Command Burst Stength
+37482,1,37615,2537,1,42529;43555,0,1,0,2,15,Shield Command Burst Stength
 # Stratios,,,,,,,,,,,
 33470,1,3335,267,1,33470,0,1,2,-4,15,Armor EM Resistance
 33470,1,3335,268,1,33470,0,1,2,-4,15,Armor Explosive Resistance
@@ -2287,12 +2565,25 @@
 17924,0,0,10014,4,567;570,0,0,0,150,15,Small Energy Turret Damage
 17924,1,3331,160,4,567;570,0,1,0,7.5,15,Small Energy Turret Tracking
 17924,1,3330,20,4,542,0,1,0,20,15,Afterburner Velocity
+# Sunesis
+42685,0,0,10014,4,567;570,0,0,0,25,15,Small Energy Turret Damage
+42685,0,0,10015,4,564;561,0,0,0,25,15,Small Hybrid Turret Damage
+42685,0,0,10016,4,574;577,0,0,0,25,15,Small Projectile Turret Damage
+42685,0,0,116,2,387;648;384;653;394,0,0,0,25,15,Rocket & Light Missile Explosive Damage
+42685,0,0,117,2,387;648;384;653;394,0,0,0,25,15,Rocket & Light Missile Kinetic Damage
+42685,0,0,114,2,387;648;384;653;394,0,0,0,25,15,Rocket & Light Missile EM Damage
+42685,0,0,118,2,387;648;384;653;394,0,0,0,25,15,Rocket & Light Missile Thermal Damage
+42685,0,0,263,3,18,0,0,0,50,15,Drone Shield HP
+42685,0,0,265,3,18,0,0,0,50,15,Drone Armor HP
+42685,0,0,9,3,18,0,0,0,50,15,Drone Hull HP
+42685,0,0,64,3,18,0,0,0,50,15,Drone Damage
+42685,0,0,1371,2,479,0,0,0,37.5,15,Probe Scan Strength Bonus
 # Svipul,,,,,,,,,,,
-34562,1,34533,10016,4,574;577,0,1,0,10,15,Small Projectile Turret Damage
-34562,0,34533,54,4,574;577,0,1,0,10,15,Small Projectile Turret Optimal Range
+34562,1,34533,10016,4,574;577,0,1,0,5,15,Small Projectile Turret Damage
+34562,1,34533,54,4,574;577,0,1,0,10,15,Small Projectile Turret Optimal Range
 34562,1,34533,1211,7,1211,0,1,0,-5,15,Heat Damage Reduction
-34562,0,34533,50,2,481,0,0,0,-95,15,Scan Probe Launcher CPU Need
-34562,2,34533,10016,4,574;577,0,0,0,50,15,Small Projectile Turret Damage
+34562,2,34533,50,2,481,0,0,0,-95,15,Scan Probe Launcher CPU Need
+34562,2,34533,10016,4,574;577,0,0,0,33,15,Small Projectile Turret Damage
 # Taipan,,,,,,,,,,,
 33081,0,0,37,2,387;648;384;653;394,0,0,0,50,15,Rocket & Light Missile Velocity
 33081,0,0,271,1,33081,0,0,2,-12,15,Shield EM Resistance
@@ -2366,8 +2657,18 @@
 23911,1,24313,263,3,87,0,1,0,2.5,15,Fighter Shield HP
 23911,1,24313,9,3,87,0,1,0,2.5,15,Fighter Hull HP
 23911,1,24313,2204,1,40346;40570,0,1,0,5,15,Siren Warp Disruption Range
-23911,1,24313,833,4,1634;1637,0,1,0,1,15,Armored & Skirmish Warfare Link Bonus
-23911,0,0,10063,1,23911,0,0,1,2,15,Warfare Link Use
+23911,0,0,10063,1,23911,0,0,1,1,15,Command Burst Modules
+23911,0,0,54,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,200,15,Command Burst AoE Range Bonus
+23911,1,24313,2535,1,42530;43556,0,1,0,1,15,Skirmish Command Burst Duration
+23911,1,24313,2535,1,42526;43552,0,1,0,1,15,Armored Command Burst Duration
+23911,1,24313,2469,1,42530;43556,0,1,0,1,15,Skirmish Command Burst Stength
+23911,1,24313,2471,1,42530;43556,0,1,0,1,15,Skirmish Command Burst Stength
+23911,1,24313,2473,1,42530;43556,0,1,0,1,15,Skirmish Command Burst Stength
+23911,1,24313,2537,1,42530;43556,0,1,0,1,15,Skirmish Command Burst Stength
+23911,1,24313,2469,1,42526;43552,0,1,0,1,15,Armored Command Burst Stength
+23911,1,24313,2471,1,42526;43552,0,1,0,1,15,Armored Command Burst Stength
+23911,1,24313,2473,1,42526;43552,0,1,0,1,15,Armored Command Burst Stength
+23911,1,24313,2537,1,42526;43552,0,1,0,1,15,Armored Command Burst Stength
 # Thorax,,,,,,,,,,,
 627,1,3332,10015,4,562;565,0,1,0,5,15,Medium Hybrid Turret Damage
 627,1,3332,160,4,562;565,0,1,0,7.5,15,Medium Hybrid Turret Tracking
@@ -2442,7 +2743,6 @@
 42126,1,3344,10009,1,42126,0,1,1,6,15,Warp Core Strength
 42126,1,3345,20,2,65,0,1,0,10,15,Stasis Web Strength
 42126,1,3345,10009,1,42126,0,1,1,6,15,Warp Core Strength
-42126,0,0,10063,1,42126,0,0,1,2,15,Warfare Link Use
 42126,0,0,10015,4,771;772,0,0,0,1000,15,Capital Hybrid Turret Damage
 42126,0,0,72,2,38,0,0,0,500,15,Shield HP - Extenders
 42126,0,0,1159,2,329,0,0,0,500,15,Armor HP - Plates
@@ -2450,6 +2750,8 @@
 42126,0,0,2115,1,42126,0,0,0,80,15,Stasis effect resistance
 42126,0,0,2135,1,42126,0,0,0,80,15,Remote Electronic Assistance impedance
 42126,0,0,73,2,1313,0,0,0,500,15,Entosis link duration
+42126,0,0,10063,1,42126,0,0,1,2,15,Command Burst Modules
+42126,0,0,54,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,200,15,Command Burst AoE Range Bonus
 # Vargur,,,,,,,,,,,
 28665,1,3337,10013,4,576;579,0,1,0,-5,15,Large Projectile Turret ROF
 28665,1,3337,158,4,576;579,0,1,0,10,15,Large Projectile Turret Falloff
@@ -2522,7 +2824,8 @@
 42125,0,0,2115,1,42125,0,0,0,50,15,Stasis effect resistance
 42125,0,0,2135,1,42125,0,0,0,50,15,Remote Electronic Assistance impedance
 42125,0,0,73,2,1313,0,0,0,500,15,Entosis link duration
-42125,0,0,10063,1,42125,0,0,1,2,15,Warfare Link Use
+42125,0,0,10063,1,42125,0,0,1,1,15,Command Burst Modules
+42125,0,0,54,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,200,15,Command Burst AoE Range Bonus
 # Vengeance,,,,,,,,,,,
 11365,1,3331,114,2,387;648,0,1,0,5,15,Rocket Damage - EM
 11365,1,3331,116,2,387;648,0,1,0,5,15,Rocket Damage - Exp
@@ -2591,13 +2894,18 @@
 22446,1,33096,274,1,22446,0,1,2,-4,15,Shield Thermal Resistance
 22446,1,23950,54,4,562;565,0,1,0,10,15,Medium Hybrid Turret Optimal Range
 22446,1,23950,10015,4,562;565,0,1,0,10,15,Medium Hybrid Turret Damage
-22446,1,23950,833,4,1636;1635,0,1,0,3,15,Siege & Information Warfare Link Bonus
-22446,1,23950,1310,4,1635,0,1,0,3,15,Information Warfare Link Bonus
-22446,1,23950,1320,4,1635,0,1,0,3,15,Information Warfare Link Bonus
-22446,1,23950,1321,4,1635,0,1,0,3,15,Information Warfare Link Bonus
-22446,1,23950,1322,4,1635,0,1,0,3,15,Information Warfare Link Bonus
-22446,1,23950,1323,4,1635,0,1,0,3,15,Information Warfare Link Bonus
-22446,0,0,10063,1,22446,0,0,1,2,15,Warfare Link Use
+22446,0,0,10063,1,22446,0,0,1,1,15,Command Burst Modules
+22446,0,0,54,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,100,15,Command Burst AoE Range Bonus
+22446,1,23950,2535,1,42527;43554,0,1,0,3,15,Information Command Burst Duration
+22446,1,23950,2535,1,42529;43555,0,1,0,3,15,Shield Command Burst Duration
+22446,1,23950,2469,1,42527;43554,0,1,0,3,15,Information Command Burst Stength
+22446,1,23950,2471,1,42527;43554,0,1,0,3,15,Information Command Burst Stength
+22446,1,23950,2473,1,42527;43554,0,1,0,3,15,Information Command Burst Stength
+22446,1,23950,2537,1,42527;43554,0,1,0,3,15,Information Command Burst Stength
+22446,1,23950,2469,1,42529;43555,0,1,0,3,15,Shield Command Burst Stength
+22446,1,23950,2471,1,42529;43555,0,1,0,3,15,Shield Command Burst Stength
+22446,1,23950,2473,1,42529;43555,0,1,0,3,15,Shield Command Burst Stength
+22446,1,23950,2537,1,42529;43555,0,1,0,3,15,Shield Command Burst Stength
 # Whiptail,,,,,,,,,,,
 33673,1,3328,117,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1677;1019;1678;88;1158;394;395;396,0,1,0,5,15,Kinetic Missile Damage
 33673,1,3328,118,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1677;1019;1678;88;1158;394;395;396,0,1,0,5,15,Thermal Missile Damage
@@ -2656,14 +2964,24 @@
 23917,1,24312,274,1,23917,0,1,2,-4,15,Shield Thermal Resistance
 23917,1,24312,10009,1,23917,0,1,1,5,15,Warp Core Strength
 23917,1,24312,2397,1,27678,0,1,0,-5,15,ECM Jammer Burst Projector Duration
-23917,1,24312,833,4,1636;1635,0,1,0,2,15,Siege & Information Warfare Link Bonus
 23917,0,0,72,2,38,0,0,0,400,15,Shield HP - Extenders
 23917,0,0,1159,2,329,0,0,0,400,15,Armor HP - Plates
 23917,0,0,2112,1,23917,0,0,0,50,15,Sensor Dampener resistance
 23917,0,0,2115,1,23917,0,0,0,50,15,Stasis effect resistance
 23917,0,0,2135,1,23917,0,0,0,50,15,Remote Electronic Assistance impedance
 23917,0,0,73,2,1313,0,0,0,500,15,Entosis link duration
-23917,0,0,10063,1,23917,0,0,1,2,15,Warfare Link Use
+23917,0,0,10063,1,23917,0,0,1,1,15,Command Burst Modules
+23917,0,0,54,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,200,15,Command Burst AoE Range Bonus
+23917,1,24312,2535,1,42527;43554,0,1,0,2,15,Information Command Burst Duration
+23917,1,24312,2535,1,42529;43555,0,1,0,2,15,Shield Command Burst Duration
+23917,1,24312,2469,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
+23917,1,24312,2471,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
+23917,1,24312,2473,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
+23917,1,24312,2537,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
+23917,1,24312,2469,1,42529;43555,0,1,0,2,15,Shield Command Burst Stength
+23917,1,24312,2471,1,42529;43555,0,1,0,2,15,Shield Command Burst Stength
+23917,1,24312,2473,1,42529;43555,0,1,0,2,15,Shield Command Burst Stength
+23917,1,24312,2537,1,42529;43555,0,1,0,2,15,Shield Command Burst Stength
 # Zealot,,,,,,,,,,,
 12003,1,3335,6,4,568;572,0,1,0,-10,15,Medium Energy Turret Cap Use
 12003,1,3335,10011,4,568;572,0,1,0,-5,15,Medium Energy Turret ROF

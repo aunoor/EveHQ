@@ -185,9 +185,9 @@ FakesAssemblies/
 #Eve SDE
 EveHQ.CacheCreator/eve.db
 EveHQ.CacheCreator/Resources/eve.db
-EveHQ.CacheCreator/Resources/graphicIDs.yaml
-EveHQ.CacheCreator/Resources/blueprints.yaml
-EveHQ.CacheCreator/Resources/skinLicenses.yaml
+EveHQ.CacheCreator/Resources/certificates.yaml
+EveHQ.CacheCreator/Resources/iconIDs.yaml
+EveHQ.CacheCreator/Resources/typeIDs.yaml
 
 #EveHQ Installer
 Installer/EveHQ*.exe
@@ -195,3 +195,7 @@ Installer/EveHQ*.exe
 #AssemblyInfo template
 AssemblyInfo.template.vb
 AssemblyInfo.template.cs
+
+# .dat binary files
+EveHQ.EveData/StaticData/*.dat
+EveHQ.EveData/StaticData/*.bin

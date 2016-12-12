@@ -92,9 +92,6 @@ Namespace Forms
                 If param = "/settings" Then
                     _showSettings = True
                 End If
-                If param.StartsWith(HQ.FittingProtocol, StringComparison.Ordinal) Then
-                    _plugInLoading.Add("EveHQ Fitter", param)
-                End If
             Next
 
             ' Set the application folder

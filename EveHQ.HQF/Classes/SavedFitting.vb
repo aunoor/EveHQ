@@ -325,7 +325,7 @@
     ''' Gets or sets a collection of remote effects to be applied to the fitting.
     ''' </summary>
     ''' <value></value>
-    ''' <returns>A collection of fleet effects to be applied to the fitting.</returns>
+    ''' <returns>A collection of remote effects to be applied to the fitting.</returns>
     ''' <remarks></remarks>
     Public Property RemoteEffects() As List(Of RemoteEffect)
         Get

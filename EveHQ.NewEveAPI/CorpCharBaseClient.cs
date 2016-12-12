@@ -90,7 +90,7 @@ namespace EveHQ.NewEveApi
         /// <param name="responseMode">The response mode.</param>
         /// <returns></returns>
         public EveServiceResponse<IEnumerable<AccountBalance>> AccountBalance(string keyId, string vCode,
-            int characterId, ResponseMode responseMode = ResponseMode.Normal)
+            long characterId, ResponseMode responseMode = ResponseMode.Normal)
         {
             return RunAsyncMethod(AccountBalanceAsync, keyId, vCode, characterId, responseMode);
         }
@@ -102,7 +102,7 @@ namespace EveHQ.NewEveApi
         /// <param name="responseMode">The response Mode.</param>
         /// <returns>Account balances.</returns>
         public Task<EveServiceResponse<IEnumerable<AccountBalance>>> AccountBalanceAsync(string keyId, string vCode,
-            int characterId, ResponseMode responseMode = ResponseMode.Normal)
+            long characterId, ResponseMode responseMode = ResponseMode.Normal)
         {
             Guard.Against(keyId.IsNullOrWhiteSpace());
             Guard.Against(vCode.IsNullOrWhiteSpace());
@@ -123,7 +123,7 @@ namespace EveHQ.NewEveApi
         /// <param name="characterId">The character id.</param>
         /// <param name="responseMode">The response mode.</param>
         /// <returns></returns>
-        public EveServiceResponse<IEnumerable<AssetItem>> AssetList(string keyId, string vCode, int characterId,
+        public EveServiceResponse<IEnumerable<AssetItem>> AssetList(string keyId, string vCode, long characterId,
             ResponseMode responseMode = ResponseMode.Normal)
         {
             return RunAsyncMethod(AssetListAsync, keyId, vCode, characterId, responseMode);
@@ -136,7 +136,7 @@ namespace EveHQ.NewEveApi
         /// <param name="responseMode">The response Mode.</param>
         /// <returns>An enumerable collection of all items in the characters assets.</returns>
         public Task<EveServiceResponse<IEnumerable<AssetItem>>> AssetListAsync(string keyId, string vCode,
-            int characterId, ResponseMode responseMode = ResponseMode.Normal)
+            long characterId, ResponseMode responseMode = ResponseMode.Normal)
         {
             Guard.Against(keyId.IsNullOrWhiteSpace());
             Guard.Against(vCode.IsNullOrWhiteSpace());
@@ -157,7 +157,7 @@ namespace EveHQ.NewEveApi
         /// <param name="characterId">The character id.</param>
         /// <param name="responseMode">The response mode.</param>
         /// <returns></returns>
-        public EveServiceResponse<IEnumerable<Contact>> ContactList(string keyId, string vCode, int characterId,
+        public EveServiceResponse<IEnumerable<Contact>> ContactList(string keyId, string vCode, long characterId,
             ResponseMode responseMode = ResponseMode.Normal)
         {
             return RunAsyncMethod(ContactListAsync, keyId, vCode, characterId, responseMode);
@@ -170,7 +170,7 @@ namespace EveHQ.NewEveApi
         /// <param name="responseMode">The response Mode.</param>
         /// <returns>The contact list for the given character</returns>
         public Task<EveServiceResponse<IEnumerable<Contact>>> ContactListAsync(string keyId, string vCode,
-            int characterId, ResponseMode responseMode = ResponseMode.Normal)
+            long characterId, ResponseMode responseMode = ResponseMode.Normal)
         {
             Guard.Against(keyId.IsNullOrWhiteSpace());
             Guard.Against(vCode.IsNullOrWhiteSpace());
@@ -192,7 +192,7 @@ namespace EveHQ.NewEveApi
         /// <param name="responseMode">The response Mode.</param>
         /// <returns>The notification list for the given character</returns>
         public Task<EveServiceResponse<IEnumerable<ContactNotification>>> ContactNotifications(string keyId,
-            string vCode, int characterId, ResponseMode responseMode = ResponseMode.Normal)
+            string vCode, long characterId, ResponseMode responseMode = ResponseMode.Normal)
         {
             Guard.Against(keyId.IsNullOrWhiteSpace());
             Guard.Against(vCode.IsNullOrWhiteSpace());
@@ -214,7 +214,7 @@ namespace EveHQ.NewEveApi
         /// <param name="contractId">The contract id.</param>
         /// <param name="responseMode">The response mode.</param>
         /// <returns></returns>
-        public EveServiceResponse<IEnumerable<Contract>> Contracts(string keyId, string vCode, int characterId,
+        public EveServiceResponse<IEnumerable<Contract>> Contracts(string keyId, string vCode, long characterId,
             int contractId = 0, ResponseMode responseMode = ResponseMode.Normal)
         {
             return RunAsyncMethod(ContractsAsync, keyId, vCode, characterId, contractId, responseMode);
@@ -228,7 +228,7 @@ namespace EveHQ.NewEveApi
         /// <param name="responseMode">The response Mode.</param>
         /// <returns>The <see cref="Task" />.</returns>
         public Task<EveServiceResponse<IEnumerable<Contract>>> ContractsAsync(string keyId, string vCode,
-            int characterId, int contractId = 0, ResponseMode responseMode = ResponseMode.Normal)
+            long characterId, int contractId = 0, ResponseMode responseMode = ResponseMode.Normal)
         {
             Guard.Against(keyId.IsNullOrWhiteSpace());
             Guard.Against(vCode.IsNullOrWhiteSpace());
@@ -257,7 +257,7 @@ namespace EveHQ.NewEveApi
         /// <param name="contractId">The contract id.</param>
         /// <param name="responseMode">The response mode.</param>
         /// <returns></returns>
-        public EveServiceResponse<IEnumerable<ContractItem>> ContractItems(string keyId, string vCode, int characterId,
+        public EveServiceResponse<IEnumerable<ContractItem>> ContractItems(string keyId, string vCode, long characterId,
             long contractId, ResponseMode responseMode = ResponseMode.Normal)
         {
             return RunAsyncMethod(ContractItemsAsync, keyId, vCode, characterId, contractId, responseMode);
@@ -271,7 +271,7 @@ namespace EveHQ.NewEveApi
         /// <param name="responseMode">The response Mode.</param>
         /// <returns>The <see cref="Task" />.</returns>
         public Task<EveServiceResponse<IEnumerable<ContractItem>>> ContractItemsAsync(string keyId, string vCode,
-            int characterId, long contractId, ResponseMode responseMode = ResponseMode.Normal)
+            long characterId, long contractId, ResponseMode responseMode = ResponseMode.Normal)
         {
             Guard.Against(keyId.IsNullOrWhiteSpace());
             Guard.Against(vCode.IsNullOrWhiteSpace());
@@ -299,7 +299,7 @@ namespace EveHQ.NewEveApi
         /// <param name="responseMode">The response Mode.</param>
         /// <returns>Factional warfare data.</returns>
         public Task<EveServiceResponse<IEnumerable<ContractBid>>> ContractBids(string keyId, string vCode,
-            int characterId, ResponseMode responseMode = ResponseMode.Normal)
+            long characterId, ResponseMode responseMode = ResponseMode.Normal)
         {
             Guard.Against(keyId.IsNullOrWhiteSpace());
             Guard.Against(vCode.IsNullOrWhiteSpace());
@@ -321,7 +321,7 @@ namespace EveHQ.NewEveApi
         /// <param name="responseMode">The response Mode.</param>
         /// <returns>Factional warfare data.</returns>
         public Task<EveServiceResponse<FactionalWarfareStats>> FactionalWarfareStatistics(string keyId, string vCode,
-            int characterId, ResponseMode responseMode = ResponseMode.Normal)
+            long characterId, ResponseMode responseMode = ResponseMode.Normal)
         {
             Guard.Against(keyId.IsNullOrWhiteSpace());
             Guard.Against(vCode.IsNullOrWhiteSpace());
@@ -342,7 +342,7 @@ namespace EveHQ.NewEveApi
         /// <param name="characterId">The character id.</param>
         /// <param name="responseMode">The response mode.</param>
         /// <returns></returns>
-        public EveServiceResponse<IEnumerable<IndustryJob>> IndustryJobs(string keyId, string vCode, int characterId,
+        public EveServiceResponse<IEnumerable<IndustryJob>> IndustryJobs(string keyId, string vCode, long characterId,
             ResponseMode responseMode = ResponseMode.Normal)
         {
             return RunAsyncMethod(IndustryJobsAsync, keyId, vCode, characterId, responseMode);
@@ -355,7 +355,7 @@ namespace EveHQ.NewEveApi
         /// <param name="responseMode">The response Mode.</param>
         /// <returns>A collection of Industry Job data.</returns>
         public Task<EveServiceResponse<IEnumerable<IndustryJob>>> IndustryJobsAsync(string keyId, string vCode,
-            int characterId, ResponseMode responseMode = ResponseMode.Normal)
+            long characterId, ResponseMode responseMode = ResponseMode.Normal)
         {
             Guard.Against(keyId.IsNullOrWhiteSpace());
             Guard.Against(vCode.IsNullOrWhiteSpace());
@@ -376,14 +376,14 @@ namespace EveHQ.NewEveApi
         /// <param name="characterId">Character to query.</param>
         /// <param name="responseMode">The response Mode.</param>
         /// <returns></returns>
-        public EveServiceResponse<IEnumerable<Entities.Killmail.KillMail>> KillMails(string keyId, string vCode, int characterId,
+        public EveServiceResponse<IEnumerable<Entities.Killmail.KillMail>> KillMails(string keyId, string vCode, long characterId,
             ResponseMode responseMode = ResponseMode.Normal)
         {
             return RunAsyncMethod(KillMailsAsync, keyId, vCode, characterId, responseMode);
         }
 
         public Task<EveServiceResponse<IEnumerable<Entities.Killmail.KillMail>>> KillMailsAsync(string keyId, string vCode,
-            int characterId, ResponseMode responseMode = ResponseMode.Normal)
+            long characterId, ResponseMode responseMode = ResponseMode.Normal)
         {
             Guard.Ensure(!keyId.IsNullOrWhiteSpace());
             Guard.Ensure(!vCode.IsNullOrWhiteSpace());
@@ -398,13 +398,13 @@ namespace EveHQ.NewEveApi
                 cacheKey, ApiConstants.FiveMinuteCache, responseMode, ProcessKillMailResponse);
         }
 
-        public EveServiceResponse<IEnumerable<Entities.Blueprint>> Blueprints(string keyId, string vCode, int characterId,
+        public EveServiceResponse<IEnumerable<Entities.Blueprint>> Blueprints(string keyId, string vCode, long characterId,
             ResponseMode responseMode = ResponseMode.Normal)
         {
             return RunAsyncMethod(BlueprintsAsync, keyId, vCode, characterId, responseMode);
         }
 
-        public Task<EveServiceResponse<IEnumerable<Entities.Blueprint>>> BlueprintsAsync(string keyId, string vCode, int characterId,
+        public Task<EveServiceResponse<IEnumerable<Entities.Blueprint>>> BlueprintsAsync(string keyId, string vCode, long characterId,
             ResponseMode responseMode = ResponseMode.Normal)
         {
             Guard.Ensure(!keyId.IsNullOrWhiteSpace());
@@ -426,7 +426,7 @@ namespace EveHQ.NewEveApi
         /// <param name="characterId">The character id.</param>
         /// <param name="responseMode">The response mode.</param>
         /// <returns></returns>
-        public EveServiceResponse<IEnumerable<MarketOrder>> MarketOrders(string keyId, string vCode, int characterId,
+        public EveServiceResponse<IEnumerable<MarketOrder>> MarketOrders(string keyId, string vCode, long characterId,
             ResponseMode responseMode = ResponseMode.Normal)
         {
             return RunAsyncMethod(MarketOrdersAsync, keyId, vCode, characterId, responseMode);
@@ -439,7 +439,7 @@ namespace EveHQ.NewEveApi
         /// <param name="responseMode">The response Mode.</param>
         /// <returns>a collection of market orders</returns>
         public Task<EveServiceResponse<IEnumerable<MarketOrder>>> MarketOrdersAsync(string keyId, string vCode,
-            int characterId, ResponseMode responseMode = ResponseMode.Normal)
+            long characterId, ResponseMode responseMode = ResponseMode.Normal)
         {
             Guard.Ensure(!keyId.IsNullOrWhiteSpace());
             Guard.Ensure(!vCode.IsNullOrWhiteSpace());
@@ -460,7 +460,7 @@ namespace EveHQ.NewEveApi
         /// <param name="characterId">Character to query.</param>
         /// <param name="responseMode">The response Mode.</param>
         /// <returns>a collection of medals.</returns>
-        public Task<EveServiceResponse<IEnumerable<Medal>>> Medals(string keyId, string vCode, int characterId,
+        public Task<EveServiceResponse<IEnumerable<Medal>>> Medals(string keyId, string vCode, long characterId,
             ResponseMode responseMode = ResponseMode.Normal)
         {
             Guard.Ensure(!keyId.IsNullOrWhiteSpace());
@@ -482,7 +482,7 @@ namespace EveHQ.NewEveApi
         /// <param name="characterId">The character id.</param>
         /// <param name="responseMode">The response Mode.</param>
         /// <returns>The <see cref="Task" />.</returns>
-        public Task<EveServiceResponse<IEnumerable<Research>>> Research(string keyId, string vCode, int characterId,
+        public Task<EveServiceResponse<IEnumerable<Research>>> Research(string keyId, string vCode, long characterId,
             ResponseMode responseMode = ResponseMode.Normal)
         {
             Guard.Ensure(!keyId.IsNullOrWhiteSpace());
@@ -504,7 +504,7 @@ namespace EveHQ.NewEveApi
         /// <param name="characterId">The character id.</param>
         /// <param name="responseMode">The response Mode.</param>
         /// <returns>The <see cref="Task" />.</returns>
-        public Task<EveServiceResponse<SkillInTraining>> SkillInTraining(string keyId, string vCode, int characterId,
+        public Task<EveServiceResponse<SkillInTraining>> SkillInTraining(string keyId, string vCode, long characterId,
             ResponseMode responseMode = ResponseMode.Normal)
         {
             Guard.Ensure(!keyId.IsNullOrWhiteSpace());
@@ -526,7 +526,7 @@ namespace EveHQ.NewEveApi
         /// <param name="characterId">The character id.</param>
         /// <param name="responseMode">The response Mode.</param>
         /// <returns>The <see cref="Task" />.</returns>
-        public EveServiceResponse<IEnumerable<QueuedSkill>> SkillQueue(string keyId, string vCode, int characterId,
+        public EveServiceResponse<IEnumerable<QueuedSkill>> SkillQueue(string keyId, string vCode, long characterId,
             ResponseMode responseMode = ResponseMode.Normal)
         {
             return RunAsyncMethod(SkillQueueAsync, keyId, vCode, characterId, responseMode);
@@ -539,7 +539,7 @@ namespace EveHQ.NewEveApi
         /// <param name="responseMode">The response Mode.</param>
         /// <returns>The <see cref="Task" />.</returns>
         public Task<EveServiceResponse<IEnumerable<QueuedSkill>>> SkillQueueAsync(string keyId, string vCode,
-            int characterId, ResponseMode responseMode = ResponseMode.Normal)
+            long characterId, ResponseMode responseMode = ResponseMode.Normal)
         {
             Guard.Ensure(!keyId.IsNullOrWhiteSpace());
             Guard.Ensure(!vCode.IsNullOrWhiteSpace());
@@ -560,7 +560,7 @@ namespace EveHQ.NewEveApi
         /// <param name="characterId">The character id.</param>
         /// <param name="responseMode">The response mode.</param>
         /// <returns></returns>
-        public EveServiceResponse<IEnumerable<NpcStanding>> NPCStandings(string keyId, string vCode, int characterId,
+        public EveServiceResponse<IEnumerable<NpcStanding>> NPCStandings(string keyId, string vCode, long characterId,
             ResponseMode responseMode = ResponseMode.Normal)
         {
             return RunAsyncMethod(NPCStandingsAsync, keyId, vCode, characterId, responseMode);
@@ -573,7 +573,7 @@ namespace EveHQ.NewEveApi
         /// <param name="responseMode">The response Mode.</param>
         /// <returns>The <see cref="Task" />.</returns>
         public Task<EveServiceResponse<IEnumerable<NpcStanding>>> NPCStandingsAsync(string keyId, string vCode,
-            int characterId, ResponseMode responseMode = ResponseMode.Normal)
+            long characterId, ResponseMode responseMode = ResponseMode.Normal)
         {
             Guard.Ensure(!keyId.IsNullOrWhiteSpace());
             Guard.Ensure(!vCode.IsNullOrWhiteSpace());
@@ -602,7 +602,7 @@ namespace EveHQ.NewEveApi
         public EveServiceResponse<IEnumerable<WalletJournalEntry>> WalletJournal(
             string keyId,
             string vCode,
-            int characterId,
+            long characterId,
             int accountKey,
             long? fromId = null,
             int? rowCount = null,
@@ -624,7 +624,7 @@ namespace EveHQ.NewEveApi
         public Task<EveServiceResponse<IEnumerable<WalletJournalEntry>>> WalletJournalAsync(
             string keyId,
             string vCode,
-            int characterId,
+            long characterId,
             int accountKey,
             long? fromId = null,
             int? rowCount = null,
@@ -673,7 +673,7 @@ namespace EveHQ.NewEveApi
         public EveServiceResponse<IEnumerable<WalletTransaction>> WalletTransactions(
             string keyId,
             string vCode,
-            int characterId,
+            long characterId,
             int accountKey,
             long? fromId = null,
             int? rowCount = null,
@@ -695,7 +695,7 @@ namespace EveHQ.NewEveApi
         public Task<EveServiceResponse<IEnumerable<WalletTransaction>>> WalletTransactionsAsync(
             string keyId,
             string vCode,
-            int characterId,
+            long characterId,
             int accountKey,
             long? fromId = null,
             int? rowCount = null,

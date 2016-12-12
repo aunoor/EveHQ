@@ -9,11 +9,14 @@
 34317,1,0,0,552,1,34317,0,1,0,-33.33333333,15,Defence Mode - Signature Radius
 
 34317,2,0,0,54,4,567;570,0,0,0,66.66666667,15,Sharpshooter Mode - Small Energy Turret Optimal Range
+34317,2,0,0,10014,4,567;570,0,0,0,33,15,Sharpshooter Mode - Small Energy Turret Damage
 34317,2,0,0,76,1,34317,0,1,0,100,15,Sharpshooter Mode - Targeting Range
-34317,2,0,0,564,1,34317,0,1,0,100,15,Sharpshooter Mode - Scan Resolution
 34317,2,0,0,208,1,34317,0,1,0,100,15,Sharpshooter Mode - Sensor Strength
+34317,2,0,0,2112,1,34317,0,0,0,-66.66666666,15,Sharpshooter Mode - Sensor Dampener resistance
+34317,2,0,0,2113,1,34317,0,0,0,-66.66666666,15,Sharpshooter Mode - Weapon Disruption resistance
 
-34317,3,0,0,37,1,34317,0,1,0,66.66666667,15,Propulsion Mode - Max Velocity
+34317,3,0,0,20,4,131,0,1,0,66.66666667,15,Propulsion Mode - MWD speed boost
+34317,3,0,0,20,4,542,0,1,0,66.66666667,15,Propulsion Mode - AB speed boost
 34317,3,0,0,70,1,34317,0,1,0,-33.33333333,15,Propulsion Mode - Inertia
 
 # Svipul,,,,,,,,,,,,
@@ -28,11 +31,14 @@
 34562,1,0,0,554,2,46,0,1,0,-66.66666666,15,Defence Mode - MWD Signature Radius Penalty
 
 34562,2,0,0,160,4,574;577,0,0,0,33.33333333,15,Sharpshooter Mode - Small Projectile Turret Tracking
+34562,2,0,0,10016,4,574;577,0,0,0,33.33333333,15,Sharpshooter Mode - Small Projectile Turret Damage
 34562,2,0,0,76,1,34562,0,1,0,100,15,Sharpshooter Mode - Targeting Range
-34562,2,0,0,564,1,34562,0,1,0,100,15,Sharpshooter Mode - Scan Resolution
 34562,2,0,0,209,1,34562,0,1,0,100,15,Sharpshooter Mode - Sensor Strength
+34562,2,0,0,2112,1,34562,0,0,0,-66.66666666,15,Sharpshooter Mode - Sensor Dampener resistance
+34562,2,0,0,2113,1,34562,0,0,0,-66.66666666,15,Sharpshooter Mode - Weapon Disruption resistance
 
-34562,3,0,0,37,1,34562,0,1,0,66.66666667,15,Propulsion Mode - Max Velocity
+34562,3,0,0,20,4,131,0,1,0,66.66666667,15,Propulsion Mode - MWD speed boost
+34562,3,0,0,20,4,542,0,1,0,66.66666667,15,Propulsion Mode - AB speed boost
 34562,3,0,0,70,1,34562,0,1,0,-33.33333333,15,Propulsion Mode - Inertia
 
 # Jackdaw,,,,,,,,,,,, 
@@ -43,9 +49,14 @@
 34828,1,0,0,552,1,34828,0,1,0,-33.33333333,15,Defence Mode - Signature Radius
 
 34828,2,0,0,37,2,387;648;384;653;394,0,0,0,66.66666666,15,Sharpshooter Mode - Rocket & Light Missile Velocity
+34828,2,0,0,116,2,387;648;384;653;394,0,0,0,33.33333333,15,Rocket & Light Missile Explosive Damage
+34828,2,0,0,117,2,387;648;384;653;394,0,0,0,33.33333333,15,Rocket & Light Missile Kinetic Damage
+34828,2,0,0,114,2,387;648;384;653;394,0,0,0,33.33333333,15,Rocket & Light Missile EM Damage
+34828,2,0,0,118,2,387;648;384;653;394,0,0,0,33.33333333,15,Rocket & Light Missile Thermal Damage
 34828,2,0,0,76,1,34828,0,0,0,100,15,Sharpshooter Mode - Targeting Range
-34828,2,0,0,564,1,34828,0,0,0,100,15,Sharpshooter Mode - Scan Resolution
 34828,2,0,0,211,1,34828,0,0,0,100,15,Sharpshooter Mode - Sensor Strength
+34828,2,0,0,2112,1,34828,0,0,0,-66.66666666,15,Sharpshooter Mode - Sensor Dampener resistance
+34828,2,0,0,2113,1,34828,0,0,0,-66.66666666,15,Sharpshooter Mode - Weapon Disruption resistance
 
 34828,3,0,0,37,1,34828,0,1,0,33.66666667,15,Propulsion Mode - Max Velocity
 34828,3,0,0,70,1,34828,0,1,0,-66.66666667,15,Propulsion Mode - Inertia
@@ -62,9 +73,11 @@
 35683,1,0,0,73,2,62;1199,0,1,0,-33.33333333,15,Defence Mode - Armor repair duration
 
 35683,2,0,0,54,4,564;561,0,0,0,66.66666667,15,Sharpshooter Mode - Small Hybrid Optimal
+35683,2,0,0,10015,4,564;561,0,0,0,33,15,Sharpshooter Mode - Small Hybrid Turret Damage
 35683,2,0,0,76,1,35683,0,0,0,100,15,Sharpshooter Mode - Targeting Range
-35683,2,0,0,564,1,35683,0,0,0,100,15,Sharpshooter Mode - Scan Resolution
 35683,2,0,0,210,1,35683,0,0,0,100,15,Sharpshooter Mode - Sensor Strength
+35683,2,0,0,2112,1,35683,0,0,0,-66.66666666,15,Sharpshooter Mode - Sensor Dampener resistance
+35683,2,0,0,2113,1,35683,0,0,0,-66.66666666,15,Sharpshooter Mode - Weapon Disruption resistance
 
 35683,3,0,0,20,4,131,0,1,0,66.66666667,15,Propulsion Mode - MWD speed boost
 35683,3,0,0,6,4,131,0,1,0,-66.66666667,15,Propulsion Mode - MWD capacitor use

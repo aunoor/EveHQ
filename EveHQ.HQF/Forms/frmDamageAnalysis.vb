@@ -641,7 +641,7 @@ Namespace Forms
                 _missileEr = CDbl(_mMod.LoadedCharge.Attributes(654))
                 _missileEv = CDbl(_mMod.LoadedCharge.Attributes(653))
                 _missileDrf = CDbl(_mMod.LoadedCharge.Attributes(1353))
-                _missileDrs = CDbl(_mMod.LoadedCharge.Attributes(1354))
+                _missileDrs = CDbl(5.5)
                 _wEM = CDbl(_mMod.LoadedCharge.Attributes(114))
                 _wEx = CDbl(_mMod.LoadedCharge.Attributes(116))
                 _wKi = CDbl(_mMod.LoadedCharge.Attributes(117))

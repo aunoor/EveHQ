@@ -242,7 +242,14 @@ Namespace Forms
                 If HQ.Settings.Accounts.ContainsKey(_displayPilot.Account) = True Then
                     Dim dAccount As EveHQAccount = HQ.Settings.Accounts(_displayPilot.Account)
                     If (dAccount.ApiKeySystem = APIKeySystems.Version2 And dAccount.CanUseCharacterAPI(CharacterAccessMasks.AccountStatus)) Then
-                        lblAccountExpiry.Text = "Expiry: " & dAccount.PaidUntil.ToString & " (" & SkillFunctions.TimeToString((dAccount.PaidUntil - Now).TotalSeconds) & ")"
+
+                        Dim now As Date = Date.Now()
+                        If DateTime.Compare(dAccount.PaidUntil, now) < 0 Then
+                            lblAccountExpiry.Text = "Alpha state account"
+                        Else
+                            lblAccountExpiry.Text = "Expiry: " & dAccount.PaidUntil.ToString & " (" & SkillFunctions.TimeToString((dAccount.PaidUntil - now).TotalSeconds) & ")"
+                        End If
+
                         lblAccountLogins.Text = "Login Count: " & dAccount.LogonCount & " (" & SkillFunctions.TimeToString(dAccount.LogonMinutes * 60, False) & ")"
                         If HQ.Settings.NotifyAccountTime = True Then
                             Dim accountTime As Date = dAccount.PaidUntil
@@ -681,7 +688,15 @@ Namespace Forms
                 If grpAccount.Visible = True Then
                     If _displayPilot.Account <> "" Then
                         Dim dAccount As EveHQAccount = HQ.Settings.Accounts(_displayPilot.Account)
-                        lblAccountExpiry.Text = "Expiry: " & dAccount.PaidUntil.ToString & " (" & SkillFunctions.TimeToString((dAccount.PaidUntil - Now).TotalSeconds) & ")"
+
+
+                        Dim now As Date = Date.Now()
+                        If DateTime.Compare(dAccount.PaidUntil, now) < 0 Then
+                            lblAccountExpiry.Text = "Alpha state account"
+                        Else
+                            lblAccountExpiry.Text = "Expiry: " & dAccount.PaidUntil.ToString & " (" & SkillFunctions.TimeToString((dAccount.PaidUntil - now).TotalSeconds) & ")"
+                        End If
+
                         If HQ.Settings.NotifyAccountTime = True Then
                             Dim accountTime As Date = dAccount.PaidUntil
                             If accountTime.Year > 2000 And (accountTime - Now).TotalHours <= HQ.Settings.AccountTimeLimit Then
