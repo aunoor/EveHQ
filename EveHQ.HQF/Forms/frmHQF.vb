@@ -1253,6 +1253,8 @@ Namespace Forms
                         End If
                         SuperTooltip1.SetSuperTooltip(newModule, stt)
                         Select Case shipmod.SlotType
+                            Case SlotTypes.ServiceMod
+                                newModule.Style.BackColor = Color.FromArgb(CInt(PluginSettings.HQFSettings.ServiceModSlotColour))
                             Case SlotTypes.Subsystem
                                 newModule.Style.BackColor = Color.FromArgb(CInt(PluginSettings.HQFSettings.SubSlotColour))
                             Case SlotTypes.High
@@ -2403,6 +2405,17 @@ Namespace Forms
             For Each cargo As CargoBayItem In currentShip.CargoBayItems.Values
                 fitting.AppendLine(cargo.ItemType.Name & ", " & cargo.Quantity)
             Next
+            fitting.AppendLine("")
+            For slot As Integer = 1 To currentShip.ServiceModSlots
+                If currentShip.ServiceModSlot(slot) IsNot Nothing Then
+                    state = CInt(Math.Log(currentShip.ServiceModSlot(slot).ModuleState) / Math.Log(2))
+                    If currentShip.ServiceModSlot(slot).LoadedCharge IsNot Nothing Then
+                        fitting.AppendLine(currentShip.ServiceModSlot(slot).Name & "_" & state & ", " & currentShip.ServiceModSlot(slot).LoadedCharge.Name)
+                    Else
+                        fitting.AppendLine(currentShip.ServiceModSlot(slot).Name & "_" & state)
+                    End If
+                End If
+            Next
             Try
                 Clipboard.SetText(fitting.ToString.Trim)
             Catch ex As Exception
@@ -2482,6 +2495,16 @@ Namespace Forms
             fitting.AppendLine("")
             For Each cargo As CargoBayItem In currentship.CargoBayItems.Values
                 fitting.AppendLine(cargo.ItemType.Name & " x" & cargo.Quantity)
+            Next
+            fitting.AppendLine("")
+            For slot As Integer = 1 To currentship.ServiceModSlots
+                If currentship.ServiceModSlot(slot) IsNot Nothing Then
+                    If currentship.ServiceModSlot(slot).LoadedCharge IsNot Nothing Then
+                        fitting.AppendLine(currentship.ServiceModSlot(slot).Name & ", " & currentship.ServiceModSlot(slot).LoadedCharge.Name)
+                    Else
+                        fitting.AppendLine(currentship.ServiceModSlot(slot).Name)
+                    End If
+                End If
             Next
             Try
                 Clipboard.SetText(fitting.ToString.Trim)
@@ -2687,6 +2710,40 @@ Namespace Forms
                     fitting.AppendLine(cargo.Quantity & "x " & cargo.ItemType.Name)
                 Next
             End If
+
+            slots = New Dictionary(Of String, Integer)
+            For slot As Integer = 1 To currentship.ServiceModSlots
+                If currentship.ServiceModSlot(slot) IsNot Nothing Then
+                    If currentship.ServiceModSlot(slot).LoadedCharge IsNot Nothing Then
+                        If slotList.Contains(currentship.ServiceModSlot(slot).Name & " (" & currentship.ServiceModSlot(slot).LoadedCharge.Name & ")") = True Then
+                            ' Get the dictionary item
+                            slotCount = slots(currentship.ServiceModSlot(slot).Name & " (" & currentship.ServiceModSlot(slot).LoadedCharge.Name & ")")
+                            slots(currentship.ServiceModSlot(slot).Name & " (" & currentship.ServiceModSlot(slot).LoadedCharge.Name & ")") = slotCount + 1
+                        Else
+                            slotList.Add(currentship.ServiceModSlot(slot).Name & " (" & currentship.ServiceModSlot(slot).LoadedCharge.Name & ")")
+                            slots.Add(currentship.ServiceModSlot(slot).Name & " (" & currentship.ServiceModSlot(slot).LoadedCharge.Name & ")", 1)
+                        End If
+                    Else
+                        If slotList.Contains(currentship.ServiceModSlot(slot).Name) = True Then
+                            slotCount = slots(currentship.ServiceModSlot(slot).Name)
+                            slots(currentship.ServiceModSlot(slot).Name) = slotCount + 1
+                        Else
+                            slotList.Add(currentship.ServiceModSlot(slot).Name)
+                            slots.Add(currentship.ServiceModSlot(slot).Name, 1)
+                        End If
+                    End If
+                End If
+            Next
+            If slots.Count > 0 Then
+                For Each cMod As String In slots.Keys
+                    If CInt(slots(cMod)) > 1 Then
+                        fitting.AppendLine(slots(cMod).ToString & "x " & cMod)
+                    Else
+                        fitting.AppendLine(cMod)
+                    End If
+                Next
+            End If
+
             Try
                 Clipboard.SetText(fitting.ToString)
             Catch ex As Exception
@@ -2848,6 +2905,17 @@ Namespace Forms
                     End If
                 Next
             End If
+
+            ' Parse service module slots
+            For slot As Integer = 1 To currentship.ServiceModSlots
+                If currentship.ServiceModSlot(slot) IsNot Nothing Then
+                    If modList.ContainsKey(currentship.ServiceModSlot(slot).Name) = True Then
+                        modList(currentship.ServiceModSlot(slot).Name) += 1
+                    Else
+                        modList.Add(currentship.ServiceModSlot(slot).Name, 1)
+                    End If
+                End If
+            Next
 
         End Sub
 

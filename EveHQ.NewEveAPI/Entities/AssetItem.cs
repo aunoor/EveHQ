@@ -53,6 +53,8 @@ namespace EveHQ.NewEveApi.Entities
     /// </summary>
     public sealed class AssetItem
     {
+        private List<AssetItem> contents = new List<AssetItem>();
+
         /// <summary>
         ///     Gets the ID value of the Item. Only guaranteed unique at the time of the asset load.
         /// </summary>
@@ -61,7 +63,7 @@ namespace EveHQ.NewEveApi.Entities
         /// <summary>
         ///     Gets the Location (sol system or star base) of the item. Not used with items that are inside a container item.
         /// </summary>
-        public int LocationId { get; set; }
+        public long LocationId { get; set; }
 
         /// <summary>
         ///     Gets the item Type Id. This id can be used to get details from the inventory types Table of the EveDB.
@@ -90,11 +92,14 @@ namespace EveHQ.NewEveApi.Entities
         /// <summary>
         ///     Gets the contents of this item.
         /// </summary>
-        public IEnumerable<AssetItem> Contents { get; set; }
+        public List<AssetItem> Contents {
+            get { return contents; }
+            set { contents = value; }
+        }
 
-        /// <summary>
-        ///     Gets the containing item, if this item is inside a container.
-        /// </summary>
-        public long ParentItemId { get; set; }
+        public void addContents(AssetItem item)
+        {
+            contents.Add(item);
+        }
     }
 }

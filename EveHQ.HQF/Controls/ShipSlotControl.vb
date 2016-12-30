@@ -317,6 +317,13 @@ Namespace Controls
                 End If
             Next
 
+            'Service modules
+            For slot As Integer = 1 To ParentFitting.FittedShip.ServiceModSlots
+                If ParentFitting.FittedShip.ServiceModSlot(slot) IsNot Nothing Then
+                    itemIds.Add(CInt(ParentFitting.FittedShip.ServiceModSlot(slot).ID))
+                End If
+            Next
+
             'Drone bay
             For Each dbi As Object In ParentFitting.FittedShip.DroneBayItems.Values
                 For count As Integer = 0 To CType(dbi, DroneBayItem).Quantity
@@ -405,6 +412,11 @@ Namespace Controls
                         UpdateSlotLocation(ParentFitting.FittedShip.SubSlot(slot), slot)
                     End If
                 Next
+                For slot As Integer = 1 To ParentFitting.FittedShip.ServiceModSlots
+                    If ParentFitting.FittedShip.ServiceModSlot(slot) IsNot Nothing Then
+                        UpdateSlotLocation(ParentFitting.FittedShip.ServiceModSlot(slot), slot)
+                    End If
+                Next
                 adtSlots.EndUpdate()
                 Call RedrawCargoBayCapacity()
                 Call RedrawDroneBayCapacity()
@@ -434,6 +446,8 @@ Namespace Controls
                         shipMod = ParentFitting.FittedShip.HiSlot(slotNo)
                     Case SlotTypes.Subsystem
                         shipMod = ParentFitting.FittedShip.SubSlot(slotNo)
+                    Case SlotTypes.ServiceMod
+                        shipMod = ParentFitting.FittedShip.ServiceModSlot(slotNo)
                 End Select
                 If shipMod IsNot Nothing Then
                     shipMod.ModuleState = oldMod.ModuleState
@@ -496,6 +510,7 @@ Namespace Controls
             Dim lowSlotStyle As ElementStyle = adtSlots.Styles("SlotStyle").Copy
             Dim rigSlotStyle As ElementStyle = adtSlots.Styles("SlotStyle").Copy
             Dim subSlotStyle As ElementStyle = adtSlots.Styles("SlotStyle").Copy
+            Dim serviceModSlotStyle As ElementStyle = adtSlots.Styles("SlotStyle").Copy
             Dim selSlotStyle As ElementStyle = adtSlots.Styles("SlotStyle").Copy
             selSlotStyle.BackColorGradientType = eGradientType.Linear
             selSlotStyle.BackColor = Color.Orange
@@ -597,6 +612,25 @@ Namespace Controls
                 parentNode.Expanded = True
             End If
 
+            ' Create service module slots
+            If ParentFitting.BaseShip.ServiceModSlots > 0 Then
+                Dim parentNode As New Node("Service Module Slots", adtSlots.Styles("HeaderStyle"))
+                parentNode.Name = "32"
+                parentNode.FullRowBackground = True
+                parentNode.Image = New Bitmap(My.Resources.imgServiceModSlot, ImageSize, ImageSize)
+                adtSlots.Nodes.Add(parentNode)
+                For slot As Integer = 1 To ParentFitting.BaseShip.ServiceModSlots
+                    Dim slotNode As New Node("", serviceModSlotStyle)
+                    slotNode.Name = "32_" & slot
+                    slotNode.Style.BackColor = Color.FromArgb(255, 255, 255)
+                    slotNode.Style.BackColor2 = Color.FromArgb(CInt(PluginSettings.HQFSettings.ServiceModSlotColour))
+                    slotNode.StyleSelected = selSlotStyle
+                    Call AddUserColumnData(ParentFitting.BaseShip.ServiceModSlot(slot), slotNode)
+                    parentNode.Nodes.Add(slotNode)
+                Next
+                parentNode.Expanded = True
+            End If
+
             adtSlots.EndUpdate()
 
             ' Update ship mode switch
@@ -616,7 +650,22 @@ Namespace Controls
                 Case ShipModes.Propulsion
                     btnShipMode3.Checked = True
             End Select
-            
+
+            ' Update ship mode switch
+            Dim securitySpaceVisible = ParentFitting.BaseShip.Attributes.ContainsKey(2339)
+            lblSecuritySpace.Visible = securitySpaceVisible
+            btnSecuritySpace0.Visible = securitySpaceVisible
+            btnSecuritySpace1.Visible = securitySpaceVisible
+            btnSecuritySpace2.Visible = securitySpaceVisible
+            Select Case ParentFitting.SecuritySpace
+                Case SecuritySpace.High
+                    btnShipMode0.Checked = True
+                Case SecuritySpace.Low
+                    btnShipMode1.Checked = True
+                Case SecuritySpace.NullAndWH
+                    btnShipMode2.Checked = True
+            End Select
+
             ' Update details
             Call UpdateSlotNumbers()
             Call UpdatePrices()
@@ -1257,6 +1306,10 @@ Namespace Controls
                     currentMod = ParentFitting.BaseShip.SubSlot(slotNo)
                     fittedMod = ParentFitting.FittedShip.SubSlot(slotNo)
                     canOffline = False
+                Case SlotTypes.ServiceMod
+                    currentMod = ParentFitting.BaseShip.ServiceModSlot(slotNo)
+                    fittedMod = ParentFitting.FittedShip.ServiceModSlot(slotNo)
+                    canOffline = False
             End Select
             If currentMod IsNot Nothing Then
                 Dim currentstate As Integer = currentMod.ModuleState
@@ -1418,6 +1471,8 @@ Namespace Controls
                             loadedModule = ParentFitting.BaseShip.HiSlot(slotNo)
                         Case SlotTypes.Subsystem
                             loadedModule = ParentFitting.BaseShip.SubSlot(slotNo)
+                        Case SlotTypes.ServiceMod
+                            loadedModule = ParentFitting.BaseShip.ServiceModSlot(slotNo)
                     End Select
                     Clipboard.SetData("ShipModule", loadedModule.Clone)
                 End If
@@ -1467,6 +1522,9 @@ Namespace Controls
                 Next
                 For slot As Integer = 1 To ParentFitting.BaseShip.SubSlots
                     ParentFitting.BaseShip.SubSlot(slot) = Nothing
+                Next
+                For slot As Integer = 1 To ParentFitting.BaseShip.ServiceModSlots
+                    ParentFitting.BaseShip.ServiceModSlot(slot) = Nothing
                 Next
             End If
         End Sub
@@ -1536,6 +1594,8 @@ Namespace Controls
                             selMod = ParentFitting.BaseShip.HiSlot(slotNo)
                         Case SlotTypes.Subsystem
                             selMod = ParentFitting.BaseShip.SubSlot(slotNo)
+                        Case SlotTypes.ServiceMod
+                            selMod = ParentFitting.BaseShip.ServiceModSlot(slotNo)
                     End Select
                     If selMod.LoadedCharge IsNot Nothing Then
                         UndoStack.Push(New UndoInfo(UndoInfo.TransType.RemoveModule, slotType, slotNo, selMod.Name,
@@ -1577,6 +1637,8 @@ Namespace Controls
                         Case SlotTypes.Subsystem
                             ParentFitting.BaseShip.SubSlot(slotNo) = Nothing
                             removedSubsystems = True
+                        Case SlotTypes.ServiceMod
+                            ParentFitting.BaseShip.ServiceModSlot(slotNo) = Nothing
                     End Select
                     For Each slotCell As Cell In slot.Cells
                         slotCell.Text = ""
@@ -1617,6 +1679,8 @@ Namespace Controls
                         selMod = ParentFitting.BaseShip.HiSlot(slotNo)
                     Case SlotTypes.Subsystem
                         selMod = ParentFitting.BaseShip.SubSlot(slotNo)
+                    Case SlotTypes.ServiceMod
+                        selMod = ParentFitting.BaseShip.ServiceModSlot(slotNo)
                 End Select
                 ' Check for command processor usage
                 If selMod IsNot Nothing Then
@@ -1662,6 +1726,8 @@ Namespace Controls
                             ParentFitting.BaseShip.HiSlot(slotNo) = Nothing
                         Case SlotTypes.Subsystem
                             ParentFitting.BaseShip.SubSlot(slotNo) = Nothing
+                        Case SlotTypes.ServiceMod
+                            ParentFitting.BaseShip.ServiceModSlot(slotNo) = Nothing
                     End Select
                     adtSlots.BeginUpdate()
                     For Each slotCell As Cell In slot.Cells
@@ -1715,6 +1781,8 @@ Namespace Controls
                                     currentMod = ParentFitting.BaseShip.HiSlot(slotNo)
                                 Case SlotTypes.Subsystem
                                     currentMod = ParentFitting.BaseShip.SubSlot(slotNo)
+                                Case SlotTypes.ServiceMod
+                                    currentMod = ParentFitting.BaseShip.ServiceModSlot(slotNo)
                             End Select
                             If currentMod Is Nothing Then
                                 Dim findModuleMenuItem As New ToolStripMenuItem
@@ -2001,6 +2069,8 @@ Namespace Controls
                                             currentMod = ParentFitting.BaseShip.HiSlot(slotNo)
                                         Case SlotTypes.Subsystem
                                             currentMod = ParentFitting.BaseShip.SubSlot(slotNo)
+                                        Case SlotTypes.ServiceMod
+                                            currentMod = ParentFitting.BaseShip.ServiceModSlot(slotNo)
                                     End Select
                                     If currentMod.LoadedCharge IsNot Nothing Then
                                         chargeName = currentMod.LoadedCharge.Name
@@ -2336,6 +2406,8 @@ Namespace Controls
                     sModule = ParentFitting.FittedShip.HiSlot(CInt(slotInfo(1)))
                 Case SlotTypes.Subsystem
                     sModule = ParentFitting.FittedShip.SubSlot(CInt(slotInfo(1)))
+                Case SlotTypes.ServiceMod
+                    sModule = ParentFitting.FittedShip.ServiceModSlot(CInt(slotInfo(1)))
             End Select
             Dim showInfo As New FrmShowInfo
             Dim hPilot As EveHQPilot
@@ -2366,6 +2438,8 @@ Namespace Controls
                     sModule = ParentFitting.FittedShip.HiSlot(CInt(slotInfo(1))).LoadedCharge
                 Case SlotTypes.Subsystem
                     sModule = ParentFitting.FittedShip.SubSlot(CInt(slotInfo(1))).LoadedCharge
+                Case SlotTypes.ServiceMod
+                    sModule = ParentFitting.FittedShip.ServiceModSlot(CInt(slotInfo(1))).LoadedCharge
             End Select
             Dim showInfo As New FrmShowInfo
             Dim hPilot As EveHQPilot
@@ -2586,6 +2660,8 @@ Namespace Controls
                     fModule = ParentFitting.FittedShip.HiSlot(sModule.SlotNo)
                 Case SlotTypes.Subsystem
                     fModule = ParentFitting.FittedShip.SubSlot(sModule.SlotNo)
+                Case SlotTypes.ServiceMod
+                    fModule = ParentFitting.FittedShip.ServiceModSlot(sModule.SlotNo)
             End Select
             Dim oldState As ModuleStates = sModule.ModuleState
             sModule.ModuleState = ModuleStates.Active
@@ -2683,6 +2759,8 @@ Namespace Controls
                     fModule = ParentFitting.FittedShip.HiSlot(sModule.SlotNo)
                 Case SlotTypes.Subsystem
                     fModule = ParentFitting.FittedShip.SubSlot(sModule.SlotNo)
+                Case SlotTypes.ServiceMod
+                    fModule = ParentFitting.FittedShip.ServiceModSlot(sModule.SlotNo)
             End Select
             Dim oldState As ModuleStates = sModule.ModuleState
             sModule.ModuleState = ModuleStates.Overloaded
@@ -2730,6 +2808,8 @@ Namespace Controls
                     loadedModule = ParentFitting.BaseShip.HiSlot(slotNo)
                 Case SlotTypes.Subsystem
                     loadedModule = ParentFitting.BaseShip.SubSlot(slotNo)
+                Case SlotTypes.ServiceMod
+                    loadedModule = ParentFitting.BaseShip.ServiceModSlot(slotNo)
             End Select
             If suppressUndo = False Then
                 UndoStack.Push(New UndoInfo(UndoInfo.TransType.RemoveCharge, slotType, slotNo, loadedModule.Name,
@@ -2768,6 +2848,8 @@ Namespace Controls
                         loadedModule = ParentFitting.BaseShip.HiSlot(slotNo)
                     Case SlotTypes.Subsystem
                         loadedModule = ParentFitting.BaseShip.SubSlot(slotNo)
+                    Case SlotTypes.ServiceMod
+                        loadedModule = ParentFitting.BaseShip.ServiceModSlot(slotNo)
                 End Select
                 Dim oldChargeName As String = ""
                 If loadedModule.LoadedCharge IsNot Nothing Then
@@ -4043,6 +4125,9 @@ Namespace Controls
                             Case SlotTypes.Subsystem
                                 ocMod = ParentFitting.BaseShip.SubSlot(oslotNo).Clone
                                 ofMod = ParentFitting.FittedShip.SubSlot(oslotNo).Clone
+                            Case SlotTypes.ServiceMod
+                                ocMod = ParentFitting.BaseShip.ServiceModSlot(oslotNo).Clone
+                                ofMod = ParentFitting.FittedShip.ServiceModSlot(oslotNo).Clone
                         End Select
                     End If
 
@@ -4066,6 +4151,9 @@ Namespace Controls
                             Case SlotTypes.Subsystem
                                 ncMod = ParentFitting.BaseShip.SubSlot(nslotNo).Clone
                                 nfMod = ParentFitting.FittedShip.SubSlot(nslotNo).Clone
+                            Case SlotTypes.ServiceMod
+                                ncMod = ParentFitting.BaseShip.ServiceModSlot(nslotNo).Clone
+                                nfMod = ParentFitting.FittedShip.ServiceModSlot(nslotNo).Clone
                         End Select
                     End If
                     If e.Effect = DragDropEffects.Move Then ' Mouse button released?
@@ -4090,6 +4178,9 @@ Namespace Controls
                                 Case SlotTypes.Subsystem
                                     ParentFitting.BaseShip.SubSlot(nslotNo) = ocMod
                                     ParentFitting.FittedShip.SubSlot(nslotNo) = ofMod
+                                Case SlotTypes.ServiceMod
+                                    ParentFitting.BaseShip.ServiceModSlot(nslotNo) = ocMod
+                                    ParentFitting.FittedShip.ServiceModSlot(nslotNo) = ofMod
                             End Select
                         End If
                         If ncMod Is Nothing Then
@@ -4112,6 +4203,9 @@ Namespace Controls
                                 Case SlotTypes.Subsystem
                                     ParentFitting.BaseShip.SubSlot(oslotNo) = ncMod
                                     ParentFitting.FittedShip.SubSlot(oslotNo) = nfMod
+                                Case SlotTypes.ServiceMod
+                                    ParentFitting.BaseShip.ServiceModSlot(oslotNo) = ncMod
+                                    ParentFitting.FittedShip.ServiceModSlot(oslotNo) = nfMod
                             End Select
                         End If
                         Call UpdateSlotLocation(ofMod, nslotNo)
@@ -5829,6 +5923,22 @@ Namespace Controls
 
 #End Region
 
+        Private Sub btnSecuritySpace_Click(sender As Object, e As EventArgs) Handles btnSecuritySpace0.Click, btnSecuritySpace1.Click, btnSecuritySpace2.Click
+            Call SecuritySpaceSelection(sender)
+        End Sub
+
+        Private Sub SecuritySpaceSelection(sender As Object)
+            Dim btn As ButtonX = CType(sender, ButtonX)
+            btnSecuritySpace0.Checked = False
+            btnSecuritySpace1.Checked = False
+            btnSecuritySpace2.Checked = False
+            btn.Checked = True
+            Dim mode As Integer = CInt(btn.Name.Substring(btn.Name.Length - 1, 1))
+            ParentFitting.SecuritySpace = CType(mode, SecuritySpace)
+            If _updateAll = False Then
+                ParentFitting.ApplyFitting(BuildType.BuildEverything)
+            End If
+        End Sub
 
     End Class
 

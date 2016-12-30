@@ -210,5 +210,7 @@ namespace EveHQ.NewEveApi
         /// The items data inside KillMail
         /// </summary>
         public const string Items = "items";
+
+        public const string Flat = "flat";
     }
 }

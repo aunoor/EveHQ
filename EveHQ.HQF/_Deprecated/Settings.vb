@@ -59,6 +59,7 @@ Imports EveHQ.Core
     Private cLowSlotColour As Long = Color.Thistle.ToArgb
     Private cRigSlotColour As Long = Color.LightGreen.ToArgb
     Private cSubSlotColour As Long = Color.DarkSeaGreen.ToArgb
+    Private cServiceModSlotColour As Long = Color.MediumAquamarine.ToArgb
     Private cDefaultPilot As String = ""
     Private cRestoreLastSession As Boolean = False
     Private cLastPriceUpdate As DateTime
@@ -456,6 +457,14 @@ Imports EveHQ.Core
         End Get
         Set(ByVal value As Long)
             cSubSlotColour = value
+        End Set
+    End Property
+    Public Property ServiceModSlotColour() As Long
+        Get
+            Return cServiceModSlotColour
+        End Get
+        Set(ByVal value As Long)
+            cServiceModSlotColour = value
         End Set
     End Property
     ' ReSharper restore InconsistentNaming

@@ -1065,6 +1065,7 @@ Public Class FileConverter
                 newSettings.LowSlotColour = oldSettings.LowSlotColour
                 newSettings.RigSlotColour = oldSettings.RigSlotColour
                 newSettings.SubSlotColour = oldSettings.SubSlotColour
+                newSettings.ServiceModSlotColour = oldSettings.ServiceModSlotColour
                 newSettings.DefaultPilot = oldSettings.DefaultPilot
                 newSettings.RestoreLastSession = oldSettings.RestoreLastSession
                 newSettings.LastPriceUpdate = oldSettings.LastPriceUpdate

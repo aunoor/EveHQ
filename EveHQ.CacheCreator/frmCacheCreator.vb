@@ -2334,6 +2334,8 @@ Public Class FrmCacheCreator
                             effMod.SlotType = SlotTypes.Rig
                         Case 3772 ' Sub slot
                             effMod.SlotType = SlotTypes.Subsystem
+                        Case 6306 ' Service module slot
+                            effMod.SlotType = SlotTypes.ServiceMod
                         Case 40
                             If effMod.DatabaseGroup <> 481 Then
                                 effMod.IsLauncher = True

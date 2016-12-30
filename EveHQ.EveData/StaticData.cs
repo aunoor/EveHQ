@@ -195,7 +195,7 @@ namespace EveHQ.EveData
         /// <summary>
         ///     The stations.
         /// </summary>
-        private static Dictionary<int, Station> stations = new Dictionary<int, Station>();
+        private static Dictionary<long, Station> stations = new Dictionary<long, Station>();
 
         /// <summary>
         ///     The ship traits.
@@ -463,7 +463,7 @@ namespace EveHQ.EveData
         /// <summary>
         ///     Gets the stations.
         /// </summary>
-        public static Dictionary<int, Station> Stations
+        public static Dictionary<long, Station> Stations
         {
             get { return stations; }
         }
@@ -726,7 +726,7 @@ namespace EveHQ.EveData
         /// <summary>Gets the name of an Eve location from the location ID</summary>
         /// <param name="locationId">The location id.</param>
         /// <returns>The <see cref="string" />.</returns>
-        public static string GetLocationName(int locationId)
+        public static string GetLocationName(long locationId)
         {
             if (locationId >= 66000000)
             {
@@ -754,10 +754,10 @@ namespace EveHQ.EveData
 
             if (Convert.ToDouble(locationId) < 60000000)
             {
-                if (SolarSystems.ContainsKey(locationId))
+                if (SolarSystems.ContainsKey(locationId.ToInt32()))
                 {
                     // Known solar system
-                    return SolarSystems[locationId].Name;
+                    return SolarSystems[locationId.ToInt32()].Name;
                 }
 
                 // Unknown solar system
@@ -1026,7 +1026,7 @@ namespace EveHQ.EveData
                     var s = new FileStream(Path.Combine(coreCacheFolder, "Stations.dat"), FileMode.Open, FileAccess.Read)
                     )
                 {
-                    stations = Serializer.Deserialize<Dictionary<int, Station>>(s);
+                    stations = Serializer.Deserialize<Dictionary<long, Station>>(s);
                 }
 
                 Trace.TraceInformation(" *** Stations Finished Loading");

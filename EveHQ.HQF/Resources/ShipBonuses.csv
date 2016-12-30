@@ -2988,3 +2988,64 @@
 12003,1,16591,10014,4,568;572,0,1,0,5,15,Medium Energy Turret Damage
 12003,1,16591,54,4,568;572,0,1,0,10,15,Medium Energy Turret Optimal Range
 12003,0,0,554,2,46,0,0,0,-50,15,MWD Signature Radius Penalty
+# Astrahus ,,,,,,,,,,,
+35832,1,26252,2278,7,2278,0,0,0,25,15,combat rig effects
+35832,1,26252,2435,7,2435,0,0,0,25,15,combat rig effects
+35832,1,26252,2436,7,35832,0,0,0,25,15,combat rig effects
+35832,1,26252,2437,7,35832,0,0,0,25,15,combat rig effects
+35832,1,26252,2438,7,35832,0,0,0,25,15,combat rig effects
+35832,1,26252,2439,7,35832,0,0,0,25,15,combat rig effects
+35832,1,26252,2440,7,35832,0,0,0,25,15,combat rig effects
+35832,1,26252,2441,7,35832,0,0,0,25,15,combat rig effects
+35832,1,26252,2442,7,2442,0,0,0,25,15,combat rig effects
+35832,1,26252,2449,7,35832,0,0,0,25,15,combat rig effects
+35832,0,0,2109,2,1321,0,0,0,25,15,service module fuel consumption
+35832,0,0,2110,2,1321,0,0,0,25,15,service module fuel consumption
+# Fortizar ,,,,,,,,,,,
+35833,1,26252,2278,7,2278,0,0,0,25,15,combat rig effects
+35833,1,26252,2435,7,2435,0,0,0,25,15,combat rig effects
+35833,1,26252,2436,7,35832,0,0,0,25,15,combat rig effects
+35833,1,26252,2437,7,35832,0,0,0,25,15,combat rig effects
+35833,1,26252,2438,7,35832,0,0,0,25,15,combat rig effects
+35833,1,26252,2439,7,35832,0,0,0,25,15,combat rig effects
+35833,1,26252,2440,7,35832,0,0,0,25,15,combat rig effects
+35833,1,26252,2441,7,35832,0,0,0,25,15,combat rig effects
+35833,1,26252,2442,7,2442,0,0,0,25,15,combat rig effects
+35833,1,26252,2449,7,35832,0,0,0,25,15,combat rig effects
+35833,0,0,2109,2,1321,0,0,0,25,15,service module fuel consumption
+35833,0,0,2110,2,1321,0,0,0,25,15,service module fuel consumption
+# Keepstar ,,,,,,,,,,,
+35834,1,26252,2278,7,2278,0,0,0,25,15,combat rig effects
+35834,1,26252,2435,7,2435,0,0,0,25,15,combat rig effects
+35834,1,26252,2436,7,35832,0,0,0,25,15,combat rig effects
+35834,1,26252,2437,7,35832,0,0,0,25,15,combat rig effects
+35834,1,26252,2438,7,35832,0,0,0,25,15,combat rig effects
+35834,1,26252,2439,7,35832,0,0,0,25,15,combat rig effects
+35834,1,26252,2440,7,35832,0,0,0,25,15,combat rig effects
+35834,1,26252,2441,7,35832,0,0,0,25,15,combat rig effects
+35834,1,26252,2442,7,2442,0,0,0,25,15,combat rig effects
+35834,1,26252,2449,7,35832,0,0,0,25,15,combat rig effects
+35834,0,0,2109,2,1321,0,0,0,25,15,service module fuel consumption
+35834,0,0,2110,2,1321,0,0,0,25,15,service module fuel consumption
+# Upwell Palatine Keepstar ,,,,,,,,,,,
+40340,1,26252,2278,7,2278,0,0,0,25,15,combat rig effects
+40340,1,26252,2435,7,2435,0,0,0,25,15,combat rig effects
+40340,1,26252,2436,7,35832,0,0,0,25,15,combat rig effects
+40340,1,26252,2437,7,35832,0,0,0,25,15,combat rig effects
+40340,1,26252,2438,7,35832,0,0,0,25,15,combat rig effects
+40340,1,26252,2439,7,35832,0,0,0,25,15,combat rig effects
+40340,1,26252,2440,7,35832,0,0,0,25,15,combat rig effects
+40340,1,26252,2441,7,35832,0,0,0,25,15,combat rig effects
+40340,1,26252,2442,7,2442,0,0,0,25,15,combat rig effects
+40340,1,26252,2449,7,35832,0,0,0,25,15,combat rig effects
+40340,0,0,2109,2,1321,0,0,0,25,15,service module fuel consumption
+40340,0,0,2110,2,1321,0,0,0,25,15,service module fuel consumption
+# Raitaru ,,,,,,,,,,,
+35825,0,0,2109,2,1415,0,0,0,25,15,service module fuel consumption
+35825,0,0,2110,2,1415,0,0,0,25,15,service module fuel consumption
+# Azbel ,,,,,,,,,,,
+35826,0,0,2109,2,1415,0,0,0,25,15,service module fuel consumption
+35826,0,0,2110,2,1415,0,0,0,25,15,service module fuel consumption
+# Sotiyo ,,,,,,,,,,,
+35827,0,0,2109,2,1415,0,0,0,25,15,service module fuel consumption
+35827,0,0,2110,2,1415,0,0,0,25,15,service module fuel consumption

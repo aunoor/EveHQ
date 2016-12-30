@@ -124,6 +124,7 @@ Imports EveHQ.Common.Extensions
     Dim cShipSlotCtrl As ShipSlotControl
     Dim cShipInfoCtrl As ShipInfoControl
     Dim cShipMode As ShipModes
+    Dim cSecuritySpace As SecuritySpace = SecuritySpace.High
     ' ReSharper restore InconsistentNaming
 
 #End Region
@@ -526,6 +527,21 @@ Imports EveHQ.Common.Extensions
         End Get
         Set(ByVal value As ShipModes)
             cShipMode = value
+        End Set
+    End Property
+
+    ''' <summary>
+    ''' Gets or sets the security space
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns>The security space</returns>
+    ''' <remarks></remarks>
+    Public Property SecuritySpace() As SecuritySpace
+        Get
+            Return cSecuritySpace
+        End Get
+        Set(ByVal value As SecuritySpace)
+            cSecuritySpace = value
         End Set
     End Property
 
@@ -2734,6 +2750,17 @@ Imports EveHQ.Common.Extensions
             End If
         Next
 
+        ' Add subsystem slots
+        For slot As Integer = 1 To BaseShip.ServiceModSlots
+            If BaseShip.ServiceModSlot(slot) IsNot Nothing Then
+                If BaseShip.ServiceModSlot(slot).LoadedCharge IsNot Nothing Then
+                    Modules.Add(New ModuleWithState(CStr(BaseShip.ServiceModSlot(slot).ID), CStr(BaseShip.ServiceModSlot(slot).LoadedCharge.ID), BaseShip.ServiceModSlot(slot).ModuleState))
+                Else
+                    Modules.Add(New ModuleWithState(CStr(BaseShip.ServiceModSlot(slot).ID), Nothing, BaseShip.ServiceModSlot(slot).ModuleState))
+                End If
+            End If
+        Next
+
         ' Add rig slots
         For slot As Integer = 1 To BaseShip.RigSlots
             If BaseShip.RigSlot(slot) IsNot Nothing Then
@@ -2888,6 +2915,8 @@ Imports EveHQ.Common.Extensions
                     loadedModule = BaseShip.HiSlot(slotNo)
                 Case SlotTypes.Subsystem
                     loadedModule = BaseShip.SubSlot(slotNo)
+                Case SlotTypes.ServiceMod
+                    loadedModule = BaseShip.ServiceModSlot(slotNo)
             End Select
             If loadedModule IsNot Nothing Then
                 oldModName = loadedModule.Name
@@ -3134,7 +3163,7 @@ Imports EveHQ.Common.Extensions
 #Region "Item Fitting Check Routines"
 
     Private Function IsSlotAvailable(ByVal shipMod As ShipModule, Optional ByVal repShipMod As ShipModule = Nothing) As Boolean
-        Dim cSub, cRig, cLow, cMid, cHi, cTurret, cLauncher As Integer
+        Dim cServiceMod, cSub, cRig, cLow, cMid, cHi, cTurret, cLauncher As Integer
 
         If repShipMod IsNot Nothing Then
             Select Case repShipMod.SlotType
@@ -3148,6 +3177,8 @@ Imports EveHQ.Common.Extensions
                     cHi = BaseShip.HiSlotsUsed - 1
                 Case SlotTypes.Subsystem
                     cSub = BaseShip.SubSlotsUsed - 1
+                Case SlotTypes.ServiceMod
+                    cSub = BaseShip.ServiceModSlotsUsed - 1
             End Select
             If repShipMod.IsTurret = True Then
                 cTurret = BaseShip.TurretSlotsUsed - 1
@@ -3156,6 +3187,7 @@ Imports EveHQ.Common.Extensions
                 cLauncher = BaseShip.LauncherSlotsUsed - 1
             End If
         Else
+            cServiceMod = BaseShip.ServiceModSlotsUsed
             cSub = BaseShip.SubSlotsUsed
             cRig = BaseShip.RigSlotsUsed
             cLow = BaseShip.LowSlotsUsed
@@ -3189,6 +3221,11 @@ Imports EveHQ.Common.Extensions
             Case SlotTypes.Subsystem
                 If cSub = BaseShip.SubSlots Then
                     MessageBox.Show("There are no available subsystem slots remaining on '" & FittingName & "' (" & ShipName & ").", "Slot Allocation Issue", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    Return False
+                End If
+            Case SlotTypes.ServiceMod
+                If cServiceMod = BaseShip.ServiceModSlots Then
+                    MessageBox.Show("There are no available service module slots remaining on '" & FittingName & "' (" & ShipName & ").", "Slot Allocation Issue", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     Return False
                 End If
         End Select
@@ -3241,6 +3278,8 @@ Imports EveHQ.Common.Extensions
                 Next
             End If
         End If
+        'Check for service module restrictions
+        'ServiceMod
 
         ' Check for Rig restrictions
         If shipMod.SlotType = SlotTypes.Rig Then
@@ -3311,15 +3350,7 @@ Imports EveHQ.Common.Extensions
             End If
         Next
         ' Apply ship group and type restrictions
-        If BaseShip.DatabaseGroup = ModuleEnum.GroupCitadel Then
-            If shipMod.Attributes.ContainsKey(AttributeEnum.ModuleCanFitShipGroup1) = False Then
-                If search = False Then
-                    MessageBox.Show("You cannot fit a " & shipMod.Name & " to your " & ShipName & " ('" & FittingName & "').", "Type Restriction", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                End If
-                Return False
-            End If
-        End If
-        If shipGroups.Count > 0 Then
+        If shipGroups.Count > 0 Or BaseShip.DatabaseGroup = ModuleEnum.GroupCitadel Or BaseShip.DatabaseGroup = ModuleEnum.GroupEngineerComplex Then
             If shipGroups.Contains(BaseShip.DatabaseGroup) = False Then
                 If shipTypes.Contains(BaseShip.ID) = False Then
                     If search = False Then
@@ -3613,6 +3644,15 @@ Imports EveHQ.Common.Extensions
                     End If
                 Next
                 MessageBox.Show("There was an error finding the next available subsystem slot.", "Slot Location Issue", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Case SlotTypes.ServiceMod
+                For slotNo As Integer = 1 To 5
+                    If BaseShip.ServiceModSlot(slotNo) Is Nothing Then
+                        BaseShip.ServiceModSlot(slotNo) = shipMod
+                        shipMod.SlotNo = slotNo
+                        Return slotNo
+                    End If
+                Next
+                MessageBox.Show("There was an error finding the next available service module slot.", "Slot Location Issue", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End Select
         Return 0
     End Function
@@ -3709,6 +3749,9 @@ Imports EveHQ.Common.Extensions
                 Next
             End If
         Next
+
+        ' Get servicemodule skills
+        'ServiceMod
 
         ' Get Rig Skills
         For slot As Integer = 1 To cShip.RigSlots
@@ -3905,6 +3948,7 @@ End Class
     Dim cRemoteEffects As New List(Of RemoteEffect)
 
     Dim cShipMode As ShipModes
+    Dim cSecuritySpace As SecuritySpace = SecuritySpace.High
 
     ''' <summary>
     ''' Gets or sets the the Ship Name used for the fitting
@@ -4186,6 +4230,21 @@ End Class
         End Get
         Set(ByVal value As ShipModes)
             cShipMode = value
+        End Set
+    End Property
+
+    ''' <summary>
+    ''' Gets or sets the security space
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns>The security space</returns>
+    ''' <remarks></remarks>
+    Public Property SecuritySpace() As SecuritySpace
+        Get
+            Return cSecuritySpace
+        End Get
+        Set(ByVal value As SecuritySpace)
+            cSecuritySpace = value
         End Set
     End Property
 

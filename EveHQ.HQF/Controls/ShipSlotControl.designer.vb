@@ -31,6 +31,9 @@ Namespace Controls
             Dim SuperTooltipInfo19 As DevComponents.DotNetBar.SuperTooltipInfo = New DevComponents.DotNetBar.SuperTooltipInfo()
             Dim SuperTooltipInfo20 As DevComponents.DotNetBar.SuperTooltipInfo = New DevComponents.DotNetBar.SuperTooltipInfo()
             Dim SuperTooltipInfo21 As DevComponents.DotNetBar.SuperTooltipInfo = New DevComponents.DotNetBar.SuperTooltipInfo()
+            Dim SuperTooltipSecuritySpace0 As DevComponents.DotNetBar.SuperTooltipInfo = New DevComponents.DotNetBar.SuperTooltipInfo()
+            Dim SuperTooltipSecuritySpace1 As DevComponents.DotNetBar.SuperTooltipInfo = New DevComponents.DotNetBar.SuperTooltipInfo()
+            Dim SuperTooltipSecuritySpace2 As DevComponents.DotNetBar.SuperTooltipInfo = New DevComponents.DotNetBar.SuperTooltipInfo()
             Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ShipSlotControl))
             Dim SuperTooltipInfo22 As DevComponents.DotNetBar.SuperTooltipInfo = New DevComponents.DotNetBar.SuperTooltipInfo()
             Dim SuperTooltipInfo23 As DevComponents.DotNetBar.SuperTooltipInfo = New DevComponents.DotNetBar.SuperTooltipInfo()
@@ -196,6 +199,10 @@ Namespace Controls
             Me.btnShipMode1 = New DevComponents.DotNetBar.ButtonX()
             Me.btnShipMode0 = New DevComponents.DotNetBar.ButtonX()
             Me.lblShipMode = New System.Windows.Forms.Label()
+            Me.btnSecuritySpace2 = New DevComponents.DotNetBar.ButtonX()
+            Me.btnSecuritySpace1 = New DevComponents.DotNetBar.ButtonX()
+            Me.btnSecuritySpace0 = New DevComponents.DotNetBar.ButtonX()
+            Me.lblSecuritySpace = New System.Windows.Forms.Label()
             Me.btnAutoSize = New DevComponents.DotNetBar.ButtonX()
             Me.btnRedo = New DevComponents.DotNetBar.ButtonX()
             Me.btnUndo = New DevComponents.DotNetBar.ButtonX()
@@ -1858,6 +1865,10 @@ Namespace Controls
             Me.panelFunctions.Controls.Add(Me.btnShipMode1)
             Me.panelFunctions.Controls.Add(Me.btnShipMode0)
             Me.panelFunctions.Controls.Add(Me.lblShipMode)
+            Me.panelFunctions.Controls.Add(Me.btnSecuritySpace2)
+            Me.panelFunctions.Controls.Add(Me.btnSecuritySpace1)
+            Me.panelFunctions.Controls.Add(Me.btnSecuritySpace0)
+            Me.panelFunctions.Controls.Add(Me.lblSecuritySpace)
             Me.panelFunctions.Controls.Add(Me.btnAutoSize)
             Me.panelFunctions.Controls.Add(Me.btnRedo)
             Me.panelFunctions.Controls.Add(Me.btnUndo)
@@ -1975,6 +1986,80 @@ Namespace Controls
             Me.lblShipMode.TabIndex = 17
             Me.lblShipMode.Text = "Ship Mode:"
             Me.lblShipMode.Visible = False
+            '
+            'btnSecuritySpace2
+            '
+            Me.btnSecuritySpace2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+            Me.btnSecuritySpace2.AutoCheckOnClick = True
+            Me.btnSecuritySpace2.ColorTable = DevComponents.DotNetBar.eButtonColor.MagentaWithBackground
+            Me.btnSecuritySpace2.FocusCuesEnabled = False
+            Me.btnSecuritySpace2.Image = Global.EveHQ.HQF.My.Resources.Resources.nullsecwh
+            Me.btnSecuritySpace2.ImageFixedSize = New System.Drawing.Size(32, 32)
+            Me.btnSecuritySpace2.Location = New System.Drawing.Point(454, 3)
+            Me.btnSecuritySpace2.Name = "btnSecuritySpace2"
+            Me.btnSecuritySpace2.Size = New System.Drawing.Size(32, 32)
+            Me.btnSecuritySpace2.SplitButton = True
+            Me.btnSecuritySpace2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+            SuperTooltipSecuritySpace2.BodyText = "This toggle button will set the security space to Null and WH." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+            SuperTooltipSecuritySpace2.Color = DevComponents.DotNetBar.eTooltipColor.Purple
+            SuperTooltipSecuritySpace2.FooterImage = Global.EveHQ.HQF.My.Resources.Resources.nullsecwh
+            SuperTooltipSecuritySpace2.FooterText = "Set Security Space to Null and WH"
+            Me.SlotTip.SetSuperTooltip(Me.btnSecuritySpace2, SuperTooltipSecuritySpace2)
+            Me.btnSecuritySpace2.TabIndex = 20
+            Me.btnSecuritySpace2.Visible = False
+            '
+            'btnSecuritySpace1
+            '
+            Me.btnSecuritySpace1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+            Me.btnSecuritySpace1.AutoCheckOnClick = True
+            Me.btnSecuritySpace1.ColorTable = DevComponents.DotNetBar.eButtonColor.MagentaWithBackground
+            Me.btnSecuritySpace1.FocusCuesEnabled = False
+            Me.btnSecuritySpace1.Image = Global.EveHQ.HQF.My.Resources.Resources.lowsec
+            Me.btnSecuritySpace1.ImageFixedSize = New System.Drawing.Size(32, 32)
+            Me.btnSecuritySpace1.Location = New System.Drawing.Point(421, 3)
+            Me.btnSecuritySpace1.Name = "btnSecuritySpace1"
+            Me.btnSecuritySpace1.Size = New System.Drawing.Size(32, 32)
+            Me.btnSecuritySpace1.SplitButton = True
+            Me.btnSecuritySpace1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+            SuperTooltipSecuritySpace1.BodyText = "This toggle button will set the security space to Low." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+            SuperTooltipSecuritySpace1.Color = DevComponents.DotNetBar.eTooltipColor.Purple
+            SuperTooltipSecuritySpace1.FooterImage = Global.EveHQ.HQF.My.Resources.Resources.lowsec
+            SuperTooltipSecuritySpace1.FooterText = "Set Security Space to Low"
+            Me.SlotTip.SetSuperTooltip(Me.btnSecuritySpace1, SuperTooltipSecuritySpace1)
+            Me.btnSecuritySpace1.TabIndex = 19
+            Me.btnSecuritySpace1.Visible = False
+            '
+            'btnSecuritySpace0
+            '
+            Me.btnSecuritySpace0.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+            Me.btnSecuritySpace0.AutoCheckOnClick = True
+            Me.btnSecuritySpace0.ColorTable = DevComponents.DotNetBar.eButtonColor.MagentaWithBackground
+            Me.btnSecuritySpace0.FocusCuesEnabled = False
+            Me.btnSecuritySpace0.Image = Global.EveHQ.HQF.My.Resources.Resources.hisec
+            Me.btnSecuritySpace0.ImageFixedSize = New System.Drawing.Size(32, 32)
+            Me.btnSecuritySpace0.Location = New System.Drawing.Point(388, 3)
+            Me.btnSecuritySpace0.Name = "btnSecuritySpace0"
+            Me.btnSecuritySpace0.Size = New System.Drawing.Size(32, 32)
+            Me.btnSecuritySpace0.SplitButton = True
+            Me.btnSecuritySpace0.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+            SuperTooltipSecuritySpace0.BodyText = "This toggle button will set the security space to High." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+            SuperTooltipSecuritySpace0.Color = DevComponents.DotNetBar.eTooltipColor.Purple
+            SuperTooltipSecuritySpace0.FooterImage = Global.EveHQ.HQF.My.Resources.Resources.hisec
+            SuperTooltipSecuritySpace0.FooterText = "Set Security Space to High"
+            Me.SlotTip.SetSuperTooltip(Me.btnSecuritySpace0, SuperTooltipSecuritySpace0)
+            Me.btnSecuritySpace0.TabIndex = 18
+            Me.btnSecuritySpace0.Visible = False
+            '
+            'lblSecuritySpace
+            '
+            Me.lblSecuritySpace.AutoSize = True
+            Me.lblSecuritySpace.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+            Me.lblSecuritySpace.Location = New System.Drawing.Point(304, 14)
+            Me.lblSecuritySpace.Name = "lblSecuritySpace"
+            Me.lblSecuritySpace.Size = New System.Drawing.Size(60, 13)
+            Me.lblSecuritySpace.TabIndex = 17
+            Me.lblSecuritySpace.Text = "Security Space:"
+            Me.lblSecuritySpace.Visible = False
             '
             'btnAutoSize
             '
@@ -2398,6 +2483,7 @@ Namespace Controls
         Friend WithEvents ComboItem13 As DevComponents.Editors.ComboItem
         Friend WithEvents rateFitting As DevComponents.DotNetBar.Controls.RatingStar
         Friend WithEvents lblShipMode As System.Windows.Forms.Label
+        Friend WithEvents lblSecuritySpace As System.Windows.Forms.Label
         Private WithEvents ExpandableSplitter1 As DevComponents.DotNetBar.ExpandableSplitter
         Private WithEvents panelFunctions As DevComponents.DotNetBar.PanelEx
         Private WithEvents adtSlots As DevComponents.AdvTree.AdvTree
@@ -2469,6 +2555,9 @@ Namespace Controls
         Private WithEvents btnShipMode3 As DevComponents.DotNetBar.ButtonX
         Private WithEvents btnShipMode2 As DevComponents.DotNetBar.ButtonX
         Private WithEvents btnShipMode1 As DevComponents.DotNetBar.ButtonX
+        Private WithEvents btnSecuritySpace0 As DevComponents.DotNetBar.ButtonX
+        Private WithEvents btnSecuritySpace2 As DevComponents.DotNetBar.ButtonX
+        Private WithEvents btnSecuritySpace1 As DevComponents.DotNetBar.ButtonX
         Friend WithEvents FighterAbilitiesToolStripMenuItem As ToolStripMenuItem
         Friend WithEvents FighterTurretToolStripMenuItem As ToolStripMenuItem
         Friend WithEvents FighterMissileToolStripMenuItem As ToolStripMenuItem

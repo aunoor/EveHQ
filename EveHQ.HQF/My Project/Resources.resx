@@ -208,6 +208,9 @@
   <data name="imgSubSlot" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon76_04.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="imgServiceModSlot" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\stationServiceSlot.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="imgCap" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon01_01.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -405,6 +408,15 @@
   </data>
   <data name="ModuleChanges" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ModuleChanges.csv;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hisec" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconHiSec.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lowsec" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconLoSec.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nullsecwh" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconNullSec.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="defence" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\defence.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

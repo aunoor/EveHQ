@@ -129,7 +129,7 @@ Namespace ItemBrowser
 
             ' Load the IDs
             ' Set the fitting attributeID list
-            Dim ids() As Integer = {11, 12, 13, 14, 30, 48, 50, 101, 102, 1132, 1137, 1153}
+            Dim ids() As Integer = {11, 12, 13, 14, 30, 48, 50, 101, 102, 1132, 1137, 1153, 2056}
             _fittingIDList = New List(Of Integer)(ids)
 
             ' Load the categories & groups

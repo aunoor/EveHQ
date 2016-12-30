@@ -352,6 +352,7 @@ Public Enum ModuleEnum
     GroupAncillaryRemoteArmorsRepairers = 1698
     GroupECM = 201
     GroupCitadel = 1657
+    GroupEngineerComplex = 1404
 
     ' marketGroupIDs (see invMarketGroups)
     MarketgroupGasHarvesters = 1037

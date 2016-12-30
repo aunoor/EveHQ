@@ -48,7 +48,7 @@ Imports EveHQ.EveData
 Namespace Classes
 
     Public Class Locations
-        Public Shared Function GetLocationNameFromID(ByVal locID As Integer) As String
+        Public Shared Function GetLocationNameFromID(ByVal locID As Long) As String
             If locID >= 66000000 Then
                 If locID < 66014933 Then
                     locID = locID - 6000001
@@ -56,7 +56,7 @@ Namespace Classes
                     locID = locID - 6000000
                 End If
             End If
-            Dim newLocation As Station
+            Dim newLocation As Station = Nothing
             If locID >= 61000000 And locID <= 61999999 Then
                 If StaticData.Stations.ContainsKey(locID) = True Then
                     ' Known Outpost
@@ -73,20 +73,22 @@ Namespace Classes
             Else
                 If locID < 60000000 Then
                     If StaticData.Stations.ContainsKey(locID) Then
-                        Dim newSystem As SolarSystem = StaticData.SolarSystems(locID)
+                        Dim newSystem As SolarSystem = StaticData.SolarSystems(CInt(locID))
                         Return newSystem.Name
                     Else
                         Return "Unknown Location"
                     End If
                 Else
-                    newLocation = StaticData.Stations(locID)
+                    If StaticData.Stations.ContainsKey(locID) Then
+                        newLocation = StaticData.Stations(locID)
+                    End If
                     If newLocation IsNot Nothing Then
                         Return newLocation.StationName
                     Else
                         ' Unknown system/station!
                         newLocation = New Station
                         newLocation.StationId = locID
-                        newLocation.StationName = "Unknown Location"
+                        newLocation.StationName = "Unknown Location " + locID.ToString()
                         newLocation.SystemId = 0
                         Return newLocation.StationName
                     End If

@@ -160,6 +160,7 @@ Imports Newtonsoft.Json
         savedFit.Tags = fit.Tags
         savedFit.Rating = fit.Rating
         savedFit.ShipMode = fit.ShipMode
+        savedFit.SecuritySpace = fit.SecuritySpace
         Return savedFit
     End Function
 
@@ -201,6 +202,7 @@ Imports Newtonsoft.Json
             newFit.Tags = fit.Tags
             newFit.Rating = fit.Rating
             newFit.ShipMode = CType(fit.ShipMode, ShipModes)
+            newFit.SecuritySpace = CType(fit.SecuritySpace, SecuritySpace)
             Return newFit
         Else
             Return Nothing

@@ -183,6 +183,8 @@ Namespace Forms
             pbRigSlotColour.BackColor = rColor
             Dim sColor As Color = Color.FromArgb(CInt(PluginSettings.HQFSettings.SubSlotColour))
             pbSubSlotColour.BackColor = sColor
+            Dim smColor As Color = Color.FromArgb(CInt(PluginSettings.HQFSettings.ServiceModSlotColour))
+            pbServiceModSlotColour.BackColor = smColor
             _redrawColumns = True
             Call RedrawSlotColumnList()
             _redrawColumns = False
@@ -331,6 +333,22 @@ Namespace Forms
             Else
                 pbSubSlotColour.BackColor = cd1.Color
                 PluginSettings.HQFSettings.SubSlotColour = cd1.Color.ToArgb
+            End If
+        End Sub
+
+        Private Sub pbServiceModSlotColour_Click(ByVal sender As Object, ByVal e As EventArgs) Handles pbServiceModSlotColour.Click
+            Dim dlgResult As Integer
+            With cd1
+                .AllowFullOpen = True
+                .AnyColor = True
+                .FullOpen = True
+                dlgResult = .ShowDialog()
+            End With
+            If dlgResult = DialogResult.Cancel Then
+                Exit Sub
+            Else
+                pbServiceModSlotColour.BackColor = cd1.Color
+                PluginSettings.HQFSettings.ServiceModSlotColour = cd1.Color.ToArgb
             End If
         End Sub
 
