@@ -828,7 +828,17 @@ Namespace Forms
                 Dim newLine As New ListViewItem
                 newLine.Text = newPilot.Name
                 newLine.SubItems.Add(newPilot.ID)
-                newLine.SubItems.Add(newPilot.Account)
+
+                If newPilot.Account <> "" And HQ.Settings.Accounts.ContainsKey(newPilot.Account) Then
+                    newLine.SubItems.Add(HQ.Settings.Accounts(newPilot.Account).FriendlyName)
+                Else
+                    If newPilot.Account <> "" Then
+                        newLine.SubItems.Add(newPilot.Account)
+                    Else
+                        newLine.SubItems.Add("-")
+                    End If
+                End If
+
                 If newPilot.Active = True Then
                     newLine.Checked = True
                 Else
