@@ -76,10 +76,12 @@ Namespace Forms
             Me.lblPilotSP = New DevComponents.DotNetBar.LabelX()
             Me.lblPilotIsk = New DevComponents.DotNetBar.LabelX()
             Me.lblPilotCorp = New DevComponents.DotNetBar.LabelX()
+            Me.lblPilotAccount = New DevComponents.DotNetBar.LabelX()
             Me.lblPilotID = New DevComponents.DotNetBar.LabelX()
             Me.lblPilotSPLbl = New DevComponents.DotNetBar.LabelX()
             Me.lblPilotIskLbl = New DevComponents.DotNetBar.LabelX()
             Me.lblPilotCorpLbl = New DevComponents.DotNetBar.LabelX()
+            Me.lblPilotAccountLbl = New DevComponents.DotNetBar.LabelX()
             Me.lblPilotIDLbl = New DevComponents.DotNetBar.LabelX()
             Me.lblPilotName = New DevComponents.DotNetBar.LabelX()
             Me.LabelX6 = New DevComponents.DotNetBar.LabelX()
@@ -770,10 +772,12 @@ Namespace Forms
             Me.grpPilotInfo.Controls.Add(Me.lblPilotSP)
             Me.grpPilotInfo.Controls.Add(Me.lblPilotIsk)
             Me.grpPilotInfo.Controls.Add(Me.lblPilotCorp)
+            Me.grpPilotInfo.Controls.Add(Me.lblPilotAccount)
             Me.grpPilotInfo.Controls.Add(Me.lblPilotID)
             Me.grpPilotInfo.Controls.Add(Me.lblPilotSPLbl)
             Me.grpPilotInfo.Controls.Add(Me.lblPilotIskLbl)
             Me.grpPilotInfo.Controls.Add(Me.lblPilotCorpLbl)
+            Me.grpPilotInfo.Controls.Add(Me.lblPilotAccountLbl)
             Me.grpPilotInfo.Controls.Add(Me.lblPilotIDLbl)
             Me.grpPilotInfo.Controls.Add(Me.lblPilotName)
             Me.grpPilotInfo.Controls.Add(Me.LabelX6)
@@ -781,7 +785,7 @@ Namespace Forms
             Me.grpPilotInfo.IsShadowEnabled = True
             Me.grpPilotInfo.Location = New System.Drawing.Point(3, 3)
             Me.grpPilotInfo.Name = "grpPilotInfo"
-            Me.grpPilotInfo.Size = New System.Drawing.Size(304, 142)
+            Me.grpPilotInfo.Size = New System.Drawing.Size(304, 162)
             '
             '
             '
@@ -854,6 +858,20 @@ Namespace Forms
             Me.lblPilotCorp.TabIndex = 8
             Me.lblPilotCorp.Text = "Pilot Corp"
             '
+            'lblPilotAccount
+            '
+            Me.lblPilotAccount.BackColor = System.Drawing.Color.Transparent
+            '
+            '
+            '
+            Me.lblPilotAccount.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+            Me.lblPilotAccount.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+            Me.lblPilotAccount.Location = New System.Drawing.Point(84, 132)
+            Me.lblPilotAccount.Name = "lblPilotAccount"
+            Me.lblPilotAccount.Size = New System.Drawing.Size(198, 23)
+            Me.lblPilotAccount.TabIndex = 8
+            Me.lblPilotAccount.Text = "Pilot Account"
+            '
             'lblPilotID
             '
             Me.lblPilotID.BackColor = System.Drawing.Color.Transparent
@@ -909,6 +927,20 @@ Namespace Forms
             Me.lblPilotCorpLbl.Size = New System.Drawing.Size(65, 23)
             Me.lblPilotCorpLbl.TabIndex = 3
             Me.lblPilotCorpLbl.Text = "Pilot Corp"
+            '
+            'lblPilotAccountLbl
+            '
+            Me.lblPilotAccountLbl.BackColor = System.Drawing.Color.Transparent
+            '
+            '
+            '
+            Me.lblPilotAccountLbl.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+            Me.lblPilotAccountLbl.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+            Me.lblPilotAccountLbl.Location = New System.Drawing.Point(13, 132)
+            Me.lblPilotAccountLbl.Name = "lblPilotAccountLbl"
+            Me.lblPilotAccountLbl.Size = New System.Drawing.Size(65, 23)
+            Me.lblPilotAccountLbl.TabIndex = 3
+            Me.lblPilotAccountLbl.Text = "Pilot Account"
             '
             'lblPilotIDLbl
             '
@@ -1740,5 +1772,7 @@ Namespace Forms
         Friend WithEvents NodeConnector1 As DevComponents.AdvTree.NodeConnector
         Friend WithEvents ElementStyle3 As DevComponents.DotNetBar.ElementStyle
 
+        Private WithEvents lblPilotAccountLbl As DevComponents.DotNetBar.LabelX
+        Private WithEvents lblPilotAccount As DevComponents.DotNetBar.LabelX
     End Class
 End Namespace
