@@ -1372,7 +1372,7 @@
 2596,1,42839,54,5,3435,0,0,0,16,Interdiction Maneuvers Charge - Tackle module range bonus
 # Rapid Deployment Charge
 #  Bonus: 22 AB/MWD module speed increase bonus  Value: 12
-2596,1,42840,20,5,3450;3454,0,0,0,16,Rapid Deployment Charge - AB/MWD module speed increase bonus
+2596,1,42840,20,2,46,0,0,0,16,Rapid Deployment Charge - AB/MWD module speed increase bonus
 # Mining Laser Field Enhancement Charge
 #  Bonus: 23 Mining/survey module range bonus  Value: 30 
 2596,1,42829,54,5,3386;16281;25544;3426,0,0,0,16,Mining Laser Field Enhancement Charge - Mining/survey module range bonus
@@ -1460,7 +1460,7 @@
 2596,1,42839,54,5,3435,0,0,0,4,Interdiction Maneuvers Charge - Tackle module range bonus
 # Rapid Deployment Charge
 #  Bonus: 22 AB/MWD module speed increase bonus  Value: 12
-2596,1,42840,20,5,3450;3454,0,0,0,4,Rapid Deployment Charge - AB/MWD module speed increase bonus
+2596,1,42840,20,2,46,0,0,0,4,Rapid Deployment Charge - AB/MWD module speed increase bonus
 # Mining Laser Field Enhancement Charge
 #  Bonus: 23 Mining/survey module range bonus  Value: 30 
 2596,1,42829,54,5,3386;16281;25544;3426,0,0,0,4,Mining Laser Field Enhancement Charge - Mining/survey module range bonus
