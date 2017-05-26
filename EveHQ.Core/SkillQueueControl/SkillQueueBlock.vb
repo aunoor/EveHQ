@@ -136,6 +136,13 @@ Namespace SkillQueueControl
                     _trainedLevel = _currentSkill.Level
                     ' Calculatate percentage
                     If _currentQueuedSkill.SkillID = _currentPilot.TrainingSkillID And _currentQueuedSkill.Level = _currentPilot.TrainingSkillLevel Then
+
+                        ' This is a dirty temporary hack to handle XML API returning wrong values on extracted skill
+                        ' Pilot information would crash if we requeue and extracted skill and API hasn't updated pilot values
+                        If _trainedLevel = 5 Then
+                            _trainedLevel = _currentQueuedSkill.Level - 1
+                        End If
+
                         _percent = (Math.Min(Math.Max(CDbl((_currentSkill.SP + _currentPilot.TrainingCurrentSP - HQ.SkillListName(_currentSkill.Name).LevelUp(_trainedLevel)) / (HQ.SkillListName(_currentSkill.Name).LevelUp(_trainedLevel + 1) - HQ.SkillListName(_currentSkill.Name).LevelUp(_trainedLevel)) * 100), 0), 100))
                     Else
                         _percent = (Math.Min(Math.Max(CDbl((_currentSkill.SP - HQ.SkillListName(_currentSkill.Name).LevelUp(_trainedLevel)) / (HQ.SkillListName(_currentSkill.Name).LevelUp(_trainedLevel + 1) - HQ.SkillListName(_currentSkill.Name).LevelUp(_trainedLevel)) * 100), 0), 100))

@@ -253,7 +253,7 @@
 625,1,3335,84,2,325;1698,0,1,0,12.5,15,Remote Armor Repairer Rep Amount
 625,0,0,54,2,325;1698,0,0,0,430,15,Remote Armor Repairer Optimal
 625,0,0,2044,2,325;1698,0,0,0,430,15,Remote Armor Repair Falloff
-625,0,0,91,2,67,0,0,0,1000,15,Energy Transfer Range
+625,0,0,54,2,67,0,0,0,1000,15,Energy Transfer Range
 625,0,0,90,2,67,0,0,0,200,15,Energy Transfer Amount
 # Augoror Navy Issue,,,,,,,,,,,
 29337,1,3335,10014,4,568;572,0,1,0,25,15,Medium Energy Turret Damage
@@ -291,7 +291,7 @@
 # Basilisk,,,,,,,,,,,
 11985,1,3334,54,2,41;1697,0,1,0,60,15,Remote Shield Booster Optimal
 11985,1,3334,2044,2,41;1697,0,1,0,60,15,Remote Shield Booster Falloff
-11985,1,3334,91,2,67,0,1,0,150,15,Energy Transfer Range
+11985,1,3334,54,2,67,0,1,0,150,15,Energy Transfer Range
 11985,1,3334,84,4,842,0,1,0,20,15,Armor Maintenance Bot Transfer
 11985,1,3334,83,4,842,0,1,0,20,15,Hull Maintenance Bot Transfer
 11985,1,12096,6,2,41;1697,0,1,0,-15,15,Remote Shield Booster Cap Use
@@ -823,7 +823,7 @@
 # Etana,,,,,,,,,,,
 32790,1,3334,54,2,41;1697,0,1,0,62,15,Remote Shield Booster Optimal
 32790,1,3334,2044,2,41;1697,0,1,0,62,15,Remote Shield Booster Falloff
-32790,1,3334,91,2,67,0,1,0,160,15,Energy Transfer Range
+32790,1,3334,54,2,67,0,1,0,160,15,Energy Transfer Range
 32790,1,3334,68,4,842,0,1,0,20,15,Shield Maintenance Bot Transfer
 32790,1,3334,84,4,842,0,1,0,20,15,Armor Maintenance Bot Transfer
 32790,1,3334,83,4,842,0,1,0,20,15,Hull Maintenance Bot Transfer
@@ -992,7 +992,7 @@
 # Guardian,,,,,,,,,,,
 11987,1,3335,54,2,325;1698,0,1,0,60,15,Remote Armor Repairer Optimal
 11987,1,3335,2044,2,325;1698,0,1,0,60,15,Remote Armor Repair falloff
-11987,1,3335,91,2,67,0,1,0,150,15,Energy Transfer Range
+11987,1,3335,54,2,67,0,1,0,150,15,Energy Transfer Range
 11987,1,3335,68,4,842,0,1,0,20,15,Shield Maintenance Bot Transfer
 11987,1,3335,84,4,842,0,1,0,20,15,Armor Maintenance Bot Transfer
 11987,1,3335,83,4,842,0,1,0,20,15,Hull Maintenance Bot Transfer
@@ -1888,7 +1888,7 @@
 620,1,3334,68,2,41;1697,0,1,0,12.5,15,Remote Shield Booster Rep Amount
 620,0,0,54,2,41;1697,0,0,0,430,15,Remote Shield Booster Optimal
 620,0,0,2044,2,41;1697,0,0,0,430,15,Remote Shield Booster Falloff
-620,0,0,91,2,67,0,0,0,1000,15,Energy Transfer Range
+620,0,0,54,2,67,0,0,0,1000,15,Energy Transfer Range
 620,0,0,90,2,67,0,0,0,200,15,Energy Transfer Amount
 # Osprey Navy Issue,,,,,,,,,,,
 29340,1,3334,114,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1677;1019;1678;88;1158;394;395;396,0,1,0,20,15,Missile EM Damage

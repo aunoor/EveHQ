@@ -20,7 +20,7 @@
 292,1,3442,2229,3,87,0,1,0,0,Drone Interfacing - Fighters -  Ability Kinetic Damage
 292,1,3442,2230,3,87,0,1,0,0,Drone Interfacing - Fighters -  Ability Explosive Damage
 434,1,3442,77,2,101,0,1,0,0,Drone Interfacing - Mining
-591,1,12305,37,3,18,0,1,0,0,Drone Navigation
+591,1,12305,37,3,18;87,0,1,0,0,Drone Navigation
 294,1,23606,54,3,18,0,1,0,0,Drone Sharpshooting
 353,1,3436,10005,3,6,0,1,1,0,Drones
 292,1,23069,2131,3,87,0,1,0,0,Fighters -  Attack Missile EM Damage
@@ -1383,7 +1383,7 @@
 2596,1,42839,54,5,3435,0,0,0,16,Interdiction Maneuvers Charge - Tackle module range bonus
 # Rapid Deployment Charge
 #  Bonus: 22 AB/MWD module speed increase bonus  Value: 12
-2596,1,42840,20,5,3450;3454,0,0,0,16,Rapid Deployment Charge - AB/MWD module speed increase bonus
+2596,1,42840,20,2,46,0,0,0,16,Rapid Deployment Charge - AB/MWD module speed increase bonus
 # Mining Laser Field Enhancement Charge
 #  Bonus: 23 Mining/survey module range bonus  Value: 30 
 2596,1,42829,54,5,3386;16281;25544;3426,0,0,0,16,Mining Laser Field Enhancement Charge - Mining/survey module range bonus
@@ -1471,7 +1471,7 @@
 2596,1,42839,54,5,3435,0,0,0,4,Interdiction Maneuvers Charge - Tackle module range bonus
 # Rapid Deployment Charge
 #  Bonus: 22 AB/MWD module speed increase bonus  Value: 12
-2596,1,42840,20,5,3450;3454,0,0,0,4,Rapid Deployment Charge - AB/MWD module speed increase bonus
+2596,1,42840,20,2,46,0,0,0,4,Rapid Deployment Charge - AB/MWD module speed increase bonus
 # Mining Laser Field Enhancement Charge
 #  Bonus: 23 Mining/survey module range bonus  Value: 30 
 2596,1,42829,54,5,3386;16281;25544;3426,0,0,0,4,Mining Laser Field Enhancement Charge - Mining/survey module range bonus
