@@ -654,16 +654,14 @@ Namespace Controls
             ' Update ship mode switch
             Dim securitySpaceVisible = ParentFitting.BaseShip.Attributes.ContainsKey(2339)
             lblSecuritySpace.Visible = securitySpaceVisible
-            btnSecuritySpace0.Visible = securitySpaceVisible
-            btnSecuritySpace1.Visible = securitySpaceVisible
-            btnSecuritySpace2.Visible = securitySpaceVisible
+            cboSecuritySpace.Visible = securitySpaceVisible
             Select Case ParentFitting.SecuritySpace
                 Case SecuritySpace.High
-                    btnShipMode0.Checked = True
+                    cboSecuritySpace.SelectedIndex = 0
                 Case SecuritySpace.Low
-                    btnShipMode1.Checked = True
+                    cboSecuritySpace.SelectedIndex = 1
                 Case SecuritySpace.NullAndWH
-                    btnShipMode2.Checked = True
+                    cboSecuritySpace.SelectedIndex = 2
             End Select
 
             ' Update details
@@ -5923,20 +5921,19 @@ Namespace Controls
 
 #End Region
 
-        Private Sub btnSecuritySpace_Click(sender As Object, e As EventArgs) Handles btnSecuritySpace0.Click, btnSecuritySpace1.Click, btnSecuritySpace2.Click
+        Private Sub cboSecuritySpace_SelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs) _
+            Handles cboSecuritySpace.SelectedIndexChanged
             Call SecuritySpaceSelection(sender)
+
         End Sub
 
         Private Sub SecuritySpaceSelection(sender As Object)
-            Dim btn As ButtonX = CType(sender, ButtonX)
-            btnSecuritySpace0.Checked = False
-            btnSecuritySpace1.Checked = False
-            btnSecuritySpace2.Checked = False
-            btn.Checked = True
-            Dim mode As Integer = CInt(btn.Name.Substring(btn.Name.Length - 1, 1))
-            ParentFitting.SecuritySpace = CType(mode, SecuritySpace)
-            If _updateAll = False Then
-                ParentFitting.ApplyFitting(BuildType.BuildEverything)
+            If cboSecuritySpace.SelectedIndex <> -1 Then
+                Dim mode As Integer = cboSecuritySpace.SelectedIndex
+                ParentFitting.SecuritySpace = CType(mode, SecuritySpace)
+                If _updateAll = False Then
+                    ParentFitting.ApplyFitting(BuildType.BuildEverything)
+                End If
             End If
         End Sub
 
