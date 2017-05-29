@@ -86,8 +86,8 @@ Namespace Forms
         Dim _inventionSuccessCost As Double = 0
         Dim _resetInventedBP As Boolean = False
 
-        ' New CREST Lib variables
-        Dim _industrySolarSystem As EveCrest.Models.Crest.IndustrySystem
+        ' New ESI Lib variables
+        Dim _industrySolarSystem As Esi.Models.Esi.IndustrySystem
 
 #End Region
 
@@ -1209,21 +1209,21 @@ Namespace Forms
             lblBatchSize.Text = product.PortionSize.ToString("N0")
             lblProdQuantity.Text = (product.PortionSize * _currentJob.Runs).ToString("N0")
 
-            ' New CREST feature
-            ' Fetch factory cost based on CREST query result
+            ' New ESI feature
+            ' Fetch factory cost based on ESI query result
             ' >>
             Dim newFactoryCosts As Double = 0.0
             Dim newBaseJobCost As Double = 0.0
             Dim itemPrice As Double = 0.0
-            Dim crestLib As EveCrest.EveCrest = EveCrest.EveCrest.getInstance()
+            Dim esiLib As Esi.Esi = Esi.Esi.Instance()
 
-            ' get the factory location before fetching CREST data (once threads are started, we no longer have access to the owner data)
+            ' get the factory location before fetching ESI data (once threads are started, we no longer have access to the owner data)
             Dim selectedFactorySystem = CType(cboFactoryLocation.SelectedItem, SolarSystem)
-            ' prepare to get industrial indices from CREST in a detach thread
-            Dim indices As Threading.Tasks.Task(Of Dictionary(Of Long, EveCrest.Models.Crest.IndustrySystem)) = crestLib.getIndustrySystems()
-            ' this is the CREST indices callback
-            Dim indicesContinuation As Action(Of Threading.Tasks.Task(Of Dictionary(Of Long, EveCrest.Models.Crest.IndustrySystem))) =
-                Sub(dataTask As Threading.Tasks.Task(Of Dictionary(Of Long, EveCrest.Models.Crest.IndustrySystem)))
+            ' prepare to get industrial indices from ESI in a detach thread
+            Dim indices As Threading.Tasks.Task(Of Dictionary(Of Long, Esi.Models.Esi.IndustrySystem)) = esiLib.GetIndustrySystems()
+            ' this is the ESI indices callback
+            Dim indicesContinuation As Action(Of Threading.Tasks.Task(Of Dictionary(Of Long, Esi.Models.Esi.IndustrySystem))) =
+                Sub(dataTask As Threading.Tasks.Task(Of Dictionary(Of Long, Esi.Models.Esi.IndustrySystem)))
                     ' do the job only when everything is done
                     If dataTask.IsCanceled = False And dataTask.IsFaulted = False And dataTask.Exception Is Nothing And dataTask.Result IsNot Nothing Then
                         ' check that we have something in the selected factory
@@ -1233,22 +1233,23 @@ Namespace Forms
                             ' update the factory cost using the manufacturing indice
                             ' TODO : take the indice according to the job type
                             If _industrySolarSystem IsNot Nothing Then
-                                newFactoryCosts = _industrySolarSystem.getSystemCostIndice(EveCrest.Models.Crest.FactoryActivity.Manufacturing).costIndex
+                                newFactoryCosts = _industrySolarSystem.getSystemCostIndice(Esi.Models.Esi.FactoryActivity.Manufacturing).costIndex
                             End If
                         End If
                     End If
 
-                    ' prepare to get item prices from CREST in a detach thread
-                    Dim prices As Threading.Tasks.Task(Of Dictionary(Of Long, EveCrest.Models.Crest.MarketPrice)) = crestLib.fetchMarketPrices()
-                    ' this is the CREST prices callback
-                    Dim pricesContinuation As Action(Of Threading.Tasks.Task(Of Dictionary(Of Long, EveCrest.Models.Crest.MarketPrice))) =
-                        Sub(subDataTask As Threading.Tasks.Task(Of Dictionary(Of Long, EveCrest.Models.Crest.MarketPrice)))
+                    ' prepare to get item prices from ESI in a detach thread
+                    Dim prices As Threading.Tasks.Task(Of Dictionary(Of Long, Esi.Models.Esi.MarketPrice)) = esiLib.FetchMarketPrices()
+
+                    ' this is the ESI prices callback
+                    Dim pricesContinuation As Action(Of Threading.Tasks.Task(Of Dictionary(Of Long, Esi.Models.Esi.MarketPrice))) =
+                        Sub(subDataTask As Threading.Tasks.Task(Of Dictionary(Of Long, Esi.Models.Esi.MarketPrice)))
                             ' do the job only when everything is done
                             If subDataTask.IsCanceled = False And subDataTask.IsFaulted = False And subDataTask.Exception Is Nothing And subDataTask.Result IsNot Nothing Then
                                 ' iterate over each base component and get its ajusted price
                                 For Each item In _currentJob.Resources
                                     If subDataTask.Result.ContainsKey(item.Value.TypeID) Then
-                                        newBaseJobCost += subDataTask.Result(item.Value.TypeID).adjustedPrice * item.Value.BaseUnits
+                                        newBaseJobCost += subDataTask.Result(item.Value.TypeID).AdjustedPrice * item.Value.BaseUnits
                                     End If
                                 Next
 
