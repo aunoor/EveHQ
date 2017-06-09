@@ -624,6 +624,14 @@
 #,1,22761,0,0,0,0,1,0,0,Recon Ship
 151,1,3327,70,3,6,0,1,0,0,Spaceship Command
 #,1,19719,0,0,0,0,1,0,0,Transport Ships
+# STRUCTURE MANAGEMENT ,,,,,,,,,,
+317,1,37799,6,2,1329;1330,0,1,0,0,Structure Engineering Systems
+317,1,37798,6,2,1441;1442;1332,0,1,0,0,Structure Electronic Systems
+66,1,37797,73,2,1333,0,1,0,0,Structure Doomsday Systems
+292,1,37796,114,2,1548;1547;1546,0,1,0,0,Structure Missile Systems
+292,1,37796,116,2,1548;1547;1546,0,1,0,0,Structure Missile Systems
+292,1,37796,117,2,1548;1547;1546,0,1,0,0,Structure Missile Systems
+292,1,37796,118,2,1548;1547;1546,0,1,0,0,Structure Missile Systems
 ## OVERLOADING ATTRIBUTE MAPPING,,,,,,,,,,
 # ARMOR,,,,,,,,,,
 1230,2,1199,84,6,0,0,0,0,8,Ancillary Armor Rep Amount
@@ -743,8 +751,11 @@
 ## MODULE ATTRIBUTE MAPPING,,,,,,,,,,
 # FITTING,,,,,,,,,,
 50,0,0,49,3,6,0,0,1,14,CPU -> CPU_Used
+50,0,0,49,3,65,0,0,1,14,CPU -> CPU_Used
 30,0,0,15,3,6,0,0,1,14,PG -> PG_Used
+30,0,0,15,3,65,0,0,1,14,PG -> PG_Used
 1153,0,0,1152,3,6,0,0,1,14,Cal -> Cal_Used
+1153,0,0,1152,3,65,0,0,1,14,Cal -> Cal_Used
 10032,0,0,10049,0,6,0,0,6,28,Cap rate (+ve)
 10032,0,0,10050,0,6,0,0,7,28,Cap rate (+ve)
 # AMMUNITION & CHARGES,,,,,,,,,,
@@ -2049,3 +2060,245 @@
 767,1,36910,160,2,55;53;74,0,0,0,15,Antipharmakon Iokira - Tracking Speed Bonus
 557,1,36911,281,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1677;1019;1678;88;1158;394;395;396,0,0,0,15,Antipharmakon Toxot - Missile Flight Time Bonus
 1079,1,36912,482,3,6,0,0,0,15,Antipharmakon Aeolis - Capacitor Bonus
+## STRUCTURE RIGS ,,,,,,,,,,
+#ID,Name,Effects
+#37216	Standup M-Set Missile Precision I		6402
+2438,1,37216,653,2,1547;1546,0,0,0,15,Standup M-Set Missile Precision I
+#37217	Standup M-Set Missile Precision II		6402
+2438,1,37217,653,2,1547;1546,0,0,0,15,Standup M-Set Missile Precision II
+#37218	Standup M-Set Energy Neutralizer Projection I		6404
+2440,1,37218,54,2,1329,0,0,0,15,Standup M-Set Energy Neutralizer Projection I
+2441,1,37218,2044,2,1329,0,0,0,15,Standup M-Set Energy Neutralizer Projection I
+#37219	Standup M-Set Energy Neutralizer Projection II		6404
+2440,1,37219,54,2,1329,0,0,0,15,Standup M-Set Energy Neutralizer Projection II
+2441,1,37219,2044,2,1329,0,0,0,15,Standup M-Set Energy Neutralizer Projection II
+#37220	Standup M-Set Missile Projection I			6403
+2439,1,37220,37,2,1547;1546,0,0,0,15,Standup M-Set Missile Projection I
+#37221	Standup M-Set Missile Projection II			6403
+2439,1,37220,37,2,1547;1546,0,0,0,15,Standup M-Set Missile Projection II
+#37222	Standup M-Set Energy Neutralizer Economy I		6405
+2442,1,37220,6,2,1329,0,0,0,15,Standup M-Set Energy Neutralizer Economy I
+#37223	Standup M-Set Energy Neutralizer Economy II		6405
+2442,1,37223,6,2,1329,0,0,0,15,Standup M-Set Energy Neutralizer Economy II
+#37228	Standup M-Set Electronic Warfare Projection I	6406
+2440,1,37228,54,2,1332;1719,0,0,0,15,Standup M-Set Electronic Warfare Projection I
+2441,1,37228,2044,2,1332;1719,0,0,0,15,Standup M-Set Electronic Warfare Projection I
+2441,1,37228,158,2,1332;1719,0,0,0,15,Standup M-Set Electronic Warfare Projection I
+#37229	Standup M-Set Electronic Warfare Projection II	6406
+2440,1,37229,54,2,1332;1719,0,0,0,15,Standup M-Set Electronic Warfare Projection II
+2441,1,37229,2044,2,1332;1719,0,0,0,15,Standup M-Set Electronic Warfare Projection II
+2441,1,37229,158,2,1332;1719,0,0,0,15,Standup M-Set Electronic Warfare Projection II
+#37230	Standup M-Set Electronic Warfare Economy I		6407
+2442,1,37230,6,2,1332;1719,0,0,0,15,Standup M-Set Electronic Warfare Economy I
+#37231	Standup M-Set Electronic Warfare Economy II		6407
+2442,1,37231,6,2,1332;1719,0,0,0,15,Standup M-Set Electronic Warfare Economy II
+#37232	Standup M-Set Structure Target Multiplexing I	6408
+2434,1,37232,192,1,37232,0,0,1,15,Standup M-Set Structure Target Multiplexing I
+#37233	Standup M-Set Structure Target Multiplexing II	6408
+2434,1,37233,192,1,37233,0,0,1,15,Standup M-Set Structure Target Multiplexing II
+#37234	Standup M-Set Scan Resolution I			6409
+2435,1,37234,564,1,37234,0,0,0,15,Standup M-Set Scan Resolution I
+#37235	Standup M-Set Scan Resolution II		6409
+2435,1,37235,564,1,37235,0,0,0,15,Standup M-Set Scan Resolution II
+#37248	Standup L-Set Missile Flight Processor I	6402,6403
+2438,1,37248,653,2,1547;1546,0,0,0,15,Standup L-Set Missile Flight Processor I
+2439,1,37248,37,2,1547;1546,0,0,0,15,Standup L-Set Missile Flight Processor I
+#37249	Standup L-Set Missile Flight Processor II	6402,6403
+2438,1,37249,653,2,1547;1546,0,0,0,15,Standup L-Set Missile Flight Processor II
+2439,1,37249,37,2,1547;1546,0,0,0,15,Standup L-Set Missile Flight Processor II
+#37250	Standup L-Set Energy Neutralizer Feedback Control I			6404,6405
+2440,1,37250,54,2,1329,0,0,0,15,Standup L-Set Energy Neutralizer Feedback Control I	
+2441,1,37250,2044,2,1329,0,0,0,15,Standup L-Set Energy Neutralizer Feedback Control I	
+2442,1,37250,6,2,1329,0,0,0,15,Standup L-Set Energy Neutralizer Feedback Control I
+#37251	Standup L-Set Energy Neutralizer Feedback Control II		6404,6405
+2440,1,37251,54,2,1329,0,0,0,15,Standup L-Set Energy Neutralizer Feedback Control II
+2441,1,37251,2044,2,1329,0,0,0,15,Standup L-Set Energy Neutralizer Feedback Control II
+2442,1,37251,6,2,1329,0,0,0,15,Standup L-Set Energy Neutralizer Feedback Control II
+#37254	Standup L-Set EW Expert System I		6406,6407
+2440,1,37254,54,2,1332;1719,0,0,0,15,Standup L-Set EW Expert System I
+2441,1,37254,2044,2,1332;1719,0,0,0,15,Standup L-Set EW Expert System I
+2441,1,37254,158,2,1332;1719,0,0,0,15,Standup L-Set EW Expert System I
+2442,1,37254,6,2,1332;1719,0,0,0,15,Standup L-Set EW Expert System I
+#37255	Standup L-Set EW Expert System II		6406,6407
+2440,1,37255,54,2,1332;1719,0,0,0,15,Standup L-Set EW Expert System II
+2441,1,37255,2044,2,1332;1719,0,0,0,15,Standup L-Set EW Expert System II
+2441,1,37255,158,2,1332;1719,0,0,0,15,Standup L-Set EW Expert System II
+2442,1,37255,6,2,1332;1719,0,0,0,15,Standup L-Set EW Expert System II
+#37256	Standup L-Set Bomb Aimer I		6410,6411
+2449,1,37256,654,2,1548,0,0,0,15,Standup L-Set Bomb Aimer I
+2439,1,37256,37,2,1548,0,0,0,15,Standup L-Set Bomb Aimer I
+#37257	Standup L-Set Bomb Aimer II		6410,6411
+2449,1,37256,654,2,1548,0,0,0,15,Standup L-Set Bomb Aimer I
+2439,1,37256,37,2,1548,0,0,0,15,Standup L-Set Bomb Aimer I
+#37258	Standup L-Set Point Defense Battery Control I		6412,6413
+2436,1,37258,99,2,1330,0,0,0,15,Standup L-Set Point Defense Battery Control I
+2437,1,37258,6,2,1330,0,0,0,15,Standup L-Set Point Defense Battery Control I
+#37259	Standup L-Set Point Defense Battery Control II		6412,6413
+2436,1,37259,99,2,1330,0,0,0,15,Standup L-Set Point Defense Battery Control II
+2437,1,37259,6,2,1330,0,0,0,15,Standup L-Set Point Defense Battery Control II
+#37260	Standup L-Set Target Acquisition Array I		6408,6409
+2434,1,37260,192,1,37232,0,0,1,15,Standup L-Set Target Acquisition Array I
+2435,1,37260,564,1,37234,0,0,0,15,Standup L-Set Target Acquisition Array I
+#37261	Standup L-Set Target Acquisition Array II		6408,6409
+2434,1,37261,192,1,37232,0,0,1,15,Standup L-Set Target Acquisition Array II
+2435,1,37261,564,1,37234,0,0,0,15,Standup L-Set Target Acquisition Array II
+#37268	Standup XL-Set Missile Fire Control Computer I		6402,6403,6410,6411
+2438,1,37268,653,2,1547;1546,0,0,0,15,Standup XL-Set Missile Fire Control Computer I
+2439,1,37268,37,2,1547;1546,0,0,0,15,Standup XL-Set Missile Fire Control Computer I
+2449,1,37268,654,2,1548,0,0,0,15,Standup XL-Set Missile Fire Control Computer I
+2439,1,37268,37,2,1548,0,0,0,15,Standup XL-Set Missile Fire Control Computer I
+#37269	Standup XL-Set Missile Fire Control Computer II
+2438,1,37269,653,2,1547;1546,0,0,0,15,Standup XL-Set Missile Fire Control Computer II
+2439,1,37269,37,2,1547;1546,0,0,0,15,Standup XL-Set Missile Fire Control Computer II
+2449,1,37269,654,2,1548,0,0,0,15,Standup XL-Set Missile Fire Control Computer II
+2439,1,37269,37,2,1548,0,0,0,15,Standup XL-Set Missile Fire Control Computer II
+#37272	Standup XL-Set EW and Emissions Co-ordinator I		6404,6405,6406,6407
+2440,1,37272,54,2,1329,0,0,0,15,Standup XL-Set EW and Emissions Co-ordinator I
+2441,1,37272,2044,2,1329,0,0,0,15,Standup XL-Set EW and Emissions Co-ordinator I
+2442,1,37272,6,2,1329,0,0,0,15,Standup XL-Set EW and Emissions Co-ordinator I
+2440,1,37272,54,2,1332;1719,0,0,0,15,Standup XL-Set EW and Emissions Co-ordinator I
+2441,1,37272,2044,2,1332;1719,0,0,0,15,Standup XL-Set EW and Emissions Co-ordinator I
+2441,1,37272,158,2,1332;1719,0,0,0,15,Standup XL-Set EW and Emissions Co-ordinator I
+2442,1,37272,6,2,1332;1719,0,0,0,15,Standup XL-Set EW and Emissions Co-ordinator I
+#37273	Standup XL-Set EW and Emissions Co-ordinator II		6404,6405,6406,6407
+2440,1,37273,54,2,1329,0,0,0,15,Standup XL-Set EW and Emissions Co-ordinator II
+2441,1,37273,2044,2,1329,0,0,0,15,Standup XL-Set EW and Emissions Co-ordinator II
+2442,1,37273,6,2,1329,0,0,0,15,Standup XL-Set EW and Emissions Co-ordinator II
+2440,1,37273,54,2,1332;1719,0,0,0,15,Standup XL-Set EW and Emissions Co-ordinator II
+2441,1,37273,2044,2,1332;1719,0,0,0,15,Standup XL-Set EW and Emissions Co-ordinator II
+2441,1,37273,158,2,1332;1719,0,0,0,15,Standup XL-Set EW and Emissions Co-ordinator II
+2442,1,37273,6,2,1332;1719,0,0,0,15,Standup XL-Set EW and Emissions Co-ordinator II
+#37274	Standup XL-Set Extinction Level Weapons Suite I		6408,6409,6412,6413,6417,6475
+2434,1,37274,192,1,37232,0,0,1,15,Standup XL-Set Extinction Level Weapons Suite I
+2435,1,37274,564,1,37234,0,0,0,15,Standup XL-Set Extinction Level Weapons Suite I
+2436,1,37274,99,2,1330,0,0,0,15,Standup XL-Set Extinction Level Weapons Suite I
+2437,1,37274,6,2,1330,0,0,0,15,Standup XL-Set Extinction Level Weapons Suite I
+2278,1,37274,2106,2,1333,0,0,1,15,Standup XL-Set Extinction Level Weapons Suite I
+2277,1,37274,2104,2,1333,0,0,1,15,Standup XL-Set Extinction Level Weapons Suite I
+#37275	Standup XL-Set Extinction Level Weapons Suite II		6408,6409,6412,6413,6417,6475
+2434,1,37275,192,1,37232,0,0,1,15,Standup XL-Set Extinction Level Weapons Suite II
+2435,1,37275,564,1,37234,0,0,0,15,Standup XL-Set Extinction Level Weapons Suite II
+2436,1,37275,99,2,1330,0,0,0,15,Standup XL-Set Extinction Level Weapons Suite II
+2437,1,37275,6,2,1330,0,0,0,15,Standup XL-Set Extinction Level Weapons Suite II
+2278,1,37275,2106,2,1333,0,0,1,15,Standup XL-Set Extinction Level Weapons Suite II
+2277,1,37275,2104,2,1333,0,0,1,15,Standup XL-Set Extinction Level Weapons Suite II
+#37281	Standup M-Set HS Materials Reclamation II
+#37280	Standup M-Set HS Materials Reclamation I
+#41422	Standup M-Set LNS Materials Reclamation I
+#41423	Standup M-Set LNS Materials Reclamation II
+#41424	Standup M-Set I1 Materials Reclamation I
+#41425	Standup M-Set I1 Materials Reclamation II
+#41426	Standup M-Set I2 Materials Reclamation I
+#41427	Standup M-Set I2 Materials Reclamation II
+#37282	Standup L-Set Ore Grading Processor I
+#37283	Standup L-Set Ore Grading Processor II
+#41428	Standup L-Set Ice Grading Processor I
+#41429	Standup L-Set Ice Grading Processor II
+#37284	Standup XL-Set Reprocessing Monitor I
+#37285	Standup XL-Set Reprocessing Monitor II
+#37146	Standup M-Set Basic Medium Ship Manufacturing Material Efficiency I
+#37147	Standup M-Set Basic Medium Ship Manufacturing Material Efficiency II
+#37148	Standup M-Set Drone and Fighter Manufacturing Time Efficiency I
+#37149	Standup M-Set Drone and Fighter Manufacturing Time Efficiency II
+#37150	Standup M-Set Ammunition Manufacturing Time Efficiency I
+#37151	Standup M-Set Ammunition Manufacturing Time Efficiency II
+#37152	Standup M-Set Basic Large Ship Manufacturing Material Efficiency II
+#37153	Standup M-Set Basic Medium Ship Manufacturing Time Efficiency II
+#37154	Standup M-Set Basic Small Ship Manufacturing Material Efficiency I
+#37155	Standup M-Set Basic Small Ship Manufacturing Material Efficiency II
+#37156	Standup M-Set Drone and Fighter Manufacturing Material Efficiency I
+#37157	Standup M-Set Drone and Fighter Manufacturing Material Efficiency II
+#37158	Standup M-Set Ammunition Manufacturing Material Efficiency I
+#37159	Standup M-Set Ammunition Manufacturing Material Efficiency II
+#37160	Standup M-Set Equipment Manufacturing Time Efficiency I
+#37161	Standup M-Set Equipment Manufacturing Time Efficiency II
+#37162	Standup M-Set Basic Small Ship Manufacturing Time Efficiency I
+#37163	Standup M-Set Basic Small Ship Manufacturing Time Efficiency II
+#43732	Standup M-Set Basic Large Ship Manufacturing Material Efficiency I
+#43733	Standup M-Set Basic Large Ship Manufacturing Time Efficiency I
+#43734	Standup M-Set Basic Large Ship Manufacturing Time Efficiency II
+#43854	Standup M-Set Advanced Small Ship Manufacturing Material Efficiency II
+#43855	Standup M-Set Advanced Small Ship Manufacturing Material Efficiency I
+#43856	Standup M-Set Advanced Small Ship Manufacturing Time Efficiency I
+#43857	Standup M-Set Advanced Small Ship Manufacturing Time Efficiency II
+#43858	Standup M-Set Advanced Medium Ship Manufacturing Material Efficiency I
+#43859	Standup M-Set Advanced Medium Ship Manufacturing Material Efficiency II
+#43860	Standup M-Set Advanced Medium Ship Manufacturing Time Efficiency I
+#43861	Standup M-Set Advanced Medium Ship Manufacturing Time Efficiency II
+#43862	Standup M-Set Advanced Large Ship Manufacturing Material Efficiency I
+#43863	Standup M-Set Advanced Large Ship Manufacturing Material Efficiency II
+#43864	Standup M-Set Advanced Large Ship Manufacturing Time Efficiency II
+#43865	Standup M-Set Advanced Large Ship Manufacturing Time Efficiency I
+#43866	Standup M-Set Advanced Component Manufacturing Material Efficiency II
+#43867	Standup M-Set Advanced Component Manufacturing Material Efficiency I
+#43868	Standup M-Set Advanced Component Manufacturing Time Efficiency II
+#43869	Standup M-Set Advanced Component Manufacturing Time Efficiency I
+#43870	Standup M-Set Basic Capital Component Manufacturing Material Efficiency I
+#43871	Standup M-Set Basic Capital Component Manufacturing Material Efficiency II
+#43872	Standup M-Set Basic Capital Component Manufacturing Time Efficiency I
+#43873	Standup M-Set Basic Capital Component Manufacturing Time Efficiency II
+#43874	Standup M-Set Structure Manufacturing Material Efficiency II
+#43875	Standup M-Set Structure Manufacturing Material Efficiency I
+#43876	Standup M-Set Structure Manufacturing Time Efficiency I
+#43877	Standup M-Set Structure Manufacturing Time Efficiency II
+#43878	Standup M-Set Invention Cost Optimization II
+#43879	Standup M-Set Invention Cost Optimization I
+#43880	Standup M-Set Invention Accelerator I
+#43881	Standup M-Set Invention Accelerator II
+#43882	Standup M-Set ME Research Accelerator II
+#43883	Standup M-Set ME Research Accelerator I
+#43884	Standup M-Set ME Research Cost Optimization II
+#43885	Standup M-Set ME Research Cost Optimization I
+#43886	Standup M-Set TE Research Cost Optimization II
+#43887	Standup M-Set TE Research Cost Optimization I
+#43888	Standup M-Set TE Research Accelerator II
+#43889	Standup M-Set TE Research Accelerator I
+#43890	Standup M-Set Blueprint Copy Cost Optimization II
+#43891	Standup M-Set Blueprint Copy Cost Optimization I
+#43892	Standup M-Set Blueprint Copy Accelerator II
+#43893	Standup M-Set Blueprint Copy Accelerator I
+#43919	Standup M-Set Basic Medium Ship Manufacturing Time Efficiency I
+#43920	Standup M-Set Equipment Manufacturing Material Efficiency I
+#43921	Standup M-Set Equipment Manufacturing Material Efficiency II
+#37164	Standup L-Set Ammunition Manufacturing Efficiency I
+#37165	Standup L-Set Ammunition Manufacturing Efficiency II
+#37166	Standup L-Set Basic Large Ship Manufacturing Efficiency I
+#37167	Standup L-Set Basic Large Ship Manufacturing Efficiency II
+#37168	Standup L-Set Advanced Large Ship Manufacturing Efficiency I
+#37169	Standup L-Set Advanced Large Ship Manufacturing Efficiency II
+#37170	Standup L-Set Equipment Manufacturing Efficiency I
+#37171	Standup L-Set Equipment Manufacturing Efficiency II
+#37172	Standup L-Set Capital Ship Manufacturing Efficiency II
+#37173	Standup L-Set Capital Ship Manufacturing Efficiency I
+#37174	Standup L-Set Advanced Component Manufacturing Efficiency I
+#37175	Standup L-Set Advanced Component Manufacturing Efficiency II
+#43707	Standup L-Set Advanced Small Ship Manufacturing Efficiency I
+#43708	Standup L-Set Advanced Small Ship Manufacturing Efficiency II
+#43709	Standup L-Set Advanced Medium Ship Manufacturing Efficiency I
+#43711	Standup L-Set Advanced Medium Ship Manufacturing Efficiency II
+#43712	Standup L-Set Drone and Fighter Manufacturing Efficiency I
+#43713	Standup L-Set Drone and Fighter Manufacturing Efficiency II
+#43714	Standup L-Set Basic Small Ship Manufacturing Efficiency I
+#43715	Standup L-Set Basic Small Ship Manufacturing Efficiency II
+#43716	Standup L-Set Basic Medium Ship Manufacturing Efficiency I
+#43717	Standup L-Set Basic Medium Ship Manufacturing Efficiency II
+#43718	Standup L-Set Basic Capital Component Manufacturing Efficiency I
+#43719	Standup L-Set Basic Capital Component Manufacturing Efficiency II
+#43720	Standup L-Set Structure Manufacturing Efficiency I
+#43721	Standup L-Set Structure Manufacturing Efficiency II
+#43722	Standup L-Set Invention Optimization I
+#43723	Standup L-Set Invention Optimization II
+#43724	Standup L-Set ME Research Optimization I
+#43725	Standup L-Set ME Research Optimization II
+#43726	Standup L-Set TE Research Optimization I
+#43727	Standup L-Set TE Research Optimization II
+#43729	Standup L-Set Blueprint Copy Optimization I
+#43730	Standup L-Set Blueprint Copy Optimization II
+#37178	Standup XL-Set Equipment and Consumable Manufacturing Efficiency I
+#37179	Standup XL-Set Equipment and Consumable Manufacturing Efficiency II
+#37180	Standup XL-Set Ship Manufacturing Efficiency I
+#37181	Standup XL-Set Ship Manufacturing Efficiency II
+#37182	Standup XL-Set Laboratory Optimization II
+#37183	Standup XL-Set Laboratory Optimization I
+#43704	Standup XL-Set Structure and Component Manufacturing Efficiency I
+#43705	Standup XL-Set Structure and Component Manufacturing Efficiency II

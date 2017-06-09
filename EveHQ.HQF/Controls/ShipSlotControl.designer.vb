@@ -196,6 +196,11 @@ Namespace Controls
             Me.btnShipMode1 = New DevComponents.DotNetBar.ButtonX()
             Me.btnShipMode0 = New DevComponents.DotNetBar.ButtonX()
             Me.lblShipMode = New System.Windows.Forms.Label()
+            Me.cbiSecuritySpaceHigh = New DevComponents.Editors.ComboItem()
+            Me.cbiSecuritySpaceLow = New DevComponents.Editors.ComboItem()
+            Me.cbiSecuritySpaceNull = New DevComponents.Editors.ComboItem()
+            Me.cboSecuritySpace = New DevComponents.DotNetBar.Controls.ComboBoxEx()
+            Me.lblSecuritySpace = New System.Windows.Forms.Label()
             Me.btnAutoSize = New DevComponents.DotNetBar.ButtonX()
             Me.btnRedo = New DevComponents.DotNetBar.ButtonX()
             Me.btnUndo = New DevComponents.DotNetBar.ButtonX()
@@ -1858,6 +1863,8 @@ Namespace Controls
             Me.panelFunctions.Controls.Add(Me.btnShipMode1)
             Me.panelFunctions.Controls.Add(Me.btnShipMode0)
             Me.panelFunctions.Controls.Add(Me.lblShipMode)
+            Me.panelFunctions.Controls.Add(Me.cboSecuritySpace)
+            Me.panelFunctions.Controls.Add(Me.lblSecuritySpace)
             Me.panelFunctions.Controls.Add(Me.btnAutoSize)
             Me.panelFunctions.Controls.Add(Me.btnRedo)
             Me.panelFunctions.Controls.Add(Me.btnUndo)
@@ -1975,6 +1982,44 @@ Namespace Controls
             Me.lblShipMode.TabIndex = 17
             Me.lblShipMode.Text = "Ship Mode:"
             Me.lblShipMode.Visible = False
+            '
+            'cboSecuritySpace
+            '
+            Me.cboSecuritySpace.DisplayMember = "Text"
+            Me.cboSecuritySpace.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+            Me.cboSecuritySpace.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+            Me.cboSecuritySpace.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+            Me.cboSecuritySpace.FormattingEnabled = True
+            Me.cboSecuritySpace.Items.AddRange(New Object() {Me.cbiSecuritySpaceHigh, Me.cbiSecuritySpaceLow, Me.cbiSecuritySpaceNull})
+            Me.cboSecuritySpace.ItemHeight = 15
+            Me.cboSecuritySpace.Location = New System.Drawing.Point(388, 10)
+            Me.cboSecuritySpace.Name = "cboSecuritySpace"
+            Me.cboSecuritySpace.Size = New System.Drawing.Size(148, 21)
+            Me.cboSecuritySpace.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+            Me.cboSecuritySpace.TabIndex = 18
+            '
+            'cbiSecuritySpaceHigh
+            '
+            Me.cbiSecuritySpaceHigh.Text = "High Sec"
+            '
+            'cbiSecuritySpaceLow
+            '
+            Me.cbiSecuritySpaceLow.Text = "Low Sec"
+            '
+            'cbiSecuritySpaceNull
+            '
+            Me.cbiSecuritySpaceNull.Text = "Null Sec/Wormhole"
+            '
+            'lblSecuritySpace
+            '
+            Me.lblSecuritySpace.AutoSize = True
+            Me.lblSecuritySpace.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+            Me.lblSecuritySpace.Location = New System.Drawing.Point(304, 14)
+            Me.lblSecuritySpace.Name = "lblSecuritySpace"
+            Me.lblSecuritySpace.Size = New System.Drawing.Size(60, 13)
+            Me.lblSecuritySpace.TabIndex = 17
+            Me.lblSecuritySpace.Text = "Security Space:"
+            Me.lblSecuritySpace.Visible = False
             '
             'btnAutoSize
             '
@@ -2398,6 +2443,7 @@ Namespace Controls
         Friend WithEvents ComboItem13 As DevComponents.Editors.ComboItem
         Friend WithEvents rateFitting As DevComponents.DotNetBar.Controls.RatingStar
         Friend WithEvents lblShipMode As System.Windows.Forms.Label
+        Friend WithEvents lblSecuritySpace As System.Windows.Forms.Label
         Private WithEvents ExpandableSplitter1 As DevComponents.DotNetBar.ExpandableSplitter
         Private WithEvents panelFunctions As DevComponents.DotNetBar.PanelEx
         Private WithEvents adtSlots As DevComponents.AdvTree.AdvTree
@@ -2469,6 +2515,10 @@ Namespace Controls
         Private WithEvents btnShipMode3 As DevComponents.DotNetBar.ButtonX
         Private WithEvents btnShipMode2 As DevComponents.DotNetBar.ButtonX
         Private WithEvents btnShipMode1 As DevComponents.DotNetBar.ButtonX
+        Private WithEvents cboSecuritySpace As DevComponents.DotNetBar.Controls.ComboBoxEx
+        Friend WithEvents cbiSecuritySpaceHigh As DevComponents.Editors.ComboItem
+        Friend WithEvents cbiSecuritySpaceLow As DevComponents.Editors.ComboItem
+        Friend WithEvents cbiSecuritySpaceNull As DevComponents.Editors.ComboItem
         Friend WithEvents FighterAbilitiesToolStripMenuItem As ToolStripMenuItem
         Friend WithEvents FighterTurretToolStripMenuItem As ToolStripMenuItem
         Friend WithEvents FighterMissileToolStripMenuItem As ToolStripMenuItem

@@ -104,6 +104,7 @@
     <Compile Include="Classes\Capacitor.vb" />
     <Compile Include="Classes\Charges.vb" />
     <Compile Include="Classes\DNAFitting.vb" />
+    <Compile Include="Classes\SecuritySpace.vb" />
     <Compile Include="Classes\ShipModes.vb" />
     <Compile Include="Forms\frmShipSelection.Designer.vb">
       <DependentUpon>frmShipSelection.vb</DependentUpon>
@@ -112,6 +113,11 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Resources.Designer.vb">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="_Deprecated\ImplantGroup.vb" />
     <Compile Include="_New\FittingPilots.vb" />
     <Compile Include="_New\FittingSkill.vb" />
@@ -310,11 +316,6 @@
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
-    </Compile>
-    <Compile Include="My Project\Resources.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="My Project\Settings.Designer.vb">
       <AutoGen>True</AutoGen>

@@ -163,15 +163,29 @@ Namespace Forms
                 ExpFitting.UpdateBaseShipFromFitting()
             End If
 
-            For slotNo As Integer = 1 To ExpFitting.BaseShip.SubSlots
-                If ExpFitting.BaseShip.SubSlot(slotNo) IsNot Nothing Then
+            For slotNo As Integer = 1 To expFitting.BaseShip.ServiceModSlots
+                If expFitting.BaseShip.ServiceModSlot(slotNo) IsNot Nothing Then
+                    slotGroup = "service module slot "
+                    hardware = fitXML.CreateElement("hardware")
+                    hardwareAtt = fitXML.CreateAttribute("slot")
+                    hardwareAtt.Value = slotGroup & (slotNo - 1).ToString
+                    hardware.Attributes.Append(hardwareAtt)
+                    hardwareAtt = fitXML.CreateAttribute("type")
+                    hardwareAtt.Value = expFitting.BaseShip.ServiceModSlot(slotNo).Name
+                    hardware.Attributes.Append(hardwareAtt)
+                    fitNode.AppendChild(hardware)
+                End If
+            Next
+
+            For slotNo As Integer = 1 To expFitting.BaseShip.SubSlots
+                If expFitting.BaseShip.SubSlot(slotNo) IsNot Nothing Then
                     slotGroup = "subsystem slot "
                     hardware = fitXML.CreateElement("hardware")
                     hardwareAtt = fitXML.CreateAttribute("slot")
                     hardwareAtt.Value = slotGroup & (slotNo - 1).ToString
                     hardware.Attributes.Append(hardwareAtt)
                     hardwareAtt = fitXML.CreateAttribute("type")
-                    hardwareAtt.Value = ExpFitting.BaseShip.SubSlot(slotNo).Name
+                    hardwareAtt.Value = expFitting.BaseShip.SubSlot(slotNo).Name
                     hardware.Attributes.Append(hardwareAtt)
                     fitNode.AppendChild(hardware)
                 End If

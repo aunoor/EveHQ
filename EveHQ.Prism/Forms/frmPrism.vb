@@ -416,7 +416,7 @@ Namespace Forms
         Private Sub CheckCharXmlFiles(ByVal pOwner As PrismOwner)
 
             If pOwner.IsCorp = False Then
-                Const ResponseMode As ResponseMode = ResponseMode.CacheOnly
+                Const ResponseMode As ResponseMode = ResponseMode.BypassCache
                 If HQ.Settings.Pilots.ContainsKey(pOwner.Name) = True Then
                     Dim selPilot As EveHQPilot = HQ.Settings.Pilots(pOwner.Name)
                     Dim pilotAccount As EveHQAccount = pOwner.Account
@@ -4039,7 +4039,7 @@ Namespace Forms
                         If blueprint.LocationID Is Nothing Then blueprint.LocationID = "0" ' Resets details
                         If StaticData.Blueprints.ContainsKey(CInt(blueprint.TypeID)) Then
                             bpData = StaticData.Blueprints(CInt(blueprint.TypeID))
-                            locationName = Locations.GetLocationNameFromID(CInt(blueprint.LocationID))
+                            locationName = Locations.GetLocationNameFromID(CLng(blueprint.LocationID))
                             If locationName <> "" AndAlso _bpLocations.Contains(locationName) = False Then
                                 _bpLocations.Add(locationName)
                             End If
@@ -4482,7 +4482,7 @@ Namespace Forms
                     Dim locationName As String
                     For Each selitem As Node In adtBlueprints.SelectedNodes
                         bpAsset = PlugInData.BlueprintAssets(bpForm.OwnerName).Item(CLng(selitem.Tag))
-                        locationName = Locations.GetLocationNameFromID(CInt(bpAsset.LocationID))
+                        locationName = Locations.GetLocationNameFromID(CLng(bpAsset.LocationID))
                         Call UpdateOwnerBpItem(bpForm.OwnerName, locationName, bpAsset, selitem)
                     Next
                 Else

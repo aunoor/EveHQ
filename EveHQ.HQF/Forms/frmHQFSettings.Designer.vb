@@ -51,6 +51,8 @@ Namespace Forms
             Me.chkAutoResizeColumns = New System.Windows.Forms.CheckBox()
             Me.lblSubSlotColour = New System.Windows.Forms.Label()
             Me.pbSubSlotColour = New System.Windows.Forms.PictureBox()
+            Me.lblServiceModSlotColour = New System.Windows.Forms.Label()
+            Me.pbServiceModSlotColour = New System.Windows.Forms.PictureBox()
             Me.btnMoveDown = New System.Windows.Forms.Button()
             Me.btnMoveUp = New System.Windows.Forms.Button()
             Me.lvwColumns = New System.Windows.Forms.ListView()
@@ -157,6 +159,7 @@ Namespace Forms
             CType(Me.pbRigSlotColour, System.ComponentModel.ISupportInitialize).BeginInit()
             Me.gbSlotFormat.SuspendLayout()
             CType(Me.pbSubSlotColour, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.pbServiceModSlotColour, System.ComponentModel.ISupportInitialize).BeginInit()
             Me.gbConstants.SuspendLayout()
             CType(Me.nudMissileRange, System.ComponentModel.ISupportInitialize).BeginInit()
             CType(Me.nudShieldRecharge, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -372,6 +375,8 @@ Namespace Forms
             Me.gbSlotFormat.Controls.Add(Me.chkAutoResizeColumns)
             Me.gbSlotFormat.Controls.Add(Me.lblSubSlotColour)
             Me.gbSlotFormat.Controls.Add(Me.pbSubSlotColour)
+            Me.gbSlotFormat.Controls.Add(Me.lblServiceModSlotColour)
+            Me.gbSlotFormat.Controls.Add(Me.pbServiceModSlotColour)
             Me.gbSlotFormat.Controls.Add(Me.btnMoveDown)
             Me.gbSlotFormat.Controls.Add(Me.btnMoveUp)
             Me.gbSlotFormat.Controls.Add(Me.lvwColumns)
@@ -420,6 +425,25 @@ Namespace Forms
             Me.pbSubSlotColour.Size = New System.Drawing.Size(24, 24)
             Me.pbSubSlotColour.TabIndex = 32
             Me.pbSubSlotColour.TabStop = False
+            '
+            'lblServiceModSlotColour
+            '
+            Me.lblServiceModSlotColour.AutoSize = True
+            Me.lblServiceModSlotColour.Location = New System.Drawing.Point(284, 221)
+            Me.lblServiceModSlotColour.Name = "lblServiceModSlotColour"
+            Me.lblServiceModSlotColour.Size = New System.Drawing.Size(114, 13)
+            Me.lblServiceModSlotColour.TabIndex = 33
+            Me.lblServiceModSlotColour.Text = "Service Module Slot Colour"
+            '
+            'pbServiceModSlotColour
+            '
+            Me.pbServiceModSlotColour.BackColor = System.Drawing.Color.MediumAquamarine
+            Me.pbServiceModSlotColour.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+            Me.pbServiceModSlotColour.Location = New System.Drawing.Point(411, 214)
+            Me.pbServiceModSlotColour.Name = "pbServiceModSlotColour"
+            Me.pbServiceModSlotColour.Size = New System.Drawing.Size(24, 24)
+            Me.pbServiceModSlotColour.TabIndex = 32
+            Me.pbServiceModSlotColour.TabStop = False
             '
             'btnMoveDown
             '
@@ -1625,6 +1649,7 @@ Namespace Forms
             Me.gbSlotFormat.ResumeLayout(False)
             Me.gbSlotFormat.PerformLayout()
             CType(Me.pbSubSlotColour, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.pbServiceModSlotColour, System.ComponentModel.ISupportInitialize).EndInit()
             Me.gbConstants.ResumeLayout(False)
             Me.gbConstants.PerformLayout()
             CType(Me.nudMissileRange, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1678,6 +1703,8 @@ Namespace Forms
         Friend WithEvents lblShieldRechargeUnit As System.Windows.Forms.Label
         Friend WithEvents lblSubSlotColour As System.Windows.Forms.Label
         Friend WithEvents pbSubSlotColour As System.Windows.Forms.PictureBox
+        Friend WithEvents lblServiceModSlotColour As System.Windows.Forms.Label
+        Friend WithEvents pbServiceModSlotColour As System.Windows.Forms.PictureBox
         Friend WithEvents chkAmmoLoadTime As System.Windows.Forms.CheckBox
         Friend WithEvents chkCapBoosterReloadTime As System.Windows.Forms.CheckBox
         Friend WithEvents gbDamageProfiles As System.Windows.Forms.GroupBox

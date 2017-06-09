@@ -368,6 +368,13 @@
     ''' <remarks></remarks>
     Public Property ShipMode As Integer
 
+    ''' <summary>
+    ''' Gets or sets the current security space
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns>The current security space</returns>
+    ''' <remarks></remarks>
+    Public Property SecuritySpace As Integer
 
 #End Region
 
