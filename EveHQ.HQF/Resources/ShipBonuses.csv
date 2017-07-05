@@ -3049,3 +3049,16 @@
 # Sotiyo ,,,,,,,,,,,
 35827,0,0,2109,2,1415,0,0,0,25,15,service module fuel consumption
 35827,0,0,2110,2,1415,0,0,0,25,15,service module fuel consumption
+# Pacifier ,,,,,,,,,,,
+44993,1,3330,51,2,507;509,0,1,0,5,15,Rocket Launcher & Light Missile Launcher ROF
+44993,1,3330,281,2,384;387,0,1,0,10,15,Rocket & Light Missile Flight Time
+44993,1,3331,10014,4,567;570,0,1,0,5,15,Small Energy Turret Damage
+44993,1,3331,54,4,567;570,0,1,0,10,15,Small Energy Turret Optimal Range
+44993,1,3328,10015,4,561;564,0,1,0,5,15,Small Hybrid Turret Damage
+44993,1,3328,160,4,561;564,0,1,0,7.5,15,Small Hybrid Turret Tracking
+44993,1,3329,10013,4,574;577,0,1,0,5,15,Small Projectile Turret ROF
+44993,1,3329,158,4,574;577,0,1,0,10,15,Small Projectile Turret Falloff
+44993,1,12093,1371,2,479,0,1,0,10,15,Probe Scan Strength Bonus
+44993,1,12093,1281,0,44993,0,1,0,10,15,Warp Speed
+44993,0,0,50,2,330,0,0,0,-100,15,Cloaking Device CPU
+44993,0,0,1910,4,1718,0,0,1,10,15,Data & Relic Analyzer Virus Strength
