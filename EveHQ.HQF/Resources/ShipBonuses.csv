@@ -3076,3 +3076,9 @@
 42242,0,0,68,4,842,0,0,0,200,15,Shield Maintenance Bot Transfer
 42242,0,0,84,4,842,0,0,0,200,15,Armor Maintenance Bot Transfer
 42242,0,0,83,4,842,0,0,0,200,15,Hull Maintenance Bot Transfer
+# Chemosh ,,,,,,,,,,,
+42243,1,20525,90,2,68,0,1,0,15,15,Nos Drain Amount
+42243,1,20526,90,2,71,0,1,0,15,15,Neut Drain Amount
+42243,1,20532,54,2,65,0,1,0,20,15,Stasis Web Range
+42243,0,0,10014,4,773;774,0,0,0,25,15,Capital Energy Turret Damage
+42243,0,0,73,2,1313,0,0,0,500,15,Entosis link duration
