@@ -3082,3 +3082,19 @@
 42243,1,20532,54,2,65,0,1,0,20,15,Stasis Web Range
 42243,0,0,10014,4,773;774,0,0,0,25,15,Capital Energy Turret Damage
 42243,0,0,73,2,1313,0,0,0,500,15,Entosis link duration
+# Molok ,,,,,,,,,,,
+42241,1,3347,90,2,68,0,1,0,15,15,Nos Drain Amount
+42241,1,3347,90,2,71,0,1,0,15,15,Neut Drain Amount
+42241,1,3347,10009,1,42241,0,1,1,6,15,Warp Core Strength
+42241,1,3345,54,2,65,0,1,0,20,15,Stasis Web Range
+42241,1,3345,10009,1,42241,0,1,1,6,15,Warp Core Strength
+42241,0,0,10063,1,42241,0,0,1,2,15,Command Burst Modules
+42241,0,0,54,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,200,15,Command Burst AoE Range Bonus
+42241,0,0,10014,4,773;774,0,0,0,1400,15,Capital Energy Turret Damage
+42241,0,0,1159,2,329,0,0,0,500,15,Armor HP - Plates
+42241,0,0,72,2,38,0,0,0,500,15,Shield HP - Extenders
+42241,0,0,2112,1,42241,0,0,0,80,15,Sensor Dampener resistance
+42241,0,0,2113,1,42241,0,0,0,80,15,Weapon Disruption resistance
+42241,0,0,2115,1,42241,0,0,0,80,15,Stasis effect resistance
+42241,0,0,2135,1,42241,0,0,0,80,15,Remote Electronic Assistance impedance
+42241,0,0,73,2,1313,0,0,0,500,15,Entosis link duration
