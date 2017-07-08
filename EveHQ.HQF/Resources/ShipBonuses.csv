@@ -3082,3 +3082,32 @@
 42243,1,20532,54,2,65,0,1,0,20,15,Stasis Web Range
 42243,0,0,10014,4,773;774,0,0,0,25,15,Capital Energy Turret Damage
 42243,0,0,73,2,1313,0,0,0,500,15,Entosis link duration
+# Molok ,,,,,,,,,,,
+42241,1,3347,90,2,68,0,1,0,15,15,Nos Drain Amount
+42241,1,3347,90,2,71,0,1,0,15,15,Neut Drain Amount
+42241,1,3347,10009,1,42241,0,1,1,6,15,Warp Core Strength
+42241,1,3345,54,2,65,0,1,0,20,15,Stasis Web Range
+42241,1,3345,10009,1,42241,0,1,1,6,15,Warp Core Strength
+42241,0,0,10063,1,42241,0,0,1,2,15,Command Burst Modules
+42241,0,0,54,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,200,15,Command Burst AoE Range Bonus
+42241,0,0,10014,4,773;774,0,0,0,1400,15,Capital Energy Turret Damage
+42241,0,0,1159,2,329,0,0,0,500,15,Armor HP - Plates
+42241,0,0,72,2,38,0,0,0,500,15,Shield HP - Extenders
+42241,0,0,2112,1,42241,0,0,0,80,15,Sensor Dampener resistance
+42241,0,0,2113,1,42241,0,0,0,80,15,Weapon Disruption resistance
+42241,0,0,2115,1,42241,0,0,0,80,15,Stasis effect resistance
+42241,0,0,2135,1,42241,0,0,0,80,15,Remote Electronic Assistance impedance
+42241,0,0,73,2,1313,0,0,0,500,15,Entosis link duration
+# Enforcer ,,,,,,,,,,,
+44995,1,22761,54,2,52,0,1,0,5,15,Warp Disruptor Range
+44995,1,22761,54,2,65,0,1,0,10,15,Stasis Web Range
+44995,1,22761,1281,1,44995,0,1,0,10,15,Warp Speed
+44995,1,3332,10015,4,562;565,0,1,0,5,15,Medium Hybrid Turret Damage
+44995,1,3332,160,4,562;565,0,1,0,7.5,15,Medium Hybrid Turret Tracking
+44995,1,3333,10013,4,575;578,0,1,0,5,15,Medium Projectile Turret ROF
+44995,1,3333,158,4,575;578,0,1,0,10,15,Medium Projectile Turret Falloff
+44995,1,3334,51,2,511;510;771,0,1,0,5,15,"Rapid Light, Heavy & HAM Launcher ROF"
+44995,1,3334,281,2,654;655;772;385;395,0,1,0,10,15,Heavy & HAM Flight Time
+44995,0,3335,10014,4,568;572,0,1,0,5,15,Medium Energy Turret Damage
+44995,0,3335,54,4,568;572,0,1,1,10,15,Medium Energy Turret Optimal Range
+44995,0,0,50,2,330,0,0,0,-100,15,Cloaking Device CPU
