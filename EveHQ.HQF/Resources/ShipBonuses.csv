@@ -1338,6 +1338,7 @@
 11971,1,22761,54,4,562;565,0,1,0,10,15,Medium Hybrid Turret Optimal Range
 # Legion,,,,,,,,,,,
 29986,1,30650,1211,7,1211,0,1,0,-5,15,Heat Damage Reduction
+29986,0,0,50,2,481,0,0,0,-99,15,Scan Probe Launcher CPU Need
 # Leviathan,,,,,,,,,,,
 3764,1,3346,117,2,476;1677;1019;1678;89;657,0,1,0,50,15,Citadel Torpedo, Torpedo & Citadel Cruise Missile Kinetic Damage
 3764,1,3346,114,2,476;1677;1019;1678;89;657,0,1,0,40,15,Citadel Torpedo, Torpedo & Citadel Cruise Missile EM Damage
@@ -1378,6 +1379,7 @@
 37606,1,24314,2537,1,42529;43555,0,1,0,1,15,Shield Command Burst Stength
 # Loki,,,,,,,,,,,
 29990,1,30653,1211,7,1211,0,1,0,-5,15,Heat Damage Reduction
+29990,0,0,50,2,481,0,0,0,-99,15,Scan Probe Launcher CPU Need
 # Machariel,,,,,,,,,,,
 17738,0,0,10013,4,576;579,0,0,0,-25,15,Large Projectile Turret ROF
 17738,1,3337,10016,4,576;579,0,1,0,5,15,Large Projectile Turret Damage
@@ -2082,6 +2084,7 @@
 33697,0,0,50,2,330,0,0,0,-100,15,Cloaking Device CPU
 # Proteus,,,,,,,,,,,
 29988,1,30652,1211,7,1211,0,1,0,-5,15,Heat Damage Reduction
+29988,0,0,50,2,481,0,0,0,-99,15,Scan Probe Launcher CPU Need
 # Providence,,,,,,,,,,,
 20183,1,20524,10004,1,20183,0,1,0,5,15,Cargo Capacity
 20183,1,20524,37,1,20183,0,1,0,5,15,Max Velocity
@@ -2637,6 +2640,7 @@
 26842,1,3337,10016,4,576;579,0,1,0,5,15,Large Projectile Turret Damage
 # Tengu,,,,,,,,,,,
 29984,1,30651,1211,7,1211,0,1,0,-5,15,Heat Damage Reduction
+29984,0,0,50,2,481,0,0,0,-99,15,Scan Probe Launcher CPU Need
 # Thalia,,,,,,,,,,,
 37459,0,0,54,2,325;1698,0,0,0,50,15,Remote Armor Repair Optimal Range Bonus
 37459,0,0,2044,2,325;1698,0,0,0,600,15,Remote Armor Repair falloff Bonus
@@ -3066,7 +3070,7 @@
 42242,1,24311,90,2,68,0,1,0,30,15,Nos Drain Amount
 42242,1,24311,54,2,68,0,1,0,30,15,Nos Drain Optimal Range
 42242,1,24311,2044,2,68,0,1,0,30,15,Nos Drain Falloff
-42242,1,24314,12096,2,325,0,1,0,5,15,Remote Armor Repairer Cycle Time
+42242,1,24314,73,2,325,0,1,0,5,15,Remote Armor Repairer Cycle Time
 42242,0,0,50,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,90,15,Command Burst CPU Reduction
 42242,0,0,30,2,325,0,0,0,90,15,Remote Armor Repairers power need
 42242,0,0,50,2,68,0,0,0,90,15,Nos CPU Need

@@ -1,320 +1,379 @@
 #HQF Subsystem Bonus Mapping Table,,,,,,,,,,,
 #Type ID,Affecting Type,Affecting ID,Affected Attribute,Affected Type,Affected ID,Stack Nerf,Per Level,Calc Type,Value,Status,Description
-# Defensive Subsystems,,,,,,,,,,,
-# Legion Defensive - Adaptive Augmenter,,,,,,,,,,,
-29964,1,30532,267,1,29986,0,1,2,-4,15,Armor EM Resistance
-29964,1,30532,268,1,29986,0,1,2,-4,15,Armor Explosive Resistance
-29964,1,30532,269,1,29986,0,1,2,-4,15,Armor Kinetic Resistance
-29964,1,30532,270,1,29986,0,1,2,-4,15,Armor Thermal Resistance
-29964,1,30532,84,2,325,0,1,0,10,15,Remote Armor Repair Amount
-# Legion Defensive - Nanobot Injector,,,,,,,,,,,
-29965,1,30532,84,2,62;1199,0,1,0,10,15,Armor Repair Amount
-# Legion Defensive - Augmented Plating,,,,,,,,,,,
-29966,1,30532,265,1,29986,0,1,0,7.5,15,Armor HP
-#29966,1,30532,1159,2,329,0,1,0,7.5,15,Armor Plate HP
-# Legion Defensive - Warfare Processor,,,,,,,,,,,
-29967,0,0,54,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,50,15,Command Burst AoE Range Bonus
-29967,1,30532,2535,1,42527;43554,0,1,0,2,15,Information Command Burst Duration
-29967,1,30532,2535,1,42526;43552,0,1,0,2,15,Armored Command Burst Duration
-29967,1,30532,2535,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Duration
-29967,1,30532,2469,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
-29967,1,30532,2471,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
-29967,1,30532,2473,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
-29967,1,30532,2537,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
-29967,1,30532,2469,1,42526;43552,0,1,0,2,15,Armored Command Burst Stength
-29967,1,30532,2471,1,42526;43552,0,1,0,2,15,Armored Command Burst Stength
-29967,1,30532,2473,1,42526;43552,0,1,0,2,15,Armored Command Burst Stength
-29967,1,30532,2537,1,42526;43552,0,1,0,2,15,Armored Command Burst Stength
-29967,1,30532,2469,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Stength
-29967,1,30532,2471,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Stength
-29967,1,30532,2473,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Stength
-29967,1,30532,2537,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Stength
-# Loki Defensive - Adaptive Shielding,,,,,,,,,,,
-29974,1,30545,271,1,29990,0,1,2,-4,15,Shield EM Resistance
-29974,1,30545,272,1,29990,0,1,2,-4,15,Shield Explosive Resistance
-29974,1,30545,273,1,29990,0,1,2,-4,15,Shield Kinetic Resistance
-29974,1,30545,274,1,29990,0,1,2,-4,15,Shield Thermal Resistance
-29974,1,30545,68,2,41,0,1,0,10,15,Shield Transporter Amount
-# Loki Defensive - Adaptive Augmenter,,,,,,,,,,,
-29975,1,30545,267,1,29990,0,1,2,-4,15,Armor EM Resistance
-29975,1,30545,268,1,29990,0,1,2,-4,15,Armor Explosive Resistance
-29975,1,30545,269,1,29990,0,1,2,-4,15,Armor Kinetic Resistance
-29975,1,30545,270,1,29990,0,1,2,-4,15,Armor Thermal Resistance
-# Loki Defensive - Amplification Node,,,,,,,,,,,
-29976,1,30545,552,1,29990,0,1,0,-5,15,Signature Radius
-# Loki Defensive - Warfare Processor,,,,,,,,,,,
-29977,0,0,54,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,50,15,Command Burst AoE Range Bonus
-29977,1,30545,2535,1,42529;43555,0,1,0,2,15,Shield Command Burst Duration
-29977,1,30545,2535,1,42526;43552,0,1,0,2,15,Armored Command Burst Duration
-29977,1,30545,2535,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Duration
-29977,1,30545,2469,1,42529;43555,0,1,0,2,15,Shield Command Burst Stength
-29977,1,30545,2471,1,42529;43555,0,1,0,2,15,Shield Command Burst Stength
-29977,1,30545,2473,1,42529;43555,0,1,0,2,15,Shield Command Burst Stength
-29977,1,30545,2537,1,42529;43555,0,1,0,2,15,Shield Command Burst Stength
-29977,1,30545,2469,1,42526;43552,0,1,0,2,15,Armored Command Burst Stength
-29977,1,30545,2471,1,42526;43552,0,1,0,2,15,Armored Command Burst Stength
-29977,1,30545,2473,1,42526;43552,0,1,0,2,15,Armored Command Burst Stength
-29977,1,30545,2537,1,42526;43552,0,1,0,2,15,Armored Command Burst Stength
-29977,1,30545,2469,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Stength
-29977,1,30545,2471,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Stength
-29977,1,30545,2473,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Stength
-29977,1,30545,2537,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Stength
-# Proteus Defensive - Adaptive Augmenter,,,,,,,,,,,
-29979,1,30540,267,1,29988,0,1,2,-4,15,Armor EM Resistance
-29979,1,30540,268,1,29988,0,1,2,-4,15,Armor Explosive Resistance
-29979,1,30540,269,1,29988,0,1,2,-4,15,Armor Kinetic Resistance
-29979,1,30540,270,1,29988,0,1,2,-4,15,Armor Thermal Resistance
-29979,1,30540,84,2,325,0,1,0,10,15,Remote Armor Repair Amount
-# Proteus Defensive - Nanobot Injector,,,,,,,,,,,
-29980,1,30540,84,2,62;1199,0,1,0,10,15,Armor Repair Amount
-# Proteus Defensive - Augmented Plating,,,,,,,,,,,
-29981,1,30540,265,1,29988,0,1,0,7.5,15,Armor HP
-#29981,1,30540,1159,2,329,0,1,0,7.5,15,Armor Plate HP
-# Proteus Defensive - Warfare Processor,,,,,,,,,,,
-29982,0,0,54,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,50,15,Command Burst AoE Range Bonus
-29982,1,30540,2535,1,42527;43554,0,1,0,2,15,Information Command Burst Duration
-29982,1,30540,2535,1,42526;43552,0,1,0,2,15,Armored Command Burst Duration
-29982,1,30540,2535,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Duration
-29982,1,30540,2469,1,42526;43552,0,1,0,2,15,Armored Command Burst Stength
-29982,1,30540,2471,1,42526;43552,0,1,0,2,15,Armored Command Burst Stength
-29982,1,30540,2473,1,42526;43552,0,1,0,2,15,Armored Command Burst Stength
-29982,1,30540,2537,1,42526;43552,0,1,0,2,15,Armored Command Burst Stength
-29982,1,30540,2469,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Stength
-29982,1,30540,2471,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Stength
-29982,1,30540,2473,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Stength
-29982,1,30540,2537,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Stength
-29982,1,30540,2469,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
-29982,1,30540,2471,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
-29982,1,30540,2473,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
-29982,1,30540,2537,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
-# Tengu Defensive - Adaptive Shielding,,,,,,,,,,,
-29969,1,30544,271,1,29984,0,1,2,-4,15,Shield EM Resistance
-29969,1,30544,272,1,29984,0,1,2,-4,15,Shield Explosive Resistance
-29969,1,30544,273,1,29984,0,1,2,-4,15,Shield Kinetic Resistance
-29969,1,30544,274,1,29984,0,1,2,-4,15,Shield Thermal Resistance
-29969,1,30544,68,2,41,0,1,0,10,15,Shield Transporter Amount
-# Tengu Defensive - Amplification Node,,,,,,,,,,,
-29970,1,30544,68,2,40;1156,0,1,0,10,15,Shield Booster Boost
+# Tengu Core Subsystems
+# Tengu Core - Obfuscation Manifold,,,,,,,,,,,
+45625,1,30548,54,2,201,0,1,0,10,15,ECM Optimal Range
+45625,1,30548,238,2,201,0,1,0,10,15,ECM Jam Strength Grav
+45625,1,30548,239,2,201,0,1,0,10,15,ECM Jam Strength Ladar
+45625,1,30548,240,2,201,0,1,0,10,15,ECM Jam Strength Mag
+45625,1,30548,241,2,201,0,1,0,10,15,ECM Jam Strength Radar
+45625,1,30548,1229,7,238;239;240;241,0,1,0,15,15,All ECM Jam Strength
+45625,1,30548,1211,7,1211,0,1,0,-5,15,Reduction in module damage from overheating
+
+# Tengu Core - Augmented Graviton Reactor,,,,,,,,,,,
+45626,1,30548,482,1,29984,0,1,0,5,15,Capacitor Capacity
+45626,1,30548,2267,1,29984,0,1,0,3,15,Energy Warfare resistance
+45626,0,0,11,1,29984,0,0,0,20,15,PG Bonus
+
+# Tengu Core - Electronic Efficiency Gate,,,,,,,,,,,
+45627,1,30548,1851,1,29984,0,1,0,15,15,Sensor Strength Bonus
+45627,1,30548,76,1,29984,0,1,0,5,15,Max Targeting Bonus
+45627,0,0,48,1,29984,0,0,0,25,15,CPU Bonus
+45627,0,0,235,1,29984,0,0,1,1,15,Max Locked Targets Bonus
+
+# Tengu Defensive Subsystems
+# Tengu Defensive - Covert Reconfiguration,,,,,,,,,,,
+45589,1,30544,1371,2,479,0,1,0,10,15,Probe Scan Strength Bonus
+45589,1,30544,68,2,40;1156,0,1,0,7.5,15,Shield Booster Boost
+45589,1,30544,1231,2,40;1156,0,1,0,7.5,15,Shield Boost Amount Overheat Effect
+45589,0,0,50,2,330,0,0,0,-100,15,Cloaking Device CPU
+45589,0,0,1910,4,1718,0,0,1,10,15,Data & Relic Analyzer Virus Strength
+
 # Tengu Defensive - Supplemental Screening,,,,,,,,,,,
-29971,1,30544,263,1,29984,0,1,0,5,15,Shield HP
-#29971,1,30544,72,2,38,0,1,0,10,5,Shield Extender HP
-29971,1,30544,479,1,29984,0,1,0,-3,15,Shield Recharge Rate,,,,,,,,,,,,,,,,,,
-# Tengu Defensive - Warfare Processor,,,,,,,,,,,
-29972,0,0,54,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,50,15,Command Burst AoE Range Bonus
-29972,1,30544,2535,1,42529;43555,0,1,0,2,15,Shield Command Burst Duration
-29972,1,30544,2535,1,42527;43554,0,1,0,2,15,Information Command Burst Duration
-29972,1,30544,2535,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Duration
-29972,1,30544,2469,1,42529;43555,0,1,0,2,15,Shield Command Burst Stength
-29972,1,30544,2471,1,42529;43555,0,1,0,2,15,Shield Command Burst Stength
-29972,1,30544,2473,1,42529;43555,0,1,0,2,15,Shield Command Burst Stength
-29972,1,30544,2537,1,42529;43555,0,1,0,2,15,Shield Command Burst Stength
-29972,1,30544,2469,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Stength
-29972,1,30544,2471,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Stength
-29972,1,30544,2473,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Stength
-29972,1,30544,2537,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Stength
-29972,1,30544,2469,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
-29972,1,30544,2471,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
-29972,1,30544,2473,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
-29972,1,30544,2537,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
-# Electronics Subsystems,,,,,,,,,,,
-# Legion Electronics - Energy Parasitic Complex,,,,,,,,,,,
-30036,1,30536,90,2,68,0,1,0,10,15,Nos Drain Amount
-30036,1,30536,97,2,71,0,1,0,10,15,Neut Drain Amount
-# Legion Electronics - Tactical Targeting Network,,,,,,,,,,,
-30038,1,30536,564,1,29986,0,1,0,15,15,Scan Resolution
-# Legion Electronics - Dissolution Sequencer,,,,,,,,,,,
-30040,1,30536,208,1,29986,0,1,0,15,15,Radar Sensor Strength
-30040,1,30536,209,1,29986,0,1,0,15,15,Ladar Sensor Strength
-30040,1,30536,210,1,29986,0,1,0,15,15,Mag Sensor Strength
-30040,1,30536,211,1,29986,0,1,0,15,15,Grav Sensor Strength
-30040,1,30536,76,1,29986,0,1,0,5,15,Max Targeting Range
-# Legion Electronics - Emergent Locus Analyzer,,,,,,,,,,,
-30042,0,0,50,2,481,0,0,0,-99,15,Scan Probe Launcher CPU Use
-30042,1,30536,1371,2,479,0,1,0,10,15,Probe Scan Strength Bonus
-30042,1,30536,1045,2,650,0,1,0,20,15,Tractor Beam Velocity
-30042,1,30536,54,2,650,0,1,0,20,15,Tractor Beam Range
-30042,0,0,1910,4,1718,0,0,1,10,15,Data & Relic Analyzer Virus Strength
-# Loki Electronics - Immobility Drivers,,,,,,,,,,,
-30066,1,30543,54,2,65,0,1,0,30,15,Stasis Web Range
-# Loki Electronics - Tactical Targeting Network,,,,,,,,,,,
-30068,1,30543,564,1,29990,0,1,0,15,15,Scan Resolution
-# Loki Electronics - Dissolution Sequencer,,,,,,,,,,,
-30070,1,30543,208,1,29990,0,1,0,15,15,Radar Sensor Strength
-30070,1,30543,209,1,29990,0,1,0,15,15,Ladar Sensor Strength
-30070,1,30543,210,1,29990,0,1,0,15,15,Mag Sensor Strength
-30070,1,30543,211,1,29990,0,1,0,15,15,Grav Sensor Strength
-30070,1,30543,76,1,29990,0,1,0,5,15,Max Targeting Range
-# Loki Electronics - Emergent Locus Analyzer,,,,,,,,,,,
-30072,0,0,50,2,481,0,0,0,-99,15,Scan Probe Launcher CPU Use
-30072,1,30543,1371,2,479,0,1,0,10,15,Probe Scan Strength Bonus
-30072,1,30543,1045,2,650,0,1,0,20,15,Tractor Beam Velocity
-30072,1,30543,54,2,650,0,1,0,20,15,Tractor Beam Range
-30072,0,0,1910,4,1718,0,0,1,10,15,Data & Relic Analyzer Virus Strength
-# Proteus Electronics - Friction Extension Processor,,,,,,,,,,,
-30056,1,30541,54,2,52,0,1,0,10,15,Warp Scrambler Range
-# Proteus Electronics - CPU Efficiency Gate,,,,,,,,,,,
-30058,1,30541,48,1,29988,0,1,0,5,15,CPU Bonus
-# Proteus Electronics - Dissolution Sequencer,,,,,,,,,,,
-30060,1,30541,208,1,29988,0,1,0,15,15,Radar Sensor Strength
-30060,1,30541,209,1,29988,0,1,0,15,15,Ladar Sensor Strength
-30060,1,30541,210,1,29988,0,1,0,15,15,Mag Sensor Strength
-30060,1,30541,211,1,29988,0,1,0,15,15,Grav Sensor Strength
-30060,1,30541,76,1,29988,0,1,0,5,15,Max Targeting Range
-# Proteus Electronics - Emergent Locus Analyzer,,,,,,,,,,,
-30062,0,0,50,2,481,0,0,0,-99,15,Scan Probe Launcher CPU Use
-30062,1,30541,1371,2,479,0,1,0,10,15,Probe Scan Strength Bonus
-30062,1,30541,1045,2,650,0,1,0,20,15,Tractor Beam Velocity
-30062,1,30541,54,2,650,0,1,0,20,15,Tractor Beam Range
-30062,0,0,1910,4,1718,0,0,1,10,15,Data & Relic Analyzer Virus Strength
-# Tengu Electronics - Obfuscation Manifold,,,,,,,,,,,
-30046,1,30542,54,2,201,0,1,0,12.5,15,ECM Optimal Range
-# Tengu Electronics - CPU Efficiency Gate,,,,,,,,,,,
-30048,1,30542,48,1,29984,0,1,0,5,15,CPU Bonus
-# Tengu Electronics - Dissolution Sequencer,,,,,,,,,,,
-30050,1,30542,208,1,29984,0,1,0,15,15,Radar Sensor Strength
-30050,1,30542,209,1,29984,0,1,0,15,15,Ladar Sensor Strength
-30050,1,30542,210,1,29984,0,1,0,15,15,Mag Sensor Strength
-30050,1,30542,211,1,29984,0,1,0,15,15,Grav Sensor Strength
-30050,1,30542,76,1,29984,0,1,0,5,15,Max Targeting Range
-# Tengu Electronics - Emergent Locus Analyzer,,,,,,,,,,,
-30052,0,0,50,2,481,0,0,0,-99,15,Scan Probe Launcher CPU Use
-30052,1,30542,1371,2,479,0,1,0,10,15,Probe Scan Strength Bonus
-30052,1,30542,1045,2,650,0,1,0,20,15,Tractor Beam Velocity
-30052,1,30542,54,2,650,0,1,0,20,15,Tractor Beam Range
-30052,0,0,1910,4,1718,0,0,1,10,15,Data & Relic Analyzer Virus Strength
-# Engineering Subsystems,,,,,,,,,,,
-# Legion Engineering - Power Core Multiplier,,,,,,,,,,,
-30169,1,30539,11,1,29986,0,1,0,5,15,PG Bonus
-# Legion Engineering - Augmented Capacitor Reservoir,,,,,,,,,,,
-30171,1,30539,482,1,29986,0,1,0,5,15,Capacitor Capacity
-# Legion Engineering - Capacitor Regeneration Matrix,,,,,,,,,,,
-30173,1,30539,55,1,29986,0,1,0,-5,15,Capacitor Recharge
-# Legion Engineering - Supplemental Coolant Injector,,,,,,,,,,,
-30175,1,30539,1211,7,1211,0,1,0,-5,15,Heat Damage Reduction
-# Loki Engineering - Power Core Multiplier,,,,,,,,,,,
-30159,1,30547,11,1,29990,0,1,0,5,15,PG Bonus
-# Loki Engineering - Augmented Capacitor Reservoir,,,,,,,,,,,
-30161,1,30547,482,1,29990,0,1,0,5,15,Capacitor Capacity
-# Loki Engineering - Capacitor Regeneration Matrix,,,,,,,,,,,
-30163,1,30547,55,1,29990,0,1,0,-5,15,Capacitor Recharge
-# Loki Engineering - Supplemental Coolant Injector,,,,,,,,,,,
-30165,1,30547,1211,7,1211,0,1,0,-5,15,Heat Damage Reduction
-# Proteus Engineering - Power Core Multiplier,,,,,,,,,,,
-30149,1,30546,11,1,29988,0,1,0,5,15,PG Bonus
-# Proteus Engineering - Augmented Capacitor Reservoir,,,,,,,,,,,
-30151,1,30546,263,3,18,0,1,0,7.5,15,Drone Shield HP
-30151,1,30546,265,3,18,0,1,0,7.5,15,Drone Armor HP
-30151,1,30546,9,3,18,0,1,0,7.5,15,Drone Hull HP
-30151,1,30546,37,3,18,0,1,0,5,15,Drone MWD Speed
-# Proteus Engineering - Capacitor Regeneration Matrix,,,,,,,,,,,
-30153,1,30546,55,1,29988,0,1,0,-5,15,Capacitor Recharge
-# Proteus Engineering - Supplemental Coolant Injector,,,,,,,,,,,
-30155,1,30546,1211,7,1211,0,1,0,-5,15,Heat Damage Reduction
-# Tengu Engineering - Power Core Multiplier,,,,,,,,,,,
-30139,1,30548,11,1,29984,0,1,0,5,15,PG Bonus
-# Tengu Engineering - Augmented Capacitor Reservoir,,,,,,,,,,,
-30141,1,30548,482,1,29984,0,1,0,5,15,Capacitor Capacity
-# Tengu Engineering - Capacitor Regeneration Matrix,,,,,,,,,,,
-30143,1,30548,55,1,29984,0,1,0,-5,15,Capacitor Recharge
-# Tengu Engineering - Supplemental Coolant Injector,,,,,,,,,,,
-30145,1,30548,1211,7,1211,0,1,0,-5,15,Heat Damage Reduction
-# Offensive Subsystems,,,,,,,,,,,
-# Legion Offensive - Drone Synthesis Projector,,,,,,,,,,,
-30117,1,30537,6,4,568;572,0,1,0,-10,15,Medium Energy Turret Cap Use
-30117,1,30537,263,3,18,0,1,0,7.5,15,Drone Shield HP
-30117,1,30537,265,3,18,0,1,0,7.5,15,Drone Armor HP
-30117,1,30537,9,3,18,0,1,0,7.5,15,Drone Hull HP
-30117,1,30537,64,3,18,0,1,0,10,15,Drone Damage
-# Legion Offensive - Assault Optimization,,,,,,,,,,,
-30118,1,30537,114,2,772;654,0,1,0,5,15,HAM EM Damage
-30118,1,30537,116,2,772;654,0,1,0,5,15,HAM Explosive Damage
-30118,1,30537,117,2,772;654,0,1,0,5,15,HAM Kinetic Damage
-30118,1,30537,118,2,772;654,0,1,0,5,15,HAM Thermal Damage
-30118,1,30537,51,2,511;524;506;510;771;507;508;509,0,1,0,-5,15,Missile Launcher ROF
-# Legion Offensive - Liquid Crystal Magnifiers,,,,,,,,,,,
-30119,1,30537,6,4,568;572,0,1,0,-10,15,Medium Energy Turret Cap Use
-30119,1,30537,10014,4,568;572,0,1,0,10,15,Medium Energy Turret Damage
-30119,1,30537,54,4,568;572,0,1,0,10,15,Medium Energy Turret Optimal Range
-# Legion Offensive - Covert Reconfiguration,,,,,,,,,,,
-30120,1,30537,6,4,568;572,0,1,0,-10,15,Medium Energy Turret Cap Use
-30120,0,0,50,2,330,0,0,0,-100,15,Cloaking Device CPU
-# Loki Offensive - Turret Concurrence Registry,,,,,,,,,,,
-30132,1,30551,10016,4,575;578,0,1,0,10,15,Medium Projectile Turret Damage
-30132,1,30551,54,4,575;578,0,1,0,10,15,Medium Projectile Optimal Range
-30132,1,30551,160,4,575;578,0,1,0,7.5,15,Medium Projectile Turret Tracking
-# Loki Offensive - Projectile Scoping Array,,,,,,,,,,,
-30133,1,30551,10013,4,575;578,0,1,0,-7.5,15,Medium Projectile Turret ROF
-30133,1,30551,158,4,575;578,0,1,0,10,15,Medium Projectile Turret Falloff
-# Loki Offensive - Hardpoint Efficiency Configuration,,,,,,,,,,,
-30134,1,30551,10013,4,575;578,0,1,0,-7.5,15,Medium Projectile Turret ROF
-30134,1,30551,51,2,511;524;506;510;771;507;508;509,0,1,0,-5,15,Missile Launcher ROF
-# Loki Offensive - Covert Reconfiguration,,,,,,,,,,,
-30135,1,30551,10013,4,575;578,0,1,0,-5,15,Medium Projectile Turret ROF
-30135,0,0,50,2,330,0,0,0,-100,15,Cloaking Device CPU
-# Proteus Offensive - Dissonic Encoding Platform,,,,,,,,,,,
-30127,1,30550,10015,4,562;565,0,1,0,10,15,Medium Hybrid Turret Damage
-30127,1,30550,158,4,562;565,0,1,0,10,15,Medium Hybrid Turret Falloff
-30127,1,30550,160,4,562;565,0,1,0,7.5,15,Medium Hybrid Turret Tracking
-# Proteus Offensive - Hybrid Propulsion Armature,,,,,,,,,,,
-30128,1,30550,10015,4,562;565,0,1,0,10,15,Medium Hybrid Turret Damage
-30128,1,30550,158,4,562;565,0,1,0,10,15,Medium Hybrid Turret Falloff
-# Proteus Offensive - Drone Synthesis Projector,,,,,,,,,,,
-30129,1,30550,10015,4,562;565,0,1,0,5,15,Medium Hybrid Turret Damage
-30129,1,30550,263,3,18,0,1,0,7.5,15,Drone Shield HP
-30129,1,30550,265,3,18,0,1,0,7.5,15,Drone Armor HP
-30129,1,30550,9,3,18,0,1,0,7.5,15,Drone Hull HP
-30129,1,30550,64,3,18,0,1,0,10,15,Drone Damage
-# Proteus Offensive - Covert Reconfiguration,,,,,,,,,,,
-30130,1,30550,10015,4,562;565,0,1,0,5,15,Medium Hybrid Turret Damage
-30130,0,0,50,2,330,0,0,0,-100,15,Cloaking Device CPU
+45590,1,30544,263,1,29984,0,1,2,5,15,Shield HP
+45590,1,30544,1208,2,77,0,1,2,5,15,Shield Hardener Overheat Effect
+
+# Tengu Defensive - Amplification Node,,,,,,,,,,,
+45591,1,30544,68,2,40;1156,0,1,0,10,15,Shield Booster Boost
+45591,1,30544,1231,2,40;1156,0,1,0,10,15,Shield Boost Amount Overheat Effect
+
+# Tengu Offensive Subsystems
 # Tengu Offensive - Accelerated Ejection Bay,,,,,,,,,,,
-30122,1,30549,117,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1019;88;1158;394;395;396,0,1,0,5,15,Kinetic Missile Damage
-30122,1,30549,51,2,511;510;771,0,1,0,-7.5,15,"Rapid Light, Heavy & HAM Launcher ROF"
-30122,1,30549,37,2,385;655;772;654;395,0,1,0,10,15,Heavy & HAM Velocity
-# Tengu Offensive - Rifling Launcher Pattern,,,,,,,,,,,
-30123,1,30549,51,2,511;510;771,0,1,0,-5,15,"Rapid Light, Heavy & HAM Launcher ROF"
-30123,1,30549,238,2,201,0,1,0,10,15,ECM Jam Strength
-30123,1,30549,239,2,201,0,1,0,10,15,ECM Jam Strength
-30123,1,30549,240,2,201,0,1,0,10,15,ECM Jam Strength
-30123,1,30549,241,2,201,0,1,0,10,15,ECM Jam Strength
+45601,1,30549,117,2,653;654;655;772;385;384;394;395,0,1,0,5,15,"Kinetic HAM, Light & Heavy Missile Damage"
+45601,1,30549,51,2,511;510;771,0,1,0,-7.5,15,"Rapid Light, Heavy & HAM Launcher ROF"
+45601,1,30549,37,2,385;655;772;654;395,0,1,0,10,15,Heavy & HAM Velocity
+45601,0,0,50,2,511;510;711,0,0,0,25,15,"Rapid Light Missile, Heavy Missile & HAM Launcher CPU reduction"
+45601,0,0,30,2,511;510;711,0,0,0,25,15,"Rapid Light Missile, Heavy Missile & HAM Launcher PWG reduction"
+
 # Tengu Offensive - Magnetic Infusion Basin,,,,,,,,,,,
-30124,1,30549,10015,4,562;565,0,1,0,5,15,Medium Hybrid Turret Damage
-30124,1,30549,54,4,562;565,0,1,0,20,15,Medium Hybrid Turret Range
-# Tengu Offensive - Covert Reconfiguration,,,,,,,,,,,
-30125,1,30549,51,2,511;524;506;510;771;507;508;509,0,1,0,-5,15,Missile Launcher ROF
-30125,0,0,50,2,330,0,0,0,-100,15,Cloaking Device CPU
-# Propulsion Subsystems,,,,,,,,,,,
-# Legion Propulsion - Chassis Optimization,,,,,,,,,,,
-30076,1,30538,37,1,29986,0,1,0,5,15,Max Velocity
-# Legion Propulsion - Fuel Catalyst,,,,,,,,,,,
-30078,1,30538,20,4,542,0,1,0,10,15,Afterburner Velocity
-# Legion Propulsion - Wake Limiter,,,,,,,,,,,
-30080,1,30538,554,2,46,0,1,0,-5,15,MWD Signature Radius Penalty
-# Legion Propulsion - Interdiction Nullifier,,,,,,,,,,,
-30082,1,30538,70,1,29986,0,1,0,-5,15,Agility
-# Loki Propulsion - Chassis Optimization,,,,,,,,,,,
-30106,1,30554,37,1,29990,0,1,0,5,15,Max Velocity
-# Loki Propulsion - Intercalated Nanofibers,,,,,,,,,,,
-30108,1,30554,70,1,29990,0,1,0,-5,15,Agility
-# Loki Propulsion - Fuel Catalyst,,,,,,,,,,,
-30110,1,30554,20,4,542,0,1,0,10,15,Afterburner Velocity
-# Loki Propulsion - Interdiction Nullifier,,,,,,,,,,,
-30112,1,30554,70,1,29990,0,1,0,-5,15,Agility
-# Proteus Propulsion - Wake Limiter,,,,,,,,,,,
-30096,1,30553,554,2,46,0,1,0,-5,15,MWD Signature Radius Penalty
-# Proteus Propulsion - Localized Injectors,,,,,,,,,,,
-30098,1,30553,6,2,46,0,1,0,-15,15,AB & MWD Capacitor Use
-# Proteus Propulsion - Gravitational Capacitor,,,,,,,,,,,
-30100,1,30553,153,1,29988,0,1,0,-15,15,Warp Capacitor Need
-30100,1,30553,1281,1,29988,0,1,0,12.5,15,Warp Speed
-# Proteus Propulsion - Interdiction Nullifier,,,,,,,,,,,
-30102,1,30553,70,1,29988,0,1,0,-5,15,Agility
-# Tengu Propulsion - Intercalated Nanofibers,,,,,,,,,,,
-30086,1,30552,70,1,29984,0,1,0,-5,15,Agility
-# Tengu Propulsion - Gravitational Capacitor,,,,,,,,,,,
-30088,1,30552,153,1,29984,0,1,0,-15,15,Warp Capacitor Need
-30088,1,30552,1281,1,29984,0,1,0,12.5,15,Warp Speed
-# Tengu Propulsion - Fuel Catalyst,,,,,,,,,,,
-30090,1,30552,20,4,542,0,1,0,10,15,Afterburner Velocity
+45602,1,30549,10015,4,562;565,0,1,0,5,15,Medium Hybrid Turret Damage
+45602,1,30549,54,4,562;565,0,1,0,20,15,Medium Hybrid Turret Range
+45602,0,0,50,4,562;565,0,0,0,25,15,Medium Hybrid CPU reduction
+45602,0,0,30,4,562;565,0,0,0,25,15,Medium Hybrid PWG reduction
+
+# Tengu Offensive - Support Processor,,,,,,,,,,,
+45603,1,30549,2535,1,42529;43555,0,1,0,2,15,Shield Command Burst Duration
+45603,1,30549,2535,1,42527;43554,0,1,0,2,15,Information Command Burst Duration
+45603,1,30549,2535,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Duration
+45603,1,30549,2469,1,42529;43555,0,1,0,2,15,Shield Command Burst Stength
+45603,1,30549,2471,1,42529;43555,0,1,0,2,15,Shield Command Burst Stength
+45603,1,30549,2473,1,42529;43555,0,1,0,2,15,Shield Command Burst Stength
+45603,1,30549,2537,1,42529;43555,0,1,0,2,15,Shield Command Burst Stength
+45603,1,30549,2469,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Stength
+45603,1,30549,2471,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Stength
+45603,1,30549,2473,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Stength
+45603,1,30549,2537,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Stength
+45603,1,30549,2469,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
+45603,1,30549,2471,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
+45603,1,30549,2473,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
+45603,1,30549,2537,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
+45603,1,30549,6,2,41;1697,0,1,0,-5,15,Remote Shield Booster Cap Use
+45603,1,30549,1231,2,41;1697,0,1,0,10,15,Remote Shield Booster Overheat Effect
+45603,0,0,50,2,41;1697,0,0,0,-75,15,Remote Shield Booster CPU reduction
+45603,0,0,30,2,41;1697,0,0,0,-75,15,Remote Shield Booster PWG reduction
+45603,0,0,50,2,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,-95,15,Command Burst CPU reduction
+45603,0,0,30,2,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,-95,15,Command Burst PWG reduction
+45603,0,0,2044,2,41;1697,0,0,0,475,15,Remote Shield Booster Falloff
+45603,0,0,54,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,50,15,Command Burst AoE Range Bonus
+
+# Tengu Propulsion Sybsystems
 # Tengu Propulsion - Interdiction Nullifier,,,,,,,,,,,
-30092,1,30552,70,1,29984,0,1,0,-5,15,Agility
+45613,1,30552,1281,1,29984,0,1,0,10,15,Warp Speed
+45613,1,30552,319,1,29984,0,1,0,15,15,Warp Capacitor needed reduction
+
+# Tengu Propulsion - Chassis Optimization,,,,,,,,,,,
+45614,1,30552,70,1,29984,0,1,0,-7.5,15,Agility
+45614,1,30552,37,1,2836,0,1,0,3,15,Max Velocity
+
+# Tengu Propulsion - Fuel Catalyst,,,,,,,,,,,
+45615,1,30552,20,4,542,0,1,0,10,15,Afterburner Velocity
+45615,1,30552,1223,2,46,0,1,0,10,15,Afterburner & MWD speed overheating bonus
+
+
+# Legion Core Subsystems
+# Legion Core - Dissolution Sequencer,,,,,,,,,,,
+45622,1,30539,1851,1,29986,0,1,0,15,15,Sensor Strength Bonus
+45622,1,30539,76,1,29986,0,1,0,5,15,Max Targeting Bonus
+45622,1,30539,564,1,29986,0,1,0,15,15,Scan Resolution
+45622,0,0,235,1,29986,0,0,1,1,15,Max Locked Targets Bonus
+
+# Legion Core - Augmented Antimatter Reactor,,,,,,,,,,,
+45623,1,30539,482,1,29986,0,1,0,5,15,Capacitor Capacity
+45623,1,30539,2267,1,29986,0,1,0,3,15,Energy Warfare resistance
+45623,0,0,11,1,29986,0,0,0,20,15,PG Bonus
+
+# Legion Core - Energy Parasitic Complex,,,,,,,,,,,
+45624,1,30539,90,2,68;71,0,1,0,10,15,Nos & Neut Drain Amount
+45624,1,30539,1229,7,90,0,1,0,10,15,Nos & Neut Drain Overheat Amount Bonus
+45624,1,30539,1211,7,1211,0,1,0,-5,15,Reduction in module damage from overheating
+45624,0,0,30,2,68;71,0,0,0,-50,15,Remote Shield Booster PWG reduction
+
+# Legion Defensive Subsystems
+# Legion Defensive - Covert Reconfiguration,,,,,,,,,,,
+45586,1,30532,1371,2,479,0,1,0,10,15,Probe Scan Strength Bonus
+45586,1,30532,84,2,62;1199,0,1,0,7.5,15,Armor Repair Amount
+45586,1,30532,1230,2,62;1199,0,1,0,7.5,15,Armor Repair Amount Overheat Effect
+45586,0,0,50,2,330,0,0,0,-100,15,Cloaking Device CPU
+45586,0,0,1910,4,1718,0,0,1,10,15,Data & Relic Analyzer Virus Strength
+
+# Legion Defensive - Augmented Plating,,,,,,,,,,,
+45587,1,30532,267,1,29986,0,1,2,-5,15,Armor EM Resistance
+45587,1,30532,268,1,29986,0,1,2,-5,15,Armor Explosive Resistance
+45587,1,30532,269,1,29986,0,1,2,-5,15,Armor Kinetic Resistance
+45587,1,30532,270,1,29986,0,1,2,-5,15,Armor Thermal Resistance
+45587,1,30532,1208,2,328,0,1,2,5,15,Armor Hardener Overheat Effect
+
+# Legion Defensive - Nanobot Injector,,,,,,,,,,,
+45588,1,30532,84,2,62;1199,0,1,0,10,15,Armor Repair Amount
+45588,1,30532,1230,2,62;1199,0,1,0,10,15,Armor Repair Amount Overheat Effect
+
+# Legion Offensive Subsystems
+# Legion Offensive - Liquid Crystal Magnifiers,,,,,,,,,,,
+45598,1,30537,6,4,568;572,0,1,0,-10,15,Medium Energy Turret Cap Use
+45598,1,30537,10014,4,568;572,0,1,0,10,15,Medium Energy Turret Damage
+45598,1,30537,54,4,568;572,0,1,0,10,15,Medium Energy Turret Optimal Range
+45598,0,0,50,4,568;572,0,0,0,25,15,Medium Energy Turret CPU reduction
+45598,0,0,30,4,568;572,0,0,0,25,15,Medium Energy Turret PWG reduction
+
+# Legion Offensive - Assault Optimization,,,,,,,,,,,
+45599,1,30537,114,2,653;654;655;772;385;384;394;395,0,1,0,5,15,"EM HAM, Light & Heavy Missile Damage"
+45599,1,30537,116,2,653;654;655;772;385;384;394;395,0,1,0,5,15,"Explosive HAM, Light & Heavy Missile Damage"
+45599,1,30537,117,2,653;654;655;772;385;384;394;395,0,1,0,5,15,"Kinetic HAM, Light & Heavy Missile Damage"
+45599,1,30537,118,2,653;654;655;772;385;384;394;395,0,1,0,5,15,"Thermal HAM, Light & Heavy Missile Damage"
+45599,1,30537,51,2,511;510;771,0,1,0,-5,15,"Rapid Light, Heavy & HAM Launcher ROF"
+45599,1,30537,263,3,18,0,1,0,10,15,Drone Shield HP
+45599,1,30537,265,3,18,0,1,0,10,15,Drone Armor HP
+45599,1,30537,9,3,18,0,1,0,10,15,Drone Hull HP
+45599,1,30537,64,3,18,0,1,0,10,15,Drone Damage
+45599,0,0,50,2,511;510;711,0,0,0,25,15,"Rapid Light Missile, Heavy Missile & HAM Launcher CPU reduction"
+45599,0,0,30,2,511;510;711,0,0,0,25,15,"Rapid Light Missile, Heavy Missile & HAM Launcher PWG reduction"
+
+# Legion Offensive - Support Processor,,,,,,,,,,,
+45600,1,30537,2535,1,42526;43552,0,1,0,2,15,Armored Command Burst Duration
+45600,1,30537,2535,1,42527;43554,0,1,0,2,15,Information Command Burst Duration
+45600,1,30537,2535,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Duration
+45600,1,30537,2469,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
+45600,1,30537,2471,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
+45600,1,30537,2473,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
+45600,1,30537,2537,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
+45600,1,30537,2469,1,42526;43552,0,1,0,2,15,Armored Command Burst Stength
+45600,1,30537,2471,1,42526;43552,0,1,0,2,15,Armored Command Burst Stength
+45600,1,30537,2473,1,42526;43552,0,1,0,2,15,Armored Command Burst Stength
+45600,1,30537,2537,1,42526;43552,0,1,0,2,15,Armored Command Burst Stength
+45600,1,30537,2469,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Stength
+45600,1,30537,2471,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Stength
+45600,1,30537,2473,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Stength
+45600,1,30537,2537,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Stength
+45600,1,30537,6,2,325;1698,0,1,0,-5,15,Remote Armor Repairer Cap Use
+45600,1,30537,1230,2,325;1698,0,1,0,10,15,Remote Armor Repairer Overheat Effect
+45600,0,0,50,2,325;1698,0,0,0,-75,15,Remote Armor Repairer CPU reduction
+45600,0,0,30,2,325;1698,0,0,0,-75,15,Remote Armor Repairer PWG reduction
+45600,0,0,50,2,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,-95,15,Command Burst CPU reduction
+45600,0,0,30,2,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,-95,15,Command Burst PWG reduction
+45600,0,0,54,2,325;1698,0,0,0,20,15,Remote Armor Repairer Optimal
+45600,0,0,2044,2,325;1698,0,0,0,1150,15,Remote Armor Repair Falloff
+45600,0,0,54,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,50,15,Command Burst AoE Range Bonus
+
+# Legion Propulsion Subsystems
+# Legion Propulsion - Interdiction Nullifier,,,,,,,,,,,
+45610,1,30538,1281,1,29986,0,1,0,10,15,Warp Speed
+45610,1,30538,319,1,29986,0,1,0,15,15,Warp Capacitor needed reduction
+
+# Legion Propulsion - Intercalated Nanofibers,,,,,,,,,,,
+45611,1,30538,70,1,29984,0,1,0,-5,15,Agility
+45611,1,30538,37,1,2836,0,1,0,5,15,Max Velocity
+
+# Legion Propulsion - Wake Limiter,,,,,,,,,,,
+45612,1,30538,20,4,542,0,1,0,10,15,Afterburner Velocity
+45612,1,30538,554,2,46,0,1,0,-10,15,MWD Signature Radius Penalty
+
+
+# Loki Core Subsystems 
+# Loki Core - Dissolution Sequencer,,,,,,,,,,,
+45631,1,30547,1851,1,29990,0,1,0,15,15,Sensor Strength Bonus
+45631,1,30547,76,1,29990,0,1,0,5,15,Max Targeting Bonus
+45631,1,30547,564,1,29990,0,1,0,15,15,Scan Resolution
+45631,0,0,235,1,29990,0,0,1,1,15,Max Locked Targets Bonus
+
+# Loki Core - Augmented Nuclear Reactor,,,,,,,,,,,
+45632,1,30547,55,1,29990,0,1,0,-5,15,Capacitor Recharge Time Bonus
+45632,1,30547,2267,1,29990,0,1,0,3,15,Energy Warfare resistance
+45632,0,0,11,1,29990,0,0,0,20,15,PG Bonus
+
+# Loki Core - Immobility Drivers,,,,,,,,,,,
+45633,1,30547,54,2,65,0,1,0,25,15,Stasis Web Range
+45633,1,30547,1229,7,54,0,1,0,10,15,Stasis Web Range Overheat Bonus
+45633,1,30547,1211,7,1211,0,1,0,-5,15,Reduction in module damage from overheating
+
+# Loki Defensive Subsystems
+# Loki Defensive - Covert Reconfiguration,,,,,,,,,,,
+45595,1,30545,1371,2,479,0,1,0,10,15,Probe Scan Strength Bonus
+45595,1,30545,84,2,62;1199,0,1,0,7.5,15,Armor Repair Amount
+45595,1,30545,1230,2,62;1199,0,1,0,7.5,15,Armor Repair Amount Overheat Effect
+45595,0,0,50,2,330,0,0,0,-100,15,Cloaking Device CPU
+45595,0,0,1910,4,1718,0,0,1,10,15,Data & Relic Analyzer Virus Strength
+
+# Loki Defensive - Augmented Durability,,,,,,,,,,,
+45596,1,30545,263,1,29990,0,1,2,5,15,Shield HP
+45596,1,30545,265,1,29990,0,1,0,5,15,Armor HP
+45596,1,30545,1208,2,77,0,1,2,5,15,Shield Hardener Overheat Effect
+45596,1,30545,1208,2,328,0,1,2,5,15,Armor Hardener Overheat Effect
+
+# Loki Defensive - Adaptive Defense Node,,,,,,,,,,,
+45597,1,30545,68,2,40;1156,0,1,0,10,15,Shield Booster Boost
+45597,1,30545,84,2,62;1199,0,1,0,10,15,Armor Repair Amount
+45597,1,30545,1231,2,40;1156,0,1,0,10,15,Shield Boost Amount Overheat Effect
+45597,1,30545,1230,2,62;1199,0,1,0,10,15,Armor Repair Amount Overheat Effect
+
+# Loki Offensive Subsystems
+# Loki Offensive - Projectile Scoping Array,,,,,,,,,,,
+45607,1,30551,10016,4,575;578,0,1,0,17.5,15,Medium Projectile Turret Damage
+45607,1,30551,54,4,575;578,0,1,0,10,15,Medium Projectile Optimal Range
+45607,1,30551,158,4,575;578,0,1,0,10,15,Medium Projectile Falloff Range
+45607,1,30551,160,4,575;578,0,1,0,7.5,15,Medium Projectile Turret Tracking
+45607,0,0,50,4,575;578,0,0,0,25,15,Medium Projectile Turret CPU reduction
+45607,0,0,30,4,575;578,0,0,0,25,15,Medium Projectile Turret PWG reduction
+
+# Loki Offensive - Launcher Efficiency Configuration,,,,,,,,,,,
+45608,1,30551,51,2,511;510;771,0,1,0,-10,15,"Rapid Light, Heavy & HAM Launcher ROF"
+45608,1,30551,37,2,385;655;772;654;395,0,1,0,5,15,Heavy & HAM Velocity
+45608,1,30551,653,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1677;1019;1678;88;1158;394;395;396,0,1,0,5,15,Missile Explosion Velocity
+45608,0,0,50,2,511;510;711,0,0,0,25,15,"Rapid Light Missile, Heavy Missile & HAM Launcher CPU reduction"
+45608,0,0,30,2,511;510;711,0,0,0,25,15,"Rapid Light Missile, Heavy Missile & HAM Launcher PWG reduction"
+
+# Loki Offensive - Support Processor,,,,,,,,,,,
+45609,1,30551,2535,1,42529;43555,0,1,0,2,15,Shield Command Burst Duration
+45609,1,30551,2535,1,42527;43554,0,1,0,2,15,Information Command Burst Duration
+45609,1,30551,2535,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Duration
+45609,1,30551,2469,1,42529;43555,0,1,0,2,15,Shield Command Burst Stength
+45609,1,30551,2471,1,42529;43555,0,1,0,2,15,Shield Command Burst Stength
+45609,1,30551,2473,1,42529;43555,0,1,0,2,15,Shield Command Burst Stength
+45609,1,30551,2537,1,42529;43555,0,1,0,2,15,Shield Command Burst Stength
+45609,1,30551,2469,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Stength
+45609,1,30551,2471,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Stength
+45609,1,30551,2473,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Stength
+45609,1,30551,2537,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Stength
+45609,1,30551,2469,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
+45609,1,30551,2471,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
+45609,1,30551,2473,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
+45609,1,30551,2537,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
+45609,1,30551,6,2,41;1697,0,1,0,-5,15,Remote Shield Booster Cap Use
+45609,1,30551,6,2,325;1698,0,1,0,-5,15,Remote Armor Repairer Cap Use
+45609,1,30551,1231,2,41;1697,0,1,0,10,15,Remote Shield Booster Overheat Effect
+45609,1,30551,1230,2,325;1698,0,1,0,10,15,Remote Armor Repairer Overheat Effect
+45609,0,0,50,2,325;1698,0,0,0,-75,15,Remote Armor Repairer CPU reduction
+45609,0,0,30,2,325;1698,0,0,0,-75,15,Remote Armor Repairer PWG reduction
+45609,0,0,50,2,41;1697,0,0,0,-75,15,Remote Shield Booster CPU reduction
+45609,0,0,30,2,41;1697,0,0,0,-75,15,Remote Shield Booster PWG reduction
+45609,0,0,50,2,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,-95,15,Command Burst CPU reduction
+45609,0,0,30,2,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,-95,15,Command Burst PWG reduction
+45609,0,0,54,2,325;1698,0,0,0,20,15,Remote Armor Repairer Optimal
+45609,0,0,2044,2,325;1698,0,0,0,1150,15,Remote Armor Repair Falloff
+45609,0,0,2044,2,41;1697,0,0,0,475,15,Remote Shield Booster Falloff
+45609,0,0,54,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,50,15,Command Burst AoE Range Bonus
+
+# Loki Propulsion Subsystems
+# Loki Propulsion - Interdiction Nullifier,,,,,,,,,,,
+45619,1,30554,1281,1,29990,0,1,0,10,15,Warp Speed
+45619,1,30554,319,1,29990,0,1,0,15,15,Warp Capacitor needed reduction
+
+# Loki Propulsion - Intercalated Nanofibers,,,,,,,,,,,
+45620,1,30554,70,1,29990,0,1,0,-5,15,Agility
+45620,1,30554,37,1,29990,0,1,0,5,15,Max Velocity
+
+# Loki Propulsion - Wake Limiter,,,,,,,,,,,
+45621,1,30554,20,4,542,0,1,0,10,15,Afterburner Velocity
+45621,1,30554,554,2,46,0,1,0,-10,15,MWD Signature Radius Penalty
+
+
+# Proteus Core Subsystems
+# Proteus Core - Electronic Efficiency Gate,,,,,,,,,,,
+45628,1,30546,1851,1,29988,0,1,0,15,15,Sensor Strength Bonus
+45628,1,30546,76,1,29988,0,1,0,5,15,Max Targeting Bonus
+45628,0,0,48,1,29988,0,0,0,25,15,CPU Bonus
+45628,0,0,235,1,29988,0,0,1,1,15,Max Locked Targets Bonus
+
+# Proteus Core - Augmented Fusion Reactor,,,,,,,,,,,
+45629,1,30546,55,1,29988,0,1,0,-5,15,Capacitor Recharge Time Bonus
+45629,1,30546,2267,1,29988,0,1,0,3,15,Energy Warfare resistance
+45629,0,0,11,1,29988,0,0,0,20,15,PG Bonus
+
+# Proteus Core - Friction Extension Processor,,,,,,,,,,,
+45630,1,30546,54,2,52,0,1,0,7.5,15,Warp Scrambler & Warp Disruptor Range
+45630,1,30546,1229,7,54,0,1,0,15,15,Warp Scrambler & Warp Disruptor Range Overheat Bonus
+45630,1,30546,1211,7,1211,0,1,0,-5,15,Reduction in module damage from overheating
+
+# Proteus Defensive Subsystems
+# Proteus Defensive - Covert Reconfiguration,,,,,,,,,,,
+45592,1,30540,1371,2,479,0,1,0,10,15,Probe Scan Strength Bonus
+45592,1,30540,84,2,62;1199,0,1,0,7.5,15,Armor Repair Amount
+45592,1,30540,1230,2,62;1199,0,1,0,7.5,15,Armor Repair Amount Overheat Effect
+45592,0,0,50,2,330,0,0,0,-100,15,Cloaking Device CPU
+45592,0,0,1910,4,1718,0,0,1,10,15,Data & Relic Analyzer Virus Strength
+
+# Proteus Defensive - Augmented Plating,,,,,,,,,,,
+45593,1,30540,267,1,29988,0,1,2,-5,15,Armor EM Resistance
+45593,1,30540,268,1,29988,0,1,2,-5,15,Armor Explosive Resistance
+45593,1,30540,269,1,29988,0,1,2,-5,15,Armor Kinetic Resistance
+45593,1,30540,270,1,29988,0,1,2,-5,15,Armor Thermal Resistance
+45593,1,30540,1208,2,328,0,1,2,5,15,Armor Hardener Overheat Effect
+
+# Proteus Defensive - Nanobot Injector,,,,,,,,,,,
+45594,1,30540,84,2,62;1199,0,1,0,10,15,Armor Repair Amount
+45594,1,30540,1230,2,62;1199,0,1,0,10,15,Armor Repair Amount Overheat Effect
+
+# Proteus Offensive Subsystems
+# Proteus Offensive - Hybrid Encoding Platform,,,,,,,,,,,
+45604,1,30550,10015,4,562;565,0,1,0,10,15,Medium Hybrid Turret Damage
+45604,1,30550,158,4,562;565,0,1,0,10,15,Medium Hybrid Falloff Range
+45604,1,30550,160,4,562;565,0,1,0,7.5,15,Medium Hybrid Turret Tracking
+45604,0,0,50,4,562;565,0,0,0,25,15,Medium Hybrid CPU reduction
+45604,0,0,30,4,562;565,0,0,0,25,15,Medium Hybrid PWG reduction
+
+# Proteus Offensive - Drone Synthesis Projector,,,,,,,,,,,
+45605,1,30550,160,4,562;565,0,1,0,10,15,Medium Hybrid Turret Tracking
+45605,1,30550,263,3,18,0,1,0,10,15,Drone Shield HP
+45605,1,30550,265,3,18,0,1,0,10,15,Drone Armor HP
+45605,1,30550,9,3,18,0,1,0,10,15,Drone Hull HP
+45605,1,30550,37,3,18,0,1,0,5,15,Drone MWD Speed
+45605,0,0,50,4,562;565,0,0,0,25,15,Medium Hybrid CPU reduction
+45605,0,0,30,4,562;565,0,0,0,25,15,Medium Hybrid PWG reduction
+
+# Proteus Offensive - Support Processor,,,,,,,,,,,
+45606,1,30550,2535,1,42526;43552,0,1,0,2,15,Armored Command Burst Duration
+45606,1,30550,2535,1,42527;43554,0,1,0,2,15,Information Command Burst Duration
+45606,1,30550,2535,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Duration
+45606,1,30550,2469,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
+45606,1,30550,2471,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
+45606,1,30550,2473,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
+45606,1,30550,2537,1,42527;43554,0,1,0,2,15,Information Command Burst Stength
+45606,1,30550,2469,1,42526;43552,0,1,0,2,15,Armored Command Burst Stength
+45606,1,30550,2471,1,42526;43552,0,1,0,2,15,Armored Command Burst Stength
+45606,1,30550,2473,1,42526;43552,0,1,0,2,15,Armored Command Burst Stength
+45606,1,30550,2537,1,42526;43552,0,1,0,2,15,Armored Command Burst Stength
+45606,1,30550,2469,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Stength
+45606,1,30550,2471,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Stength
+45606,1,30550,2473,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Stength
+45606,1,30550,2537,1,42530;43556,0,1,0,2,15,Skirmish Command Burst Stength
+45606,1,30550,6,2,325;1698,0,1,0,-5,15,Remote Armor Repairer Cap Use
+45606,1,30550,1230,2,325;1698,0,1,0,10,15,Remote Armor Repairer Overheat Effect
+45606,0,0,50,2,325;1698,0,0,0,-75,15,Remote Armor Repairer CPU reduction
+45606,0,0,30,2,325;1698,0,0,0,-75,15,Remote Armor Repairer PWG reduction
+45606,0,0,50,2,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,-95,15,Command Burst CPU reduction
+45606,0,0,30,2,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,-95,15,Command Burst PWG reduction
+45606,0,0,54,2,325;1698,0,0,0,20,15,Remote Armor Repairer Optimal
+45606,0,0,2044,2,325;1698,0,0,0,1150,15,Remote Armor Repair Falloff
+45606,0,0,54,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,50,15,Command Burst AoE Range Bonus
+
+# Proteus Propulsion Subsystems
+# Proteus Propulsion - Interdiction Nullifier,,,,,,,,,,,
+45616,1,30553,1281,1,29988,0,1,0,10,15,Warp Speed
+45616,1,30553,319,1,29988,0,1,0,15,15,Warp Capacitor needed reduction
+
+# Proteus Propulsion - Hyperspatial Optimization,,,,,,,,,,,
+45617,1,30553,70,1,29988,0,1,0,-7.5,15,Agility
+45617,1,30553,1281,1,29988,0,1,0,10,15,Warp Speed
+
+# Proteus Propulsion - Localized Injectors,,,,,,,,,,,
+45618,1,30553,6,2,46,0,1,0,-15,15,Afterburner & MWD Capacitor Use
+45618,1,30553,1223,2,46,0,1,0,10,15,Afterburner & MWD speed overheating bonus

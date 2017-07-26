@@ -5276,14 +5276,16 @@ Namespace Controls
             cboBoosterSlot3.BeginUpdate()
             cboBoosterSlot3.Items.Clear()
             For Each booster As ShipModule In Boosters.BoosterList.Values
-                Select Case CInt(booster.Attributes(1087))
-                    Case 1
-                        cboBoosterSlot1.Items.Add(booster.Name)
-                    Case 2
-                        cboBoosterSlot2.Items.Add(booster.Name)
-                    Case 3
-                        cboBoosterSlot3.Items.Add(booster.Name)
-                End Select
+				If booster.Attributes.ContainsKey(1087) Then
+					Select Case CInt(booster.Attributes(1087))
+						Case 1
+							cboBoosterSlot1.Items.Add(booster.Name)
+						Case 2
+							cboBoosterSlot2.Items.Add(booster.Name)
+						Case 3
+						    cboBoosterSlot3.Items.Add(booster.Name)
+					End Select
+				End If
             Next
             cboBoosterSlot1.EndUpdate()
             cboBoosterSlot2.EndUpdate()

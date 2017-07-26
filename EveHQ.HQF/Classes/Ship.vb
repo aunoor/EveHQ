@@ -59,7 +59,7 @@ Imports System.Runtime.Serialization
 #Region "Constants"
     Const MaxBasicSlots As Integer = 8
     Const MaxRigSlots As Integer = 3
-    Const MaxSubSlots As Integer = 5
+    Const MaxSubSlots As Integer = 4
     Const MaxServiceModSlots As Integer = 8
 #End Region
 
@@ -2316,8 +2316,10 @@ Imports System.Runtime.Serialization
                     End If
                 Case 1137
                     newShip.RigSlots = CInt(attValue)
-                Case 1367
-                    newShip.SubSlots = CInt(attValue)
+	            Case 1367
+		            'newShip.SubSlots = CInt(attValue)
+		            ' It's a hack because SDE of 2017-07-12 has a wrong value for number of Subsystems per SC hulls. It should be 4 but 5.
+		            newShip.SubSlots = 4
                 Case 2056
                     newShip.ServiceModSlots = CInt(attValue)
                 Case 15
