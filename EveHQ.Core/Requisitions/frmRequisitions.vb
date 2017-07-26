@@ -367,7 +367,7 @@ Namespace Requisitions
                     orderOwned = _ownedAssets(order.ItemName).TotalQuantity
                     For Each locID As String In _ownedAssets(order.ItemName).Locations.Keys
                         Dim locNode As New Node
-                        locNode.Text = StaticData.GetLocationName(CInt(locID))
+                        locNode.Text = StaticData.GetLocationName(CLng(locID))
                         locNode.Cells.Add(New Cell(_ownedAssets(order.ItemName).Locations(locID).ToString("N0")))
                         locNode.Cells(1).StyleNormal = numberStyle
                         orderNode.Nodes.Add(locNode)

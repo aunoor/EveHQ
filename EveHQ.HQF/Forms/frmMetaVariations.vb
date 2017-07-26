@@ -347,6 +347,14 @@ Namespace Forms
                                     End If
                                 End If
                             Next
+                        Case SlotTypes.ServiceMod
+                            For slot As Integer = 1 To _activeFitting.BaseShip.ServiceModSlots
+                                If _activeFitting.BaseShip.ServiceModSlot(slot) IsNot Nothing Then
+                                    If _activeFitting.BaseShip.ServiceModSlot(slot).Name = _baseModule.Name Then
+                                        _activeFitting.AddModule(newModule, slot, False, False, _baseModule, False, False)
+                                    End If
+                                End If
+                            Next
                     End Select
 
                     If _baseModule.DatabaseCategory = ModuleEnum.CategorySubsystems Then

@@ -62,6 +62,7 @@ Imports Newtonsoft.Json
     Private _lowSlotColour As Long = Color.Thistle.ToArgb
     Private _rigSlotColour As Long = Color.LightGreen.ToArgb
     Private _subSlotColour As Long = Color.DarkSeaGreen.ToArgb
+    Private _serviceModSlotColour As Long = Color.MediumAquamarine.ToArgb
     Private _defaultPilot As String = ""
     Private _restoreLastSession As Boolean = False
     Private _lastPriceUpdate As DateTime
@@ -462,6 +463,14 @@ Imports Newtonsoft.Json
         End Get
         Set(ByVal value As Long)
             _SubSlotColour = value
+        End Set
+    End Property
+    Public Property ServiceModSlotColour() As Long
+        Get
+            Return _serviceModSlotColour
+        End Get
+        Set(ByVal value As Long)
+            _serviceModSlotColour = value
         End Set
     End Property
 

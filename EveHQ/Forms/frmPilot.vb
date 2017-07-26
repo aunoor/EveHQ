@@ -153,9 +153,19 @@ Namespace Forms
 
                 ' Display Information
                 Try
+                    Dim FriendlyName As String = "-"
+                    If _displayPilot.Account <> "" And HQ.Settings.Accounts.ContainsKey(_displayPilot.Account) Then
+                        FriendlyName = HQ.Settings.Accounts(_displayPilot.Account).FriendlyName
+                    Else
+                        If _displayPilot.Account <> "" Then
+                            FriendlyName = _displayPilot.Account
+                        End If
+                    End If
+
                     lblPilotName.Text = _displayPilot.Name
                     lblPilotID.Text = _displayPilot.ID
                     lblPilotCorp.Text = _displayPilot.Corp
+                    lblPilotAccount.Text = FriendlyName
                     lblPilotIsk.Text = _displayPilot.Isk.ToString("N2")
                     lblPilotSP.Text = (_displayPilot.SkillPoints + SkillFunctions.CalcCurrentSkillPoints(_displayPilot)).ToString("N0")
                 Catch e As Exception

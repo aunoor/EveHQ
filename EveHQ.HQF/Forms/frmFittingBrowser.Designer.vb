@@ -29,6 +29,7 @@
             Dim ListViewGroup3 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Low Slots", System.Windows.Forms.HorizontalAlignment.Left)
             Dim ListViewGroup4 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Rig Slots", System.Windows.Forms.HorizontalAlignment.Left)
             Dim ListViewGroup5 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Subsystems", System.Windows.Forms.HorizontalAlignment.Left)
+            Dim ListViewGroup6 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("Service Modules", System.Windows.Forms.HorizontalAlignment.Left)
             Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmFittingBrowser))
             Me.lblShipType = New System.Windows.Forms.Label()
             Me.pbShip = New System.Windows.Forms.PictureBox()
@@ -193,7 +194,9 @@
             ListViewGroup4.Name = "lvwgRigSlots"
             ListViewGroup5.Header = "Subsystems"
             ListViewGroup5.Name = "lvwgSubSlots"
-            Me.lvwSlots.Groups.AddRange(New System.Windows.Forms.ListViewGroup() {ListViewGroup1, ListViewGroup2, ListViewGroup3, ListViewGroup4, ListViewGroup5})
+            ListViewGroup6.Header = "Service Modules"
+            ListViewGroup6.Name = "lvwgServiceModSlots"
+            Me.lvwSlots.Groups.AddRange(New System.Windows.Forms.ListViewGroup() {ListViewGroup1, ListViewGroup2, ListViewGroup3, ListViewGroup4, ListViewGroup5, ListViewGroup6})
             Me.lvwSlots.Location = New System.Drawing.Point(413, 12)
             Me.lvwSlots.Name = "lvwSlots"
             Me.lvwSlots.Size = New System.Drawing.Size(379, 614)

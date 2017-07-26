@@ -147,7 +147,11 @@ namespace EveHQ.NewEveApi
 
             string cacheKey = CacheKeyFormat.FormatInvariant(keyId, characterId);
 
-            return GetServiceResponseAsync(keyId, vCode, characterId, MethodPath.FormatInvariant(PathPrefix), null,
+            int listMode = 1;
+            IDictionary<string, string> apiParams = new Dictionary<string, string>();
+            apiParams[ApiConstants.Flat] = listMode.ToInvariantString();
+
+            return GetServiceResponseAsync(keyId, vCode, characterId, MethodPath.FormatInvariant(PathPrefix), apiParams,
                 cacheKey, ApiConstants.SixHourCache, responseMode, ParseAssetListResponse);
         }
 
@@ -1340,7 +1344,24 @@ namespace EveHQ.NewEveApi
                 return new AssetItem[0]; // return empty collection
             }
 
-            return rowset.Elements(ApiConstants.Row).Select(row => CreateItemFromRow(row, 0));
+            List<AssetItem> assetTree = new List<AssetItem>();
+            Dictionary<long, AssetItem> assetsById = rowset.Elements(ApiConstants.Row).ToDictionary(row => row.Attribute(ApiConstants.ItemId).Value.ToInt64(), row => CreateItemFromRow(row));
+            foreach (AssetItem asset in assetsById.Values)
+            {
+                AssetItem parentAsset = null;
+                if (assetsById.TryGetValue(asset.LocationId, out parentAsset))
+                {
+                    asset.LocationId = 0;
+                    parentAsset.addContents(asset);
+                }
+                else
+                {
+                    assetTree.Add(asset);
+                }
+            }
+
+            return assetTree;
+
         }
 
         /// <summary>Parses the response from AccountBalance API.</summary>
@@ -1367,12 +1388,11 @@ namespace EveHQ.NewEveApi
 
         /// <summary>Creates a single AssetItem from xml.</summary>
         /// <param name="row">row describing the item.</param>
-        /// <param name="parentId">parent id if applicable, otherwise 0.</param>
         /// <returns>an AssetItem.</returns>
-        private static AssetItem CreateItemFromRow(XElement row, long parentId)
+        private static AssetItem CreateItemFromRow(XElement row)
         {
-            long itemId, quantity, rawQuantity;
-            int typeId, locationId, flag;
+            long itemId, quantity, rawQuantity, locationId;
+            int typeId, flag;
             bool single;
 
             XAttribute item = row.Attribute(ApiConstants.ItemId);
@@ -1384,20 +1404,12 @@ namespace EveHQ.NewEveApi
             XAttribute singleton = row.Attribute(ApiConstants.Singleton);
 
             itemId = item != null ? item.Value.ToInt64() : 0;
-            locationId = location != null ? location.Value.ToInt32() : 0;
+            locationId = location != null ? location.Value.ToInt64() : 0;
             typeId = type != null ? type.Value.ToInt32() : 0;
             quantity = count != null ? count.Value.ToInt64() : 0;
             rawQuantity = rawCount != null ? rawCount.Value.ToInt64() : 0;
             flag = flagAttrib != null ? flagAttrib.Value.ToInt32() : 0;
             single = singleton != null && singleton.Value.ToBoolean();
-
-            // check to see if there are children.
-            XElement childRowset = row.Element(ApiConstants.Rowset);
-            IEnumerable<AssetItem> children = null;
-            if (childRowset != null)
-            {
-                children = childRowset.Elements(ApiConstants.Row).Select(rowItem => CreateItemFromRow(rowItem, itemId));
-            }
 
             return new AssetItem
             {
@@ -1407,9 +1419,7 @@ namespace EveHQ.NewEveApi
                 Quantity = quantity,
                 RawQuantity = rawQuantity,
                 Flag = flag,
-                Singleton = single,
-                Contents = children,
-                ParentItemId = parentId
+                Singleton = single
             };
         }
 

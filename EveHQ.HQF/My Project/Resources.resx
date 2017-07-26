@@ -208,6 +208,9 @@
   <data name="imgSubSlot" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon76_04.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="imgServiceModSlot" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\stationServiceSlot.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="imgCap" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon01_01.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

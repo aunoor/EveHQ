@@ -59,7 +59,8 @@ Imports System.Runtime.Serialization
 #Region "Constants"
     Const MaxBasicSlots As Integer = 8
     Const MaxRigSlots As Integer = 3
-    Const MaxSubSlots As Integer = 5
+    Const MaxSubSlots As Integer = 4
+    Const MaxServiceModSlots As Integer = 8
 #End Region
 
     ' ReSharper disable InconsistentNaming - for MS serialization compatability
@@ -83,6 +84,7 @@ Imports System.Runtime.Serialization
     Private _cLowSlots As Integer
     Private _cRigSlots As Integer
     Private _cSubSlots As Integer
+    Private _cServiceModSlots As Integer
     Private _cTurretSlots As Integer
     Private _cLauncherSlots As Integer
     Private _cCalibration As Integer
@@ -147,6 +149,7 @@ Imports System.Runtime.Serialization
     Private ReadOnly _cLowSlot(8) As ShipModule
     Private ReadOnly _cRigSlot(8) As ShipModule
     Private ReadOnly _cSubSlot(5) As ShipModule
+    Private ReadOnly _cServiceModSlot(8) As ShipModule
     Private _cRequiredSkills As New SortedList(Of String, ItemSkills)
     Private _cRequiredSkillList As New SortedList(Of String, ItemSkills)
     Private _cAttributes As New SortedList(Of Integer, Double)
@@ -155,6 +158,7 @@ Imports System.Runtime.Serialization
     Private _cLowSlotsUsed As Integer
     Private _cRigSlotsUsed As Integer
     Private _cSubSlotsUsed As Integer
+    Private _cServiceModSlotsUsed As Integer
     Private _cTurretSlotsUsed As Integer
     Private _cLauncherSlotsUsed As Integer
     Private _cCalibrationUsed As Integer
@@ -431,6 +435,23 @@ Imports System.Runtime.Serialization
                 End If
             Else
                 _cSubSlots = value
+            End If
+        End Set
+    End Property
+
+    <ProtoMember(112)> <Description("The number of available service module slots on the ship")> <Category("Fitting")> Public Property ServiceModSlots() As Integer
+        Get
+            Return _cServiceModSlots
+        End Get
+        Set(ByVal value As Integer)
+            If _cOverrideFittingRules = False Then
+                If value < 0 Or value > MaxServiceModSlots Then
+                    MessageBox.Show("The number of service module slots is currently restricted to " & MaxServiceModSlots.ToString, "Ship Properties Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Else
+                    _cServiceModSlots = value
+                End If
+            Else
+                _cServiceModSlots = value
             End If
         End Set
     End Property
@@ -1421,6 +1442,36 @@ Imports System.Runtime.Serialization
             End If
         End Set
     End Property
+    <Description("The fitted service module slots of the ship")> <Category("Fitted Slots")> Public Property ServiceModSlot(ByVal index As Integer) As ShipModule
+        Get
+            If (index < 1 Or index > _cServiceModSlots) And _cOverrideFittingRules = False Then
+                MessageBox.Show("Service Module Slot index must be in the range 1 to " & _cServiceModSlots & " for " & _cName, "HQF Slot Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Return Nothing
+            Else
+                Return _cServiceModSlot(index)
+            End If
+        End Get
+        Set(ByVal value As ShipModule)
+            If (index < 1 Or index > _cServiceModSlots) And _cOverrideFittingRules = False Then
+                MessageBox.Show("Service Module Slot index must be in the range 1 to " & _cServiceModSlots & " for " & _cName, "HQF Slot Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Else
+                If value Is Nothing Then
+                    If _cServiceModSlot(index) IsNot Nothing Then
+                        _cServiceModSlotsUsed -= 1
+                        _cFittingBasePrice -= _cServiceModSlot(index).BasePrice
+                    End If
+                Else
+                    If _cServiceModSlot(index) IsNot Nothing Then
+                        _cServiceModSlotsUsed -= 1
+                        _cFittingBasePrice -= _cServiceModSlot(index).BasePrice
+                    End If
+                    _cServiceModSlotsUsed += 1
+                    _cFittingBasePrice += value.BasePrice
+                End If
+                _cServiceModSlot(index) = value
+            End If
+        End Set
+    End Property
 
 #End Region
 
@@ -1466,13 +1517,23 @@ Imports System.Runtime.Serialization
         End Set
     End Property
 
-    <ProtoMember(80)> <Browsable(False)> _
+    <ProtoMember(80)> <Browsable(False)>
     <Description("The number of fitted subsystem slots on the ship")> <Category("Fitting Used")> Public Property SubSlotsUsed() As Integer
         Get
             Return _cSubSlotsUsed
         End Get
         Set(ByVal value As Integer)
             _cSubSlotsUsed = value
+        End Set
+    End Property
+
+    <ProtoMember(113)> <Browsable(False)>
+    <Description("The number of fitted service module slots on the ship")> <Category("Fitting Used")> Public Property ServiceModSlotsUsed() As Integer
+        Get
+            Return _cServiceModSlotsUsed
+        End Get
+        Set(ByVal value As Integer)
+            _cServiceModSlotsUsed = value
         End Set
     End Property
 
@@ -2221,6 +2282,10 @@ Imports System.Runtime.Serialization
         Attributes.Add(10083, 0)
         ' Add unused attribute for calibration used
         Attributes.Add(1152, 0)
+        If DatabaseCategory = 65 Then
+            Attributes.Add(15, 0)
+            Attributes.Add(49, 0)
+        End If
         ' Check for slot attributes (missing for T3)
         If Attributes.ContainsKey(12) = False Then
             Attributes.Add(12, 0)
@@ -2251,8 +2316,12 @@ Imports System.Runtime.Serialization
                     End If
                 Case 1137
                     newShip.RigSlots = CInt(attValue)
-                Case 1367
-                    newShip.SubSlots = CInt(attValue)
+	            Case 1367
+		            'newShip.SubSlots = CInt(attValue)
+		            ' It's a hack because SDE of 2017-07-12 has a wrong value for number of Subsystems per SC hulls. It should be 4 but 5.
+		            newShip.SubSlots = 4
+                Case 2056
+                    newShip.ServiceModSlots = CInt(attValue)
                 Case 15
                     newShip.PGUsed = attValue
                 Case 1132
@@ -2439,6 +2508,7 @@ Imports System.Runtime.Serialization
         Attributes(14) = HiSlots
         Attributes(1137) = RigSlots
         Attributes(1367) = SubSlots
+        Attributes(2056) = ServiceModSlots
         Attributes(15) = PGUsed
         Attributes(1132) = Calibration
         Attributes(1152) = CalibrationUsed
@@ -2530,6 +2600,7 @@ End Class
     <ProtoMember(3)> Mid = 4
     <ProtoMember(4)> High = 8
     <ProtoMember(5)> Subsystem = 16
+    <ProtoMember(6)> ServiceMod = 32
 End Enum
 
 <ProtoContract()> <Serializable()> Public Class ShipLists

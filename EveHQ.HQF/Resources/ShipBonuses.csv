@@ -253,7 +253,7 @@
 625,1,3335,84,2,325;1698,0,1,0,12.5,15,Remote Armor Repairer Rep Amount
 625,0,0,54,2,325;1698,0,0,0,430,15,Remote Armor Repairer Optimal
 625,0,0,2044,2,325;1698,0,0,0,430,15,Remote Armor Repair Falloff
-625,0,0,91,2,67,0,0,0,1000,15,Energy Transfer Range
+625,0,0,54,2,67,0,0,0,1000,15,Energy Transfer Range
 625,0,0,90,2,67,0,0,0,200,15,Energy Transfer Amount
 # Augoror Navy Issue,,,,,,,,,,,
 29337,1,3335,10014,4,568;572,0,1,0,25,15,Medium Energy Turret Damage
@@ -291,7 +291,7 @@
 # Basilisk,,,,,,,,,,,
 11985,1,3334,54,2,41;1697,0,1,0,60,15,Remote Shield Booster Optimal
 11985,1,3334,2044,2,41;1697,0,1,0,60,15,Remote Shield Booster Falloff
-11985,1,3334,91,2,67,0,1,0,150,15,Energy Transfer Range
+11985,1,3334,54,2,67,0,1,0,150,15,Energy Transfer Range
 11985,1,3334,84,4,842,0,1,0,20,15,Armor Maintenance Bot Transfer
 11985,1,3334,83,4,842,0,1,0,20,15,Hull Maintenance Bot Transfer
 11985,1,12096,6,2,41;1697,0,1,0,-15,15,Remote Shield Booster Cap Use
@@ -823,7 +823,7 @@
 # Etana,,,,,,,,,,,
 32790,1,3334,54,2,41;1697,0,1,0,62,15,Remote Shield Booster Optimal
 32790,1,3334,2044,2,41;1697,0,1,0,62,15,Remote Shield Booster Falloff
-32790,1,3334,91,2,67,0,1,0,160,15,Energy Transfer Range
+32790,1,3334,54,2,67,0,1,0,160,15,Energy Transfer Range
 32790,1,3334,68,4,842,0,1,0,20,15,Shield Maintenance Bot Transfer
 32790,1,3334,84,4,842,0,1,0,20,15,Armor Maintenance Bot Transfer
 32790,1,3334,83,4,842,0,1,0,20,15,Hull Maintenance Bot Transfer
@@ -992,7 +992,7 @@
 # Guardian,,,,,,,,,,,
 11987,1,3335,54,2,325;1698,0,1,0,60,15,Remote Armor Repairer Optimal
 11987,1,3335,2044,2,325;1698,0,1,0,60,15,Remote Armor Repair falloff
-11987,1,3335,91,2,67,0,1,0,150,15,Energy Transfer Range
+11987,1,3335,54,2,67,0,1,0,150,15,Energy Transfer Range
 11987,1,3335,68,4,842,0,1,0,20,15,Shield Maintenance Bot Transfer
 11987,1,3335,84,4,842,0,1,0,20,15,Armor Maintenance Bot Transfer
 11987,1,3335,83,4,842,0,1,0,20,15,Hull Maintenance Bot Transfer
@@ -1338,6 +1338,7 @@
 11971,1,22761,54,4,562;565,0,1,0,10,15,Medium Hybrid Turret Optimal Range
 # Legion,,,,,,,,,,,
 29986,1,30650,1211,7,1211,0,1,0,-5,15,Heat Damage Reduction
+29986,0,0,50,2,481,0,0,0,-99,15,Scan Probe Launcher CPU Need
 # Leviathan,,,,,,,,,,,
 3764,1,3346,117,2,476;1677;1019;1678;89;657,0,1,0,50,15,Citadel Torpedo, Torpedo & Citadel Cruise Missile Kinetic Damage
 3764,1,3346,114,2,476;1677;1019;1678;89;657,0,1,0,40,15,Citadel Torpedo, Torpedo & Citadel Cruise Missile EM Damage
@@ -1378,6 +1379,7 @@
 37606,1,24314,2537,1,42529;43555,0,1,0,1,15,Shield Command Burst Stength
 # Loki,,,,,,,,,,,
 29990,1,30653,1211,7,1211,0,1,0,-5,15,Heat Damage Reduction
+29990,0,0,50,2,481,0,0,0,-99,15,Scan Probe Launcher CPU Need
 # Machariel,,,,,,,,,,,
 17738,0,0,10013,4,576;579,0,0,0,-25,15,Large Projectile Turret ROF
 17738,1,3337,10016,4,576;579,0,1,0,5,15,Large Projectile Turret Damage
@@ -1888,7 +1890,7 @@
 620,1,3334,68,2,41;1697,0,1,0,12.5,15,Remote Shield Booster Rep Amount
 620,0,0,54,2,41;1697,0,0,0,430,15,Remote Shield Booster Optimal
 620,0,0,2044,2,41;1697,0,0,0,430,15,Remote Shield Booster Falloff
-620,0,0,91,2,67,0,0,0,1000,15,Energy Transfer Range
+620,0,0,54,2,67,0,0,0,1000,15,Energy Transfer Range
 620,0,0,90,2,67,0,0,0,200,15,Energy Transfer Amount
 # Osprey Navy Issue,,,,,,,,,,,
 29340,1,3334,114,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1677;1019;1678;88;1158;394;395;396,0,1,0,20,15,Missile EM Damage
@@ -2082,6 +2084,7 @@
 33697,0,0,50,2,330,0,0,0,-100,15,Cloaking Device CPU
 # Proteus,,,,,,,,,,,
 29988,1,30652,1211,7,1211,0,1,0,-5,15,Heat Damage Reduction
+29988,0,0,50,2,481,0,0,0,-99,15,Scan Probe Launcher CPU Need
 # Providence,,,,,,,,,,,
 20183,1,20524,10004,1,20183,0,1,0,5,15,Cargo Capacity
 20183,1,20524,37,1,20183,0,1,0,5,15,Max Velocity
@@ -2637,6 +2640,7 @@
 26842,1,3337,10016,4,576;579,0,1,0,5,15,Large Projectile Turret Damage
 # Tengu,,,,,,,,,,,
 29984,1,30651,1211,7,1211,0,1,0,-5,15,Heat Damage Reduction
+29984,0,0,50,2,481,0,0,0,-99,15,Scan Probe Launcher CPU Need
 # Thalia,,,,,,,,,,,
 37459,0,0,54,2,325;1698,0,0,0,50,15,Remote Armor Repair Optimal Range Bonus
 37459,0,0,2044,2,325;1698,0,0,0,600,15,Remote Armor Repair falloff Bonus
@@ -2988,3 +2992,126 @@
 12003,1,16591,10014,4,568;572,0,1,0,5,15,Medium Energy Turret Damage
 12003,1,16591,54,4,568;572,0,1,0,10,15,Medium Energy Turret Optimal Range
 12003,0,0,554,2,46,0,0,0,-50,15,MWD Signature Radius Penalty
+# Astrahus ,,,,,,,,,,,
+35832,1,26252,2278,7,2278,0,0,0,25,15,combat rig effects
+35832,1,26252,2435,7,2435,0,0,0,25,15,combat rig effects
+35832,1,26252,2436,7,35832,0,0,0,25,15,combat rig effects
+35832,1,26252,2437,7,35832,0,0,0,25,15,combat rig effects
+35832,1,26252,2438,7,35832,0,0,0,25,15,combat rig effects
+35832,1,26252,2439,7,35832,0,0,0,25,15,combat rig effects
+35832,1,26252,2440,7,35832,0,0,0,25,15,combat rig effects
+35832,1,26252,2441,7,35832,0,0,0,25,15,combat rig effects
+35832,1,26252,2442,7,2442,0,0,0,25,15,combat rig effects
+35832,1,26252,2449,7,35832,0,0,0,25,15,combat rig effects
+35832,0,0,2109,2,1321,0,0,0,25,15,service module fuel consumption
+35832,0,0,2110,2,1321,0,0,0,25,15,service module fuel consumption
+# Fortizar ,,,,,,,,,,,
+35833,1,26252,2278,7,2278,0,0,0,25,15,combat rig effects
+35833,1,26252,2435,7,2435,0,0,0,25,15,combat rig effects
+35833,1,26252,2436,7,35832,0,0,0,25,15,combat rig effects
+35833,1,26252,2437,7,35832,0,0,0,25,15,combat rig effects
+35833,1,26252,2438,7,35832,0,0,0,25,15,combat rig effects
+35833,1,26252,2439,7,35832,0,0,0,25,15,combat rig effects
+35833,1,26252,2440,7,35832,0,0,0,25,15,combat rig effects
+35833,1,26252,2441,7,35832,0,0,0,25,15,combat rig effects
+35833,1,26252,2442,7,2442,0,0,0,25,15,combat rig effects
+35833,1,26252,2449,7,35832,0,0,0,25,15,combat rig effects
+35833,0,0,2109,2,1321,0,0,0,25,15,service module fuel consumption
+35833,0,0,2110,2,1321,0,0,0,25,15,service module fuel consumption
+# Keepstar ,,,,,,,,,,,
+35834,1,26252,2278,7,2278,0,0,0,25,15,combat rig effects
+35834,1,26252,2435,7,2435,0,0,0,25,15,combat rig effects
+35834,1,26252,2436,7,35832,0,0,0,25,15,combat rig effects
+35834,1,26252,2437,7,35832,0,0,0,25,15,combat rig effects
+35834,1,26252,2438,7,35832,0,0,0,25,15,combat rig effects
+35834,1,26252,2439,7,35832,0,0,0,25,15,combat rig effects
+35834,1,26252,2440,7,35832,0,0,0,25,15,combat rig effects
+35834,1,26252,2441,7,35832,0,0,0,25,15,combat rig effects
+35834,1,26252,2442,7,2442,0,0,0,25,15,combat rig effects
+35834,1,26252,2449,7,35832,0,0,0,25,15,combat rig effects
+35834,0,0,2109,2,1321,0,0,0,25,15,service module fuel consumption
+35834,0,0,2110,2,1321,0,0,0,25,15,service module fuel consumption
+# Upwell Palatine Keepstar ,,,,,,,,,,,
+40340,1,26252,2278,7,2278,0,0,0,25,15,combat rig effects
+40340,1,26252,2435,7,2435,0,0,0,25,15,combat rig effects
+40340,1,26252,2436,7,35832,0,0,0,25,15,combat rig effects
+40340,1,26252,2437,7,35832,0,0,0,25,15,combat rig effects
+40340,1,26252,2438,7,35832,0,0,0,25,15,combat rig effects
+40340,1,26252,2439,7,35832,0,0,0,25,15,combat rig effects
+40340,1,26252,2440,7,35832,0,0,0,25,15,combat rig effects
+40340,1,26252,2441,7,35832,0,0,0,25,15,combat rig effects
+40340,1,26252,2442,7,2442,0,0,0,25,15,combat rig effects
+40340,1,26252,2449,7,35832,0,0,0,25,15,combat rig effects
+40340,0,0,2109,2,1321,0,0,0,25,15,service module fuel consumption
+40340,0,0,2110,2,1321,0,0,0,25,15,service module fuel consumption
+# Raitaru ,,,,,,,,,,,
+35825,0,0,2109,2,1415,0,0,0,25,15,service module fuel consumption
+35825,0,0,2110,2,1415,0,0,0,25,15,service module fuel consumption
+# Azbel ,,,,,,,,,,,
+35826,0,0,2109,2,1415,0,0,0,25,15,service module fuel consumption
+35826,0,0,2110,2,1415,0,0,0,25,15,service module fuel consumption
+# Sotiyo ,,,,,,,,,,,
+35827,0,0,2109,2,1415,0,0,0,25,15,service module fuel consumption
+35827,0,0,2110,2,1415,0,0,0,25,15,service module fuel consumption
+# Pacifier ,,,,,,,,,,,
+44993,1,3330,51,2,507;509,0,1,0,5,15,Rocket Launcher & Light Missile Launcher ROF
+44993,1,3330,281,2,384;387,0,1,0,10,15,Rocket & Light Missile Flight Time
+44993,1,3331,10014,4,567;570,0,1,0,5,15,Small Energy Turret Damage
+44993,1,3331,54,4,567;570,0,1,0,10,15,Small Energy Turret Optimal Range
+44993,1,3328,10015,4,561;564,0,1,0,5,15,Small Hybrid Turret Damage
+44993,1,3328,160,4,561;564,0,1,0,7.5,15,Small Hybrid Turret Tracking
+44993,1,3329,10013,4,574;577,0,1,0,5,15,Small Projectile Turret ROF
+44993,1,3329,158,4,574;577,0,1,0,10,15,Small Projectile Turret Falloff
+44993,1,12093,1371,2,479,0,1,0,10,15,Probe Scan Strength Bonus
+44993,1,12093,1281,0,44993,0,1,0,10,15,Warp Speed
+44993,0,0,50,2,330,0,0,0,-100,15,Cloaking Device CPU
+44993,0,0,1910,4,1718,0,0,1,10,15,Data & Relic Analyzer Virus Strength
+# Dagon ,,,,,,,,,,,
+42242,1,24311,90,2,68,0,1,0,30,15,Nos Drain Amount
+42242,1,24311,54,2,68,0,1,0,30,15,Nos Drain Optimal Range
+42242,1,24311,2044,2,68,0,1,0,30,15,Nos Drain Falloff
+42242,1,24314,73,2,325,0,1,0,5,15,Remote Armor Repairer Cycle Time
+42242,0,0,50,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,90,15,Command Burst CPU Reduction
+42242,0,0,30,2,325,0,0,0,90,15,Remote Armor Repairers power need
+42242,0,0,50,2,68,0,0,0,90,15,Nos CPU Need
+42242,0,0,54,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,200,15,Command Burst AoE Range Bonus
+42242,0,0,73,2,1313,0,0,0,500,15,Entosis link duration
+42242,0,0,10063,1,42242,0,0,1,1,15,Command Burst Modules
+42242,0,0,68,4,842,0,0,0,200,15,Shield Maintenance Bot Transfer
+42242,0,0,84,4,842,0,0,0,200,15,Armor Maintenance Bot Transfer
+42242,0,0,83,4,842,0,0,0,200,15,Hull Maintenance Bot Transfer
+# Chemosh ,,,,,,,,,,,
+42243,1,20525,90,2,68,0,1,0,15,15,Nos Drain Amount
+42243,1,20526,90,2,71,0,1,0,15,15,Neut Drain Amount
+42243,1,20532,54,2,65,0,1,0,20,15,Stasis Web Range
+42243,0,0,10014,4,773;774,0,0,0,25,15,Capital Energy Turret Damage
+42243,0,0,73,2,1313,0,0,0,500,15,Entosis link duration
+# Molok ,,,,,,,,,,,
+42241,1,3347,90,2,68,0,1,0,15,15,Nos Drain Amount
+42241,1,3347,90,2,71,0,1,0,15,15,Neut Drain Amount
+42241,1,3347,10009,1,42241,0,1,1,6,15,Warp Core Strength
+42241,1,3345,54,2,65,0,1,0,20,15,Stasis Web Range
+42241,1,3345,10009,1,42241,0,1,1,6,15,Warp Core Strength
+42241,0,0,10063,1,42241,0,0,1,2,15,Command Burst Modules
+42241,0,0,54,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,200,15,Command Burst AoE Range Bonus
+42241,0,0,10014,4,773;774,0,0,0,1400,15,Capital Energy Turret Damage
+42241,0,0,1159,2,329,0,0,0,500,15,Armor HP - Plates
+42241,0,0,72,2,38,0,0,0,500,15,Shield HP - Extenders
+42241,0,0,2112,1,42241,0,0,0,80,15,Sensor Dampener resistance
+42241,0,0,2113,1,42241,0,0,0,80,15,Weapon Disruption resistance
+42241,0,0,2115,1,42241,0,0,0,80,15,Stasis effect resistance
+42241,0,0,2135,1,42241,0,0,0,80,15,Remote Electronic Assistance impedance
+42241,0,0,73,2,1313,0,0,0,500,15,Entosis link duration
+# Enforcer ,,,,,,,,,,,
+44995,1,22761,54,2,52,0,1,0,5,15,Warp Disruptor Range
+44995,1,22761,54,2,65,0,1,0,10,15,Stasis Web Range
+44995,1,22761,1281,1,44995,0,1,0,10,15,Warp Speed
+44995,1,3332,10015,4,562;565,0,1,0,5,15,Medium Hybrid Turret Damage
+44995,1,3332,160,4,562;565,0,1,0,7.5,15,Medium Hybrid Turret Tracking
+44995,1,3333,10013,4,575;578,0,1,0,5,15,Medium Projectile Turret ROF
+44995,1,3333,158,4,575;578,0,1,0,10,15,Medium Projectile Turret Falloff
+44995,1,3334,51,2,511;510;771,0,1,0,5,15,"Rapid Light, Heavy & HAM Launcher ROF"
+44995,1,3334,281,2,654;655;772;385;395,0,1,0,10,15,Heavy & HAM Flight Time
+44995,0,3335,10014,4,568;572,0,1,0,5,15,Medium Energy Turret Damage
+44995,0,3335,54,4,568;572,0,1,1,10,15,Medium Energy Turret Optimal Range
+44995,0,0,50,2,330,0,0,0,-100,15,Cloaking Device CPU

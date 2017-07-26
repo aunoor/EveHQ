@@ -116,7 +116,9 @@
             nItem.Pos = qItem.Pos
             nItem.Notes = qItem.Notes
             nItem.Priority = qItem.Priority
-            newQ.Add(nItem.Key, nItem)
+            If newQ.ContainsKey(nItem.Key) = False Then
+                newQ.Add(nItem.Key, nItem)
+            End If
         Next
         newQueue.Queue = newQ
         Return newQueue

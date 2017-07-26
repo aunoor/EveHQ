@@ -179,6 +179,17 @@ Public Class DNAFitting
             End If
         Next
 
+        ' Add the service modules
+        For slot As Integer = 1 To newFit.BaseShip.ServiceModSlots
+            If newFit.BaseShip.ServiceModSlot(slot) IsNot Nothing Then
+                If mods.ContainsKey(newFit.BaseShip.ServiceModSlot(slot).ID) Then
+                    mods(newFit.BaseShip.ServiceModSlot(slot).ID) += 1
+                Else
+                    mods.Add(newFit.BaseShip.ServiceModSlot(slot).ID, 1)
+                End If
+            End If
+        Next
+
         ' Add drones
         For Each dbi As DroneBayItem In newFit.BaseShip.DroneBayItems.Values
             mods.Add(dbi.DroneType.ID, dbi.Quantity)

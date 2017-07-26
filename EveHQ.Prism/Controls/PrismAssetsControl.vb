@@ -644,7 +644,7 @@ Namespace Controls
                                             Exit For
                                         End If
                                     Next
-                                    Dim locID As Integer = assetItem.LocationId
+                                    Dim locID As Long = assetItem.LocationId
                                     If addLocation = True Then
                                         If locID >= 66000000 Then
                                             If locID < 66014933 Then
@@ -653,9 +653,9 @@ Namespace Controls
                                                 locID = locID - 6000000
                                             End If
                                         End If
-                                        Dim newLocation As Station
+                                        Dim newLocation As Station = Nothing
                                         If CDbl(locID) >= 61000000 And CDbl(locID) <= 61999999 Then
-                                            If StaticData.Stations.ContainsKey(locID) = True Then
+                                            If StaticData.Stations.ContainsKey(locID.ToInt32) = True Then
                                                 ' Known Outpost
                                                 newLocation = StaticData.Stations(locID)
                                                 locNode.Text = newLocation.StationName
@@ -666,8 +666,8 @@ Namespace Controls
                                             Else
                                                 ' Unknown outpost!
                                                 newLocation = New Station
-                                                newLocation.StationId = CInt(locID)
-                                                newLocation.StationName = "Unknown Outpost"
+                                                newLocation.StationId = locID
+                                                newLocation.StationName = "Unknown Outpost " + locID.ToString
                                                 newLocation.SystemId = 0
                                                 locNode.Text = newLocation.StationName
                                                 locNode.Tag = newLocation.StationId
@@ -677,8 +677,8 @@ Namespace Controls
                                             End If
                                         Else
                                             If locID < 60000000 Then
-                                                If StaticData.SolarSystems.ContainsKey(locID) Then
-                                                    Dim newSystem As SolarSystem = StaticData.SolarSystems(locID)
+                                                If StaticData.SolarSystems.ContainsKey(locID.ToInt32) Then
+                                                    Dim newSystem As SolarSystem = StaticData.SolarSystems(CInt(locID))
                                                     eveLocation = newSystem
                                                     locNode.Text = newSystem.Name
                                                     locNode.Tag = newSystem.Id
@@ -686,12 +686,14 @@ Namespace Controls
                                                     stationLocation = newSystem.Name
                                                 Else
                                                     eveLocation = Nothing
-                                                    locNode.Text = "Unknown System"
+                                                    locNode.Text = "Unknown System " + locID.ToString
                                                     locNode.Tag = locID
                                                     stationLocation = locNode.Text
                                                 End If
                                             Else
-                                                newLocation = StaticData.Stations(locID)
+                                                If StaticData.Stations.ContainsKey(locID) Then
+                                                    newLocation = StaticData.Stations(locID)
+                                                End If
                                                 If newLocation IsNot Nothing Then
                                                     locNode.Text = newLocation.StationName
                                                     locNode.Tag = newLocation.StationId
@@ -701,8 +703,8 @@ Namespace Controls
                                                 Else
                                                     ' Unknown system/station!
                                                     newLocation = New Station
-                                                    newLocation.StationId = CInt(locID)
-                                                    newLocation.StationName = "Unknown Location"
+                                                    newLocation.StationId = assetItem.LocationId
+                                                    newLocation.StationName = "Unknown Location " + assetItem.LocationId.ToString
                                                     newLocation.SystemId = 0
                                                     locNode.Text = newLocation.StationName
                                                     locNode.Tag = newLocation.StationId

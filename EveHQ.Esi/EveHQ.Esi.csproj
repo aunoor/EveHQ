@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3F84FC66-8EC7-4A56-9AA2-ED30F5565E24}</ProjectGuid>
+    <ProjectGuid>{CAA5BC94-0922-4F30-AC20-B28D0BB748C1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EveHQ.EveCrest</RootNamespace>
-    <AssemblyName>EveHQ.EveCrest</AssemblyName>
+    <RootNamespace>EveHQ.Esi</RootNamespace>
+    <AssemblyName>EveHQ.Esi</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -38,7 +38,7 @@
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>EveHQ.Crest.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>EveHQ.Esi.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
@@ -69,20 +69,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EveCrest.cs" />
+    <Compile Include="Esi.cs" />
     <Compile Include="Models\Cache\CacheItem.cs" />
-    <Compile Include="Models\CrestResult.cs" />
-    <Compile Include="Models\Crest\FactoryActivity.cs" />
-    <Compile Include="Models\Crest\IndustrySystem.cs" />
-    <Compile Include="Models\Crest\ItemType.cs" />
-    <Compile Include="Models\Crest\MarketPrice.cs" />
-    <Compile Include="Models\Crest\SolarSystem.cs" />
-    <Compile Include="Models\Crest\SystemCostIndice.cs" />
+    <Compile Include="Models\Esi\FactoryActivity.cs" />
+    <Compile Include="Models\Esi\IndustrySystem.cs" />
+    <Compile Include="Models\Esi\ItemType.cs" />
+    <Compile Include="Models\Esi\MarketPrice.cs" />
+    <Compile Include="Models\Esi\SolarSystem.cs" />
+    <Compile Include="Models\Esi\SystemCostIndice.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="EveHQ.Crest.pfx" />
+    <None Include="EveHQ.Esi.pfx" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

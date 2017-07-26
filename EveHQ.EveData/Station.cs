@@ -58,7 +58,7 @@ namespace EveHQ.EveData
         ///     Gets or sets the station ID.
         /// </summary>
         [ProtoMember(1)]
-        public int StationId { get; set; }
+        public long StationId { get; set; }
 
         /// <summary>
         ///     Gets or sets the station name.

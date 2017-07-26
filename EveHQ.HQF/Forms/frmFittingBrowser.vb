@@ -167,6 +167,15 @@ Namespace Forms
                     Call AddUserColumns(_currentShip.SubSlot(slot), newSlot)
                     lvwSlots.Items.Add(newSlot)
                 Next
+                For slot As Integer = 1 To _currentShip.ServiceModSlots
+                    Dim newSlot As New ListViewItem
+                    newSlot.Name = "32_" & slot
+                    newSlot.BackColor = Color.FromArgb(CInt(PluginSettings.HQFSettings.ServiceModSlotColour))
+                    newSlot.ForeColor = Color.Black
+                    newSlot.Group = lvwSlots.Groups.Item("lvwgServiceModSlots")
+                    Call AddUserColumns(_currentShip.ServiceModSlot(slot), newSlot)
+                    lvwSlots.Items.Add(newSlot)
+                Next
                 lvwSlots.EndUpdate()
             End If
         End Sub
