@@ -3363,10 +3363,10 @@ Imports EveHQ.Common.Extensions
                 Dim allowed As Boolean = False
                 Dim subID As Integer
                 If shipMod.DatabaseGroup = ModuleEnum.GroupGangLinks Then
-                    For slotNo As Integer = 1 To 5
+                    For slotNo As Integer = 1 To Ship.MaxSubSlots
                         If BaseShip.SubSlot(slotNo) IsNot Nothing Then
                             subID = BaseShip.SubSlot(slotNo).ID
-                            If subID = ModuleEnum.ItemLegionWarfareProcessor Or subID = ModuleEnum.ItemLokiWarfareProcessor Or subID = ModuleEnum.ItemProteusWarfareProcessor Or subID = ModuleEnum.ItemTenguWarfareProcessor Then
+                            If subID = ModuleEnum.ItemLegionSupportProcessor Or subID = ModuleEnum.ItemLokiSupportProcessor Or subID = ModuleEnum.ItemProteusSupportProcessor Or subID = ModuleEnum.ItemTenguSupportProcessor Then
                                 allowed = True
                                 Exit For
                             End If
@@ -3374,12 +3374,12 @@ Imports EveHQ.Common.Extensions
                     Next
                     If allowed = False Then
                         If search = False Then
-                            MessageBox.Show("You cannot fit a " & shipMod.Name & " to your " & ShipName & " ('" & FittingName & "') without Warfare Processor subsystem.", "Subsystem Restriction", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            MessageBox.Show("You cannot fit a " & shipMod.Name & " to your " & ShipName & " ('" & FittingName & "') without Support Processor subsystem.", "Subsystem Restriction", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         End If
                         Return False
                     End If
                 ElseIf shipMod.DatabaseGroup = ModuleEnum.GroupCloakingDevices Or shipMod.DatabaseGroup = ModuleEnum.GroupCynosuralFields Then
-                    For slotNo As Integer = 1 To 5
+                    For slotNo As Integer = 1 To Ship.MaxSubSlots
                         If BaseShip.SubSlot(slotNo) IsNot Nothing Then
                             subID = BaseShip.SubSlot(slotNo).ID
                             If subID = ModuleEnum.ItemLegionCovertReconfiguration Or subID = ModuleEnum.ItemLokiCovertReconfiguration Or subID = ModuleEnum.ItemProteusCovertReconfiguration Or subID = ModuleEnum.ItemTenguCovertReconfiguration Then

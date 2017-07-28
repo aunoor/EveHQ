@@ -275,13 +275,13 @@ Public Enum ModuleEnum
 
     ' itemIDs (see invTypes)
     ItemBastionModuleI = 33400
-    ItemLegionCovertReconfiguration = 30120
-    ItemLegionWarfareProcessor = 29967
-    ItemLokiCovertReconfiguration = 30135
-    ItemLokiWarfareProcessor = 29977
+    ItemLegionCovertReconfiguration = 45586
+    ItemLegionSupportProcessor = 45600
+    ItemLokiCovertReconfiguration = 45595
+    ItemLokiSupportProcessor = 45609
     ItemNaniteRepairPaste = 28668
-    ItemProteusCovertReconfiguration = 30130
-    ItemProteusWarfareProcessor = 29982
+    ItemProteusCovertReconfiguration = 45592
+    ItemProteusSupportProcessor = 45606
     ItemSiegeModuleI = 20280
     ItemSiegeModuleT2 = 4292
     ItemSkillArmoredWarfare = 20494
@@ -290,8 +290,8 @@ Public Enum ModuleEnum
     ItemSkillMiningForeman = 22536
     ItemSkillSiegeWarfare = 3350
     ItemSkillSkirmishWarfare = 3349
-    ItemTenguCovertReconfiguration = 30125
-    ItemTenguWarfareProcessor = 29972
+    ItemTenguCovertReconfiguration = 45589
+    ItemTenguSupportProcessor = 45603
     ItemTriageModuleI = 27951
     ItemTriageModuleT2 = 4294
     ItemSmallCommandProcessorI = 43894
