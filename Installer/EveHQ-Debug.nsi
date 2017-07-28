@@ -29,14 +29,14 @@ InstallDirRegKey HKLM "Software\EveHQ" "Install_Dir"
 !define MUI_WELCOMEFINISHPAGE_BITMAP EveHQInstallerSideImage.bmp
 
 #Installer file settings
-VIAddVersionKey "CompanyName" "Software Addicts Studios"
-VIAddVersionKey "FileDescription" "EveHQ: The Internet Spaceship Toolki"
-VIAddVersionKey "LegalCopyright" "Copyright 2005-2013, EveHQ Dev Team"
+VIAddVersionKey "CompanyName" "EveHQ Team"
+VIAddVersionKey "FileDescription" "EveHQ: The Internet Spaceship Toolkit"
+VIAddVersionKey "LegalCopyright" "Copyright 2005-2017, EveHQ Team"
 VIAddVersionKey "ProductName" "EveHQ Setup"
 !ifdef Version
 VIProductVersion ${Version}
 !else
-VIProductVersion 1.0.0.0
+VIProductVersion 2.31.2.0
 !endif
 
 
@@ -64,7 +64,6 @@ Var StartMenuFolder
 !insertmacro MUI_PAGE_INSTFILES
 
 #Finish page
-
 #!define MUI_FINISHPAGE_RUN $INSTDIR\EveHQ.exe /local
 #!define MUI_FINISHPAGE_RUN_TEXT "Run EveHQ.exe"
 !define MUI_FINISHPAGE_SHOWREADME ""
@@ -92,48 +91,58 @@ SectionIn RO
 ###################################################################
   SetOutPath $INSTDIR
   
-  File "..\BuildOutput\Debug\DevComponents.DotNetBar2.dll"
-  File "..\BuildOutput\Debug\EveCacheParser.dll"
-  File "..\BuildOutput\Debug\EveHQ.Caching.dll"
-  File "..\BuildOutput\Debug\EveHQ.Caching.pdb"
-  File "..\BuildOutput\Debug\EveHQ.Common.dll"
-  File "..\BuildOutput\Debug\EveHQ.Core.dll"
-  File "..\BuildOutput\Debug\EveHQ.Core.pdb"
-  File "..\BuildOutput\Debug\EveHQ.EveAPI.dll"
-  File "..\BuildOutput\Debug\EveHQ.EveAPI.pdb"
-  File "..\BuildOutput\Debug\EveHQ.EveAPI.Legacy.dll"
-  File "..\BuildOutput\Debug\EveHQ.EveAPI.Legacy.pdb"
-  File "..\BuildOutput\Debug\EveHQ.EveData.dll"
-  File "..\BuildOutput\Debug\EveHQ.EveData.pdb"
-  File "..\BuildOutput\Debug\EveHQ.exe"
-  File "..\BuildOutput\Debug\EveHQ.pdb"
-  File "..\BuildOutput\Debug\EveHQ.exe.config"
-  File "..\BuildOutput\Debug\EveHQ.HQF.dll"
-  File "..\BuildOutput\Debug\EveHQ.HQF.pdb"
-  File "..\BuildOutput\Debug\EveHQ.KillMailViewer.dll"
-  File "..\BuildOutput\Debug\EveHQ.KillMailViewer.pdb"
-  File "..\BuildOutput\Debug\EveHQ.Market.dll"
-  File "..\BuildOutput\Debug\EveHQ.Market.pdb"
-  File "..\BuildOutput\Debug\EveHQ.Prism.dll"
-  File "..\BuildOutput\Debug\EveHQ.Prism.pdb"
-  File "..\BuildOutput\Debug\EveHQ.Void.dll"
-  File "..\BuildOutput\Debug\EveHQ.Void.pdb"
-  File "..\BuildOutput\Debug\GammaJul.lglcd.dll"
-  File "..\BuildOutput\Debug\GammaJul.lglcd.Native32.dll"
-  File "..\BuildOutput\Debug\GammaJul.lglcd.Native64.dll"
-  File "..\BuildOutput\Debug\Ionic.Zip.dll"
-  File "..\BuildOutput\Debug\Newtonsoft.json.dll"
-  File "..\BuildOutput\Debug\protobuf-net.dll"
-  File "..\BuildOutput\Debug\EveHQ.SettingsConverter.exe"
-  File "..\BuildOutput\Debug\EveHQ.SettingsConverter.pdb"
-  File "..\BuildOutput\Debug\System.Data.SQLite.dll"
-  File "..\BuildOutput\Debug\System.Net.Http.dll"
-  File "..\BuildOutput\Debug\System.Net.Http.Extensions.dll"
-  File "..\BuildOutput\Debug\System.Net.Http.Primitives.dll"
-  File "..\BuildOutput\Debug\System.Net.Http.WebRequest.dll"
-  File "..\BuildOutput\Debug\System.Runtime.dll"
-  File "..\BuildOutput\Debug\System.Threading.Tasks.dll"
+  File "..\BuildOutput\EveHQ\Debug\DevComponents.DotNetBar2.dll"
+  File "..\BuildOutput\EveHQ\Debug\EveCacheParser.dll"
+  File "..\BuildOutput\EveHQ\Debug\EveHQ.Caching.dll"
+  File "..\BuildOutput\EveHQ\Debug\EveHQ.Caching.pdb"
+  File "..\BuildOutput\EveHQ\Debug\EveHQ.Common.dll"
+  File "..\BuildOutput\EveHQ\Debug\EveHQ.Common.pdb"
+  File "..\BuildOutput\EveHQ\Debug\EveHQ.Core.dll"
+  File "..\BuildOutput\EveHQ\Debug\EveHQ.Core.pdb"
+  File "..\BuildOutput\EveHQ\Debug\EveHQ.Esi.dll"
+  File "..\BuildOutput\EveHQ\Debug\EveHQ.Esi.pdb"
+  File "..\BuildOutput\EveHQ\Debug\EveHQ.EveAPI.Legacy.dll"
+  File "..\BuildOutput\EveHQ\Debug\EveHQ.EveAPI.Legacy.pdb"
+  File "..\BuildOutput\EveHQ\Debug\EveHQ.EveData.dll"
+  File "..\BuildOutput\EveHQ\Debug\EveHQ.EveData.pdb"
+  File "..\BuildOutput\EveHQ\Debug\EveHQ.exe"
+  File "..\BuildOutput\EveHQ\Debug\EveHQ.pdb"
+  File "..\BuildOutput\EveHQ\Debug\EveHQ.exe.config"
+  File "..\BuildOutput\EveHQ\Debug\EveHQ.HQF.dll"
+  File "..\BuildOutput\EveHQ\Debug\EveHQ.HQF.pdb"
+  File "..\BuildOutput\EveHQ\Debug\EveHQ.KillMailViewer.dll"
+  File "..\BuildOutput\EveHQ\Debug\EveHQ.KillMailViewer.pdb"
+  File "..\BuildOutput\EveHQ\Debug\EveHQ.Market.dll"
+  File "..\BuildOutput\EveHQ\Debug\EveHQ.Market.pdb"  
+  File "..\BuildOutput\EveHQ\Debug\EveHQ.NewEveAPI.dll"
+  File "..\BuildOutput\EveHQ\Debug\EveHQ.NewEveAPI.pdb"
+  File "..\BuildOutput\EveHQ\Debug\EveHQ.Prism.dll"
+  File "..\BuildOutput\EveHQ\Debug\EveHQ.Prism.pdb"
+  File "..\BuildOutput\EveHQ\Debug\EveHQ.EveCrest.dll"
+  File "..\BuildOutput\EveHQ\Debug\EveHQ.EveCrest.pdb"
+  File "..\BuildOutput\EveHQ\Debug\EveHQ.Void.dll"
+  File "..\BuildOutput\EveHQ\Debug\EveHQ.Void.pdb"
+  File "..\BuildOutput\EveHQ\Debug\GammaJul.lglcd.dll"
+  File "..\BuildOutput\EveHQ\Debug\GammaJul.lglcd.Native32.dll"
+  File "..\BuildOutput\EveHQ\Debug\GammaJul.lglcd.Native64.dll"
+  File "..\BuildOutput\EveHQ\Debug\Ionic.Zip.dll"
+  File "..\BuildOutput\EveHQ\Debug\Newtonsoft.json.dll"
+  File "..\BuildOutput\EveHQ\Debug\protobuf-net.dll"
+  File "..\BuildOutput\EveHQ\Debug\EveHQ.SettingsConverter.exe"
+  File "..\BuildOutput\EveHQ\Debug\EveHQ.SettingsConverter.pdb"
+  File "..\BuildOutput\EveHQ\Debug\System.Data.SQLite.dll"
+  File "..\BuildOutput\EveHQ\Debug\System.Net.Http.dll"
+  File "..\BuildOutput\EveHQ\Debug\System.Net.Http.Extensions.dll"
+  File "..\BuildOutput\EveHQ\Debug\System.Net.Http.Primitives.dll"
+  File "..\BuildOutput\EveHQ\Debug\System.Net.Http.WebRequest.dll"
+  File "..\BuildOutput\EveHQ\Debug\System.Runtime.dll"
+  File "..\BuildOutput\EveHQ\Debug\System.Threading.Tasks.dll"
   File "..\EveHQ\License.txt"
+
+  SetOutPath $INSTDIR\x64
+  File "..\BuildOutput\EveHQ\Debug\x64\SQLite.Interop.dll"
+  SetOutPath $INSTDIR\x86
+  File "..\BuildOutput\EveHQ\Debug\x86\SQLite.Interop.dll"
 
 ###################################################################
 # Data files                                                      #
@@ -142,65 +151,64 @@ SectionIn RO
 
   SetOutPath $INSTDIR\StaticData
 
-	File "..\BuildOutput\Debug\StaticData\Agents.dat"
-	File "..\BuildOutput\Debug\StaticData\AssemblyArrays.dat"
-	File "..\BuildOutput\Debug\StaticData\attributes.dat"
-	File "..\BuildOutput\Debug\StaticData\AttributeTypes.dat"
-	File "..\BuildOutput\Debug\StaticData\Blueprints.dat"
-	File "..\BuildOutput\Debug\StaticData\boosters.dat"
-	File "..\BuildOutput\Debug\StaticData\CertCats.dat"
-	File "..\BuildOutput\Debug\StaticData\CertRec.dat"
-	File "..\BuildOutput\Debug\StaticData\Certs.dat"
-	File "..\BuildOutput\Debug\StaticData\CertSkills.dat"
-	File "..\BuildOutput\Debug\StaticData\Constellations.dat"
-	File "..\BuildOutput\Debug\StaticData\Divisions.dat"
-	File "..\BuildOutput\Debug\StaticData\EffectTypes.dat"
-	File "..\BuildOutput\Debug\StaticData\GroupCats.dat"
-	File "..\BuildOutput\Debug\StaticData\implants.dat"
-	File "..\BuildOutput\Debug\StaticData\ItemCats.dat"
-	File "..\BuildOutput\Debug\StaticData\ItemFlags.dat"
-	File "..\BuildOutput\Debug\StaticData\ItemGroups.bin"
-	File "..\BuildOutput\Debug\StaticData\ItemGroups.dat"
-	File "..\BuildOutput\Debug\StaticData\ItemList.dat"
-	File "..\BuildOutput\Debug\StaticData\ItemMarketGroups.dat"
-	File "..\BuildOutput\Debug\StaticData\Items.dat"
-	File "..\BuildOutput\Debug\StaticData\ItemUnlocks.dat"
-	File "..\BuildOutput\Debug\StaticData\MarketGroups.dat"
-	File "..\BuildOutput\Debug\StaticData\Masteries.dat"
-	File "..\BuildOutput\Debug\StaticData\MetaGroups.dat"
-	File "..\BuildOutput\Debug\StaticData\MetaTypes.dat"
-	File "..\BuildOutput\Debug\StaticData\modules.dat"
-	File "..\BuildOutput\Debug\StaticData\NPCCorps.dat"
-	File "..\BuildOutput\Debug\StaticData\Regions.dat"
-	File "..\BuildOutput\Debug\StaticData\ShipGroups.bin"
-	File "..\BuildOutput\Debug\StaticData\ships.dat"
-	File "..\BuildOutput\Debug\StaticData\skills.dat"
-	File "..\BuildOutput\Debug\StaticData\SkillUnlocks.dat"
-	File "..\BuildOutput\Debug\StaticData\Stations.dat"
-	File "..\BuildOutput\Debug\StaticData\Systems.dat"
-		File "..\BuildOutput\Debug\StaticData\Traits.dat"
-  File "..\BuildOutput\Debug\StaticData\TypeAttributes.dat"
-  File "..\BuildOutput\Debug\StaticData\TypeEffects.dat"
-  File "..\BuildOutput\Debug\StaticData\TypeMaterials.dat"
-  File "..\BuildOutput\Debug\StaticData\Units.dat"
+	File "..\BuildOutput\EveHQ\Debug\StaticData\Agents.dat"
+	File "..\BuildOutput\EveHQ\Debug\StaticData\AssemblyArrays.dat"
+	File "..\BuildOutput\EveHQ\Debug\StaticData\attributes.dat"
+	File "..\BuildOutput\EveHQ\Debug\StaticData\AttributeTypes.dat"
+	File "..\BuildOutput\EveHQ\Debug\StaticData\Blueprints.dat"
+	File "..\BuildOutput\EveHQ\Debug\StaticData\boosters.dat"
+	File "..\BuildOutput\EveHQ\Debug\StaticData\CertCats.dat"
+	File "..\BuildOutput\EveHQ\Debug\StaticData\CertRec.dat"
+	File "..\BuildOutput\EveHQ\Debug\StaticData\Certs.dat"
+	File "..\BuildOutput\EveHQ\Debug\StaticData\CertSkills.dat"
+	File "..\BuildOutput\EveHQ\Debug\StaticData\Constellations.dat"
+	File "..\BuildOutput\EveHQ\Debug\StaticData\Divisions.dat"
+	File "..\BuildOutput\EveHQ\Debug\StaticData\EffectTypes.dat"
+	File "..\BuildOutput\EveHQ\Debug\StaticData\GroupCats.dat"
+	File "..\BuildOutput\EveHQ\Debug\StaticData\implants.dat"
+	File "..\BuildOutput\EveHQ\Debug\StaticData\ItemCats.dat"
+	File "..\BuildOutput\EveHQ\Debug\StaticData\ItemFlags.dat"
+	File "..\BuildOutput\EveHQ\Debug\StaticData\ItemGroups.bin"
+	File "..\BuildOutput\EveHQ\Debug\StaticData\ItemGroups.dat"
+	File "..\BuildOutput\EveHQ\Debug\StaticData\ItemList.dat"
+	File "..\BuildOutput\EveHQ\Debug\StaticData\ItemMarketGroups.dat"
+	File "..\BuildOutput\EveHQ\Debug\StaticData\Items.dat"
+	File "..\BuildOutput\EveHQ\Debug\StaticData\ItemUnlocks.dat"
+	File "..\BuildOutput\EveHQ\Debug\StaticData\MarketGroups.dat"
+	File "..\BuildOutput\EveHQ\Debug\StaticData\Masteries.dat"
+	File "..\BuildOutput\EveHQ\Debug\StaticData\MetaGroups.dat"
+	File "..\BuildOutput\EveHQ\Debug\StaticData\MetaTypes.dat"
+	File "..\BuildOutput\EveHQ\Debug\StaticData\modules.dat"
+	File "..\BuildOutput\EveHQ\Debug\StaticData\NPCCorps.dat"
+	File "..\BuildOutput\EveHQ\Debug\StaticData\Regions.dat"
+	File "..\BuildOutput\EveHQ\Debug\StaticData\ShipGroups.bin"
+	File "..\BuildOutput\EveHQ\Debug\StaticData\ships.dat"
+	File "..\BuildOutput\EveHQ\Debug\StaticData\skills.dat"
+	File "..\BuildOutput\EveHQ\Debug\StaticData\SkillUnlocks.dat"
+	File "..\BuildOutput\EveHQ\Debug\StaticData\Stations.dat"
+	File "..\BuildOutput\EveHQ\Debug\StaticData\Systems.dat"
+	File "..\BuildOutput\EveHQ\Debug\StaticData\Traits.dat"
+	File "..\BuildOutput\EveHQ\Debug\StaticData\TypeAttributes.dat"
+	File "..\BuildOutput\EveHQ\Debug\StaticData\TypeEffects.dat"
+	File "..\BuildOutput\EveHQ\Debug\StaticData\TypeMaterials.dat"
+	File "..\BuildOutput\EveHQ\Debug\StaticData\Units.dat"
   
   # delete cache files
   
 ${If} $useLocalFlag == "1" 
-   Delete $INSTDIR\EveHQ\HQF\Cache\*.*
+  Delete $INSTDIR\EveHQ\HQF\Cache\*.*
   Delete $INSTDIR\EveHQ\CoreCache\*.*
   Delete $INSTDIR\EveHQ\ImageCache\*.*
   !insertmacro RemoveFilesAndSubDirs "$INSTDIR\EveHQ\MarketCache\"
 ${Else}
-   Delete $APPDATA\EveHQ\HQF\Cache\*.*
+  Delete $APPDATA\EveHQ\HQF\Cache\*.*
   Delete $APPDATA\EveHQ\CoreCache\*.*
   Delete $APPDATA\EveHQ\ImageCache\*.*
   !insertmacro RemoveFilesAndSubDirs "$APPDATA\EveHQ\MarketCache\"
 ${EndIf}
   
  SetOutPath $INSTDIR
-  
-  
+    
 
  ; Write the installation path into the registry
   WriteRegStr HKLM SOFTWARE\EveHQ "Install_Dir" "$INSTDIR"
@@ -217,7 +225,7 @@ ${EndIf}
 	!insertmacro MUI_STARTMENU_WRITE_END
   
   ; Write the uninstall keys for Windows
- WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\EveHQ" "DisplayName" "EveHQ"
+  WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\EveHQ" "DisplayName" "EveHQ"
   WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\EveHQ" "UninstallString" '"$INSTDIR\uninstall.exe"'
   WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\EveHQ" "NoModify" 1
   WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\EveHQ" "NoRepair" 1
@@ -231,18 +239,12 @@ SectionEnd
 
 
 Section "un.Uninstall"
-  
-  
-  
   ; Remove registry keys
   DeleteRegKey HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\EveHQ"
   DeleteRegKey HKLM SOFTWARE\EveHQ
 
   ; Remove files and uninstaller
-  Delete $INSTDIR\*.exe
-  Delete $INSTDIR\*.dll
-  Delete $INSTDIR\*.pdb
-  Delete $INSTDIR\*.txt
+  Delete $INSTDIR\*.*
   
 ${If} $useLocalFlag == "1" 
   !insertmacro RemoveFilesAndSubDirs "$INSTDIR\StaticData" 
@@ -408,7 +410,6 @@ StrCpy $useLocalFlag 0
 
     StrCpy $useLocalFlag 1
     
-
 FunctionEnd
 
 Function un.onInit
@@ -492,5 +493,3 @@ Function un.EveHQNotRunning
  
 	success:
 FunctionEnd
-
-

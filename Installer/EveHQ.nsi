@@ -29,14 +29,14 @@ InstallDirRegKey HKLM "Software\EveHQ" "Install_Dir"
 !define MUI_WELCOMEFINISHPAGE_BITMAP EveHQInstallerSideImage.bmp
 
 #Installer file settings
-VIAddVersionKey "CompanyName" "EveHQ Dev Team"
+VIAddVersionKey "CompanyName" "EveHQ Team"
 VIAddVersionKey "FileDescription" "EveHQ: The Internet Spaceship Toolkit"
-#VIAddVersionKey "LegalCopyright" "Copyright 2005-2013, EveHQ Dev Team"
+VIAddVersionKey "LegalCopyright" "Copyright 2005-2017, EveHQ Team"
 VIAddVersionKey "ProductName" "EveHQ Setup"
 !ifdef Version
 VIProductVersion ${Version}
 !else
-VIProductVersion 1.0.0.0
+VIProductVersion 2.31.2.0
 !endif
 
 
@@ -94,8 +94,11 @@ SectionIn RO
   File "..\BuildOutput\EveHQ\Release\EveHQ.Caching.dll"
   File "..\BuildOutput\EveHQ\Release\EveHQ.Caching.pdb"
   File "..\BuildOutput\EveHQ\Release\EveHQ.Common.dll"
+  File "..\BuildOutput\EveHQ\Release\EveHQ.Common.pdb"
   File "..\BuildOutput\EveHQ\Release\EveHQ.Core.dll"
   File "..\BuildOutput\EveHQ\Release\EveHQ.Core.pdb"
+  File "..\BuildOutput\EveHQ\Release\EveHQ.Esi.dll"
+  File "..\BuildOutput\EveHQ\Release\EveHQ.Esi.pdb"
   File "..\BuildOutput\EveHQ\Release\EveHQ.EveAPI.Legacy.dll"
   File "..\BuildOutput\EveHQ\Release\EveHQ.EveAPI.Legacy.pdb"
   File "..\BuildOutput\EveHQ\Release\EveHQ.EveData.dll"
@@ -221,7 +224,7 @@ ${EndIf}
 	!insertmacro MUI_STARTMENU_WRITE_END
   
   ; Write the uninstall keys for Windows
- WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\EveHQ" "DisplayName" "EveHQ"
+  WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\EveHQ" "DisplayName" "EveHQ"
   WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\EveHQ" "UninstallString" '"$INSTDIR\uninstall.exe"'
   WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\EveHQ" "NoModify" 1
   WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\EveHQ" "NoRepair" 1
@@ -235,18 +238,13 @@ SectionEnd
 
 
 Section "un.Uninstall"
-  
-  
-  
+
   ; Remove registry keys
   DeleteRegKey HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\EveHQ"
   DeleteRegKey HKLM SOFTWARE\EveHQ
 
   ; Remove files and uninstaller
-  Delete $INSTDIR\*.exe
-  Delete $INSTDIR\*.dll
-  Delete $INSTDIR\*.pdb
-  Delete $INSTDIR\*.txt
+  Delete $INSTDIR\*.*
   
 ${If} $useLocalFlag == "1" 
   !insertmacro RemoveFilesAndSubDirs "$INSTDIR\StaticData" 
