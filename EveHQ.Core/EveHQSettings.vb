@@ -46,7 +46,6 @@
 Imports System.Drawing
 Imports DevComponents.DotNetBar
 Imports System.Windows.Forms
-Imports EveHQ.EveAPI
 Imports EveHQ.Market
 Imports EveHQ.Common.Extensions
 Imports System.Globalization
@@ -78,9 +77,12 @@ Public Class EveHQSettings
     Private _marketRegionList As ArrayList
     Private _priceCriteria(11) As Boolean
     Private _ccpApiServerAddress As String
+	<JsonProperty>
     Private _eveFolderLabel(4) As String
+	<JsonProperty>
     Private _eveFolderLua(4) As Boolean
     Private _igbAllowedData As SortedList(Of String, Boolean)
+	<JsonProperty>
     Private _eveFolder(4) As String
     Private _qColumns(20, 1) As String
     Private _marketStatOverrides As Dictionary(Of Integer, ItemMarketOverride)
