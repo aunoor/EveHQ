@@ -59,7 +59,7 @@ Imports System.Runtime.Serialization
 #Region "Constants"
     Const MaxBasicSlots As Integer = 8
     Const MaxRigSlots As Integer = 3
-    Const MaxSubSlots As Integer = 4
+	Public Const MaxSubSlots As Integer = 4
     Const MaxServiceModSlots As Integer = 8
 #End Region
 
