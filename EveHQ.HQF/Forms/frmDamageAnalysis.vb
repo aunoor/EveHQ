@@ -57,32 +57,117 @@ Namespace Forms
         Dim _attackingShip, _targetShip As Ship
         Dim _tMod As New ShipModule
         Dim _mMod As New ShipModule
+
+		''' <summary>
+		''' Signature Radius of Target.
+		''' </summary>
         Dim _sr As Double = 0
         Dim _transVel As Double = 0
+
+		''' <summary>
+		''' Target Velocity.
+		''' </summary>
         Dim _targetVel As Double = 0
+
+		''' <summary>
+		''' Distance to target.
+		''' </summary>
         Dim _d As Double = 0
-        Dim _tsr As Double = 0 ' Turret Signature Radius
-        Dim _tt As Double = 0 ' Turret Tracking
-        Dim _tor As Double = 0 ' Turret Optimal Range
-        Dim _tf As Double = 0 ' Turret Falloff
-        Dim _tvd As Double = 0 ' Turret Volley Damage
-        Dim _tdps As Double = 0 ' Turret DPS
-        Dim _tc As Integer = 0 ' Turret Count 
-        Dim _trof As Double = 0 ' Turret ROF
-        Dim _mc As Integer = 0 ' Missile Count
-        Dim _mor As Double = 0 ' Missile Optimal Range
-        Dim _mrof As Double = 0 ' Missile ROF
+
+		''' <summary>
+		''' Turret Signature Radius.
+		''' </summary>
+        Dim _tsr As Double = 0 
+
+		''' <summary>
+		''' Turret Tracking.
+		''' </summary>
+        Dim _tt As Double = 0
+
+		''' <summary>
+		''' Turret Optimal Range.
+		''' </summary>
+        Dim _tor As Double = 0
+
+		''' <summary>
+		''' Turret Falloff.
+		''' </summary>
+        Dim _tf As Double = 0
+
+		''' <summary>
+		''' Turret Volley Damage
+		''' </summary>
+        Dim _tvd As Double = 0
+
+		''' <summary>
+		''' Turret DPS.
+		''' </summary>
+        Dim _tdps As Double = 0
+
+		''' <summary>
+		''' Turret Count.
+		''' </summary>
+        Dim _tc As Integer = 0
+
+		''' <summary>
+		''' Turret ROF.
+		''' </summary>
+        Dim _trof As Double = 0
+
+		''' <summary>
+		''' Missile Count.
+		''' </summary>
+        Dim _mc As Integer = 0
+
+		''' <summary>
+		''' Missile Optimal Range.
+		''' </summary>
+        Dim _mor As Double = 0
+
+		''' <summary>
+		''' Missile ROF.
+		''' </summary>
+        Dim _mrof As Double = 0
+
+		''' <summary>
+		''' Missile Explosion Radius.
+		''' </summary>
         Dim _missileEr As Double = 0
+
+		''' <summary>
+		''' Missile Explosion Velocity.
+		''' </summary>
         Dim _missileEv As Double = 0
+
+		''' <summary>
+		''' Damage Reduction Factor.
+		''' </summary>
         Dim _missileDrf As Double = 0
         Dim _missileDrs As Double = 0
-        Dim _mvd As Double = 0 ' Missile Volley Damage
-        Dim _mdps As Double = 0 ' Missile DPS
+
+		''' <summary>
+		''' Missile Volley Damage.
+		''' </summary>
+        Dim _mvd As Double = 0
+
+		''' <summary>
+		''' Missile DPS.
+		''' </summary>
+        Dim _mdps As Double = 0
         Dim _sHp, _aHp, _hHp As Double
         Dim _sEM, _sEx, _sKi, _sTh As Double
         Dim _aEM, _aEx, _aKi, _aTh As Double
         Dim _hEM, _hEx, _hKi, _hTh As Double
-        Dim _wEM, _wEx, _wKi, _wTh, _wT As Double
+
+        Dim _wEM As Double
+		Dim _wEx As Double
+		Dim _wKi As Double
+		Dim _wTh As Double
+
+		''' <summary>
+		''' Total Missile Damage.
+		''' </summary>
+		Dim _wT As Double
         Dim _sdEM, _sdEx, _sdKi, _sdTh, _sdT As Double
         Dim _adEM, _adEx, _adKi, _adTh, _adT As Double
         Dim _hdEM, _hdEx, _hdKi, _hdTh, _hdT As Double
@@ -92,6 +177,10 @@ Namespace Forms
         Dim _tsrr, _tarr, _thrr As Double
         Dim _estNr, _eatNr, _ehtNr As Double
         Dim _estR, _eatR, _ehtR As Double
+
+		''' <summary>
+		''' Expected Damage.
+		''' </summary>
         Dim _cth As Double = 0
         Dim _edr As Double = 0
         Dim _graphForm As New FrmChartViewer
@@ -655,7 +744,22 @@ Namespace Forms
 
                 ' Calculate the actual damage
                 If _mor >= _d Then
-                    _cth = _wT * Math.Min(Math.Min(_sr / _missileEr, 1), (_missileEv / _missileEr * _sr / _targetVel) ^ (Math.Log(_missileDrf) / Math.Log(_missileDrs)))
+	                Dim minimumVelocityFactor As Double = _missileEv / _missileEr
+	                Dim signatureFactor As Double = _sr / _missileEr
+					Dim damageFactor = 1.0
+	                If signatureFactor < 1.0 Then
+						' target signature radius matters
+						damageFactor = signatureFactor
+					End If
+					If _targetVel >= minimumVelocityFactor * _sr Then
+						' target velocity matters
+						Dim velocityFactor As Double = (_missileEv / _targetVel * signatureFactor) ^ _missileDrf
+						If(velocityFactor < signatureFactor) Then
+							damageFactor = velocityFactor
+						End If
+					End If
+
+	                _cth = _wT * damageFactor
                 Else
                     _cth = 0
                 End If
