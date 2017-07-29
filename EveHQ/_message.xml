@@ -1,10 +1,11 @@
 ﻿<eveHQMessage>
-  <lastUpdated>28/07/2017 22:00:00</lastUpdated>
-  <title>New ships, citadel fitting and T3 cruisers subsystems update with hotfix</title>
-  <allowIgnore>1</allowIgnore>
-  <message><![CDATA[<b>Hot fix for wrong CPU and PWG bonuses for some T3 subsystems.<br /><br />New ships, citadel fitting and T3 cruisers subsystems update</b><br /><br />This update made by the new maintainer of EveHQ - Mike Eshva. It should work but please excuse me if I made something wrong for the first time.<br /><br />I've added new ships: Chemosh, Dagon, Molok, Pacifier and Enforcer. As well I've changed T3 cruisers subsystems to 2017 July patch. Old fittings can't be upgraded. Sorry.<br /><br />As well beta citadel fitting and citadel assets retrieval brought by paulkpeterson.<br /><br /><a href="http://evehq.co/?p=346">In depth post</a><br /><br />Please report bugs on our <a href="http://evehq.co/forum/" title="Forum"><b>Forum</b></a> (bugs reports section)<br /><br />Join us on : <a href="https://twitter.com/EveHQOfficial" title="Twitter"><b>Twitter</b></a> | <a href="https://www.facebook.com/pages/EveHQ/846633492024781" title="Facebook"><b>Facebook</b></a> | <a href="https://plus.google.com/u/0/b/112000195040101905760/112000195040101905760/about" title="Google+"><b>Google+</b></a> | <a href="http://evehq.co" title="Website"><b>Website</b></a>]]></message>
-  <disabledPlugins>
-    <plugin name="PoS Manager" version="2.8.1.3869"/>
-    <plugin name="EveHQ Route Map" version="2.4.0.3671"/>
-  </disabledPlugins>
+	<lastUpdated>29/07/2017 22:00:00</lastUpdated>
+	<title>3 Fixes</title>
+	<allowIgnore>1</allowIgnore>
+	<message><![CDATA[<b>Fixes for blueprint calculator, fitting T3 ships and missile damage analysis</b><br/><br/>[Prism][Bug] Blueprint calculator throws an exception on open.<br/><br/>[Fitter][Bug] Contextual command "Find Module To Fit" on T3 subsystem slots spams a error message dialog.<br/><br/>[Fitter][Bug] Missile damage analysis handled incorrectly. It is a bug with a long history. If your targed doesn't move you had 0 damage on it in a missile ship. I've corrected it but <b>need your help to test the DPS numbers for different circumstances like target signature, target speed and your missiles type.</b><br/><br/>Please report bugs on our <a href="http://evehq.co/forum/" title="Forum"><b>Forum</b></a>(bugs reports section) or better on our GitHub project's <a href="https://github.com/EveHQ-Team/EveHQ/issues" title="issue tracker"><b>issue tracker</b></a><br/><br/>Join us on:<a href="https://twitter.com/EveHQOfficial" title="Twitter"><b>Twitter</b></a>|<a href="https://www.facebook.com/pages/EveHQ/846633492024781" title="Facebook"><b>Facebook</b></a>|<a href="https://plus.google.com/u/0/b/112000195040101905760/112000195040101905760/about" title="Google+"><b>Google+</b></a>|<a href="http://evehq.co" title="Website"><b>Website</b></a>]]></message>
+	<disabledPlugins>
+		<plugin name="PoS Manager" version="2.8.1.3869"/>
+		<plugin name="EveHQ Route Map" version="2.4.0.3671"/>
+	</disabledPlugins>
 </eveHQMessage>
+
