@@ -5103,14 +5103,14 @@ Namespace Forms
         Private Sub adtProdJobs_SelectionChanged(ByVal sender As Object, ByVal e As EventArgs) Handles adtProdJobs.SelectionChanged
             Select Case adtProdJobs.SelectedNodes.Count
                 Case 0
-                    btnDeleteJob.Text = "Delete Job"
-                    btnDeleteJob.Enabled = False
+	                miDeleteJobs.Text = "Delete Job..."
+	                miDeleteJobs.Enabled = False
 					miAddToBatch.Enabled = False
                     PRPM.BatchJob = Nothing
                     PRPM.ProductionJob = Nothing
                 Case 1
-                    btnDeleteJob.Text = "Delete Job"
-                    btnDeleteJob.Enabled = True
+	                miDeleteJobs.Text = "Delete Job..."
+	                miDeleteJobs.Enabled = True
 	                miAddToBatch.Enabled = True
                     ' Create a null batch job to pass to the PR control to negate batch display
                     PRPM.BatchJob = Nothing
@@ -5118,8 +5118,8 @@ Namespace Forms
                     Dim existingJob As Job = Jobs.JobList(jobName)
                     PRPM.ProductionJob = existingJob
                 Case Else
-                    btnDeleteJob.Text = "Delete Jobs"
-                    btnDeleteJob.Enabled = True
+	                miDeleteJobs.Text = "Delete Jobs..."
+	                miDeleteJobs.Enabled = True
 	                miAddToBatch.Enabled = True
                     ' Create a temporary batch job to pass to the PR control
                     Dim tempBatch As New BatchJob
@@ -5144,7 +5144,7 @@ Namespace Forms
             AdvTreeSorter.Sort(ch, True, False)
         End Sub
 
-        Private Sub btnDeleteJob_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnDeleteJob.Click
+        Private Sub btnDeleteJob_Click(ByVal sender As Object, ByVal e As EventArgs) Handles miDeleteJobs.Click
             Dim reply As DialogResult = MessageBox.Show("Are you sure you want to delete the selected jobs?", "Confirm Job Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
             If reply = DialogResult.No Then
                 Exit Sub

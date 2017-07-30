@@ -232,7 +232,6 @@ Namespace Forms
 		Me.pnlJobs = New DevComponents.DotNetBar.PanelEx()
 		Me.btnClearAllJobs = New DevComponents.DotNetBar.ButtonX()
 		Me.btnRefreshJobs = New DevComponents.DotNetBar.ButtonX()
-		Me.btnDeleteJob = New DevComponents.DotNetBar.ButtonX()
 		Me.tiProductionJobs = New DevComponents.DotNetBar.TabItem(Me.components)
 		Me.TabControlPanel13 = New DevComponents.DotNetBar.TabControlPanel()
 		Me.adtBatches = New DevComponents.AdvTree.AdvTree()
@@ -497,6 +496,7 @@ Namespace Forms
 		Me.ctxProductionJobs = New System.Windows.Forms.ContextMenuStrip(Me.components)
 		Me.miAddToBatch = New System.Windows.Forms.ToolStripMenuItem()
 		Me.miAddToNewBatch = New System.Windows.Forms.ToolStripMenuItem()
+		Me.miDeleteJobs = New System.Windows.Forms.ToolStripMenuItem()
 		Me.ctxTransactions.SuspendLayout
 		CType(Me.dtiJournalEndDate,System.ComponentModel.ISupportInitialize).BeginInit
 		CType(Me.dtiJournalStartDate,System.ComponentModel.ISupportInitialize).BeginInit
@@ -2823,7 +2823,6 @@ Namespace Forms
 		Me.pnlJobs.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
 		Me.pnlJobs.Controls.Add(Me.btnClearAllJobs)
 		Me.pnlJobs.Controls.Add(Me.btnRefreshJobs)
-		Me.pnlJobs.Controls.Add(Me.btnDeleteJob)
 		Me.pnlJobs.DisabledBackColor = System.Drawing.Color.Empty
 		Me.pnlJobs.Dock = System.Windows.Forms.DockStyle.Bottom
 		Me.pnlJobs.Location = New System.Drawing.Point(1, 573)
@@ -2843,9 +2842,9 @@ Namespace Forms
 		Me.btnClearAllJobs.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
 		Me.btnClearAllJobs.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
 		Me.btnClearAllJobs.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
-		Me.btnClearAllJobs.Location = New System.Drawing.Point(3, 3)
+		Me.btnClearAllJobs.Location = New System.Drawing.Point(10, 10)
 		Me.btnClearAllJobs.Name = "btnClearAllJobs"
-		Me.btnClearAllJobs.Size = New System.Drawing.Size(75, 21)
+		Me.btnClearAllJobs.Size = New System.Drawing.Size(75, 30)
 		Me.btnClearAllJobs.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
 		Me.btnClearAllJobs.TabIndex = 4
 		Me.btnClearAllJobs.Text = "Clear Jobs"
@@ -2855,25 +2854,12 @@ Namespace Forms
 		Me.btnRefreshJobs.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
 		Me.btnRefreshJobs.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
 		Me.btnRefreshJobs.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
-		Me.btnRefreshJobs.Location = New System.Drawing.Point(165, 3)
+		Me.btnRefreshJobs.Location = New System.Drawing.Point(95, 10)
 		Me.btnRefreshJobs.Name = "btnRefreshJobs"
-		Me.btnRefreshJobs.Size = New System.Drawing.Size(200, 21)
+		Me.btnRefreshJobs.Size = New System.Drawing.Size(200, 30)
 		Me.btnRefreshJobs.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
 		Me.btnRefreshJobs.TabIndex = 5
 		Me.btnRefreshJobs.Text = "Refresh Job Costings and Profits"
-		'
-		'btnDeleteJob
-		'
-		Me.btnDeleteJob.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
-		Me.btnDeleteJob.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
-		Me.btnDeleteJob.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
-		Me.btnDeleteJob.Enabled = false
-		Me.btnDeleteJob.Location = New System.Drawing.Point(84, 3)
-		Me.btnDeleteJob.Name = "btnDeleteJob"
-		Me.btnDeleteJob.Size = New System.Drawing.Size(75, 21)
-		Me.btnDeleteJob.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-		Me.btnDeleteJob.TabIndex = 1
-		Me.btnDeleteJob.Text = "Delete Job"
 		'
 		'tiProductionJobs
 		'
@@ -6317,16 +6303,16 @@ Namespace Forms
 		'
 		'ctxProductionJobs
 		'
-		Me.ctxProductionJobs.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.miAddToBatch})
+		Me.ctxProductionJobs.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.miAddToBatch, Me.miDeleteJobs})
 		Me.ctxProductionJobs.Name = "ctxProductionJobs"
-		Me.ctxProductionJobs.Size = New System.Drawing.Size(144, 26)
+		Me.ctxProductionJobs.Size = New System.Drawing.Size(151, 48)
 		'
 		'miAddToBatch
 		'
 		Me.miAddToBatch.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.miAddToNewBatch})
 		Me.miAddToBatch.Enabled = false
 		Me.miAddToBatch.Name = "miAddToBatch"
-		Me.miAddToBatch.Size = New System.Drawing.Size(143, 22)
+		Me.miAddToBatch.Size = New System.Drawing.Size(150, 22)
 		Me.miAddToBatch.Text = "Add to Batch"
 		'
 		'miAddToNewBatch
@@ -6334,6 +6320,13 @@ Namespace Forms
 		Me.miAddToNewBatch.Name = "miAddToNewBatch"
 		Me.miAddToNewBatch.Size = New System.Drawing.Size(161, 22)
 		Me.miAddToNewBatch.Text = "New Batch Job..."
+		'
+		'miDeleteJobs
+		'
+		Me.miDeleteJobs.Enabled = false
+		Me.miDeleteJobs.Name = "miDeleteJobs"
+		Me.miDeleteJobs.Size = New System.Drawing.Size(150, 22)
+		Me.miDeleteJobs.Text = "Delete Job(s)..."
 		'
 		'FrmPrism
 		'
@@ -6722,7 +6715,6 @@ End Sub
 		Private WithEvents rbProduction As DevComponents.DotNetBar.RibbonBar
 		Private WithEvents btnProductionManager As DevComponents.DotNetBar.ButtonItem
 		Private WithEvents btnBlueprintCalc As DevComponents.DotNetBar.ButtonItem
-		Private WithEvents btnDeleteJob As DevComponents.DotNetBar.ButtonX
 		Private WithEvents colJobUnitProfit As DevComponents.AdvTree.ColumnHeader
 		Private WithEvents colJobProfitRate As DevComponents.AdvTree.ColumnHeader
 		Private WithEvents splitterProductionMngr As DevComponents.DotNetBar.ExpandableSplitter
@@ -6909,5 +6901,6 @@ End Sub
 		Private WithEvents colBPMCategory As DevComponents.AdvTree.ColumnHeader
 		Private WithEvents colBPMGroup As DevComponents.AdvTree.ColumnHeader
 		Friend WithEvents miAddToNewBatch As Windows.Forms.ToolStripMenuItem
+		Friend WithEvents miDeleteJobs As Windows.Forms.ToolStripMenuItem
 	End Class
 End NameSpace
