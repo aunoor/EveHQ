@@ -223,6 +223,9 @@ Namespace Forms
 		Me.TabControlPanel13 = New DevComponents.DotNetBar.TabControlPanel()
 		Me.adtBatches = New DevComponents.AdvTree.AdvTree()
 		Me.colBatchName = New DevComponents.AdvTree.ColumnHeader()
+		Me.ctxBatchJobs = New System.Windows.Forms.ContextMenuStrip(Me.components)
+		Me.miDeleteBatches = New System.Windows.Forms.ToolStripMenuItem()
+		Me.miDeleteBatchJobs = New System.Windows.Forms.ToolStripMenuItem()
 		Me.NodeConnector4 = New DevComponents.AdvTree.NodeConnector()
 		Me.ElementStyle4 = New DevComponents.DotNetBar.ElementStyle()
 		Me.PanelEx1 = New DevComponents.DotNetBar.PanelEx()
@@ -496,9 +499,6 @@ Namespace Forms
 		Me.ctxProductionJobs = New System.Windows.Forms.ContextMenuStrip(Me.components)
 		Me.miAddToBatch = New System.Windows.Forms.ToolStripMenuItem()
 		Me.miAddToNewBatch = New System.Windows.Forms.ToolStripMenuItem()
-		Me.miDeleteBatchJobs = New System.Windows.Forms.ToolStripMenuItem()
-		Me.ctxBatchJobs = New System.Windows.Forms.ContextMenuStrip(Me.components)
-		Me.miDeleteBatches = New System.Windows.Forms.ToolStripMenuItem()
 		Me.miDeleteProductionJobs = New System.Windows.Forms.ToolStripMenuItem()
 		Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
 		Me.ctxTransactions.SuspendLayout
@@ -525,6 +525,7 @@ Namespace Forms
 		Me.tcPM.SuspendLayout
 		Me.TabControlPanel13.SuspendLayout
 		CType(Me.adtBatches,System.ComponentModel.ISupportInitialize).BeginInit
+		Me.ctxBatchJobs.SuspendLayout
 		Me.PanelEx1.SuspendLayout
 		Me.TabControlPanel12.SuspendLayout
 		CType(Me.adtProdJobs,System.ComponentModel.ISupportInitialize).BeginInit
@@ -575,7 +576,6 @@ Namespace Forms
 		Me.TabControlPanel17.SuspendLayout
 		CType(Me.adtInventionJobs,System.ComponentModel.ISupportInitialize).BeginInit
 		Me.ctxProductionJobs.SuspendLayout
-		Me.ctxBatchJobs.SuspendLayout
 		Me.SuspendLayout
 		'
 		'lblCurrentAPI
@@ -2707,13 +2707,13 @@ Namespace Forms
 		Me.tcPM.ColorScheme.TabItemBackgroundColorBlend.AddRange(New DevComponents.DotNetBar.BackgroundColorBlend() {New DevComponents.DotNetBar.BackgroundColorBlend(System.Drawing.Color.FromArgb(CType(CType(215,Byte),Integer), CType(CType(230,Byte),Integer), CType(CType(249,Byte),Integer)), 0!), New DevComponents.DotNetBar.BackgroundColorBlend(System.Drawing.Color.FromArgb(CType(CType(199,Byte),Integer), CType(CType(220,Byte),Integer), CType(CType(248,Byte),Integer)), 0.45!), New DevComponents.DotNetBar.BackgroundColorBlend(System.Drawing.Color.FromArgb(CType(CType(179,Byte),Integer), CType(CType(208,Byte),Integer), CType(CType(245,Byte),Integer)), 0.45!), New DevComponents.DotNetBar.BackgroundColorBlend(System.Drawing.Color.FromArgb(CType(CType(215,Byte),Integer), CType(CType(229,Byte),Integer), CType(CType(247,Byte),Integer)), 1!)})
 		Me.tcPM.ColorScheme.TabItemHotBackgroundColorBlend.AddRange(New DevComponents.DotNetBar.BackgroundColorBlend() {New DevComponents.DotNetBar.BackgroundColorBlend(System.Drawing.Color.FromArgb(CType(CType(255,Byte),Integer), CType(CType(253,Byte),Integer), CType(CType(235,Byte),Integer)), 0!), New DevComponents.DotNetBar.BackgroundColorBlend(System.Drawing.Color.FromArgb(CType(CType(255,Byte),Integer), CType(CType(236,Byte),Integer), CType(CType(168,Byte),Integer)), 0.45!), New DevComponents.DotNetBar.BackgroundColorBlend(System.Drawing.Color.FromArgb(CType(CType(255,Byte),Integer), CType(CType(218,Byte),Integer), CType(CType(89,Byte),Integer)), 0.45!), New DevComponents.DotNetBar.BackgroundColorBlend(System.Drawing.Color.FromArgb(CType(CType(255,Byte),Integer), CType(CType(230,Byte),Integer), CType(CType(141,Byte),Integer)), 1!)})
 		Me.tcPM.ColorScheme.TabItemSelectedBackgroundColorBlend.AddRange(New DevComponents.DotNetBar.BackgroundColorBlend() {New DevComponents.DotNetBar.BackgroundColorBlend(System.Drawing.Color.White, 0!), New DevComponents.DotNetBar.BackgroundColorBlend(System.Drawing.Color.FromArgb(CType(CType(253,Byte),Integer), CType(CType(253,Byte),Integer), CType(CType(254,Byte),Integer)), 0.45!), New DevComponents.DotNetBar.BackgroundColorBlend(System.Drawing.Color.FromArgb(CType(CType(253,Byte),Integer), CType(CType(253,Byte),Integer), CType(CType(254,Byte),Integer)), 0.45!), New DevComponents.DotNetBar.BackgroundColorBlend(System.Drawing.Color.FromArgb(CType(CType(253,Byte),Integer), CType(CType(253,Byte),Integer), CType(CType(254,Byte),Integer)), 1!)})
-		Me.tcPM.Controls.Add(Me.TabControlPanel13)
 		Me.tcPM.Controls.Add(Me.TabControlPanel12)
+		Me.tcPM.Controls.Add(Me.TabControlPanel13)
 		Me.tcPM.Dock = System.Windows.Forms.DockStyle.Fill
 		Me.tcPM.Location = New System.Drawing.Point(1, 1)
 		Me.tcPM.Name = "tcPM"
 		Me.tcPM.SelectedTabFont = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
-		Me.tcPM.SelectedTabIndex = 1
+		Me.tcPM.SelectedTabIndex = 0
 		Me.tcPM.Size = New System.Drawing.Size(676, 648)
 		Me.tcPM.Style = DevComponents.DotNetBar.eTabStripStyle.Office2007Document
 		Me.tcPM.TabIndex = 7
@@ -2741,6 +2741,7 @@ Namespace Forms
 		Me.TabControlPanel13.Style.GradientAngle = 90
 		Me.TabControlPanel13.TabIndex = 2
 		Me.TabControlPanel13.TabItem = Me.tiBatchJobs
+		Me.TabControlPanel13.Visible = false
 		'
 		'adtBatches
 		'
@@ -2765,7 +2766,7 @@ Namespace Forms
 		Me.adtBatches.NodesConnector = Me.NodeConnector4
 		Me.adtBatches.NodeStyle = Me.ElementStyle4
 		Me.adtBatches.PathSeparator = ";"
-		Me.adtBatches.Size = New System.Drawing.Size(674, 596)
+		Me.adtBatches.Size = New System.Drawing.Size(674, 573)
 		Me.adtBatches.Styles.Add(Me.ElementStyle4)
 		Me.adtBatches.TabIndex = 1
 		Me.adtBatches.Text = "AdvTree1"
@@ -2776,6 +2777,26 @@ Namespace Forms
 		Me.colBatchName.SortingEnabled = false
 		Me.colBatchName.Text = "Batch Name"
 		Me.colBatchName.Width.Absolute = 300
+		'
+		'ctxBatchJobs
+		'
+		Me.ctxBatchJobs.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.miDeleteBatches, Me.miDeleteBatchJobs})
+		Me.ctxBatchJobs.Name = "ctxBatchJobs"
+		Me.ctxBatchJobs.Size = New System.Drawing.Size(205, 48)
+		'
+		'miDeleteBatches
+		'
+		Me.miDeleteBatches.Enabled = false
+		Me.miDeleteBatches.Name = "miDeleteBatches"
+		Me.miDeleteBatches.Size = New System.Drawing.Size(204, 22)
+		Me.miDeleteBatches.Text = "Delete Batch(es)..."
+		'
+		'miDeleteBatchJobs
+		'
+		Me.miDeleteBatchJobs.Enabled = false
+		Me.miDeleteBatchJobs.Name = "miDeleteBatchJobs"
+		Me.miDeleteBatchJobs.Size = New System.Drawing.Size(204, 22)
+		Me.miDeleteBatchJobs.Text = "Delete Production Jobs..."
 		'
 		'NodeConnector4
 		'
@@ -2794,9 +2815,9 @@ Namespace Forms
 		Me.PanelEx1.Controls.Add(Me.btnClearBatches)
 		Me.PanelEx1.DisabledBackColor = System.Drawing.Color.Empty
 		Me.PanelEx1.Dock = System.Windows.Forms.DockStyle.Bottom
-		Me.PanelEx1.Location = New System.Drawing.Point(1, 597)
+		Me.PanelEx1.Location = New System.Drawing.Point(1, 574)
 		Me.PanelEx1.Name = "PanelEx1"
-		Me.PanelEx1.Size = New System.Drawing.Size(674, 27)
+		Me.PanelEx1.Size = New System.Drawing.Size(674, 50)
 		Me.PanelEx1.Style.Alignment = System.Drawing.StringAlignment.Center
 		Me.PanelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground
 		Me.PanelEx1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2
@@ -2811,9 +2832,9 @@ Namespace Forms
 		Me.btnClearBatches.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
 		Me.btnClearBatches.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
 		Me.btnClearBatches.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
-		Me.btnClearBatches.Location = New System.Drawing.Point(3, 3)
+		Me.btnClearBatches.Location = New System.Drawing.Point(10, 10)
 		Me.btnClearBatches.Name = "btnClearBatches"
-		Me.btnClearBatches.Size = New System.Drawing.Size(75, 21)
+		Me.btnClearBatches.Size = New System.Drawing.Size(100, 30)
 		Me.btnClearBatches.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
 		Me.btnClearBatches.TabIndex = 4
 		Me.btnClearBatches.Text = "Clear Batches"
@@ -2843,7 +2864,6 @@ Namespace Forms
 		Me.TabControlPanel12.Style.GradientAngle = 90
 		Me.TabControlPanel12.TabIndex = 1
 		Me.TabControlPanel12.TabItem = Me.tiProductionJobs
-		Me.TabControlPanel12.Visible = false
 		'
 		'adtProdJobs
 		'
@@ -6310,7 +6330,7 @@ Namespace Forms
 		'
 		'ctxProductionJobs
 		'
-		Me.ctxProductionJobs.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.miAddToBatch, Me.miDeleteBatchJobs})
+		Me.ctxProductionJobs.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.miAddToBatch, Me.miDeleteProductionJobs})
 		Me.ctxProductionJobs.Name = "ctxProductionJobs"
 		Me.ctxProductionJobs.Size = New System.Drawing.Size(151, 48)
 		'
@@ -6328,32 +6348,12 @@ Namespace Forms
 		Me.miAddToNewBatch.Size = New System.Drawing.Size(161, 22)
 		Me.miAddToNewBatch.Text = "New Batch Job..."
 		'
-		'miDeleteBatchJobs
-		'
-		Me.miDeleteBatchJobs.Enabled = false
-		Me.miDeleteBatchJobs.Name = "miDeleteBatchJobs"
-		Me.miDeleteBatchJobs.Size = New System.Drawing.Size(150, 22)
-		Me.miDeleteBatchJobs.Text = "Delete Job(s)..."
-		'
-		'ctxBatchJobs
-		'
-		Me.ctxBatchJobs.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.miDeleteBatches, Me.miDeleteProductionJobs})
-		Me.ctxBatchJobs.Name = "ctxBatchJobs"
-		Me.ctxBatchJobs.Size = New System.Drawing.Size(205, 48)
-		'
-		'miDeleteBatches
-		'
-		Me.miDeleteBatches.Enabled = false
-		Me.miDeleteBatches.Name = "miDeleteBatches"
-		Me.miDeleteBatches.Size = New System.Drawing.Size(204, 22)
-		Me.miDeleteBatches.Text = "Delete Batch(es)..."
-		'
 		'miDeleteProductionJobs
 		'
 		Me.miDeleteProductionJobs.Enabled = false
 		Me.miDeleteProductionJobs.Name = "miDeleteProductionJobs"
-		Me.miDeleteProductionJobs.Size = New System.Drawing.Size(204, 22)
-		Me.miDeleteProductionJobs.Text = "Delete Production Jobs..."
+		Me.miDeleteProductionJobs.Size = New System.Drawing.Size(150, 22)
+		Me.miDeleteProductionJobs.Text = "Delete Job(s)..."
 		'
 		'ContextMenuStrip1
 		'
@@ -6397,6 +6397,7 @@ Namespace Forms
 		Me.tcPM.ResumeLayout(false)
 		Me.TabControlPanel13.ResumeLayout(false)
 		CType(Me.adtBatches,System.ComponentModel.ISupportInitialize).EndInit
+		Me.ctxBatchJobs.ResumeLayout(false)
 		Me.PanelEx1.ResumeLayout(false)
 		Me.TabControlPanel12.ResumeLayout(false)
 		CType(Me.adtProdJobs,System.ComponentModel.ISupportInitialize).EndInit
@@ -6461,7 +6462,6 @@ Namespace Forms
 		Me.TabControlPanel17.ResumeLayout(false)
 		CType(Me.adtInventionJobs,System.ComponentModel.ISupportInitialize).EndInit
 		Me.ctxProductionJobs.ResumeLayout(false)
-		Me.ctxBatchJobs.ResumeLayout(false)
 		Me.ResumeLayout(false)
 
 End Sub
@@ -6934,10 +6934,10 @@ End Sub
 		Private WithEvents colBPMCategory As DevComponents.AdvTree.ColumnHeader
 		Private WithEvents colBPMGroup As DevComponents.AdvTree.ColumnHeader
 		Friend WithEvents miAddToNewBatch As Windows.Forms.ToolStripMenuItem
-		Friend WithEvents miDeleteBatchJobs As Windows.Forms.ToolStripMenuItem
+		Friend WithEvents miDeleteProductionJobs As Windows.Forms.ToolStripMenuItem
 		Friend WithEvents ctxBatchJobs As Windows.Forms.ContextMenuStrip
 		Friend WithEvents miDeleteBatches As Windows.Forms.ToolStripMenuItem
-		Friend WithEvents miDeleteProductionJobs As Windows.Forms.ToolStripMenuItem
+		Friend WithEvents miDeleteBatchJobs As Windows.Forms.ToolStripMenuItem
 		Friend WithEvents ContextMenuStrip1 As Windows.Forms.ContextMenuStrip
 	End Class
 End NameSpace
