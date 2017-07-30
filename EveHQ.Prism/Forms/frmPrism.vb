@@ -57,7 +57,6 @@ Imports DevComponents.AdvTree
 Imports DevComponents.DotNetBar
 Imports EveHQ.Core
 Imports EveHQ.Core.Requisitions
-Imports EveHQ.EveApi
 Imports EveHQ.EveData
 Imports EveHQ.Prism.BPCalc
 Imports EveHQ.Prism.Classes
@@ -5103,14 +5102,14 @@ Namespace Forms
         Private Sub adtProdJobs_SelectionChanged(ByVal sender As Object, ByVal e As EventArgs) Handles adtProdJobs.SelectionChanged
             Select Case adtProdJobs.SelectedNodes.Count
                 Case 0
-	                miDeleteJobs.Text = "Delete Job..."
-	                miDeleteJobs.Enabled = False
+	                miDeleteBatchJobs.Text = "Delete Job..."
+	                miDeleteBatchJobs.Enabled = False
 					miAddToBatch.Enabled = False
                     PRPM.BatchJob = Nothing
                     PRPM.ProductionJob = Nothing
                 Case 1
-	                miDeleteJobs.Text = "Delete Job..."
-	                miDeleteJobs.Enabled = True
+	                miDeleteBatchJobs.Text = "Delete Job..."
+	                miDeleteBatchJobs.Enabled = True
 	                miAddToBatch.Enabled = True
                     ' Create a null batch job to pass to the PR control to negate batch display
                     PRPM.BatchJob = Nothing
@@ -5118,8 +5117,8 @@ Namespace Forms
                     Dim existingJob As Job = Jobs.JobList(jobName)
                     PRPM.ProductionJob = existingJob
                 Case Else
-	                miDeleteJobs.Text = "Delete Jobs..."
-	                miDeleteJobs.Enabled = True
+	                miDeleteBatchJobs.Text = "Delete Jobs..."
+	                miDeleteBatchJobs.Enabled = True
 	                miAddToBatch.Enabled = True
                     ' Create a temporary batch job to pass to the PR control
                     Dim tempBatch As New BatchJob
@@ -5144,7 +5143,7 @@ Namespace Forms
             AdvTreeSorter.Sort(ch, True, False)
         End Sub
 
-        Private Sub btnDeleteJob_Click(ByVal sender As Object, ByVal e As EventArgs) Handles miDeleteJobs.Click
+        Private Sub btnDeleteJob_Click(ByVal sender As Object, ByVal e As EventArgs) Handles miDeleteBatchJobs.Click
             Dim reply As DialogResult = MessageBox.Show("Are you sure you want to delete the selected jobs?", "Confirm Job Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
             If reply = DialogResult.No Then
                 Exit Sub
@@ -5254,6 +5253,10 @@ Namespace Forms
                     Next
                     PRPM.BatchJob = tempBatch
             End Select
+
+	        Dim selectedBatches As List(Of Node) = GetSelectedBatches()
+	        miDeleteBatches.Enabled = selectedBatches.Count > 0
+			miDeleteBatches.Text = If (selectedBatches.Count > 1, "Delete Batches...", "Delete Batch...")
         End Sub
 
         Private Sub btnClearBatches_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnClearBatches.Click
@@ -5265,6 +5268,30 @@ Namespace Forms
                 Call UpdateBatchList()
             End If
         End Sub
+        Private Sub miDeleteBatches_Click(ByVal sender As Object, ByVal e As EventArgs) Handles miDeleteBatches.Click
+            Dim reply As DialogResult = MessageBox.Show("This will remove selected batches. Are you sure you want to delete them?", "Confirm Batch Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            If reply = DialogResult.No Then
+                Exit Sub
+            End If
+
+	        For Each selectedBatch As Node In GetSelectedBatches()
+				BatchJobs.Jobs.Remove(selectedBatch.Name)
+		        'adtBatches.Nodes.Remove(selectedBatch)
+	        Next
+
+            Call UpdateBatchList()
+        End Sub
+
+		Private Function GetSelectedBatches() As List(Of Node)
+
+			Dim selectedBatches = New List(Of Node)
+			For Each node As Node In adtBatches.SelectedNodes
+				If node.Parent Is Nothing Then
+					selectedBatches.Add(node)
+				End If
+			Next
+			Return selectedBatches
+		End Function
 
 #End Region
 
