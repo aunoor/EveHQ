@@ -44,331 +44,303 @@
 ' ==============================================================================
 
 Imports EveHQ.Core
-Imports System.Collections.ObjectModel
 Imports System.IO
 Imports Microsoft.VisualBasic.FileIO
 
 Namespace Forms
 
-    Public Class FrmBackup
+	Public Class FrmBackup
 
-        Private Sub chkAuto_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles chkAuto.CheckedChanged
-            If chkAuto.Checked = False Then
-                lblBackupDays.Enabled = False
-                lblBackupFreq.Enabled = False
-                lblBackupStart.Enabled = False
-                lblLastBackup.Enabled = False
-                lblLastBackupLbl.Enabled = False
-                lblNextBackup.Enabled = False
-                lblNextBackupLbl.Enabled = False
-                lblStartFormat.Enabled = False
-                nudDays.Enabled = False
-                dtpStart.Enabled = False
-                HQ.Settings.BackupAuto = False
-            Else
-                lblBackupDays.Enabled = True
-                lblBackupFreq.Enabled = True
-                lblBackupStart.Enabled = True
-                lblLastBackup.Enabled = True
-                lblLastBackupLbl.Enabled = True
-                lblNextBackup.Enabled = True
-                lblNextBackupLbl.Enabled = True
-                lblStartFormat.Enabled = True
-                nudDays.Enabled = True
-                dtpStart.Enabled = True
-                HQ.Settings.BackupAuto = True
-            End If
-        End Sub
+		Private Sub chkAuto_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles chkAuto.CheckedChanged
+			If chkAuto.Checked = False Then
+				lblBackupDays.Enabled = False
+				lblBackupFreq.Enabled = False
+				lblBackupStart.Enabled = False
+				lblLastBackup.Enabled = False
+				lblLastBackupLbl.Enabled = False
+				lblNextBackup.Enabled = False
+				lblNextBackupLbl.Enabled = False
+				lblStartFormat.Enabled = False
+				nudDays.Enabled = False
+				dtpStart.Enabled = False
+				HQ.Settings.BackupAuto = False
+			Else
+				lblBackupDays.Enabled = True
+				lblBackupFreq.Enabled = True
+				lblBackupStart.Enabled = True
+				lblLastBackup.Enabled = True
+				lblLastBackupLbl.Enabled = True
+				lblNextBackup.Enabled = True
+				lblNextBackupLbl.Enabled = True
+				lblStartFormat.Enabled = True
+				nudDays.Enabled = True
+				dtpStart.Enabled = True
+				HQ.Settings.BackupAuto = True
+			End If
+		End Sub
 
-        Private Sub frmBackup_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
-            nudDays.Tag = CInt(1) : dtpStart.Tag = CInt(1)
-            chkAuto.Checked = HQ.Settings.BackupAuto
-            nudDays.Value = HQ.Settings.BackupFreq
-            dtpStart.Value = HQ.Settings.BackupStart
-            nudDays.Tag = 0 : dtpStart.Tag = 0
-            Call CalcNextBackup()
-            If HQ.Settings.BackupLast.Year < 2000 Then
-                lblLastBackup.Text = "<not backed up>"
-            Else
-                lblLastBackup.Text = HQ.Settings.BackupLast.ToString
-            End If
-            Call ScanBackups()
-        End Sub
+		Private Sub frmBackup_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
+			nudDays.Tag = CInt(1) : dtpStart.Tag = CInt(1)
+			chkAuto.Checked = HQ.Settings.BackupAuto
+			nudDays.Value = HQ.Settings.BackupFreq
+			dtpStart.Value = HQ.Settings.BackupStart
+			nudDays.Tag = 0 : dtpStart.Tag = 0
+			Call CalcNextBackup()
+			If HQ.Settings.BackupLast.Year < 2000 Then
+				lblLastBackup.Text = "<not backed up>"
+			Else
+				lblLastBackup.Text = HQ.Settings.BackupLast.ToString
+			End If
+			Call ScanBackups()
+		End Sub
 
-        Private Sub nudDays_ValueChanged(ByVal sender As Object, ByVal e As EventArgs) Handles nudDays.ValueChanged
-            If nudDays.Tag IsNot Nothing Then
-                If nudDays.Tag.ToString = "0" Then
-                    HQ.Settings.BackupFreq = CInt(nudDays.Value)
-                End If
-            End If
-            Call CalcNextBackup()
-        End Sub
+		Private Sub nudDays_ValueChanged(ByVal sender As Object, ByVal e As EventArgs) Handles nudDays.ValueChanged
+			If nudDays.Tag IsNot Nothing Then
+				If nudDays.Tag.ToString = "0" Then
+					HQ.Settings.BackupFreq = CInt(nudDays.Value)
+				End If
+			End If
+			Call CalcNextBackup()
+		End Sub
 
-        Private Sub dtpStart_ValueChanged(ByVal sender As Object, ByVal e As EventArgs) Handles dtpStart.ValueChanged
-            If dtpStart.Tag IsNot Nothing Then
-                If dtpStart.Tag.ToString = "0" Then
-                    HQ.Settings.BackupStart = dtpStart.Value
-                End If
-            End If
-            Call CalcNextBackup()
-        End Sub
+		Private Sub dtpStart_ValueChanged(ByVal sender As Object, ByVal e As EventArgs) Handles dtpStart.ValueChanged
+			If dtpStart.Tag IsNot Nothing Then
+				If dtpStart.Tag.ToString = "0" Then
+					HQ.Settings.BackupStart = dtpStart.Value
+				End If
+			End If
+			Call CalcNextBackup()
+		End Sub
 
-        Private Sub btnBackup_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnBackup.Click
+		Private Sub btnBackup_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnBackup.Click
 
-            ' Check if we have anything to back up!
-            Dim noLocations As Boolean = True
-            For eveLocation As Integer = 1 To 4
-                If HQ.Settings.EveFolder(eveLocation) <> "" Then
-                    noLocations = False
-                End If
-            Next
-            Do
-                If noLocations = True Then
-                    Dim msg As String = ""
-                    msg &= "Before trying to backup your Eve-Online settings, you must set the" & ControlChars.CrLf
-                    msg &= "path to your Eve installation(s) in the Eve Folders section in EveHQ Settings." & ControlChars.CrLf & ControlChars.CrLf
-                    msg &= "Would you like to do this now?"
-                    If MessageBox.Show(msg, "Backup Location Required", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
-                        Exit Sub
-                    Else
-                        Using eveHQSettings As New FrmSettings
-                            eveHQSettings.Tag = "nodeEveFolders"
-                            eveHQSettings.ShowDialog()
-                        End Using
-                    End If
-                End If
-            Loop Until noLocations = False
+			' Check if we have anything to back up!
+			Dim noLocations As Boolean = True
+			For eveLocation As Integer = 1 To 4
+				If HQ.Settings.EveFolder(eveLocation) <> "" Then
+					noLocations = False
+				End If
+			Next
+			Do
+				If noLocations = True Then
+					Dim msg As String = ""
+					msg &= "Before trying to backup your Eve-Online settings, you must set the" & ControlChars.CrLf
+					msg &= "path to your Eve installation(s) in the Eve Folders section in EveHQ Settings." & ControlChars.CrLf & ControlChars.CrLf
+					msg &= "Would you like to do this now?"
+					If MessageBox.Show(msg, "Backup Location Required", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
+						Exit Sub
+					Else
+						Using eveHQSettings As New FrmSettings
+							eveHQSettings.Tag = "nodeEveFolders"
+							eveHQSettings.ShowDialog()
+						End Using
+					End If
+				End If
+			Loop Until noLocations = False
 
-            If BackupEveSettings() = True Then
-                lblLastBackup.Text = HQ.Settings.BackupLast.ToString
-            End If
-            Call CalcNextBackup()
-            Call ScanBackups()
-        End Sub
+			If BackupEveSettings() = True Then
+				lblLastBackup.Text = HQ.Settings.BackupLast.ToString
+			End If
+			Call CalcNextBackup()
+			Call ScanBackups()
+		End Sub
 
-        Private Sub btnScan_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnScan.Click
-            Call ScanBackups()
-        End Sub
+		Private Sub btnScan_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnScan.Click
+			Call ScanBackups()
+		End Sub
 
-        Public Sub ScanBackups()
-            lvwBackups.BeginUpdate()
-            lvwBackups.Items.Clear()
-            Dim backupDirs As ReadOnlyCollection(Of String)
-            backupDirs = My.Computer.FileSystem.GetDirectories(HQ.backupFolder)
-            Dim backupDir As String
-            For Each backupDir In backupDirs
-                Dim backupFile As String = IO.Path.Combine(backupDir, "backup.txt")
-                If My.Computer.FileSystem.FileExists(backupFile) = True Then
-                    Dim sr As StreamReader = New StreamReader(IO.Path.Combine(backupDir, "backup.txt"))
-                    Dim newLine As ListViewItem = New ListViewItem
-                    newLine.Tag = backupDir
-                    newLine.Text = sr.ReadLine
-                    Dim bDate As DateTime
-                    If DateTime.TryParse(newLine.Text, bDate) = True Then
-                        newLine.Name = bDate.ToString("yyyyMMddHHmmss")
-                    Else
-                        newLine.Name = newLine.Text
-                    End If
-                    newLine.SubItems.Add(sr.ReadLine)
-                    newLine.SubItems.Add(sr.ReadLine)
-                    lvwBackups.Items.Add(newLine)
-                    sr.Close()
-                End If
-            Next
+		Public Sub ScanBackups()
+			lvwBackups.BeginUpdate()
+			lvwBackups.Items.Clear()
 
-            ' Do an initial sort of the first column
-            lvwBackups.ListViewItemSorter = New ListViewItemComparerName(0, SortOrder.Ascending)
-            lvwBackups.Tag = -1
-            lvwBackups.Sort()
-            lvwBackups.EndUpdate()
+			For Each backupDir As String In My.Computer.FileSystem.GetDirectories(HQ.backupFolder)
+				Dim backupFolder = new DirectoryInfo(backupDir)
+				For Each backupFile As FileInfo In backupFolder.GetFiles("backup.txt", IO.SearchOption.AllDirectories)
+					Using backupFileReader As New StreamReader(backupFile.FullName)
+						Dim backedUpOn As String = backupFileReader.ReadLine
+						Dim settingsFolderPath As String = backupFileReader.ReadLine
+						Dim backupFolderPath As String = backupFileReader.ReadLine
+						Dim foundBackupItem = New ListViewItem With {
+							.Tag = backupDir,
+							.Text = backedUpOn
+						}
+						Dim bDate As DateTime
+						If DateTime.TryParse(foundBackupItem.Text, bDate) = True Then
+							foundBackupItem.Name = bDate.ToString("dd-MM-yyyy HH-mm")
+						Else
+							foundBackupItem.Name = foundBackupItem.Text
+						End If
 
-        End Sub
+						foundBackupItem.SubItems.Add(settingsFolderPath)
+						foundBackupItem.SubItems.Add(backupFolderPath)
+						lvwBackups.Items.Add(foundBackupItem)
+					End Using
+				Next
+			Next
 
-        Private Sub btnRestore_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnRestore.Click
-            If lvwBackups.SelectedItems.Count = 0 Then
-                MessageBox.Show("Please select a backup to restore before proceeding.", "Backup Set Required", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                Exit Sub
-            Else
-                Call RestoreEveSettings(lvwBackups.SelectedItems(0))
-                Call ScanBackups()
-            End If
-        End Sub
+			' Do an initial sort of the first column
+			lvwBackups.ListViewItemSorter = New ListViewItemComparerName(0, SortOrder.Ascending)
+			lvwBackups.Tag = -1
+			lvwBackups.Sort()
+			lvwBackups.Columns(0).AutoResize(ColumnHeaderAutoResizeStyle.ColumnContent)
+			lvwBackups.Columns(1).AutoResize(ColumnHeaderAutoResizeStyle.ColumnContent)
+			lvwBackups.Columns(2).AutoResize(ColumnHeaderAutoResizeStyle.ColumnContent)
 
-        Private Sub btnResetBackup_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnResetBackup.Click
-            If MessageBox.Show("Are you sure you wish to reset the last backup time?", "Confirm Reset", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
-                Exit Sub
-            End If
-            HQ.Settings.BackupLast = CDate("01/01/1999")
-            lblLastBackup.Text = "<not backed up>"
-            Call CalcNextBackup()
-        End Sub
+			lvwBackups.EndUpdate()
+		End Sub
 
-        Private Sub lvwBackups_ColumnClick(ByVal sender As Object, ByVal e As ColumnClickEventArgs) Handles lvwBackups.ColumnClick
-            If CInt(lvwBackups.Tag) = e.Column Then
-                lvwBackups.ListViewItemSorter = New ListViewItemComparerName(e.Column, SortOrder.Ascending)
-                lvwBackups.Tag = -1
-            Else
-                lvwBackups.ListViewItemSorter = New ListViewItemComparerName(e.Column, SortOrder.Descending)
-                lvwBackups.Tag = e.Column
-            End If
-            ' Call the sort method to manually sort.
-            lvwBackups.Sort()
-        End Sub
+		Private Sub btnRestore_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnRestore.Click 
+			If lvwBackups.SelectedItems.Count = 0 Then
+				MessageBox.Show("Please select a backup to restore before proceeding.", "Backup Set Required", MessageBoxButtons.OK, MessageBoxIcon.Information)
+				Exit Sub
+			Else
+				Call RestoreEveSettings(lvwBackups.SelectedItems(0))
+				Call ScanBackups()
+			End If
+		End Sub
 
-        Public Sub CalcNextBackup()
-            Dim nextBackup As Date = HQ.Settings.BackupStart
-            If HQ.Settings.BackupLast > nextBackup Then
-                nextBackup = HQ.Settings.BackupLast
-            End If
-            nextBackup = DateAdd(DateInterval.Day, HQ.Settings.BackupFreq, nextBackup)
-            lblNextBackup.Text = nextBackup.ToString
-        End Sub
+		Private Sub btnResetBackup_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnResetBackup.Click
+			If MessageBox.Show("Are you sure you wish to reset the last backup time?", "Confirm Reset", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
+				Exit Sub
+			End If
+			HQ.Settings.BackupLast = CDate("01/01/1999")
+			lblLastBackup.Text = "<not backed up>"
+			Call CalcNextBackup()
+		End Sub
 
-        Public Function BackupEveSettings() As Boolean
-            Dim backupTime As Date = Now
-            Dim timeStamp As String = Format(backupTime, "dd-MM-yyyy HH-mm")
-            Dim noFolders As Boolean = True
+		Private Sub lvwBackups_ColumnClick(ByVal sender As Object, ByVal e As ColumnClickEventArgs) Handles lvwBackups.ColumnClick
+			If CInt(lvwBackups.Tag) = e.Column Then
+				lvwBackups.ListViewItemSorter = New ListViewItemComparerName(e.Column, SortOrder.Ascending)
+				lvwBackups.Tag = -1
+			Else
+				lvwBackups.ListViewItemSorter = New ListViewItemComparerName(e.Column, SortOrder.Descending)
+				lvwBackups.Tag = e.Column
+			End If
+			' Call the sort method to manually sort.
+			lvwBackups.Sort()
+		End Sub
 
-            Try
-                For eveLocation As Integer = 1 To 4
-                    If HQ.Settings.EveFolder(eveLocation) <> "" Then
-                        noFolders = False
-                        ' We need to check 3 thing before backup
-                        ' 1. There is a cache directory in our location directory
-                        ' 2. The cache directory contains a prefs.ini file
-                        ' 3. The cache directory contains a settings folder
-                        ' 4. The cache directory contains a browser folder
-                        Dim passed As Boolean = False
+		Public Sub CalcNextBackup()
+			Dim nextBackup As Date = HQ.Settings.BackupStart
+			If HQ.Settings.BackupLast > nextBackup Then
+				nextBackup = HQ.Settings.BackupLast
+			End If
+			nextBackup = DateAdd(DateInterval.Day, HQ.Settings.BackupFreq, nextBackup)
+			lblNextBackup.Text = nextBackup.ToString
+		End Sub
 
-                        ' Check for correct cache locations
-                        Dim cacheDir As String
-                        Dim prefsFile As String
-                        Dim settingsDir As String
-                        Dim browserDir As String
-                        Dim eveFolder As String
-                        If HQ.Settings.EveFolderLUA(eveLocation) = True Then
-                            cacheDir = IO.Path.Combine(HQ.Settings.EveFolder(eveLocation), "cache")
-                            settingsDir = IO.Path.Combine(HQ.Settings.EveFolder(eveLocation), "settings")
-                            prefsFile = IO.Path.Combine(cacheDir, "prefs.ini")
-                            browserDir = IO.Path.Combine(cacheDir, "browser")
-                        Else
-                            ' Trinity 1.1 introduced (yet) another location :( Try to recreate this from the "location"
-                            Dim eveSettingsFolder As String = HQ.Settings.EveFolder(eveLocation)
-                            eveSettingsFolder = eveSettingsFolder.Replace("\", "_").Replace(":", "").Replace(" ", "_").ToLower
-                            eveSettingsFolder &= "_tranquility"
-                            eveFolder = IO.Path.Combine(IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "CCP"), "Eve")
-                            eveFolder = IO.Path.Combine(eveFolder, eveSettingsFolder)
-                            cacheDir = IO.Path.Combine(eveFolder, "cache")
-                            settingsDir = IO.Path.Combine(eveFolder, "settings")
-                            prefsFile = IO.Path.Combine(settingsDir, "prefs.ini")
-                            browserDir = IO.Path.Combine(cacheDir, "browser")
-                        End If
+		Public Function BackupEveSettings() As Boolean
+			Dim backupTime As Date = Now
+			Dim timeStamp As String = Format(backupTime, "dd-MM-yyyy HH-mm")
+			Dim settingsFound As Boolean = True
 
-                        ' Stage 1
-                        If My.Computer.FileSystem.DirectoryExists(cacheDir) = True Then
-                            ' Stage 2
-                            If My.Computer.FileSystem.FileExists(prefsFile) = True Then
-                                ' Stage 3
-                                If My.Computer.FileSystem.DirectoryExists(settingsDir) = True Then
-                                    ' Stage 4
-                                    If My.Computer.FileSystem.DirectoryExists(browserDir) = True Then
-                                        passed = True
-                                    End If
-                                End If
-                            End If
-                        End If
+			Try
+				For eveLocation As Integer = 1 To 4
+					If HQ.Settings.EveFolder(eveLocation) <> "" Then
+						settingsFound = SaveEveSettings(eveLocation, timeStamp)
+					End If
+				Next
+				HQ.Settings.BackupLast = backupTime
+				If settingsFound Then
+					HQ.Settings.BackupLastResult = 1
+				Else
+					HQ.Settings.BackupLastResult = -1
+				End If
+				Return True
+			Catch e As Exception
+				' Try and tidy up
+				For eveLocation As Integer = 1 To 4
+					Dim chkDir As String = HQ.backupFolder & "Location " & eveLocation & timeStamp
+					If My.Computer.FileSystem.DirectoryExists(chkDir) = True Then
+						My.Computer.FileSystem.DeleteDirectory(chkDir, CType(DeleteDirectoryOption.DeleteAllContents, UIOption), RecycleOption.DeletePermanently)
+					End If
+				Next
+				Dim msg As String = "Error Performing Backup"
+				msg &= ControlChars.CrLf & e.Message & ControlChars.CrLf
+				MessageBox.Show(msg, "Backup Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
+				HQ.Settings.BackupLastResult = 0
+				Return False
+			End Try
+		End Function
 
-                        If passed = True Then
-                            ' Start the backup procedure
-                            Dim destDir As String = IO.Path.Combine(HQ.backupFolder, "Location " & eveLocation & " (" & timeStamp & ")")
-                            Dim destPrefs As String = IO.Path.Combine(destDir, "prefs.ini")
-                            Dim destText As String = IO.Path.Combine(destDir, "backup.txt")
-                            Dim destSettings As String = IO.Path.Combine(destDir, "Settings")
-                            Dim destBrowser As String = IO.Path.Combine(destDir, "Browser")
+		Private Function SaveEveSettings(locationIndex As Integer, timeStamp As String) As Boolean
+			Dim locationFolderPath As String = Nothing
+			Dim locationFolderName As String = Nothing
+			If Not TryGetLocationFolder(HQ.Settings.EveFolder(locationIndex), locationFolderPath, locationFolderName) Then
+				Return False
+			End If
 
-                            ' Copy the existing files
-                            If My.Computer.FileSystem.DirectoryExists(destDir) = False Then
-                                My.Computer.FileSystem.CreateDirectory(destDir)
-                            End If
-                            My.Computer.FileSystem.CopyDirectory(settingsDir, destSettings, True)
-                            My.Computer.FileSystem.CopyFile(prefsFile, destPrefs, True)
-                            My.Computer.FileSystem.CopyDirectory(browserDir, destBrowser, True)
+			Dim settingsFolders As IEnumerable(Of String) = GetSettingsFolders(locationFolderPath)
 
-                            ' Add a little text file!
-                            Dim sw As StreamWriter = New StreamWriter(destText)
-                            sw.WriteLine(backupTime)
-                            sw.WriteLine("Location " & eveLocation)
-                            sw.WriteLine(My.Computer.FileSystem.GetParentPath(settingsDir))
-                            sw.Flush()
-                            sw.Close()
-                        Else
-                        End If
-                    End If
-                Next
-                HQ.Settings.BackupLast = backupTime
-                If noFolders = True Then
-                    HQ.Settings.BackupLastResult = 1
-                Else
-                    HQ.Settings.BackupLastResult = -1
-                End If
-                Return True
-            Catch e As Exception
-                ' Try and tidy up
-                For eveLocation As Integer = 1 To 4
-                    Dim chkDir As String = HQ.backupFolder & "Location " & eveLocation & timeStamp
-                    If My.Computer.FileSystem.DirectoryExists(chkDir) = True Then
-                        My.Computer.FileSystem.DeleteDirectory(chkDir, CType(DeleteDirectoryOption.DeleteAllContents, UIOption), RecycleOption.DeletePermanently)
-                    End If
-                Next
-                Dim msg As String = "Error Performing Backup"
-                msg &= ControlChars.CrLf & e.Message & ControlChars.CrLf
-                MessageBox.Show(msg, "Backup Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                HQ.Settings.BackupLastResult = 0
-                Return False
-            End Try
-        End Function
+			If Not settingsFolders.Any() Then
+				Return False
+			End If
 
-        Public Function RestoreEveSettings(ByVal backupItem As ListViewItem) As Boolean
-            If MessageBox.Show("Are you sure you wish to restore this backup?", "Confirm Restore", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
-                Return False
-            End If
-            Try
-                Dim strLoc As String = backupItem.SubItems(1).Text
-                Dim eveLocation As String = strLoc.Substring(strLoc.Length - 1, 1)
-                Dim sourceDir As String = backupItem.Tag.ToString
-                Dim destDir As String = backupItem.SubItems(2).Text
+			Dim backupFolder As String = Path.Combine(HQ.backupFolder, timeStamp, locationFolderName)
+			BackupAllSettingsProfiles(locationFolderPath, settingsFolders, backupFolder)
+			SaveBackupInfo(timeStamp, locationFolderPath, backupFolder)
 
-                ' Start the restore procedure
-                'Dim cacheDir As String = EveHQ.Core.HQ.Settings.EveFolder(location) & "\cache"
-                Dim prefsFile As String = IO.Path.Combine(sourceDir, "prefs.ini")
-                Dim settingsDir As String = IO.Path.Combine(sourceDir, "settings")
-                Dim browserDir As String = IO.Path.Combine(sourceDir, "browser")
-                Dim destCache As String
-                Dim destPrefs As String
-                Dim destSettings As String
-                Dim destBrowser As String
-                If HQ.Settings.EveFolderLUA(CInt(eveLocation)) = True Then
-                    destCache = IO.Path.Combine(destDir, "cache")
-                    destSettings = IO.Path.Combine(destDir, "settings")
-                    destPrefs = IO.Path.Combine(destCache, "prefs.ini")
-                    destBrowser = IO.Path.Combine(destCache, "Browser")
-                Else
-                    destCache = IO.Path.Combine(destDir, "cache")
-                    destSettings = IO.Path.Combine(destDir, "settings")
-                    destPrefs = IO.Path.Combine(destSettings, "prefs.ini")
-                    destBrowser = IO.Path.Combine(destCache, "Browser")
-                End If
-                My.Computer.FileSystem.CopyDirectory(settingsDir, destSettings, True)
-                My.Computer.FileSystem.CopyFile(prefsFile, destPrefs, True)
-                My.Computer.FileSystem.CopyDirectory(browserDir, destBrowser, True)
-                Return True
-            Catch e As Exception
-                Dim msg As String = "Error Performing Restore"
-                msg &= ControlChars.CrLf & e.Message & ControlChars.CrLf
-                MessageBox.Show(msg, "Backup Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                Return False
-            End Try
-        End Function
-        
-    End Class
+			Return True
+		End Function
+
+		Private Sub BackupAllSettingsProfiles(eveFolder As String, settingsFolders As IEnumerable(Of String), backupFolder As String)
+			For Each settingsFolder As String In settingsFolders
+				Dim sourceFolder As String = Path.Combine(eveFolder, settingsFolder)
+				Dim destinationFolder As String = Path.Combine(backupFolder, settingsFolder)
+				My.Computer.FileSystem.CopyDirectory(sourceFolder, destinationFolder, True)
+			Next
+		End Sub
+
+		Private Function TryGetLocationFolder(eveLocation As String, ByRef locationFolderPath As String, ByRef locationFolderName As String) As Boolean
+			Dim eveDataFolder = New DirectoryInfo( '
+				Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "CCP", "Eve"))
+			Dim folderNamePattern As String = $"{eveLocation.Replace("\", "_").Replace(":", "").Replace(" ", "_").ToLower}_*"
+			Dim folder As DirectoryInfo = eveDataFolder.GetDirectories(folderNamePattern, IO.SearchOption.TopDirectoryOnly).FirstOrDefault()
+
+			If folder Is Nothing Then
+				Return False
+			End If
+
+			locationFolderPath = folder.FullName
+			locationFolderName = folder.Name
+
+			Return True
+		End Function
+
+		Private Sub SaveBackupInfo(backedUpOn As String, sourceFolderPath As String, backupFolderPath As String)
+			Using writer = New StreamWriter(Path.Combine(backupFolderPath, "backup.txt"))
+				writer.WriteLine(backedUpOn)
+				writer.WriteLine(sourceFolderPath)
+				writer.WriteLine(backupFolderPath)
+			End Using
+		End Sub
+
+		Private Function GetSettingsFolders(eveFolder As String) As String()
+			Dim eveDirectoryInfo = new DirectoryInfo(eveFolder)
+			Return eveDirectoryInfo.GetDirectories("settings*", IO.SearchOption.TopDirectoryOnly).Select(Function(info) info.Name).ToArray()
+		End Function
+
+		Private Function RestoreEveSettings(backupItem As ListViewItem) As Boolean
+			If MessageBox.Show("Are you sure you wish to restore this backup?", "Confirm Restore", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
+				Return False
+			End If
+
+			Try
+				Dim sourceFolder As String = backupItem.SubItems(2).Text
+				Dim destinationFolder As String = backupItem.SubItems(1).Text
+
+				Dim settingsFolders As DirectoryInfo() = new DirectoryInfo(sourceFolder).GetDirectories()
+				For Each settingsFolder As DirectoryInfo In settingsFolders
+					My.Computer.FileSystem.CopyDirectory(settingsFolder.FullName, Path.Combine(destinationFolder, settingsFolder.Name), True)
+				Next
+
+				Return True
+			Catch e As Exception
+				Dim msg As String = $"Error Performing Restore{ControlChars.CrLf}{e.Message}{ControlChars.CrLf}"
+				MessageBox.Show(msg, "Backup Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
+				Return False
+			End Try
+		End Function
+		
+	End Class
 End NameSpace
