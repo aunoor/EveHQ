@@ -5105,13 +5105,13 @@ Namespace Forms
                 Case 0
                     btnDeleteJob.Text = "Delete Job"
                     btnDeleteJob.Enabled = False
-                    btnMakeBatch.Enabled = False
+					miAddToBatch.Enabled = False
                     PRPM.BatchJob = Nothing
                     PRPM.ProductionJob = Nothing
                 Case 1
                     btnDeleteJob.Text = "Delete Job"
                     btnDeleteJob.Enabled = True
-                    btnMakeBatch.Enabled = False
+	                miAddToBatch.Enabled = True
                     ' Create a null batch job to pass to the PR control to negate batch display
                     PRPM.BatchJob = Nothing
                     Dim jobName As String = adtProdJobs.SelectedNodes(0).Name
@@ -5120,7 +5120,7 @@ Namespace Forms
                 Case Else
                     btnDeleteJob.Text = "Delete Jobs"
                     btnDeleteJob.Enabled = True
-                    btnMakeBatch.Enabled = True
+	                miAddToBatch.Enabled = True
                     ' Create a temporary batch job to pass to the PR control
                     Dim tempBatch As New BatchJob
                     tempBatch.BatchName = "Temporary Batch from Production Manager"
@@ -5176,7 +5176,7 @@ Namespace Forms
             Call UpdateProductionJobList()
         End Sub
 
-        Private Sub btnMakeBatch_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnMakeBatch.Click
+        Private Sub btnMakeBatch_Click(ByVal sender As Object, ByVal e As EventArgs) Handles miAddToNewBatch.Click
             Using newBatchName As New FrmAddBatchJob
                 newBatchName.ShowDialog()
                 If newBatchName.DialogResult = DialogResult.OK Then
@@ -5190,6 +5190,32 @@ Namespace Forms
             End Using
             PrismEvents.StartUpdateBatchJobs()
         End Sub
+
+		Private Sub miAddToBatch_DropDownOpening(sender As Object, e As EventArgs) Handles miAddToBatch.DropDownOpening
+			ClearBatchListOnAddToBatchMenu()
+			For Each batchJob As KeyValuePair(Of String,BatchJob) In BatchJobs.Jobs
+				Dim menuItem As ToolStripDropDownItem = new ToolStripMenuItem(batchJob.Key)
+				AddHandler menuItem.Click, AddressOf AddSelectedJobsToBatch
+				menuItem.Tag = batchJob.Value
+				miAddToBatch.DropDownItems.Add(menuItem)
+			Next
+		End Sub
+
+		Private Sub ClearBatchListOnAddToBatchMenu()
+			miAddToBatch.DropDownItems.Clear()
+			miAddToBatch.DropDownItems.Add(miAddToNewBatch)
+		End Sub
+
+		Private Sub AddSelectedJobsToBatch(sender As Object, e As EventArgs)
+			Dim menuItem As ToolStripMenuItem = CType(sender, ToolStripMenuItem)
+			Dim batchJob As BatchJob = CType(menuItem.Tag, BatchJob)
+
+			For Each jobNode As Node In adtProdJobs.SelectedNodes
+				batchJob.ProductionJobs.Add(jobNode.Name)
+			Next
+
+			PrismEvents.StartUpdateBatchJobs()
+		End Sub
 
 #End Region
 
@@ -6068,7 +6094,11 @@ Namespace Forms
             End If
         End Sub
 
+		Private Sub miAddToBatch_Click(sender As Object, e As EventArgs) Handles miAddToBatch.Click
+
+		End Sub
+
 #End Region
 
-    End Class
+	End Class
 End Namespace
