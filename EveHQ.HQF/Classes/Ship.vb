@@ -2354,25 +2354,25 @@ Imports System.Runtime.Serialization
                     newShip.StructureThResist = attValue
                 Case 265
                     newShip.ArmorCapacity = attValue
-                Case 267
+                Case AttributeEnum.ShipArmorEMResistance
                     newShip.ArmorEMResist = attValue
-                Case 268
+                Case AttributeEnum.ShipArmorExpResistance
                     newShip.ArmorExResist = attValue
-                Case 269
+                Case AttributeEnum.ShipArmorKinResistance
                     newShip.ArmorKiResist = attValue
-                Case 270
+                Case AttributeEnum.ShipArmorThermResistance
                     newShip.ArmorThResist = attValue
                 Case 263
                     newShip.ShieldCapacity = attValue
                 Case 479
                     newShip.ShieldRecharge = attValue
-                Case 271
+                Case AttributeEnum.ShipShieldEMResistance
                     newShip.ShieldEMResist = attValue
-                Case 272
+                Case AttributeEnum.ShipShieldExpResistance
                     newShip.ShieldExResist = attValue
-                Case 273
+                Case AttributeEnum.ShipShieldKinResistance
                     newShip.ShieldKiResist = attValue
-                Case 274
+                Case AttributeEnum.ShipShieldThermResistance
                     newShip.ShieldThResist = attValue
                 Case 76
                     newShip.MaxTargetRange = attValue
@@ -2525,16 +2525,16 @@ Imports System.Runtime.Serialization
         Attributes(109) = StructureKiResist
         Attributes(110) = StructureThResist
         Attributes(265) = ArmorCapacity
-        Attributes(267) = ArmorEMResist
-        Attributes(268) = ArmorExResist
-        Attributes(269) = ArmorKiResist
-        Attributes(270) = ArmorThResist
+        Attributes(AttributeEnum.ShipArmorEMResistance) = ArmorEMResist
+        Attributes(AttributeEnum.ShipArmorExpResistance) = ArmorExResist
+        Attributes(AttributeEnum.ShipArmorKinResistance) = ArmorKiResist
+        Attributes(AttributeEnum.ShipArmorThermResistance) = ArmorThResist
         Attributes(263) = ShieldCapacity
         Attributes(479) = ShieldRecharge
-        Attributes(271) = ShieldEMResist
-        Attributes(272) = ShieldExResist
-        Attributes(273) = ShieldKiResist
-        Attributes(274) = ShieldThResist
+        Attributes(AttributeEnum.ShipShieldEMResistance) = ShieldEMResist
+        Attributes(AttributeEnum.ShipShieldExpResistance) = ShieldExResist
+        Attributes(AttributeEnum.ShipShieldKinResistance) = ShieldKiResist
+        Attributes(AttributeEnum.ShipShieldThermResistance) = ShieldThResist
         Attributes(76) = MaxTargetRange
         Attributes(79) = TargetingSpeed
         Attributes(192) = MaxLockedTargets

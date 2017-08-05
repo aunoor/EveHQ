@@ -660,6 +660,7 @@ Imports EveHQ.Common.Extensions
                 ApplyModuleEffectsToShip(newShip)
                 pStageTime(21) = Now
                 ApplySkillEffectsToShip(newShip)
+	            ApplyResistanceKillerEffectsToShip(newShip)
                 pStageTime(22) = Now
                 CalculateDamageStatistics(newShip)
                 pStageTime(23) = Now
@@ -760,6 +761,7 @@ Imports EveHQ.Common.Extensions
                 ApplyModuleEffectsToShip(newShip)
                 pStageTime(21) = Now
                 ApplySkillEffectsToShip(newShip)
+				ApplyResistanceKillerEffectsToShip(newShip)
                 pStageTime(22) = Now
                 CalculateDamageStatistics(newShip)
                 pStageTime(23) = Now
@@ -1900,6 +1902,25 @@ Imports EveHQ.Common.Extensions
             End If
         Next
     End Sub
+
+
+	Private Sub ApplyResistanceKillerEffectsToShip(newShip As Ship)
+		Dim tempAtts As New SortedList(Of Integer, Double)
+
+		For Each att As Integer In newShip.Attributes.Keys
+			tempAtts.Add(att, newShip.Attributes(att))
+		Next
+		For Each att In tempAtts.Keys
+			If _moduleEffectsTable.ContainsKey(att) = True Then
+				Dim baseEffectList = _moduleEffectsTable(att)
+				For Each fEffect As FinalEffect In baseEffectList.Where(Function(x As FinalEffect) x.CalcType=EffectCalcType.ResistanceKiller Or x.CalcType = EffectCalcType.HullResistanceKiller)
+					Call ApplyFinalEffectToShip(newShip, fEffect, att)
+				Next
+			End If
+		Next
+	End Sub
+
+
     Public Sub CalculateDamageStatistics(ByRef newShip As Ship)
         Dim cModule As ShipModule
         Dim dmgMod As Double = 1
@@ -2486,7 +2507,8 @@ Imports EveHQ.Common.Extensions
             Case EffectCalcType.Addition
                 newShip.Attributes(att) = newShip.Attributes(att) + fEffect.AffectedValue
             Case EffectCalcType.Difference ' Used for resistances
-                newShip.Attributes(att) = ((100 - newShip.Attributes(att)) * (-fEffect.AffectedValue / 100)) + newShip.Attributes(att)
+				Dim difference = ((100 - newShip.Attributes(att)) * (-fEffect.AffectedValue / 100)) + newShip.Attributes(att)
+                newShip.Attributes(att) = difference
             Case EffectCalcType.Velocity
                 newShip.Attributes(att) = newShip.Attributes(att) + (newShip.Attributes(att) * (newShip.Attributes(10010) / newShip.Attributes(10002) * (fEffect.AffectedValue / 100)))
             Case EffectCalcType.Absolute
@@ -2516,7 +2538,8 @@ Imports EveHQ.Common.Extensions
             Case EffectCalcType.CapBoosters
                 newShip.Attributes(att) = Math.Min(newShip.Attributes(att) - fEffect.AffectedValue, 0)
             Case EffectCalcType.ResistanceKiller
-                newShip.Attributes(att) = newShip.Attributes(att) - newShip.Attributes(att) * fEffect.AffectedValue / 100
+				Dim killerValue = newShip.Attributes(att) - newShip.Attributes(att) * fEffect.AffectedValue / 100
+                newShip.Attributes(att) = killerValue
             Case EffectCalcType.HullResistanceKiller
                 newShip.Attributes(att) = If(fEffect.AffectedValue = 1, 0, newShip.Attributes(att))
         End Select
