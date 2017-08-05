@@ -875,6 +875,10 @@ Imports EveHQ.Common.Extensions
                         cPirateImplantGroups.Item("High-grade Crystal") = cPirateImplantGroups.Item("High-grade Crystal") * aImplant.Attributes(AttributeEnum.ModuleSetBonusCrystal)
                         cPirateImplantGroups.Item("Mid-grade Crystal") = cPirateImplantGroups.Item("Mid-grade Crystal") * aImplant.Attributes(AttributeEnum.ModuleSetBonusCrystal)
                         cPirateImplantGroups.Item("Low-grade Crystal") = cPirateImplantGroups.Item("Low-grade Crystal") * aImplant.Attributes(AttributeEnum.ModuleSetBonusCrystal)
+                    Case "High-grade Asklepian", "Mid-grade Asklepian", "Low-grade Asklepian"
+                        cPirateImplantGroups.Item("High-grade Asklepian") = cPirateImplantGroups.Item("High-grade Asklepian") * aImplant.Attributes(AttributeEnum.ModuleSetBonusAsklepian)
+                        cPirateImplantGroups.Item("Mid-grade Asklepian") = cPirateImplantGroups.Item("Mid-grade Asklepian") * aImplant.Attributes(AttributeEnum.ModuleSetBonusAsklepian)
+                        cPirateImplantGroups.Item("Low-grade Asklepian") = cPirateImplantGroups.Item("Low-grade Asklepian") * aImplant.Attributes(AttributeEnum.ModuleSetBonusAsklepian)
                     Case "Mid-grade Edge", "Low-grade Edge"
                         cPirateImplantGroups.Item("Mid-grade Edge") = cPirateImplantGroups.Item("Mid-grade Edge") * aImplant.Attributes(AttributeEnum.ModuleSetBonusEdge)
                         cPirateImplantGroups.Item("Low-grade Edge") = cPirateImplantGroups.Item("Low-grade Edge") * aImplant.Attributes(AttributeEnum.ModuleSetBonusEdge)
