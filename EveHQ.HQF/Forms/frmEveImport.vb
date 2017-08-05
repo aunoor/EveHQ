@@ -45,6 +45,7 @@
 
 Imports System.Drawing
 Imports System.IO
+Imports System.Text.RegularExpressions
 Imports System.Windows.Forms
 Imports System.Xml
 Imports DevComponents.AdvTree
@@ -55,7 +56,7 @@ Namespace Forms
 
     Public Class FrmEveImport
 
-        Dim _eveFolder As String
+        Dim ReadOnly _eveFolder As String
         Dim _currentShip As Ship
         Dim _currentFit As New ArrayList
         Dim _currentFitName As String = ""
@@ -353,7 +354,6 @@ Namespace Forms
             For Each fileName As String In My.Computer.FileSystem.GetFiles(_eveFolder, SearchOption.SearchTopLevelOnly, "*.xml")
                 files.Add(fileName)
             Next
-            Dim fitXML As New XmlDocument
             Dim fittingList As XmlNodeList
             Dim shipNode As XmlNode
             Dim shipItem As Node
@@ -364,8 +364,8 @@ Namespace Forms
             adtLoadOuts.Nodes.Clear()
             For Each filename As String In files
                 Try
-                    fitXML.Load(filename)
-                    fittingList = fitXML.SelectNodes("/fittings/fitting")
+	                Dim fitXml = LoadFIttingFromFile(filename)
+	                fittingList = fitXml.SelectNodes("/fittings/fitting")
                     For Each fitNode As XmlNode In fittingList
                         shipNode = fitNode.SelectSingleNode("shipType")
                         shipName = shipNode.Attributes("value").Value.ToString
@@ -399,7 +399,18 @@ Namespace Forms
             adtLoadOuts.EndUpdate()
         End Sub
 
-        Private Sub GetEveShipLoadout(ByVal cLoadout As Node)
+		Private Function LoadFIttingFromFile(filename As String) As XmlDocument
+			Dim result As String = OpenHintPattern.Replace(File.ReadAllText(filename), "")
+			Dim fittingFileContent As String = CloseHintPattern.Replace(result, "")
+			Dim fitXml = New XmlDocument()
+			fitXml.Load(New StringReader(fittingFileContent))
+			Return fitXml
+		End Function
+
+		Private Shared ReadOnly OpenHintPattern As Regex = new Regex("<localized hint="".*?"">", RegexOptions.Compiled)
+		Private Shared ReadOnly CloseHintPattern As Regex = new Regex("</localized>", RegexOptions.Compiled)
+
+		Private Sub GetEveShipLoadout(ByVal cLoadout As Node)
             Dim fitName As String = cLoadout.Text
             Dim fileName As String = cLoadout.Tag.ToString
             Dim shipName As String = cLoadout.Parent.Text
@@ -408,8 +419,7 @@ Namespace Forms
             Dim droneList As New SortedList
             Dim cargoList As New SortedList
             ' Open the file and load the XML
-            Dim fitXML As New XmlDocument
-            fitXML.Load(fileName)
+            Dim fitXML = LoadFIttingFromFile(fileName)
             Dim fittingList As XmlNodeList = fitXML.SelectNodes("/fittings/fitting")
             Dim subCount As Integer = 0
             For Each fitNode As XmlNode In fittingList
