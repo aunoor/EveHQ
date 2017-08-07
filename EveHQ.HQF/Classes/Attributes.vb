@@ -212,6 +212,7 @@ Public Enum AttributeEnum
     ModuleSetBonusTalonHigh = 1552
     ModuleSetBonusTalonLow = 1571
     ModuleSetBonusVirtue = 1284
+    ModuleSetBonusAsklepian = 803
     ModuleShieldEMResistance = 271
     ModuleShieldExpResistance = 272
     ModuleShieldHPRepaired = 68
