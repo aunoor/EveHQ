@@ -175,7 +175,7 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="..\Version.Csharp.Targets" />
+  <Import Project="..\Version.Csharp.targets" />
   <Target Name="BeforeBuild">
     <CallTarget Targets="SetAssemblyVersion" />
   </Target>

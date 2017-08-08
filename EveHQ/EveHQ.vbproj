@@ -989,7 +989,7 @@
     <None Include="Resources\WHEffects.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
-  <Import Project="..\Version.Targets" />
+  <Import Project="..\Version.targets" />
   <Target Name="BeforeBuild">
     <CallTarget Targets="SetAssemblyVersion" />
     <CallTarget Targets="BuildInstaller" />
