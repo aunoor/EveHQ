@@ -1023,10 +1023,10 @@ Public Class FrmCacheCreator
                 Dim ta As New TypeAttrib
                 ta.TypeId = CInt(evehqData.Tables(0).Rows(item).Item("typeID"))
                 ta.AttributeId = CInt(evehqData.Tables(0).Rows(item).Item("attributeID"))
-                If IsDBNull(evehqData.Tables(0).Rows(item).Item("valueInt")) = False Then
-                    ta.Value = CDbl(evehqData.Tables(0).Rows(item).Item("valueInt"))
-                Else
+                If IsDBNull(evehqData.Tables(0).Rows(item).Item("valueFloat")) = False Then
                     ta.Value = CDbl(evehqData.Tables(0).Rows(item).Item("valueFloat"))
+                Else
+                    ta.Value = CDbl(evehqData.Tables(0).Rows(item).Item("valueInt"))
                 End If
                 StaticData.TypeAttributes.Add(ta)
             Next
