@@ -480,6 +480,11 @@ Namespace Forms
                 End If
             End If
 
+            ' Restore factory ME bonus
+            If _currentJob.StnMeBonus > 0 Then
+                stnMeBonus.Value = _currentJob.StnMeBonus
+            End If
+
             ' This is a risk, but the Runs property needs to be a long so we can support big runs of capitals.  
             ' But, for the UI, I doubt we will get into 16^2 runs...
             nudRuns.Value = CInt(_currentJob.Runs)
