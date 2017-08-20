@@ -493,10 +493,13 @@ Namespace Forms
         End Sub
 
         Private Sub DisplayInventionDetails()
+	        If _currentJob.InventionJob Is Nothing Then
+		        _currentJob.InventionJob = New BPCalc.InventionJob
+			End If
 
-            If _currentJob.InventionJob Is Nothing Then
-                _currentJob.InventionJob = New BPCalc.InventionJob
-            End If
+			If Not _currentJob.HasInventionJob Then
+				Return
+			End If
 
             ' Set InventionBP
             cboInventions.SelectedItem = StaticData.Types(_currentJob.InventionJob.InventedBpid).Name
