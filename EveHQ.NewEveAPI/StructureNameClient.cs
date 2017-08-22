@@ -69,35 +69,50 @@ namespace EveHQ.NewEveApi
 			return result;
 		}
 
-		private static EveServiceResponse<EveStructure> GetStructureDataFromJson(
+		private EveServiceResponse<EveStructure> GetStructureDataFromJson(
 			string response,
 			HttpStatusCode responseStatusCode,
 			DateTimeOffset cacheTime)
 		{
 			var structureData = JsonConvert.DeserializeObject<Dictionary<long, JToken>>(response);
 			var structureProperties = structureData.Values.First();
-			var structure = new EveStructure
-							{
-								StructureId = structureData.Keys.First(),
-								StructureName = structureProperties["name"].Value<string>(),
-								StructureTypeId = structureProperties["typeId"].Value<int>(),
-								StructureTypeName = structureProperties["typeName"].Value<string>(),
-								IsPublic = structureProperties["public"].Value<bool>(),
-								RegionId = structureProperties["regionId"].Value<int>(),
-								RegionName = structureProperties["regionName"].Value<string>(),
-								SystemId = structureProperties["systemId"].Value<int>(),
-								SystemName = structureProperties["systemName"].Value<string>()
-							};
+			try
+			{
+				var structure = new EveStructure
+								{
+									StructureId = structureData.Keys.First(),
+									StructureName = GetValueSafely(structureProperties, "name", "Unknow Structure"),
+									StructureTypeId = GetValueSafely(structureProperties, "typeId", 35832),
+									StructureTypeName = GetValueSafely(structureProperties, "typeName", "Unknown Structure Type"),
+									IsPublic = GetValueSafely(structureProperties, "public", true),
+									RegionId = GetValueSafely(structureProperties, "regionId", 10000003),
+									RegionName = GetValueSafely(structureProperties, "regionName", "Unknown Region"),
+									SystemId = GetValueSafely(structureProperties, "systemId", 30000250),
+									SystemName = GetValueSafely(structureProperties, "systemName", "Unknown Solar System")
+								};
 
-			var result = new EveServiceResponse<EveStructure>
-						{
-							ResultData = structure,
-							ServiceException = null,
-							IsSuccessfulHttpStatus = true,
-							HttpStatusCode = responseStatusCode,
-							CacheUntil = cacheTime
-						};
-			return result;
+				return new EveServiceResponse<EveStructure>
+							{
+								ResultData = structure,
+								ServiceException = null,
+								IsSuccessfulHttpStatus = true,
+								HttpStatusCode = responseStatusCode,
+								CacheUntil = cacheTime
+							};
+			}
+			catch (Exception exception)
+			{
+				throw new Exception(
+					$"Can not parse a response from the Structure Name API. The response code was {responseStatusCode} and it's body:" +
+					$"{Environment.NewLine}{response}",
+					exception);
+			}
+		}
+
+		private TValue GetValueSafely<TValue>(JToken properties, string valueName, TValue defaultValue = default(TValue))
+		{
+			var property = properties[valueName];
+			return property.Type != JTokenType.Null ? property.Value<TValue>() : defaultValue;
 		}
 
 		private void SetCacheEntry(string key, EveServiceResponse<EveStructure> data)
