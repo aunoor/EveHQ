@@ -36,7 +36,7 @@ VIAddVersionKey "ProductName" "EveHQ Setup"
 !ifdef Version
 VIProductVersion ${Version}
 !else
-VIProductVersion 2.31.7.0
+VIProductVersion 2.31.8.0
 !endif
 
 
