@@ -108,6 +108,7 @@
     <Compile Include="WebRequests\IHttpRequestProvider.cs" />
     <Compile Include="WebRequests\HttpRequestProvider.cs" />
     <Compile Include="WebRequests\WebProxyDetails.cs" />
+    <Compile Include="WebRequests\WebServiceExceptionHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\EveHQ.snk">
