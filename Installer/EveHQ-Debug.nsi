@@ -139,6 +139,7 @@ SectionIn RO
   File "..\BuildOutput\EveHQ\Debug\System.Net.Http.WebRequest.dll"
   File "..\BuildOutput\EveHQ\Debug\System.Runtime.dll"
   File "..\BuildOutput\EveHQ\Debug\System.Threading.Tasks.dll"
+  File "..\BuildOutput\EveHQ\Debug\MathNet.Numerics.dll"
   File "..\EveHQ\License.txt"
 
   SetOutPath $INSTDIR\x64

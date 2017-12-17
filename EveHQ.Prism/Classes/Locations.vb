@@ -47,9 +47,10 @@ Imports System.Net.Http
 Imports EveHQ.Common
 Imports EveHQ.Core
 Imports EveHQ.EveData
+Imports EveHQ.NewEveAPI
 
 Namespace Classes
-	Public Class Locations
+	Public Class Locations1
 		Public Shared Function GetLocationFromID(locationId As Long) As AssetLocation
 			If locationId >= 66014933 Then
 				Return GetStructureLocation(locationId)

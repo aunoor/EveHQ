@@ -121,8 +121,12 @@ Namespace Forms
         Dim _bpmStyleExhausted As ElementStyle
 
         Friend Shared LockObj As New Object()
+		Private ReadOnly _locations As Locations
 
 #End Region
+		Public Sub New()
+			_locations = new Locations(HQ.ApiProvider.StructureName, AddressOf HQ.WriteLogEvent)
+		End Sub
 
 #Region "Form Initialisation Routines"
 
@@ -4038,7 +4042,7 @@ Namespace Forms
                         If blueprint.LocationID Is Nothing Then blueprint.LocationID = "0" ' Resets details
                         If StaticData.Blueprints.ContainsKey(CInt(blueprint.TypeID)) Then
                             bpData = StaticData.Blueprints(CInt(blueprint.TypeID))
-                            locationName = Locations.GetLocationFromID(CLng(blueprint.LocationID)).ContainerName
+                            locationName = _locations.GetLocationFromID(CLng(blueprint.LocationID)).ContainerName
                             If locationName <> "" AndAlso _bpLocations.Contains(locationName) = False Then
                                 _bpLocations.Add(locationName)
                             End If
@@ -4481,7 +4485,7 @@ Namespace Forms
                     Dim locationName As String
                     For Each selitem As Node In adtBlueprints.SelectedNodes
                         bpAsset = PlugInData.BlueprintAssets(bpForm.OwnerName).Item(CLng(selitem.Tag))
-                        locationName = Locations.GetLocationFromID(CLng(bpAsset.LocationID)).ContainerName
+                        locationName = _locations.GetLocationFromID(CLng(bpAsset.LocationID)).ContainerName
                         Call UpdateOwnerBpItem(bpForm.OwnerName, locationName, bpAsset, selitem)
                     Next
                 Else

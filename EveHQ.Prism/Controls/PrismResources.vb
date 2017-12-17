@@ -56,6 +56,7 @@ Imports System.Threading.Tasks
 Imports System.Text
 Imports EveHQ.Core.Requisitions
 Imports EveHQ.Common.Extensions
+Imports EveHQ.NewEveAPI
 
 Namespace Controls
 
@@ -68,8 +69,9 @@ Namespace Controls
         ReadOnly _groupResources As New SortedList(Of Integer, Long)
         ReadOnly _swapResources As New SortedList(Of Integer, SwapResource)
         ReadOnly _productionList As New SortedList(Of String, ProductionItem)
+		Private _locations As Locations
 
-        Public Property ProductionJob() As Job
+		Public Property ProductionJob() As Job
             Get
                 Return _currentJob
             End Get
@@ -133,7 +135,7 @@ Namespace Controls
 
             ' Add any initialization after the InitializeComponent() call.
             cboAssetSelection.DropDownControl = New PrismSelectionControl(PrismSelectionType.AllOwners, True, cboAssetSelection)
-
+			_locations = new Locations(HQ.ApiProvider.StructureName, AddressOf HQ.WriteLogEvent)
         End Sub
 
         Private Sub PrismResources_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
@@ -528,7 +530,7 @@ Namespace Controls
                         If _ownedResources(itemID).Count > 1 Then
                             For Each resourceLocation As String In _ownedResources(itemID).Keys
                                 If resourceLocation <> "TotalOwned" Then
-                                    Dim newLoc As New Node(Locations.GetLocationFromID(CLng(resourceLocation)).ContainerName)
+                                    Dim newLoc As New Node(_locations.GetLocationFromID(CLng(resourceLocation)).ContainerName)
                                     newLoc.Cells.Add(New Cell(""))
                                     newLoc.Cells.Add(New Cell(_ownedResources(itemID).Item(resourceLocation).ToString("N0")))
                                     newLoc.Cells.Add(New Cell(""))
