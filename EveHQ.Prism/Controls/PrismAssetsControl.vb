@@ -88,7 +88,6 @@ Namespace Controls
 		Dim _numberOfActiveColumns As Integer = 0
 		ReadOnly _assetColumn As New SortedList(Of String, Integer)
 		Private ReadOnly _assetNodes As New Dictionary(Of Long, List(Of Node))
-		Private ReadOnly _locations As Locations
 		Private Const TotalValueText As String = "Total Displayed Asset Value: {0} ISK  ({1} total quantity)"
 		Public ReadOnly Property RecyclingAssetList As SortedList(Of Integer, Long)
 			Get
@@ -112,8 +111,6 @@ Namespace Controls
 
 			' Set the value of the min system value text box
 			txtMinSystemValue.Text = CDbl(0).ToInvariantString("N2")
-
-			_locations = new Locations(HQ.ApiProvider.StructureName, AddressOf HQ.WriteLogEvent)
 
 		End Sub
 
@@ -648,7 +645,7 @@ Namespace Controls
 										End If
 									Next
 
-									Dim assetLocation = _locations.GetLocationFromID(assetItem.LocationId)
+									Dim assetLocation = HQ.Locations.GetLocationFromID(assetItem.LocationId)
 									If addLocation = True Then
 										locNode.Text = assetLocation.ContainerName
 										locNode.Tag = assetLocation.ContainerId

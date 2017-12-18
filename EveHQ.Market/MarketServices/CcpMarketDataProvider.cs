@@ -20,7 +20,11 @@ namespace EveHQ.Market.MarketServices
 {
 	public sealed class CcpMarketDataProvider : IMarketOrderDataProvider, IMarketStatDataProvider
 	{
-		public CcpMarketDataProvider(string cacheRootFolder, IHttpRequestProvider requestProvider, SupportedMarket supportedMarket, Locations locations)
+		public CcpMarketDataProvider(
+			string cacheRootFolder,
+			IHttpRequestProvider requestProvider,
+			SupportedMarket supportedMarket,
+			Locations locations)
 		{
 			_regionOrdersCache = new TextFileCacheProvider(Path.Combine(cacheRootFolder, "MarketOrders"));
 			_requestProvider = requestProvider;
@@ -56,7 +60,7 @@ namespace EveHQ.Market.MarketServices
 					{
 						var orders = RetrieveOrders(itemTypeId, regionId);
 						result.ItemTypeId = itemTypeId;
-						result.Regions = new HashSet<int>(new[]{ regionId });
+						result.Regions = new HashSet<int>(new[] { regionId });
 						result.BuyOrders = orders.Where(order => order.IsBuyOrder).ToList();
 						result.SellOrders = orders.Where(order => !order.IsBuyOrder).ToList();
 					}
@@ -111,7 +115,7 @@ namespace EveHQ.Market.MarketServices
 						Median = prices.Median(),
 						StdDeviation = prices.StandardDeviation(),
 						Percentile = prices.Percentile(5),
-						Volume = marketOrders.Sum(order => order.QuantityRemaining)
+						Volume = marketOrders.Sum(order => (long)order.QuantityRemaining)
 					};
 		}
 
