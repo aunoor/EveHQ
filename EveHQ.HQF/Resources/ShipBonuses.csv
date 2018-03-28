@@ -642,7 +642,7 @@
 20125,1,22761,54,2,71,0,1,0,40,15,Neut Drain Optimal Range
 20125,1,22761,2044,2,71,0,1,0,20,15,Neut Drain Falloff
 # Cyclone,,,,,,,,,,,
-16231,1,33098,51,2,510;771,0,1,0,-5,15,Heavy & HAM Launcher ROF
+16231,1,33098,51,2,510;771,0,1,0,-7.5,15,Heavy & HAM Launcher ROF
 16231,1,33098,68,2,40;1156,0,1,0,7.5,15,Shield Booster Boost
 16231,0,0,37,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1677;1019;1678;88;1158;394;395;396,0,0,0,25,15,Missile Velocity
 16231,0,0,54,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,50,15,Command Burst AoE Range Bonus
@@ -735,10 +735,10 @@
 24698,0,0,37,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1677;1019;1678;88;1158;394;395;396,0,0,0,25,15,Missile Velocity
 24698,0,0,54,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,50,15,Command Burst AoE Range Bonus
 # Drake Navy Issue,,,,,,,,,,,
-33153,1,33096,271,1,33153,0,1,2,-4,15,Shield EM Resistance
-33153,1,33096,272,1,33153,0,1,2,-4,15,Shield Explosive Resistance
-33153,1,33096,273,1,33153,0,1,2,-4,15,Shield Kinetic Resistance
-33153,1,33096,274,1,33153,0,1,2,-4,15,Shield Thermal Resistance
+33153,1,33096,114,2,385;655;772;654;395,0,1,0,10,15,EM Heavy & HAM Damage
+33153,1,33096,116,2,385;655;772;654;395,0,1,0,10,15,Explosive Heavy & HAM Damage
+33153,1,33096,117,2,385;655;772;654;395,0,1,0,10,15,Kinetic Heavy & HAM Damage
+33153,1,33096,118,2,385;655;772;654;395,0,1,0,10,15,Thermal Heavy & HAM Damage
 33153,1,33096,654,2,385;655;772;654;395,0,1,0,-5,15,Heavy & HAM Explosion Radius
 33153,0,0,37,2,654;656;655;653;648;657;772;386;385;384;387;89;476;1677;1019;1678;88;1158;394;395;396,0,0,0,25,15,Missile Velocity
 33153,0,0,54,1,42529;43555;42527;43554;42526;43552;42530;43556,0,0,0,50,15,Command Burst AoE Range Bonus
@@ -1229,7 +1229,7 @@
 12042,1,3328,265,3,18,0,1,0,10,15,Drone Armor HP
 12042,1,3328,9,3,18,0,1,0,10,15,Drone Hull HP
 12042,1,12095,54,4,564;561,0,1,0,10,15,Small Hybrid Turret Optimal Range
-12042,1,12095,283,1,12042,0,1,1,5,15,Drone Bay Capacity
+12042,1,12095,160,3,18,0,1,0,10,15,Drone Tracking
 12042,0,0,554,2,46,0,0,0,-50,15,MWD Signature Radius Penalty
 # Ishtar,,,,,,,,,,,
 12005,1,3332,160,4,839,0,1,0,7.5,15,Heavy Drone Tracking
@@ -1258,10 +1258,13 @@
 34828,2,0,118,2,387;648;384;653;394,0,0,0,33,15,Rocket & Light Missile Thermal Damage
 34828,2,0,50,2,481,0,0,0,-95,15,Scan Probe Launcher CPU Need
 # Jaguar,,,,,,,,,,,
-11400,1,3329,10016,4,574;577,0,1,0,5,15,Small Projectile Turret Damage
-11400,1,3329,160,4,574;577,0,1,0,7.5,15,Small Projectile Turret Tracking
-11400,1,12095,10016,4,574;577,0,1,0,5,15,Small Projectile Turret Damage
-11400,1,12095,54,4,574;577,0,1,0,10,15,Small Projectile Turret Optimal Range
+11400,1,3329,51,4,507;509,0,1,0,-5,15,Rocket Launcher & Light Missile Launcher ROF
+11400,1,3329,68,2,40;1156,0,1,0,7.5,15,Shield Booster Boost
+11400,1,12095,116,2,387;648;384;653;394,0,1,0,5,15,Rocket & Light Missile Explosive Damage
+11400,1,12095,117,2,387;648;384;653;394,0,1,0,5,15,Rocket & Light Missile Kinetic Damage
+11400,1,12095,114,2,387;648;384;653;394,0,1,0,5,15,Rocket & Light Missile EM Damage
+11400,1,12095,118,2,387;648;384;653;394,0,1,0,5,15,Rocket & Light Missile Thermal Damage
+11400,1,12095,653,2,387;648;384;653;394,0,1,0,5,15,Rocket & Light Missile Explosion Velocity
 11400,0,0,554,2,46,0,0,0,-50,15,MWD Signature Radius Penalty
 # Keres,,,,,,,,,,,
 11174,1,3328,309,2,208,0,1,0,7.5,15,Remote Sensor Damp Effect Range
@@ -1383,7 +1386,7 @@
 # Machariel,,,,,,,,,,,
 17738,0,0,10013,4,576;579,0,0,0,-25,15,Large Projectile Turret ROF
 17738,1,3337,10016,4,576;579,0,1,0,5,15,Large Projectile Turret Damage
-17738,1,3336,158,4,576;579,0,1,0,10,15,Large Projectile Turret Falloff
+17738,1,3336,158,4,576;579,0,1,0,7.5,15,Large Projectile Turret Falloff
 # Mackinaw,,,,,,,,,,,
 22548,1,17940,1556,1,22548,0,1,0,5,15,Ore Hold Capacity
 22548,1,17940,73,4,1040;1038,0,1,0,-2,15,Strip Miner & Ice Harvester Duration
@@ -1616,7 +1619,7 @@
 #34339,1,20531,10012,4,771;772,0,1,0,-5,15,Capital Hybrid Turret ROF
 # Muninn,,,,,,,,,,,
 12015,1,3333,10013,4,575;578,0,1,0,-5,15,Medium Projectile Turret ROF
-12015,1,3333,10016,4,575;578,0,1,0,5,15,Medium Projectile Turret Damage
+12015,1,3333,10016,4,575;578,0,1,0,7.5,15,Medium Projectile Turret Damage
 12015,1,16591,54,4,575;578,0,1,0,10,15,Medium Projectile Turret Optimal Range
 12015,1,16591,160,4,575;578,0,1,0,7.5,15,Medium Projectile Turret Tracking
 12015,0,0,554,2,46,0,0,0,-50,15,MWD Signature Radius Penalty
@@ -2226,7 +2229,7 @@
 17812,1,3329,160,4,574;577,0,1,0,10,15,Small Projectile Turret Tracking
 # Retribution,,,,,,,,,,,
 11393,1,3331,6,4,567;570,0,1,0,-10,15,Small Energy Turret Cap Use
-11393,1,3331,160,4,567;570,0,1,0,7.5,15,Small Energy Turret Tracking
+11393,1,3331,10011,4,567;570,0,1,0,-5,15,Small Energy Turret RoF
 11393,1,12095,54,4,567;570,0,1,0,10,15,Small Energy Turret Optimal Range
 11393,1,12095,10014,4,567;570,0,1,0,5,15,Small Energy Turret Damage
 11393,0,0,554,2,46,0,0,0,-50,15,MWD Signature Radius Penalty
@@ -3054,13 +3057,13 @@
 35827,0,0,2109,2,1415,0,0,0,25,15,service module fuel consumption
 35827,0,0,2110,2,1415,0,0,0,25,15,service module fuel consumption
 # Pacifier ,,,,,,,,,,,
-44993,1,3330,51,2,507;509,0,1,0,5,15,Rocket Launcher & Light Missile Launcher ROF
+44993,1,3330,51,2,507;509,0,1,0,-5,15,Rocket Launcher & Light Missile Launcher ROF
 44993,1,3330,281,2,384;387,0,1,0,10,15,Rocket & Light Missile Flight Time
 44993,1,3331,10014,4,567;570,0,1,0,5,15,Small Energy Turret Damage
 44993,1,3331,54,4,567;570,0,1,0,10,15,Small Energy Turret Optimal Range
 44993,1,3328,10015,4,561;564,0,1,0,5,15,Small Hybrid Turret Damage
 44993,1,3328,160,4,561;564,0,1,0,7.5,15,Small Hybrid Turret Tracking
-44993,1,3329,10013,4,574;577,0,1,0,5,15,Small Projectile Turret ROF
+44993,1,3329,10013,4,574;577,0,1,0,-5,15,Small Projectile Turret ROF
 44993,1,3329,158,4,574;577,0,1,0,10,15,Small Projectile Turret Falloff
 44993,1,12093,1371,2,479,0,1,0,10,15,Probe Scan Strength Bonus
 44993,1,12093,1281,1,44993,0,1,0,10,15,Warp Speed
@@ -3208,3 +3211,30 @@
 # Athanor ,,,,,,,,,,,
 35835,0,0,2109,2,1322,0,0,0,25,15,service module fuel consumption
 35835,0,0,2110,2,1322,0,0,0,25,15,service module fuel consumption
+
+# Monitor ,,,,,,,,,,,
+45534,1,3335,265,1,45534,0,1,0,5,15,Armor HP
+45534,1,3334,263,1,45534,0,1,0,5,15,Shield HP
+45534,1,3332,70,1,45534,0,1,0,-5,15,Agility
+45534,1,3333,552,1,45534,0,1,0,-5,15,Signature Radius
+45534,1,47445,267,1,45534,0,1,2,-4,15,Armor EM Resistance
+45534,1,47445,268,1,45534,0,1,2,-4,15,Armor Explosive Resistance
+45534,1,47445,269,1,45534,0,1,2,-4,15,Armor Kinetic Resistance
+45534,1,47445,270,1,45534,0,1,2,-4,15,Armor Thermal Resistance
+45534,1,47445,271,1,45534,0,1,2,-4,15,Shield EM Resistance
+45534,1,47445,272,1,45534,0,1,2,-4,15,Shield Explosive Resistance
+45534,1,47445,273,1,45534,0,1,2,-4,15,Shield Kinetic Resistance
+45534,1,47445,274,1,45534,0,1,2,-4,15,Shield Thermal Resistance
+45534,1,47445,974,1,45534,0,1,2,-4,15,Hull EM Resistance
+45534,1,47445,975,1,45534,0,1,2,-4,15,Hull Explosive Resistance
+45534,1,47445,976,1,45534,0,1,2,-4,15,Hull Kinetic Resistance
+45534,1,47445,977,1,45534,0,1,2,-4,15,Hull Thermal Resistance
+45534,0,0,50,4,542;131;1650,0,0,0,-99,15,"Afterburner, MWD, Micro Jump Drive CPU Need"
+45534,0,0,30,4,542;131;1650,0,0,0,-99,15,"Afterburner, MWD, Micro Jump Drive Power Need"
+45534,0,0,50,2,481;131;1650,0,0,0,-99,15,Scan Probe Launcher CPU Need
+45534,0,0,30,2,481;131;1650,0,0,0,-99.9,15,Scan Probe Launcher Power Need
+45534,0,0,54,2,379,0,0,0,300,15,Target Painter Optimal Range
+45534,0,0,554,2,379,0,0,0,99,15,Target Painter Effect Sig Radius
+
+
+

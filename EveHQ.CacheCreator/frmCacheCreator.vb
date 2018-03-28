@@ -1644,13 +1644,17 @@ Public Class FrmCacheCreator
                         attData.ID = CInt(row.Item("attributeID"))
                         attData.Name = row.Item("attributeName").ToString
                         attData.DisplayName = row.Item("displayName").ToString
-                        attData.AttributeGroup = row.Item("attributeGroup").ToString
-                        If StaticData.AttributeUnits.ContainsKey(CInt(row.Item("unitID"))) Then
-                            attData.UnitName = StaticData.AttributeUnits(CInt(row.Item("unitID")))
-                        Else
-                            attData.UnitName = ""
-                        End If
-                        If attData.UnitName = "ms" Then
+                        'attData.AttributeGroup = row.Item("attributeGroup").ToString
+                        attData.AttributeGroup = ""
+						If IsDBNull(row.Item("unitID")) Then
+							attData.UnitName = ""
+						ElseIf Not StaticData.AttributeUnits.ContainsKey(CInt(row.Item("unitID"))) Then
+							attData.UnitName = ""
+						Else 
+							attData.UnitName = StaticData.AttributeUnits(CInt(row.Item("unitID")))
+						End If
+
+	                    If attData.UnitName = "ms" Then
                             attData.UnitName = "s"
                         End If
                         Attributes.AttributeList.Add(attData.ID, attData)
@@ -2685,8 +2689,12 @@ Public Class FrmCacheCreator
                     cMod.LoadedCharge = chg
                 End If
                 If cMod.IsFighter = True And cMod.Attributes.ContainsKey(2324) = True Then
-                    Dim chg As ShipModule = ModuleLists.ModuleList(CInt(cMod.Attributes(2324)))
-                    cMod.LoadedCharge = chg
+					If ModuleLists.ModuleList.ContainsKey(CInt(cMod.Attributes(2324))) Then
+						Dim chg As ShipModule = ModuleLists.ModuleList(CInt(cMod.Attributes(2324)))
+						cMod.LoadedCharge = chg
+					Else 
+						Dim EshvaTemp As Integer = 44
+					End If
                 End If
             Next
             ' Build the implant data

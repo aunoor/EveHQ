@@ -110,8 +110,8 @@
   description: Module - PowerRecharger
   iconFile: res:/ui/texture/icons/1_64_1.png
 91:
-  description: Module - ProtectiveShell
-  iconFile: res:/ui/texture/icons/2_64_8.png
+  description: 'Buff bar: Tethered'
+  iconFile: res:/UI/Texture/Icons/StatusEffects/tether.png
 92:
   description: Module - StorageEnhancer
   iconFile: res:/ui/texture/icons/4_64_13.png
@@ -6332,7 +6332,7 @@
   description: icon for the station service slot
   iconFile: res:/UI/Texture/classes/Fitting/stationServiceSlot.png
 21513:
-  description: Focused Warp Disruption Script
+  description: Focused Warp Scrambling Script
   iconFile: res:/ui/texture/icons/118_64_12.png
 21514:
   description: Upwell Male Jacket
@@ -6562,3 +6562,666 @@
 21622:
   description: Icon for Gold Ouroboros
   iconFile: res:/UI/Texture/Icons/Inventory/serpentisContainerGold_64.png
+21624:
+  description: 42698_female_hair_HeadWear_Beret_F01_Types_HeadWear_Beret_GuristasF01B.png
+  iconFile: res:/UI/Asset/mannequin/hair/42698_female_hair_HeadWear_Beret_F01_Types_HeadWear_Beret_GuristasF01B.png
+21626:
+  description: 42699_male_hair_HeadWear_Beret_M01_Types_HeadWear_Beret_GuristasM01B.png
+  iconFile: res:/UI/Asset/mannequin/hair/42699_male_hair_HeadWear_Beret_M01_Types_HeadWear_Beret_GuristasM01B.png
+21627:
+  description: 42708_male_hair_HeadWear_Beret_M01_Types_HeadWear_Beret_BloodraidersM01.png
+  iconFile: res:/UI/Asset/mannequin/hair/42708_male_hair_HeadWear_Beret_M01_Types_HeadWear_Beret_BloodraidersM01.png
+21628:
+  description: 42709_female_hair_HeadWear_Beret_F01_Types_HeadWear_Beret_GallenteF01.png
+  iconFile: res:/UI/Asset/mannequin/hair/42709_female_hair_HeadWear_Beret_F01_Types_HeadWear_Beret_GallenteF01.png
+21629:
+  description: 42710_male_hair_HeadWear_Cap_M01_Types_HeadWear_Cap_M01_Gallente.png
+  iconFile: res:/UI/Asset/mannequin/hair/42710_male_hair_HeadWear_Cap_M01_Types_HeadWear_Cap_M01_Gallente.png
+21630:
+  description: 42711_male_hair_HeadWear_Cap_M01_Types_HeadWear_Cap_M01_Green.png
+  iconFile: res:/UI/Asset/mannequin/hair/42711_male_hair_HeadWear_Cap_M01_Types_HeadWear_Cap_M01_Green.png
+21631:
+  description: 42712_male_hair_HeadWear_Beret_M01_Types_HeadWear_Beret_MinmatarM01.png
+  iconFile: res:/UI/Asset/mannequin/hair/42712_male_hair_HeadWear_Beret_M01_Types_HeadWear_Beret_MinmatarM01.png
+21632:
+  description: 42713_male_hair_HeadWear_Cap_M01_Types_HeadWear_Cap_M01_Orange.png
+  iconFile: res:/UI/Asset/mannequin/hair/42713_male_hair_HeadWear_Cap_M01_Types_HeadWear_Cap_M01_Orange.png
+21633:
+  description: 42714_male_hair_HeadWear_Cap_M01_Types_HeadWear_Cap_M01_WhiteBlack.png
+  iconFile: res:/UI/Asset/mannequin/hair/42714_male_hair_HeadWear_Cap_M01_Types_HeadWear_Cap_M01_WhiteBlack.png
+21634:
+  description: 42715_female_hair_HeadWear_Cap_F01_Types_HeadWear_Cap_F01_Minmatar.png
+  iconFile: res:/UI/Asset/mannequin/hair/42715_female_hair_HeadWear_Cap_F01_Types_HeadWear_Cap_F01_Minmatar.png
+21635:
+  description: 42716_female_hair_HeadWear_Cap_F01_Types_HeadWear_Cap_F01_WhiteBlack.png
+  iconFile: res:/UI/Asset/mannequin/hair/42716_female_hair_HeadWear_Cap_F01_Types_HeadWear_Cap_F01_WhiteBlack.png
+21636:
+  description: 42717_female_hair_HeadWear_Beret_F01_Types_HeadWear_Beret_GuristasF01.png
+  iconFile: res:/UI/Asset/mannequin/hair/42717_female_hair_HeadWear_Beret_F01_Types_HeadWear_Beret_GuristasF01.png
+21637:
+  description: 42718_female_hair_HeadWear_Cap_F01_Types_HeadWear_Cap_F01_Blood.png
+  iconFile: res:/UI/Asset/mannequin/hair/42718_female_hair_HeadWear_Cap_F01_Types_HeadWear_Cap_F01_Blood.png
+21638:
+  description: 42719_male_hair_HeadWear_Cap_M01_Types_HeadWear_Cap_M01_Concord.png
+  iconFile: res:/UI/Asset/mannequin/hair/42719_male_hair_HeadWear_Cap_M01_Types_HeadWear_Cap_M01_Concord.png
+21640:
+  description: 42720_female_hair_HeadWear_Cap_F01_Types_HeadWear_Cap_F01_Caldari.png
+  iconFile: res:/UI/Asset/mannequin/hair/42720_female_hair_HeadWear_Cap_F01_Types_HeadWear_Cap_F01_Caldari.png
+21641:
+  description: 42721_male_hair_HeadWear_Beret_M01_Types_HeadWear_Beret_GuristasM01.png
+  iconFile: res:/UI/Asset/mannequin/hair/42721_male_hair_HeadWear_Beret_M01_Types_HeadWear_Beret_GuristasM01.png
+21642:
+  description: 42722_female_hair_HeadWear_Cap_F01_Types_HeadWear_Cap_F01_Guristas.png
+  iconFile: res:/UI/Asset/mannequin/hair/42722_female_hair_HeadWear_Cap_F01_Types_HeadWear_Cap_F01_Guristas.png
+21643:
+  description: 42723_male_hair_HeadWear_Cap_M01_Types_HeadWear_Cap_M01_Black.png
+  iconFile: res:/UI/Asset/mannequin/hair/42723_male_hair_HeadWear_Cap_M01_Types_HeadWear_Cap_M01_Black.png
+21644:
+  description: 42724_male_hair_HeadWear_Beret_M01_Types_HeadWear_Beret_ConcordM01.png
+  iconFile: res:/UI/Asset/mannequin/hair/42724_male_hair_HeadWear_Beret_M01_Types_HeadWear_Beret_ConcordM01.png
+21645:
+  description: 42725_female_hair_HeadWear_Cap_F01_Types_HeadWear_Cap_F01_Amarr.png
+  iconFile: res:/UI/Asset/mannequin/hair/42725_female_hair_HeadWear_Cap_F01_Types_HeadWear_Cap_F01_Amarr.png
+21646:
+  description: 42726_male_hair_HeadWear_Cap_M01_Types_HeadWear_Cap_M01_Blood.png
+  iconFile: res:/UI/Asset/mannequin/hair/42726_male_hair_HeadWear_Cap_M01_Types_HeadWear_Cap_M01_Blood.png
+21647:
+  description: 42727_female_hair_HeadWear_Cap_F01_Types_HeadWear_Cap_F01_Green.png
+  iconFile: res:/UI/Asset/mannequin/hair/42727_female_hair_HeadWear_Cap_F01_Types_HeadWear_Cap_F01_Green.png
+21648:
+  description: 42728_male_hair_HeadWear_Cap_M01_Types_HeadWear_Cap_M01_Amarr.png
+  iconFile: res:/UI/Asset/mannequin/hair/42728_male_hair_HeadWear_Cap_M01_Types_HeadWear_Cap_M01_Amarr.png
+21649:
+  description: 42729_female_hair_HeadWear_Cap_F01_Types_HeadWear_Cap_F01_Camo.png
+  iconFile: res:/UI/Asset/mannequin/hair/42729_female_hair_HeadWear_Cap_F01_Types_HeadWear_Cap_F01_Camo.png
+21650:
+  description: 42730_male_hair_HeadWear_Cap_M01_Types_HeadWear_Cap_M01_Minmatar.png
+  iconFile: res:/UI/Asset/mannequin/hair/42730_male_hair_HeadWear_Cap_M01_Types_HeadWear_Cap_M01_Minmatar.png
+21651:
+  description: 42731_male_hair_HeadWear_Cap_M01_Types_HeadWear_Cap_M01_Caldari.png
+  iconFile: res:/UI/Asset/mannequin/hair/42731_male_hair_HeadWear_Cap_M01_Types_HeadWear_Cap_M01_Caldari.png
+21652:
+  description: 42732_male_hair_HeadWear_Cap_M01_Types_HeadWear_Cap_M01_Camo.png
+  iconFile: res:/UI/Asset/mannequin/hair/42732_male_hair_HeadWear_Cap_M01_Types_HeadWear_Cap_M01_Camo.png
+21654:
+  description: 42733_female_hair_HeadWear_Beret_F01_Types_HeadWear_Beret_BloodraidersF01.png
+  iconFile: res:/UI/Asset/mannequin/hair/42733_female_hair_HeadWear_Beret_F01_Types_HeadWear_Beret_BloodraidersF01.png
+21655:
+  description: 42734_female_hair_HeadWear_Cap_F01_Types_HeadWear_Cap_F01_Black.png
+  iconFile: res:/UI/Asset/mannequin/hair/42734_female_hair_HeadWear_Cap_F01_Types_HeadWear_Cap_F01_Black.png
+21656:
+  description: 42735_female_hair_HeadWear_Cap_F01_Types_HeadWear_Cap_F01_Orange.png
+  iconFile: res:/UI/Asset/mannequin/hair/42735_female_hair_HeadWear_Cap_F01_Types_HeadWear_Cap_F01_Orange.png
+21657:
+  description: 42736_male_hair_HeadWear_Beret_M01_Types_HeadWear_Beret_CaldariM01.png
+  iconFile: res:/UI/Asset/mannequin/hair/42736_male_hair_HeadWear_Beret_M01_Types_HeadWear_Beret_CaldariM01.png
+21658:
+  description: 42737_female_hair_HeadWear_Beret_F01_Types_HeadWear_Beret_ConcordF01.png
+  iconFile: res:/UI/Asset/mannequin/hair/42737_female_hair_HeadWear_Beret_F01_Types_HeadWear_Beret_ConcordF01.png
+21659:
+  description: 42738_female_hair_HeadWear_Beret_F01_Types_HeadWear_Beret_MinmatarF01.png
+  iconFile: res:/UI/Asset/mannequin/hair/42738_female_hair_HeadWear_Beret_F01_Types_HeadWear_Beret_MinmatarF01.png
+21660:
+  description: 42739_male_hair_HeadWear_Beret_M01_Types_HeadWear_Beret_GallenteM01.png
+  iconFile: res:/UI/Asset/mannequin/hair/42739_male_hair_HeadWear_Beret_M01_Types_HeadWear_Beret_GallenteM01.png
+21661:
+  description: 42740_female_hair_HeadWear_Beret_F01_Types_HeadWear_Beret_CaldariF01.png
+  iconFile: res:/UI/Asset/mannequin/hair/42740_female_hair_HeadWear_Beret_F01_Types_HeadWear_Beret_CaldariF01.png
+21662:
+  description: 42741_male_hair_HeadWear_Beret_M01_Types_HeadWear_Beret_AmarrM01.png
+  iconFile: res:/UI/Asset/mannequin/hair/42741_male_hair_HeadWear_Beret_M01_Types_HeadWear_Beret_AmarrM01.png
+21663:
+  description: 42742_female_hair_HeadWear_Cap_F01_Types_HeadWear_Cap_F01_Concord.png
+  iconFile: res:/UI/Asset/mannequin/hair/42742_female_hair_HeadWear_Cap_F01_Types_HeadWear_Cap_F01_Concord.png
+21664:
+  description: 42743_male_hair_HeadWear_Cap_M01_Types_HeadWear_Cap_M01_Guristas.png
+  iconFile: res:/UI/Asset/mannequin/hair/42743_male_hair_HeadWear_Cap_M01_Types_HeadWear_Cap_M01_Guristas.png
+21665:
+  description: 42744_female_hair_HeadWear_Beret_F01_Types_HeadWear_Beret_AmarrF01.png
+  iconFile: res:/UI/Asset/mannequin/hair/42744_female_hair_HeadWear_Beret_F01_Types_HeadWear_Beret_AmarrF01.png
+21666:
+  description: 42745_female_hair_HeadWear_Cap_F01_Types_HeadWear_Cap_F01_Gallente.png
+  iconFile: res:/UI/Asset/mannequin/hair/42745_female_hair_HeadWear_Cap_F01_Types_HeadWear_Cap_F01_Gallente.png
+21667:
+  description: 42707_female_TopOuter_ShirtMilF01_Types_ShirtMilF01_bloodraiders.png
+  iconFile: res:/UI/Asset/mannequin/topouter/42707_female_TopOuter_ShirtMilF01_Types_ShirtMilF01_bloodraiders.png
+21668:
+  description: 42700_female_TopMiddle_ShirtQF01_Types_ShirtBloodraidersF01.png
+  iconFile: res:/UI/Asset/mannequin/topmiddle/42700_female_TopMiddle_ShirtQF01_Types_ShirtBloodraidersF01.png
+21669:
+  description: 42704_male_topMiddle_ShirtQM01_Types_ShirtBloodraidersM01.png
+  iconFile: res:/UI/Asset/mannequin/topmiddle/42704_male_topMiddle_ShirtQM01_Types_ShirtBloodraidersM01.png
+21670:
+  description: 42702_male_outer_JacketMFBR01_Types_JacketMFBR02_Bloodraiders.png
+  iconFile: res:/UI/Asset/mannequin/outer/42702_male_outer_JacketMFBR01_Types_JacketMFBR02_Bloodraiders.png
+21671:
+  description: 42703_female_Outer_JacketFBR01_Types_JacketFBR02_bloodraiders.png
+  iconFile: res:/UI/Asset/mannequin/outer/42703_female_Outer_JacketFBR01_Types_JacketFBR02_bloodraiders.png
+21672:
+  description: 42705_male_outer_JacketPrtm01_Types_JacketPrtm01_bloodraiders_spec.png
+  iconFile: res:/UI/Asset/mannequin/outer/42705_male_outer_JacketPrtm01_Types_JacketPrtm01_bloodraiders_spec.png
+21673:
+  description: 42706_female_Outer_JacketPrtF01_Types_JacketPrtF01_bloodraiders_spec.png
+  iconFile: res:/UI/Asset/mannequin/outer/42706_female_Outer_JacketPrtF01_Types_JacketPrtF01_bloodraiders_spec.png
+21674:
+  description: 42701_female_bottomOuter_PantsMilF01_Types_PantsMilF01_bloodraiders.png
+  iconFile: res:/UI/Asset/mannequin/bottomouter/42701_female_bottomOuter_PantsMilF01_Types_PantsMilF01_bloodraiders.png
+21675:
+  description: Module - Command Burst Info
+  iconFile: res:/ui/texture/icons/cmd_brst_info_ph.png
+21676:
+  description: Module - Command Burst Skirmish
+  iconFile: res:/ui/texture/icons/cmd_brst_skrmsh_ph.png
+21677:
+  description: Module - Command Burst Mining Foreman
+  iconFile: res:/ui/texture/icons/cmd_brst_mine_ph.png
+21678:
+  description: Module - Command Burst Armor
+  iconFile: res:/ui/texture/icons/cmd_brst_armor_ph.png
+21679:
+  description: Module - Command Burst Shield
+  iconFile: res:/ui/texture/icons/cmd_brst_shield_ph.png
+21680:
+  description: 42905_female_Accessories_Glasses_Goggles_01_Types_goggles_01_orange
+  iconFile: res:/UI/Asset/mannequin/accessories_glasses/42905_female_Accessories_Glasses_Goggles_01_Types_goggles_01_orange.png
+21681:
+  description: 42906_male_Accessories_Glasses_Goggles_01_Types_goggles_01_orange
+  iconFile: res:/UI/Asset/mannequin/accessories_glasses/42906_male_Accessories_Glasses_Goggles_01_Types_goggles_01_orange.png
+21683:
+  description: Avatar Titan Effect Generator
+  iconFile: res:/UI/Texture/Icons/Modules/titanGeneratorAmarr.png
+21684:
+  description: Leviathan Titan Effect Generator
+  iconFile: res:/UI/Texture/Icons/Modules/titanGeneratorCaldari.png
+21685:
+  description: Erebus Titan Effect Generator
+  iconFile: res:/UI/Texture/Icons/Modules/titanGeneratorGallente.png
+21686:
+  description: Ragnarok Titan Effect Generator
+  iconFile: res:/UI/Texture/Icons/Modules/titanGeneratorMinmatar.png
+21687:
+  description: Armored Command Burst - Base
+  iconFile: res:/UI/Texture/Icons/Modules/fleetBoost_ArmorBase.png
+21688:
+  description: Armored Command Burst - Armor Reinforcement
+  iconFile: res:/UI/Texture/Icons/Modules/fleetBoost_ArmorBuffer.png
+21689:
+  description: Armored Command Burst - Rapid Repair
+  iconFile: res:/UI/Texture/Icons/Modules/fleetBoost_ArmorRepair.png
+21690:
+  description: Armored Command Burst - Armor Energizing
+  iconFile: res:/UI/Texture/Icons/Modules/fleetBoost_ArmorResists.png
+21691:
+  description: Information Command Burst - Base
+  iconFile: res:/UI/Texture/Icons/Modules/fleetBoost_InfoBase.png
+21692:
+  description: Information Command Burst - Electronic Superiority
+  iconFile: res:/UI/Texture/Icons/Modules/fleetBoost_InfoEwar.png
+21693:
+  description: Information Command Burst - Sensor Optimization
+  iconFile: res:/UI/Texture/Icons/Modules/fleetBoost_InfoSensors.png
+21694:
+  description: Information Command Burst - Electronic Hardening
+  iconFile: res:/UI/Texture/Icons/Modules/fleetBoost_InfoTargeting.png
+21695:
+  description: Mining Foreman Burst - Base
+  iconFile: res:/UI/Texture/Icons/Modules/fleetBoost_MiningBase.png
+21696:
+  description: Mining Foreman Burst - Mining Equipment Preservation
+  iconFile: res:/UI/Texture/Icons/Modules/fleetBoost_MiningCrystal.png
+21698:
+  description: Mining Foreman Burst - Mining Laser Optimization
+  iconFile: res:/UI/Texture/Icons/Modules/fleetBoost_MiningCycle.png
+21699:
+  description: Mining Foreman Burst - Mining Laser Field Enhancement
+  iconFile: res:/UI/Texture/Icons/Modules/fleetBoost_MiningRange.png
+21700:
+  description: Shield Command Burst - Base
+  iconFile: res:/UI/Texture/Icons/Modules/fleetBoost_ShieldBase.png
+21701:
+  description: Shield Command Burst - Shield Extension
+  iconFile: res:/UI/Texture/Icons/Modules/fleetBoost_ShieldBuffer.png
+21702:
+  description: Shield Command Burst - Active Shielding
+  iconFile: res:/UI/Texture/Icons/Modules/fleetBoost_ShieldRepair.png
+21703:
+  description: Shield Command Burst - Shield Harmonizing
+  iconFile: res:/UI/Texture/Icons/Modules/fleetBoost_ShieldResists.png
+21704:
+  description: Skirmish Command Burst - Base
+  iconFile: res:/UI/Texture/Icons/Modules/fleetBoost_SkirmishBase.png
+21705:
+  description: Skirmish Command Burst - Evasive Maneuvers
+  iconFile: res:/UI/Texture/Icons/Modules/fleetBoost_SkirmishSignature.png
+21706:
+  description: Skirmish Command Burst - Rapid Deployment
+  iconFile: res:/UI/Texture/Icons/Modules/fleetBoost_SkirmishSpeed.png
+21707:
+  description: Skirmish Command Burst - Interdiction Maneuvers
+  iconFile: res:/UI/Texture/Icons/Modules/fleetBoost_SkirmishWeb.png
+21708:
+  description: Fleet Boost Effect Icon - Armor Reinforcement
+  iconFile: res:/UI/Texture/Shared/Effects/fleetBoostEffect_ArmorBuffer.png
+21709:
+  description: Fleet Boost Effect Icon - Rapid Repair
+  iconFile: res:/UI/Texture/Shared/Effects/fleetBoostEffect_ArmorRepair.png
+21710:
+  description: Fleet Boost Effect Icon - Armor Energizing
+  iconFile: res:/UI/Texture/Shared/Effects/fleetBoostEffect_ArmorResists.png
+21711:
+  description: Fleet Boost Effect Icon - Base
+  iconFile: res:/UI/Texture/Shared/Effects/fleetBoostEffect_Base.png
+21712:
+  description: Fleet Boost Effect Icon - Electronic Superiority
+  iconFile: res:/UI/Texture/Shared/Effects/fleetBoostEffect_InfoEwar.png
+21713:
+  description: Fleet Boost Effect Icon - Sensor Optimization
+  iconFile: res:/UI/Texture/Shared/Effects/fleetBoostEffect_InfoSensors.png
+21714:
+  description: Fleet Boost Effect Icon - Electronic Hardening
+  iconFile: res:/UI/Texture/Shared/Effects/fleetBoostEffect_InfoTargeting.png
+21715:
+  description: Fleet Boost Effect Icon - Mining Equipment Preservation
+  iconFile: res:/UI/Texture/Shared/Effects/fleetBoostEffect_MiningCrystal.png
+21716:
+  description: Fleet Boost Effect Icon - Mining Laser Optimization
+  iconFile: res:/UI/Texture/Shared/Effects/fleetBoostEffect_MiningCycle.png
+21717:
+  description: Fleet Boost Effect Icon - Mining Laser Field Enhancement
+  iconFile: res:/UI/Texture/Shared/Effects/fleetBoostEffect_MiningRange.png
+21718:
+  description: Fleet Boost Effect Icon - Shield Extension
+  iconFile: res:/UI/Texture/Shared/Effects/fleetBoostEffect_ShieldBuffer.png
+21719:
+  description: Fleet Boost Effect Icon - Active Shielding
+  iconFile: res:/UI/Texture/Shared/Effects/fleetBoostEffect_ShieldRepair.png
+21720:
+  description: Fleet Boost Effect Icon - Shield Harmonizing
+  iconFile: res:/UI/Texture/Shared/Effects/fleetBoostEffect_ShieldResists.png
+21721:
+  description: Fleet Boost Effect Icon - Evasive Manuevuers
+  iconFile: res:/UI/Texture/Shared/Effects/fleetBoostEffect_SkirmishSignature.png
+21722:
+  description: Fleet Boost Effect Icon - Rapid Deployment
+  iconFile: res:/UI/Texture/Shared/Effects/fleetBoostEffect_SkirmishSpeed.png
+21723:
+  description: Fleet Boost Effect Icon - Interdiction Maneuvers
+  iconFile: res:/UI/Texture/Shared/Effects/fleetBoostEffect_SkirmishWeb.png
+21724:
+  description: Multi-racial Titan Effect Generator
+  iconFile: res:/UI/Texture/Icons/Modules/titanGeneratorMultiple.png
+21725:
+  description: Icon for the NPE Reward Crates
+  iconFile: res:/ui/texture/icons/inventory/empireCrate.png
+21729:
+  description: Structure Rig Engineering
+  iconFile: res:/ui/texture/icons/127_64_8.png
+21730:
+  description: Pulse Activated Nexus Invulnerability Core
+  iconFile: res:/UI/Texture/Icons/Modules/panicModule.png
+21731:
+  description: Skill Injector Restricted
+  iconFile: res:/UI/texture/icons/inventory/skillInjectorMini_64.png
+21732:
+  description: 250,000 skill points
+  iconFile: res:/ui/texture/icons/50_64_11.png
+21734:
+  description: 44121_female_bottomOuter_PantsMilF01_Types_PantsMilF01_C16.png
+  iconFile: res:/UI/Asset/mannequin/bottomouter/44121_female_bottomOuter_PantsMilF01_Types_PantsMilF01_C16.png
+21735:
+  description: 44124_male_bottomOuter_PantsMilM01_Types_PantsMilM01_C16.png
+  iconFile: res:/UI/Asset/mannequin/bottomouter/44124_male_bottomOuter_PantsMilM01_Types_PantsMilM01_C16.png
+21736:
+  description: 44122_female_hair_HeadWear_Cap_F01_Types_HeadWear_Cap_F01_C16.png
+  iconFile: res:/UI/Asset/mannequin/hair/44122_female_hair_HeadWear_Cap_F01_Types_HeadWear_Cap_F01_C16.png
+21738:
+  description: 44125_male_hair_HeadWear_Cap_M01_Types_HeadWear_Cap_M01_C16.png
+  iconFile: res:/UI/Asset/mannequin/hair/44125_male_hair_HeadWear_Cap_M01_Types_HeadWear_Cap_M01_C16.png
+21739:
+  description: 44120_female_TopMiddle_TshirtF01_Types_TshirtF01_C16.png
+  iconFile: res:/UI/Asset/mannequin/topmiddle/44120_female_TopMiddle_TshirtF01_Types_TshirtF01_C16.png
+21740:
+  description: 44123_male_topMiddle_TshirtM01_Types_TshirtM01_C16.png
+  iconFile: res:/UI/Asset/mannequin/topmiddle/44123_male_topMiddle_TshirtM01_Types_TshirtM01_C16.png
+21741:
+  description: Icon for the Naval Starter Pack
+  iconFile: res:/UI/Texture/Icons/Inventory/starterPack.png
+21742:
+  description: Icon for the Xmas crates
+  iconFile: res:/UI/Texture/Icons/Inventory/holidayCrate.png
+21743:
+  description: Focused Warp Disruption Script
+  iconFile: res:/ui/texture/icons/118_64_15.png
+21744:
+  description: SOE Exploration Suit Female
+  iconFile: res:/UI/Asset/mannequin/outer/45514_female_Outer_ExplorationSuit_F01_Types_ExplorationSuit_F01_SOE.png
+21745:
+  description: Caldari Exploration Suit Female
+  iconFile: res:/UI/Asset/mannequin/outer/45515_female_Outer_ExplorationSuit_F01_Types_ExplorationSuit_F01_Caldari.png
+21746:
+  description: Minmatar Exploration Suit Female
+  iconFile: res:/UI/Asset/mannequin/outer/45516_female_Outer_ExplorationSuit_F01_Types_ExplorationSuit_F01_Minmatar.png
+21747:
+  description: Gallente Exploration Suit Female
+  iconFile: res:/UI/Asset/mannequin/outer/45517_female_Outer_ExplorationSuit_F01_Types_ExplorationSuit_F01_Gallente.png
+21748:
+  description: Amarr Exploration Suit Female
+  iconFile: res:/UI/Asset/mannequin/outer/45518_female_Outer_ExplorationSuit_F01_Types_ExplorationSuit_F01_Amarr.png
+21749:
+  description: Caldari Orange Exploration Suit Female
+  iconFile: res:/UI/Asset/mannequin/outer/45519_female_Outer_ExplorationSuit_F01_Types_ExplorationSuit_F01_CaldariOrange.png
+21750:
+  description: ORE Exploration Suit Female
+  iconFile: res:/UI/Asset/mannequin/outer/45520_female_Outer_ExplorationSuit_F01_Types_ExplorationSuit_F01_ORE.png
+21751:
+  description: Gallente Exploration Suit Male
+  iconFile: res:/UI/Asset/mannequin/outer/45521_male_outer_ExplorationSuit_M01_Types_ExplorationSuit_M01_Gallente.png
+21752:
+  description: ORE Exploration Suit Male
+  iconFile: res:/UI/Asset/mannequin/outer/45522_male_outer_ExplorationSuit_M01_Types_ExplorationSuit_M01_ORE.png
+21753:
+  description: SOE Exploration Suit Male
+  iconFile: res:/UI/Asset/mannequin/outer/45523_male_outer_ExplorationSuit_M01_Types_ExplorationSuit_M01_SOE.png
+21754:
+  description: Caldari Exploration Suit Male
+  iconFile: res:/UI/Asset/mannequin/outer/45524_male_outer_ExplorationSuit_M01_Types_ExplorationSuit_M01_Caldari.png
+21755:
+  description: Minmatar Exploration Suit Male
+  iconFile: res:/UI/Asset/mannequin/outer/45525_male_outer_ExplorationSuit_M01_Types_ExplorationSuit_M01_Minmatar.png
+21756:
+  description: Amarr Exploration Suit Male
+  iconFile: res:/UI/Asset/mannequin/outer/45526_male_outer_ExplorationSuit_M01_Types_ExplorationSuit_M01_Amarr.png
+21757:
+  description: Caldari Orange Exploration Suit Male
+  iconFile: res:/UI/Asset/mannequin/outer/45527_male_outer_ExplorationSuit_M01_Types_ExplorationSuit_M01_CaldariOrange.png
+21760:
+  description: Project Discovery Crate Icon
+  iconFile: res:/UI/Texture/classes/ItemPacks/SplashImages/ProjectDiscoveryPlaceholder.png
+21763:
+  description: 45734_female_TopMiddle_TshirtF01_Types_TshirtF01_Exo.png
+  iconFile: res:/UI/Asset/mannequin/topmiddle/45734_female_TopMiddle_TshirtF01_Types_TshirtF01_Exo.png
+21764:
+  description: 45735_female_Outer_ExplorationSuit_F01_Types_ExplorationSuit_F01_Exo.png
+  iconFile: res:/UI/Asset/mannequin/outer/45735_female_Outer_ExplorationSuit_F01_Types_ExplorationSuit_F01_Exo.png
+21765:
+  description: 45737_female_Outer_LabCoatF01_Types_LabCoatF01_Exo.png
+  iconFile: res:/UI/Asset/mannequin/outer/45737_female_Outer_LabCoatF01_Types_LabCoatF01_Exo.png
+21766:
+  description: 45738_female_Outer_JacketMilF01_Types_JacketMilF01_exo.png
+  iconFile: res:/UI/Asset/mannequin/outer/45738_female_Outer_JacketMilF01_Types_JacketMilF01_exo.png
+21767:
+  description: 45739_female_hair_HeadWear_Cap_F01_Types_HeadWear_Cap_F01_Exo.png
+  iconFile: res:/UI/Asset/mannequin/hair/45739_female_hair_HeadWear_Cap_F01_Types_HeadWear_Cap_F01_Exo.png
+21768:
+  description: 45740_male_hair_HeadWear_Cap_M01_Types_HeadWear_Cap_M01_Exo.png
+  iconFile: res:/UI/Asset/mannequin/hair/45740_male_hair_HeadWear_Cap_M01_Types_HeadWear_Cap_M01_Exo.png
+21769:
+  description: 45741_male_outer_ExplorationSuit_M01_Types_ExplorationSuit_M01_Exo.png
+  iconFile: res:/UI/Asset/mannequin/outer/45741_male_outer_ExplorationSuit_M01_Types_ExplorationSuit_M01_Exo.png
+21770:
+  description: 45742_male_outer_JacketMilM02_Types_JacketMilM02_exo.png
+  iconFile: res:/UI/Asset/mannequin/outer/45742_male_outer_JacketMilM02_Types_JacketMilM02_exo.png
+21771:
+  description: 45743_male_TopMiddle_TshirtM01_Types_TshirtM01_Exo.png
+  iconFile: res:/UI/Asset/mannequin/topmiddle/45743_male_TopMiddle_TshirtM01_Types_TshirtM01_Exo.png
+21772:
+  description: 45744_male_outer_LabCoatM01_Types_LabCoatM01_Exo.png
+  iconFile: res:/UI/Asset/mannequin/outer/45744_male_outer_LabCoatM01_Types_LabCoatM01_Exo.png
+21773:
+  description: 45745_male_Accessories_Glasses_Glasses_Exo_M01_Types_Glasses_Exo_M01_clear.png
+  iconFile: res:/UI/Asset/mannequin/accessories_glasses/45745_male_Accessories_Glasses_Glasses_Exo_M01_Types_Glasses_Exo_M01_clear.png
+21774:
+  description: Structure Moon Drilling Service Module
+  iconFile: res:/UI/Texture/Icons/128_64_1.png
+21775:
+  description: 45736_female_Accessories_Glasses_Glasses_Exo_F01_Types_Glasses_Exo_F01_clear.png
+  iconFile: res:/UI/Asset/mannequin/accessories_glasses/45736_female_Accessories_Glasses_Glasses_Exo_F01_Types_Glasses_Exo_F01_clear.png
+21778:
+  description: 46038_male_outer_ExplorationSuit_M01_Types_ExplorationSuit_M01_IGC.png
+  iconFile: res:/UI/Asset/mannequin/outer/46038_male_outer_ExplorationSuit_M01_Types_ExplorationSuit_M01_IGC.png
+21779:
+  description: 46039_female_Outer_ExplorationSuit_F01_Types_ExplorationSuit_F01_IGC.png
+  iconFile: res:/UI/Asset/mannequin/outer/46039_female_Outer_ExplorationSuit_F01_Types_ExplorationSuit_F01_IGC.png
+21780:
+  description: 46274_male_outer_JacketPrtm01_Types_JacketPrtm01_valkyrie
+  iconFile: res:/UI/Asset/mannequin/outer/46274_male_outer_JacketPrtm01_Types_JacketPrtm01_valkyrie.png
+21781:
+  description: 46273_female_Outer_JacketPrtF01_Types_JacketPrtF01_valkyrie
+  iconFile: res:/UI/Asset/mannequin/outer/46273_female_Outer_JacketPrtF01_Types_JacketPrtF01_valkyrie.png
+21783:
+  description: ReactionBackdrop
+  iconFile: res:/ui/texture/icons/reaction.png
+21784:
+  description: Valkyrie Data Core
+  iconFile: res:/UI/Texture/Icons/Inventory/dataCore.png
+21785:
+  description: Valkyrie Relic Vault
+  iconFile: res:/UI/Texture/Icons/Inventory/relicVault.png
+21787:
+  description: refinery rig drill
+  iconFile: res:/UI/Texture/Icons/Modules/refinery_ChunkStabilization.png
+21788:
+  description: refinery rig reactions
+  iconFile: res:/UI/Texture/Icons/Modules/refinery_MiningYield.png
+21789:
+  description: refinery reaction module booster
+  iconFile: res:/UI/Texture/Icons/Modules/refinery_BoosterReactions.png
+21790:
+  description: refinery module hybrid reactions
+  iconFile: res:/UI/Texture/Icons/Modules/refinery_HybridReactions.png
+21791:
+  description: refinery module adv reactions
+  iconFile: res:/UI/Texture/Icons/Modules/refinery_T2Reactions.png
+21792:
+  description: moon asteroid ubi
+  iconFile: res:/UI/Texture/Icons/Inventory/moonAsteroid_R4.png
+21793:
+  description: moon asteroid com
+  iconFile: res:/UI/Texture/Icons/Inventory/moonAsteroid_R8.png
+21794:
+  description: moon asteroid unc
+  iconFile: res:/UI/Texture/Icons/Inventory/moonAsteroid_R16.png
+21795:
+  description: moon asteroid rar
+  iconFile: res:/UI/Texture/Icons/Inventory/moonAsteroid_R32.png
+21796:
+  description: moon asteroid exc
+  iconFile: res:/UI/Texture/Icons/Inventory/moonAsteroid_R64.png
+21797:
+  description: moon asteroid ubi jkpt
+  iconFile: res:/UI/Texture/Icons/Inventory/moonAsteroid_JackpotR4.png
+21798:
+  description: moon asteroid com jkpt
+  iconFile: res:/UI/Texture/Icons/Inventory/moonAsteroid_JackpotR8.png
+21799:
+  description: moon asteroid unc jkpt
+  iconFile: res:/UI/Texture/Icons/Inventory/moonAsteroid_JackpotR16.png
+21800:
+  description: moon asteroid rar jkpt
+  iconFile: res:/UI/Texture/Icons/Inventory/moonAsteroid_JackpotR32.png
+21801:
+  description: moon asteroid exc jkpt
+  iconFile: res:/UI/Texture/Icons/Inventory/moonAsteroid_JackpotR64.png
+21802:
+  description: Icon for the Gallente Resource Wars corporation
+  iconFile: res:/ui/texture/corps/federalStrategicMateriel.png
+21803:
+  description: Icon for the Amarr Resource Wars corporation
+  iconFile: res:/ui/texture/corps/imperialWarReserves.png
+21804:
+  description: Icon for the Minmatar Resource Wars corporation
+  iconFile: res:/ui/texture/corps/republicFleetOrdnance.png
+21805:
+  description: Icon for the Caldari Resource Wars corporation
+  iconFile: res:/ui/texture/corps/stateMilitaryStockpile.png
+21807:
+  description: 46658_female_Outer_JacketAGF01_Types_JacketAGF01_Gallente_RW.png
+  iconFile: res:/UI/Asset/mannequin/outer/46658_female_Outer_JacketAGF01_Types_JacketAGF01_Gallente_RW.png
+21808:
+  description: 46659_male_outer_JacketCMM01_Types_JacketCMM01_Caldari.png
+  iconFile: res:/UI/Asset/mannequin/outer/46659_male_outer_JacketCMM01_Types_JacketCMM01_Caldari.png
+21809:
+  description: 46660_female_Outer_JacketAGF01_Types_JacketAGF01_Gallente.png
+  iconFile: res:/UI/Asset/mannequin/outer/46660_female_Outer_JacketAGF01_Types_JacketAGF01_Gallente.png
+21810:
+  description: 46661_female_Outer_JacketCMF01_Types_JacketCMF01_Minmatar_RW.png
+  iconFile: res:/UI/Asset/mannequin/outer/46661_female_Outer_JacketCMF01_Types_JacketCMF01_Minmatar_RW.png
+21811:
+  description: 46662_male_outer_JacketAGM01_Types_JacketAGM01_Amarr.png
+  iconFile: res:/UI/Asset/mannequin/outer/46662_male_outer_JacketAGM01_Types_JacketAGM01_Amarr.png
+21812:
+  description: 46663_female_Outer_JacketAGF01_Types_JacketAGF01_Amarr.png
+  iconFile: res:/UI/Asset/mannequin/outer/46663_female_Outer_JacketAGF01_Types_JacketAGF01_Amarr.png
+21813:
+  description: 46664_male_outer_JacketCMM01_Types_JacketCMM01_Minmatar.png
+  iconFile: res:/UI/Asset/mannequin/outer/46664_male_outer_JacketCMM01_Types_JacketCMM01_Minmatar.png
+21814:
+  description: 46665_male_outer_JacketAGM01_Types_JacketAGM01_Gallente.pn
+  iconFile: res:/UI/Asset/mannequin/outer/46665_male_outer_JacketAGM01_Types_JacketAGM01_Gallente.png
+21815:
+  description: 46666_male_outer_JacketAGM01_Types_JacketAGM01_Amarr_RW.png
+  iconFile: res:/UI/Asset/mannequin/outer/46666_male_outer_JacketAGM01_Types_JacketAGM01_Amarr_RW.png
+21816:
+  description: 46667_male_outer_JacketAGM01_Types_JacketAGM01_Gallente_RW.png
+  iconFile: res:/UI/Asset/mannequin/outer/46667_male_outer_JacketAGM01_Types_JacketAGM01_Gallente_RW.png
+21817:
+  description: 46668_female_Outer_JacketAGF01_Types_JacketAGF01_Amarr_RW.png
+  iconFile: res:/UI/Asset/mannequin/outer/46668_female_Outer_JacketAGF01_Types_JacketAGF01_Amarr_RW.png
+21818:
+  description: 46669_female_Outer_JacketCMF01_Types_JacketCMF01_Caldari.png
+  iconFile: res:/UI/Asset/mannequin/outer/46669_female_Outer_JacketCMF01_Types_JacketCMF01_Caldari.png
+21819:
+  description: 46674_male_outer_JacketCMM01_Types_JacketCMM01_Minmatar_RW.png
+  iconFile: res:/UI/Asset/mannequin/outer/46674_male_outer_JacketCMM01_Types_JacketCMM01_Minmatar_RW.png
+21820:
+  description: 46671_female_Outer_JacketCMF01_Types_JacketCMF01_Caldari_RW.png
+  iconFile: res:/UI/Asset/mannequin/outer/46671_female_Outer_JacketCMF01_Types_JacketCMF01_Caldari_RW.png
+21821:
+  description: 46672_male_outer_JacketCMM01_Types_JacketCMM01_Caldari_RW.png
+  iconFile: res:/UI/Asset/mannequin/outer/46672_male_outer_JacketCMM01_Types_JacketCMM01_Caldari_RW.png
+21822:
+  description: 46673_female_Outer_JacketCMF01_Types_JacketCMF01_Minmatar.png
+  iconFile: res:/UI/Asset/mannequin/outer/46673_female_Outer_JacketCMF01_Types_JacketCMF01_Minmatar.png
+21823:
+  description: Resource Wars Asteroid Icon
+  iconFile: res:/UI/Texture/Icons/Inventory/rwAsteroid.png
+21829:
+  description: Biochemical materials
+  iconFile: res:/ui/texture/icons/Inventory/biochemMaterials.png
+21830:
+  description: Amarr RW reward crate icon
+  iconFile: res:/UI/Texture/Icons/Inventory/crateAmarr.png
+21831:
+  description: Caldari RW reward crate icon
+  iconFile: res:/UI/Texture/Icons/Inventory/crateCaldari.png
+21832:
+  description: Gallente RW reward crate icon
+  iconFile: res:/UI/Texture/Icons/Inventory/crateGallente.png
+21833:
+  description: Minmatar RW reward crate icon
+  iconFile: res:/UI/Texture/Icons/Inventory/crateMinmatar.png
+21835:
+  description: Alpha Injector Icon
+  iconFile: res:/UI/Texture/Icons/Inventory/skillInjectorAlpha.png
+21836:
+  description: 47031_female_Outer_JacketSLF_01_Types_JacketSLF_01_JinMeiOpera.png
+  iconFile: res:/UI/Asset/mannequin/outer/47031_female_Outer_JacketSLF_01_Types_JacketSLF_01_JinMeiOpera.png
+21837:
+  description: 47032_male_outer_JacketALM01_Types_JacketALM01_JinMeiOpera.png
+  iconFile: res:/UI/Asset/mannequin/outer/47032_male_outer_JacketALM01_Types_JacketALM01_JinMeiOpera.png
+21839:
+  description: Agency damage booster
+  iconFile: res:/UI/Texture/Icons/Inventory/boosterAgencyDamage.png
+21840:
+  description: Agency speed booster
+  iconFile: res:/UI/Texture/Icons/Inventory/boosterAgencySpeed.png
+21841:
+  description: Agency tank booster
+  iconFile: res:/UI/Texture/Icons/Inventory/boosterAgencyTank.png
+21843:
+  description: stolen tokens
+  iconFile: res:/ui/texture/icons/25_64_16.png
+21844:
+  description: generic guidebook
+  iconFile: res:/ui/texture/icons/25_64_3.png
+21845:
+  description: 47191_male_hair_HeadWear_Cap_M01_Types_HeadWear_Cap_M01_XV_BlackOrange.png
+  iconFile: res:/UI/Asset/mannequin/hair/47191_male_hair_HeadWear_Cap_M01_Types_HeadWear_Cap_M01_XV_BlackOrange.png
+21846:
+  description: 47192_female_TopMiddle_TshirtF01_Types_TshirtF01_XV_StarOrange.png
+  iconFile: res:/UI/Asset/mannequin/topmiddle/47192_female_TopMiddle_TshirtF01_Types_TshirtF01_XV_StarOrange.png
+21847:
+  description: 47182_male_TopMiddle_TshirtM01_Types_TshirtM01_XV_Amarr.png
+  iconFile: res:/UI/Asset/mannequin/topmiddle/47182_male_TopMiddle_TshirtM01_Types_TshirtM01_XV_Amarr.png
+21848:
+  description: 47183_male_TopMiddle_TshirtM01_Types_TshirtM01_XV_Minmatar.png
+  iconFile: res:/UI/Asset/mannequin/topmiddle/47183_male_TopMiddle_TshirtM01_Types_TshirtM01_XV_Minmatar.png
+21849:
+  description: 47184_male_TopMiddle_TshirtM01_Types_TshirtM01_XV_Gallente.png
+  iconFile: res:/UI/Asset/mannequin/topmiddle/47184_male_TopMiddle_TshirtM01_Types_TshirtM01_XV_Gallente.png
+21850:
+  description: 47185_female_TopMiddle_TshirtF01_Types_TshirtF01_XV_Gallente.png
+  iconFile: res:/UI/Asset/mannequin/topmiddle/47185_female_TopMiddle_TshirtF01_Types_TshirtF01_XV_Gallente.png
+21851:
+  description: 47186_female_TopMiddle_TshirtF01_Types_TshirtF01_XV_Amarr.png
+  iconFile: res:/UI/Asset/mannequin/topmiddle/47186_female_TopMiddle_TshirtF01_Types_TshirtF01_XV_Amarr.png
+21853:
+  description: 47188_male_TopMiddle_TshirtM01_Types_TshirtM01_XV_Caldari.png
+  iconFile: res:/UI/Asset/mannequin/topmiddle/47188_male_TopMiddle_TshirtM01_Types_TshirtM01_XV_Caldari.png
+21854:
+  description: 47189_female_TopMiddle_TshirtF01_Types_TshirtF01_XV_Caldari.png
+  iconFile: res:/UI/Asset/mannequin/topmiddle/47189_female_TopMiddle_TshirtF01_Types_TshirtF01_XV_Caldari.png
+21855:
+  description: 47190_male_TopMiddle_TshirtM01_Types_TshirtM01_XV_StarOrange.png
+  iconFile: res:/UI/Asset/mannequin/topmiddle/47190_male_TopMiddle_TshirtM01_Types_TshirtM01_XV_StarOrange.png
+21857:
+  description: 47187_female_TopMiddle_TshirtF01_Types_TshirtF01_XV_Minmatar.png
+  iconFile: res:/UI/Asset/mannequin/topmiddle/47187_female_TopMiddle_TshirtF01_Types_TshirtF01_XV_Minmatar.png
+21858:
+  description: 47193_female_hair_HeadWear_Cap_F01_Types_HeadWear_Cap_F01_XV_BlackOrange.png
+  iconFile: res:/UI/Asset/mannequin/hair/47193_female_hair_HeadWear_Cap_F01_Types_HeadWear_Cap_F01_XV_BlackOrange.png
+21860:
+  description: Assault Damage Control
+  iconFile: res:/UI/Texture/Icons/Modules/AssaultDamageControl.png
+21872:
+  description: 47287_female_Outer_ArmorSuitCF01_Types_ArmorSuitCF01_SWAT.png
+  iconFile: res:/UI/Asset/mannequin/outer/47287_female_Outer_ArmorSuitCF01_Types_ArmorSuitCF01_SWAT.png
+21873:
+  description: 47286_male_outer_ArmorSuitMM01_Types_ArmorSuitMM01_SWAT.png
+  iconFile: res:/UI/Asset/mannequin/outer/47286_male_outer_ArmorSuitMM01_Types_ArmorSuitMM01_SWAT.png
+21877:
+  description: 'Buff bar: Tether Blocked'
+  iconFile: res:/UI/Texture/Icons/StatusEffects/tetherDisabled.png
+21878:
+  description: 47477_female_hair_HeadWear_Cap_F01_Types_HeadWear_Cap_F01_XV_FF.png
+  iconFile: res:/UI/Asset/mannequin/hair/47477_female_hair_HeadWear_Cap_F01_Types_HeadWear_Cap_F01_XV_FF.png
+21879:
+  description: 47478_male_hair_HeadWear_Cap_M01_Types_HeadWear_Cap_M01_XV_FF.png
+  iconFile: res:/UI/Asset/mannequin/hair/47478_male_hair_HeadWear_Cap_M01_Types_HeadWear_Cap_M01_XV_FF.png
+21880:
+  description: 47475_female_Outer_ExplorationSuit_F01_Types_ExplorationSuit_F01_XV.png
+  iconFile: res:/UI/Asset/mannequin/outer/47475_female_Outer_ExplorationSuit_F01_Types_ExplorationSuit_F01_XV.png
+21881:
+  description: 47476_male_outer_ExplorationSuit_M01_Types_ExplorationSuit_M01_XV.png
+  iconFile: res:/UI/Asset/mannequin/outer/47476_male_outer_ExplorationSuit_M01_Types_ExplorationSuit_M01_XV.png
+21882:
+  description: 47479_female_TopMiddle_TshirtF01_Types_TshirtF01_XV_FF.png
+  iconFile: res:/UI/Asset/mannequin/topmiddle/47479_female_TopMiddle_TshirtF01_Types_TshirtF01_XV_FF.png
+21883:
+  description: 47480_male_TopMiddle_TshirtM01_Types_TshirtM01_XV_FF.png
+  iconFile: res:/UI/Asset/mannequin/topmiddle/47480_male_TopMiddle_TshirtM01_Types_TshirtM01_XV_FF.png
+21898:
+  description: Crate - Capsuleer Day Theme
+  iconFile: res:/UI/Texture/Icons/Inventory/crateCapsuleerDay.png
+21899:
+  description: Crate - Yoiul Festival Theme
+  iconFile: res:/UI/Texture/Icons/Inventory/crateChristmas.png
+21900:
+  description: Crate - Crimson Harvest Theme
+  iconFile: res:/UI/Texture/Icons/Inventory/crateCrimsonHarvest.png
+21901:
+  description: Crate - Guardian's Gala Theme
+  iconFile: res:/UI/Texture/Icons/Inventory/crateGuardiansGala.png
+21902:
+  description: Crate - Generic Celebration Theme
+  iconFile: res:/UI/Texture/Icons/Inventory/crateNewYears.png

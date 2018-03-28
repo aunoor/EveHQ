@@ -296,12 +296,12 @@
 319,1,3110,153,3,6,0,0,0,Navigation,Eifyr and Co. 'Rogue' Warp Drive Operation WD-608
 319,1,27112,153,3,6,0,0,0,Navigation,Eifyr and Co. 'Rogue' Warp Drive Operation WD-610
 319,1,3111,153,3,6,0,0,0,Navigation,Eifyr and Co. 'Rogue' Warp Drive Operation WD-612
-216,1,27100,6,4,131,0,0,0,Navigation,Eifyr and Co. 'Rogue' High Speed Maneuvering HS-901
-216,1,3112,6,4,131,0,0,0,Navigation,Eifyr and Co. 'Rogue' High Speed Maneuvering HS-902
-216,1,13243,6,4,131,0,0,0,Navigation,Eifyr and Co. 'Rogue' High Speed Maneuvering HS-903
-216,1,3113,6,4,131,0,0,0,Navigation,Eifyr and Co. 'Rogue' High Speed Maneuvering HS-904
-216,1,16006,6,4,131,0,0,0,Navigation,Eifyr and Co. 'Rogue' High Speed Maneuvering HS-905
-216,1,3116,6,4,131,0,0,0,Navigation,Eifyr and Co. 'Rogue' High Speed Maneuvering HS-906
+317,1,27100,6,4,131,0,0,0,Navigation,Eifyr and Co. 'Rogue' High Speed Maneuvering HS-901
+317,1,3112,6,4,131,0,0,0,Navigation,Eifyr and Co. 'Rogue' High Speed Maneuvering HS-902
+317,1,13243,6,4,131,0,0,0,Navigation,Eifyr and Co. 'Rogue' High Speed Maneuvering HS-903
+317,1,3113,6,4,131,0,0,0,Navigation,Eifyr and Co. 'Rogue' High Speed Maneuvering HS-904
+317,1,16006,6,4,131,0,0,0,Navigation,Eifyr and Co. 'Rogue' High Speed Maneuvering HS-905
+317,1,3116,6,4,131,0,0,0,Navigation,Eifyr and Co. 'Rogue' High Speed Maneuvering HS-906
 624,1,27115,600,3,6,0,0,0,Navigation,Eifyr and Co. 'Rogue' Warp Drive Speed WS-605
 624,1,3117,600,3,6,0,0,0,Navigation,Eifyr and Co. 'Rogue' Warp Drive Speed WS-608
 624,1,13242,600,3,6,0,0,0,Navigation,Eifyr and Co. 'Rogue' Warp Drive Speed WS-610
@@ -658,3 +658,8 @@
 292,1,3183,114;116;117;118,2,386;656,0,0,0,Missiles,Zainou 'Snapshot' Cruise Missiles CM-606
 292,1,27259,114;116;117;118,2,386;656,0,0,0,Missiles,Zainou 'Snapshot' Cruise Missiles CM-601
 292,1,3181,114;116;117;118,2,386;656,0,0,0,Missiles,Zainou 'Snapshot' Cruise Missiles CM-602
+
+1918,1,47028,1910,4,1718,0,0,0,Science,Neural Lace 'Blackglass' Net Intrusion 920-40
+#2747,1,47261,22761,2,65,0,0,0,Electronics,Inquest 'Eros' Stasis Webifier MR-803
+#2747,1,47262,22761,2,65,0,0,0,Electronics,Inquest 'Eros' Stasis Webifier MR-805
+#2747,1,47263,22761,2,65,0,0,0,Electronics,Inquest 'Eros' Stasis Webifier MR-807

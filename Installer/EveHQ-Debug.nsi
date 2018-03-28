@@ -36,7 +36,7 @@ VIAddVersionKey "ProductName" "EveHQ Setup"
 !ifdef Version
 VIProductVersion ${Version}
 !else
-VIProductVersion 2.31.11.0
+VIProductVersion 2.31.12.0
 !endif
 
 
@@ -118,8 +118,6 @@ SectionIn RO
   File "..\BuildOutput\EveHQ\Debug\EveHQ.NewEveAPI.pdb"
   File "..\BuildOutput\EveHQ\Debug\EveHQ.Prism.dll"
   File "..\BuildOutput\EveHQ\Debug\EveHQ.Prism.pdb"
-  File "..\BuildOutput\EveHQ\Debug\EveHQ.EveCrest.dll"
-  File "..\BuildOutput\EveHQ\Debug\EveHQ.EveCrest.pdb"
   File "..\BuildOutput\EveHQ\Debug\EveHQ.Void.dll"
   File "..\BuildOutput\EveHQ\Debug\EveHQ.Void.pdb"
   File "..\BuildOutput\EveHQ\Debug\GammaJul.lglcd.dll"
