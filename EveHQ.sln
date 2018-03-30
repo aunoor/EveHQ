@@ -52,6 +52,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{D37267
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EveHQ.Esi", "EveHQ.Esi\EveHQ.Esi.csproj", "{CAA5BC94-0922-4F30-AC20-B28D0BB748C1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "data", "data", "{61C56156-B249-4253-A661-44B55C96CB1A}"
+	ProjectSection(SolutionItems) = preProject
+		EveHQ\_evehqupdate.xml = EveHQ\_evehqupdate.xml
+		EveHQ\_message.xml = EveHQ\_message.xml
+		Installer\EveHQ-Debug.nsi = Installer\EveHQ-Debug.nsi
+		Installer\EveHQ.nsi = Installer\EveHQ.nsi
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|.NET = Debug|.NET
@@ -313,5 +321,8 @@ Global
 		{8B03AD2B-8399-4702-8915-335E5AD5D667} = {4542534A-44CB-42CA-803E-716936314F21}
 		{CE6D55FD-2F07-4153-8C4A-D03C29B252F3} = {4542534A-44CB-42CA-803E-716936314F21}
 		{A936DB0B-2C9B-406C-85E4-D7AC13E605EC} = {3DEE9EE8-C786-45E3-A4E2-10709F5137F7}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8E255F87-17B7-4130-8C3A-6F9E97D9E716}
 	EndGlobalSection
 EndGlobal
