@@ -128,6 +128,7 @@ Namespace Controls.DBControls
                 Else
                     cSystem.WEffect = ""
                 End If
+                'TODO: Check if this situation will happend again
                 If _wormholeSystems.ContainsKey(CStr(cSystem.Name)) = False Then
                     _wormholeSystems.Add(CStr(cSystem.Name), cSystem)
                 End If
