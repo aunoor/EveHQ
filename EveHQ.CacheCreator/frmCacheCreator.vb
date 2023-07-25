@@ -925,7 +925,9 @@ Public Class FrmCacheCreator
                     s.SystemId = CInt(reader.Item("solarSystemID"))
                     s.RefiningEfficiency = CDbl(reader.Item("reprocessingEfficiency"))
                     s.StationTake = CDbl(reader.Item("reprocessingStationsTake"))
-                    s.Services = operationServices(CInt(reader.Item("operationID")))
+                    Dim opId =  CInt(reader.Item("operationID"))
+                    'TODO: Check for extended opIDs, not included in operationID list
+                    if operationServices.ContainsKey(opID) Then s.Services = operationServices(opId)
                     StaticData.Stations.Add(s.StationId, s)
                 Loop
             End If
@@ -992,8 +994,18 @@ Public Class FrmCacheCreator
         Using evehqData As DataSet = DatabaseFunctions.GetStaticData("SELECT * FROM dgmAttributeTypes;")
             For item As Integer = 0 To evehqData.Tables(0).Rows.Count - 1
                 Dim at As New AttributeType
+                
+                Dim pub = CInt(evehqData.Tables(0).Rows(item).Item("published"))
+                'Skiping unpublished attributes
+                if pub = 0 Then Continue For
+                
                 at.AttributeId = CInt(evehqData.Tables(0).Rows(item).Item("attributeID"))
-                at.AttributeName = CStr(evehqData.Tables(0).Rows(item).Item("attributeName")).Trim
+                If IsDBNull(evehqData.Tables(0).Rows(item).Item("attributeName")) = False Then
+                    at.AttributeName = CStr(evehqData.Tables(0).Rows(item).Item("attributeName")).Trim
+                Else
+                    at.AttributeName = "Attribute " + CStr(at.AttributeId).Trim    
+                End If
+                
                 If IsDBNull(evehqData.Tables(0).Rows(item).Item("displayName")) = False Then
                     at.DisplayName = CStr(evehqData.Tables(0).Rows(item).Item("displayName")).Trim
                 Else
@@ -1096,7 +1108,12 @@ Public Class FrmCacheCreator
             For item As Integer = 0 To evehqData.Tables(0).Rows.Count - 1
                 Dim mt As New MetaType
                 mt.Id = CInt(evehqData.Tables(0).Rows(item).Item("typeID"))
-                mt.ParentId = CInt(evehqData.Tables(0).Rows(item).Item("parentTypeID"))
+                if IsDBNull(evehqData.Tables(0).Rows(item).Item("parentTypeID")) = False Then
+                    mt.ParentId = CInt(evehqData.Tables(0).Rows(item).Item("parentTypeID"))
+                Else
+                   mt.ParentId = 0 
+                End If
+                
                 mt.MetaGroupId = CInt(evehqData.Tables(0).Rows(item).Item("metaGroupID"))
                 StaticData.MetaTypes.Add(mt.Id, mt)
             Next
@@ -2163,13 +2180,19 @@ Public Class FrmCacheCreator
                     ModuleLists.ModuleMetaTypes.Clear()
                     ModuleLists.ModuleMetaGroups.Clear()
                     For Each row As DataRow In metaTypeData.Tables(0).Rows
+                        if IsDBNull(row.Item("invMetaTypes.parentTypeID")) = True Then Continue For
+                        
+                        Dim pId = 0
+                        if IsDBNull(row.Item("invMetaTypes.parentTypeID")) = False Then 
+                            pId = CInt(row.Item("invMetaTypes.parentTypeID"))
+                        End If                        
                         If ModuleLists.ModuleMetaTypes.ContainsKey(CInt(row.Item("invTypes_typeID"))) = False Then
-                            ModuleLists.ModuleMetaTypes.Add(CInt(row.Item("invTypes_typeID")), CInt(row.Item("invMetaTypes.parentTypeID")))
+                            ModuleLists.ModuleMetaTypes.Add(CInt(row.Item("invTypes_typeID")), pId)
                             ModuleLists.ModuleMetaGroups.Add(CInt(row.Item("invTypes_typeID")), CInt(row.Item("invMetaGroups_metaGroupID")))
                         End If
-                        If ModuleLists.ModuleMetaTypes.ContainsKey(CInt(row.Item("invMetaTypes.parentTypeID"))) = False Then
-                            ModuleLists.ModuleMetaTypes.Add(CInt(row.Item("invMetaTypes.parentTypeID")), CInt(row.Item("invMetaTypes.parentTypeID")))
-                            ModuleLists.ModuleMetaGroups.Add(CInt(row.Item("invMetaTypes.parentTypeID")), 0)
+                        If ModuleLists.ModuleMetaTypes.ContainsKey(pId) = False Then
+                            ModuleLists.ModuleMetaTypes.Add(pId, pId)
+                            ModuleLists.ModuleMetaGroups.Add(pId, 0)
                         End If
                     Next
                     Return
@@ -2187,7 +2210,7 @@ Public Class FrmCacheCreator
         End Try
     End Sub
     Private Sub BuildModuleData()
-        Try
+        'Try
             ModuleLists.ModuleList.Clear()
             ModuleLists.ModuleListName.Clear()
             Implants.ImplantList.Clear()
@@ -2312,13 +2335,13 @@ Public Class FrmCacheCreator
             Next
             BuildModuleEffectData()
             Return
-        Catch e As Exception
-            MessageBox.Show("Error building Module Data: " & e.Message, "HQF Initialisation Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Return
-        End Try
+        'Catch e As Exception
+            'MessageBox.Show("Error building Module Data: " & e.Message, "HQF Initialisation Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            'Return
+        'End Try
     End Sub
     Private Sub BuildModuleEffectData()
-        Try
+       'Try
             ' Get details of module attributes from already retrieved dataset
             For Each modRow As DataRow In moduleEffectData.Tables(0).Rows
                 Dim effMod As ShipModule = ModuleLists.ModuleList.Item(CInt(modRow.Item("typeID")))
@@ -2435,13 +2458,13 @@ Public Class FrmCacheCreator
             Else
                 Return
             End If
-        Catch e As Exception
-            MessageBox.Show("Error building Module Effect Data: " & e.Message, "HQF Initialisation Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Return
-        End Try
+        'Catch e As Exception
+            'MessageBox.Show("Error building Module Effect Data: " & e.Message, "HQF Initialisation Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            'Return
+        'End Try
     End Sub
     Private Function BuildModuleAttributeData() As Boolean
-        Try
+        'Try
             ' Get details of module attributes from already retrieved dataset
             Dim attValue As Double
             Dim requiredSkill1Name As String = ""
@@ -2664,7 +2687,10 @@ Public Class FrmCacheCreator
                             cMod.MetaType = 1
                         End If
                     Else
-                        cMod.MetaType = CInt(2 ^ (CInt(ModuleLists.ModuleMetaGroups(cMod.ID)) - 1))
+                        Dim mmg = CInt(ModuleLists.ModuleMetaGroups(cMod.ID))
+                        'TODO: fix that:
+                        if mmg > 19 Then mmg = 20
+                        cMod.MetaType = CInt(2 ^ ( mmg - 1))
                     End If
                 Else
                     cMod.MetaType = 1
@@ -2699,10 +2725,10 @@ Public Class FrmCacheCreator
             Else
                 Return False
             End If
-        Catch e As Exception
-            MessageBox.Show("Error building Module Attribute Data: " & e.Message, "HQF Initialisation Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Return False
-        End Try
+        'Catch e As Exception
+            'MessageBox.Show("Error building Module Attribute Data: " & e.Message, "HQF Initialisation Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            'Return False
+        'End Try
     End Function
     Private Function BuildImplantData() As Boolean
         Try

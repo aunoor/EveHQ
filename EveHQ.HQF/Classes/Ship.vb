@@ -430,6 +430,7 @@ Imports System.Runtime.Serialization
             If _cOverrideFittingRules = False Then
                 If value <> MaxSubSlots And value <> 0 Then
                     MessageBox.Show("The number of subsystem slots is currently restricted to " & MaxSubSlots.ToString, "Ship Properties Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    _cSubSlots = MaxSubSlots
                 Else
                     _cSubSlots = value
                 End If
