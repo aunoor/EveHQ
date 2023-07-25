@@ -22,7 +22,7 @@ Namespace My.Resources
     '''<summary>
     '''  A strongly-typed resource class, for looking up localized strings, etc.
     '''</summary>
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0"),  _
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0"),  _
      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(),  _
      Global.Microsoft.VisualBasic.HideModuleNameAttribute()>  _
@@ -299,7 +299,7 @@ Namespace My.Resources
         '''      &lt;row errorCode=&quot;100&quot; errorText=&quot;Expected before ref/trans ID = 0: wallet not previously loaded.&quot; /&gt;
         '''      &lt;row errorCode=&quot;101&quot; errorText=&quot;Wallet exhausted: retry after {0}.&quot; /&gt;
         '''      &lt;row errorCode=&quot;102&quot; errorText=&quot;Expected before ref/trans ID [{0}] but supplied [{1}]: wallet previously loaded.&quot; /&gt;
-        '''      [rest of string was truncated]&quot;;.
+        '''      &lt;row er [rest of string was truncated]&quot;;.
         '''</summary>
         Friend ReadOnly Property Errors() As String
             Get
@@ -1129,7 +1129,9 @@ Namespace My.Resources
         '''30642,1382,1440
         '''30642,1383,1000000000
         '''30642,1384,0
-        '''30642,1385,300000000 [rest of string was truncated]&quot;;.
+        '''30642,1385,300000000
+        '''30642,1457,299
+        '''30643,1381,5 [rest of string was truncated]&quot;;.
         '''</summary>
         Friend ReadOnly Property WHattribs() As String
             Get
@@ -1187,7 +1189,7 @@ Namespace My.Resources
         '''1465,2,920,267,3,6,0,0,2,15,Armor EM Resistance Bonus
         '''1466,2,920,269,3,6,0,0,2,15,Armor Kin Resistance Bonus
         '''1467,2,920,270,3,6,0,0,2,15,Armor Therm Resistance Bonus
-        '''1 [rest of string was truncated]&quot;;.
+        '''1468,2,920, [rest of string was truncated]&quot;;.
         '''</summary>
         Friend ReadOnly Property WHEffects() As String
             Get
@@ -1229,7 +1231,8 @@ Namespace My.Resources
         '''J101042,Cataclysmic Variable
         '''J101145,Pulsar
         '''J101336,Cataclysmic Variable
-        '''J101343,Wol [rest of string was truncated]&quot;;.
+        '''J101343,Wolf Rayet
+        '''J101415,Red Gia [rest of string was truncated]&quot;;.
         '''</summary>
         Friend ReadOnly Property WSpaceTypes() As String
             Get

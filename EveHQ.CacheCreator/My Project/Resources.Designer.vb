@@ -22,7 +22,7 @@ Namespace My.Resources
     '''<summary>
     '''  A strongly-typed resource class, for looking up localized strings, etc.
     '''</summary>
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0"),  _
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0"),  _
      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(),  _
      Global.Microsoft.VisualBasic.HideModuleNameAttribute()>  _
@@ -131,7 +131,12 @@ Namespace My.Resources
         '''73,13
         '''2398,13
         '''2399,13
-        '''2 [rest of string was truncated]&quot;;.
+        '''2400,13
+        '''2397,13
+        '''180,14
+        '''181,14
+        '''275,14
+        '''.
         '''</summary>
         Friend ReadOnly Property attributeGroups() As String
             Get
@@ -150,7 +155,7 @@ Namespace My.Resources
         ''' PRIMARY KEY (typeID, activityID, requiredTypeID)
         ''');
         '''
-        '''INSERT  [rest of string was truncated]&quot;;.
+        '''INSERT INTO invBu [rest of string was truncated]&quot;;.
         '''</summary>
         Friend ReadOnly Property SQLQueries() As String
             Get

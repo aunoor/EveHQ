@@ -22,7 +22,7 @@ Namespace My.Resources
     '''<summary>
     '''  A strongly-typed resource class, for looking up localized strings, etc.
     '''</summary>
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0"),  _
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0"),  _
      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(),  _
      Global.Microsoft.VisualBasic.HideModuleNameAttribute()>  _
@@ -73,7 +73,7 @@ Namespace My.Resources
         '''10010,Thrust Addition,Thrust Addition,0,,6
         '''10011,energyTurretROF,Rate Of Fire,0,s,9
         '''10012,hybridTurretROF,Rate Of Fire,0,s,9
-        '''10013,projectileTurretROF,Rate  [rest of string was truncated]&quot;;.
+        '''10013,projectileTurretROF,Rate Of Fire,0,s, [rest of string was truncated]&quot;;.
         '''</summary>
         Friend ReadOnly Property Attributes() As String
             Get
@@ -102,7 +102,7 @@ Namespace My.Resources
         '''15464,0,1079,Improved,Mindflood,Capacitor Bonus
         '''10165,0,349,Improved,Soothsayer,Turret Falloff Bonus
         '''15458,0,554,Improved,Xinstict,Sig Radius Bonus
-        '''9950,0,548,Standard,Bl [rest of string was truncated]&quot;;.
+        '''9950,0,548,Standard,Blue Pill,Sh [rest of string was truncated]&quot;;.
         '''</summary>
         Friend ReadOnly Property BoosterEffects() As String
             Get
@@ -148,7 +148,7 @@ Namespace My.Resources
         '''Pure Thermal,0,0,0,10000
         '''Rogue Drone,0,7000,2000,1000
         '''Sanshas Nation,5300,0,0,4700
-        '''Serp [rest of string was truncated]&quot;;.
+        '''Serpentis,0,0,4500,55 [rest of string was truncated]&quot;;.
         '''</summary>
         Friend ReadOnly Property DamageProfiles() As String
             Get
@@ -187,7 +187,8 @@ Namespace My.Resources
         '''2340,1,24613,2055,3,6,0,1,0,0,Fighter Hangar Management
         '''292,1,12484,64,5,12484,0,1,0,0,Amarr Drone Specialization
         '''292,1,12487,64,5,12487,0,1,0,0,Caldari Drone Specialization
-        '''459,1,3437,10007,3,6,0,1,1,0,Drone Avi [rest of string was truncated]&quot;;.
+        '''459,1,3437,10007,3,6,0,1,1,0,Drone Avionics
+        '''32 [rest of string was truncated]&quot;;.
         '''</summary>
         Friend ReadOnly Property Effects() As String
             Get
@@ -723,7 +724,7 @@ Namespace My.Resources
         '''624,1,33525,1281,3,6,0,0,0,Navigation;Learning,High-grade Ascendancy Beta
         '''624,1,33526,1281,3,6,0,0,0,Navigation;Learning,High-grade Ascendancy Delta
         '''624,1,33527,1281,3,6,0,0,0,Navigation;Learning,High-grade Ascendancy Epsilon
-        '''624,1,33528,1281, [rest of string was truncated]&quot;;.
+        '''624,1,33528,1281,3,6,0,0 [rest of string was truncated]&quot;;.
         '''</summary>
         Friend ReadOnly Property ImplantEffects() As String
             Get
@@ -940,7 +941,7 @@ Namespace My.Resources
         '''1200mm Heavy Prototype I Artillery,1200mm Heavy Prototype Artillery,
         '''1200mm Heavy Prototype I Siege Cannon,1200mm Heavy Prototype Siege Cannon,
         '''125mm Light Gallium I Machine Gun,125mm Light Gallium Machine Gun,
-        '''125mm Light Prototype I Automatic Cannon,125mm [rest of string was truncated]&quot;;.
+        '''125mm Light Prototype I Automatic Cannon,125mm Light P [rest of string was truncated]&quot;;.
         '''</summary>
         Friend ReadOnly Property ModuleChanges() As String
             Get
@@ -990,7 +991,10 @@ Namespace My.Resources
         '''28264,837,0
         '''28266,839,0
         '''28268,839,0
-        '''2 [rest of string was truncated]&quot;;.
+        '''28270,838,0
+        '''28272,838,0
+        '''28274,837,0
+        '''28276, [rest of string was truncated]&quot;;.
         '''</summary>
         Friend ReadOnly Property newItemMarketGroup() As String
             Get
@@ -1074,7 +1078,7 @@ Namespace My.Resources
         '''34317,1,0,0,267,1,34317,0,1,2,-33.33333333,15,Defence Mode - Armor EM Resistence
         '''34317,1,0,0,268,1,34317,0,1,2,-33.33333333,15,Defence Mode - Armor Explosive Resistence
         '''34317,1,0,0,269,1,34317,0,1,2,-33.33333333,15,Defence Mode - Armor Kinetic Resistence
-        '''34317,1,0,0,270,1,34317,0,1,2,- [rest of string was truncated]&quot;;.
+        '''34317,1,0,0,270,1,34317,0,1,2,-33.3333 [rest of string was truncated]&quot;;.
         '''</summary>
         Friend ReadOnly Property ShipModeBonuses() As String
             Get
@@ -1165,12 +1169,13 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to #HQF Subsystem Bonus Mapping Table,,,,,,,,,,,
         '''#Type ID,Affecting Type,Affecting ID,Affected Attribute,Affected Type,Affected ID,Stack Nerf,Per Level,Calc Type,Value,Status,Description
-        '''# Defensive Subsystems,,,,,,,,,,,
-        '''# Legion Defensive - Adaptive Augmenter,,,,,,,,,,,
-        '''29964,1,30532,267,1,29986,0,1,2,-4,15,Armor EM Resistance
-        '''29964,1,30532,268,1,29986,0,1,2,-4,15,Armor Explosive Resistance
-        '''29964,1,30532,269,1,29986,0,1,2,-4,15,Armor Kinetic Resistance
-        '''29964,1,30532,270,1,29986,0,1,2,-4,15,Armor Therma [rest of string was truncated]&quot;;.
+        '''# Tengu Core Subsystems
+        '''# Tengu Core - Obfuscation Manifold,,,,,,,,,,,
+        '''45625,1,30548,54,2,201,0,1,0,10,15,ECM Optimal Range
+        '''45625,1,30548,238,2,201,0,1,0,10,15,ECM Jam Strength Grav
+        '''45625,1,30548,239,2,201,0,1,0,10,15,ECM Jam Strength Ladar
+        '''45625,1,30548,240,2,201,0,1,0,10,15,ECM Jam Strength Mag
+        '''45625,1,30548,241,2,20 [rest of string was truncated]&quot;;.
         '''</summary>
         Friend ReadOnly Property Subsystems() As String
             Get
