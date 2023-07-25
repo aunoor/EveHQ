@@ -128,7 +128,9 @@ Namespace Controls.DBControls
                 Else
                     cSystem.WEffect = ""
                 End If
-                _wormholeSystems.Add(CStr(cSystem.Name), cSystem)
+                If _wormholeSystems.ContainsKey(CStr(cSystem.Name)) = False Then
+                    _wormholeSystems.Add(CStr(cSystem.Name), cSystem)
+                End If
             Next
             whClasses.Clear()
             _whEffects.Clear()
