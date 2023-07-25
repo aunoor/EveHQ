@@ -159,7 +159,10 @@ Namespace Controls.DBControls
                 End If
                 ' Add in data from the resource file
                 If cWh.Name.StartsWith("Test", StringComparison.Ordinal) = False Then
-                    _wormholes.Add(CStr(cWh.Name), cWh)
+                    If _wormholes.ContainsKey(CStr(cWh.Name)) = False Then
+                        'TODO: Check if this situation will happend again 
+                        _wormholes.Add(CStr(cWh.Name), cWh)
+                    End if
                 End If
             Next
             whAttributes.Clear()
