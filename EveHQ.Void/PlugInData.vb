@@ -151,7 +151,9 @@ Public Class PlugInData
             End If
             ' Add in data from the resource file
             If cWormhole.Name.StartsWith("Test", StringComparison.Ordinal) = False Then
-                VoidData.Wormholes.Add(CStr(cWormhole.Name), cWormhole)
+                If VoidData.Wormholes.ContainsKey(CStr(cWormhole.Name)) = False Then 
+                    VoidData.Wormholes.Add(CStr(cWormhole.Name), cWormhole)
+                End If    
             End If
         Next
         whAttributes.Clear()
@@ -201,7 +203,10 @@ Public Class PlugInData
             Else
                 cSystem.WEffect = ""
             End If
-            VoidData.WormholeSystems.Add(CStr(cSystem.Name), cSystem)
+            'TODO: Check why this situation is happened 
+            if VoidData.WormholeSystems.ContainsKey(CStr(cSystem.Name)) = False 
+                VoidData.WormholeSystems.Add(CStr(cSystem.Name), cSystem)
+            End If    
         Next
         whClasses.Clear()
         VoidData.WormholeEffects.Clear()
