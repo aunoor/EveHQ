@@ -62,8 +62,10 @@ Public Class FrmVoid
         cboWHType.AutoCompleteSource = AutoCompleteSource.CustomSource
         cboWHType.Items.Clear()
         For Each wh As WormHole In VoidData.Wormholes.Values
-            cboWHType.Items.Add(wh.Name)
-            cboWHType.AutoCompleteCustomSource.Add(wh.Name)
+            If (cboWHType.Items.Contains(wh.Name)) = False Then
+                cboWHType.Items.Add(wh.Name)
+                cboWHType.AutoCompleteCustomSource.Add(wh.Name)
+            End If    
         Next
         cboWHType.EndUpdate()
     End Sub
@@ -75,8 +77,10 @@ Public Class FrmVoid
         cboWHSystem.AutoCompleteSource = AutoCompleteSource.CustomSource
         cboWHSystem.Items.Clear()
         For Each wh As WormholeSystem In VoidData.WormholeSystems.Values
-            cboWHSystem.Items.Add(wh.Name)
-            cboWHSystem.AutoCompleteCustomSource.Add(wh.Name)
+            If cboWHSystem.Items.Contains(wh.Name) = False Then 
+                cboWHSystem.Items.Add(wh.Name)
+                cboWHSystem.AutoCompleteCustomSource.Add(wh.Name)
+            End If    
         Next
         cboWHSystem.EndUpdate()
     End Sub

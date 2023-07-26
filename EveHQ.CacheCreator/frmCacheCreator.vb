@@ -2180,7 +2180,6 @@ Public Class FrmCacheCreator
                     ModuleLists.ModuleMetaTypes.Clear()
                     ModuleLists.ModuleMetaGroups.Clear()
                     For Each row As DataRow In metaTypeData.Tables(0).Rows
-                        if IsDBNull(row.Item("invMetaTypes.parentTypeID")) = True Then Continue For
                         
                         Dim pId = 0
                         if IsDBNull(row.Item("invMetaTypes.parentTypeID")) = False Then 
@@ -2309,8 +2308,10 @@ Public Class FrmCacheCreator
                         nModule = ModuleLists.ModuleList(modId)
                         If ModuleLists.ModuleMetaTypes.ContainsKey(modId) = True Then
                             parentId = ModuleLists.ModuleMetaTypes(modId)
-                            eModule = ModuleLists.ModuleList(parentId)
-                            nModule.MarketGroup = eModule.MarketGroup
+                            If ModuleLists.ModuleList.ContainsKey(parentId) Then
+                                eModule = ModuleLists.ModuleList(parentId)
+                                nModule.MarketGroup = eModule.MarketGroup
+                            End If
                         End If
                     End If
                 Next
