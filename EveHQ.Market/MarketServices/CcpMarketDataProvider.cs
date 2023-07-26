@@ -161,7 +161,7 @@ namespace EveHQ.Market.MarketServices
 			}
 
 			var requestUri = new Uri(
-				$"https://esi.tech.ccp.is/latest/markets/{regionId}/orders/?datasource=tranquility&order_type=all&page=1&type_id={typeId}");
+				$"https://esi.evetech.net/latest/markets/{regionId}/orders/?datasource=tranquility&order_type=all&page=1&type_id={typeId}");
 			var requestTask = _requestProvider.GetAsync(requestUri);
 			requestTask.Wait(); // wait for the completion (we're in a background task anyways)
 

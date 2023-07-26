@@ -109,6 +109,8 @@ namespace EveHQ.NewEveAPI
 		private AssetLocation GetStructureLocation(long locationId)
 		{
 			var result = new AssetLocation();
+			/*
+			//TODO: Need Fix for location of Structure name 
 			var structureNameTask = _structureNameClient.GetStructureNameAsync(locationId);
 			var isStructureNameGotten = false;
 			if (_isStructureNameServiceAbailable)
@@ -134,15 +136,16 @@ namespace EveHQ.NewEveAPI
 			}
 			else
 			{
+			*/
 				result.ContainerName = $"Unknown Location {locationId} (Wreck?)";
 				result.ContainerId = locationId;
 				result.SolarSystem = null;
-			}
+			//}
 
 			return result;
 		}
 
-		private bool _isStructureNameServiceAbailable = true;
+		//private bool _isStructureNameServiceAbailable = true;
 
 		private readonly StructureNameClient _structureNameClient;
 		private readonly Action<string> _logAction;
