@@ -540,7 +540,10 @@ namespace EveHQ.EveData
             {
                 return;
             }
-
+            
+            //TODO: Fix attribute storage!
+            if (!AttributeTypes.ContainsKey(att.Id)) return;
+            
             // Alter data based on unit ID
             switch (AttributeTypes[att.Id].UnitId)
             {
@@ -611,9 +614,22 @@ namespace EveHQ.EveData
 
             foreach (ItemAttrib att in atts)
             {
-                attributeList.Add(att.Id,
-                    new ItemAttribData(att.Id, att.Value, AttributeTypes[att.Id].DisplayName,
-                        " " + AttributeUnits[AttributeTypes[att.Id].UnitId]));
+
+                //TODO: Fix attribute storage!
+                string unit = "unknown";
+                string name = "att id: " + att.Id;
+
+                if (AttributeTypes.ContainsKey(att.Id))
+                {
+                    name = AttributeTypes.ContainsKey(att.Id) ? AttributeTypes[att.Id].DisplayName : "unknown";
+                    unit = AttributeUnits.ContainsKey(AttributeTypes[att.Id].UnitId)
+                        ? AttributeUnits[AttributeTypes[att.Id].UnitId]
+                        : "unknown";
+                }
+               
+                attributeList.Add(att.Id, 
+                    new ItemAttribData(att.Id, att.Value, name, " " + unit)
+                );
             }
 
             // Process attribute data
