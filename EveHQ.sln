@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26430.14
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "EveHQ", "EveHQ\EveHQ.vbproj", "{366925AB-54F3-4D36-B05C-E98DBE8DA595}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -54,17 +54,19 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EveHQ.Esi", "EveHQ.Esi\EveH
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "data", "data", "{61C56156-B249-4253-A661-44B55C96CB1A}"
 	ProjectSection(SolutionItems) = preProject
-		EveHQ\_evehqupdate.xml = EveHQ\_evehqupdate.xml
-		EveHQ\_message.xml = EveHQ\_message.xml
 		Installer\EveHQ-Debug.nsi = Installer\EveHQ-Debug.nsi
 		Installer\EveHQ.nsi = Installer\EveHQ.nsi
+		EveHQ\_evehqupdate.xml = EveHQ\_evehqupdate.xml
+		EveHQ\_message.xml = EveHQ\_message.xml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Vendor", "Vendor", "{A7AE5353-E914-44B4-A653-6B1C4F945E7B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ESI.NET", "Vendor\ESI.NET\ESI.NET\ESI.NET.csproj", "{CD0DD8AC-3AC9-4E29-A8FA-BBECA3037978}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ESI.NET", "Vendor\ESI.NET\ESI.NET\ESI.NET.csproj", "{CD0DD8AC-3AC9-4E29-A8FA-BBECA3037978}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiteDB", "Vendor\LiteDB\LiteDB\LiteDB.csproj", "{879C40EA-2C85-48D1-9A6A-1368884A4DE2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LiteDB", "Vendor\LiteDB\LiteDB\LiteDB.csproj", "{879C40EA-2C85-48D1-9A6A-1368884A4DE2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EveHQ.UI", "EveHQ.UI\EveHQ.UI.csproj", "{ABB6A19E-F242-4C5A-AA7A-35689C261C1E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -357,6 +359,26 @@ Global
 		{879C40EA-2C85-48D1-9A6A-1368884A4DE2}.Release|Win32.Build.0 = Release|Any CPU
 		{879C40EA-2C85-48D1-9A6A-1368884A4DE2}.Release|x86.ActiveCfg = Release|Any CPU
 		{879C40EA-2C85-48D1-9A6A-1368884A4DE2}.Release|x86.Build.0 = Release|Any CPU
+		{ABB6A19E-F242-4C5A-AA7A-35689C261C1E}.Debug|.NET.ActiveCfg = Debug|Any CPU
+		{ABB6A19E-F242-4C5A-AA7A-35689C261C1E}.Debug|.NET.Build.0 = Debug|Any CPU
+		{ABB6A19E-F242-4C5A-AA7A-35689C261C1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABB6A19E-F242-4C5A-AA7A-35689C261C1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABB6A19E-F242-4C5A-AA7A-35689C261C1E}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{ABB6A19E-F242-4C5A-AA7A-35689C261C1E}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{ABB6A19E-F242-4C5A-AA7A-35689C261C1E}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{ABB6A19E-F242-4C5A-AA7A-35689C261C1E}.Debug|Win32.Build.0 = Debug|Any CPU
+		{ABB6A19E-F242-4C5A-AA7A-35689C261C1E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{ABB6A19E-F242-4C5A-AA7A-35689C261C1E}.Debug|x86.Build.0 = Debug|Any CPU
+		{ABB6A19E-F242-4C5A-AA7A-35689C261C1E}.Release|.NET.ActiveCfg = Release|Any CPU
+		{ABB6A19E-F242-4C5A-AA7A-35689C261C1E}.Release|.NET.Build.0 = Release|Any CPU
+		{ABB6A19E-F242-4C5A-AA7A-35689C261C1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABB6A19E-F242-4C5A-AA7A-35689C261C1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABB6A19E-F242-4C5A-AA7A-35689C261C1E}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{ABB6A19E-F242-4C5A-AA7A-35689C261C1E}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{ABB6A19E-F242-4C5A-AA7A-35689C261C1E}.Release|Win32.ActiveCfg = Release|Any CPU
+		{ABB6A19E-F242-4C5A-AA7A-35689C261C1E}.Release|Win32.Build.0 = Release|Any CPU
+		{ABB6A19E-F242-4C5A-AA7A-35689C261C1E}.Release|x86.ActiveCfg = Release|Any CPU
+		{ABB6A19E-F242-4C5A-AA7A-35689C261C1E}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
