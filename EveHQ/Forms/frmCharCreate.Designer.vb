@@ -177,61 +177,61 @@ Namespace Forms
             '
             Me.nudW.Enabled = False
             Me.nudW.Location = New System.Drawing.Point(173, 165)
-            Me.nudW.Maximum = New Decimal(New Integer() {15, 0, 0, 0})
-            Me.nudW.Minimum = New Decimal(New Integer() {5, 0, 0, 0})
+            Me.nudW.Maximum = New Decimal(New Integer() {23, 0, 0, 0})
+            Me.nudW.Minimum = New Decimal(New Integer() {20, 0, 0, 0})
             Me.nudW.Name = "nudW"
             Me.nudW.Size = New System.Drawing.Size(70, 21)
             Me.nudW.TabIndex = 34
             Me.nudW.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-            Me.nudW.Value = New Decimal(New Integer() {8, 0, 0, 0})
+            Me.nudW.Value = New Decimal(New Integer() {20, 0, 0, 0})
             '
             'nudP
             '
             Me.nudP.Enabled = False
             Me.nudP.Location = New System.Drawing.Point(173, 139)
-            Me.nudP.Maximum = New Decimal(New Integer() {15, 0, 0, 0})
-            Me.nudP.Minimum = New Decimal(New Integer() {5, 0, 0, 0})
+            Me.nudP.Maximum = New Decimal(New Integer() {23, 0, 0, 0})
+            Me.nudP.Minimum = New Decimal(New Integer() {20, 0, 0, 0})
             Me.nudP.Name = "nudP"
             Me.nudP.Size = New System.Drawing.Size(70, 21)
             Me.nudP.TabIndex = 33
             Me.nudP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-            Me.nudP.Value = New Decimal(New Integer() {8, 0, 0, 0})
+            Me.nudP.Value = New Decimal(New Integer() {20, 0, 0, 0})
             '
             'nudM
             '
             Me.nudM.Enabled = False
             Me.nudM.Location = New System.Drawing.Point(173, 113)
-            Me.nudM.Maximum = New Decimal(New Integer() {15, 0, 0, 0})
-            Me.nudM.Minimum = New Decimal(New Integer() {5, 0, 0, 0})
+            Me.nudM.Maximum = New Decimal(New Integer() {23, 0, 0, 0})
+            Me.nudM.Minimum = New Decimal(New Integer() {20, 0, 0, 0})
             Me.nudM.Name = "nudM"
             Me.nudM.Size = New System.Drawing.Size(70, 21)
             Me.nudM.TabIndex = 32
             Me.nudM.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-            Me.nudM.Value = New Decimal(New Integer() {8, 0, 0, 0})
+            Me.nudM.Value = New Decimal(New Integer() {20, 0, 0, 0})
             '
             'nudI
             '
             Me.nudI.Enabled = False
             Me.nudI.Location = New System.Drawing.Point(173, 87)
-            Me.nudI.Maximum = New Decimal(New Integer() {15, 0, 0, 0})
-            Me.nudI.Minimum = New Decimal(New Integer() {5, 0, 0, 0})
+            Me.nudI.Maximum = New Decimal(New Integer() {23, 0, 0, 0})
+            Me.nudI.Minimum = New Decimal(New Integer() {20, 0, 0, 0})
             Me.nudI.Name = "nudI"
             Me.nudI.Size = New System.Drawing.Size(70, 21)
             Me.nudI.TabIndex = 31
             Me.nudI.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-            Me.nudI.Value = New Decimal(New Integer() {8, 0, 0, 0})
+            Me.nudI.Value = New Decimal(New Integer() {20, 0, 0, 0})
             '
             'nudC
             '
             Me.nudC.Enabled = False
             Me.nudC.Location = New System.Drawing.Point(173, 61)
-            Me.nudC.Maximum = New Decimal(New Integer() {15, 0, 0, 0})
-            Me.nudC.Minimum = New Decimal(New Integer() {5, 0, 0, 0})
+            Me.nudC.Maximum = New Decimal(New Integer() {22, 0, 0, 0})
+            Me.nudC.Minimum = New Decimal(New Integer() {19, 0, 0, 0})
             Me.nudC.Name = "nudC"
             Me.nudC.Size = New System.Drawing.Size(70, 21)
             Me.nudC.TabIndex = 30
             Me.nudC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-            Me.nudC.Value = New Decimal(New Integer() {7, 0, 0, 0})
+            Me.nudC.Value = New Decimal(New Integer() {19, 0, 0, 0})
             '
             'lblW
             '
@@ -241,7 +241,7 @@ Namespace Forms
             Me.lblW.Name = "lblW"
             Me.lblW.Size = New System.Drawing.Size(98, 13)
             Me.lblW.TabIndex = 29
-            Me.lblW.Text = "Willpower (5 to 15)"
+            Me.lblW.Text = "Willpower (20 to 23)"
             '
             'lblP
             '
@@ -251,7 +251,7 @@ Namespace Forms
             Me.lblP.Name = "lblP"
             Me.lblP.Size = New System.Drawing.Size(103, 13)
             Me.lblP.TabIndex = 28
-            Me.lblP.Text = "Perception (5 to 15)"
+            Me.lblP.Text = "Perception (20 to 23)"
             '
             'lblM
             '
@@ -261,7 +261,7 @@ Namespace Forms
             Me.lblM.Name = "lblM"
             Me.lblM.Size = New System.Drawing.Size(90, 13)
             Me.lblM.TabIndex = 27
-            Me.lblM.Text = "Memory (5 to 15)"
+            Me.lblM.Text = "Memory (20 to 23)"
             '
             'lblI
             '
@@ -271,7 +271,7 @@ Namespace Forms
             Me.lblI.Name = "lblI"
             Me.lblI.Size = New System.Drawing.Size(107, 13)
             Me.lblI.TabIndex = 26
-            Me.lblI.Text = "Intelligence (5 to 15)"
+            Me.lblI.Text = "Intelligence (20 to 23)"
             '
             'lblC
             '
@@ -281,7 +281,7 @@ Namespace Forms
             Me.lblC.Name = "lblC"
             Me.lblC.Size = New System.Drawing.Size(96, 13)
             Me.lblC.TabIndex = 25
-            Me.lblC.Text = "Charisma (5 to 15)"
+            Me.lblC.Text = "Charisma (19 to 22)"
             '
             'grpSelection
             '

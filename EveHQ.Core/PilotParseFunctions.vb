@@ -1,7 +1,7 @@
 '==============================================================================
 '
-' EveHQ - An Eve-Online™ character assistance application
-' Copyright © 2005-2015  EveHQ Development Team
+' EveHQ - An Eve-Onlineâ„¢ character assistance application
+' Copyright Â© 2005-2015  EveHQ Development Team
 '
 ' This file is part of EveHQ.
 '
@@ -21,7 +21,7 @@
 '
 ' The MIT License (MIT)
 '
-' Copyright © 2005-2015  EveHQ Development Team
+' Copyright Â© 2005-2015  EveHQ Development Team
 '
 ' Permission is hereby granted, free of charge, to any person obtaining a copy
 ' of this software and associated documentation files (the "Software"), to deal
@@ -790,13 +790,16 @@ Public Class PilotParseFunctions
 
         For Each cert In StaticData.Certificates.Values
             For Each grade In cert.GradesAndSkills.Keys.ToList()
-                If CheckPilotSkillsForCertGrade(cert.GradesAndSkills(grade), cPilot) Then
-                    If qualifiedCerts.ContainsKey(cert.Id) Then
-                        qualifiedCerts(cert.Id) = grade
-                    Else
-                        qualifiedCerts.Add(cert.Id, grade)
+                'TODO: Check why this situation is happened
+                If cert.GradesAndSkills(grade) IsNot Nothing Then
+                    If CheckPilotSkillsForCertGrade(cert.GradesAndSkills(grade), cPilot) Then
+                        If qualifiedCerts.ContainsKey(cert.Id) Then
+                            qualifiedCerts(cert.Id) = grade
+                        Else
+                            qualifiedCerts.Add(cert.Id, grade)
+                        End If
                     End If
-                End If
+                End If    
             Next
         Next
         Return qualifiedCerts

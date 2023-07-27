@@ -164,7 +164,7 @@ Namespace Forms
         Private Sub nud_ValueChanged(ByVal sender As Object, ByVal e As EventArgs) Handles nudC.ValueChanged, nudI.ValueChanged, nudM.ValueChanged, nudP.ValueChanged, nudW.ValueChanged
             Dim attTotal As Integer = CInt(nudC.Value + nudI.Value + nudM.Value + nudP.Value + nudW.Value)
             lblAttTotal.Text = CStr(attTotal)
-            If attTotal = 39 Then
+            If attTotal = 99 Then
                 btnAddPilot.Enabled = True
             Else
                 btnAddPilot.Enabled = False
