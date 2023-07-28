@@ -65,7 +65,6 @@
     <Optimize>false</Optimize>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
-    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -80,10 +79,12 @@
     <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
     <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
-    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup />
+  <PropertyGroup>
+    <GenerateResourceUsePreserializedResources>true</GenerateResourceUsePreserializedResources>
+  </PropertyGroup>
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
@@ -106,10 +107,14 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
-    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="mscorlib" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core">
@@ -135,15 +140,28 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
     <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Resources.Extensions, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Resources.Extensions.7.0.0\lib\net462\System.Resources.Extensions.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
       <Private>True</Private>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
@@ -850,6 +868,10 @@
       <Project>{7caaeb13-6eb8-482c-b63c-f78cb30b2289}</Project>
       <Name>EveHQ.NewEveAPI</Name>
     </ProjectReference>
+    <ProjectReference Include="..\EveHQ.WUI\EveHQ.WUI.csproj">
+      <Project>{c3bffaa7-84bc-434f-aecd-dbe097a233de}</Project>
+      <Name>EveHQ.WUI</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icon09_09_grey.png" />
@@ -999,10 +1021,7 @@
     <None Include="Resources\WHEffects.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
-  <Import Project="..\Version.targets" />
   <Target Name="BeforeBuild">
-    <CallTarget Targets="SetAssemblyVersion" />
-    <CallTarget Targets="BuildInstaller" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets. -->
@@ -1012,29 +1031,6 @@
   </Target>-->
   <Target Name="AfterBuild">
   </Target>
-  <PropertyGroup>
-    <StyleCopMSBuildTargetsFile>..\packages\StyleCop.MSBuild.4.7.45.0\tools\StyleCop.targets</StyleCopMSBuildTargetsFile>
-  </PropertyGroup>
-  <Import Condition="Exists('$(StyleCopMSBuildTargetsFile)')" Project="$(StyleCopMSBuildTargetsFile)" />
-  <PropertyGroup>
-    <StyleCopMSBuildMessageMissing>Failed to import StyleCop.MSBuild targets from '$(StyleCopMSBuildTargetsFile)'. The StyleCop.MSBuild package was either missing or incomplete when the project was loaded. Ensure that the package is present and then restart the build. If you are using an IDE (e.g. Visual Studio), reload the project before restarting the build.</StyleCopMSBuildMessageMissing>
-    <StyleCopMSBuildMessagePresent>Failed to import StyleCop.MSBuild targets from '$(StyleCopMSBuildTargetsFile)'. The StyleCop.MSBuild package was either missing or incomplete when the project was loaded (but is now present). To fix this, restart the build. If you are using an IDE (e.g. Visual Studio), reload the project before restarting the build.</StyleCopMSBuildMessagePresent>
-    <StyleCopMSBuildMessageRestore>Failed to import StyleCop.MSBuild targets from '$(StyleCopMSBuildTargetsFile)'. The StyleCop.MSBuild package was either missing or incomplete when the project was loaded. To fix this, restore the package and then restart the build. If you are using an IDE (e.g. Visual Studio), you may need to reload the project before restarting the build. Note that regular NuGet package restore (during build) does not work with this package because the package needs to be present before the project is loaded. If this is an automated build (e.g. CI server), you may want to ensure that the build process restores the StyleCop.MSBuild package before the project is built.</StyleCopMSBuildMessageRestore>
-    <StyleCopMSBuildMessageRestored>Failed to import StyleCop.MSBuild targets from '$(StyleCopMSBuildTargetsFile)'. The StyleCop.MSBuild package was either missing or incomplete when the project was loaded (but is now present). To fix this, restart the build. If you are using an IDE (e.g. Visual Studio), reload the project before restarting the build. Note that when using regular NuGet package restore (during build) the package will not be available for the initial build because the package needs to be present before the project is loaded. If package restore executes successfully in the intitial build then the package will be available for subsequent builds. If this is an automated build (e.g. CI server), you may want to ensure that the build process restores the StyleCop.MSBuild package before the initial build.</StyleCopMSBuildMessageRestored>
-  </PropertyGroup>
-  <Target Name="StyleCopMSBuildTargetsNotFound">
-    <Warning Condition="!Exists('$(StyleCopMSBuildTargetsFile)') And $(RestorePackages)!=true And $(StyleCopTreatErrorsAsWarnings)!=false" Text="$(StyleCopMSBuildMessageMissing)" />
-    <Warning Condition="Exists('$(StyleCopMSBuildTargetsFile)')  And $(RestorePackages)!=true And $(StyleCopTreatErrorsAsWarnings)!=false" Text="$(StyleCopMSBuildMessagePresent)" />
-    <Warning Condition="!Exists('$(StyleCopMSBuildTargetsFile)') And $(RestorePackages)==true And $(StyleCopTreatErrorsAsWarnings)!=false" Text="$(StyleCopMSBuildMessageRestore)" />
-    <Warning Condition="Exists('$(StyleCopMSBuildTargetsFile)')  And $(RestorePackages)==true And $(StyleCopTreatErrorsAsWarnings)!=false" Text="$(StyleCopMSBuildMessageRestored)" />
-    <Error Condition="!Exists('$(StyleCopMSBuildTargetsFile)') And $(RestorePackages)!=true And $(StyleCopTreatErrorsAsWarnings)==false" Text="$(StyleCopMSBuildMessageMissing)" />
-    <Error Condition="Exists('$(StyleCopMSBuildTargetsFile)')  And $(RestorePackages)!=true And $(StyleCopTreatErrorsAsWarnings)==false" Text="$(StyleCopMSBuildMessagePresent)" />
-    <Error Condition="!Exists('$(StyleCopMSBuildTargetsFile)') And $(RestorePackages)==true And $(StyleCopTreatErrorsAsWarnings)==false" Text="$(StyleCopMSBuildMessageRestore)" />
-    <Error Condition="Exists('$(StyleCopMSBuildTargetsFile)')  And $(RestorePackages)==true And $(StyleCopTreatErrorsAsWarnings)==false" Text="$(StyleCopMSBuildMessageRestored)" />
-  </Target>
-  <PropertyGroup>
-    <PrepareForBuildDependsOn Condition="!Exists('$(StyleCopMSBuildTargetsFile)')">StyleCopMSBuildTargetsNotFound;$(PrepareForBuildDependsOn)</PrepareForBuildDependsOn>
-  </PropertyGroup>
   <PropertyGroup>
     <PreBuildEvent />
   </PropertyGroup>
@@ -1047,7 +1043,5 @@
       <ErrorText>Ce projet fait référence à des packages NuGet qui sont manquants sur cet ordinateur. Utilisez l'option de restauration des packages NuGet pour les télécharger. Pour plus d'informations, consultez http://go.microsoft.com/fwlink/?LinkID=322105. Le fichier manquant est : {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.101.0\build\net40\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.101.0\build\net40\System.Data.SQLite.Core.targets'))" />
-    <Error Condition="!Exists('..\packages\StyleCop.MSBuild.6.2.0\build\StyleCop.MSBuild.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\StyleCop.MSBuild.6.2.0\build\StyleCop.MSBuild.targets'))" />
   </Target>
-  <Import Project="..\packages\StyleCop.MSBuild.6.2.0\build\StyleCop.MSBuild.targets" Condition="Exists('..\packages\StyleCop.MSBuild.6.2.0\build\StyleCop.MSBuild.targets')" />
 </Project>
