@@ -1,6 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <OutputPath>..\BuildOutput\CacheCreator\$(Configuration)\</OutputPath>
     <RootNamespace>EveHQ.KillMailViewer</RootNamespace>
     <TargetFramework>net48</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
