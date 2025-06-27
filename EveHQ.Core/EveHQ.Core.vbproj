@@ -1,102 +1,17 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{AD4AA9C0-F258-44D8-9D71-07493198B580}</ProjectGuid>
-    <OutputType>Library</OutputType>
     <RootNamespace>EveHQ.Core</RootNamespace>
-    <AssemblyName>EveHQ.Core</AssemblyName>
-    <MyType>Windows</MyType>
-    <OptionStrict>On</OptionStrict>
-    <OptionCompare>Binary</OptionCompare>
-    <FileUpgradeFlags>
-    </FileUpgradeFlags>
-    <OldToolsVersion>3.5</OldToolsVersion>
-    <UpgradeBackupLocation>
-    </UpgradeBackupLocation>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
-    <PublishUrl>publish\</PublishUrl>
-    <Install>true</Install>
-    <InstallFrom>Disk</InstallFrom>
-    <UpdateEnabled>false</UpdateEnabled>
-    <UpdateMode>Foreground</UpdateMode>
-    <UpdateInterval>7</UpdateInterval>
-    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
-    <UpdatePeriodically>false</UpdatePeriodically>
-    <UpdateRequired>false</UpdateRequired>
-    <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
-    <UseApplicationTrust>false</UseApplicationTrust>
-    <BootstrapperEnabled>true</BootstrapperEnabled>
-    <TargetFrameworkProfile />
-    <AssemblyInfoTitle>EveHQ.Core</AssemblyInfoTitle>
-    <AssemblyInfoDescription>Eve Online game tool</AssemblyInfoDescription>
-    <AssemblyInfoGUID>982a7ada-9fbe-4192-9c9f-50619b1cc3b9</AssemblyInfoGUID>
-    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
+    <GenerateResourceUsePreserializedResources>true</GenerateResourceUsePreserializedResources>
+    <TargetFramework>net48</TargetFramework>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <DefineDebug>true</DefineDebug>
-    <DefineTrace>true</DefineTrace>
-    <OutputPath>$(SolutionDir)BuildOutput\EveHQ\$(Configuration)\</OutputPath>
-    <DocumentationFile>EveHQ.Core.xml</DocumentationFile>
-    <NoWarn>42353,42354,42355,40010</NoWarn>
-    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
-    <Optimize>false</Optimize>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <DefineDebug>false</DefineDebug>
-    <DefineTrace>true</DefineTrace>
-    <Optimize>true</Optimize>
-    <OutputPath>$(SolutionDir)BuildOutput\EveHQ\$(Configuration)\</OutputPath>
-    <DocumentationFile>EveHQ.Core.xml</DocumentationFile>
-    <NoWarn>42353,42354,42355,40010</NoWarn>
-    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup>
-    <OptionInfer>On</OptionInfer>
-  </PropertyGroup>
+
   <ItemGroup>
     <Reference Include="DevComponents.DotNetBar2">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Ref\DotNetBar\DevComponents.DotNetBar2.dll</HintPath>
     </Reference>
     <Reference Include="GammaJul.LgLcd">
       <HintPath>..\Ref\G15 Drivers\GammaJul.LgLcd.dll</HintPath>
-    </Reference>
-    <Reference Include="Ionic.Zip, Version=1.9.8.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
-      <HintPath>$(SolutionDir)packages\DotNetZip.1.9.8\lib\net20\Ionic.Zip.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.13.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Data" />
-    <Reference Include="System.Data.SQLite">
-      <HintPath>..\Ref\SQLite\System.Data.SQLite.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>ExternalLibs\System.Data.SqlServerCe.dll</HintPath>
     </Reference>
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
@@ -106,293 +21,26 @@
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
   </ItemGroup>
+
   <ItemGroup>
-    <Import Include="Microsoft.VisualBasic" />
-    <Import Include="System" />
-    <Import Include="System.Collections" />
-    <Import Include="System.Collections.Generic" />
-    <Import Include="System.Data" />
-    <Import Include="System.Diagnostics" />
-    <Import Include="System.Linq" />
+    <ProjectReference Include="..\EveHQ.Esi\EveHQ.Esi.csproj" />
+    <ProjectReference Include="..\EveHQ.EveData\EveHQ.EveData.csproj" />
+    <ProjectReference Include="..\EveHQ.Market\EveHQ.Market.csproj" />
   </ItemGroup>
+
   <ItemGroup>
-    <Compile Include="AdvTreeSorter.vb" />
-    <Compile Include="CoreReports\PieCollectedDataHelper.vb" />
-    <Compile Include="CoreReports\Reports.vb" />
-    <Compile Include="Corporation.vb" />
-    <Compile Include="CustomDataFunctions.vb" />
-    <Compile Include="DataFunctions.vb" />
-    <Compile Include="Deprecated\APIResults.vb" />
-    <Compile Include="Deprecated\APITypes.vb" />
-    <Compile Include="Deprecated\RemoteProxyServer.vb" />
-    <Compile Include="EveApiKey.vb" />
-    <Compile Include="frmModifyQueues.Designer.vb">
-      <DependentUpon>frmModifyQueues.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmModifyQueues.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ItemBrowser\frmIB.Designer.vb">
-      <DependentUpon>frmIB.vb</DependentUpon>
-    </Compile>
-    <Compile Include="ItemBrowser\frmIB.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ItemBrowser\IBSkillTree.Designer.vb">
-      <DependentUpon>IBSkillTree.vb</DependentUpon>
-    </Compile>
-    <Compile Include="ItemBrowser\IBSkillTree.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="APIAccountStatuses.vb" />
-    <Compile Include="APIKeySystems.vb" />
-    <Compile Include="APIKeyTypes.vb" />
-    <Compile Include="CorporationRoles.vb" />
-    <Compile Include="EveHQAccount.vb" />
-    <Compile Include="EveHQPilot.vb" />
-    <Compile Include="EveHQPilotQueuedSkill.vb" />
-    <Compile Include="EveHQPilotSkill.vb" />
-    <Compile Include="EveHQPlugin.vb" />
-    <Compile Include="EveHQPluginStatus.vb" />
-    <Compile Include="EveHQSettings.vb" />
-    <Compile Include="frmModifyPrices.Designer.vb">
-      <DependentUpon>frmModifyPrices.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmModifyPrices.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EveHQBackup.vb" />
-    <Compile Include="ClassSorter.vb" />
-    <Compile Include="Deprecated\EveAccount.vb" />
-    <Compile Include="EveAPIStatusForm.Designer.vb">
-      <DependentUpon>EveAPIStatusForm.vb</DependentUpon>
-    </Compile>
-    <Compile Include="EveAPIStatusForm.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EveHQIcon.Designer.vb">
-      <DependentUpon>EveHQIcon.vb</DependentUpon>
-    </Compile>
-    <Compile Include="EveHQIcon.vb">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="EveHQIconToolTipForm.Designer.vb">
-      <DependentUpon>EveHQIconToolTipForm.vb</DependentUpon>
-    </Compile>
-    <Compile Include="EveHQIconToolTipForm.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EveHQMessage.vb" />
-    <Compile Include="EveMail.vb" />
-    <Compile Include="EveServer.vb" />
-    <Compile Include="Deprecated\EveSettings.vb" />
-    <Compile Include="frmModifyPrice.designer.vb">
-      <DependentUpon>frmModifyPrice.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmModifyPrice.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmSelectQueue.Designer.vb">
-      <DependentUpon>frmSelectQueue.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmSelectQueue.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="G15LCDv2.vb" />
-    <Compile Include="HQ.vb" />
-    <Compile Include="IEveHQPlugIn.vb" />
-    <Compile Include="ImageHandler.vb" />
-    <Compile Include="ItemMarketOverride.vb" />
-    <Compile Include="Market.vb" />
-    <Compile Include="My Project\Application.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Application.myapp</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="My Project\AssemblyInfo.vb" />
-    <Compile Include="My Project\Resources.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="My Project\Settings.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-    <Compile Include="Deprecated\Pilot.vb" />
-    <Compile Include="PilotParseFunctions.vb" />
-    <Compile Include="Deprecated\PlugIn.vb" />
-    <Compile Include="PriceGroup.vb" />
-    <Compile Include="ProxyServerFunctions.vb" />
-    <Compile Include="Requisitions\frmMergeRequisitions.Designer.vb">
-      <DependentUpon>frmMergeRequisitions.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Requisitions\frmMergeRequisitions.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Requisitions\frmAddRequisition.Designer.vb">
-      <DependentUpon>frmAddRequisition.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Requisitions\frmAddRequisition.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Requisitions\frmAddRequisitionItem.Designer.vb">
-      <DependentUpon>frmAddRequisitionItem.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Requisitions\frmAddRequisitionItem.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Requisitions\frmEditRequisition.Designer.vb">
-      <DependentUpon>frmEditRequisition.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Requisitions\frmEditRequisition.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Requisitions\frmRequisitions.Designer.vb">
-      <DependentUpon>frmRequisitions.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Requisitions\frmRequisitions.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Requisitions\Requisition.vb" />
-    <Compile Include="Requisitions\RequisitionAsset.vb" />
-    <Compile Include="Requisitions\RequisitionOrder.vb" />
-    <Compile Include="RSSFeed.vb" />
-    <Compile Include="EveHQSkillQueue.vb" />
-    <Compile Include="EveHQSkillQueueItem.vb" />
-    <Compile Include="PilotSortTrainingTime.vb" />
-    <Compile Include="EveHQPilotStanding.vb" />
-    <Compile Include="StandingType.vb" />
-    <Compile Include="SkillFunctions.vb" />
-    <Compile Include="Deprecated\SkillQueue.vb" />
-    <Compile Include="SkillQueueControl\SkillQueueBlock.Designer.vb">
-      <DependentUpon>SkillQueueBlock.vb</DependentUpon>
-    </Compile>
-    <Compile Include="SkillQueueControl\SkillQueueBlock.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="SkillQueueControl\SkillQueueControl.Designer.vb">
-      <DependentUpon>SkillQueueControl.vb</DependentUpon>
-    </Compile>
-    <Compile Include="SkillQueueControl\SkillQueueControl.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="SkillQueueFunctions.vb" />
-    <Compile Include="Deprecated\SkillQueueItem.vb" />
-    <Compile Include="SkillQueueControl\SkillQueueTimeControl.Designer.vb">
-      <DependentUpon>SkillQueueTimeControl.vb</DependentUpon>
-    </Compile>
-    <Compile Include="SkillQueueControl\SkillQueueTimeControl.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="SortedQueueItem.vb" />
-    <Compile Include="Standings.vb" />
-    <Compile Include="Ticker.Designer.vb">
-      <DependentUpon>Ticker.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Ticker.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <PackageReference Include="Ionic.Zip" Version="1.9.1.8" />
+    <PackageReference Include="System.Data.SQLite" Version="1.0.119" />
+    <PackageReference Include="System.Resources.Extensions" Version="9.0.6" />
+    <PackageReference Include="System.Xml.Linq" Version="3.5.21022.801" />
   </ItemGroup>
+
   <ItemGroup>
-    <EmbeddedResource Include="frmModifyPrices.resx">
-      <DependentUpon>frmModifyPrices.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="EveAPIStatusForm.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>EveAPIStatusForm.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="EveHQIconToolTipForm.resx">
-      <DependentUpon>EveHQIconToolTipForm.vb</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmModifyPrice.resx">
-      <DependentUpon>frmModifyPrice.vb</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmModifyQueues.resx">
-      <DependentUpon>frmModifyQueues.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmSelectQueue.resx">
-      <DependentUpon>frmSelectQueue.vb</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ItemBrowser\frmIB.resx">
-      <DependentUpon>frmIB.vb</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ItemBrowser\IBSkillTree.resx">
-      <DependentUpon>IBSkillTree.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="My Project\Resources.resx">
-      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
-      <CustomToolNamespace>My.Resources</CustomToolNamespace>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Requisitions\frmMergeRequisitions.resx">
-      <DependentUpon>frmMergeRequisitions.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Requisitions\frmAddRequisition.resx">
-      <DependentUpon>frmAddRequisition.vb</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Requisitions\frmAddRequisitionItem.resx">
-      <DependentUpon>frmAddRequisitionItem.vb</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Requisitions\frmEditRequisition.resx">
-      <DependentUpon>frmEditRequisition.vb</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Requisitions\frmRequisitions.resx">
-      <DependentUpon>frmRequisitions.vb</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SkillQueueControl\SkillQueueBlock.resx">
-      <DependentUpon>SkillQueueBlock.vb</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SkillQueueControl\SkillQueueControl.resx">
-      <DependentUpon>SkillQueueControl.vb</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SkillQueueControl\SkillQueueTimeControl.resx">
-      <DependentUpon>SkillQueueTimeControl.vb</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Ticker.resx">
-      <DependentUpon>Ticker.vb</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="app.config" />
-    <None Include="My Project\Application.myapp">
-      <Generator>MyApplicationCodeGenerator</Generator>
-      <LastGenOutput>Application.Designer.vb</LastGenOutput>
-    </None>
-    <None Include="My Project\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <CustomToolNamespace>My</CustomToolNamespace>
-      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
     <None Include="Resources\refresh.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\EveHQ_IGBLogo1.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\EveHQ_LCDLogo.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\ArrowDown.png" />
     <None Include="Resources\ArrowUp.png" />
     <None Include="Resources\Info32.png" />
@@ -410,87 +58,5 @@
     <None Include="Resources\Strings.txt" />
     <None Include="Resources\EveHQ_IGBLogo.jpg" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\EveHQ.Common\EveHQ.Common.csproj">
-      <Project>{7CD9A34B-9635-4D69-B451-1CE93B8280D8}</Project>
-      <Name>EveHQ.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EveHQ.EveData\EveHQ.EveData.csproj">
-      <Project>{C3FEE7B0-5E02-4910-BBB9-A03425294B7A}</Project>
-      <Name>EveHQ.EveData</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EveHQ.Market\EveHQ.Market.csproj">
-      <Project>{99C775D1-F465-40C6-AF18-D1803B976E3D}</Project>
-      <Name>EveHQ.Market</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EveHQ.NewEveAPI\EveHQ.NewEveAPI.csproj">
-      <Project>{7caaeb13-6eb8-482c-b63c-f78cb30b2289}</Project>
-      <Name>EveHQ.NewEveAPI</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{94E38DFF-614B-4CBD-B67C-F211BB35CE8B}" />
-  </ItemGroup>
-  <ItemGroup>
-    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
-      <Visible>False</Visible>
-      <ProductName>Windows Installer 3.1</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
-  </ItemGroup>
-  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets. -->
-  <Import Project="..\Version.targets" />
-  <Target Name="BeforeBuild">
-    <CallTarget Targets="SetAssemblyVersion" />
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  <PropertyGroup>
-    <PreBuildEvent>
-    </PreBuildEvent>
-  </PropertyGroup>
-  <PropertyGroup>
-    <StyleCopMSBuildTargetsFile>$(SolutionDir)packages\StyleCop.MSBuild.6.2.0\build\StyleCop.MSBuild.targets</StyleCopMSBuildTargetsFile>
-  </PropertyGroup>
-  <Import Condition="Exists('$(StyleCopMSBuildTargetsFile)')" Project="$(StyleCopMSBuildTargetsFile)" />
-  <PropertyGroup>
-    <StyleCopMSBuildMessageMissing>Failed to import StyleCop.MSBuild targets from '$(StyleCopMSBuildTargetsFile)'. The StyleCop.MSBuild package was either missing or incomplete when the project was loaded. Ensure that the package is present and then restart the build. If you are using an IDE (e.g. Visual Studio), reload the project before restarting the build.</StyleCopMSBuildMessageMissing>
-    <StyleCopMSBuildMessagePresent>Failed to import StyleCop.MSBuild targets from '$(StyleCopMSBuildTargetsFile)'. The StyleCop.MSBuild package was either missing or incomplete when the project was loaded (but is now present). To fix this, restart the build. If you are using an IDE (e.g. Visual Studio), reload the project before restarting the build.</StyleCopMSBuildMessagePresent>
-    <StyleCopMSBuildMessageRestore>Failed to import StyleCop.MSBuild targets from '$(StyleCopMSBuildTargetsFile)'. The StyleCop.MSBuild package was either missing or incomplete when the project was loaded. To fix this, restore the package and then restart the build. If you are using an IDE (e.g. Visual Studio), you may need to reload the project before restarting the build. Note that regular NuGet package restore (during build) does not work with this package because the package needs to be present before the project is loaded. If this is an automated build (e.g. CI server), you may want to ensure that the build process restores the StyleCop.MSBuild package before the project is built.</StyleCopMSBuildMessageRestore>
-    <StyleCopMSBuildMessageRestored>Failed to import StyleCop.MSBuild targets from '$(StyleCopMSBuildTargetsFile)'. The StyleCop.MSBuild package was either missing or incomplete when the project was loaded (but is now present). To fix this, restart the build. If you are using an IDE (e.g. Visual Studio), reload the project before restarting the build. Note that when using regular NuGet package restore (during build) the package will not be available for the initial build because the package needs to be present before the project is loaded. If package restore executes successfully in the intitial build then the package will be available for subsequent builds. If this is an automated build (e.g. CI server), you may want to ensure that the build process restores the StyleCop.MSBuild package before the initial build.</StyleCopMSBuildMessageRestored>
-  </PropertyGroup>
-  <Target Name="StyleCopMSBuildTargetsNotFound">
-    <Warning Condition="!Exists('$(StyleCopMSBuildTargetsFile)') And $(RestorePackages)!=true And $(StyleCopTreatErrorsAsWarnings)!=false" Text="$(StyleCopMSBuildMessageMissing)" />
-    <Warning Condition="Exists('$(StyleCopMSBuildTargetsFile)')  And $(RestorePackages)!=true And $(StyleCopTreatErrorsAsWarnings)!=false" Text="$(StyleCopMSBuildMessagePresent)" />
-    <Warning Condition="!Exists('$(StyleCopMSBuildTargetsFile)') And $(RestorePackages)==true And $(StyleCopTreatErrorsAsWarnings)!=false" Text="$(StyleCopMSBuildMessageRestore)" />
-    <Warning Condition="Exists('$(StyleCopMSBuildTargetsFile)')  And $(RestorePackages)==true And $(StyleCopTreatErrorsAsWarnings)!=false" Text="$(StyleCopMSBuildMessageRestored)" />
-    <Error Condition="!Exists('$(StyleCopMSBuildTargetsFile)') And $(RestorePackages)!=true And $(StyleCopTreatErrorsAsWarnings)==false" Text="$(StyleCopMSBuildMessageMissing)" />
-    <Error Condition="Exists('$(StyleCopMSBuildTargetsFile)')  And $(RestorePackages)!=true And $(StyleCopTreatErrorsAsWarnings)==false" Text="$(StyleCopMSBuildMessagePresent)" />
-    <Error Condition="!Exists('$(StyleCopMSBuildTargetsFile)') And $(RestorePackages)==true And $(StyleCopTreatErrorsAsWarnings)==false" Text="$(StyleCopMSBuildMessageRestore)" />
-    <Error Condition="Exists('$(StyleCopMSBuildTargetsFile)')  And $(RestorePackages)==true And $(StyleCopTreatErrorsAsWarnings)==false" Text="$(StyleCopMSBuildMessageRestored)" />
-  </Target>
-  <PropertyGroup>
-    <PrepareForBuildDependsOn Condition="!Exists('$(StyleCopMSBuildTargetsFile)')">StyleCopMSBuildTargetsNotFound;$(PrepareForBuildDependsOn)</PrepareForBuildDependsOn>
-  </PropertyGroup>
-  <PropertyGroup>
-    <PostBuildEvent />
-  </PropertyGroup>
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\StyleCop.MSBuild.6.2.0\build\StyleCop.MSBuild.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\StyleCop.MSBuild.6.2.0\build\StyleCop.MSBuild.targets'))" />
-  </Target>
+
 </Project>
