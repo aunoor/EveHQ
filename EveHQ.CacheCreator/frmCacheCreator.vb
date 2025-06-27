@@ -1629,9 +1629,9 @@ Public Class FrmCacheCreator
             marketGroupData = DatabaseFunctions.GetStaticData(strSql)
             If marketGroupData IsNot Nothing Then
                 If marketGroupData.Tables(0).Rows.Count <> 0 Then
-                    Market.MarketGroupList.Clear()
+                    HQF.Market.MarketGroupList.Clear()
                     For Each row As DataRow In marketGroupData.Tables(0).Rows
-                        Market.MarketGroupList.Add(row.Item("marketGroupID").ToString, row.Item("marketGroupName").ToString)
+                        HQF.Market.MarketGroupList.Add(row.Item("marketGroupID").ToString, row.Item("marketGroupName").ToString)
                     Next
                     Return
                 Else
@@ -2838,7 +2838,7 @@ Public Class FrmCacheCreator
                         Case HQFEffectType.Category
                             affectingName = StaticData.TypeCats(newEffect.AffectingID) & ";Category;" & Attributes.AttributeQuickList(newEffect.AffectedAtt).ToString
                         Case HQFEffectType.MarketGroup
-                            affectingName = Market.MarketGroupList(newEffect.AffectingID.ToString) & ";Market Group;" & Attributes.AttributeQuickList(newEffect.AffectedAtt).ToString
+                            affectingName = HQF.Market.MarketGroupList(newEffect.AffectingID.ToString) & ";Market Group;" & Attributes.AttributeQuickList(newEffect.AffectedAtt).ToString
                     End Select
                     affectingName &= ";"
 
@@ -3291,7 +3291,7 @@ Public Class FrmCacheCreator
         mruNode.Tag = "Recently Used"
         tvwItems.Nodes.Add(mruNode)
         tvwItems.EndUpdate()
-        Market.MarketGroupPath.Clear()
+        HQF.Market.MarketGroupPath.Clear()
         Call BuildTreePathData(tvwItems)
         Call WriteItemGroups(tvwItems)
         tvwItems.Dispose()
@@ -3392,7 +3392,7 @@ Public Class FrmCacheCreator
             If childNode.Nodes.Count > 0 Then
                 BuildTreePathData2(childNode)
             Else
-                Market.MarketGroupPath.Add(childNode.Tag.ToString, childNode.FullPath)
+                HQF.Market.MarketGroupPath.Add(childNode.Tag.ToString, childNode.FullPath)
             End If
         Next
     End Sub
