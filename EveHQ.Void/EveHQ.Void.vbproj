@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputPath>..\BuildOutput\CacheCreator\$(Configuration)\</OutputPath>
+    <OutputPath>..\BuildOutput\EveHQ\$(Configuration)\</OutputPath>
     <RootNamespace>EveHQ.Void</RootNamespace>
     <TargetFramework>net48</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
