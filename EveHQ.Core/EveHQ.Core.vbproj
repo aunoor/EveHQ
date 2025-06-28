@@ -26,6 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\EveHQ.CoreLib\EveHQ.CoreLib.csproj" />
     <ProjectReference Include="..\EveHQ.Esi\EveHQ.Esi.csproj" />
     <ProjectReference Include="..\EveHQ.EveData\EveHQ.EveData.csproj" />
     <ProjectReference Include="..\EveHQ.Market\EveHQ.Market.csproj" />

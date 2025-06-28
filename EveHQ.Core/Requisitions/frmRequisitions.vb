@@ -52,6 +52,7 @@ Imports System.Xml
 Imports System.Threading.Tasks
 Imports EveHQ.Common.Extensions
 Imports System.Text
+Imports EveHQ.CoreLib
 Imports EveHQ.NewEveApi.Entities
 
 Namespace Requisitions

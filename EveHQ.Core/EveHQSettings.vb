@@ -52,6 +52,7 @@ Imports System.Globalization
 Imports System.IO
 Imports Newtonsoft.Json
 Imports System.Text
+Imports EveHQ.CoreLib
 
 ''' <summary>
 ''' Class for the new EveHQ settings.

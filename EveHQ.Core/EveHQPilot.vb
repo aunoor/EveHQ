@@ -43,6 +43,7 @@
 '
 ' ==============================================================================
 
+Imports EveHQ.CoreLib
 Imports EveHQ.EveData
 
 <Serializable()> Public Class EveHQPilot

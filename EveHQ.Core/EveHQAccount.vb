@@ -45,6 +45,7 @@
 
 Imports EveHQ.EveApi
 Imports System.Xml
+Imports EveHQ.CoreLib
 Imports EveHQ.NewEveApi
 
 <Serializable()>
