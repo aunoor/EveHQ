@@ -43,7 +43,7 @@ public class HQ_
     public static bool LastAutoAPIResult = true;
     public static DateTime NextAutoAPITime = System.DateTime.Now.AddMinutes(60);
     public static DateTime AutoRetryAPITime = System.DateTime.Now.AddMinutes(5); //' Minimum retry time if an error occurs
-    //TODO: public static EveHqlcd As New G15Lcd
+    public static G15Lcd EveHqlcd = new();
     public static bool IsG15LcdActive = false;
     public static string LcdPilot = "";
     public static int LcdCharMode = 0;
@@ -61,6 +61,12 @@ public class HQ_
     public static string BcAppKey = "B23079B49E1FCBB9C224C9D9CC591DF9904C193F";
     public static bool EveHQIsUpdating = false;
 
+    //TODO: public static EveHQSettings Settings = new()
+    
+    
+    
+    
+    
     private static string _appDataFolder = "";
     private static IMarketStatDataProvider? _marketStatDataProvider;
     private static IMarketOrderDataProvider? _marketOrderDataProvider;
@@ -79,4 +85,49 @@ public class HQ_
     private static CcpMarketDataProvider? _ccpMarketDataProvider;
     private static Locations? _locations;
 
+    
+
+    public static WebProxyDetails? ProxyDetails
+    {
+        get
+        {
+            return new WebProxyDetails();
+            //TODO: Create proxy details
+            // if (!Settings.ProxyRequired)
+            // {
+            //     return new WebProxyDetails();
+            // }
+            //
+            // if (_proxyDetails == null)
+            // {
+            //     _proxyDetails = new WebProxyDetails();
+            //     _proxyDetails.ProxyPassword = Settings.ProxyPassword;
+            //     var scheme = String.Empty;
+            //     if (!Settings.ProxyServer.StartsWith("http://"))
+            //     {
+            //         scheme = "http://";
+            //     }
+            //     _proxyDetails.ProxyServerAddress = new Uri(scheme + Settings.ProxyServer)
+            //     _proxyDetails.ProxyUserName = Settings.ProxyUsername;
+            //     _proxyDetails.UseBasicAuth = Settings.ProxyUseBasic;
+            //     _proxyDetails.UseDefaultCredential = Settings.ProxyUseDefault;
+            // }
+            //
+            // return _proxyDetails;
+        }
+    } 
+    
+    public static NewEveApi.EveAPI ApiProvider
+    {
+        get
+        {
+            if (_apiProvider == null)
+            {
+                _apiProvider = new NewEveApi.EveAPI(ApiCacheFolder, new HttpRequestProvider(ProxyDetails));
+            }
+
+            return _apiProvider;
+        }
+    }
+    
 }

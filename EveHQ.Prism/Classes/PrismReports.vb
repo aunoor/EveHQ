@@ -49,6 +49,7 @@ Imports EveHQ.EveAPI
 Imports EveHQ.Core
 Imports System.Xml
 Imports EveHQ.Common.Extensions
+Imports EveHQ.CoreLib
 
 Namespace Classes
 

@@ -54,6 +54,7 @@ Imports EveHQ.Common.Extensions
 Imports System.Text
 Imports System.Net
 Imports System.IO
+Imports EveHQ.CoreLib
 
 Public Class FrmKmv
     Private Const KillTimeFormat As String = "yyyy-MM-dd HH:mm:ss"

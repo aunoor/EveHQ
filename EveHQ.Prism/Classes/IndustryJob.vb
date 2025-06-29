@@ -50,6 +50,7 @@ Imports EveHQ.Core
 Imports EveHQ.EveAPI
 Imports EveHQ.EveData
 Imports EveHQ.Common.Extensions
+Imports EveHQ.CoreLib
 
 Namespace Classes
 

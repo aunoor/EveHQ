@@ -43,6 +43,7 @@
 '
 ' ==============================================================================
 
+Imports EveHQ.CoreLib
 Imports EveHQ.EveData
 
 Public Class Market

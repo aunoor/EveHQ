@@ -1,7 +1,7 @@
 '==============================================================================
 '
-' EveHQ - An Eve-Online™ character assistance application
-' Copyright © 2005-2015  EveHQ Development Team
+' EveHQ - An Eve-Onlineï¿½ character assistance application
+' Copyright ï¿½ 2005-2015  EveHQ Development Team
 '
 ' This file is part of EveHQ.
 '
@@ -21,7 +21,7 @@
 '
 ' The MIT License (MIT)
 '
-' Copyright © 2005-2015  EveHQ Development Team
+' Copyright ï¿½ 2005-2015  EveHQ Development Team
 '
 ' Permission is hereby granted, free of charge, to any person obtaining a copy
 ' of this software and associated documentation files (the "Software"), to deal
@@ -56,6 +56,7 @@ Imports System.Threading.Tasks
 Imports System.Text
 Imports EveHQ.Core.Requisitions
 Imports EveHQ.Common.Extensions
+Imports EveHQ.CoreLib
 Imports EveHQ.NewEveAPI
 
 Namespace Controls
@@ -883,7 +884,7 @@ Namespace Controls
             Next
             AdvTreeSorter.Sort(adtBatchResources, 1, True, True)
             adtBatchResources.EndUpdate()
-            lblBatchTotals.Text = "Batch Value: " & batchValue.ToString("N2") & " isk  ,  Batch Volume: " & batchVolume.ToString("N2") & " m³"
+            lblBatchTotals.Text = "Batch Value: " & batchValue.ToString("N2") & " isk  ,  Batch Volume: " & batchVolume.ToString("N2") & " mï¿½"
             Call DisplayProductionList()
         End Sub
 

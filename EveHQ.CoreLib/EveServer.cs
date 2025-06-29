@@ -33,6 +33,42 @@ public class EveServer_
 
     public void GetServerStatus()
     {
-        //TODO: GetServerStatus()
+        try
+        {
+            var serverInfo = HQ_.ApiProvider.Server.ServerStatus();
+            if (serverInfo.IsSuccess)
+            {
+                var serverIsUp = serverInfo.ResultData.IsServerOpen;
+                var serverPlayers = serverInfo.ResultData.OnlinePlayers;
+                if (serverIsUp)
+                {
+                    Status = (int)ServerStatus.Up;
+                    Players = serverPlayers;
+                }
+                else
+                {
+                    Status = (int)ServerStatus.Down;
+                    Players = 0;
+                }
+            }
+            else
+            {
+                Version = "";
+                Players = 0;
+                Codename = "";
+                Status = (int)ServerStatus.Unknown;
+                StatusText = "Server status Unknown";
+            }
+
+            LastChecked = DateTime.Now;
+        }
+        catch (Exception ex)
+        {
+            Version = "";
+            Players = 0;
+            Codename = "";
+            Status = (int)ServerStatus.Unknown;
+            StatusText = "Server status Unknown";            
+        }
     }
 }

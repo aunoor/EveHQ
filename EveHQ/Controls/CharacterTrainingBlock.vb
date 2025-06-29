@@ -60,7 +60,7 @@ Namespace Controls
             ' Add any initialization after the InitializeComponent() call.
 
             If IsAccount = True Then
-                Dim cAccount As Core.EveHQAccount = Core.HQ.Settings.Accounts(objectName)
+                Dim cAccount As CoreLib.EveHQAccount = Core.HQ.Settings.Accounts(objectName)
                 _usingAccount = cAccount.UserID
 
                 ' Prepare block for a blank account
