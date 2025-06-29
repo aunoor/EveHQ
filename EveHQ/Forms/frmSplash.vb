@@ -304,8 +304,8 @@ Namespace Forms
                 Else
                     ' Check if the LCD will cycle chars
                     If HQ.Settings.CycleG15Pilots = True Then
-                        G15Lcd.TmrLcdChar.Interval = (1000 * HQ.Settings.CycleG15Time)
-                        G15Lcd.TmrLcdChar.Enabled = True
+                        'G15Lcd.TmrLcdChar.Interval = (1000 * HQ.Settings.CycleG15Time)
+                        'G15Lcd.TmrLcdChar.Enabled = True
                     End If
                 End If
             End If

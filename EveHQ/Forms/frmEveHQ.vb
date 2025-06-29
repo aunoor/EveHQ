@@ -381,7 +381,7 @@ Namespace Forms
 
             ' Add the pilot refresh handler
             AddHandler PilotParseFunctions.RefreshPilots, AddressOf RemoteRefreshPilots
-            AddHandler G15Lcd.UpdateAPI, AddressOf RemoteUpdate
+            'AddHandler G15Lcd.UpdateAPI, AddressOf RemoteUpdate
             AddHandler HQ.ShutDownEveHQ, AddressOf ShutdownRoutine
             AddHandler EveMailEvents.MailUpdateNumbers, AddressOf UpdateEveMailButton
 
