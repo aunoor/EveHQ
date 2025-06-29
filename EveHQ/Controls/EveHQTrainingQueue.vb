@@ -58,10 +58,10 @@ Namespace Controls
 #Region "Class Variables"
 
         Dim _queuePilotName As String
-        Dim _queuePilot As Core.EveHQPilot
+        Dim _queuePilot As CoreLib.EveHQPilot
         Dim _queueName As String
-        Dim _queue As Core.EveHQSkillQueue
-        Dim _storedQueue As Core.EveHQSkillQueue = Nothing
+        Dim _queue As CoreLib.EveHQSkillQueue
+        Dim _storedQueue As CoreLib.EveHQSkillQueue = Nothing
         Dim _nodeImage As Image = My.Resources.SkillBook16
 
         ReadOnly _startup As Boolean
@@ -90,11 +90,11 @@ Namespace Controls
             End Set
         End Property
 
-        Public Property Queue As Core.EveHQSkillQueue
+        Public Property Queue As CoreLib.EveHQSkillQueue
             Get
                 Return _queue
             End Get
-            Set(value As Core.EveHQSkillQueue)
+            Set(value As CoreLib.EveHQSkillQueue)
                 _queue = value
             End Set
         End Property
@@ -267,7 +267,7 @@ Namespace Controls
                 adtQueue.CellHorizontalSpacing = 1
 
                 ' Call the main procedure
-                Dim aq As Core.EveHQSkillQueue = _queuePilot.TrainingQueues(_queueName)
+                Dim aq As CoreLib.EveHQSkillQueue = _queuePilot.TrainingQueues(_queueName)
                 Dim sortedQueue As ArrayList = Core.SkillQueueFunctions.BuildQueue(_queuePilot, aq, False, True)
                 'If sortedQueues.ContainsKey(QueueName) = True Then
                 '    sortedQueues(QueueName) = sortedQueue
@@ -415,8 +415,8 @@ Namespace Controls
                         Case "Percent"
                             Dim skillPct As Double
                             If _queuePilot.PilotSkills.ContainsKey(qitem.Name) Then
-                                Dim myCurSkill As Core.EveHQPilotSkill = _queuePilot.PilotSkills(qitem.Name)
-                                Dim baseSkill As Core.EveSkill = Core.HQ.SkillListID(myCurSkill.ID)
+                                Dim myCurSkill As CoreLib.EveHQPilotSkill = _queuePilot.PilotSkills(qitem.Name)
+                                Dim baseSkill As CoreLib.EveSkill = Core.HQ.SkillListID(myCurSkill.ID)
                                 Dim clevel As Integer = CInt(qitem.FromLevel)
                                 Dim nextLevelSp As Integer = baseSkill.LevelUp(clevel + 1) - baseSkill.LevelUp(clevel)
 
@@ -574,11 +574,11 @@ Namespace Controls
 
         Private Sub btnStoreQueue_Click(sender As Object, e As EventArgs) Handles btnStoreQueue.Click
             If btnStoreQueue.Checked = True Then
-                _storedQueue = CType(_queue.Clone, Core.EveHQSkillQueue)
+                _storedQueue = CType(_queue.Clone, CoreLib.EveHQSkillQueue)
                 btnStoreQueue.Text = "Restore Queue"
             Else
                 If _storedQueue IsNot Nothing Then
-                    _queuePilot.TrainingQueues(_queueName) = CType(_storedQueue.Clone, Core.EveHQSkillQueue)
+                    _queuePilot.TrainingQueues(_queueName) = CType(_storedQueue.Clone, CoreLib.EveHQSkillQueue)
                     _storedQueue = Nothing
                     Call DrawQueue(True)
                 End If
@@ -593,12 +593,12 @@ Namespace Controls
         Public Sub RedrawMenuOptions()
             ' Determines what buttons and menus are available from the listview!
             ' Check the clipboard status
-            Dim skillList As List(Of Core.EveHQSkillQueueItem) = ClipboardData()
+            Dim skillList As List(Of CoreLib.EveHQSkillQueueItem) = ClipboardData()
             mnuPasteSkills.DropDownItems.Clear()
             If skillList Is Nothing Then
                 mnuPasteSkills.Enabled = False
             Else
-                For Each skill As Core.EveHQSkillQueueItem In skillList
+                For Each skill As CoreLib.EveHQSkillQueueItem In skillList
                     Dim subMenu As New ToolStripMenuItem(skill.Name & " (" & skill.FromLevel.ToString & " -> " & skill.ToLevel.ToString & ")", Nothing, AddressOf PasteSkill)
                     subMenu.Tag = skill
                     mnuPasteSkills.DropDownItems.Add(subMenu)
@@ -625,7 +625,7 @@ Namespace Controls
 
                         Dim curLevel As Integer
 
-                        Dim mySkill As Core.EveHQPilotSkill
+                        Dim mySkill As CoreLib.EveHQPilotSkill
                         If _queuePilot.PilotSkills.ContainsKey(skillName) = False Then
                             curLevel = 0
                         Else
@@ -739,7 +739,7 @@ Namespace Controls
                 Dim skillName As String = mnuSkillName.Text
                 Dim currentLevel As Integer = 0
                 If _queuePilot.PilotSkills.ContainsKey(skillName) = True Then
-                    Dim cSkill As Core.EveHQPilotSkill = _queuePilot.PilotSkills(skillName)
+                    Dim cSkill As CoreLib.EveHQPilotSkill = _queuePilot.PilotSkills(skillName)
                     currentLevel = cSkill.Level
                 End If
                 For a As Integer = 1 To 5
@@ -797,7 +797,7 @@ Namespace Controls
                 Dim toLevel As Integer = CInt(keyName.Substring(keyName.Length - 1, 1))
                 If _queue.Queue.ContainsKey(keyName) = True Then
                     ' Remove it from the queue
-                    Dim mySkill As Core.EveHQSkillQueueItem
+                    Dim mySkill As CoreLib.EveHQSkillQueueItem
                     mySkill = _queue.Queue(keyName)
                     Dim mySkillPos As Integer = mySkill.Pos - 1
                     Call DeleteFromQueue(mySkill)
@@ -817,7 +817,7 @@ Namespace Controls
                 Dim toLevel As Integer = CInt(keyName.Substring(keyName.Length - 1, 1))
 
                 ' Remove it from the queue
-                Dim mySkill As Core.EveHQSkillQueueItem
+                Dim mySkill As CoreLib.EveHQSkillQueueItem
                 mySkill = _queue.Queue(keyName)
                 Dim mySkillPos As Integer = mySkill.Pos
                 Call DeleteFromQueue(mySkill)
@@ -837,7 +837,7 @@ Namespace Controls
                 Dim toLevel As Integer = CInt(keyName.Substring(keyName.Length - 1, 1))
 
                 ' Remove it from the queue
-                Dim mySkill As Core.EveHQSkillQueueItem
+                Dim mySkill As CoreLib.EveHQSkillQueueItem
                 mySkill = _queue.Queue(keyName)
                 Dim mySkillPos As Integer = mySkill.Pos
                 Call DeleteFromQueue(mySkill)
@@ -896,9 +896,9 @@ Namespace Controls
         End Sub
         Private Sub mnuPasteSkills_Click(sender As Object, e As EventArgs) Handles mnuPasteSkills.Click
             ' Check if the clipboard data is actually relevant for use
-            Dim skillList As List(Of Core.EveHQSkillQueueItem) = ClipboardData()
+            Dim skillList As List(Of CoreLib.EveHQSkillQueueItem) = ClipboardData()
             If skillList IsNot Nothing Then
-                For Each skill As Core.EveHQSkillQueueItem In skillList
+                For Each skill As CoreLib.EveHQSkillQueueItem In skillList
                     _queue = Core.SkillQueueFunctions.AddSkillToQueue(_queuePilot, skill.Name, _queue.Queue.Count + 1, _queue, skill.ToLevel, False, False, "")
                 Next
             End If
@@ -910,7 +910,7 @@ Namespace Controls
             ' Get the skill from the menu tag
             Try
                 Dim menu As ToolStripMenuItem = CType(sender, ToolStripMenuItem)
-                Dim skill As Core.EveHQSkillQueueItem = CType(menu.Tag, Core.EveHQSkillQueueItem)
+                Dim skill As CoreLib.EveHQSkillQueueItem = CType(menu.Tag, CoreLib.EveHQSkillQueueItem)
                 _queue = Core.SkillQueueFunctions.AddSkillToQueue(_queuePilot, skill.Name, _queue.Queue.Count + 1, _queue, skill.ToLevel, False, False, "")
                 DrawQueue(False)
             Catch ex As Exception
@@ -981,7 +981,7 @@ Namespace Controls
             ' Get the skill name
             Dim keyName As String = adtQueue.SelectedNodes(0).Name
             Dim toLevel As Integer = CInt(keyName.Substring(keyName.Length - 1, 1))
-            Dim myTSkill As Core.EveHQSkillQueueItem
+            Dim myTSkill As CoreLib.EveHQSkillQueueItem
             If _queue.Queue.ContainsKey(keyName) = True Then
                 myTSkill = _queue.Queue(keyName)
                 If selectedLevel < CInt(toLevel) Then
@@ -997,7 +997,7 @@ Namespace Controls
                 End If
                 If selectedLevel > CInt(toLevel) Then
                     ' Check if we have another skill that can be affected by us increasing the level i.e. the same skill!
-                    Dim checkSkill As Core.EveHQSkillQueueItem
+                    Dim checkSkill As CoreLib.EveHQSkillQueueItem
                     Dim idx As Integer = 0
                     Do
                         checkSkill = _queue.Queue(_queue.Queue.Keys(idx))
@@ -1050,7 +1050,7 @@ Namespace Controls
             End If
         End Sub
 
-        Public Sub DeleteFromQueue(ByVal mySkill As Core.EveHQSkillQueueItem)
+        Public Sub DeleteFromQueue(ByVal mySkill As CoreLib.EveHQSkillQueueItem)
             Dim delPos As Integer = mySkill.Pos
             _queue.Queue.Remove(mySkill.Name & mySkill.FromLevel & mySkill.ToLevel)
             ' Reshuffle all the positions below
@@ -1077,10 +1077,10 @@ Namespace Controls
             If adtQueue IsNot Nothing Then
                 If adtQueue.SelectedNodes.Count > 0 Then
                     ' Build a new queue
-                    Dim selQueue As New Core.EveHQSkillQueue
+                    Dim selQueue As New CoreLib.EveHQSkillQueue
                     For Each lvi As Node In adtQueue.SelectedNodes
                         Dim keyName As String = lvi.Name
-                        Dim splitSkillQueueItem As Core.EveHQSkillQueueItem = CType(_queue.Queue(keyName).Clone, Core.EveHQSkillQueueItem)
+                        Dim splitSkillQueueItem As CoreLib.EveHQSkillQueueItem = CType(_queue.Queue(keyName).Clone, CoreLib.EveHQSkillQueueItem)
                         selQueue.Queue.Add(keyName, splitSkillQueueItem)
                     Next
                     Using myQueue As New Core.FrmModifyQueues
@@ -1098,7 +1098,7 @@ Namespace Controls
 
         End Sub
 
-        Public Function ClipboardData() As List(Of Core.EveHQSkillQueueItem)
+        Public Function ClipboardData() As List(Of CoreLib.EveHQSkillQueueItem)
             Dim skillText As String
             Try
                 skillText = Clipboard.GetText()
@@ -1107,7 +1107,7 @@ Namespace Controls
                 Return Nothing
             End Try
             If skillText.StartsWith("EveHQSkills:", StringComparison.Ordinal) Then
-                Dim skillList As New List(Of Core.EveHQSkillQueueItem)
+                Dim skillList As New List(Of CoreLib.EveHQSkillQueueItem)
                 ' Could potentially be valid, so let's parse it and find out
                 Dim keyList As List(Of String) = skillText.Split(":".ToCharArray).ToList
                 ' We can safely remove the first item
@@ -1125,7 +1125,7 @@ Namespace Controls
                                 ' Check valid "to" level
                                 If toLevel > 0 And toLevel <= 5 And toLevel > fromLevel Then
                                     ' Add this skill to the list to return if there are no errors
-                                    Dim skill As New Core.EveHQSkillQueueItem
+                                    Dim skill As New CoreLib.EveHQSkillQueueItem
                                     skill.Name = skillName
                                     skill.FromLevel = fromLevel
                                     skill.ToLevel = toLevel
@@ -1158,7 +1158,7 @@ Namespace Controls
 
             ' Get the skill name
             Dim keyName As String = adtQueue.SelectedNodes(0).Name
-            Dim myTSkill As Core.EveHQSkillQueueItem = _queue.Queue(keyName)
+            Dim myTSkill As CoreLib.EveHQSkillQueueItem = _queue.Queue(keyName)
 
             If myTSkill.ToLevel < 5 Then
                 ChangeLevel(myTSkill.ToLevel + 1)
@@ -1170,7 +1170,7 @@ Namespace Controls
 
             ' Get the skill name
             Dim keyName As String = adtQueue.SelectedNodes(0).Name
-            Dim myTSkill As Core.EveHQSkillQueueItem = _queue.Queue(keyName)
+            Dim myTSkill As CoreLib.EveHQSkillQueueItem = _queue.Queue(keyName)
 
             If myTSkill.ToLevel > 1 Then
                 ChangeLevel(myTSkill.ToLevel - 1)
@@ -1181,7 +1181,7 @@ Namespace Controls
         Public Sub MoveUpQueue()
             ' Store the keyname being used
             Dim keyName As String = adtQueue.SelectedNodes(0).Name
-            Dim sourceSkill As Core.EveHQSkillQueueItem
+            Dim sourceSkill As CoreLib.EveHQSkillQueueItem
             sourceSkill = _queue.Queue(keyName)
             Dim oldPos As Integer = sourceSkill.Pos
             Dim queueJump As Integer = 0
@@ -1198,7 +1198,7 @@ Namespace Controls
                 queueJump += 1
                 si = sourceSkill.Pos
                 di = si - queueJump
-                Dim destSkill As Core.EveHQSkillQueueItem
+                Dim destSkill As CoreLib.EveHQSkillQueueItem
                 For Each destSkill In _queue.Queue.Values
                     If destSkill.Pos = di Then Exit For
                 Next
@@ -1206,18 +1206,18 @@ Namespace Controls
                 'Dim din As String = destSkill.Name & destSkill.FromLevel & destSkill.ToLevel
                 Dim sin As String = sourceSkill.Name & sourceSkill.FromLevel & sourceSkill.ToLevel
 
-                Dim mySSkill As Core.EveHQSkillQueueItem
+                Dim mySSkill As CoreLib.EveHQSkillQueueItem
                 mySSkill = _queue.Queue(sin)
                 ' Move all the items up or down depending on position
                 If si > di Then
-                    Dim moveSkill As Core.EveHQSkillQueueItem
+                    Dim moveSkill As CoreLib.EveHQSkillQueueItem
                     For Each moveSkill In _queue.Queue.Values
                         If moveSkill.Pos >= di And moveSkill.Pos < si Then
                             moveSkill.Pos += 1
                         End If
                     Next
                 Else
-                    Dim moveSkill As Core.EveHQSkillQueueItem
+                    Dim moveSkill As CoreLib.EveHQSkillQueueItem
                     For Each moveSkill In _queue.Queue.Values
                         If moveSkill.Pos > si And moveSkill.Pos <= di Then
                             moveSkill.Pos -= 1
@@ -1230,7 +1230,7 @@ Namespace Controls
 
                 ' Check for movement in the queue
                 Core.SkillQueueFunctions.BuildQueue(_queuePilot, _queue, False, True)
-                Dim posSkill As Core.EveHQSkillQueueItem
+                Dim posSkill As CoreLib.EveHQSkillQueueItem
                 posSkill = _queue.Queue(keyName)
                 newPos = posSkill.Pos
 
@@ -1244,7 +1244,7 @@ Namespace Controls
         Public Sub MoveDownQueue()
             ' Store the keyname being used
             Dim keyName As String = adtQueue.SelectedNodes(0).Name
-            Dim sourceSkill As Core.EveHQSkillQueueItem
+            Dim sourceSkill As CoreLib.EveHQSkillQueueItem
             sourceSkill = _queue.Queue(keyName)
             Dim oldpos As Integer = sourceSkill.Pos
             Dim newpos As Integer
@@ -1255,7 +1255,7 @@ Namespace Controls
                 queueJump += 1
                 Dim si As Integer = sourceSkill.Pos
                 di = si + queueJump
-                Dim destSkill As Core.EveHQSkillQueueItem
+                Dim destSkill As CoreLib.EveHQSkillQueueItem
                 For Each destSkill In _queue.Queue.Values
                     If destSkill.Pos = di Then Exit For
                 Next
@@ -1263,18 +1263,18 @@ Namespace Controls
                 'Dim din As String = destSkill.Name & destSkill.FromLevel & destSkill.ToLevel
                 Dim sin As String = sourceSkill.Name & sourceSkill.FromLevel & sourceSkill.ToLevel
 
-                Dim mySSkill As Core.EveHQSkillQueueItem
+                Dim mySSkill As CoreLib.EveHQSkillQueueItem
                 mySSkill = _queue.Queue(sin)
                 ' Move all the items up or down depending on position
                 If si > di Then
-                    Dim moveSkill As Core.EveHQSkillQueueItem
+                    Dim moveSkill As CoreLib.EveHQSkillQueueItem
                     For Each moveSkill In _queue.Queue.Values
                         If moveSkill.Pos >= di And moveSkill.Pos < si Then
                             moveSkill.Pos += 1
                         End If
                     Next
                 Else
-                    Dim moveSkill As Core.EveHQSkillQueueItem
+                    Dim moveSkill As CoreLib.EveHQSkillQueueItem
                     For Each moveSkill In _queue.Queue.Values
                         If moveSkill.Pos > si And moveSkill.Pos <= di Then
                             moveSkill.Pos -= 1
@@ -1287,7 +1287,7 @@ Namespace Controls
 
                 ' Check for movement in the queue
                 Core.SkillQueueFunctions.BuildQueue(_queuePilot, _queue, False, True)
-                Dim posSkill As Core.EveHQSkillQueueItem
+                Dim posSkill As CoreLib.EveHQSkillQueueItem
                 posSkill = _queue.Queue(keyName)
                 newpos = posSkill.Pos
 
@@ -1313,7 +1313,7 @@ Namespace Controls
                 highestIndex = Math.Max(adtQueue.SelectedNodes(selItem).Index, highestIndex)
 
                 ' Remove it from the queue
-                Dim mySkill As Core.EveHQSkillQueueItem
+                Dim mySkill As CoreLib.EveHQSkillQueueItem
                 If _queue.Queue.ContainsKey(keyName) = True Then
                     mySkill = _queue.Queue(keyName)
                     ' Delete the Skill

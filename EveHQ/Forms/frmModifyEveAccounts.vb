@@ -44,6 +44,7 @@
 ' ==============================================================================
 
 Imports EveHQ.Core
+Imports EveHQ.CoreLib
 Imports System.Text
 Imports System.Threading
 
@@ -138,7 +139,7 @@ Namespace Forms
             Else
                 lblAPIKeyTypeV2.Text = "Checking..."
                 lblAPIAccessMask.Text = "Checking..."
-                Dim nt As New Thread(AddressOf CheckAPIV2Key)
+                Dim nt As New Thread(AddressOf CheckApiv2Key)
                 nt.IsBackground = True
                 nt.Start()
             End If
@@ -153,7 +154,7 @@ Namespace Forms
             testAccount.CheckAPIKey()
             _testV2APIKeyType = testAccount.APIKeyType.ToString
             _testV2APIAccessMask = testAccount.AccessMask
-            Invoke(New MethodInvoker(AddressOf UpdateAPIV2KeyType))
+            Invoke(New MethodInvoker(AddressOf UpdateApiv2KeyType))
         End Sub
 
         Private Sub UpdateApiv2KeyType()
@@ -173,4 +174,4 @@ Namespace Forms
             Close()
         End Sub
     End Class
-End NameSpace
+End Namespace

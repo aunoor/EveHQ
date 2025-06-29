@@ -9,12 +9,12 @@ public class EveSkill : ICloneable
     public int ID;
     public string Name = "";
     public string Description = "";
-    public string GroupID = "";
+    public int GroupID;
     public bool Published;
     public int Rank;
     public int SP;
     public int Level;
-    public int[] LevelUp = [5];
+    public int[] LevelUp = new int[6];
     public string Pa = "";
     public string Sa = "";
     public Dictionary<int, int> PreReqSkills = [];

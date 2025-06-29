@@ -197,7 +197,7 @@
             ' Load the combo box with the pilot info
             cboPilots.BeginUpdate()
             cboPilots.Items.Clear()
-            For Each pilot As EveHQ.Core.EveHQPilot In EveHQ.Core.HQ.Settings.Pilots.Values
+            For Each pilot As EveHQ.CoreLib.EveHQPilot In EveHQ.Core.HQ.Settings.Pilots.Values
                 If pilot.Active = True Then
                     cboPilots.Items.Add(pilot.Name)
                 End If

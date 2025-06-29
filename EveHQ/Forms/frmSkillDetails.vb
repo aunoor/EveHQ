@@ -48,6 +48,7 @@ Imports EveHQ.EveData
 Imports EveHQ.Core
 Imports System.Text
 Imports EveHQ.Core.ItemBrowser
+Imports EveHQ.CoreLib
 
 Namespace Forms
 
@@ -313,7 +314,7 @@ Namespace Forms
             For Each cert As Certificate In StaticData.Certificates.Values
                 For Each cGrade As CertificateGrade In System.Enum.GetValues(GetType(CertificateGrade))
                     If cert.GradesAndSkills.ContainsKey(cGrade) Then
-                        if IsNothing(cert.GradesAndSkills.Item(cGrade)) = False
+                        If IsNothing(cert.GradesAndSkills.Item(cGrade)) = False Then
                             If cert.GradesAndSkills(cGrade).ContainsKey(skillID) Then
                                 Dim newItem As New ListViewItem
                                 Dim toolTipText As New StringBuilder
@@ -348,7 +349,7 @@ Namespace Forms
                 Next
             Next
 
-           lvwDepend.EndUpdate()
+            lvwDepend.EndUpdate()
         End Sub
         Private Sub PrepareQueues(ByVal skillID As Integer)
             lvwQueues.BeginUpdate()
@@ -530,9 +531,9 @@ Namespace Forms
 
         Private Sub mnuViewCertDetails_Click(ByVal sender As Object, ByVal e As EventArgs) Handles mnuViewCertDetails.Click
             Dim certID As Integer = CInt(mnuItemName.Tag)
-            frmCertificateDetails.Text = mnuItemName.Text
-            frmCertificateDetails.DisplayPilotName = _displayPilotName
-            frmCertificateDetails.ShowCertDetails(certID)
+            FrmCertificateDetails.Text = mnuItemName.Text
+            FrmCertificateDetails.DisplayPilotName = _displayPilotName
+            FrmCertificateDetails.ShowCertDetails(certID)
         End Sub
 
         Public Sub New()

@@ -112,7 +112,7 @@
             ' Load the combo box with the corp info
             cboCorps.BeginUpdate()
             cboCorps.Items.Clear()
-            For Each corp As EveHQ.Core.Corporation In EveHQ.Core.HQ.Settings.Corporations.Values
+            For Each corp As EveHQ.CoreLib.Corporation In EveHQ.Core.HQ.Settings.Corporations.Values
                 '                If corp.Active = True Then
                 cboCorps.Items.Add(corp.Name)
                 '                End If

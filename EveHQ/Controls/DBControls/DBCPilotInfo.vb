@@ -45,6 +45,7 @@
 
 Imports EveHQ.Core
 Imports EveHQ.Common.Extensions
+Imports EveHQ.CoreLib
 
 Namespace Controls.DBControls
     Public Class DBCPilotInfo
@@ -61,7 +62,7 @@ Namespace Controls.DBControls
             ' Load the combo box with the pilot info
             cboPilot.BeginUpdate()
             cboPilot.Items.Clear()
-            For Each pilot As EveHQPilot In HQ.Settings.Pilots.Values
+            For Each pilot As CoreLib.EveHQPilot In HQ.Settings.Pilots.Values
                 If pilot.Active = True Then
                     cboPilot.Items.Add(pilot.Name)
                 End If
@@ -105,7 +106,7 @@ Namespace Controls.DBControls
 #End Region
 
 #Region "Class Variables"
-        Dim _pilot As EveHQPilot
+        Dim _pilot As CoreLib.EveHQPilot
 #End Region
 
 #Region "Private Methods"

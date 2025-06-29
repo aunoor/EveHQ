@@ -50,13 +50,14 @@ Imports EveHQ.Core
 Imports EveHQ.Common.Extensions
 Imports DevComponents.AdvTree
 Imports EveHQ.Core.ItemBrowser
+Imports EveHQ.CoreLib
 
 Namespace Forms
 
     Public Class FrmCertificateDetails
 
         Dim _displayPilotName As String
-        Dim _displayPilot As New EveHQPilot
+        Dim _displayPilot As New CoreLib.EveHQPilot
 
         Public Property DisplayPilotName() As String
             Get

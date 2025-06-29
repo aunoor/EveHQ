@@ -56,7 +56,7 @@ Namespace Controls.DBConfigs
             ' Load the combo box with the pilot info
             cboPilots.BeginUpdate()
             cboPilots.Items.Clear()
-            For Each pilot As Core.EveHQPilot In Core.HQ.Settings.Pilots.Values
+            For Each pilot As CoreLib.EveHQPilot In Core.HQ.Settings.Pilots.Values
                 If pilot.Active = True And pilot.Account <> "" Then
                     cboPilots.Items.Add(pilot.Name)
                 End If

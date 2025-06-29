@@ -45,6 +45,7 @@
 
 Imports EveHQ.Core.CoreReports
 Imports EveHQ.Core
+Imports EveHQ.CoreLib
 
 Namespace Forms
     Public Class FrmImplants

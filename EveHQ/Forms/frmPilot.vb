@@ -46,12 +46,13 @@
 Imports System.ComponentModel
 Imports DevComponents.DotNetBar
 Imports EveHQ.EveData
-Imports EveHQ.EveAPI
+Imports EveHQ.EveApi
 Imports EveHQ.Core
 Imports DevComponents.AdvTree
 Imports System.IO
 Imports SearchOption = Microsoft.VisualBasic.FileIO.SearchOption
-Imports EveHQ.NewEveApi
+Imports EveHQ.NewEveAPI
+Imports EveHQ.CoreLib
 
 Namespace Forms
 
@@ -263,7 +264,7 @@ Namespace Forms
                         lblAccountLogins.Text = "Login Count: " & dAccount.LogonCount & " (" & SkillFunctions.TimeToString(dAccount.LogonMinutes * 60, False) & ")"
                         If HQ.Settings.NotifyAccountTime = True Then
                             Dim accountTime As Date = dAccount.PaidUntil
-                            If accountTime.Year > 2000 And (accountTime - Now).TotalHours <= HQ.Settings.AccountTimeLimit Then
+                            If accountTime.Year > 2000 And (accountTime - now).TotalHours <= HQ.Settings.AccountTimeLimit Then
                                 lblAccountExpiry.ForeColor = Color.Red
                             End If
                         End If
@@ -709,7 +710,7 @@ Namespace Forms
 
                         If HQ.Settings.NotifyAccountTime = True Then
                             Dim accountTime As Date = dAccount.PaidUntil
-                            If accountTime.Year > 2000 And (accountTime - Now).TotalHours <= HQ.Settings.AccountTimeLimit Then
+                            If accountTime.Year > 2000 And (accountTime - now).TotalHours <= HQ.Settings.AccountTimeLimit Then
                                 lblAccountExpiry.ForeColor = Color.Red
                             Else
                                 lblAccountExpiry.ForeColor = Color.Black

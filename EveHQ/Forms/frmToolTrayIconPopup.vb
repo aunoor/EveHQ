@@ -45,6 +45,7 @@
 
 Imports EveHQ.Controls
 Imports EveHQ.Core
+Imports EveHQ.CoreLib
 Imports System.Runtime.InteropServices
 
 Namespace Forms
@@ -121,11 +122,11 @@ Namespace Forms
 
     Friend Class NativeMethods
         ' Methods
-        <DllImport("user32.dll")> _
+        <DllImport("user32.dll")>
         Public Shared Function SetWindowPos(ByVal hWnd As IntPtr, ByVal hWndInsertAfter As Integer, ByVal x As Integer, ByVal y As Integer, ByVal cx As Integer, ByVal cy As Integer, ByVal uFlags As UInt32) As Boolean
         End Function
 
-        <DllImport("user32.dll")> _
+        <DllImport("user32.dll")>
         Public Shared Function ShowWindow(ByVal hWnd As IntPtr, ByVal flags As Integer) As Boolean
         End Function
 
@@ -138,4 +139,4 @@ Namespace Forms
         Public Const SWP_NOSIZE As Integer = 1
         ' ReSharper restore InconsistentNaming
     End Class
-End NameSpace
+End Namespace

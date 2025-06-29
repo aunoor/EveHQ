@@ -3,7 +3,7 @@
 /// <summary>
 /// Class for handling the custom database - based on SQLite format
 /// </summary>
-public class CustomDataFunctions
+public class CustomDataFunctions_
 {
 //region "Core Database Access Routines"
     

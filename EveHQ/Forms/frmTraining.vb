@@ -55,6 +55,7 @@ Imports EveHQ.Core.ItemBrowser
 Imports System.IO
 Imports System.Xml
 Imports EveHQ.Core.Requisitions
+Imports EveHQ.CoreLib
 
 Namespace Forms
 
@@ -1038,10 +1039,10 @@ Namespace Forms
             ' Establish the sort direction and store it for later comparison and use
             Dim sortDirection As SortDirection
             If ch.SortDirection = eSortDirection.None Or ch.SortDirection = eSortDirection.Descending Then
-                sortDirection = sortDirection.Ascending
+                sortDirection = SortDirection.Ascending
                 ch.SortDirection = eSortDirection.Ascending
             Else
-                sortDirection = sortDirection.Descending
+                sortDirection = SortDirection.Descending
                 ch.SortDirection = eSortDirection.Descending
             End If
 
@@ -1163,7 +1164,7 @@ Namespace Forms
                 ' since each cert contains the 5 grades instead of having 5 different certs, loop for each grade
                 Dim grade = CertificateGrade.Basic
                 addCert = False
-                groupNode = CType(_certListNodes.Item(newCert.GroupID.ToString), TreeNode)
+                groupNode = CType(_certListNodes.Item(newCert.GroupId.ToString), TreeNode)
                 Select Case filter
                     Case 0
                         addCert = True
@@ -1319,7 +1320,7 @@ Namespace Forms
             Dim grade As Integer = CInt(CType(sender, ToolStripItem).Name.Substring(CType(sender, ToolStripItem).Name.Length - 1, 1))
             Dim certCat As String = mnuCertName.Tag.ToString
             For Each cert As Certificate In StaticData.Certificates.Values
-                If cert.GroupID = CInt(certCat) Then
+                If cert.GroupId = CInt(certCat) Then
                     Call AddCertSkills(cert, CType(grade, CertificateGrade))
                 End If
             Next
@@ -1568,7 +1569,7 @@ Namespace Forms
             For Each cert As Certificate In StaticData.Certificates.Values
                 For Each cGrade As CertificateGrade In System.Enum.GetValues(GetType(CertificateGrade))
                     If cert.GradesAndSkills.ContainsKey(cGrade) Then
-                        if IsNothing(cert.GradesAndSkills.Item(cGrade)) = False
+                        If IsNothing(cert.GradesAndSkills.Item(cGrade)) = False Then
                             If cert.GradesAndSkills(cGrade).ContainsKey(skillID) Then
                                 Dim newItem As New ListViewItem
                                 Dim toolTipText As New StringBuilder

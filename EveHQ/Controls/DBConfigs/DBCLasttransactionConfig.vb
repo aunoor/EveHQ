@@ -45,6 +45,7 @@
 
 Imports EveHQ.Core
 Imports EveHQ.Controls.DBControls
+Imports EveHQ.CoreLib
 
 Namespace Controls.DBConfigs
     Public Class DBCLasttransactionConfig
@@ -114,4 +115,4 @@ Namespace Controls.DBConfigs
             Close()
         End Sub
     End Class
-End NameSpace
+End Namespace

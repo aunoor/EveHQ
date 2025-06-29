@@ -49,7 +49,7 @@ Namespace Controls
 
     Public Class CharacterTrainingBlock
 
-        ReadOnly _displayPilot As Core.EveHQPilot
+        ReadOnly _displayPilot As CoreLib.EveHQPilot
         ReadOnly _displayPilotName As String = ""
         ReadOnly _usingAccount As String = ""
 
@@ -105,9 +105,9 @@ Namespace Controls
                 Call OverlayAccountTime()
 
                 ' Establish which skill is training
-                Dim currentTrainingSkill As New Core.EveHQPilotQueuedSkill
+                Dim currentTrainingSkill As New CoreLib.EveHQPilotQueuedSkill
                 Dim lastQueueTime As DateTime = Now
-                For Each queuedSkill As Core.EveHQPilotQueuedSkill In _displayPilot.QueuedSkills.Values
+                For Each queuedSkill As CoreLib.EveHQPilotQueuedSkill In _displayPilot.QueuedSkills.Values
                     If Core.SkillFunctions.ConvertEveTimeToLocal(queuedSkill.EndTime) >= Now And Core.SkillFunctions.ConvertEveTimeToLocal(queuedSkill.StartTime) <= Now Then
                         currentTrainingSkill = queuedSkill
                     End If
@@ -163,9 +163,9 @@ Namespace Controls
             If Core.HQ.Settings.Pilots.ContainsKey(_displayPilotName) = True Then
 
                 ' Establish which skill is training
-                Dim currentTrainingSkill As New Core.EveHQPilotQueuedSkill
+                Dim currentTrainingSkill As New CoreLib.EveHQPilotQueuedSkill
                 Dim lastQueueTime As DateTime = Now
-                For Each queuedSkill As Core.EveHQPilotQueuedSkill In _displayPilot.QueuedSkills.Values
+                For Each queuedSkill As CoreLib.EveHQPilotQueuedSkill In _displayPilot.QueuedSkills.Values
                     If Core.SkillFunctions.ConvertEveTimeToLocal(queuedSkill.EndTime) >= Now And Core.SkillFunctions.ConvertEveTimeToLocal(queuedSkill.StartTime) <= Now Then
                         currentTrainingSkill = queuedSkill
                     End If
@@ -200,7 +200,7 @@ Namespace Controls
 
         Private Sub OverlayAccountTime()
             If pbPilot.InitialImage IsNot Nothing Then
-                Dim isAlpha As Boolean = Core.HQ.Settings.Pilots.ContainsKey(_displayPilotName) And Core.HQ.Settings.Accounts(_displayPilot.Account).APIAccountStatus = Core.APIAccountStatuses.Alpha
+                Dim isAlpha As Boolean = Core.HQ.Settings.Pilots.ContainsKey(_displayPilotName) And Core.HQ.Settings.Accounts(_displayPilot.Account).APIAccountStatus = CoreLib.APIAccountStatuses.Alpha
                 If Core.HQ.Settings.NotifyAccountTime = True Or isAlpha Then
                     If Core.HQ.Settings.Pilots.ContainsKey(_displayPilotName) Then
                         If Core.HQ.Settings.Accounts.ContainsKey(_displayPilot.Account) Then
@@ -250,7 +250,7 @@ Namespace Controls
 #Region "Portrait Related Routines"
 
         Private Sub mnuCtxPicGetPortraitFromServer_Click(ByVal sender As System.Object, ByVal e As EventArgs) Handles mnuCtxPicGetPortraitFromServer.Click
-            Dim dPilot As Core.EveHQPilot = Core.HQ.Settings.Pilots(_displayPilotName)
+            Dim dPilot As CoreLib.EveHQPilot = Core.HQ.Settings.Pilots(_displayPilotName)
             pbPilot.ImageLocation = "http://image.eveonline.com/Character/" & dPilot.ID & "_256.jpg"
         End Sub
         Private Sub mnuCtxPicGetPortraitFromLocal_Click(ByVal sender As System.Object, ByVal e As EventArgs) Handles mnuCtxPicGetPortraitFromLocal.Click

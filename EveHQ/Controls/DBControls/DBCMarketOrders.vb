@@ -49,8 +49,9 @@ Imports EveHQ.EveApi
 Imports EveHQ.Core
 Imports System.Xml
 Imports EveHQ.Common.Extensions
-Imports EveHQ.NewEveApi
-Imports EveHQ.NewEveApi.Entities
+Imports EveHQ.NewEveAPI
+Imports EveHQ.NewEveAPI.Entities
+Imports EveHQ.CoreLib
 
 Namespace Controls.DBControls
     Public Class DBCMarketOrders

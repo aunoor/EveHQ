@@ -45,11 +45,12 @@
 
 Imports System.Globalization
 Imports DevComponents.AdvTree
-Imports EveHQ.EveAPI
+Imports EveHQ.EveApi
 Imports EveHQ.Core
 Imports DevComponents.DotNetBar
 Imports System.Xml
 Imports EveHQ.Common.Extensions
+Imports EveHQ.CoreLib
 
 Namespace Controls.DBControls
 
@@ -153,7 +154,7 @@ Namespace Controls.DBControls
                     ' Get transactions
                     Dim transactionList = journalData.ResultData
 
-                    
+
                     adtLastTransactions.BeginUpdate()
                     adtLastTransactions.Nodes.Clear()
                     Dim maxCount = Math.Min(numTransactionsDisplay - 1, transactionList.Count - 1)
@@ -229,4 +230,4 @@ Namespace Controls.DBControls
             Call UpdateTransactions()
         End Sub
     End Class
-End NameSpace
+End Namespace

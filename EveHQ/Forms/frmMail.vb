@@ -51,6 +51,7 @@ Imports System.Threading
 Imports System.Text
 Imports System.Text.RegularExpressions
 Imports EveHQ.Common.Extensions
+Imports EveHQ.CoreLib
 
 Namespace Forms
 
@@ -543,9 +544,9 @@ Namespace Forms
                             keyNode.Parent.Text = "EveMail Inbox (" & _currentUnreadMails.ToString & ")"
                             Dim updateSQL As String = "UPDATE eveMail SET readMail=1 WHERE messageKey='" & _allMails(-CLng(key)).MessageKey & "';"
                             If CustomDataFunctions.SetCustomData(updateSQL) = -2 Then
-                                MessageBox.Show("There was an error setting the read status of the EveMails. The error was: " & ControlChars.CrLf & ControlChars.CrLf & HQ.dataError & ControlChars.CrLf & ControlChars.CrLf & "Data: " & updateSQL.ToString, "Error Setting EveMail Status", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                                MessageBox.Show("There was an error setting the read status of the EveMails. The error was: " & ControlChars.CrLf & ControlChars.CrLf & HQ.DataError & ControlChars.CrLf & ControlChars.CrLf & "Data: " & updateSQL.ToString, "Error Setting EveMail Status", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                             End If
-                            Call frmEveHQ.UpdateEveMailButton()
+                            Call FrmEveHQ.UpdateEveMailButton()
                         End If
                     Else
                         Dim newnotice As EveNotification = _allNotices(-CLng(key))
@@ -561,9 +562,9 @@ Namespace Forms
                             keyNode.Parent.Text = "Eve Notifications (" & _currentUnreadNotices.ToString & ")"
                             Dim updateSQL As String = "UPDATE eveNotifications SET readMail=1 WHERE messageKey='" & _allNotices(-CLng(key)).MessageKey & "';"
                             If CustomDataFunctions.SetCustomData(updateSQL) = -2 Then
-                                MessageBox.Show("There was an error setting the read status of the Eve Notifications. The error was: " & ControlChars.CrLf & ControlChars.CrLf & HQ.dataError & ControlChars.CrLf & ControlChars.CrLf & "Data: " & updateSQL.ToString, "Error Setting Eve Notification Status", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                                MessageBox.Show("There was an error setting the read status of the Eve Notifications. The error was: " & ControlChars.CrLf & ControlChars.CrLf & HQ.DataError & ControlChars.CrLf & ControlChars.CrLf & "Data: " & updateSQL.ToString, "Error Setting Eve Notification Status", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                             End If
-                            Call frmEveHQ.UpdateEveMailButton()
+                            Call FrmEveHQ.UpdateEveMailButton()
                         End If
                     End If
                     btnCopyEvemail.Enabled = True
@@ -574,7 +575,7 @@ Namespace Forms
         End Sub
 
         Private Function CleanMessage(ByVal message As String) As String
-            Dim output As String = Message.Trim()
+            Dim output As String = message.Trim()
 
             output = output.Replace("<br>", "<br />").Replace("<BR>", "<br />")
             output = output.Replace("<br />", ControlChars.CrLf)
@@ -596,4 +597,4 @@ Namespace Forms
         End Sub
 
     End Class
-End NameSpace
+End Namespace

@@ -44,7 +44,8 @@
 ' ==============================================================================
 
 Imports EveHQ.Core
-Imports EveHQ.EveAPI
+Imports EveHQ.CoreLib
+Imports EveHQ.EveApi
 
 Namespace Forms
 

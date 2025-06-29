@@ -1,5 +1,6 @@
 ﻿Imports System.Globalization
 Imports EveHQ.Core
+Imports EveHQ.CoreLib
 
 Namespace Controls.DBControls
     Public Class DBCCorpInfo
@@ -80,7 +81,7 @@ Namespace Controls.DBControls
                     lblMemberCount.Text = "Member Count: " & _corp.ApiData.MemberCount
                     Dim walletTotal As Double = 0
                     If _corp.WalletBalances IsNot Nothing Then
-                        For Each walletBalance As NewEveApi.Entities.AccountBalance In _corp.WalletBalances
+                        For Each walletBalance As NewEveAPI.Entities.AccountBalance In _corp.WalletBalances
                             walletTotal += walletBalance.Balance
                         Next
                     End If

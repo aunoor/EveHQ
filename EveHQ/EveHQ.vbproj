@@ -848,6 +848,10 @@
       <Project>{7CD9A34B-9635-4D69-B451-1CE93B8280D8}</Project>
       <Name>EveHQ.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\EveHQ.CoreLib\EveHQ.CoreLib.csproj">
+      <Project>{2b7e3d8e-5da4-493d-92e5-6b59c5b3c4f9}</Project>
+      <Name>EveHQ.CoreLib</Name>
+    </ProjectReference>
     <ProjectReference Include="..\EveHQ.Core\EveHQ.Core.vbproj">
       <Project>{AD4AA9C0-F258-44D8-9D71-07493198B580}</Project>
       <Name>EveHQ.Core</Name>

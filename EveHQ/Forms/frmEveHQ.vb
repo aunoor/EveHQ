@@ -68,6 +68,7 @@ Imports System.Net.Http
 Imports EveHQ.Core.ItemBrowser
 Imports Microsoft.VisualBasic.FileIO
 Imports System.Threading.Tasks
+Imports EveHQ.CoreLib
 
 Namespace Forms
 
@@ -1007,7 +1008,7 @@ Namespace Forms
             End If
         End Sub
 
-        Private Sub SendEveHQMail(ByVal cpilot As EveHQPilot, ByVal mailText As String)
+        Private Sub SendEveHQMail(ByVal cpilot As CoreLib.EveHQPilot, ByVal mailText As String)
             Dim eveHQMail As New SmtpClient
             Try
                 eveHQMail.Host = HQ.Settings.EMailServer
@@ -2380,7 +2381,7 @@ Namespace Forms
 
                     ' Clear the character XML files
                     Try
-                        For Each charFile As String In _
+                        For Each charFile As String In
                             My.Computer.FileSystem.GetFiles(HQ.ApiCacheFolder, FileIO.SearchOption.SearchTopLevelOnly,
                                                             "EVEHQAPI_" & APITypes.CharacterSheet.ToString & "*")
                             My.Computer.FileSystem.DeleteFile(charFile)
@@ -2390,7 +2391,7 @@ Namespace Forms
 
                     ' Clear the skill training XML files
                     Try
-                        For Each charFile As String In _
+                        For Each charFile As String In
                             My.Computer.FileSystem.GetFiles(HQ.ApiCacheFolder, FileIO.SearchOption.SearchTopLevelOnly,
                                                             "EVEHQAPI_" & APITypes.SkillTraining.ToString & "*")
                             My.Computer.FileSystem.DeleteFile(charFile)
@@ -2400,7 +2401,7 @@ Namespace Forms
 
                     ' Clear the skill queue XML files
                     Try
-                        For Each charFile As String In _
+                        For Each charFile As String In
                             My.Computer.FileSystem.GetFiles(HQ.ApiCacheFolder, FileIO.SearchOption.SearchTopLevelOnly,
                                                             "EVEHQAPI_" & APITypes.SkillQueue.ToString & "*")
                             My.Computer.FileSystem.DeleteFile(charFile)
@@ -3290,7 +3291,7 @@ Namespace Forms
 
         Private Sub AppCommandTheme_Executed(ByVal sender As Object, ByVal e As EventArgs) Handles AppCommandTheme.Executed
             Dim source As ICommandSource = CType(sender, ICommandSource)
-            If typeof(source.CommandParameter) Is String Then
+            If TypeOf (source.CommandParameter) Is String Then
                 Dim cs As eStyle = CType([Enum].Parse(GetType(eStyle), source.CommandParameter.ToString()), eStyle)
                 ' This is all that is needed to change the color table for all controls on the form
                 UpdateTheme(cs, Color.Empty)
@@ -3306,7 +3307,7 @@ Namespace Forms
                     btnCanvasColor.Enabled = False
                     HQ.Settings.ThemeTint = Color.Empty
                 End If
-            ElseIf typeof(source.CommandParameter) Is Color Then
+            ElseIf TypeOf (source.CommandParameter) Is Color Then
                 Dim tint As Color = CType(source.CommandParameter, Color)
                 If CType(source, ColorPickerDropDown).Text = "Canvas Color" Then
                     ' Updating then metro canvas color

@@ -44,6 +44,7 @@
 ' ==============================================================================
 
 Imports EveHQ.Core
+Imports EveHQ.CoreLib
 
 Namespace Controls.DBControls
     Public Class DBCEveSkillQueue
@@ -127,7 +128,7 @@ Namespace Controls.DBControls
 
         Private Sub lblPilot_LinkClicked(ByVal sender As Object, ByVal e As LinkLabelLinkClickedEventArgs) Handles lblPilot.LinkClicked
             Forms.FrmPilot.DisplayPilotName = _pilot.Name
-            Forms.frmEveHQ.OpenPilotInfoForm()
+            Forms.FrmEveHQ.OpenPilotInfoForm()
         End Sub
 
 #End Region

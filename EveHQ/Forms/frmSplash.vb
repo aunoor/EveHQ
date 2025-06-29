@@ -56,6 +56,7 @@ Imports System.Windows.Forms.VisualStyles
 Imports System.Text
 Imports EveHQ.Common.Extensions
 Imports SearchOption = Microsoft.VisualBasic.FileIO.SearchOption
+Imports EveHQ.CoreLib
 
 Namespace Forms
 

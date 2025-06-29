@@ -56,7 +56,7 @@ Namespace Controls
             ' Add any initialization after the InitializeComponent() call.
 
             ' Get pilot
-            Dim dPilot As Core.EveHQPilot = Core.HQ.Settings.Pilots(pilotName)
+            Dim dPilot As CoreLib.EveHQPilot = Core.HQ.Settings.Pilots(pilotName)
 
             ' Draw image
             pbPilot.SizeMode = PictureBoxSizeMode.StretchImage

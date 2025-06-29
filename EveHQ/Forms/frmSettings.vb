@@ -59,6 +59,7 @@ Imports Microsoft.Win32
 Imports System.Windows.Forms.VisualStyles
 Imports System.Net
 Imports System.Reflection
+Imports EveHQ.CoreLib
 
 Namespace Forms
 
@@ -77,7 +78,7 @@ Namespace Forms
                     _redrawColumns = False
                     Call FrmTraining.RefreshAllTrainingQueues()
                 End If
-                Call frmEveHQ.UpdatePilotInfo()
+                Call FrmEveHQ.UpdatePilotInfo()
             End If
         End Sub
 
@@ -254,11 +255,11 @@ Namespace Forms
                 If HQ.Settings.TrainingBarDockPosition = eDockSide.None Then
                     HQ.Settings.TrainingBarDockPosition = eDockSide.Bottom
                 End If
-                frmEveHQ.Bar1.DockSide = CType(HQ.Settings.TrainingBarDockPosition, eDockSide)
-                frmEveHQ.DockContainerItem1.Height = HQ.Settings.TrainingBarHeight
-                frmEveHQ.DockContainerItem1.Width = HQ.Settings.TrainingBarWidth
+                FrmEveHQ.Bar1.DockSide = CType(HQ.Settings.TrainingBarDockPosition, eDockSide)
+                FrmEveHQ.DockContainerItem1.Height = HQ.Settings.TrainingBarHeight
+                FrmEveHQ.DockContainerItem1.Width = HQ.Settings.TrainingBarWidth
             Else
-                frmEveHQ.Bar1.Visible = False
+                FrmEveHQ.Bar1.Visible = False
                 ' Clear old event handlers and controls
                 For c As Integer = FrmEveHQ.trainingBlockLayout.Controls.Count - 1 To 0 Step -1
                     Dim cb As CharacterTrainingBlock = CType(FrmEveHQ.trainingBlockLayout.Controls(c), CharacterTrainingBlock)
@@ -276,25 +277,25 @@ Namespace Forms
             HQ.Settings.EnableAutomaticSave = chkEnableAutomaticSave.Checked
             nudAutomaticSaveTime.Enabled = chkEnableAutomaticSave.Checked
             If chkEnableAutomaticSave.Checked = True Then
-                frmEveHQ.tmrSave.Start()
+                FrmEveHQ.tmrSave.Start()
             Else
-                frmEveHQ.tmrSave.Stop()
+                FrmEveHQ.tmrSave.Stop()
             End If
         End Sub
 
         Private Sub nudAutomaticSaveTime_Click(ByVal sender As Object, ByVal e As EventArgs) Handles nudAutomaticSaveTime.Click
             HQ.Settings.AutomaticSaveTime = CInt(nudAutomaticSaveTime.Value)
-            frmEveHQ.tmrSave.Interval = CInt(nudAutomaticSaveTime.Value) * 60000
+            FrmEveHQ.tmrSave.Interval = CInt(nudAutomaticSaveTime.Value) * 60000
         End Sub
 
         Private Sub nudAutomaticSaveTime_HandleDestroyed(ByVal sender As Object, ByVal e As EventArgs) Handles nudAutomaticSaveTime.HandleDestroyed
             HQ.Settings.AutomaticSaveTime = CInt(nudAutomaticSaveTime.Value)
-            frmEveHQ.tmrSave.Interval = CInt(nudAutomaticSaveTime.Value) * 60000
+            FrmEveHQ.tmrSave.Interval = CInt(nudAutomaticSaveTime.Value) * 60000
         End Sub
 
         Private Sub nudAutomaticSaveTime_KeyUp(ByVal sender As Object, ByVal e As KeyEventArgs) Handles nudAutomaticSaveTime.KeyUp
             HQ.Settings.AutomaticSaveTime = CInt(nudAutomaticSaveTime.Value)
-            frmEveHQ.tmrSave.Interval = CInt(nudAutomaticSaveTime.Value) * 60000
+            FrmEveHQ.tmrSave.Interval = CInt(nudAutomaticSaveTime.Value) * 60000
         End Sub
 
         Private Sub cboStartupPilot_SelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs) _
@@ -359,11 +360,11 @@ Namespace Forms
             HQ.Settings.MdiTabPosition = cboMDITabPosition.SelectedItem.ToString
             Select Case HQ.Settings.MdiTabPosition
                 Case "Top"
-                    frmEveHQ.tabEveHQMDI.Dock = DockStyle.Top
-                    frmEveHQ.tabEveHQMDI.TabAlignment = eTabStripAlignment.Top
+                    FrmEveHQ.tabEveHQMDI.Dock = DockStyle.Top
+                    FrmEveHQ.tabEveHQMDI.TabAlignment = eTabStripAlignment.Top
                 Case "Bottom"
-                    frmEveHQ.tabEveHQMDI.Dock = DockStyle.Bottom
-                    frmEveHQ.tabEveHQMDI.TabAlignment = eTabStripAlignment.Bottom
+                    FrmEveHQ.tabEveHQMDI.Dock = DockStyle.Bottom
+                    FrmEveHQ.tabEveHQMDI.TabAlignment = eTabStripAlignment.Bottom
             End Select
         End Sub
 
@@ -385,7 +386,7 @@ Namespace Forms
 
         Private Sub UpdateColourOptions()
             ' Update the pilot colours
-            Call UpdatePBPilotColours()
+            Call UpdatePbPilotColours()
             chkDisableVisualStyles.Checked = HQ.Settings.DisableVisualStyles
             txtCSVSeparator.Text = HQ.Settings.CsvSeparatorChar
         End Sub
@@ -471,7 +472,7 @@ Namespace Forms
             ' Update the colours
             FrmPilot.adtSkills.Refresh()
             ' Update the PBPilot Colours
-            Call UpdatePBPilotColours()
+            Call UpdatePbPilotColours()
         End Sub
 
         Private Sub chkDisableVisualStyles_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs) _
@@ -593,7 +594,7 @@ Namespace Forms
                     For Each pilotName As String In removeList
                         HQ.Settings.Pilots.Remove(pilotName)
                     Next
-                    Call frmEveHQ.UpdatePilotInfo()
+                    Call FrmEveHQ.UpdatePilotInfo()
                     Call UpdatePilots()
                 Else
                     adtAccounts.Select()
@@ -630,7 +631,7 @@ Namespace Forms
         End Sub
 
         Private Sub btnGetData_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnGetData.Click
-            Call frmEveHQ.QueryMyEveServer()
+            Call FrmEveHQ.QueryMyEveServer()
         End Sub
 
         Public Sub UpdateAccounts()
@@ -670,9 +671,9 @@ Namespace Forms
             Next
             adtAccounts.EndUpdate()
             If HQ.Settings.Accounts.Count = 0 Then
-                frmEveHQ.btnQueryAPI.Enabled = False
+                FrmEveHQ.btnQueryAPI.Enabled = False
             Else
-                frmEveHQ.btnQueryAPI.Enabled = True
+                FrmEveHQ.btnQueryAPI.Enabled = True
             End If
         End Sub
 
@@ -810,8 +811,8 @@ Namespace Forms
         End Sub
 
         Private Sub btnAddPilotFromXML_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnAddPilotFromXML.Click
-            Call PilotParseFunctions.LoadPilotFromXML()
-            Call frmEveHQ.UpdatePilotInfo()
+            Call PilotParseFunctions.LoadPilotFromXml()
+            Call FrmEveHQ.UpdatePilotInfo()
             Call UpdatePilots()
         End Sub
 
@@ -875,7 +876,7 @@ Namespace Forms
                     ' Update the settings view
                     Call UpdatePilots()
                     ' Update the list of pilots in the main form
-                    Call frmEveHQ.UpdatePilotInfo()
+                    Call FrmEveHQ.UpdatePilotInfo()
                 Else
                     lvwPilots.Select()
                     Exit Sub
@@ -1260,16 +1261,16 @@ Namespace Forms
         Private Sub chkEnableEveStatus_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs) _
             Handles chkEnableEveStatus.CheckedChanged
             If chkEnableEveStatus.Checked = True Then
-                frmEveHQ.lblTQStatus.Text = "Tranquility Status: Unknown"
+                FrmEveHQ.lblTQStatus.Text = "Tranquility Status: Unknown"
                 HQ.Settings.EnableEveStatus = True
-                frmEveHQ.tmrEve.Interval = 100
-                frmEveHQ.tmrEve.Start()
+                FrmEveHQ.tmrEve.Interval = 100
+                FrmEveHQ.tmrEve.Start()
             Else
                 HQ.Settings.EnableEveStatus = False
-                frmEveHQ.EveStatusIcon.Icon = My.Resources.EveHQ
-                frmEveHQ.EveStatusIcon.Text = "EveHQ"
-                frmEveHQ.tmrEve.Stop()
-                frmEveHQ.lblTQStatus.Text = "Tranquility Status: Updates Disabled"
+                FrmEveHQ.EveStatusIcon.Icon = My.Resources.EveHQ
+                FrmEveHQ.EveStatusIcon.Text = "EveHQ"
+                FrmEveHQ.tmrEve.Stop()
+                FrmEveHQ.lblTQStatus.Text = "Tranquility Status: Updates Disabled"
             End If
         End Sub
 
@@ -1702,7 +1703,7 @@ Namespace Forms
                     Try
                         G15Lcd.InitLcd()
                         ' Check if the LCD will cycle chars
-                        If HQ.IsG15LCDActive = True And HQ.Settings.CycleG15Pilots = True Then
+                        If HQ.IsG15LcdActive = True And HQ.Settings.CycleG15Pilots = True Then
                             G15Lcd.TmrLcdChar.Interval = (1000 * HQ.Settings.CycleG15Time)
                             G15Lcd.TmrLcdChar.Enabled = True
                         End If
@@ -1945,28 +1946,28 @@ Namespace Forms
             HQ.Settings.TaskbarIconMode = cboTaskbarIconMode.SelectedIndex
             Select Case HQ.Settings.TaskbarIconMode
                 Case 0 ' Simple
-                    Select Case HQ.myTQServer.Status
+                    Select Case HQ.MyTqServer.Status
                         Case EveServer.ServerStatus.Down
-                            frmEveHQ.EveStatusIcon.Text = HQ.myTQServer.StatusText
+                            FrmEveHQ.EveStatusIcon.Text = HQ.MyTqServer.StatusText
                         Case EveServer.ServerStatus.Starting
-                            frmEveHQ.EveStatusIcon.Text = HQ.myTQServer.StatusText
+                            FrmEveHQ.EveStatusIcon.Text = HQ.MyTqServer.StatusText
                         Case EveServer.ServerStatus.Shutting
-                            frmEveHQ.EveStatusIcon.Text = HQ.myTQServer.StatusText
+                            FrmEveHQ.EveStatusIcon.Text = HQ.MyTqServer.StatusText
                         Case EveServer.ServerStatus.Full
-                            frmEveHQ.EveStatusIcon.Text = HQ.myTQServer.StatusText
+                            FrmEveHQ.EveStatusIcon.Text = HQ.MyTqServer.StatusText
                         Case EveServer.ServerStatus.ProxyDown
-                            frmEveHQ.EveStatusIcon.Text = HQ.myTQServer.StatusText
+                            FrmEveHQ.EveStatusIcon.Text = HQ.MyTqServer.StatusText
                         Case EveServer.ServerStatus.Unknown
-                            frmEveHQ.EveStatusIcon.Text = HQ.myTQServer.StatusText
+                            FrmEveHQ.EveStatusIcon.Text = HQ.MyTqServer.StatusText
                         Case EveServer.ServerStatus.Up
-                            Dim msg As String = HQ.myTQServer.ServerName & ":" & vbCrLf
-                            msg = msg & "Version: " & HQ.myTQServer.Version & vbCrLf
-                            msg = msg & "Players: " & HQ.myTQServer.Players
+                            Dim msg As String = HQ.MyTqServer.ServerName & ":" & vbCrLf
+                            msg = msg & "Version: " & HQ.MyTqServer.Version & vbCrLf
+                            msg = msg & "Players: " & HQ.MyTqServer.Players
                             If msg.Length > 50 Then
-                                frmEveHQ.EveStatusIcon.Text = HQ.myTQServer.ServerName & ":" & vbCrLf &
+                                FrmEveHQ.EveStatusIcon.Text = HQ.MyTqServer.ServerName & ":" & vbCrLf &
                                                               "Server currently initialising"
                             Else
-                                frmEveHQ.EveStatusIcon.Text = msg
+                                FrmEveHQ.EveStatusIcon.Text = msg
                             End If
                     End Select
                 Case 1 ' Enhanced
@@ -2040,7 +2041,7 @@ Namespace Forms
                         If configForm.DialogResult = DialogResult.OK Then
                             ' Save the Widget
                             Dim ci As PropertyInfo = myType.GetProperty("ControlConfiguration")
-                            Dim myConfig As SortedList(Of String, Object) = CType(ci.GetValue(newWidget, Nothing), 
+                            Dim myConfig As SortedList(Of String, Object) = CType(ci.GetValue(newWidget, Nothing),
                                                                                   SortedList(Of String, Object))
                             HQ.Settings.DashboardConfiguration.Add(myConfig)
                             Call UpdateWidgets()
@@ -2055,7 +2056,7 @@ Namespace Forms
                 Else
                     ' Save the Widget
                     Dim ci As PropertyInfo = myType.GetProperty("ControlConfiguration")
-                    Dim myConfig As SortedList(Of String, Object) = CType(ci.GetValue(newWidget, Nothing), 
+                    Dim myConfig As SortedList(Of String, Object) = CType(ci.GetValue(newWidget, Nothing),
                                                                           SortedList(Of String, Object))
                     HQ.Settings.DashboardConfiguration.Add(myConfig)
                     Call UpdateWidgets()
@@ -2077,7 +2078,7 @@ Namespace Forms
                 HQ.Settings.DashboardConfiguration.RemoveAt(index)
                 lvWidgets.SelectedItems(0).Remove()
                 ' Update the dashboard
-                frmDashboard.UpdateWidgets()
+                FrmDashboard.UpdateWidgets()
             Else
                 MessageBox.Show("Please select a Widget to remove before proceeding.", "Widget Selection Required",
                                 MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -2120,26 +2121,26 @@ Namespace Forms
                         End Using
                 End Select
                 ' Update the dashboard
-                frmDashboard.UpdateWidgets()
+                FrmDashboard.UpdateWidgets()
             End If
         End Sub
 
         Private Sub chkShowPriceTicker_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs) _
             Handles chkShowPriceTicker.CheckedChanged
             HQ.Settings.DBTicker = chkShowPriceTicker.Checked
-            frmDashboard.ticker1.Visible = HQ.Settings.DBTicker
+            FrmDashboard.Ticker1.Visible = HQ.Settings.DBTicker
         End Sub
 
         Private Sub cboTickerLocation_SelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs) _
             Handles cboTickerLocation.SelectedIndexChanged
             HQ.Settings.DBTickerLocation = cboTickerLocation.SelectedItem.ToString
-            If frmDashboard IsNot Nothing Then
+            If FrmDashboard IsNot Nothing Then
                 Try
                     Select Case HQ.Settings.DBTickerLocation
                         Case "Top"
-                            frmDashboard.ticker1.Dock = DockStyle.Top
+                            FrmDashboard.Ticker1.Dock = DockStyle.Top
                         Case "Bottom"
-                            frmDashboard.ticker1.Dock = DockStyle.Bottom
+                            FrmDashboard.Ticker1.Dock = DockStyle.Bottom
                     End Select
 
                 Catch ex As Exception
@@ -2164,12 +2165,12 @@ Namespace Forms
 
             ' Clear the list of providers before we add items
             _marketDataProvider.Items.Clear()
-	        _marketDataProvider.Items.Add(CcpMarketDataProvider.Name)
-	        _marketDataProvider.Items.Add(FuzzworkMarketStatDataProvider.Name)
-	        _marketDataProvider.Items.Add(EveCentralMarketDataProvider.Name)
+            _marketDataProvider.Items.Add(CcpMarketDataProvider.Name)
+            _marketDataProvider.Items.Add(FuzzworkMarketStatDataProvider.Name)
+            _marketDataProvider.Items.Add(EveCentralMarketDataProvider.Name)
 
 
-	        ' Set selected to the current setting.
+            ' Set selected to the current setting.
             _marketDataProvider.SelectedItem = HQ.MarketStatDataProvider.ProviderName
         End Sub
 
@@ -2560,20 +2561,20 @@ Namespace Forms
         Private Sub ChangeMarketProvider(ByVal providerName As String)
             If providerName = EveCentralMarketDataProvider.Name Then
                 HQ.MarketStatDataProvider = HQ.GetEveCentralMarketInstance
-            Else If providerName = FuzzworkMarketStatDataProvider.Name
+            ElseIf providerName = FuzzworkMarketStatDataProvider.Name Then
                 HQ.MarketStatDataProvider = HQ.GetFuzzworkMarketStatDataProvider
-			Else
+            Else
                 HQ.MarketStatDataProvider = HQ.GetCcpMarketStatDataProvider
             End If
         End Sub
 
 #End Region
-        
+
         Public Sub FinaliseAPIServerUpdate()
             btnGetData.Enabled = True
             Call UpdatePilots()
         End Sub
 
-       
+
     End Class
 End Namespace

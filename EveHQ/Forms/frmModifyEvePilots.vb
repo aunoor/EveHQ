@@ -44,6 +44,7 @@
 ' ==============================================================================
 
 Imports EveHQ.Core
+Imports EveHQ.CoreLib
 
 Namespace Forms
     Public Class FrmModifyEvePilots
@@ -93,4 +94,4 @@ Namespace Forms
             Close()
         End Sub
     End Class
-End NameSpace
+End Namespace

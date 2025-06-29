@@ -49,7 +49,7 @@ Namespace Forms
     Public Class FrmEditImplants
 
         Dim _displayPilotName As String
-        Dim _displayPilot As EveHQPilot
+        Dim _displayPilot As CoreLib.EveHQPilot
 
         Public Property DisplayPilotName() As String
             Get

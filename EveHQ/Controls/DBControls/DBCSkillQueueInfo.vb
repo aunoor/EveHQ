@@ -44,6 +44,7 @@
 ' ==============================================================================
 
 Imports EveHQ.Core
+Imports EveHQ.CoreLib
 
 Namespace Controls.DBControls
     Public Class DBCSkillQueueInfo
@@ -60,7 +61,7 @@ Namespace Controls.DBControls
             ' Load the combo box with the pilot info
             cboPilot.BeginUpdate()
             cboPilot.Items.Clear()
-            For Each pilot As EveHQPilot In HQ.Settings.Pilots.Values
+            For Each pilot As CoreLib.EveHQPilot In HQ.Settings.Pilots.Values
                 If pilot.Active = True Then
                     cboPilot.Items.Add(pilot.Name)
                 End If
@@ -151,7 +152,7 @@ Namespace Controls.DBControls
 #End Region
 
 #Region "Class Variables"
-        Dim _pilot As EveHQPilot
+        Dim _pilot As CoreLib.EveHQPilot
 #End Region
 
 #Region "Private Methods"
@@ -240,7 +241,7 @@ Namespace Controls.DBControls
 
         Private Sub lblPilot_LinkClicked(ByVal sender As Object, ByVal e As LinkLabelLinkClickedEventArgs) Handles lblPilot.LinkClicked
             Forms.FrmPilot.DisplayPilotName = _pilot.Name
-            Forms.frmEveHQ.OpenPilotInfoForm()
+            Forms.FrmEveHQ.OpenPilotInfoForm()
         End Sub
 
         Private Sub lvwSkills_Resize(ByVal sender As Object, ByVal e As EventArgs) Handles lvwSkills.Resize
@@ -250,4 +251,4 @@ Namespace Controls.DBControls
 #End Region
 
     End Class
-End NameSpace
+End Namespace
