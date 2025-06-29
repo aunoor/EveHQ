@@ -46,6 +46,7 @@
 Imports System.Drawing
 Imports System.Windows.Forms
 Imports EveHQ.Core
+Imports EveHQ.CoreLib
 
 Namespace Forms
 

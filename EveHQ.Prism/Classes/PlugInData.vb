@@ -54,6 +54,7 @@ Imports System.Xml
 Imports System.IO
 Imports EveHQ.Prism.Forms
 Imports EveHQ.Common.Extensions
+Imports EveHQ.CoreLib
 Imports Newtonsoft.Json
 
 ' ReSharper disable once CheckNamespace - for binary serialization compatability
@@ -180,7 +181,7 @@ Public Class PlugInData
     Private Sub LoadAssetItemNames()
         Try
             Const StrSQL As String = "SELECT * FROM assetItemNames;"
-            Dim nameData As DataSet = CustomDataFunctions.GetCustomData(StrSQL)
+            Dim nameData As DataSet = Core.CustomDataFunctions.GetCustomData(StrSQL)
             AssetItemNames.Clear()
             If nameData IsNot Nothing Then
                 If nameData.Tables(0).Rows.Count > 0 Then

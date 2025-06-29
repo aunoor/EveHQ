@@ -47,6 +47,7 @@ Imports System.Globalization
 Imports EveHQ.EveApi
 Imports EveHQ.Common.Extensions
 Imports System.Xml
+Imports EveHQ.CoreLib
 
 Public Class Standings
     Public Shared Sub GetStandings(ByVal pilotName As String)

@@ -50,6 +50,7 @@ Imports System.Windows.Forms
 Imports DevComponents.AdvTree
 Imports DevComponents.DotNetBar
 Imports EveHQ.Core
+Imports EveHQ.CoreLib
 
 Namespace Forms
 

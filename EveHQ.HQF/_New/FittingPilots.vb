@@ -47,6 +47,7 @@
 Imports EveHQ.Core
 Imports System.Windows.Forms
 Imports System.IO
+Imports EveHQ.CoreLib
 Imports Newtonsoft.Json
 
 <Serializable()> Class FittingPilots

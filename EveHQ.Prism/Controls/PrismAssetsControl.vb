@@ -58,6 +58,7 @@ Imports System.Threading.Tasks
 Imports EveHQ.Core.ItemBrowser
 Imports System.Text
 Imports System.IO
+Imports EveHQ.CoreLib
 Imports EveHQ.NewEveApi
 Imports EveHQ.Prism.Forms
 
@@ -2026,7 +2027,7 @@ Namespace Controls
 			Dim assetId As Long = CLng(mnuAddCustomName.Tag)
 			Dim itemName As String = mnuItemName.Text
 			Dim assetSql As String = "DELETE FROM assetItemNames WHERE itemID=" & assetId & ";"
-			If CustomDataFunctions.SetCustomData(assetSql) = -2 Then
+			If Core.CustomDataFunctions.SetCustomData(assetSql) = -2 Then
 				MessageBox.Show("There was an error deleting the record from the Asset Item Names database table. The error was: " & ControlChars.CrLf & ControlChars.CrLf & HQ.DataError & ControlChars.CrLf & ControlChars.CrLf & "Data: " & assetSql, "Error Writing Asset Name Data", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
 			Else
 				PlugInData.AssetItemNames.Remove(assetId)

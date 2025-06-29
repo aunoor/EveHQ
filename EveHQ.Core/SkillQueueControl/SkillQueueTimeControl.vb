@@ -45,6 +45,7 @@
 
 Imports System.Drawing
 Imports System.Windows.Forms
+Imports EveHQ.CoreLib
 
 Namespace SkillQueueControl
 

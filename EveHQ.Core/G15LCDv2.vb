@@ -47,6 +47,7 @@ Imports System.Threading
 Imports System.Drawing
 Imports GammaJul.LgLcd
 Imports System.Drawing.Text
+Imports EveHQ.CoreLib
 Imports Timer = System.Windows.Forms.Timer
 
 Public Class G15Lcd

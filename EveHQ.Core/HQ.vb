@@ -57,8 +57,8 @@ Imports EveHQ.Market.MarketServices
 Public Class HQ
     Private Declare Auto Function SetProcessWorkingSetSize Lib "kernel32.dll" (ByVal procHandle As IntPtr, ByVal min As Int32, ByVal max As Int32) As Boolean
 
-    Public Shared MainForm As Form
-    Private Shared tempPilots1 As New SortedList(Of String, EveHQPilot)
+    Public Shared MainForm As Form '
+    Private Shared tempPilots1 As New SortedList(Of String, EveHQPilot) '
     Public Shared TempCorps As New SortedList(Of String, Corporation)
     Public Shared MyTqServer As EveServer = New EveServer
     Public Shared SkillListName As New Dictionary(Of String, EveSkill) ' SkillName, EveSkill

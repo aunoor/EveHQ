@@ -1,7 +1,7 @@
 '==============================================================================
 '
-' EveHQ - An Eve-Online™ character assistance application
-' Copyright © 2005-2015  EveHQ Development Team
+' EveHQ - An Eve-Onlineï¿½ character assistance application
+' Copyright ï¿½ 2005-2015  EveHQ Development Team
 '
 ' This file is part of EveHQ.
 '
@@ -21,7 +21,7 @@
 '
 ' The MIT License (MIT)
 '
-' Copyright © 2005-2015  EveHQ Development Team
+' Copyright ï¿½ 2005-2015  EveHQ Development Team
 '
 ' Permission is hereby granted, free of charge, to any person obtaining a copy
 ' of this software and associated documentation files (the "Software"), to deal
@@ -48,6 +48,7 @@ Imports DevComponents.AdvTree
 Imports DevComponents.DotNetBar
 Imports DevComponents.DotNetBar.Controls
 Imports EveHQ.Core
+Imports EveHQ.CoreLib
 Imports EveHQ.EveData
 Imports EveHQ.Prism.Classes
 
@@ -221,7 +222,7 @@ Namespace Forms
             strSQL &= " HAVING COUNT(*) > 1) AS Dupes ON walletJournal.transKey = Dupes.transKey AND walletJournal.transID <> Dupes.MinTransID)"
             ' Old SQL code - may come in useful!
             'strSQL = "DELETE T1 FROM walletJournal T1, walletJournal T2 WHERE (T1.transKey = T2.transKey) AND T1.importDate > T2.importDate"
-            If CustomDataFunctions.SetCustomData(strSQL) = -2 Then
+            If Core.CustomDataFunctions.SetCustomData(strSQL) = -2 Then
                 MessageBox.Show("Error deleting duplicate entries from the Wallet Journal table!", "Delete Duplicates Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
                 MessageBox.Show("Successfully deleted duplicate entries from the Wallet Journal table!", "Delete Duplicates Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -239,7 +240,7 @@ Namespace Forms
             strSQL &= " HAVING COUNT(*) > 1) AS Dupes ON walletTransactions.transKey = Dupes.transKey AND walletTransactions.transID <> Dupes.MinTransID)"
             ' Old SQL code - may come in useful!
             'strSQL = "DELETE T1 FROM walletTransactions T1, walletTransactions T2 WHERE (T1.transKey = T2.transKey) AND T1.importDate > T2.importDate"
-            If CustomDataFunctions.SetCustomData(strSQL) = -2 Then
+            If Core.CustomDataFunctions.SetCustomData(strSQL) = -2 Then
                 MessageBox.Show("Error deleting duplicate entries from the Wallet Transactions table!", "Delete Duplicates Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
                 MessageBox.Show("Successfully deleted duplicate entries from the Wallet Transactions table!", "Delete Duplicates Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -708,7 +709,7 @@ Namespace Forms
 
         Private Sub btnDeleteUndefinedJournals_Click(sender As Object, e As EventArgs) Handles btnDeleteUndefinedJournals.Click
             Const StrSQL As String = "DELETE FROM walletJournal WHERE refTypeID = 0;"
-            If CustomDataFunctions.SetCustomData(StrSQL) = -2 Then
+            If Core.CustomDataFunctions.SetCustomData(StrSQL) = -2 Then
                 MessageBox.Show("Error deleting undefined entries from the Wallet Journal table!", "Delete Undefined Entries Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
                 MessageBox.Show("Successfully deleted undefined entries from the Wallet Journal table!", "Delete Undefined Entries Success", MessageBoxButtons.OK, MessageBoxIcon.Information)

@@ -44,6 +44,7 @@
 ' ==============================================================================
 
 Imports System.Windows.Forms
+Imports EveHQ.CoreLib
 Imports EveHQ.EveData
 
 Namespace Requisitions

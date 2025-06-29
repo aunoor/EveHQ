@@ -46,6 +46,7 @@
 Imports DevComponents.AdvTree
 Imports DevComponents.DotNetBar
 Imports System.Drawing
+Imports EveHQ.CoreLib
 
 Namespace ItemBrowser
 

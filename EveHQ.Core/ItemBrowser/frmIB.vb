@@ -52,6 +52,7 @@ Imports System.Text
 Imports System.Text.RegularExpressions
 Imports EveHQ.Core.Requisitions
 Imports EveHQ.Common.Extensions
+Imports EveHQ.CoreLib
 Imports MarkupLinkClickEventArgs = DevComponents.DotNetBar.MarkupLinkClickEventArgs
 
 Namespace ItemBrowser

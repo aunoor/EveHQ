@@ -46,6 +46,7 @@
 Imports DevComponents.AdvTree
 Imports DevComponents.Editors
 Imports System.Windows.Forms
+Imports EveHQ.CoreLib
 
 Namespace Requisitions
 

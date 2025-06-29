@@ -50,6 +50,7 @@ Imports System.Windows.Forms
 Imports System.Text
 Imports System.Xml
 Imports EveHQ.Common.Extensions
+Imports EveHQ.CoreLib
 Imports EveHQ.NewEveApi
 Imports EveHQ.NewEveApi.Entities
 

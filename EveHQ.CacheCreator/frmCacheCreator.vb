@@ -50,6 +50,7 @@ Imports EveHQ.HQF
 Imports ProtoBuf
 Imports EveHQ.EveData
 Imports System.Data.SQLite
+Imports EveHQ.CoreLib
 Imports YamlDotNet.RepresentationModel
 
 Public Class FrmCacheCreator
@@ -1760,7 +1761,7 @@ Public Class FrmCacheCreator
         Dim groupIDs As IEnumerable(Of Integer) = StaticData.GetGroupsInCategory(16)
         For Each groupId As Integer In groupIDs
             If groupId <> 267 Then
-                Dim newSkillGroup As New Core.SkillGroup
+                Dim newSkillGroup As New SkillGroup
                 newSkillGroup.ID = groupId
                 newSkillGroup.Name = StaticData.TypeGroups(groupId)
                 Core.HQ.SkillGroups.Add(newSkillGroup.Name, newSkillGroup)
@@ -1768,7 +1769,7 @@ Public Class FrmCacheCreator
                 ' Get the items in this skill group
                 Dim items As IEnumerable(Of EveType) = StaticData.GetItemsInGroup(CInt(groupId))
                 For Each item As EveType In items
-                    Dim newSkill As New Core.EveSkill
+                    Dim newSkill As New EveSkill
                     newSkill.ID = item.Id
                     newSkill.Description = item.Description
                     newSkill.GroupID = item.Group
@@ -1791,7 +1792,7 @@ Public Class FrmCacheCreator
         Dim skillAtts As List(Of TypeAttrib) = (From ta In StaticData.TypeAttributes Where skillAttFilter.Contains(ta.TypeId)).ToList
 
         Const MaxPreReqs As Integer = 10
-        For Each newSkill As Core.EveSkill In Core.HQ.SkillListID.Values
+        For Each newSkill As CoreLib.EveSkill In Core.HQ.SkillListID.Values
             Dim preReqSkills(MaxPreReqs) As Integer
             Dim preReqSkillLevels(MaxPreReqs) As Integer
 

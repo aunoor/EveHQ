@@ -52,6 +52,7 @@ Imports EveHQ.Prism.BPCalc
 Imports EveHQ.Prism.Classes
 Imports EveHQ.Prism.Controls
 Imports DevComponents.DotNetBar
+Imports EveHQ.CoreLib
 
 Namespace Forms
 

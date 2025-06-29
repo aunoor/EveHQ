@@ -1,7 +1,7 @@
 '==============================================================================
 '
-' EveHQ - An Eve-Online™ character assistance application
-' Copyright © 2005-2015  EveHQ Development Team
+' EveHQ - An Eve-Onlineï¿½ character assistance application
+' Copyright ï¿½ 2005-2015  EveHQ Development Team
 '
 ' This file is part of EveHQ.
 '
@@ -21,7 +21,7 @@
 '
 ' The MIT License (MIT)
 '
-' Copyright © 2005-2015  EveHQ Development Team
+' Copyright ï¿½ 2005-2015  EveHQ Development Team
 '
 ' Permission is hereby granted, free of charge, to any person obtaining a copy
 ' of this software and associated documentation files (the "Software"), to deal
@@ -56,6 +56,7 @@ Imports DevComponents.DotNetBar
 Imports EveHQ.Common.Extensions
 Imports EveHQ.Core
 Imports EveHQ.Core.Requisitions
+Imports EveHQ.CoreLib
 Imports EveHQ.HQF.Controls
 
 Namespace Forms
@@ -304,7 +305,7 @@ Namespace Forms
                                 stt.BodyText &= "Armor: " & ship.ArmorCapacity.ToString("N0") & " - EM:" & ship.ArmorEMResist.ToString("N0") & "% Ex:" & ship.ArmorExResist.ToString("N0") & "% Ki:" & ship.ArmorKiResist.ToString("N0") & "% Th:" & ship.ArmorThResist.ToString("N0") & "%<br />"
                                 stt.BodyText &= "Hull: " & ship.StructureCapacity.ToString("N0") & " - EM:" & ship.StructureEMResist.ToString("N0") & "% Ex:" & ship.StructureExResist.ToString("N0") & "% Ki:" & ship.StructureKiResist.ToString("N0") & "% Th:" & ship.StructureThResist.ToString("N0") & "%<br />"
                                 stt.BodyText &= "Targeting: " & (ship.MaxTargetRange / 1000).ToString("N0") & "km, (" & ship.MaxLockedTargets.ToString("N0") & "T), Scan Res: " & ship.ScanResolution.ToString("N0") & "mm, Sensors: " & (ship.GravSensorStrenth + ship.LadarSensorStrenth + ship.MagSensorStrenth + ship.RadarSensorStrenth).ToString("N0") & "<br />"
-                                stt.BodyText &= "Cargo: " & ship.CargoBay.ToString("N0") & "m³ Drone Bay: " & ship.DroneBay.ToString("N0") & "m³ (B/W: " & ship.DroneBandwidth.ToString("N0") & "Mb/s)<br />"
+                                stt.BodyText &= "Cargo: " & ship.CargoBay.ToString("N0") & "mï¿½ Drone Bay: " & ship.DroneBay.ToString("N0") & "mï¿½ (B/W: " & ship.DroneBandwidth.ToString("N0") & "Mb/s)<br />"
                                 stt.BodyText &= "Max Velocity: " & ship.MaxVelocity.ToString("N2") & "m/s, Warp: " & ship.WarpSpeed.ToString("N0") & "au/s"
                                 stt.Color = eTooltipColor.Yellow
                                 'stt.BodyImage = EveHQ.Core.ImageHandler.GetImage(Ship.ID, 96)
@@ -688,7 +689,7 @@ Namespace Forms
                     stt.BodyText &= "Armor: " & ship.ArmorCapacity.ToString("N0") & " - EM:" & ship.ArmorEMResist.ToString("N0") & "% Ex:" & ship.ArmorExResist.ToString("N0") & "% Ki:" & ship.ArmorKiResist.ToString("N0") & "% Th:" & ship.ArmorThResist.ToString("N0") & "%<br />"
                     stt.BodyText &= "Hull: " & ship.StructureCapacity.ToString("N0") & " - EM:" & ship.StructureEMResist.ToString("N0") & "% Ex:" & ship.StructureExResist.ToString("N0") & "% Ki:" & ship.StructureKiResist.ToString("N0") & "% Th:" & ship.StructureThResist.ToString("N0") & "%<br />"
                     stt.BodyText &= "Targeting: " & (ship.MaxTargetRange / 1000).ToString("N0") & "km, (" & ship.MaxLockedTargets.ToString("N0") & "T), Scan Res: " & ship.ScanResolution.ToString("N0") & "mm, Sensors: " & (ship.GravSensorStrenth + ship.LadarSensorStrenth + ship.MagSensorStrenth + ship.RadarSensorStrenth).ToString("N0") & "<br />"
-                    stt.BodyText &= "Cargo: " & ship.CargoBay.ToString("N0") & "m³ Drone Bay: " & ship.DroneBay.ToString("N0") & "m³ (B/W: " & ship.DroneBandwidth.ToString("N0") & "Mb/s)<br />"
+                    stt.BodyText &= "Cargo: " & ship.CargoBay.ToString("N0") & "mï¿½ Drone Bay: " & ship.DroneBay.ToString("N0") & "mï¿½ (B/W: " & ship.DroneBandwidth.ToString("N0") & "Mb/s)<br />"
                     stt.BodyText &= "Max Velocity: " & ship.MaxVelocity.ToString("N2") & "m/s, Warp: " & ship.WarpSpeed.ToString("N0") & "au/s"
                     stt.Color = eTooltipColor.Yellow
                     'stt.BodyImage = EveHQ.Core.ImageHandler.GetImage(Ship.ID, 96)

@@ -1,7 +1,7 @@
 '==============================================================================
 '
-' EveHQ - An Eve-Online™ character assistance application
-' Copyright © 2005-2015  EveHQ Development Team
+' EveHQ - An Eve-Onlineï¿½ character assistance application
+' Copyright ï¿½ 2005-2015  EveHQ Development Team
 '
 ' This file is part of EveHQ.
 '
@@ -21,7 +21,7 @@
 '
 ' The MIT License (MIT)
 '
-' Copyright © 2005-2015  EveHQ Development Team
+' Copyright ï¿½ 2005-2015  EveHQ Development Team
 '
 ' Permission is hereby granted, free of charge, to any person obtaining a copy
 ' of this software and associated documentation files (the "Software"), to deal
@@ -62,6 +62,7 @@ Imports EveHQ.Prism.BPCalc
 Imports EveHQ.Prism.Classes
 Imports EveHQ.Prism.Controls
 Imports EveHQ.Common.Extensions
+Imports EveHQ.CoreLib
 Imports EveHQ.NewEveApi
 
 Namespace Forms
@@ -2355,7 +2356,7 @@ Namespace Forms
             strSql &= " ORDER BY walletJournal.transKey DESC;"
 
             ' Fetch the data
-            Dim walletData As DataSet = CustomDataFunctions.GetCustomData(strSql)
+            Dim walletData As DataSet = Core.CustomDataFunctions.GetCustomData(strSql)
 
             Return walletData
 
@@ -2398,7 +2399,7 @@ Namespace Forms
             strSql &= " ORDER BY walletJournal.transKey DESC;"
 
             ' Fetch the data
-            Dim walletData As DataSet = CustomDataFunctions.GetCustomData(strSql)
+            Dim walletData As DataSet = Core.CustomDataFunctions.GetCustomData(strSql)
 
             Return walletData
 
@@ -2434,11 +2435,11 @@ Namespace Forms
             Dim reply As DialogResult = MessageBox.Show("Are you really sure you want to delete all the journal entries from the database?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
             If reply = DialogResult.Yes Then
                 Dim strSql As String = "DELETE * FROM walletJournal;"
-                If CustomDataFunctions.SetCustomData(strSql) <> -2 Then
+                If Core.CustomDataFunctions.SetCustomData(strSql) <> -2 Then
                     MessageBox.Show("Reset Complete")
                 End If
                 strSql = "DROP TABLE walletJournal;"
-                If CustomDataFunctions.SetCustomData(strSql) <> -2 Then
+                If Core.CustomDataFunctions.SetCustomData(strSql) <> -2 Then
                     MessageBox.Show("Table Deletion Complete")
                 End If
                 Call PrismDataFunctions.CheckDatabaseTables()
@@ -2630,7 +2631,7 @@ Namespace Forms
             strSql &= " AND walletJournal.transDate >= '" & startDate.ToString(PrismTimeFormat, _culture) & "' AND walletJournal.transDate < '" & endDate.ToString(PrismTimeFormat, _culture) & "'"
             strSql &= " AND walletJournal.charName IN ('" & ownerName.Replace("'", "''") & "')"
             Try
-                CustomDataFunctions.SetCustomData(strSql)
+                Core.CustomDataFunctions.SetCustomData(strSql)
             Catch ex As Exception
                 MessageBox.Show("There was an error removing existing transactions. The error was: " & ex.Message, "Import Wallet Journal", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Exit Sub
@@ -2723,7 +2724,7 @@ Namespace Forms
             strSql &= " ORDER BY walletTransactions.transKey DESC;"
 
             ' Fetch the data
-            Dim walletData As DataSet = CustomDataFunctions.GetCustomData(strSql)
+            Dim walletData As DataSet = Core.CustomDataFunctions.GetCustomData(strSql)
 
             ' Determine if this is personal, or corp, or unknown if an old owner
             Dim isPersonal As Boolean = False
@@ -3441,7 +3442,7 @@ Namespace Forms
             lblPriceTotals.Text = "Sale / Refine / Best Totals: " & salePriceTotal.ToString("N2") & " / " & refinePriceTotal.ToString("N2") & " / " & bestPriceTotal.ToString("N2")
             AdvTreeSorter.Sort(adtRecycle, 1, True, True)
             adtRecycle.EndUpdate()
-            lblVolume.Text = volume.ToString("N2") & " m³"
+            lblVolume.Text = volume.ToString("N2") & " mï¿½"
             lblItems.Text = adtRecycle.Nodes.Count.ToString("N0")
             lblItems.Text &= " (" & items.ToString("N0") & ")"
             ' Create the totals list

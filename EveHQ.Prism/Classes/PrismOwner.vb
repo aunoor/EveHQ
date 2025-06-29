@@ -44,6 +44,7 @@
 ' ==============================================================================
 
 Imports EveHQ.Core
+Imports EveHQ.CoreLib
 
 Namespace Classes
 

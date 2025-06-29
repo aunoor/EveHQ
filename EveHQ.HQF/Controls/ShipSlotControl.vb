@@ -54,6 +54,7 @@ Imports EveHQ.Common.Extensions
 Imports EveHQ.HQF.Forms
 Imports EveHQ.Core.Requisitions
 Imports System.Text
+Imports EveHQ.CoreLib
 
 Namespace Controls
     Public Class ShipSlotControl

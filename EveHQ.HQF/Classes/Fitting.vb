@@ -52,6 +52,7 @@ Imports System.Reflection
 Imports System.IO
 Imports System.Runtime.Serialization
 Imports EveHQ.Common.Extensions
+Imports EveHQ.CoreLib
 
 ''' <summary>
 ''' Class for holding an instance of a EveHQ HQF fitting used for processing

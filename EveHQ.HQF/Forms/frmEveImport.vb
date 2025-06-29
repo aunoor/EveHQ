@@ -50,6 +50,7 @@ Imports System.Windows.Forms
 Imports System.Xml
 Imports DevComponents.AdvTree
 Imports EveHQ.Core
+Imports EveHQ.CoreLib
 Imports SearchOption = Microsoft.VisualBasic.FileIO.SearchOption
 
 Namespace Forms

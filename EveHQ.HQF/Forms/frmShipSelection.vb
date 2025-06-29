@@ -51,6 +51,7 @@ Imports DevComponents.DotNetBar
 Imports DevComponents.DotNetBar.Controls
 Imports DevComponents.Editors
 Imports EveHQ.Core
+Imports EveHQ.CoreLib
 
 Namespace Forms
 

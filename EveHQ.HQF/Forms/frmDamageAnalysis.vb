@@ -49,6 +49,7 @@ Imports EveHQ.HQF.Controls
 Imports EveHQ.Core
 Imports System.Windows.Forms
 Imports System.Text
+Imports EveHQ.CoreLib
 
 Namespace Forms
 

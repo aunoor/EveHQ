@@ -48,6 +48,7 @@ Imports System.Text
 Imports System.Windows.Forms
 Imports DevComponents.DotNetBar
 Imports EveHQ.Core
+Imports EveHQ.CoreLib
 Imports EveHQ.HQF.Forms
 
 Namespace Controls
