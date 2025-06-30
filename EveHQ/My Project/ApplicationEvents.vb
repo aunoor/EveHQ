@@ -43,6 +43,7 @@
 '
 ' ==============================================================================
 
+Imports EveHQ.CoreLib
 Imports EveHQ.Forms
 
 Namespace My
@@ -60,10 +61,10 @@ Namespace My
         Private Sub MyApplication_NetworkAvailabilityChanged(ByVal sender As Object, ByVal e As Microsoft.VisualBasic.Devices.NetworkAvailableEventArgs) Handles Me.NetworkAvailabilityChanged
             Try
                 If e.IsNetworkAvailable = False Then
-                    frmEveHQ.EveStatusIcon.BalloonTipIcon = ToolTipIcon.Info
-                    frmEveHQ.EveStatusIcon.BalloonTipTitle = "Network Status Notification"
-                    frmEveHQ.EveStatusIcon.BalloonTipText = "EveHQ has detected that the connection to the network has been lost. This will affect the responses from the Eve Servers."
-                    frmEveHQ.EveStatusIcon.ShowBalloonTip(3000)
+                    FrmEveHQ.EveStatusIcon.BalloonTipIcon = ToolTipIcon.Info
+                    FrmEveHQ.EveStatusIcon.BalloonTipTitle = "Network Status Notification"
+                    FrmEveHQ.EveStatusIcon.BalloonTipText = "EveHQ has detected that the connection to the network has been lost. This will affect the responses from the Eve Servers."
+                    FrmEveHQ.EveStatusIcon.ShowBalloonTip(3000)
                 End If
             Catch ex As Exception
                 ' Some form of error here so move on and see if things still work ok?
@@ -75,7 +76,7 @@ Namespace My
         End Sub
 
         Private Sub MyApplication_Startup(ByVal sender As Object, ByVal e As Microsoft.VisualBasic.ApplicationServices.StartupEventArgs) Handles Me.Startup
-            frmEveHQ.WindowState = FormWindowState.Minimized
+            FrmEveHQ.WindowState = FormWindowState.Minimized
         End Sub
 
         Private Sub MyApplication_StartupNextInstance(ByVal sender As Object, ByVal e As Microsoft.VisualBasic.ApplicationServices.StartupNextInstanceEventArgs) Handles Me.StartupNextInstance
@@ -83,10 +84,10 @@ Namespace My
             ' Can we get /params?
             For Each param As String In e.CommandLine
             Next
-            If frmEveHQ.WindowState = FormWindowState.Minimized Then
-                frmEveHQ.WindowState = FormWindowState.Maximized
-                frmEveHQ.Show()
-                frmEveHQ.BringToFront()
+            If FrmEveHQ.WindowState = FormWindowState.Minimized Then
+                FrmEveHQ.WindowState = FormWindowState.Maximized
+                FrmEveHQ.Show()
+                FrmEveHQ.BringToFront()
             End If
             e.BringToForeground = True
         End Sub
@@ -101,7 +102,7 @@ Namespace My
                     trace.AppendLine("")
                     trace.AppendLine("========== Plug-ins ==========")
                     trace.AppendLine("")
-                    For Each myPlugIn As Core.EveHQPlugIn In Core.HQ.Plugins.Values
+                    For Each myPlugIn As EveHQPlugIn In Core.HQ.Plugins.Values
                         If myPlugIn.ShortFileName IsNot Nothing Then
                             trace.AppendLine(myPlugIn.ShortFileName & " (" & myPlugIn.Version & ")")
                         End If

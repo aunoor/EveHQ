@@ -51,6 +51,7 @@ Imports System.Windows.Forms
 Imports System.IO
 Imports EveHQ.HQF.Forms
 Imports EveHQ.Common.Extensions
+Imports EveHQ.CoreLib
 Imports ProtoBuf
 
 Public Class PlugInData

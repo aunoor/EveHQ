@@ -43,22 +43,23 @@
 '
 ' ==============================================================================
 
+Imports EveHQ.CoreLib
 Imports EveHQ.EveData
 
 Public Class PlugInData
-    Implements Core.IEveHQPlugIn
+    Implements IEveHQPlugIn
 
-    Public Function GetPlugInData(ByVal data As Object, ByVal dataType As Integer) As Object Implements Core.IEveHQPlugIn.GetPlugInData
+    Public Function GetPlugInData(ByVal data As Object, ByVal dataType As Integer) As Object Implements IEveHQPlugIn.GetPlugInData
         Return Nothing
     End Function
 
-    Public Function EveHQStartUp() As Boolean Implements Core.IEveHQPlugIn.EveHQStartUp
+    Public Function EveHQStartUp() As Boolean Implements IEveHQPlugIn.EveHQStartUp
         Return LoadVoidData()
     End Function
 
-    Public Function GetEveHQPlugInInfo() As Core.EveHQPlugIn Implements Core.IEveHQPlugIn.GetEveHQPlugInInfo
+    Public Function GetEveHQPlugInInfo() As EveHQPlugIn Implements IEveHQPlugIn.GetEveHQPlugInInfo
         ' Returns data to EveHQ to identify it as a plugin
-        Dim eveHQPlugIn As New Core.EveHQPlugIn
+        Dim eveHQPlugIn As New EveHQPlugIn
         eveHQPlugIn.Name = "EveHQ Void"
         eveHQPlugIn.Description = "Wormhole and W-Space Information Tool"
         eveHQPlugIn.Author = "EveHQ Team"
@@ -70,11 +71,11 @@ Public Class PlugInData
         Return eveHQPlugIn
     End Function
 
-    Public Function RunEveHQPlugIn() As Windows.Forms.Form Implements Core.IEveHQPlugIn.RunEveHQPlugIn
+    Public Function RunEveHQPlugIn() As Windows.Forms.Form Implements IEveHQPlugIn.RunEveHQPlugIn
         Return New frmVoid
     End Function
 
-    Public Function SaveAll() As Boolean Implements Core.IEveHQPlugIn.SaveAll
+    Public Function SaveAll() As Boolean Implements IEveHQPlugIn.SaveAll
         ' No data or settings to save
         Return False
     End Function

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using EveHQ.Common;
 using EveHQ.Common.Logging;
@@ -54,15 +55,15 @@ public class HQ_
     public static SortedList<string, string> Widgets = [];
     //TODO: public static Event ShutDownEveHQ();
     public static bool UpdateShutDownRequest = false;
-    //TODO: public static RemoteProxy As New RemoteProxyServer
+    public static RemoteProxyServer RemoteProxy = new RemoteProxyServer();
     public static bool APIUpdateInProgress = false;
     //TODO: public static EveHQServerMessage As EveHQMessage
     public static bool RestoredSettings = false;
     public static string BcAppKey = "B23079B49E1FCBB9C224C9D9CC591DF9904C193F";
     public static bool EveHQIsUpdating = false;
 
-    //TODO: public static EveHQSettings Settings = new()
-    
+    public static EveHQSettings_ Settings = new();
+    public static Stopwatch EveHQLogTimer  = new Stopwatch();
     
     
     
@@ -79,15 +80,33 @@ public class HQ_
     private static WebProxyDetails? _proxyDetails;
     private static NewEveApi.EveAPI? _apiProvider;
     private static string _updateLocation = "";
-    //TODO: private static Dictionary<string, EveHQPlugIn> _plugins = [];
+    private static Dictionary<string, EveHQPlugIn> _plugins = [];
     private static EveCentralMarketDataProvider? _eveCentralProvider;
     private static IMarketStatDataProvider? _eveHqProvider;
     private static CcpMarketDataProvider? _ccpMarketDataProvider;
     private static Locations? _locations;
 
     
+    //////////////////////////////////
+    
+    
+    public static Dictionary<string, EveHQPlugIn> Plugins {get => _plugins; set => _plugins = value; }
 
-    public static WebProxyDetails? ProxyDetails
+    public static bool StartShutdownEveHQ
+    {
+        set
+        {
+            if (value)
+            {
+                //TODO ShutDownEveHQ();
+            }
+        }
+    }
+    
+    public static string AppDataFolder {get => _appDataFolder; set => _appDataFolder = value; }
+
+
+    public static WebProxyDetails ProxyDetails
     {
         get
         {
@@ -129,5 +148,7 @@ public class HQ_
             return _apiProvider;
         }
     }
+    
+    public static void WriteLogEvent(string message){}
     
 }
