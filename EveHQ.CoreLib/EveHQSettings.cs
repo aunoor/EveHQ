@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
+using System.Text;
 using System.Windows.Forms;
 using DevComponents.DotNetBar;
 using EveHQ.Common.Extensions;
@@ -645,6 +647,101 @@ public class EveHQSettings_
         InitialiseRemoteProxyServer();
     }
 
+    public static bool Load(bool showRawData)
+    {
+        if (File.Exists(Path.Combine(HQ_.AppDataFolder, "EveHQSettings.json")))
+        {
+            try
+            {
+                using var s = new StreamReader(Path.Combine(HQ_.AppDataFolder, "EveHQSettings.json"));
+                var json  = s.ReadToEnd();
+                HQ_.Settings = JsonConvert.DeserializeObject<EveHQSettings_>(json);
+            }
+            catch (Exception ex)
+            {
+                Trace.TraceError(ex.FormatException());
+                var msg =
+                    "There was an error trying to load the settings file and it appears that this file is corrupt." +
+                    "\r\n" + "\r\n";
+                msg += "The error was: " + ex.Message + "\r\n" + "\r\n";
+                msg += "Stacktrace: " + ex.StackTrace + "\r\n" + "\r\n";
+                msg += "EveHQ will copy this file to 'EveHQSettings.bad' and delete the original file and re-initialise the settings. This means you will need to re-enter your API information but your production and fittings data should be intact and available once the API data has been downloaded. You can attempt to reload the old settings by renaming the 'EveHQSettings.bad' file to 'EveHQSettings.bin', however if the issue continues the bad file will be useful to the EveHQ team for debugging purposes" +
+                       "\r\n" + "\r\n";
+                msg += "Press OK to reset the settings." + "\r\n";
+                MessageBox.Show(msg, "Invalid Settings file detected", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                try
+                {
+                    File.Copy(Path.Combine(HQ_.AppDataFolder, "EveHQSettings.json"),
+                        Path.Combine(HQ_.AppDataFolder, "EveHQSettings.bad"), true);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show(
+                        "Unable to delete the EveHQSettings.json file. Please delete this manually before proceeding",
+                        "Delete File Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Application.Exit();
+                }
+            }
+        }
+        else
+        {
+            HQ_.Settings = new EveHQSettings_();
+        }
+
+        if (HQ_.Settings == null)
+        {
+            MessageBox.Show(
+                "There was an issue loading the settings file: It was empty. Please delete the EveHQSettigns.json file manually and restore from backup.");
+            return false;
+        }
+
+        if (showRawData == false)
+        {
+            //' Reset the update URL to a temp location
+            if (HQ_.Settings.UpdateUrl != "http://evehq.co/update/")
+            {
+                HQ_.Settings.UpdateUrl = "http://evehq.co/update/";
+            }
+            
+            //' Set the Custom database connection
+            try
+            {
+                if (CustomDataFunctions_.SetEveHQDataConnectionString() == false)
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                var msg = new StringBuilder();
+                msg.AppendLine("Error: " + ex.Message);
+                msg.AppendLine("");
+                msg.AppendLine(
+                    "An error occurred trying to set the custom database connection string. This could be down to a missing database library file.");
+                MessageBox.Show(msg.ToString(), "Error Initialising Database", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+
+            InitialiseQueueColumns();
+            InitialiseUserColumns();
+            InitialiseRemoteProxyServer();
+            if (string.IsNullOrEmpty(HQ_.Settings.get_QColumns(0, 0)))
+            {
+                ResetColumns();
+            }
+            
+            //Set Theme stuff
+            if (HQ_.Settings.ThemeSetByUser == false)
+            {
+                HQ_.Settings.ThemeStyle = eStyle.Office2007Black;
+                HQ_.Settings.ThemeTint = Color.Empty;
+            }
+        }
+
+        return true;
+    }
+    
     public static void InitialiseRemoteProxyServer()
     {
         HQ_.RemoteProxy.ProxyRequired = HQ_.Settings.ProxyRequired;
