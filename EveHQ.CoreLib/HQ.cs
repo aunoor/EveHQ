@@ -62,7 +62,7 @@ public class HQ_
     public static string BcAppKey = "B23079B49E1FCBB9C224C9D9CC591DF9904C193F";
     public static bool EveHQIsUpdating = false;
 
-    public static EveHQSettings_? Settings = new();
+    public static EveHQSettings? Settings = new();
     public static Stopwatch EveHQLogTimer  = new Stopwatch();
     
     

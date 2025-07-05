@@ -1805,7 +1805,7 @@ Namespace Forms
                                     MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Else
                     lblEveDir.Text = .SelectedPath
-                    HQ.Settings.EveFolder(folder) = .SelectedPath
+                    HQ.Settings.SetEveFolder(folder, .SelectedPath)
                     Dim chkLUA As CheckBox = CType(gbFolderHost.Controls("chkLUA" & CStr(folder).Trim), CheckBox)
                     chkLUA.Enabled = True
                     Dim txtFName As TextBox = CType(gbFolderHost.Controls("txtFriendlyName" & CStr(folder).Trim), TextBox)
@@ -1830,7 +1830,7 @@ Namespace Forms
             chkLUA.Enabled = False
             Dim lblCacheSize As Label = CType(gbFolderHost.Controls("lblCacheSize" & CStr(folder).Trim), Label)
             lblCacheSize.Text = ""
-            HQ.Settings.EveFolder(folder) = ""
+            HQ.Settings.SetEveFolder(folder, "")
         End Sub
 
         Private Sub chkLUA_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs) _
@@ -1849,7 +1849,7 @@ Namespace Forms
         Private Sub CheckLUA(ByVal chkLUA As CheckBox, ByVal folder As Integer)
             ' If selected, check the program files directory for the settings, otherwise check the user directory
             If chkLUA.Checked = True Then
-                HQ.Settings.EveFolderLua(folder) = True
+                HQ.Settings.SetEveFolderLua(folder, True)
                 ' Check program files
                 If _startup = False Then
                     Dim cacheDir As String = Path.Combine(HQ.Settings.EveFolder(folder), "cache")
@@ -1864,7 +1864,7 @@ Namespace Forms
                     End If
                 End If
             Else
-                HQ.Settings.EveFolderLua(folder) = False
+                HQ.Settings.SetEveFolderLua(folder, False)
                 ' Check the application directory for the user
                 If _startup = False Then
                     Dim eveAppFolder As String = HQ.Settings.EveFolder(folder)
@@ -1895,7 +1895,7 @@ Namespace Forms
                     txtFriendlyName4.TextChanged
             Dim txtFName As TextBox = CType(sender, TextBox)
             Dim idx As Integer = CInt(txtFName.Name.Substring(txtFName.Name.Length - 1, 1))
-            HQ.Settings.EveFolderLabel(idx) = txtFName.Text
+            HQ.Settings.SetEveFolderLabel(idx, txtFName.Text)
             Dim gbFolderHost As GroupBox = CType(gbEveFolders.Controls("gbLocation" & CStr(idx).Trim), GroupBox)
             If HQ.Settings.EveFolderLabel(idx) <> "" Then
                 gbFolderHost.Text = "Eve Location " & idx & " (" & HQ.Settings.EveFolderLabel(idx) & ")"

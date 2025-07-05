@@ -153,8 +153,8 @@ Namespace Forms
 			lvwBackups.BeginUpdate()
 			lvwBackups.Items.Clear()
 
-			For Each backupDir As String In My.Computer.FileSystem.GetDirectories(HQ.backupFolder)
-				Dim backupFolder = new DirectoryInfo(backupDir)
+			For Each backupDir As String In My.Computer.FileSystem.GetDirectories(HQ.BackupFolder)
+				Dim backupFolder = New DirectoryInfo(backupDir)
 				For Each backupFile As FileInfo In backupFolder.GetFiles("backup.txt", IO.SearchOption.AllDirectories)
 					Using backupFileReader As New StreamReader(backupFile.FullName)
 						Dim backedUpOn As String = backupFileReader.ReadLine
@@ -189,7 +189,7 @@ Namespace Forms
 			lvwBackups.EndUpdate()
 		End Sub
 
-		Private Sub btnRestore_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnRestore.Click 
+		Private Sub btnRestore_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnRestore.Click
 			If lvwBackups.SelectedItems.Count = 0 Then
 				MessageBox.Show("Please select a backup to restore before proceeding.", "Backup Set Required", MessageBoxButtons.OK, MessageBoxIcon.Information)
 				Exit Sub
@@ -250,7 +250,7 @@ Namespace Forms
 			Catch e As Exception
 				' Try and tidy up
 				For eveLocation As Integer = 1 To 4
-					Dim chkDir As String = HQ.backupFolder & "Location " & eveLocation & timeStamp
+					Dim chkDir As String = HQ.BackupFolder & "Location " & eveLocation & timeStamp
 					If My.Computer.FileSystem.DirectoryExists(chkDir) = True Then
 						My.Computer.FileSystem.DeleteDirectory(chkDir, CType(DeleteDirectoryOption.DeleteAllContents, UIOption), RecycleOption.DeletePermanently)
 					End If
@@ -276,7 +276,7 @@ Namespace Forms
 				Return False
 			End If
 
-			Dim backupFolder As String = Path.Combine(HQ.backupFolder, timeStamp, locationFolderName)
+			Dim backupFolder As String = Path.Combine(HQ.BackupFolder, timeStamp, locationFolderName)
 			BackupAllSettingsProfiles(locationFolderPath, settingsFolders, backupFolder)
 			SaveBackupInfo(timeStamp, locationFolderPath, backupFolder)
 
@@ -316,7 +316,7 @@ Namespace Forms
 		End Sub
 
 		Private Function GetSettingsFolders(eveFolder As String) As String()
-			Dim eveDirectoryInfo = new DirectoryInfo(eveFolder)
+			Dim eveDirectoryInfo = New DirectoryInfo(eveFolder)
 			Return eveDirectoryInfo.GetDirectories("settings*", IO.SearchOption.TopDirectoryOnly).Select(Function(info) info.Name).ToArray()
 		End Function
 
@@ -329,7 +329,7 @@ Namespace Forms
 				Dim sourceFolder As String = backupItem.SubItems(2).Text
 				Dim destinationFolder As String = backupItem.SubItems(1).Text
 
-				Dim settingsFolders As DirectoryInfo() = new DirectoryInfo(sourceFolder).GetDirectories()
+				Dim settingsFolders As DirectoryInfo() = New DirectoryInfo(sourceFolder).GetDirectories()
 				For Each settingsFolder As DirectoryInfo In settingsFolders
 					My.Computer.FileSystem.CopyDirectory(settingsFolder.FullName, Path.Combine(destinationFolder, settingsFolder.Name), True)
 				Next
@@ -341,6 +341,6 @@ Namespace Forms
 				Return False
 			End Try
 		End Function
-		
+
 	End Class
-End NameSpace
+End Namespace
