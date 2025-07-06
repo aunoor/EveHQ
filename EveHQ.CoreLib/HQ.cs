@@ -121,6 +121,13 @@ public class HQ
                 if (Settings.MarketDataProvider == EveCentralMarketDataProvider.Name)
                 {
                     _marketStatDataProvider = GetEveCentralMarketInstance();
+                } else if (Settings.MarketDataProvider == FuzzworkMarketStatDataProvider.Name)
+                {
+                    _marketStatDataProvider = GetFuzzworkMarketStatDataProvider();
+                }
+                else
+                {
+                    _marketStatDataProvider = GetCcpMarketStatDataProvider();
                 }
             }
 
@@ -135,7 +142,7 @@ public class HQ
         {
             if (_tickerItemList.Count == 0)
             {
-                //Add place holder mineral types only
+                //Add placeholder mineral types only
                 _tickerItemList.Add(34);
                 _tickerItemList.Add(35);
                 _tickerItemList.Add(36);
