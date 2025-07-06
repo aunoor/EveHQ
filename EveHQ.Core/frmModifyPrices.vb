@@ -47,6 +47,7 @@ Imports DevComponents.AdvTree
 Imports DevComponents.DotNetBar
 Imports EveHQ.EveData
 Imports System.Windows.Forms
+Imports EveHQ.CoreLib
 
 Public Class FrmModifyPrices
 

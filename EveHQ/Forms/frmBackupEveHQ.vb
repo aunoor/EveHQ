@@ -44,6 +44,7 @@
 ' ==============================================================================
 
 Imports EveHQ.Core
+Imports EveHQ.CoreLib
 Imports System.Collections.ObjectModel
 Imports System.IO
 
@@ -53,7 +54,7 @@ Namespace Forms
 
         Private Sub btnBackup_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnBackup.Click
             If EveHQBackup.BackupEveHQSettings() = True Then
-                lblLastBackup.Text = HQ.Settings.EveHQBackupLast.ToString
+                lblLastBackup.Text = HQ.Settings.EveHqBackupLast.ToString
             End If
             Call CalcNextBackup()
             Call ScanBackups()
@@ -84,7 +85,7 @@ Namespace Forms
 
         Private Sub frmBackupEveHQ_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
             nudDays.Tag = CInt(1) : dtpStart.Tag = CInt(1)
-            Select Case HQ.Settings.EveHQBackupMode
+            Select Case HQ.Settings.EveHqBackupMode
                 Case 0
                     radManualBackup.Checked = True
                 Case 1
@@ -92,24 +93,24 @@ Namespace Forms
                 Case 2
                     RadAutoBackup.Checked = True
             End Select
-            If HQ.Settings.EveHQBackupWarnFreq < 1 Then
-                HQ.Settings.EveHQBackupWarnFreq = 1
+            If HQ.Settings.EveHqBackupWarnFreq < 1 Then
+                HQ.Settings.EveHqBackupWarnFreq = 1
             End If
-            nudBackupWarning.Value = HQ.Settings.EveHQBackupWarnFreq
-            If HQ.Settings.EveHQBackupFreq < 1 Then
-                HQ.Settings.EveHQBackupFreq = 1
+            nudBackupWarning.Value = HQ.Settings.EveHqBackupWarnFreq
+            If HQ.Settings.EveHqBackupFreq < 1 Then
+                HQ.Settings.EveHqBackupFreq = 1
             End If
-            nudDays.Value = HQ.Settings.EveHQBackupFreq
-            If HQ.Settings.EveHQBackupStart < dtpStart.MinDate Then
-                HQ.Settings.EveHQBackupStart = Now
+            nudDays.Value = HQ.Settings.EveHqBackupFreq
+            If HQ.Settings.EveHqBackupStart < dtpStart.MinDate Then
+                HQ.Settings.EveHqBackupStart = Now
             End If
-            dtpStart.Value = HQ.Settings.EveHQBackupStart
+            dtpStart.Value = HQ.Settings.EveHqBackupStart
             nudDays.Tag = 0 : dtpStart.Tag = 0
             Call CalcNextBackup()
-            If HQ.Settings.EveHQBackupLast.Year < 2000 Then
+            If HQ.Settings.EveHqBackupLast.Year < 2000 Then
                 lblLastBackup.Text = "<not backed up>"
             Else
-                lblLastBackup.Text = HQ.Settings.EveHQBackupLast.ToString
+                lblLastBackup.Text = HQ.Settings.EveHqBackupLast.ToString
             End If
             chkBackupBeforeUpdate.Checked = HQ.Settings.BackupBeforeUpdate
             Call ScanBackups()
@@ -119,7 +120,7 @@ Namespace Forms
             If MessageBox.Show("Are you sure you wish to reset the last backup time?", "Confirm Reset", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
                 Exit Sub
             End If
-            HQ.Settings.EveHQBackupLast = CDate("01/01/1999")
+            HQ.Settings.EveHqBackupLast = CDate("01/01/1999")
             lblLastBackup.Text = "<not backed up>"
             Call CalcNextBackup()
         End Sub
@@ -127,7 +128,7 @@ Namespace Forms
         Private Sub nudDays_ValueChanged(ByVal sender As Object, ByVal e As EventArgs) Handles nudDays.ValueChanged
             If nudDays.Tag IsNot Nothing Then
                 If nudDays.Tag.ToString = "0" Then
-                    HQ.Settings.EveHQBackupFreq = CInt(nudDays.Value)
+                    HQ.Settings.EveHqBackupFreq = CInt(nudDays.Value)
                 End If
             End If
             Call CalcNextBackup()
@@ -136,7 +137,7 @@ Namespace Forms
         Private Sub dtpStart_ValueChanged(ByVal sender As Object, ByVal e As EventArgs) Handles dtpStart.ValueChanged
             If dtpStart.Tag IsNot Nothing Then
                 If dtpStart.Tag.ToString = "0" Then
-                    HQ.Settings.EveHQBackupStart = dtpStart.Value
+                    HQ.Settings.EveHqBackupStart = dtpStart.Value
                 End If
             End If
             Call CalcNextBackup()
@@ -144,7 +145,7 @@ Namespace Forms
 
         Private Sub radManualBackup_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles radManualBackup.CheckedChanged
             If radManualBackup.Checked = True Then
-                HQ.Settings.EveHQBackupMode = 0
+                HQ.Settings.EveHqBackupMode = 0
                 lblBackupWarning.Enabled = False
                 lblBackupWarningDays.Enabled = False
                 nudBackupWarning.Enabled = False
@@ -161,7 +162,7 @@ Namespace Forms
 
         Private Sub radPromptBackup_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles radPromptBackup.CheckedChanged
             If radPromptBackup.Checked = True Then
-                HQ.Settings.EveHQBackupMode = 1
+                HQ.Settings.EveHqBackupMode = 1
                 lblBackupWarning.Enabled = True
                 lblBackupWarningDays.Enabled = True
                 nudBackupWarning.Enabled = True
@@ -178,7 +179,7 @@ Namespace Forms
 
         Private Sub RadAutoBackup_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles RadAutoBackup.CheckedChanged
             If RadAutoBackup.Checked = True Then
-                HQ.Settings.EveHQBackupMode = 2
+                HQ.Settings.EveHqBackupMode = 2
                 lblBackupWarning.Enabled = False
                 lblBackupWarningDays.Enabled = False
                 nudBackupWarning.Enabled = False
@@ -224,4 +225,4 @@ Namespace Forms
             End If
         End Sub
     End Class
-End NameSpace
+End Namespace

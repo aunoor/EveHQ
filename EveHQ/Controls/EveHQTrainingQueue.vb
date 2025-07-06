@@ -47,6 +47,7 @@ Imports DevComponents.AdvTree
 Imports EveHQ.Forms
 Imports DevComponents.DotNetBar
 Imports System.Text
+Imports EveHQ.CoreLib
 
 Namespace Controls
 
@@ -76,7 +77,7 @@ Namespace Controls
             End Get
             Set(value As String)
                 _queuePilotName = value
-                _queuePilot = Core.HQ.Settings.Pilots(_queuePilotName)
+                _queuePilot = HQ.Settings.Pilots(_queuePilotName)
             End Set
         End Property
 
@@ -175,7 +176,7 @@ Namespace Controls
 
             ' Add subitems based on the user selected columns
             Dim colName As String
-            For Each col As String In Core.HQ.Settings.UserQueueColumns
+            For Each col As String In HQ.Settings.UserQueueColumns
                 If col.EndsWith("1", StringComparison.Ordinal) = True Then
                     colName = col.Substring(0, col.Length - 1)
                     ' Define a new column header
@@ -241,11 +242,11 @@ Namespace Controls
                 Dim styleReadySkill As ElementStyle = adtQueue.Styles(0).Copy
 
                 styleCurrentTraining.BackColor = Color.LimeGreen
-                styleIsPreReq.BackColor = Color.FromArgb(CInt(Core.HQ.Settings.IsPreReqColor))
-                styleHasPreReq.BackColor = Color.FromArgb(CInt(Core.HQ.Settings.HasPreReqColor))
-                styleBothPreReq.BackColor = Color.FromArgb(CInt(Core.HQ.Settings.BothPreReqColor))
-                stylePartialTraining.BackColor = Color.FromArgb(CInt(Core.HQ.Settings.PartialTrainColor))
-                styleReadySkill.BackColor = Color.FromArgb(CInt(Core.HQ.Settings.ReadySkillColor))
+                styleIsPreReq.BackColor = Color.FromArgb(CInt(HQ.Settings.IsPreReqColor))
+                styleHasPreReq.BackColor = Color.FromArgb(CInt(HQ.Settings.HasPreReqColor))
+                styleBothPreReq.BackColor = Color.FromArgb(CInt(HQ.Settings.BothPreReqColor))
+                stylePartialTraining.BackColor = Color.FromArgb(CInt(HQ.Settings.PartialTrainColor))
+                styleReadySkill.BackColor = Color.FromArgb(CInt(HQ.Settings.ReadySkillColor))
 
                 ' Save the selected items
                 'For Each selNode As Node In adtQueue.SelectedNodes
@@ -393,7 +394,7 @@ Namespace Controls
         Private Sub AddUserColumns(ByVal newskill As Node, ByVal qitem As Core.SortedQueueItem, ByVal totalSP As Long)
             ' Add subitems based on the user selected columns
             Dim colName As String
-            For Each col As String In Core.HQ.Settings.UserQueueColumns
+            For Each col As String In HQ.Settings.UserQueueColumns
                 If col.EndsWith("1", StringComparison.Ordinal) = True Then
                     colName = col.Substring(0, col.Length - 1)
                     Dim newSi As New Cell
@@ -416,7 +417,7 @@ Namespace Controls
                             Dim skillPct As Double
                             If _queuePilot.PilotSkills.ContainsKey(qitem.Name) Then
                                 Dim myCurSkill As CoreLib.EveHQPilotSkill = _queuePilot.PilotSkills(qitem.Name)
-                                Dim baseSkill As CoreLib.EveSkill = Core.HQ.SkillListID(myCurSkill.ID)
+                                Dim baseSkill As CoreLib.EveSkill = HQ.SkillListID(myCurSkill.ID)
                                 Dim clevel As Integer = CInt(qitem.FromLevel)
                                 Dim nextLevelSp As Integer = baseSkill.LevelUp(clevel + 1) - baseSkill.LevelUp(clevel)
 
@@ -1119,7 +1120,7 @@ Namespace Controls
                         Dim fromLevel As Integer = CInt(keyName.Substring(keyName.Length - 2, 1))
                         Dim toLevel As Integer = CInt(keyName.Substring(keyName.Length - 1, 1))
                         ' Check valid skill name
-                        If Core.HQ.SkillListName.ContainsKey(skillName) = True Then
+                        If HQ.SkillListName.ContainsKey(skillName) = True Then
                             ' Check valid "from" level
                             If fromLevel >= 0 And fromLevel < 5 Then
                                 ' Check valid "to" level

@@ -46,6 +46,7 @@
 Imports System.Reflection
 Imports System.Globalization
 Imports EveHQ.Core
+Imports EveHQ.CoreLib
 
 Namespace Controls.DBControls
 
@@ -241,12 +242,12 @@ Namespace Controls.DBControls
                                 cControlConfig(configProperty) = New Size(CInt(parts(0).Split("=".ToCharArray).Last), CInt(parts(1).Split("=".ToCharArray).Last))
                             End If
                     End Select
-                Try
-                    pi.SetValue(Me, Convert.ChangeType(cControlConfig(configProperty), pi.PropertyType, CultureInfo.InvariantCulture), Nothing)
-                Catch e As Exception
-                    oldConfigProperties.Add(configProperty)
-                    Continue For
-                End Try
+                    Try
+                        pi.SetValue(Me, Convert.ChangeType(cControlConfig(configProperty), pi.PropertyType, CultureInfo.InvariantCulture), Nothing)
+                    Catch e As Exception
+                        oldConfigProperties.Add(configProperty)
+                        Continue For
+                    End Try
                 End If
             Next
             ' Delete any old config properties
@@ -264,9 +265,9 @@ Namespace Controls.DBControls
         ''' <remarks></remarks>
         Protected Sub SetConfig(ByVal configProperty As String, ByVal configData As Object)
             If cControlConfig.ContainsKey(configProperty) = False Then
-                cControlConfig.Add(configProperty, ConfigData.ToString)
+                cControlConfig.Add(configProperty, configData.ToString)
             Else
-                cControlConfig(configProperty) = ConfigData.ToString
+                cControlConfig(configProperty) = configData.ToString
             End If
         End Sub
 #End Region
@@ -404,7 +405,7 @@ Namespace Controls.DBControls
             If removeIndex > -1 Then
                 HQ.Settings.DashboardConfiguration.RemoveAt(removeIndex)
                 ' Update the dashboard
-                Forms.frmDashboard.UpdateWidgets()
+                Forms.FrmDashboard.UpdateWidgets()
             End If
         End Sub
 
@@ -412,4 +413,4 @@ Namespace Controls.DBControls
 
 
     End Class
-End NameSpace
+End Namespace

@@ -48,6 +48,7 @@ Imports System.IO
 Imports System.Threading
 Imports System.Drawing.Imaging
 Imports System.Net
+Imports EveHQ.CoreLib
 
 Public Class ImageHandler
 

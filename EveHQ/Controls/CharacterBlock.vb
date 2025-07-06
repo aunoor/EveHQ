@@ -44,6 +44,7 @@
 ' ==============================================================================
 
 Imports System.IO
+Imports EveHQ.CoreLib
 
 Namespace Controls
 
@@ -56,11 +57,11 @@ Namespace Controls
             ' Add any initialization after the InitializeComponent() call.
 
             ' Get pilot
-            Dim dPilot As CoreLib.EveHQPilot = Core.HQ.Settings.Pilots(pilotName)
+            Dim dPilot As CoreLib.EveHQPilot = HQ.Settings.Pilots(pilotName)
 
             ' Draw image
             pbPilot.SizeMode = PictureBoxSizeMode.StretchImage
-            Dim imgFilename As String = Path.Combine(Core.HQ.imageCacheFolder, dPilot.ID & ".png")
+            Dim imgFilename As String = Path.Combine(HQ.ImageCacheFolder, dPilot.ID & ".png")
             If My.Computer.FileSystem.FileExists(imgFilename) = True Then
                 pbPilot.ImageLocation = imgFilename
             Else
@@ -76,4 +77,4 @@ Namespace Controls
 
         End Sub
     End Class
-End NameSpace
+End Namespace

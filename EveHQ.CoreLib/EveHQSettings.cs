@@ -584,53 +584,53 @@ public class EveHQSettings
     {
         var trueStr = true.ToString();
         var falseStr = false.ToString();
-        HQ_.Settings.SetQColumns(0, 0, "Name");
-        HQ_.Settings.SetQColumns(0, 1, trueStr);
-        HQ_.Settings.SetQColumns(1, 0, "Curr");
-        HQ_.Settings.SetQColumns(1, 1, trueStr);
-        HQ_.Settings.SetQColumns(2, 0, "From");
-        HQ_.Settings.SetQColumns(2, 1, trueStr);
-        HQ_.Settings.SetQColumns(3, 0, "Tole");
-        HQ_.Settings.SetQColumns(3, 1, trueStr);
-        HQ_.Settings.SetQColumns(4, 0, "Perc");
-        HQ_.Settings.SetQColumns(4, 1, trueStr);
-        HQ_.Settings.SetQColumns(5, 0, "Trai");
-        HQ_.Settings.SetQColumns(5, 1, trueStr);
-        HQ_.Settings.SetQColumns(6, 0, "Comp");
-        HQ_.Settings.SetQColumns(6, 1, trueStr);
-        HQ_.Settings.SetQColumns(7, 0, "Date");
-        HQ_.Settings.SetQColumns(7, 1, trueStr);
-        HQ_.Settings.SetQColumns(8, 0, "Rank");
-        HQ_.Settings.SetQColumns(8, 1, falseStr);
-        HQ_.Settings.SetQColumns(9, 0, "PAtt");
-        HQ_.Settings.SetQColumns(9, 1, falseStr);
-        HQ_.Settings.SetQColumns(10, 0,  "SAtt");
-        HQ_.Settings.SetQColumns(10, 1,  falseStr);
-        HQ_.Settings.SetQColumns(11, 0,  "SPRH");
-        HQ_.Settings.SetQColumns(11, 1,  falseStr);
-        HQ_.Settings.SetQColumns(12, 0,  "SPRD");
-        HQ_.Settings.SetQColumns(12, 1,  falseStr);
-        HQ_.Settings.SetQColumns(13, 0,  "SPRW");
-        HQ_.Settings.SetQColumns(13, 1,  falseStr);
-        HQ_.Settings.SetQColumns(14, 0,  "SPRM");
-        HQ_.Settings.SetQColumns(14, 1,  falseStr);
-        HQ_.Settings.SetQColumns(15, 0,  "SPRY");
-        HQ_.Settings.SetQColumns(15, 1,  falseStr);
-        HQ_.Settings.SetQColumns(16, 0,  "SPAd");
-        HQ_.Settings.SetQColumns(16, 1,  falseStr);
-        HQ_.Settings.SetQColumns(17, 0,  "SPTo");
-        HQ_.Settings.SetQColumns(17, 1,  falseStr);
-        HQ_.Settings.SetQColumns(18, 0,  "Note");
-        HQ_.Settings.SetQColumns(18, 1,  falseStr);
-        HQ_.Settings.SetQColumns(19, 0,  "Prio");
-        HQ_.Settings.SetQColumns(19, 1,  falseStr);
-        HQ_.Settings.QColumnsSet = true;
+        HQ.Settings.SetQColumns(0, 0, "Name");
+        HQ.Settings.SetQColumns(0, 1, trueStr);
+        HQ.Settings.SetQColumns(1, 0, "Curr");
+        HQ.Settings.SetQColumns(1, 1, trueStr);
+        HQ.Settings.SetQColumns(2, 0, "From");
+        HQ.Settings.SetQColumns(2, 1, trueStr);
+        HQ.Settings.SetQColumns(3, 0, "Tole");
+        HQ.Settings.SetQColumns(3, 1, trueStr);
+        HQ.Settings.SetQColumns(4, 0, "Perc");
+        HQ.Settings.SetQColumns(4, 1, trueStr);
+        HQ.Settings.SetQColumns(5, 0, "Trai");
+        HQ.Settings.SetQColumns(5, 1, trueStr);
+        HQ.Settings.SetQColumns(6, 0, "Comp");
+        HQ.Settings.SetQColumns(6, 1, trueStr);
+        HQ.Settings.SetQColumns(7, 0, "Date");
+        HQ.Settings.SetQColumns(7, 1, trueStr);
+        HQ.Settings.SetQColumns(8, 0, "Rank");
+        HQ.Settings.SetQColumns(8, 1, falseStr);
+        HQ.Settings.SetQColumns(9, 0, "PAtt");
+        HQ.Settings.SetQColumns(9, 1, falseStr);
+        HQ.Settings.SetQColumns(10, 0,  "SAtt");
+        HQ.Settings.SetQColumns(10, 1,  falseStr);
+        HQ.Settings.SetQColumns(11, 0,  "SPRH");
+        HQ.Settings.SetQColumns(11, 1,  falseStr);
+        HQ.Settings.SetQColumns(12, 0,  "SPRD");
+        HQ.Settings.SetQColumns(12, 1,  falseStr);
+        HQ.Settings.SetQColumns(13, 0,  "SPRW");
+        HQ.Settings.SetQColumns(13, 1,  falseStr);
+        HQ.Settings.SetQColumns(14, 0,  "SPRM");
+        HQ.Settings.SetQColumns(14, 1,  falseStr);
+        HQ.Settings.SetQColumns(15, 0,  "SPRY");
+        HQ.Settings.SetQColumns(15, 1,  falseStr);
+        HQ.Settings.SetQColumns(16, 0,  "SPAd");
+        HQ.Settings.SetQColumns(16, 1,  falseStr);
+        HQ.Settings.SetQColumns(17, 0,  "SPTo");
+        HQ.Settings.SetQColumns(17, 1,  falseStr);
+        HQ.Settings.SetQColumns(18, 0,  "Note");
+        HQ.Settings.SetQColumns(18, 1,  falseStr);
+        HQ.Settings.SetQColumns(19, 0,  "Prio");
+        HQ.Settings.SetQColumns(19, 1,  falseStr);
+        HQ.Settings.QColumnsSet = true;
     }
 
     public void Save()
     {
-        var fileName = Path.Combine(HQ_.AppDataFolder, "EveHQSettings.json");
-        HQ_.WriteLogEvent("Settings: Saving EveHQ settings to " + fileName);
+        var fileName = Path.Combine(HQ.AppDataFolder, "EveHQSettings.json");
+        HQ.WriteLogEvent("Settings: Saving EveHQ settings to " + fileName);
         //Convert the current settings to a JSON formatted string
         var json = JsonConvert.SerializeObject(this, Formatting.Indented);
         
@@ -643,8 +643,8 @@ public class EveHQSettings
         }
         catch (Exception ex)
         {
-            HQ_.WriteLogEvent("Settings: Error saving EveHQ settings to " +
-                              Path.Combine(HQ_.AppDataFolder, "EveHQSettings.bin - " + ex.Message));
+            HQ.WriteLogEvent("Settings: Error saving EveHQ settings to " +
+                              Path.Combine(HQ.AppDataFolder, "EveHQSettings.bin - " + ex.Message));
         }
         
         //Update the Proxy Server settings
@@ -653,13 +653,13 @@ public class EveHQSettings
 
     public static bool Load(bool showRawData)
     {
-        if (File.Exists(Path.Combine(HQ_.AppDataFolder, "EveHQSettings.json")))
+        if (File.Exists(Path.Combine(HQ.AppDataFolder, "EveHQSettings.json")))
         {
             try
             {
-                using var s = new StreamReader(Path.Combine(HQ_.AppDataFolder, "EveHQSettings.json"));
+                using var s = new StreamReader(Path.Combine(HQ.AppDataFolder, "EveHQSettings.json"));
                 var json  = s.ReadToEnd();
-                HQ_.Settings = JsonConvert.DeserializeObject<EveHQSettings>(json);
+                HQ.Settings = JsonConvert.DeserializeObject<EveHQSettings>(json);
             }
             catch (Exception ex)
             {
@@ -676,8 +676,8 @@ public class EveHQSettings
                     MessageBoxIcon.Information);
                 try
                 {
-                    File.Copy(Path.Combine(HQ_.AppDataFolder, "EveHQSettings.json"),
-                        Path.Combine(HQ_.AppDataFolder, "EveHQSettings.bad"), true);
+                    File.Copy(Path.Combine(HQ.AppDataFolder, "EveHQSettings.json"),
+                        Path.Combine(HQ.AppDataFolder, "EveHQSettings.bad"), true);
                 }
                 catch (Exception)
                 {
@@ -690,10 +690,10 @@ public class EveHQSettings
         }
         else
         {
-            HQ_.Settings = new EveHQSettings();
+            HQ.Settings = new EveHQSettings();
         }
 
-        if (HQ_.Settings == null)
+        if (HQ.Settings == null)
         {
             MessageBox.Show(
                 "There was an issue loading the settings file: It was empty. Please delete the EveHQSettigns.json file manually and restore from backup.");
@@ -703,9 +703,9 @@ public class EveHQSettings
         if (showRawData == false)
         {
             //' Reset the update URL to a temp location
-            if (HQ_.Settings.UpdateUrl != "http://evehq.co/update/")
+            if (HQ.Settings.UpdateUrl != "http://evehq.co/update/")
             {
-                HQ_.Settings.UpdateUrl = "http://evehq.co/update/";
+                HQ.Settings.UpdateUrl = "http://evehq.co/update/";
             }
             
             //' Set the Custom database connection
@@ -730,16 +730,16 @@ public class EveHQSettings
             InitialiseQueueColumns();
             InitialiseUserColumns();
             InitialiseRemoteProxyServer();
-            if (string.IsNullOrEmpty(HQ_.Settings.QColumns(0, 0)))
+            if (string.IsNullOrEmpty(HQ.Settings.QColumns(0, 0)))
             {
                 ResetColumns();
             }
             
             //Set Theme stuff
-            if (HQ_.Settings.ThemeSetByUser == false)
+            if (HQ.Settings.ThemeSetByUser == false)
             {
-                HQ_.Settings.ThemeStyle = eStyle.Office2007Black;
-                HQ_.Settings.ThemeTint = Color.Empty;
+                HQ.Settings.ThemeStyle = eStyle.Office2007Black;
+                HQ.Settings.ThemeTint = Color.Empty;
             }
         }
 
@@ -748,139 +748,139 @@ public class EveHQSettings
     
     public static void InitialiseRemoteProxyServer()
     {
-        HQ_.RemoteProxy.ProxyRequired = HQ_.Settings.ProxyRequired;
-        HQ_.RemoteProxy.ProxyServer = HQ_.Settings.ProxyServer;
-        HQ_.RemoteProxy.ProxyPort = HQ_.Settings.ProxyPort;
-        HQ_.RemoteProxy.UseDefaultCredentials = HQ_.Settings.ProxyUseDefault;
-        HQ_.RemoteProxy.ProxyUsername = HQ_.Settings.ProxyUsername;
-        HQ_.RemoteProxy.ProxyPassword = HQ_.Settings.ProxyPassword;
-        HQ_.RemoteProxy.UseBasicAuthentication = HQ_.Settings.ProxyUseBasic;        
+        HQ.RemoteProxy.ProxyRequired = HQ.Settings.ProxyRequired;
+        HQ.RemoteProxy.ProxyServer = HQ.Settings.ProxyServer;
+        HQ.RemoteProxy.ProxyPort = HQ.Settings.ProxyPort;
+        HQ.RemoteProxy.UseDefaultCredentials = HQ.Settings.ProxyUseDefault;
+        HQ.RemoteProxy.ProxyUsername = HQ.Settings.ProxyUsername;
+        HQ.RemoteProxy.ProxyPassword = HQ.Settings.ProxyPassword;
+        HQ.RemoteProxy.UseBasicAuthentication = HQ.Settings.ProxyUseBasic;        
     }
 
     public static void InitialiseQueueColumns()
     {
-        HQ_.Settings.StandardQueueColumns.Clear();
+        HQ.Settings.StandardQueueColumns.Clear();
         ListViewItem newItem;
         
         newItem = new ListViewItem();
         newItem.Name = "Current";
         newItem.Text = "Cur Lvl";
         newItem.Checked = true;
-        HQ_.Settings.StandardQueueColumns.Add(newItem);
+        HQ.Settings.StandardQueueColumns.Add(newItem);
         newItem = new ListViewItem();
         newItem.Name = "From";
         newItem.Text = "From Lvl";
         newItem.Checked = true;
-        HQ_.Settings.StandardQueueColumns.Add(newItem);
+        HQ.Settings.StandardQueueColumns.Add(newItem);
         newItem = new ListViewItem();
         newItem.Name = "To";
         newItem.Text = "To Lvl";
         newItem.Checked = true;
-        HQ_.Settings.StandardQueueColumns.Add(newItem);
+        HQ.Settings.StandardQueueColumns.Add(newItem);
         newItem = new ListViewItem();
         newItem.Name = "Percent";
         newItem.Text = "%";
         newItem.Checked = true;
-        HQ_.Settings.StandardQueueColumns.Add(newItem);
+        HQ.Settings.StandardQueueColumns.Add(newItem);
         newItem = new ListViewItem();
         newItem.Name = "TrainTime";
         newItem.Text = "Training Time";
         newItem.Checked = true;
-        HQ_.Settings.StandardQueueColumns.Add(newItem);
+        HQ.Settings.StandardQueueColumns.Add(newItem);
         newItem = new ListViewItem();
         newItem.Name = "TimeToComplete";
         newItem.Text = "Time To Complete";
         newItem.Checked = true;
-        HQ_.Settings.StandardQueueColumns.Add(newItem);
+        HQ.Settings.StandardQueueColumns.Add(newItem);
         newItem = new ListViewItem();
         newItem.Name = "DateEnded";
         newItem.Text = "Date Completed";
         newItem.Checked = true;
-        HQ_.Settings.StandardQueueColumns.Add(newItem);
+        HQ.Settings.StandardQueueColumns.Add(newItem);
         newItem = new ListViewItem();
         newItem.Name = "Rank";
         newItem.Text = "Rank";
         newItem.Checked = false;
-        HQ_.Settings.StandardQueueColumns.Add(newItem);
+        HQ.Settings.StandardQueueColumns.Add(newItem);
         newItem = new ListViewItem();
         newItem.Name = "PAtt";
         newItem.Text = "Pri Att";
         newItem.Checked = false;
-        HQ_.Settings.StandardQueueColumns.Add(newItem);
+        HQ.Settings.StandardQueueColumns.Add(newItem);
         newItem = new ListViewItem();
         newItem.Name = "SAtt";
         newItem.Text = "Sec Att";
         newItem.Checked = false;
-        HQ_.Settings.StandardQueueColumns.Add(newItem);
+        HQ.Settings.StandardQueueColumns.Add(newItem);
         newItem = new ListViewItem();
         newItem.Name = "SPHour";
         newItem.Text = "SP /hour";
         newItem.Checked = false;
-        HQ_.Settings.StandardQueueColumns.Add(newItem);
+        HQ.Settings.StandardQueueColumns.Add(newItem);
         newItem = new ListViewItem();
         newItem.Name = "SPDay";
         newItem.Text = "SP /day";
         newItem.Checked = false;
-        HQ_.Settings.StandardQueueColumns.Add(newItem);
+        HQ.Settings.StandardQueueColumns.Add(newItem);
         newItem = new ListViewItem();
         newItem.Name = "SPWeek";
         newItem.Text = "SP /week";
         newItem.Checked = false;
-        HQ_.Settings.StandardQueueColumns.Add(newItem);
+        HQ.Settings.StandardQueueColumns.Add(newItem);
         newItem = new ListViewItem();
         newItem.Name = "SPMonth";
         newItem.Text = "SP /month";
         newItem.Checked = false;
-        HQ_.Settings.StandardQueueColumns.Add(newItem);
+        HQ.Settings.StandardQueueColumns.Add(newItem);
         newItem = new ListViewItem();
         newItem.Name = "SPYear";
         newItem.Text = "SP /year";
         newItem.Checked = false;
-        HQ_.Settings.StandardQueueColumns.Add(newItem);
+        HQ.Settings.StandardQueueColumns.Add(newItem);
         newItem = new ListViewItem();
         newItem.Name = "SPAdded";
         newItem.Text = "SP Added";
         newItem.Checked = false;
-        HQ_.Settings.StandardQueueColumns.Add(newItem);
+        HQ.Settings.StandardQueueColumns.Add(newItem);
         newItem = new ListViewItem();
         newItem.Name = "SPTotal";
         newItem.Text = "SP Total";
         newItem.Checked = false;
-        HQ_.Settings.StandardQueueColumns.Add(newItem);
+        HQ.Settings.StandardQueueColumns.Add(newItem);
         newItem = new ListViewItem();
         newItem.Name = "Notes";
         newItem.Text = "Notes";
         newItem.Checked = false;
-        HQ_.Settings.StandardQueueColumns.Add(newItem);
+        HQ.Settings.StandardQueueColumns.Add(newItem);
         newItem = new ListViewItem();
         newItem.Name = "Priority";
         newItem.Text = "Priority";
         newItem.Checked = false;
-        HQ_.Settings.StandardQueueColumns.Add(newItem);        
+        HQ.Settings.StandardQueueColumns.Add(newItem);        
     }
 
     public static void InitialiseUserColumns()
     {
-        if (HQ_.Settings.UserQueueColumns.Count == 0) {
+        if (HQ.Settings.UserQueueColumns.Count == 0) {
             //Add preset items
-            HQ_.Settings.UserQueueColumns.Add("Current1");
-            HQ_.Settings.UserQueueColumns.Add("From1");
-            HQ_.Settings.UserQueueColumns.Add("To1");
-            HQ_.Settings.UserQueueColumns.Add("Percent1");
-            HQ_.Settings.UserQueueColumns.Add("TrainTime1");
-            HQ_.Settings.UserQueueColumns.Add("TimeToComplete1");
-            HQ_.Settings.UserQueueColumns.Add("DateEnded1");
+            HQ.Settings.UserQueueColumns.Add("Current1");
+            HQ.Settings.UserQueueColumns.Add("From1");
+            HQ.Settings.UserQueueColumns.Add("To1");
+            HQ.Settings.UserQueueColumns.Add("Percent1");
+            HQ.Settings.UserQueueColumns.Add("TrainTime1");
+            HQ.Settings.UserQueueColumns.Add("TimeToComplete1");
+            HQ.Settings.UserQueueColumns.Add("DateEnded1");
         }
         
         //Check if the standard columns have changed and we need to add columns
-        if (HQ_.Settings.UserQueueColumns.Count == HQ_.Settings.StandardQueueColumns.Count) return;
-        foreach (ListViewItem slotItem in HQ_.Settings.StandardQueueColumns)
+        if (HQ.Settings.UserQueueColumns.Count == HQ.Settings.StandardQueueColumns.Count) return;
+        foreach (ListViewItem slotItem in HQ.Settings.StandardQueueColumns)
         {
             if (
-                HQ_.Settings.UserQueueColumns.Contains(slotItem.Name + "0") == false &&
-                HQ_.Settings.UserQueueColumns.Contains(slotItem.Name + "1") == false)
+                HQ.Settings.UserQueueColumns.Contains(slotItem.Name + "0") == false &&
+                HQ.Settings.UserQueueColumns.Contains(slotItem.Name + "1") == false)
             {
-                HQ_.Settings.UserQueueColumns.Add(slotItem.Name + "0");
+                HQ.Settings.UserQueueColumns.Add(slotItem.Name + "0");
             }
         }
     }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -15,8 +16,8 @@ using System.Windows.Forms;
 
 namespace EveHQ.CoreLib;
 
- 
-public class HQ_
+
+public class HQ
 {
     #if NET48
     public static Form? MainForm = null;
@@ -56,7 +57,10 @@ public class HQ_
     public static bool AppUpdateAvailable = false;
     public static DateTime NextAutoMailAPITime = System.DateTime.Now;
     public static SortedList<string, string> Widgets = [];
-    public static EventHandler ShutDownEveHQ;
+    
+    public delegate void ShutDownEveHQHandler();
+    public static event ShutDownEveHQHandler ShutDownEveHQ;
+    
     public static bool UpdateShutDownRequest = false;
     public static RemoteProxyServer RemoteProxy = new RemoteProxyServer();
     public static bool APIUpdateInProgress = false;
@@ -100,7 +104,7 @@ public class HQ_
         {
             if (value)
             {
-                ShutDownEveHQ?.Invoke(null, EventArgs.Empty);
+                ShutDownEveHQ?.Invoke();
                 //TODO ShutDownEveHQ();
             }
         }
@@ -246,7 +250,7 @@ public class HQ_
         set => tempPilots1 = value;
     }
 
-    public static void ReduseMemory()
+    public static void ReduceMemory()
     {
         GC.Collect();
         GC.WaitForPendingFinalizers();
@@ -344,5 +348,100 @@ public class HQ_
 
         return _ccpMarketDataProvider;
     }
+}
 
+public class ListViewItemComparerText : IComparer
+{
+    private int _col;
+    private SortOrder _order;
+
+    public ListViewItemComparerText()
+    {
+        _col = 0;
+        _order = SortOrder.Ascending;
+    }
+    
+    public ListViewItemComparerText(int column, SortOrder order)
+    {
+        _col = column;
+        _order = order;
+    }
+
+    public int Compare(object x, object y)
+    {
+        int returnVal = -1;
+
+        var a = ((ListViewItem)x).SubItems[_col].Text;
+        var b = ((ListViewItem)y).SubItems[_col].Text;
+        
+        decimal firstNumber = 0;
+        decimal secondNumber = 0;
+        
+        if (decimal.TryParse(a, out firstNumber) &&
+            decimal.TryParse(b, out secondNumber))
+        {
+            returnVal = Decimal.Compare(firstNumber, secondNumber);
+        }
+        else
+        {
+            returnVal = String.Compare(a, b);
+        }
+        
+        //Determine whether the sort order is descending.
+        if (_order == SortOrder.Descending)
+        {
+            //Invert the value returned by String.Compare.
+            returnVal *= -1;
+        }
+        
+        return returnVal;
+    }
+}
+
+public class ListViewItemComparerName : IComparer
+{
+    private int _col;
+    private SortOrder _order;
+
+    public ListViewItemComparerName()
+    {
+        _col = 0;
+        _order = SortOrder.Ascending;
+    }
+    
+    public ListViewItemComparerName(int column, SortOrder order)
+    {
+        _col = column;
+        _order = order;
+    }
+
+    public int Compare(object x, object y)
+    {
+        int returnVal = -1;
+
+        var a = ((ListViewItem)x).SubItems[_col].Name;
+        var b = ((ListViewItem)y).SubItems[_col].Name;
+        
+        decimal firstNumber = 0;
+        decimal secondNumber = 0;
+        
+        if (decimal.TryParse(a, out firstNumber) &&
+            decimal.TryParse(b, out secondNumber))
+        {
+            returnVal = Decimal.Compare(firstNumber, secondNumber);
+        }
+        else
+        {
+            returnVal = String.Compare(a, b);
+        }
+        
+        //Determine whether the sort order is descending.
+        if (_order == SortOrder.Descending)
+        {
+            //Invert the value returned by String.Compare.
+            returnVal *= -1;
+        }
+        
+        return returnVal;
+    }
 }

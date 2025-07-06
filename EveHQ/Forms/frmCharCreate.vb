@@ -43,13 +43,14 @@
 '
 ' ==============================================================================
 
-Imports EveHQ.EveAPI
+Imports EveHQ.EveApi
 Imports EveHQ.Core
 Imports System.IO
 Imports EveHQ.Common.Extensions
 Imports Newtonsoft.Json
-Imports EveHQ.NewEveApi.Entities
-Imports EveHQ.NewEveApi
+Imports EveHQ.NewEveAPI.Entities
+Imports EveHQ.NewEveAPI
+Imports EveHQ.CoreLib
 
 Namespace Forms
 

@@ -35,7 +35,7 @@ public class EveServer
     {
         try
         {
-            var serverInfo = HQ_.ApiProvider.Server.ServerStatus();
+            var serverInfo = HQ.ApiProvider.Server.ServerStatus();
             if (serverInfo.IsSuccess)
             {
                 var serverIsUp = serverInfo.ResultData.IsServerOpen;

@@ -1,10 +1,12 @@
-﻿Namespace Controls.DBConfigs
-    <Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿Imports EveHQ.CoreLib
+
+Namespace Controls.DBConfigs
+    <Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
     Partial Class DBCSkillQueueInfoConfig
         Inherits DevComponents.DotNetBar.Office2007Form
 
         'Form overrides dispose to clean up the component list.
-        <System.Diagnostics.DebuggerNonUserCode()> _
+        <System.Diagnostics.DebuggerNonUserCode()>
         Protected Overrides Sub Dispose(ByVal disposing As Boolean)
             Try
                 If disposing AndAlso components IsNot Nothing Then
@@ -21,7 +23,7 @@
         'NOTE: The following procedure is required by the Windows Form Designer
         'It can be modified using the Windows Form Designer.  
         'Do not modify it using the code editor.
-        <System.Diagnostics.DebuggerStepThrough()> _
+        <System.Diagnostics.DebuggerStepThrough()>
         Private Sub InitializeComponent()
             Me.btnCancel = New DevComponents.DotNetBar.ButtonX
             Me.btnAccept = New DevComponents.DotNetBar.ButtonX
@@ -197,7 +199,7 @@
             ' Load the combo box with the pilot info
             cboPilots.BeginUpdate()
             cboPilots.Items.Clear()
-            For Each pilot As EveHQ.CoreLib.EveHQPilot In EveHQ.Core.HQ.Settings.Pilots.Values
+            For Each pilot As EveHQ.CoreLib.EveHQPilot In HQ.Settings.Pilots.Values
                 If pilot.Active = True Then
                     cboPilots.Items.Add(pilot.Name)
                 End If
@@ -214,4 +216,4 @@
         Friend WithEvents radEve As DevComponents.DotNetBar.Controls.CheckBoxX
         Friend WithEvents radEveHQ As DevComponents.DotNetBar.Controls.CheckBoxX
     End Class
-End NameSpace
+End Namespace

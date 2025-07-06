@@ -49,6 +49,7 @@ Imports System.Text
 Imports System.IO
 Imports System.Xml
 Imports System.Web
+Imports EveHQ.CoreLib
 
 Namespace Forms
 
@@ -255,9 +256,9 @@ Namespace Forms
             If sfd.FileName <> "" Then
                 Select Case sfd.FilterIndex
                     Case 1
-                        Call ExportCSV(sfd.FileName)
+                        Call ExportCsv(sfd.FileName)
                     Case 2
-                        Call ExportTSV(sfd.FileName)
+                        Call ExportTsv(sfd.FileName)
                     Case 3
                         Call ExportXML(sfd.FileName)
                 End Select

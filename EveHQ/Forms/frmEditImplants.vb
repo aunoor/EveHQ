@@ -44,6 +44,7 @@
 ' ==============================================================================
 
 Imports EveHQ.Core
+Imports EveHQ.CoreLib
 
 Namespace Forms
     Public Class FrmEditImplants
@@ -93,4 +94,4 @@ Namespace Forms
             nudW.Value = _displayPilot.WImplantM
         End Sub
     End Class
-End NameSpace
+End Namespace

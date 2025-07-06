@@ -47,6 +47,7 @@ Imports System.Globalization
 Imports EveHQ.EveData
 Imports System.Windows.Forms
 Imports System.Text
+Imports EveHQ.CoreLib
 
 Namespace Requisitions
 

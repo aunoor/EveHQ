@@ -58,7 +58,7 @@ public class EveHQAccount
 
         if (ApiKeySystem != APIKeySystems.Version2) return;
         
-        var apiResponse = HQ_.ApiProvider.Account.ApiKeyInfo(UserID, APIKey);
+        var apiResponse = HQ.ApiProvider.Account.ApiKeyInfo(UserID, APIKey);
         if (!apiResponse.IsSuccess) return;
         
         AccessMask = apiResponse.ResultData.AccessMask;
@@ -75,7 +75,7 @@ public class EveHQAccount
         var charList = new List<string>();
         do
         {
-            var characters = HQ_.ApiProvider.Account.Characters(UserID, APIKey);
+            var characters = HQ.ApiProvider.Account.Characters(UserID, APIKey);
             if (!characters.IsSuccess)
             {
                 break;

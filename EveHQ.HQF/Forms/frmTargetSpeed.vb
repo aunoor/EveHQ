@@ -1,7 +1,7 @@
 '==============================================================================
 '
-' EveHQ - An Eve-Online™ character assistance application
-' Copyright © 2005-2015  EveHQ Development Team
+' EveHQ - An Eve-Onlineï¿½ character assistance application
+' Copyright ï¿½ 2005-2015  EveHQ Development Team
 '
 ' This file is part of EveHQ.
 '
@@ -21,7 +21,7 @@
 '
 ' The MIT License (MIT)
 '
-' Copyright © 2005-2015  EveHQ Development Team
+' Copyright ï¿½ 2005-2015  EveHQ Development Team
 '
 ' Permission is hereby granted, free of charge, to any person obtaining a copy
 ' of this software and associated documentation files (the "Software"), to deal
@@ -45,6 +45,7 @@
 
 Imports System.Windows.Forms.DataVisualization.Charting
 Imports System.Windows.Forms
+Imports EveHQ.CoreLib
 
 Namespace Forms
 
@@ -173,7 +174,7 @@ Namespace Forms
 
         Private Sub mnuSaveImage_Click(sender As System.Object, e As EventArgs) Handles mnuSaveImage.Click
             Try
-                Chart1.SaveImage(IO.Path.Combine(Core.HQ.ReportFolder, Chart1.Titles(0).Text & ".png"), Drawing.Imaging.ImageFormat.Png)
+                Chart1.SaveImage(IO.Path.Combine(HQ.ReportFolder, Chart1.Titles(0).Text & ".png"), Drawing.Imaging.ImageFormat.Png)
                 MessageBox.Show("Image successfully saved into the EveHQ report folder.", "Save Successful", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Catch ex As Exception
                 MessageBox.Show("There was an error saving the image: " & ex.Message, "Save Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)

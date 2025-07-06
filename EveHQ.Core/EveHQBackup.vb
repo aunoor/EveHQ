@@ -49,6 +49,7 @@ Imports DevComponents.DotNetBar
 Imports Microsoft.VisualBasic.FileIO
 
 Imports System.Text
+Imports EveHQ.CoreLib
 Imports Ionic.Zip
 
 

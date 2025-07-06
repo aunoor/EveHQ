@@ -44,6 +44,7 @@
 ' ==============================================================================
 
 Imports EveHQ.Controls.DBControls
+Imports EveHQ.CoreLib
 
 Namespace Controls.DBConfigs
     Public Class DBCMarketOrdersConfig
@@ -56,7 +57,7 @@ Namespace Controls.DBConfigs
             ' Load the combo box with the pilot info
             cboPilots.BeginUpdate()
             cboPilots.Items.Clear()
-            For Each pilot As CoreLib.EveHQPilot In Core.HQ.Settings.Pilots.Values
+            For Each pilot As CoreLib.EveHQPilot In HQ.Settings.Pilots.Values
                 If pilot.Active = True And pilot.Account <> "" Then
                     cboPilots.Items.Add(pilot.Name)
                 End If
@@ -109,4 +110,4 @@ Namespace Controls.DBConfigs
             Close()
         End Sub
     End Class
-End NameSpace
+End Namespace

@@ -45,6 +45,7 @@
 
 Imports EveHQ.Core
 Imports DevComponents.DotNetBar
+Imports EveHQ.CoreLib
 
 Namespace Forms
     Public Class FrmEveHQMessage
@@ -64,4 +65,4 @@ Namespace Forms
         End Sub
 
     End Class
-End NameSpace
+End Namespace

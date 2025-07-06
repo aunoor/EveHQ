@@ -102,7 +102,7 @@ Namespace My
                     trace.AppendLine("")
                     trace.AppendLine("========== Plug-ins ==========")
                     trace.AppendLine("")
-                    For Each myPlugIn As EveHQPlugIn In Core.HQ.Plugins.Values
+                    For Each myPlugIn As EveHQPlugIn In HQ.Plugins.Values
                         If myPlugIn.ShortFileName IsNot Nothing Then
                             trace.AppendLine(myPlugIn.ShortFileName & " (" & myPlugIn.Version & ")")
                         End If
@@ -113,8 +113,8 @@ Namespace My
                     trace.AppendLine("")
                     trace.AppendLine("Operating System: " & Environment.OSVersion.ToString)
                     trace.AppendLine(".Net Framework Version: " & Environment.Version.ToString)
-                    trace.AppendLine("EveHQ Location: " & Core.HQ.AppFolder)
-                    trace.AppendLine("EveHQ Cache Locations: " & Core.HQ.AppDataFolder)
+                    trace.AppendLine("EveHQ Location: " & HQ.AppFolder)
+                    trace.AppendLine("EveHQ Cache Locations: " & HQ.AppDataFolder)
                     myException.txtStackTrace.Text = trace.ToString
                     Dim result As Integer = myException.ShowDialog()
                     If result = DialogResult.Ignore Then

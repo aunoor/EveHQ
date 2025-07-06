@@ -50,6 +50,7 @@ Imports System.Drawing.Imaging
 Imports System.Drawing.Drawing2D
 Imports EveHQ.EveData
 Imports EveHQ.Core.ItemBrowser
+Imports EveHQ.CoreLib
 
 Public Class Ticker
     Dim WithEvents _tmrScrollTimer As New Timer

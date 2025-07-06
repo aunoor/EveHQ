@@ -44,6 +44,7 @@
 ' ==============================================================================
 
 Imports System.Net
+Imports EveHQ.CoreLib
 Imports EveHQ.EveAPI
 
 ''' <summary>

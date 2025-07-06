@@ -46,6 +46,7 @@
 Imports EveHQ.EveData
 Imports EveHQ.Common.Extensions
 Imports System.Windows.Forms
+Imports EveHQ.CoreLib
 
 Public Class FrmModifyPrice
 

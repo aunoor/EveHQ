@@ -1751,9 +1751,9 @@ Public Class FrmCacheCreator
         End Try
     End Sub
     Private Sub LoadEveSkillData()
-        Core.HQ.SkillListName.Clear()
-        Core.HQ.SkillListID.Clear()
-        Core.HQ.SkillGroups.Clear()
+        HQ.SkillListName.Clear()
+        HQ.SkillListID.Clear()
+        HQ.SkillGroups.Clear()
 
         Dim skillAttFilter As New List(Of Integer)
 
@@ -1764,7 +1764,7 @@ Public Class FrmCacheCreator
                 Dim newSkillGroup As New SkillGroup
                 newSkillGroup.ID = groupId
                 newSkillGroup.Name = StaticData.TypeGroups(groupId)
-                Core.HQ.SkillGroups.Add(newSkillGroup.Name, newSkillGroup)
+                HQ.SkillGroups.Add(newSkillGroup.Name, newSkillGroup)
 
                 ' Get the items in this skill group
                 Dim items As IEnumerable(Of EveType) = StaticData.GetItemsInGroup(CInt(groupId))
@@ -1781,7 +1781,7 @@ Public Class FrmCacheCreator
                     Else
                         newSkill.Published = item.Published
                     End If
-                    Core.HQ.SkillListID.Add(newSkill.ID, newSkill)
+                    HQ.SkillListID.Add(newSkill.ID, newSkill)
                     skillAttFilter.Add(CInt(newSkill.ID))
                 Next
             End If
@@ -1792,7 +1792,7 @@ Public Class FrmCacheCreator
         Dim skillAtts As List(Of TypeAttrib) = (From ta In StaticData.TypeAttributes Where skillAttFilter.Contains(ta.TypeId)).ToList
 
         Const MaxPreReqs As Integer = 10
-        For Each newSkill As CoreLib.EveSkill In Core.HQ.SkillListID.Values
+        For Each newSkill As CoreLib.EveSkill In HQ.SkillListID.Values
             Dim preReqSkills(MaxPreReqs) As Integer
             Dim preReqSkillLevels(MaxPreReqs) As Integer
 
@@ -1868,7 +1868,7 @@ Public Class FrmCacheCreator
                 newSkill.LevelUp(a) = CInt(Math.Ceiling(Core.SkillFunctions.CalculateSPLevel(newSkill.Rank, a)))
             Next
             ' Add the currentskill to the name list
-            Core.HQ.SkillListName.Add(newSkill.Name, newSkill)
+            HQ.SkillListName.Add(newSkill.Name, newSkill)
         Next
 
     End Sub
@@ -2828,7 +2828,7 @@ Public Class FrmCacheCreator
                         Case HQFEffectType.Item
                             If newEffect.AffectingID > 0 Then
                                 affectingName = StaticData.Types(newEffect.AffectingID).Name
-                                If Core.HQ.SkillListName.ContainsKey(affectingName) = True Then
+                                If HQ.SkillListName.ContainsKey(affectingName) = True Then
                                     affectingName &= ";Skill;" & Attributes.AttributeQuickList(newEffect.AffectedAtt).ToString
                                 Else
                                     affectingName &= ";Item;" & Attributes.AttributeQuickList(newEffect.AffectedAtt).ToString

@@ -44,6 +44,7 @@
 ' ==============================================================================
 
 Imports System.IO
+Imports EveHQ.CoreLib
 
 Namespace Controls
 
@@ -59,29 +60,29 @@ Namespace Controls
             InitializeComponent()
             ' Add any initialization after the InitializeComponent() call.
 
-            If IsAccount = True Then
-                Dim cAccount As CoreLib.EveHQAccount = Core.HQ.Settings.Accounts(objectName)
+            If isAccount = True Then
+                Dim cAccount As CoreLib.EveHQAccount = HQ.Settings.Accounts(objectName)
                 _usingAccount = cAccount.UserID
 
                 ' Prepare block for a blank account
                 pbPilot.SizeMode = PictureBoxSizeMode.StretchImage
-                    pbPilot.Image = My.Resources.Warning64
-                    lblSkill.Text = "Account: " & cAccount.FriendlyName
-                    lblTime.Text = "NOT CURRENTLY TRAINING!"
-                    ToolTip1.SetToolTip(lblTime, "Account '" & cAccount.FriendlyName & "' is not training!")
-                    lblQueue.Text = ""
-                    ToolTip1.SetToolTip(lblQueue, "")
-                    lblSkill.ForeColor = Color.Red
-                    lblTime.LinkColor = Color.Red
-                    lblQueue.LinkColor = Color.Red
-                    lblSkill.Name = ""
-                    lblTime.Name = ""
+                pbPilot.Image = My.Resources.Warning64
+                lblSkill.Text = "Account: " & cAccount.FriendlyName
+                lblTime.Text = "NOT CURRENTLY TRAINING!"
+                ToolTip1.SetToolTip(lblTime, "Account '" & cAccount.FriendlyName & "' is not training!")
+                lblQueue.Text = ""
+                ToolTip1.SetToolTip(lblQueue, "")
+                lblSkill.ForeColor = Color.Red
+                lblTime.LinkColor = Color.Red
+                lblQueue.LinkColor = Color.Red
+                lblSkill.Name = ""
+                lblTime.Name = ""
                 lblQueue.Name = ""
             Else
                 ' Prepare block for a training character
                 _displayPilotName = objectName
                 _usingAccount = ""
-                _displayPilot = Core.HQ.Settings.Pilots(_displayPilotName)
+                _displayPilot = HQ.Settings.Pilots(_displayPilotName)
 
                 ' Update skill info before displaying
                 _displayPilot.TrainingCurrentSP = CInt(Core.SkillFunctions.CalcCurrentSkillPoints(_displayPilot))
@@ -160,7 +161,7 @@ Namespace Controls
         End Sub
 
         Private Sub tmrUpdate_Tick(ByVal sender As System.Object, ByVal e As EventArgs) Handles tmrUpdate.Tick
-            If Core.HQ.Settings.Pilots.ContainsKey(_displayPilotName) = True Then
+            If HQ.Settings.Pilots.ContainsKey(_displayPilotName) = True Then
 
                 ' Establish which skill is training
                 Dim currentTrainingSkill As New CoreLib.EveHQPilotQueuedSkill
@@ -200,12 +201,12 @@ Namespace Controls
 
         Private Sub OverlayAccountTime()
             If pbPilot.InitialImage IsNot Nothing Then
-                Dim isAlpha As Boolean = Core.HQ.Settings.Pilots.ContainsKey(_displayPilotName) And Core.HQ.Settings.Accounts(_displayPilot.Account).APIAccountStatus = CoreLib.APIAccountStatuses.Alpha
-                If Core.HQ.Settings.NotifyAccountTime = True Or isAlpha Then
-                    If Core.HQ.Settings.Pilots.ContainsKey(_displayPilotName) Then
-                        If Core.HQ.Settings.Accounts.ContainsKey(_displayPilot.Account) Then
-                            Dim accountTime As Date = Core.HQ.Settings.Accounts(_displayPilot.Account).PaidUntil
-                            If accountTime.Year > 2000 And (accountTime - Now).TotalHours <= Core.HQ.Settings.AccountTimeLimit Then
+                Dim isAlpha As Boolean = HQ.Settings.Pilots.ContainsKey(_displayPilotName) And HQ.Settings.Accounts(_displayPilot.Account).APIAccountStatus = CoreLib.APIAccountStatuses.Alpha
+                If HQ.Settings.NotifyAccountTime = True Or isAlpha Then
+                    If HQ.Settings.Pilots.ContainsKey(_displayPilotName) Then
+                        If HQ.Settings.Accounts.ContainsKey(_displayPilot.Account) Then
+                            Dim accountTime As Date = HQ.Settings.Accounts(_displayPilot.Account).PaidUntil
+                            If accountTime.Year > 2000 And (accountTime - Now).TotalHours <= HQ.Settings.AccountTimeLimit Then
                                 ' Check exactly how much time is left (i.e. less than an hour?)
                                 Dim overlayText As String
                                 Dim timeRemaining As Double = (accountTime - Now).TotalHours
@@ -250,15 +251,15 @@ Namespace Controls
 #Region "Portrait Related Routines"
 
         Private Sub mnuCtxPicGetPortraitFromServer_Click(ByVal sender As System.Object, ByVal e As EventArgs) Handles mnuCtxPicGetPortraitFromServer.Click
-            Dim dPilot As CoreLib.EveHQPilot = Core.HQ.Settings.Pilots(_displayPilotName)
+            Dim dPilot As CoreLib.EveHQPilot = HQ.Settings.Pilots(_displayPilotName)
             pbPilot.ImageLocation = "http://image.eveonline.com/Character/" & dPilot.ID & "_256.jpg"
         End Sub
         Private Sub mnuCtxPicGetPortraitFromLocal_Click(ByVal sender As System.Object, ByVal e As EventArgs) Handles mnuCtxPicGetPortraitFromLocal.Click
             ' If double-clicked, see if we can get it from the eve portrait folder
             For folder As Integer = 1 To 4
                 Dim folderName As String
-                If Core.HQ.Settings.EveFolderLua(folder) = False Then
-                    Dim eveSettingsFolder As String = Core.HQ.Settings.EveFolder(folder)
+                If HQ.Settings.EveFolderLua(folder) = False Then
+                    Dim eveSettingsFolder As String = HQ.Settings.EveFolder(folder)
                     If eveSettingsFolder IsNot Nothing Then
                         eveSettingsFolder = eveSettingsFolder.Replace("\", "_").Replace(":", "").Replace(" ", "_").ToLower & "_tranquility"
                         Dim eveFolder As String = Path.Combine(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "CCP"), "EVE")
@@ -267,7 +268,7 @@ Namespace Controls
                         folderName = ""
                     End If
                 Else
-                    folderName = Path.Combine(Path.Combine(Path.Combine(Core.HQ.Settings.EveFolder(folder), "cache"), "Pictures"), "Portraits")
+                    folderName = Path.Combine(Path.Combine(Path.Combine(HQ.Settings.EveFolder(folder), "cache"), "Pictures"), "Portraits")
                 End If
                 If My.Computer.FileSystem.DirectoryExists(folderName) = True Then
                     For Each foundFile As String In My.Computer.FileSystem.GetFiles(folderName, FileIO.SearchOption.SearchTopLevelOnly, "*.png")
@@ -288,7 +289,7 @@ Namespace Controls
 
         Private Sub mnuSavePortrait_Click(ByVal sender As System.Object, ByVal e As EventArgs) Handles mnuSavePortrait.Click
             Dim imgFilename As String = _displayPilot.ID & ".png"
-            imgFilename = Path.Combine(Core.HQ.imageCacheFolder, imgFilename)
+            imgFilename = Path.Combine(HQ.ImageCacheFolder, imgFilename)
             ' Save the file
             Try
                 pbPilot.InitialImage.Save(imgFilename)
@@ -304,7 +305,7 @@ Namespace Controls
         End Sub
 
         Private Sub tmrUpdateOverlays_Tick(sender As System.Object, e As EventArgs) Handles tmrUpdateOverlays.Tick
-            If Core.HQ.Settings.Pilots.ContainsKey(_displayPilotName) = True Then
+            If HQ.Settings.Pilots.ContainsKey(_displayPilotName) = True Then
                 Call ApplyOverlays()
             End If
         End Sub

@@ -1,4 +1,6 @@
-﻿Namespace Controls.DBConfigs
+﻿Imports EveHQ.CoreLib
+
+Namespace Controls.DBConfigs
     <Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
     Partial Class DBCCorpInfoConfig
         Inherits DevComponents.DotNetBar.Office2007Form
@@ -112,7 +114,7 @@
             ' Load the combo box with the corp info
             cboCorps.BeginUpdate()
             cboCorps.Items.Clear()
-            For Each corp As EveHQ.CoreLib.Corporation In EveHQ.Core.HQ.Settings.Corporations.Values
+            For Each corp As EveHQ.CoreLib.Corporation In HQ.Settings.Corporations.Values
                 '                If corp.Active = True Then
                 cboCorps.Items.Add(corp.Name)
                 '                End If

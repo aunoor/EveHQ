@@ -52,6 +52,7 @@ Imports EveHQ.EveAPI
 Imports EveHQ.Core
 Imports EveHQ.EveData
 Imports EveHQ.Common.Extensions
+Imports EveHQ.CoreLib
 Imports EveHQ.NewEveApi.Entities
 
 Namespace Classes

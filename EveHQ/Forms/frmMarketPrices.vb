@@ -51,6 +51,7 @@ Imports EveHQ.Market
 Imports System.IO
 Imports EveHQ.Common.Extensions
 Imports System.Threading.Tasks
+Imports EveHQ.CoreLib
 
 Namespace Forms
 
@@ -388,7 +389,7 @@ Namespace Forms
             _buyOrderMetrics.Volume = itemStat.Buy.Volume.ToInvariantString()
 
         End Sub
-        
+
         Private Sub OnMarketSettingsClick(sender As Object, e As EventArgs) Handles Button2.Click
             ShowMarketSettings()
         End Sub
@@ -400,4 +401,4 @@ Namespace Forms
             End Using
         End Sub
     End Class
-End NameSpace
+End Namespace
