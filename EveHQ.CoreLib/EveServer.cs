@@ -2,7 +2,7 @@
 
 namespace EveHQ.CoreLib;
 
-public class EveServer_
+public class EveServer
 {
     public enum ServerStatus : int
     {

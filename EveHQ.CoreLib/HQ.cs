@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using DevComponents.DotNetBar;
 using EveHQ.Common;
 using EveHQ.Common.Logging;
 using EveHQ.Market;
@@ -22,7 +23,9 @@ public class HQ_
     #endif
     public static SortedList<string, EveHQPilot> tempPilots1 = [];
     public static SortedList<string, Corporation> TempCorps = [];
-    //TODO: public static MyTqServer As EveServer = New EveServer
+
+    public static EveServer MyTqServer = new EveServer();
+    public static EveHQMessage EveHQServerMessage;
     public static Dictionary<string, EveSkill> SkillListName = []; //' SkillName, EveSkill
     public static SortedList<int, EveSkill> SkillListID = []; //' SkillID, EveSkill
     public static Dictionary<string, SkillGroup> SkillGroups = [];
@@ -53,11 +56,10 @@ public class HQ_
     public static bool AppUpdateAvailable = false;
     public static DateTime NextAutoMailAPITime = System.DateTime.Now;
     public static SortedList<string, string> Widgets = [];
-    //TODO: public static Event ShutDownEveHQ();
+    public static EventHandler ShutDownEveHQ;
     public static bool UpdateShutDownRequest = false;
     public static RemoteProxyServer RemoteProxy = new RemoteProxyServer();
     public static bool APIUpdateInProgress = false;
-    //TODO: public static EveHQServerMessage As EveHQMessage
     public static bool RestoredSettings = false;
     public static string BcAppKey = "B23079B49E1FCBB9C224C9D9CC591DF9904C193F";
     public static bool EveHQIsUpdating = false;
@@ -98,6 +100,7 @@ public class HQ_
         {
             if (value)
             {
+                ShutDownEveHQ?.Invoke(null, EventArgs.Empty);
                 //TODO ShutDownEveHQ();
             }
         }
@@ -105,7 +108,77 @@ public class HQ_
     
     public static string AppDataFolder {get => _appDataFolder; set => _appDataFolder = value; }
 
+    public static IMarketStatDataProvider MarketStatDataProvider
+    {
+        get
+        {
+            if (_marketStatDataProvider == null)
+            {
+                if (Settings.MarketDataProvider == EveCentralMarketDataProvider.Name)
+                {
+                    _marketStatDataProvider = GetEveCentralMarketInstance();
+                }
+            }
 
+            return _marketStatDataProvider;
+        }
+        set => _marketStatDataProvider = value;
+    }
+
+    public static List<int> TickerItemList
+    {
+        get
+        {
+            if (_tickerItemList.Count == 0)
+            {
+                //Add place holder mineral types only
+                _tickerItemList.Add(34);
+                _tickerItemList.Add(35);
+                _tickerItemList.Add(36);
+                _tickerItemList.Add(37);
+                _tickerItemList.Add(38);
+                _tickerItemList.Add(39);
+                _tickerItemList.Add(40);
+                _tickerItemList.Add(11399);
+            }
+            return _tickerItemList;
+        }
+        set => _tickerItemList = value;
+    }
+
+
+    public static IMarketOrderDataProvider MarketOrderDataProvider
+    {
+        get
+        {
+            if (Settings.MarketDataProvider == EveCentralMarketDataProvider.Name)
+            {
+                _marketOrderDataProvider = GetEveCentralMarketInstance();
+            } else if (Settings.MarketDataProvider == CcpMarketDataProvider.Name)
+            {
+                _marketOrderDataProvider = GetCcpMarketStatDataProvider();
+            }
+            else
+            {
+                _marketOrderDataProvider = new StabMarketOrderDataProvider();
+            }
+
+            return _marketOrderDataProvider;
+        }
+    }
+
+    public static Stream LoggingStream
+    {
+        get => _loggingStream;
+        set => _loggingStream = value;
+    }
+
+    public static EveHQTraceLogger EveHQTracer
+    {
+        get => _eveHqTracer;
+        set => _eveHqTracer = value;
+    }
+    
     public static WebProxyDetails ProxyDetails
     {
         get
@@ -134,7 +207,13 @@ public class HQ_
             //
             // return _proxyDetails;
         }
-    } 
+    }
+
+    public static String UpdateLocation
+    {
+        get => _updateLocation;
+        set => _updateLocation = value;
+    }
     
     public static NewEveApi.EveAPI ApiProvider
     {
@@ -148,7 +227,122 @@ public class HQ_
             return _apiProvider;
         }
     }
+
+    public static Locations Locations
+    {
+        get
+        {
+            if (_locations == null)
+            {
+                _locations = new Locations(ApiProvider.StructureName, WriteLogEvent);
+            }
+            return _locations;
+        }
+    }
+
+    public static SortedList<string, EveHQPilot> TempPilots
+    {
+        get => tempPilots1;
+        set => tempPilots1 = value;
+    }
+
+    public static void ReduseMemory()
+    {
+        GC.Collect();
+        GC.WaitForPendingFinalizers();
+    }
     
-    public static void WriteLogEvent(string message){}
-    
+    public static void WriteLogEvent(string eventText)
+    {
+        TimeSpan ts = EveHQLogTimer.Elapsed;
+
+        string elapsedTime = string.Format("{0:00}:{1:00}:{2:00}.{3:000}", ts.Hours, ts.Minutes, ts.Seconds,
+            ts.Milliseconds);
+        eventText = "[" + elapsedTime + "]" + " " + eventText;
+        try
+        {
+            Trace.WriteLine(eventText, "Information");
+        }
+        catch
+        {
+            // ignored
+        }
+    }
+
+    public static TabItem GetMdiTab(string tabName)
+    {
+        TabStrip mainTab = MainForm.Controls["tabEveHQMDI"] as TabStrip;
+        if (mainTab != null)
+        {
+            foreach (TabItem tp in mainTab.Tabs)
+            {
+                if (tp.Text == tabName) {
+                    return tp;
+                }
+            }
+        }
+
+        return null;
+    }
+
+
+    public static EveCentralMarketDataProvider GetEveCentralMarketInstance()
+    {
+        if (_eveCentralProvider == null)
+        {
+            if (Settings.ProxyRequired)
+            {
+                _eveCentralProvider = new EveCentralMarketDataProvider(
+                    Path.Combine(AppDataFolder, "MarketCache\\EveCentral"), new HttpRequestProvider(ProxyDetails));
+            }
+            else
+            {
+                _eveCentralProvider = new EveCentralMarketDataProvider(
+                    Path.Combine(AppDataFolder, "MarketCache\\EveCentral"), new HttpRequestProvider(null));
+            }
+        }
+
+        return _eveCentralProvider;
+    }
+
+    public static IMarketStatDataProvider GetFuzzworkMarketStatDataProvider()
+    {
+        if (_eveHqProvider == null)
+        {
+            if (Settings.ProxyRequired)
+            {
+                _eveHqProvider = new FuzzworkMarketStatDataProvider(
+                    Path.Combine(AppDataFolder, "MarketCache\\Fuzzwork"), new HttpRequestProvider(ProxyDetails),
+                    new SupportedMarket());
+            } else {
+                _eveHqProvider = new FuzzworkMarketStatDataProvider(
+                    Path.Combine(AppDataFolder, "MarketCache\\Fuzzwork"), new HttpRequestProvider(null),
+                    new SupportedMarket());
+            }
+        }
+
+        return _eveHqProvider;
+    }
+
+    public static CcpMarketDataProvider GetCcpMarketStatDataProvider()
+    {
+        if (_eveHqProvider == null)
+        {
+            if (Settings.ProxyRequired)
+            {
+                _ccpMarketDataProvider = new CcpMarketDataProvider(
+                    Path.Combine(AppDataFolder, "MarketCache\\Ccp"), new HttpRequestProvider(ProxyDetails),
+                    new SupportedMarket(), Locations);
+            }
+            else
+            {
+                _ccpMarketDataProvider = new CcpMarketDataProvider(
+                    Path.Combine(AppDataFolder, "MarketCache\\Ccp"), new HttpRequestProvider(null),
+                    new SupportedMarket(), Locations);
+            }
+        }
+
+        return _ccpMarketDataProvider;
+    }
+
 }
