@@ -1,7 +1,7 @@
 '==============================================================================
 '
-' EveHQ - An Eve-Online™ character assistance application
-' Copyright © 2005-2015  EveHQ Development Team
+' EveHQ - An Eve-Onlineï¿½ character assistance application
+' Copyright ï¿½ 2005-2015  EveHQ Development Team
 '
 ' This file is part of EveHQ.
 '
@@ -21,7 +21,7 @@
 '
 ' The MIT License (MIT)
 '
-' Copyright © 2005-2015  EveHQ Development Team
+' Copyright ï¿½ 2005-2015  EveHQ Development Team
 '
 ' Permission is hereby granted, free of charge, to any person obtaining a copy
 ' of this software and associated documentation files (the "Software"), to deal
@@ -424,33 +424,33 @@ Namespace Forms
 
         Private Sub ConvertSettings(useLocalSwitch As Boolean, settingsFolder As String)
 
-            Dim oldSettings As EveSettings
+            ' Dim oldSettings As EveSettings
             Dim arguments As New StringBuilder
             Dim externalApp As New ProcessStartInfo
             externalApp.FileName = Path.Combine(Application.StartupPath, "EveHQ.SettingsConverter.exe")
 
             ' Load up the old settings file to see if we can grab some info
-            If My.Computer.FileSystem.FileExists(Path.Combine(settingsFolder, "EveHQSettings.bin")) = True Then
-                Using s As New FileStream(Path.Combine(settingsFolder, "EveHQSettings.bin"), FileMode.Open)
-                    Dim f As New BinaryFormatter
-                    oldSettings = CType(f.Deserialize(s), EveSettings)
-                End Using
-
-                ' Build the command line arguments
-                If useLocalSwitch = True Then
-                    arguments.Append("/local")
-                End If
-                arguments.Append(" /dbformat;" & CStr(oldSettings.DBFormat))
-                arguments.Append(" /dbserver;" & oldSettings.DBServer)
-                arguments.Append(" /dbname;" & oldSettings.DBServer)
-                If oldSettings.DBSQLSecurity = True Then
-                    arguments.Append(" /dbsqlsec;1")
-                Else
-                    arguments.Append(" /dbsqlsec;0")
-                End If
-                arguments.Append(" /dbusername;" & oldSettings.DBUsername)
-                arguments.Append(" /dbpassword;" & oldSettings.DBPassword)
-            End If
+'            If My.Computer.FileSystem.FileExists(Path.Combine(settingsFolder, "EveHQSettings.bin")) = True Then
+'                Using s As New FileStream(Path.Combine(settingsFolder, "EveHQSettings.bin"), FileMode.Open)
+'                    Dim f As New BinaryFormatter
+'                    oldSettings = CType(f.Deserialize(s), EveSettings)
+'                End Using
+'
+'                ' Build the command line arguments
+'                If useLocalSwitch = True Then
+'                    arguments.Append("/local")
+'                End If
+'                arguments.Append(" /dbformat;" & CStr(oldSettings.DBFormat))
+'                arguments.Append(" /dbserver;" & oldSettings.DBServer)
+'                arguments.Append(" /dbname;" & oldSettings.DBServer)
+'                If oldSettings.DBSQLSecurity = True Then
+'                    arguments.Append(" /dbsqlsec;1")
+'                Else
+'                    arguments.Append(" /dbsqlsec;0")
+'                End If
+'                arguments.Append(" /dbusername;" & oldSettings.DBUsername)
+'                arguments.Append(" /dbpassword;" & oldSettings.DBPassword)
+'            End If
             externalApp.Arguments = arguments.ToString
 
             ' Start the process and wait until it has finished
