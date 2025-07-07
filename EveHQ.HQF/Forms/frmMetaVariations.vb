@@ -47,6 +47,7 @@ Imports System.ComponentModel
 Imports System.Windows.Forms
 Imports DevComponents.AdvTree
 Imports EveHQ.Core
+Imports EveHQ.CoreLib
 Imports EveHQ.EveData
 
 Namespace Forms
