@@ -59,7 +59,7 @@
     <DebugType>full</DebugType>
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
-    <OutputPath>..\BuildOutput\EveHQ\$(Configuration)\</OutputPath>
+    <OutputPath>..\BuildOutput\EveHQ\$(Configuration)\net48\</OutputPath>
     <DocumentationFile>EveHQ.xml</DocumentationFile>
     <NoWarn>42353,42354,42355,40010</NoWarn>
     <Optimize>false</Optimize>
