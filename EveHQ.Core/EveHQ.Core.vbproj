@@ -17,6 +17,7 @@
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Security" />
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
@@ -60,5 +61,15 @@
     <None Include="Resources\Strings.txt" />
     <None Include="Resources\EveHQ_IGBLogo.jpg" />
   </ItemGroup>
+
+
+<ItemGroup>
+    <EmbeddedResource Update="Requisitions\frmRequisitions.resx">
+      <DependentUpon>frmRequisitions.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ItemBrowser\frmIB.resx">
+      <DependentUpon>frmIB.vb</DependentUpon>
+    </EmbeddedResource>
+</ItemGroup>
 
 </Project>
