@@ -484,7 +484,7 @@ Namespace Forms
                         Dim types() As Type = myAssembly.GetTypes
                         For Each t As Type In types
                             If t.IsPublic = True Then
-                                If t.GetInterface("EveHQ.Core.IEveHQPlugIn") IsNot Nothing Then
+                                If t.GetInterface("EveHQ.CoreLib.IEveHQPlugIn") IsNot Nothing Then
                                     Dim myPlugIn As IEveHQPlugIn = CType(Activator.CreateInstance(t), IEveHQPlugIn)
                                     Dim eveHQPlugIn As EveHQPlugIn = myPlugIn.GetEveHQPlugInInfo
                                     eveHQPlugIn.FileName = filename
