@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+   <Reference Include="Microsoft.VisualBasic" />
    <PackageReference Include="System.Resources.Extensions" Version="9.0.6" />
    <Reference Include="System.Windows.Forms.DataVisualization" />
   </ItemGroup>

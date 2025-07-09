@@ -18,6 +18,7 @@
      <SpecificVersion>False</SpecificVersion>
      <HintPath>..\Ref\DotNetBar\DevComponents.DotNetBar2.dll</HintPath>
    </Reference>
+   <Reference Include="Microsoft.VisualBasic" />
    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
